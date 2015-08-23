@@ -15,7 +15,6 @@ var Home = React.createClass({
           <div className="lead">
             Welcome!  
           </div>
-          <input type="submit" value="Submit"/>
         </div>
       </div>
     );

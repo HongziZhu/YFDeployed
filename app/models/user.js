@@ -25,7 +25,7 @@
   // username: { type: String, default: '' },
   
   students: [{
-    studentId: { type: String, default: uuid.v1() },
+    studentId: { type: String, default: uuid.v4() },
     firstName: { type: String, trim: true, required: 'First name cannot be blank.' },
     lastName: { type: String, trim: true, required: 'Last name cannot be blank.' },
     incomingGrade: {

@@ -25579,7 +25579,7 @@ var YFActions = {
 
 module.exports = YFActions;
 
-},{"../constants/YFConstants":217,"../dispatcher/AppDispatcher":218}],210:[function(require,module,exports){
+},{"../constants/YFConstants":218,"../dispatcher/AppDispatcher":219}],210:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -25600,7 +25600,150 @@ if (typeof window !== 'undefined') {
 	};
 }
 
-},{"./components/Routes.jsx":214,"react":205,"react-router":36}],211:[function(require,module,exports){
+},{"./components/Routes.jsx":215,"react":205,"react-router":36}],211:[function(require,module,exports){
+'use strict';
+
+var React=require('react');
+
+var Attendance = React.createClass({displayName: "Attendance",
+  render: function () {
+    
+    return (
+      React.createElement("div", {className: "col-md-6 col-md-offset-3"}, 
+        React.createElement("div", {className: "panel panel-default"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              "Attendance"
+            )
+          ), 
+
+          React.createElement("div", {className: "panel-body"}, 
+            React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-sm-12"}, 
+                React.createElement("strong", null, "How many days do you want to attend per week?"), 
+                React.createElement("br", null
+                )
+              ), 
+
+              React.createElement("div", {className: "col-sm-12"}, 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "attendPattern", value: "option1", defaultChecked: true}), 
+                    "5 full days per week (8:00 am -6:30 pm) $235"
+                  )
+                ), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "attendPattern", value: "option2"}), 
+                    "4 full days per week (8:00 am -6:30 pm) $210"
+                  )
+                ), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "attendPattern", value: "option1"}), 
+                    "3 full days per week (8:00 am -6:30 pm) $190"
+                  )
+                ), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "attendPattern", value: "option2"}), 
+                    "5 mornings per week (8:00 am -12:30 pm) $175"
+                  )
+                ), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "attendPattern", value: "option2"}), 
+                    "5 afternoons per week (1:00 pm -6:30 pm) $175"
+                  )
+                )
+              )
+            ), 
+            React.createElement("hr", null), 
+
+            React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-sm-12"}, 
+                React.createElement("strong", null, "Choose the attending weekdays"), 
+                React.createElement("br", null
+                )
+              ), 
+
+              React.createElement("div", {className: "col-sm-12"}, 
+                React.createElement("label", {className: "checkbox-inline"}, 
+                  React.createElement("input", {type: "checkbox", value: "option1"}), " Monday"
+                ), 
+                React.createElement("label", {className: "checkbox-inline"}, 
+                  React.createElement("input", {type: "checkbox", value: "option2"}), " Tuesday"
+                ), 
+                React.createElement("label", {className: "checkbox-inline"}, 
+                  React.createElement("input", {type: "checkbox", value: "option3"}), " Wednesday"
+                ), 
+                React.createElement("label", {className: "checkbox-inline"}, 
+                  React.createElement("input", {type: "checkbox", value: "option2"}), " Thursday"
+                ), 
+                React.createElement("label", {className: "checkbox-inline"}, 
+                  React.createElement("input", {type: "checkbox", value: "option3"}), " Friday"
+                )
+              )
+            ), 
+            React.createElement("hr", null), 
+
+            React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-sm-12"}, 
+                React.createElement("strong", null, "Choose the weeks to apply"), 
+                React.createElement("br", null
+                ), 
+                React.createElement("ul", null, 
+                  React.createElement("label", {className: "checkbox"}, 
+                    React.createElement("input", {type: "checkbox", className: "icheck-15", value: "option1"}), "Week 1 (6/15-6/19)"
+                  ), 
+                  React.createElement("label", {className: "checkbox"}, 
+                    React.createElement("input", {type: "checkbox", value: "option2"}), "Week 2 (6/22-6/26)"
+                  ), 
+                  React.createElement("label", {className: "checkbox"}, 
+                    React.createElement("input", {type: "checkbox", value: "option3"}), "Week 3 (6/29-7/2 Yang Fan is CLOSED on Friday)"
+                  ), 
+                  React.createElement("label", {className: "checkbox"}, 
+                    React.createElement("input", {type: "checkbox", value: "option2"}), "Week 4 (7/6-7/10)"
+                  ), 
+                  React.createElement("label", {className: "checkbox"}, 
+                    React.createElement("input", {type: "checkbox", value: "option3"}), "Week 5 (7/13-7/17)"
+                  ), 
+                  React.createElement("label", {className: "checkbox"}, 
+                    React.createElement("input", {type: "checkbox", value: "option1"}), "Week 6 (7/20-7/24)"
+                  ), 
+                  React.createElement("label", {className: "checkbox"}, 
+                    React.createElement("input", {type: "checkbox", value: "option2"}), "Week 7 (7/27-7/31)"
+                  ), 
+                  React.createElement("label", {className: "checkbox"}, 
+                    React.createElement("input", {type: "checkbox", value: "option3"}), "Week 8 (8/3-8/7)"
+                  ), 
+                  React.createElement("label", {className: "checkbox"}, 
+                    React.createElement("input", {type: "checkbox", value: "option2"}), "Week 9 (8/10-8/14)"
+                  ), 
+                  React.createElement("label", {className: "checkbox"}, 
+                    React.createElement("input", {type: "checkbox", value: "option3"}), "Week 10 (8/17-8/21)"
+                  )
+                )
+              )
+            ), 
+            React.createElement("hr", null), 
+
+            React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-sm-12"}, 
+                React.createElement("button", {className: "btn btn-info"}, "Submit")
+              )
+            )
+
+          )
+        )
+      )
+    );
+  }
+});
+
+module.exports = Attendance;
+
+},{"react":205}],212:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -25624,18 +25767,19 @@ var GradeBox = React.createClass({displayName: "GradeBox",
           React.createElement("select", {className: "form-control", onChange: this.props.handleChange}, 
             React.createElement("option", {value: "K"}, "K"), 
             React.createElement("option", {value: "G1"}, "G1"), 
-            React.createElement("option", null, "G2"), 
-            React.createElement("option", null, "G3"), 
-            React.createElement("option", null, "G4"), 
-            React.createElement("option", null, "G5"), 
-            React.createElement("option", null, "G6"), 
-            React.createElement("option", null, "G7"), 
-            React.createElement("option", null, "G8"), 
-            React.createElement("option", null, "G9"), 
-            React.createElement("option", null, "G10"), 
-            React.createElement("option", null, "G11"), 
-            React.createElement("option", null, "G12")
-          )
+            React.createElement("option", {value: "G2"}, "G2"), 
+            React.createElement("option", {value: "G3"}, "G3"), 
+            React.createElement("option", {value: "G4"}, "G4"), 
+            React.createElement("option", {value: "G5"}, "G5"), 
+            React.createElement("option", {value: "G6"}, "G6"), 
+            React.createElement("option", {value: "G7"}, "G7"), 
+            React.createElement("option", {value: "G8"}, "G8"), 
+            React.createElement("option", {value: "G9"}, "G9"), 
+            React.createElement("option", {value: "G10"}, "G10"), 
+            React.createElement("option", {value: "G11"}, "G11"), 
+            React.createElement("option", {value: "G12"}, "G12")
+          ), 
+          React.createElement("button", {type: "button", className: "btn btn-info", ref: "stu_btn", onClick: this.props.showContinue}, "Confirm")
         )
       )
     );
@@ -25643,14 +25787,15 @@ var GradeBox = React.createClass({displayName: "GradeBox",
 });
 
 var GetStarted = React.createClass({displayName: "GetStarted",
-	mixins: [ Navigation ],
-	getInitialState: function() {
+  mixins: [ Navigation ],
+  getInitialState: function() {
     return { 
       user: {},
       students: [],
       selectedIndex: 0,
       showGrade: false,
-      grade: ''
+      incomingGrade: 'K',
+      showContinue: false
     };
   },
   componentDidMount: function() {
@@ -25671,7 +25816,16 @@ var GetStarted = React.createClass({displayName: "GetStarted",
   },
   handleSelectGrade: function(e) {
     e.preventDefault();
-    this.setState({ grade: e.currentTarget.value });
+    this.setState({ incomingGrade: e.currentTarget.value });
+  },
+  handleContinue: function(e) {
+    e.preventDefault();
+    YFStore.setIncomingGradeAndIndex(this.state.incomingGrade, this.state.selectedIndex);
+    this.transitionTo('attendance');
+  },
+  showContinue: function(e) {
+    e.preventDefault();
+    this.setState({ showContinue: true });
   },
 
   render: function () {
@@ -25691,17 +25845,23 @@ var GetStarted = React.createClass({displayName: "GetStarted",
     }
 
     return (
-      React.createElement("div", null, 
+      React.createElement("div", {className: "col-md-6 col-md-offset-3"}, 
       React.createElement("div", {className: "panel panel-primary"}, 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("strong", null, "Select Your Child")
         ), 
         React.createElement("div", {className: "panel-body"}, 
           studentRows, 
-          React.createElement("button", {type: "button", className: "btn btn-primary", ref: "stu_btn", onClick: this.showGradeBox}, "Confirm")
+          React.createElement("button", {type: "button", className: "btn btn-info", ref: "stu_btn", onClick: this.showGradeBox}, "Confirm")
         )
       ), 
-      this.state.showGrade ? React.createElement(GradeBox, {stu_fname: this.state.students[this.state.selectedIndex].firstName, handleChange: this.handleSelectGrade}) : React.createElement("p", null)
+
+      this.state.showGrade ? React.createElement(GradeBox, {
+        stu_fname: this.state.students[this.state.selectedIndex].firstName, 
+        handleChange: this.handleSelectGrade, 
+        showContinue: this.showContinue}) : React.createElement("p", null), 
+
+      this.state.showContinue ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("p", null)
       )
     );
   } 
@@ -25709,7 +25869,7 @@ var GetStarted = React.createClass({displayName: "GetStarted",
 
 module.exports = GetStarted;
 
-},{"../actions/YFActions":209,"../stores/YFStore.jsx":219,"formsy-react":7,"react":205,"react-router":36}],212:[function(require,module,exports){
+},{"../actions/YFActions":209,"../stores/YFStore.jsx":220,"formsy-react":7,"react":205,"react-router":36}],213:[function(require,module,exports){
 'use strict';
 
 var React=require('react');
@@ -25726,8 +25886,7 @@ var Home = React.createClass({displayName: "Home",
           React.createElement("h2", null, "YangFan Enrollment System"), 
           React.createElement("div", {className: "lead"}, 
             "Welcome!"  
-          ), 
-          React.createElement("input", {type: "submit", value: "Submit"})
+          )
         )
       )
     );
@@ -25736,7 +25895,7 @@ var Home = React.createClass({displayName: "Home",
 
 module.exports = Home;
 
-},{"react":205}],213:[function(require,module,exports){
+},{"react":205}],214:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -25871,7 +26030,7 @@ var MyOwnInput = React.createClass({displayName: "MyOwnInput",
 //       </Formsy.Form>
 module.exports = Login;
 
-},{"../actions/YFActions":209,"../stores/YFStore.jsx":219,"formsy-react":7,"react":205,"react-router":36}],214:[function(require,module,exports){
+},{"../actions/YFActions":209,"../stores/YFStore.jsx":220,"formsy-react":7,"react":205,"react-router":36}],215:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -25885,19 +26044,21 @@ var Signup = require('./Signup.jsx');
 var Login = require('./Login.jsx');
 var Home = require('./Home.jsx');
 var GetStarted = require('./GetStarted.jsx');
+var Attendance = require('./Attendance.jsx');
 
 var routes = (
 	React.createElement(Route, {handler: YFApp}, 
 		React.createElement(Route, {name: "signup", path: "/signup", handler: Signup}), 
 		React.createElement(Route, {name: "login", path: "/login", handler: Login}), 
 		React.createElement(Route, {name: "getStarted", path: "/user/getStarted", handler: GetStarted}), 
+		React.createElement(Route, {name: "attendance", path: "/user/attendance", handler: Attendance}), 
 		React.createElement(DefaultRoute, {name: "home", handler: Home})
 	)
 );
 
 module.exports = routes;
 
-},{"./GetStarted.jsx":211,"./Home.jsx":212,"./Login.jsx":213,"./Signup.jsx":215,"./YFApp.jsx":216,"react":205,"react-router":36}],215:[function(require,module,exports){
+},{"./Attendance.jsx":211,"./GetStarted.jsx":212,"./Home.jsx":213,"./Login.jsx":214,"./Signup.jsx":216,"./YFApp.jsx":217,"react":205,"react-router":36}],216:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -26155,7 +26316,7 @@ var ParentBox = React.createClass({displayName: "ParentBox",
 
 module.exports = Signup;
 
-},{"../actions/YFActions":209,"formsy-react":7,"react":205,"react-router":36,"superagent":206}],216:[function(require,module,exports){
+},{"../actions/YFActions":209,"formsy-react":7,"react":205,"react-router":36,"superagent":206}],217:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -26229,7 +26390,7 @@ var YFApp = React.createClass({displayName: "YFApp",
 
 module.exports = YFApp;
 
-},{"../stores/YFStore.jsx":219,"react":205,"react-router":36}],217:[function(require,module,exports){
+},{"../stores/YFStore.jsx":220,"react":205,"react-router":36}],218:[function(require,module,exports){
 /*
  * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -26249,7 +26410,7 @@ module.exports = keyMirror({
   YF_LOAD_STUDENTS: null
 });
 
-},{"keymirror":10}],218:[function(require,module,exports){
+},{"keymirror":10}],219:[function(require,module,exports){
 /*
 * AppDispatcher
 *
@@ -26260,7 +26421,7 @@ var Dispatcher = require('flux').Dispatcher;
 
 module.exports = new Dispatcher();
 
-},{"flux":3}],219:[function(require,module,exports){
+},{"flux":3}],220:[function(require,module,exports){
 'use strict';
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
@@ -26274,29 +26435,31 @@ var user = {};
 var loggedIn = false;
 var authError = false;
 var students = [];
+var selectedIndex = 0; //selected student index
+var incomingGrade = '';
 
 /**Tips: More than simply managing a collection of ORM-style objects, stores manage the application state for a particular domain within the application.
 */
 //Register new user in a family unit
 function createUser(body) {
-	var url = '/api/users/new';
-	request
-	.post(url)
-	.send(body)
-	.accept('application/json')
-	.end(function(err, user){
-		if(err) { return console.error(err); }
-	});
+  var url = '/api/users/new';
+  request
+  .post(url)
+  .send(body)
+  .accept('application/json')
+  .end(function(err, user){
+    if(err) { return console.error(err); }
+  });
 } 
 
 function login(data, next) {
-	var url = '/api/users/session';
-	request
-	.post(url)
-	.send(data)
+  var url = '/api/users/session';
+  request
+  .post(url)
+  .send(data)
   .accept('application/json')
-	.end(function(err, res){
-		if(err) {
+  .end(function(err, res){
+    if(err) {
       authError = true;
     } else {
       loggedIn = true;
@@ -26304,7 +26467,7 @@ function login(data, next) {
       console.log(JSON.stringify(user, null, 4));
     }
     next();
-	});
+  });
 }
 
 function findStudentsById(id, next) {
@@ -26331,6 +26494,13 @@ var YFStore = assign({}, EventEmitter.prototype, {
   },
   resetAuthError: function() {
     authError = false;
+  },
+  setIncomingGradeAndIndex: function(grade, index) {
+    incomingGrade = grade;
+    selectedIndex = index;
+  },
+  getIncomingGrade: function() {
+    return incomingGrade;
   },
 
   emitChange: function() {
@@ -26365,7 +26535,7 @@ AppDispatcher.register(function(action) {
 
     case YFConstants.YF_LOGIN:
       data = action.data;
-    	login(data, function() {
+      login(data, function() {
         YFStore.emit(CHANGE_EVENT);
         if(!authError) { action.next(); }
       });
@@ -26385,4 +26555,4 @@ AppDispatcher.register(function(action) {
 
 module.exports = YFStore;
 
-},{"../constants/YFConstants":217,"../dispatcher/AppDispatcher":218,"events":1,"object-assign":11,"superagent":206}]},{},[210]);
+},{"../constants/YFConstants":218,"../dispatcher/AppDispatcher":219,"events":1,"object-assign":11,"superagent":206}]},{},[210]);
