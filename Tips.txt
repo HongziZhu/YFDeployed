@@ -1,0 +1,3 @@
+1. Don't put this.goBack(), this.transitionTo() into superagent's request's callback.
+2. Never forget to write e.preventDefault(); if I want to give customized handling.
+3. Give radios same name in order to implement single-option
