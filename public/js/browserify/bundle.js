@@ -25700,7 +25700,8 @@ var Home = React.createClass({displayName: "Home",
     //Diff: 1. class -> className; 2. for -> htmlFor; 3. <input ..... />;  4. <br> -> <br></br>
     //5. a single element to contain the render stuff
     return (
-
+      React.createElement("div", {className: "row"}, 
+React.createElement("div", {className: "col-md-12"}, 
      React.createElement("table", {className: "dataintable"}, 
 React.createElement("tbody", null, React.createElement("tr", null, 
 React.createElement("th", {style: {width: '5%'}}), 
@@ -25781,7 +25782,216 @@ React.createElement("td", null, React.createElement("ul", null,
     ))
 )
 ))
+), 
 
+
+
+
+
+
+
+
+React.createElement("div", {className: "col-md-12"}, 
+          React.createElement("div", {className: "panel panel-primary"}, 
+            React.createElement("div", {classname: "panel-heading"}, 
+              React.createElement("strong", null, "Select Afternoon Enrichment Activities")
+            ), 
+            /* ------------------------------------------------------Week 1------------------------------------------------------------------------ */
+            React.createElement("div", {className: "panel-body"}, 
+              React.createElement("strong", null, "Week 1 (6/15-6/19): 4-5:30 pm on Mon., Wed., and Thu.."), 
+              React.createElement("br", null), 
+              React.createElement("br", null), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios1", defaultValue: "option1", defaultChecked: true}), 
+                  "4-5:30 pm: Public Speaking (G3 &up, class size 15) ($35 for 4.5 hr per week)"
+                )
+              ), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios2", defaultValue: "option2"}), 
+                  "4-5:30 pm: Kung Fu (K &up, class size 15) ($30 for 4.5 hr per week)"
+                )
+              )
+            ), 
+            /* ------------------------------------------------------Week 2------------------------------------------------------------------------ */
+            React.createElement("div", {className: "panel-body"}, 
+              React.createElement("strong", null, "Week 2 (6/22-6/26): 4-5:30 pm on Mon., Wed., and Thu.."), 
+              React.createElement("br", null), 
+              React.createElement("br", null), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios1", defaultValue: "option1", defaultChecked: true}), 
+                  "4-5:30 pm: Chess (G1-G2, class size 15) ($28 for 4.5 hr per week)"
+                )
+              ), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios2", defaultValue: "option2"}), 
+                  "4-5:30 pm: Swimming (G1 &up. 3 levels offered each day. Beginner/Intermediate/Advanced, 5-7 students per class) ($40 for 4.5 hr per week)"
+                )
+              )
+            ), 
+            /* ------------------------------------------------------Week 3------------------------------------------------------------------------ */
+            React.createElement("div", {className: "panel-body"}, 
+              React.createElement("strong", null, "Week 3 (6/29-7/3): 4-5:30 pm on Mon., Wed., and Thu.."), 
+              React.createElement("br", null), 
+              React.createElement("br", null), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios1", defaultValue: "option1", defaultChecked: true}), 
+                  "4-5:30 pm: Chess (G1-G2, class size 15) ($28 for 4.5 hr per week)"
+                )
+              ), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios2", defaultValue: "option2"}), 
+                  "4-5:30 pm: Swimming (G1 &up. 3 levels offered each day. Beginner/Intermediate/Advanced, 5-7 students per class) ($40 for 4.5 hr per week)"
+                )
+              )
+            ), 
+            /* ------------------------------------------------------Week 4------------------------------------------------------------------------ */
+            React.createElement("div", {className: "panel-body"}, 
+              React.createElement("strong", null, "Week 4 (7/6-7/10): 4-5:30 pm on Mon., Wed., and Thu.."), 
+              React.createElement("br", null), 
+              React.createElement("br", null), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios1", defaultValue: "option1", defaultChecked: true}), 
+                  "4-5:30 pm: Chess (G1-G2, class size 15) ($28 for 4.5 hr per week)"
+                )
+              ), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios2", defaultValue: "option2"}), 
+                  "4-5:30 pm: Swimming (G1 &up. 3 levels offered each day. Beginner/Intermediate/Advanced, 5-7 students per class) ($40 for 4.5 hr per week)"
+                )
+              ), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios2", defaultValue: "option2"}), 
+                  "4-5:30 pm: Public Speaking (K-G2, class size 15) ($35 for 4.5 hr per wee"
+                )
+              )
+            ), 
+            /* ------------------------------------------------------Week 5------------------------------------------------------------------------ */
+            React.createElement("div", {className: "panel-body"}, 
+              React.createElement("div", {className: "panel-body"}, 
+                React.createElement("strong", null, "Week 5 (7/13-7/17): 4-5:30 pm on Mon., Wed., and Thu.."), 
+                React.createElement("br", null), 
+                React.createElement("br", null), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios1", defaultValue: "option1", defaultChecked: true}), 
+                    "4-5:30 pm: Chess (G1-G2, class size 15) ($28 for 4.5 hr per week)"
+                  )
+                ), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios2", defaultValue: "option2"}), 
+                    "4-5:30 pm: Swimming (G1 &up. 3 levels offered each day. Beginner/Intermediate/Advanced, 5-7 students per class) ($40 for 4.5 hr per week)"
+                  )
+                ), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios2", defaultValue: "option2"}), 
+                    "4-5:30 pm: Public Speaking (K-G2, class size 15) ($35 for 4.5 hr per wee"
+                  )
+                )
+              )
+            ), 
+            /* ------------------------------------------------------Week 6------------------------------------------------------------------------ */
+            React.createElement("div", {className: "panel-body"}, 
+              React.createElement("strong", null, "Week 6 (7/20-7/24): 4-5:30 pm on Mon., Wed., and Thu.."), 
+              React.createElement("br", null), 
+              React.createElement("br", null), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios1", defaultValue: "option1", defaultChecked: true}), 
+                  "4-5:30 pm: Swimming (G1 &up. 3 levels offered each day. Beginner/Intermediate/Advanced, 5-7 students per class) ($40 for 4.5 hr per week)"
+                )
+              )
+            ), 
+            /* ------------------------------------------------------Week 7------------------------------------------------------------------------ */
+            React.createElement("div", {className: "panel-body"}, 
+              React.createElement("strong", null, "Week 7 (7/20-7/24): 4-5:30 pm on Mon., Wed., and Thu.."), 
+              React.createElement("br", null), 
+              React.createElement("br", null), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios1", defaultValue: "option1", defaultChecked: true}), 
+                  "4-5:30 pm: Chess (G1-G2, class size 15) ($28 for 4.5 hr per week)"
+                )
+              ), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios2", defaultValue: "option2"}), 
+                  "4-5:30 pm: Swimming (G1 &up. 3 levels offered each day. Beginner/Intermediate/Advanced, 5-7 students per class) ($40 for 4.5 hr per week)"
+                )
+              )
+            ), 
+            /* ------------------------------------------------------Week 8------------------------------------------------------------------------ */
+            React.createElement("div", {className: "panel-body"}, 
+              React.createElement("strong", null, "Week 8 (8/3-8/7): 4-5:30 pm on Mon., Wed., and Thu.."), 
+              React.createElement("br", null), 
+              React.createElement("br", null), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios1", defaultValue: "option1", defaultChecked: true}), 
+                  "4-5:30 pm: Chess (G3 &up, class size 15) ($28 for 4.5 hr per week)"
+                )
+              ), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios2", defaultValue: "option2"}), "4-5:30 pm: Swimming (G1 &up. 3 levels offered each day. Beginner/Intermediate/Advanced, 5-7 students per class) ($40 for 4.5 hr per week)"
+                )
+              ), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios2", defaultValue: "option2"}), 
+                  "4-5:30 pm: Role Playing (K-G2, class size 20) ($30 for 4.5 hr per week)"
+                )
+              )
+            ), 
+            /* ------------------------------------------------------Week 9------------------------------------------------------------------------ */
+            React.createElement("div", {className: "panel-body"}, 
+              React.createElement("strong", null, "Week 8 (8/3-8/7): 4-5:30 pm on Mon., Wed., and Thu.."), 
+              React.createElement("br", null), 
+              React.createElement("br", null), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios1", defaultValue: "option1", defaultChecked: true}), 
+                  "4-5:30 pm: Chess (G3 &up, class size 15) ($28 for 4.5 hr per week)"
+                )
+              ), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios2", defaultValue: "option2"}), 
+                  "4-5:30 pm: Swimming (G1 &up. 3 levels offered each day. Beginner/Intermediate/Advanced, 5-7 students per class) ($40 for 4.5 hr per week)"
+                )
+              ), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios2", defaultValue: "option2"}), 
+                  "4-5:30 pm: Public Speaking (K-G2, class size 15) ($35 for 4.5 hr per wee"
+                )
+              )
+            ), 
+            /* ------------------------------------------------------Week 10------------------------------------------------------------------------ */
+            React.createElement("div", {className: "panel-body"}, 
+              React.createElement("strong", null, "Week 8 (8/3-8/7): 4-5:30 pm on Mon., Wed., and Thu.."), 
+              React.createElement("br", null), 
+              React.createElement("br", null), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  React.createElement("input", {type: "radio", name: "optionsRadios", id: "optionsRadios1", defaultValue: "option1", defaultChecked: true}), 
+                  "4-5:30 pm: Kun Fu (K &up, class size 15) ($30 for 4.5 hr per week)"
+                )
+              )
+            )
+          )		
+        )
+)
 
     );
   }
