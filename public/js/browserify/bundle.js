@@ -25700,7 +25700,89 @@ var Home = React.createClass({displayName: "Home",
     //Diff: 1. class -> className; 2. for -> htmlFor; 3. <input ..... />;  4. <br> -> <br></br>
     //5. a single element to contain the render stuff
     return (
-      React.createElement("p", null, "Hello")
+
+     React.createElement("table", {className: "dataintable"}, 
+React.createElement("tbody", null, React.createElement("tr", null, 
+React.createElement("th", {style: {width: '5%'}}), 
+React.createElement("th", {style: {width: '19%'}}, "Monday"), 
+React.createElement("th", {style: {width: '19%'}}, "Tuesday"), 
+React.createElement("th", {style: {width: '19%'}}, "Wednesday"), 
+React.createElement("th", {style: {width: '19%'}}, "Thursday"), 
+React.createElement("th", {style: {width: '19%'}}, "Friday")
+), 
+
+React.createElement("tr", null, 
+React.createElement("th", null, "AM"), 
+React.createElement("td", null, 
+    React.createElement("ul", null, 
+        React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
+        React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Morning Enrichment Activity"))
+    )
+), 
+React.createElement("td", null, 
+  React.createElement("ul", null, 
+    React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
+    React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Morning Enrichment Activity")), 
+    React.createElement("li", null, React.createElement("span", {className: "movie"}, "Movie Trip"))
+  )
+ ), 
+
+React.createElement("td", null, 
+	React.createElement("ul", null, 
+	React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
+	React.createElement("li", null, "circle")
+	)
+), 
+React.createElement("td", null, 
+	React.createElement("ul", null, 
+	React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
+	React.createElement("li", null, "circle")
+	)
+), 
+React.createElement("td", null, 
+	React.createElement("ul", null, 
+	React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
+	React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Morning Enrichment Activity")), 
+	React.createElement("li", null, "circle")
+	)
+)
+), 
+
+React.createElement("tr", null, 
+React.createElement("th", null, "PM"), 
+React.createElement("td", null, React.createElement("ul", null, 
+    React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Afternoon Enrichment Activity")), 
+	React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
+	React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes"))
+    )), 
+React.createElement("td", null, 
+	React.createElement("ul", null, 
+	React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
+	React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes")), 
+	React.createElement("li", null, "circle")
+	)
+), 
+React.createElement("td", null, 
+	React.createElement("ul", null, 
+	React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
+	React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes")), 
+	React.createElement("li", null, "circle")
+	)
+), 
+React.createElement("td", null, React.createElement("ul", null, 
+    React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Afternoon Enrichment Activity")), 
+	React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
+	React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes"))
+    )), 
+React.createElement("td", null, React.createElement("ul", null, 
+    React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Afternoon Enrichment Activity")), 
+	React.createElement("li", null, "square"), 
+	React.createElement("li", null, "circle")
+    ))
+)
+))
+
+
     );
   }
 });
