@@ -60,13 +60,13 @@ var Login = React.createClass({
   		<p>Success! </p>
   	}
     return (
-    	<div>
+    	<div className="col-md-6 col-md-offset-3">
     	{errorAlert}
-    	<form className="form-horizontal" onSubmit={this.handleSubmit}>
+    	<form className="form-horizontal " onSubmit={this.handleSubmit}>
 			  <div className="form-group">
 			    <label htmlFor="email" className="col-sm-2 control-label">Email</label>
 			    <div className="col-sm-10">
-			      <input type="email" className="form-control" ref="email" placeholder="Email"/>
+			      <input type="email" autofocus className="form-control" ref="email" placeholder="Email"/>
 			    </div>
 			  </div>
 			  <div className="form-group">

@@ -33,6 +33,7 @@ var GradeBox = React.createClass({
             <option value='G11'>G11</option>
             <option value='G12'>G12</option>
           </select> 
+          <br></br>
           <button type="button" className="btn btn-info" ref='stu_btn' onClick={this.props.showContinue}>Confirm</button>
         </div>
       </div>

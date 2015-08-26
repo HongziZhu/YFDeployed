@@ -403,11 +403,12 @@ process.umask = function() { return 0; };
  * of patent rights can be found in the PATENTS file in the same directory.
  */
 
-module.exports.Dispatcher = require('./lib/Dispatcher')
+module.exports.Dispatcher = require('./lib/Dispatcher');
 
 },{"./lib/Dispatcher":4}],4:[function(require,module,exports){
-/*
- * Copyright (c) 2014, Facebook, Inc.
+(function (process){
+/**
+ * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -415,14 +416,18 @@ module.exports.Dispatcher = require('./lib/Dispatcher')
  * of patent rights can be found in the PATENTS file in the same directory.
  *
  * @providesModule Dispatcher
- * @typechecks
+ * 
+ * @preventMunge
  */
 
-"use strict";
+'use strict';
 
-var invariant = require('./invariant');
+exports.__esModule = true;
 
-var _lastID = 1;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var invariant = require('fbjs/lib/invariant');
+
 var _prefix = 'ID_';
 
 /**
@@ -472,7 +477,7 @@ var _prefix = 'ID_';
  *
  * This payload is digested by both stores:
  *
- *    CountryStore.dispatchToken = flightDispatcher.register(function(payload) {
+ *   CountryStore.dispatchToken = flightDispatcher.register(function(payload) {
  *     if (payload.actionType === 'country-update') {
  *       CountryStore.country = payload.selectedCountry;
  *     }
@@ -500,14 +505,10 @@ var _prefix = 'ID_';
  *     flightDispatcher.register(function(payload) {
  *       switch (payload.actionType) {
  *         case 'country-update':
+ *         case 'city-update':
  *           flightDispatcher.waitFor([CityStore.dispatchToken]);
  *           FlightPriceStore.price =
  *             getFlightPriceStore(CountryStore.country, CityStore.city);
- *           break;
- *
- *         case 'city-update':
- *           FlightPriceStore.price =
- *             FlightPriceStore(CountryStore.country, CityStore.city);
  *           break;
  *     }
  *   });
@@ -517,131 +518,109 @@ var _prefix = 'ID_';
  * `FlightPriceStore`.
  */
 
+var Dispatcher = (function () {
   function Dispatcher() {
-    this.$Dispatcher_callbacks = {};
-    this.$Dispatcher_isPending = {};
-    this.$Dispatcher_isHandled = {};
-    this.$Dispatcher_isDispatching = false;
-    this.$Dispatcher_pendingPayload = null;
+    _classCallCheck(this, Dispatcher);
+
+    this._callbacks = {};
+    this._isDispatching = false;
+    this._isHandled = {};
+    this._isPending = {};
+    this._lastID = 1;
   }
 
   /**
    * Registers a callback to be invoked with every dispatched payload. Returns
    * a token that can be used with `waitFor()`.
-   *
-   * @param {function} callback
-   * @return {string}
    */
-  Dispatcher.prototype.register=function(callback) {
-    var id = _prefix + _lastID++;
-    this.$Dispatcher_callbacks[id] = callback;
+
+  Dispatcher.prototype.register = function register(callback) {
+    var id = _prefix + this._lastID++;
+    this._callbacks[id] = callback;
     return id;
   };
 
   /**
    * Removes a callback based on its token.
-   *
-   * @param {string} id
    */
-  Dispatcher.prototype.unregister=function(id) {
-    invariant(
-      this.$Dispatcher_callbacks[id],
-      'Dispatcher.unregister(...): `%s` does not map to a registered callback.',
-      id
-    );
-    delete this.$Dispatcher_callbacks[id];
+
+  Dispatcher.prototype.unregister = function unregister(id) {
+    !this._callbacks[id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.unregister(...): `%s` does not map to a registered callback.', id) : invariant(false) : undefined;
+    delete this._callbacks[id];
   };
 
   /**
    * Waits for the callbacks specified to be invoked before continuing execution
    * of the current callback. This method should only be used by a callback in
    * response to a dispatched payload.
-   *
-   * @param {array<string>} ids
    */
-  Dispatcher.prototype.waitFor=function(ids) {
-    invariant(
-      this.$Dispatcher_isDispatching,
-      'Dispatcher.waitFor(...): Must be invoked while dispatching.'
-    );
+
+  Dispatcher.prototype.waitFor = function waitFor(ids) {
+    !this._isDispatching ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.waitFor(...): Must be invoked while dispatching.') : invariant(false) : undefined;
     for (var ii = 0; ii < ids.length; ii++) {
       var id = ids[ii];
-      if (this.$Dispatcher_isPending[id]) {
-        invariant(
-          this.$Dispatcher_isHandled[id],
-          'Dispatcher.waitFor(...): Circular dependency detected while ' +
-          'waiting for `%s`.',
-          id
-        );
+      if (this._isPending[id]) {
+        !this._isHandled[id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.waitFor(...): Circular dependency detected while ' + 'waiting for `%s`.', id) : invariant(false) : undefined;
         continue;
       }
-      invariant(
-        this.$Dispatcher_callbacks[id],
-        'Dispatcher.waitFor(...): `%s` does not map to a registered callback.',
-        id
-      );
-      this.$Dispatcher_invokeCallback(id);
+      !this._callbacks[id] ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatcher.waitFor(...): `%s` does not map to a registered callback.', id) : invariant(false) : undefined;
+      this._invokeCallback(id);
     }
   };
 
   /**
    * Dispatches a payload to all registered callbacks.
-   *
-   * @param {object} payload
    */
-  Dispatcher.prototype.dispatch=function(payload) {
-    invariant(
-      !this.$Dispatcher_isDispatching,
-      'Dispatch.dispatch(...): Cannot dispatch in the middle of a dispatch.'
-    );
-    this.$Dispatcher_startDispatching(payload);
+
+  Dispatcher.prototype.dispatch = function dispatch(payload) {
+    !!this._isDispatching ? process.env.NODE_ENV !== 'production' ? invariant(false, 'Dispatch.dispatch(...): Cannot dispatch in the middle of a dispatch.') : invariant(false) : undefined;
+    this._startDispatching(payload);
     try {
-      for (var id in this.$Dispatcher_callbacks) {
-        if (this.$Dispatcher_isPending[id]) {
+      for (var id in this._callbacks) {
+        if (this._isPending[id]) {
           continue;
         }
-        this.$Dispatcher_invokeCallback(id);
+        this._invokeCallback(id);
       }
     } finally {
-      this.$Dispatcher_stopDispatching();
+      this._stopDispatching();
     }
   };
 
   /**
    * Is this Dispatcher currently dispatching.
-   *
-   * @return {boolean}
    */
-  Dispatcher.prototype.isDispatching=function() {
-    return this.$Dispatcher_isDispatching;
+
+  Dispatcher.prototype.isDispatching = function isDispatching() {
+    return this._isDispatching;
   };
 
   /**
    * Call the callback stored with the given id. Also do some internal
    * bookkeeping.
    *
-   * @param {string} id
    * @internal
    */
-  Dispatcher.prototype.$Dispatcher_invokeCallback=function(id) {
-    this.$Dispatcher_isPending[id] = true;
-    this.$Dispatcher_callbacks[id](this.$Dispatcher_pendingPayload);
-    this.$Dispatcher_isHandled[id] = true;
+
+  Dispatcher.prototype._invokeCallback = function _invokeCallback(id) {
+    this._isPending[id] = true;
+    this._callbacks[id](this._pendingPayload);
+    this._isHandled[id] = true;
   };
 
   /**
    * Set up bookkeeping needed when dispatching.
    *
-   * @param {object} payload
    * @internal
    */
-  Dispatcher.prototype.$Dispatcher_startDispatching=function(payload) {
-    for (var id in this.$Dispatcher_callbacks) {
-      this.$Dispatcher_isPending[id] = false;
-      this.$Dispatcher_isHandled[id] = false;
+
+  Dispatcher.prototype._startDispatching = function _startDispatching(payload) {
+    for (var id in this._callbacks) {
+      this._isPending[id] = false;
+      this._isHandled[id] = false;
     }
-    this.$Dispatcher_pendingPayload = payload;
-    this.$Dispatcher_isDispatching = true;
+    this._pendingPayload = payload;
+    this._isDispatching = true;
   };
 
   /**
@@ -649,17 +628,21 @@ var _prefix = 'ID_';
    *
    * @internal
    */
-  Dispatcher.prototype.$Dispatcher_stopDispatching=function() {
-    this.$Dispatcher_pendingPayload = null;
-    this.$Dispatcher_isDispatching = false;
+
+  Dispatcher.prototype._stopDispatching = function _stopDispatching() {
+    delete this._pendingPayload;
+    this._isDispatching = false;
   };
 
+  return Dispatcher;
+})();
 
 module.exports = Dispatcher;
-
-},{"./invariant":5}],5:[function(require,module,exports){
+}).call(this,require('_process'))
+},{"_process":2,"fbjs/lib/invariant":5}],5:[function(require,module,exports){
+(function (process){
 /**
- * Copyright (c) 2014, Facebook, Inc.
+ * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
  *
  * This source code is licensed under the BSD-style license found in the
@@ -682,8 +665,8 @@ module.exports = Dispatcher;
  * will remain to ensure logic does not differ in production.
  */
 
-var invariant = function(condition, format, a, b, c, d, e, f) {
-  if (false) {
+var invariant = function (condition, format, a, b, c, d, e, f) {
+  if (process.env.NODE_ENV !== 'production') {
     if (format === undefined) {
       throw new Error('invariant requires an error message argument');
     }
@@ -692,17 +675,13 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
   if (!condition) {
     var error;
     if (format === undefined) {
-      error = new Error(
-        'Minified exception occurred; use the non-minified dev environment ' +
-        'for the full error message and additional helpful warnings.'
-      );
+      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
     } else {
       var args = [a, b, c, d, e, f];
       var argIndex = 0;
-      error = new Error(
-        'Invariant Violation: ' +
-        format.replace(/%s/g, function() { return args[argIndex++]; })
-      );
+      error = new Error('Invariant Violation: ' + format.replace(/%s/g, function () {
+        return args[argIndex++];
+      }));
     }
 
     error.framesToPop = 1; // we don't care about invariant's own frame
@@ -711,8 +690,8 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 };
 
 module.exports = invariant;
-
-},{}],6:[function(require,module,exports){
+}).call(this,require('_process'))
+},{"_process":2}],6:[function(require,module,exports){
 var utils = require('./utils.js');
 
 var convertValidationsToObject = function (validations) {
@@ -25574,12 +25553,20 @@ var YFActions = {
       userId: id,
       next: next
     });
+  },
+
+  saveSummerSchedule: function(student, next) {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_SAVE_SUMMER_SCHEDULE,
+      student: student,
+      next: next
+    });
   }
 };
 
 module.exports = YFActions;
 
-},{"../constants/YFConstants":218,"../dispatcher/AppDispatcher":219}],210:[function(require,module,exports){
+},{"../constants/YFConstants":219,"../dispatcher/AppDispatcher":220}],210:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -25600,13 +25587,231 @@ if (typeof window !== 'undefined') {
 	};
 }
 
-},{"./components/Routes.jsx":215,"react":205,"react-router":36}],211:[function(require,module,exports){
+},{"./components/Routes.jsx":216,"react":205,"react-router":36}],211:[function(require,module,exports){
 'use strict';
 
 var React=require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
 
 var Attendance = React.createClass({displayName: "Attendance",
+  mixins: [ Navigation ],
+  getInitialState: function() {
+    return { 
+      currentStudent: {},
+      schedulePattern: '5_full',
+      attendingDays: [
+        { day: 'Mon', selected: true },
+        { day: 'Tue', selected: true },
+        { day: 'Wed', selected: true },
+        { day: 'Thu', selected: true },
+        { day: 'Fri', selected: true }
+      ],
+      daysMatched: true,
+      allScheduled: false,
+      summerWeeks: []
+    };
+  },
+  componentDidMount: function() {
+    var self = this;
+    this.setState({ 
+      currentStudent: YFStore.getCurrentStudent(),
+      summerWeeks: YFStore.getSummerWeeks(),
+      allScheduled: YFStore.getAllScheduled()
+    });
+  },
+  changePattern: function(e) {
+    var self = this;
+    var pat = e.currentTarget.value;
+    var dayNum = 0;
+    for(var i = 0; i < 5; i++){
+      dayNum += self.state.attendingDays[i].selected ? 1 : 0;
+    }
+    var p = parseInt(pat.substring(0, 1));
+    if(p === dayNum){
+      self.setState({ schedulePattern: pat, daysMatched: true });
+    } else {
+      self.setState({ schedulePattern: pat, daysMatched: false });
+    }
+  },
+  changeWeekday: function() {
+    var self = this;
+    var state = [
+      { day: 'Mon', selected: React.findDOMNode(self.refs.Mon).checked },
+      { day: 'Tue', selected: React.findDOMNode(self.refs.Tue).checked },
+      { day: 'Wed', selected: React.findDOMNode(self.refs.Wed).checked },
+      { day: 'Thu', selected: React.findDOMNode(self.refs.Thu).checked },
+      { day: 'Fri', selected: React.findDOMNode(self.refs.Fri).checked }
+    ];
+    var dayNum = 0;
+    for(var i = 0; i < 5; i++){
+      dayNum += state[i].selected ? 1 : 0;
+    }
+    var p = parseInt(self.state.schedulePattern.substring(0, 1));
+    if(p === dayNum){
+      this.setState({ attendingDays: state, daysMatched: true });
+    } else {
+      this.setState({ attendingDays: state, daysMatched: false });
+    }
+    
+  },
+  applyWeeks: function(e) {
+    e.preventDefault();
+    var self = this;
+    if(!this.state.daysMatched){
+      return alert('Please choose the correct attending weekdays.');
+    }
+    var applied = [
+      { week: 'week_1', coveredDate: '6/13-6/17', 
+      selected: React.findDOMNode(this.refs.week_1).checked, 
+      done: this.state.summerWeeks[0].done},
+      { week: 'week_2', coveredDate: '6/20-6/24', 
+      selected: React.findDOMNode(this.refs.week_2).checked, 
+      done: this.state.summerWeeks[1].done},
+      { week: 'week_3', coveredDate: '6/27-7/1', 
+      selected: React.findDOMNode(this.refs.week_3).checked, 
+      done: this.state.summerWeeks[2].done},
+      { week: 'week_4', coveredDate: '7/4-7/8', 
+      selected: React.findDOMNode(this.refs.week_4).checked, 
+      done: this.state.summerWeeks[3].done},
+      { week: 'week_5', coveredDate: '7/11-7/15', 
+      selected: React.findDOMNode(this.refs.week_5).checked, 
+      done: this.state.summerWeeks[4].done},
+      { week: 'week_6', coveredDate: '7/18-7/22', 
+      selected: React.findDOMNode(this.refs.week_6).checked, 
+      done: this.state.summerWeeks[5].done},
+      { week: 'week_7', coveredDate: '7/25-7/29', 
+      selected: React.findDOMNode(this.refs.week_7).checked, 
+      done: this.state.summerWeeks[6].done},
+      { week: 'week_8', coveredDate: '8/1-8/5', 
+      selected: React.findDOMNode(this.refs.week_8).checked, 
+      done: this.state.summerWeeks[7].done},
+      { week: 'week_9', coveredDate: '8/8-8/12', 
+      selected: React.findDOMNode(this.refs.week_9).checked, 
+      done: this.state.summerWeeks[8].done},
+      { week: 'week_10', coveredDate: '8/15-8/19', 
+      selected: React.findDOMNode(this.refs.week_10).checked, 
+      done: this.state.summerWeeks[9].done}
+    ];
+    YFStore.setSummerWeeks(this.state.schedulePattern, this.state.attendingDays, applied, function() {
+      self.setState({ summerWeeks: YFStore.getSummerWeeks() }, function() {
+        React.findDOMNode(self.refs.submitButton).blur();
+        if(YFStore.getSummerWeekCount() === 10){
+          YFActions.saveSummerSchedule(this.state.currentStudent, function() {
+            YFStore.setAllScheduled(true);
+            self.setState({ allScheduled: YFStore.getAllScheduled() });
+            console.log('summer schedule saved.');
+          });
+        }
+      });
+    });
+  },
+  changeWeeks: function() {
+    var state = [
+      { week: 'week_1', coveredDate: '6/13-6/17', 
+      selected: React.findDOMNode(this.refs.week_1).checked, 
+      done: this.state.summerWeeks[0].done},
+      { week: 'week_2', coveredDate: '6/20-6/24', 
+      selected: React.findDOMNode(this.refs.week_2).checked, 
+      done: this.state.summerWeeks[1].done},
+      { week: 'week_3', coveredDate: '6/27-7/1', 
+      selected: React.findDOMNode(this.refs.week_3).checked, 
+      done: this.state.summerWeeks[2].done},
+      { week: 'week_4', coveredDate: '7/4-7/8', 
+      selected: React.findDOMNode(this.refs.week_4).checked, 
+      done: this.state.summerWeeks[3].done},
+      { week: 'week_5', coveredDate: '7/11-7/15', 
+      selected: React.findDOMNode(this.refs.week_5).checked, 
+      done: this.state.summerWeeks[4].done},
+      { week: 'week_6', coveredDate: '7/18-7/22', 
+      selected: React.findDOMNode(this.refs.week_6).checked, 
+      done: this.state.summerWeeks[5].done},
+      { week: 'week_7', coveredDate: '7/25-7/29', 
+      selected: React.findDOMNode(this.refs.week_7).checked, 
+      done: this.state.summerWeeks[6].done},
+      { week: 'week_8', coveredDate: '8/1-8/5', 
+      selected: React.findDOMNode(this.refs.week_8).checked, 
+      done: this.state.summerWeeks[7].done},
+      { week: 'week_9', coveredDate: '8/8-8/12', 
+      selected: React.findDOMNode(this.refs.week_9).checked, 
+      done: this.state.summerWeeks[8].done},
+      { week: 'week_10', coveredDate: '8/15-8/19', 
+      selected: React.findDOMNode(this.refs.week_10).checked, 
+      done: this.state.summerWeeks[9].done}
+    ];
+    this.setState({ summerWeeks: state });
+  },
+  handleContinue: function(e) {
+    e.preventDefault();
+    this.transitionTo('enrichment_activities');
+  },
+  selectAllWeeks: function() {
+    // e.preventDefault();
+    var v = React.findDOMNode(this.refs.allWeeks).checked;
+    var self = this;
+    var state = [
+      { week: 'week_1', coveredDate: '6/13-6/17', selected: v, 
+      done: self.state.summerWeeks[0].done},
+      { week: 'week_2', coveredDate: '6/20-6/24', selected: v, 
+      done: self.state.summerWeeks[1].done},
+      { week: 'week_3', coveredDate: '6/27-7/1', selected: v, 
+      done: self.state.summerWeeks[2].done},
+      { week: 'week_4', coveredDate: '7/4-7/8', selected: v, 
+      done: self.state.summerWeeks[3].done},
+      { week: 'week_5', coveredDate: '7/11-7/15', selected: v, 
+      done: self.state.summerWeeks[4].done},
+      { week: 'week_6', coveredDate: '7/18-7/22', selected: v, 
+      done: self.state.summerWeeks[5].done},
+      { week: 'week_7', coveredDate: '7/25-7/29', selected: v, 
+      done: self.state.summerWeeks[6].done},
+      { week: 'week_8', coveredDate: '8/1-8/5', selected: v, 
+      done: self.state.summerWeeks[7].done},
+      { week: 'week_9', coveredDate: '8/8-8/12', selected: v, 
+      done: self.state.summerWeeks[8].done},
+      { week: 'week_10', coveredDate: '8/15-8/19', selected: v, 
+      done: self.state.summerWeeks[9].done}
+    ];
+    this.setState({ summerWeeks: state}, function() {
+      self.forceUpdate();
+    });
+  },
+
   render: function () {
+    var self = this;
+    var weekdaysHelper = !this.state.daysMatched ? (React.createElement("p", {className: "bg-danger"}, "Please choose EXACT ", this.state.schedulePattern.substring(0, 1), " weekdays to attend.")) : React.createElement("p", null) 
+
+    var weekdays = this.state.attendingDays.map(function(d){
+      return (
+        React.createElement("label", {className: "checkbox-inline", key: d.day}, 
+          React.createElement("input", {type: "checkbox", ref: d.day, checked: d.selected, onChange: self.changeWeekday}), d.day
+        )
+      );
+    });
+
+    var summerWeeks = this.state.summerWeeks.map(function(w, index){
+      if(w.done){
+        var weeks = YFStore.getSummerCampWeeks();
+        var days = weeks[index].attendingDays.map(function(d) {
+          return ( d + '. ');
+        });
+        return (
+          React.createElement("label", {className: "checkbox", key: w.week}, 
+            React.createElement("input", {type: "checkbox", ref: w.week, disabled: true}), w.week, " (", w.coveredDate, ")", React.createElement("p", {className: "bg-warning"}, "Scheduled ", weeks[index].schedulePattern, ": ", days)
+          )
+        );
+      } else {
+        return (
+          React.createElement("label", {className: "checkbox", key: w.week}, 
+            React.createElement("input", {type: "checkbox", ref: w.week, checked: w.selected, onChange: self.changeWeeks}), w.week, " (", w.coveredDate, ")"
+          )
+        );
+      }
+    });
+
+    var continueHelper = this.state.allScheduled ? (React.createElement("p", {className: "bg-success"}, "All summer weeks have been scheduled, please click Continue button below.")) : React.createElement("p", null);
     
     return (
       React.createElement("div", {className: "col-md-6 col-md-offset-3"}, 
@@ -25618,6 +25823,7 @@ var Attendance = React.createClass({displayName: "Attendance",
           ), 
 
           React.createElement("div", {className: "panel-body"}, 
+          
             React.createElement("div", {className: "row"}, 
               React.createElement("div", {className: "col-sm-12"}, 
                 React.createElement("strong", null, "How many days do you want to attend per week?"), 
@@ -25628,32 +25834,32 @@ var Attendance = React.createClass({displayName: "Attendance",
               React.createElement("div", {className: "col-sm-12"}, 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "attendPattern", value: "option1", defaultChecked: true}), 
-                    "5 full days per week (8:00 am -6:30 pm) $235"
+                    React.createElement("input", {type: "radio", name: "attendPattern", onChange: this.changePattern, value: "5_full", defaultChecked: true}), 
+                    "5 full days per week (8:00 am - 6:30 pm) $235"
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "attendPattern", value: "option2"}), 
-                    "4 full days per week (8:00 am -6:30 pm) $210"
+                    React.createElement("input", {type: "radio", name: "attendPattern", onChange: this.changePattern, value: "4_full"}), 
+                    "4 full days per week (8:00 am - 6:30 pm) $210"
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "attendPattern", value: "option1"}), 
-                    "3 full days per week (8:00 am -6:30 pm) $190"
+                    React.createElement("input", {type: "radio", name: "attendPattern", onChange: this.changePattern, value: "3_full"}), 
+                    "3 full days per week (8:00 am - 6:30 pm) $190"
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "attendPattern", value: "option2"}), 
-                    "5 mornings per week (8:00 am -12:30 pm) $175"
+                    React.createElement("input", {type: "radio", name: "attendPattern", onChange: this.changePattern, value: "5_morning"}), 
+                    "5 mornings per week (8:00 am - 12:30 pm) $175"
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "attendPattern", value: "option2"}), 
-                    "5 afternoons per week (1:00 pm -6:30 pm) $175"
+                    React.createElement("input", {type: "radio", name: "attendPattern", onChange: this.changePattern, value: "5_afternoon"}), 
+                    "5 afternoons per week (1:00 pm - 6:30 pm) $175"
                   )
                 )
               )
@@ -25662,80 +25868,39 @@ var Attendance = React.createClass({displayName: "Attendance",
 
             React.createElement("div", {className: "row"}, 
               React.createElement("div", {className: "col-sm-12"}, 
-                React.createElement("strong", null, "Choose the attending weekdays"), 
-                React.createElement("br", null
+                React.createElement("strong", null, "Choose the attending weekdays"), React.createElement("br", null), 
+                weekdaysHelper, 
+                weekdays
+              )
+            ), 
+            React.createElement("hr", null), 
+
+            React.createElement("form", {className: "form-horizontal", onSubmit: this.applyWeeks}, 
+              React.createElement("div", {className: "row"}, 
+                React.createElement("div", {className: "col-sm-12"}, 
+                  React.createElement("strong", null, "Choose the weeks to apply"), 
+                  React.createElement("br", null), 
+                  React.createElement("ul", null, 
+                    React.createElement("label", {className: "checkbox text-primary"}, 
+                      React.createElement("input", {type: "checkbox", ref: "allWeeks", onChange: this.selectAllWeeks}), React.createElement("strong", null, "Select All Weeks")
+                    ), 
+                    React.createElement("br", null), 
+                    summerWeeks
+                  )
                 )
               ), 
+              React.createElement("hr", null), 
 
-              React.createElement("div", {className: "col-sm-12"}, 
-                React.createElement("label", {className: "checkbox-inline"}, 
-                  React.createElement("input", {type: "checkbox", value: "option1"}), " Monday"
-                ), 
-                React.createElement("label", {className: "checkbox-inline"}, 
-                  React.createElement("input", {type: "checkbox", value: "option2"}), " Tuesday"
-                ), 
-                React.createElement("label", {className: "checkbox-inline"}, 
-                  React.createElement("input", {type: "checkbox", value: "option3"}), " Wednesday"
-                ), 
-                React.createElement("label", {className: "checkbox-inline"}, 
-                  React.createElement("input", {type: "checkbox", value: "option2"}), " Thursday"
-                ), 
-                React.createElement("label", {className: "checkbox-inline"}, 
-                  React.createElement("input", {type: "checkbox", value: "option3"}), " Friday"
+              React.createElement("div", {className: "row"}, 
+                React.createElement("div", {className: "col-sm-12"}, 
+                  React.createElement("button", {type: "submit", ref: "submitButton", className: "btn btn-primary"}, "Submit"), React.createElement("br", null), 
+                  continueHelper
                 )
-              )
-            ), 
-            React.createElement("hr", null), 
-
-            React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-sm-12"}, 
-                React.createElement("strong", null, "Choose the weeks to apply"), 
-                React.createElement("br", null
-                ), 
-                React.createElement("ul", null, 
-                  React.createElement("label", {className: "checkbox"}, 
-                    React.createElement("input", {type: "checkbox", className: "icheck-15", value: "option1"}), "Week 1 (6/15-6/19)"
-                  ), 
-                  React.createElement("label", {className: "checkbox"}, 
-                    React.createElement("input", {type: "checkbox", value: "option2"}), "Week 2 (6/22-6/26)"
-                  ), 
-                  React.createElement("label", {className: "checkbox"}, 
-                    React.createElement("input", {type: "checkbox", value: "option3"}), "Week 3 (6/29-7/2 Yang Fan is CLOSED on Friday)"
-                  ), 
-                  React.createElement("label", {className: "checkbox"}, 
-                    React.createElement("input", {type: "checkbox", value: "option2"}), "Week 4 (7/6-7/10)"
-                  ), 
-                  React.createElement("label", {className: "checkbox"}, 
-                    React.createElement("input", {type: "checkbox", value: "option3"}), "Week 5 (7/13-7/17)"
-                  ), 
-                  React.createElement("label", {className: "checkbox"}, 
-                    React.createElement("input", {type: "checkbox", value: "option1"}), "Week 6 (7/20-7/24)"
-                  ), 
-                  React.createElement("label", {className: "checkbox"}, 
-                    React.createElement("input", {type: "checkbox", value: "option2"}), "Week 7 (7/27-7/31)"
-                  ), 
-                  React.createElement("label", {className: "checkbox"}, 
-                    React.createElement("input", {type: "checkbox", value: "option3"}), "Week 8 (8/3-8/7)"
-                  ), 
-                  React.createElement("label", {className: "checkbox"}, 
-                    React.createElement("input", {type: "checkbox", value: "option2"}), "Week 9 (8/10-8/14)"
-                  ), 
-                  React.createElement("label", {className: "checkbox"}, 
-                    React.createElement("input", {type: "checkbox", value: "option3"}), "Week 10 (8/17-8/21)"
-                  )
-                )
-              )
-            ), 
-            React.createElement("hr", null), 
-
-            React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-sm-12"}, 
-                React.createElement("button", {className: "btn btn-info"}, "Submit")
               )
             )
-
           )
-        )
+        ), 
+        this.state.allScheduled ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("p", null)
       )
     );
   }
@@ -25743,7 +25908,37 @@ var Attendance = React.createClass({displayName: "Attendance",
 
 module.exports = Attendance;
 
-},{"react":205}],212:[function(require,module,exports){
+},{"../actions/YFActions":209,"../stores/YFStore.jsx":221,"react":205,"react-router":36}],212:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+
+var EnrichmentActivities = React.createClass({displayName: "EnrichmentActivities",
+  mixins: [ Navigation ],
+  getInitialState: function() {
+    return { 
+      x: ''
+    };
+  },
+  componentDidMount: function() {
+    var self = this;
+  },
+
+  render: function () {
+    return (
+      React.createElement("p", null, "EnrichmentActivities")
+    );
+  } 
+});
+
+module.exports = EnrichmentActivities;
+
+},{"../actions/YFActions":209,"../stores/YFStore.jsx":221,"react":205,"react-router":36}],213:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -25779,6 +25974,7 @@ var GradeBox = React.createClass({displayName: "GradeBox",
             React.createElement("option", {value: "G11"}, "G11"), 
             React.createElement("option", {value: "G12"}, "G12")
           ), 
+          React.createElement("br", null), 
           React.createElement("button", {type: "button", className: "btn btn-info", ref: "stu_btn", onClick: this.props.showContinue}, "Confirm")
         )
       )
@@ -25869,7 +26065,7 @@ var GetStarted = React.createClass({displayName: "GetStarted",
 
 module.exports = GetStarted;
 
-},{"../actions/YFActions":209,"../stores/YFStore.jsx":220,"formsy-react":7,"react":205,"react-router":36}],213:[function(require,module,exports){
+},{"../actions/YFActions":209,"../stores/YFStore.jsx":221,"formsy-react":7,"react":205,"react-router":36}],214:[function(require,module,exports){
 'use strict';
 
 var React=require('react');
@@ -25895,7 +26091,7 @@ var Home = React.createClass({displayName: "Home",
 
 module.exports = Home;
 
-},{"react":205}],214:[function(require,module,exports){
+},{"react":205}],215:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -25958,13 +26154,13 @@ var Login = React.createClass({displayName: "Login",
   		React.createElement("p", null, "Success! ")
   	}
     return (
-    	React.createElement("div", null, 
+    	React.createElement("div", {className: "col-md-6 col-md-offset-3"}, 
     	errorAlert, 
-    	React.createElement("form", {className: "form-horizontal", onSubmit: this.handleSubmit}, 
+    	React.createElement("form", {className: "form-horizontal ", onSubmit: this.handleSubmit}, 
 			  React.createElement("div", {className: "form-group"}, 
 			    React.createElement("label", {htmlFor: "email", className: "col-sm-2 control-label"}, "Email"), 
 			    React.createElement("div", {className: "col-sm-10"}, 
-			      React.createElement("input", {type: "email", className: "form-control", ref: "email", placeholder: "Email"})
+			      React.createElement("input", {type: "email", autofocus: true, className: "form-control", ref: "email", placeholder: "Email"})
 			    )
 			  ), 
 			  React.createElement("div", {className: "form-group"}, 
@@ -26030,7 +26226,7 @@ var MyOwnInput = React.createClass({displayName: "MyOwnInput",
 //       </Formsy.Form>
 module.exports = Login;
 
-},{"../actions/YFActions":209,"../stores/YFStore.jsx":220,"formsy-react":7,"react":205,"react-router":36}],215:[function(require,module,exports){
+},{"../actions/YFActions":209,"../stores/YFStore.jsx":221,"formsy-react":7,"react":205,"react-router":36}],216:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -26045,6 +26241,7 @@ var Login = require('./Login.jsx');
 var Home = require('./Home.jsx');
 var GetStarted = require('./GetStarted.jsx');
 var Attendance = require('./Attendance.jsx');
+var EnrichmentActivities = require('./EnrichmentActivities.jsx');
 
 var routes = (
 	React.createElement(Route, {handler: YFApp}, 
@@ -26052,13 +26249,14 @@ var routes = (
 		React.createElement(Route, {name: "login", path: "/login", handler: Login}), 
 		React.createElement(Route, {name: "getStarted", path: "/user/getStarted", handler: GetStarted}), 
 		React.createElement(Route, {name: "attendance", path: "/user/attendance", handler: Attendance}), 
+		React.createElement(Route, {name: "enrichment_activities", path: "/user/enrichment_activities", handler: EnrichmentActivities}), 
 		React.createElement(DefaultRoute, {name: "home", handler: Home})
 	)
 );
 
 module.exports = routes;
 
-},{"./Attendance.jsx":211,"./GetStarted.jsx":212,"./Home.jsx":213,"./Login.jsx":214,"./Signup.jsx":216,"./YFApp.jsx":217,"react":205,"react-router":36}],216:[function(require,module,exports){
+},{"./Attendance.jsx":211,"./EnrichmentActivities.jsx":212,"./GetStarted.jsx":213,"./Home.jsx":214,"./Login.jsx":215,"./Signup.jsx":217,"./YFApp.jsx":218,"react":205,"react-router":36}],217:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -26316,7 +26514,7 @@ var ParentBox = React.createClass({displayName: "ParentBox",
 
 module.exports = Signup;
 
-},{"../actions/YFActions":209,"formsy-react":7,"react":205,"react-router":36,"superagent":206}],217:[function(require,module,exports){
+},{"../actions/YFActions":209,"formsy-react":7,"react":205,"react-router":36,"superagent":206}],218:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -26382,15 +26580,13 @@ var YFApp = React.createClass({displayName: "YFApp",
   },
 
   _onChange: function() {
-    this.setState({ user: YFStore.getUser(), loggedIn: YFStore.getLoggedIn() }, function() {
-      console.log('State changed: ' + JSON.stringify(this.state.loggedIn, null, 4));
-    });
+    this.setState({ user: YFStore.getUser(), loggedIn: YFStore.getLoggedIn() });
   }
 });
 
 module.exports = YFApp;
 
-},{"../stores/YFStore.jsx":220,"react":205,"react-router":36}],218:[function(require,module,exports){
+},{"../stores/YFStore.jsx":221,"react":205,"react-router":36}],219:[function(require,module,exports){
 /*
  * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -26407,10 +26603,11 @@ var keyMirror = require('keymirror');
 module.exports = keyMirror({
   YF_CREATE_USER: null,
   YF_LOGIN: null,
-  YF_LOAD_STUDENTS: null
+  YF_LOAD_STUDENTS: null,
+  YF_SAVE_SUMMER_SCHEDULE: null
 });
 
-},{"keymirror":10}],219:[function(require,module,exports){
+},{"keymirror":10}],220:[function(require,module,exports){
 /*
 * AppDispatcher
 *
@@ -26421,7 +26618,7 @@ var Dispatcher = require('flux').Dispatcher;
 
 module.exports = new Dispatcher();
 
-},{"flux":3}],220:[function(require,module,exports){
+},{"flux":3}],221:[function(require,module,exports){
 'use strict';
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
@@ -26437,6 +26634,21 @@ var authError = false;
 var students = [];
 var selectedIndex = 0; //selected student index
 var incomingGrade = '';
+var summerWeeks = [
+  { week: 'week_1', coveredDate: '6/13-6/17', selected: false, done: false },
+  { week: 'week_2', coveredDate: '6/20-6/24', selected: false, done: false },
+  { week: 'week_3', coveredDate: '6/27-7/1', selected: false, done: false },
+  { week: 'week_4', coveredDate: '7/4-7/8', selected: false, done: false },
+  { week: 'week_5', coveredDate: '7/11-7/15', selected: false, done: false },
+  { week: 'week_6', coveredDate: '7/18-7/22', selected: false, done: false },
+  { week: 'week_7', coveredDate: '7/25-7/29', selected: false, done: false },
+  { week: 'week_8', coveredDate: '8/1-8/5', selected: false, done: false },
+  { week: 'week_9', coveredDate: '8/8-8/12', selected: false, done: false },
+  { week: 'week_10', coveredDate: '8/15-8/19', selected: false, done: false }
+];
+var summerWeekCount = 0;
+var summerCampWeeks = [];
+var allScheduled = false;
 
 /**Tips: More than simply managing a collection of ORM-style objects, stores manage the application state for a particular domain within the application.
 */
@@ -26464,7 +26676,6 @@ function login(data, next) {
     } else {
       loggedIn = true;
       user = res.body;
-      console.log(JSON.stringify(user, null, 4));
     }
     next();
   });
@@ -26482,6 +26693,24 @@ function findStudentsById(id, next) {
   });
 }
 
+function saveSummerSchedule(student, next) {
+  var url = '/api/users/summer/schedule/new';
+  var data = {
+    student: student,
+    summerCampWeeks: summerCampWeeks
+  };
+  request
+  .post(url)
+  .send(data)
+  .accept('application/json')
+  .end(function(err) {
+    if(err) { return console.error(err); }
+  });
+
+  next();
+}
+
+
 var YFStore = assign({}, EventEmitter.prototype, {
   getUser: function() {
     return user;
@@ -26498,9 +26727,50 @@ var YFStore = assign({}, EventEmitter.prototype, {
   setIncomingGradeAndIndex: function(grade, index) {
     incomingGrade = grade;
     selectedIndex = index;
+    students[index].incomingGrade = grade;
   },
   getIncomingGrade: function() {
     return incomingGrade;
+  },
+  getCurrentStudent: function() {
+    return students[selectedIndex];
+  },
+  getSummerWeeks: function() {
+    return summerWeeks;
+  },
+  setSummerWeeks: function(schedulePattern, attendingDays, applied, next) {
+    summerWeeks = applied;
+    var days = [];
+    for(var j = 0; j < 5; j++) {
+      var d = attendingDays[j];
+      if(d.selected) { days.push(d.day); }
+    }
+    for(var i = 0; i < 10; i++) {
+      var w = summerWeeks[i];
+      if(w.selected && !w.done){
+        summerCampWeeks[i] = {
+          coveredDate: w.coveredDate,
+          schedulePattern: schedulePattern,
+          attendingDays: days
+        };
+        w.selected = false;
+        w.done = true;
+        summerWeekCount ++;
+      }
+    }
+    next();
+  },
+  getSummerWeekCount: function() {
+    return summerWeekCount;
+  },
+  getSummerCampWeeks: function() {
+    return summerCampWeeks;
+  },
+  getAllScheduled: function() {
+    return allScheduled;
+  },
+  setAllScheduled: function(b) {
+    allScheduled = b;
   },
 
   emitChange: function() {
@@ -26547,6 +26817,9 @@ AppDispatcher.register(function(action) {
         action.next(students);
       });
       break;
+    case YFConstants.YF_SAVE_SUMMER_SCHEDULE:
+      saveSummerSchedule(action.student, action.next);
+      break;
 
     default:
       // no op
@@ -26555,4 +26828,4 @@ AppDispatcher.register(function(action) {
 
 module.exports = YFStore;
 
-},{"../constants/YFConstants":218,"../dispatcher/AppDispatcher":219,"events":1,"object-assign":11,"superagent":206}]},{},[210]);
+},{"../constants/YFConstants":219,"../dispatcher/AppDispatcher":220,"events":1,"object-assign":11,"superagent":206}]},{},[210]);

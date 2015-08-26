@@ -29,6 +29,14 @@ var YFActions = {
       userId: id,
       next: next
     });
+  },
+
+  saveSummerSchedule: function(student, next) {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_SAVE_SUMMER_SCHEDULE,
+      student: student,
+      next: next
+    });
   }
 };
 

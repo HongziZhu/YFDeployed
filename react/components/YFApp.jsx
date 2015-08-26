@@ -63,9 +63,7 @@ var YFApp = React.createClass({
   },
 
   _onChange: function() {
-    this.setState({ user: YFStore.getUser(), loggedIn: YFStore.getLoggedIn() }, function() {
-      console.log('State changed: ' + JSON.stringify(this.state.loggedIn, null, 4));
-    });
+    this.setState({ user: YFStore.getUser(), loggedIn: YFStore.getLoggedIn() });
   }
 });
 

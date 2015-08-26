@@ -26,9 +26,12 @@ exports.load = function (req, res, next, id) {
 exports.createUser = function (req, res, next) {
   var user = new User(req.body);
   user.provider = 'local';
+  for(var i = 0; i < user.students.length; i++) {
+      user.students[i].userId = user._id;
+  }
   user.save(function (err, user) {
     if(err) { return next(err); }
-    res.json(user);
+      res.json(user);
   });
 };
 

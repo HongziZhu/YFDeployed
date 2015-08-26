@@ -1,33 +1,30 @@
+'use strict';
 
-/**
- * Module dependencies.
- */
+var mongoose = require('mongoose');
+var crypto = require('crypto');
+var uuid = require('node-uuid');
 
- var mongoose = require('mongoose');
- var crypto = require('crypto');
- var uuid = require('node-uuid');
+var Schema = mongoose.Schema;
+var oAuthTypes = [
+'github',
+'twitter',
+'facebook',
+'google',
+'linkedin'
+];
 
- var Schema = mongoose.Schema;
- var oAuthTypes = [
- 'github',
- 'twitter',
- 'facebook',
- 'google',
- 'linkedin'
- ];
-
-/**
- * User Schema
- */
-
- var UserSchema = new Schema({
+var UserSchema = new Schema({
   // name: { type: String, default: '' },
   // username: { type: String, default: '' },
-  
+  _id: { type: String, default: uuid.v4() },
   students: [{
-    studentId: { type: String, default: uuid.v4() },
+    userId: String,
     firstName: { type: String, trim: true, required: 'First name cannot be blank.' },
     lastName: { type: String, trim: true, required: 'Last name cannot be blank.' },
+    currentGrade: {
+      type: String,
+      enum: ['K', 'G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7', 'G8', 'G9', 'G10', 'G11', 'G12']
+    },
     incomingGrade: {
       type: String,
       enum: ['K', 'G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7', 'G8', 'G9', 'G10', 'G11', 'G12']
