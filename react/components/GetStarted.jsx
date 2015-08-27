@@ -45,24 +45,38 @@ var GetStarted = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
     return { 
-      user: {},
+      user: YFStore.getUser(),
       students: [],
-      selectedIndex: 0,
-      showGrade: false,
+      program: 'Summer Camp',
+      selectedIndex: 0, //which student
       incomingGrade: 'K',
+      showGrade: false,
+      showChild: false,
       showContinue: false
     };
   },
   componentDidMount: function() {
     var self = this;
-    this.setState({ user: YFStore.getUser() }, function() {
-      YFActions.findStudentsById(self.state.user._id, function(students) {
-        self.setState({ students: students });
-      });
-    }); 
+    // this.setState({ user: YFStore.getUser() }, function() {
+    //   YFActions.findStudentsById(self.state.user._id, function(students) {
+    //     self.setState({ students: students });
+    //   });
+    // });
+    YFStore.addChangeListener(self._onChange);
+  },
+  componentWillUnmount: function() {
+    YFStore.removeChangeListener(this._onChange);
+  },
+  handleSelectProgram: function(e) {
+    this.setState({ program: e.currentTarget.value });
   },
   handleSelectStudent: function(e) {
     this.setState({ selectedIndex: e.currentTarget.value });
+  },
+  showChildBox: function(e) {
+    e.preventDefault();
+    this.setState({ showChild: true });
+    React.findDOMNode(this.refs.program_btn).blur();
   },
   showGradeBox: function(e) {
     e.preventDefault();
@@ -81,6 +95,9 @@ var GetStarted = React.createClass({
   showContinue: function(e) {
     e.preventDefault();
     this.setState({ showContinue: true });
+  },
+  _onChange: function() {
+    this.setState({ user: YFStore.getUser(), students: YFStore.getStudents() });
   },
 
   render: function () {
@@ -103,13 +120,34 @@ var GetStarted = React.createClass({
       <div className="col-md-6 col-md-offset-3">
       <div className="panel panel-primary">
         <div className="panel-heading">
+          <strong>Select the Program to Enroll</strong>
+        </div>
+        <div className="panel-body">
+          <div className="radio">
+            <label><input type="radio" onChange={this.handleSelectProgram} value="Summer Camp" name='program' defaultChecked/>Summer Camp</label>
+          </div>
+          <div className="radio">
+            <label><input type="radio" onChange={this.handleSelectProgram} value="After School" name='program' />After School</label>
+          </div>
+          <div className="radio">
+            <label><input type="radio" onChange={this.handleSelectProgram} value="Elective and Enrichment" name='program' />Elective and Enrichment</label>
+          </div>
+
+          <button type="button" className="btn btn-info" ref='program_btn' onClick={this.showChildBox}>Confirm</button>
+        </div>
+      </div>
+
+
+      {this.state.showChild ? 
+      <div className="panel panel-primary">
+        <div className="panel-heading">
           <strong>Select Your Child</strong>
         </div>
         <div className="panel-body">
           {studentRows}
           <button type="button" className="btn btn-info" ref='stu_btn' onClick={this.showGradeBox}>Confirm</button>
         </div>
-      </div>
+      </div> : <p></p>}
 
       {this.state.showGrade ? <GradeBox 
         stu_fname={this.state.students[this.state.selectedIndex].firstName} 

@@ -15,5 +15,6 @@ module.exports = keyMirror({
   YF_CREATE_USER: null,
   YF_LOGIN: null,
   YF_LOAD_STUDENTS: null,
-  YF_SAVE_SUMMER_SCHEDULE: null
+  YF_SAVE_SUMMER_SCHEDULE: null,
+  YF_SAVE_SUMMER_AFTERNOON_ACADEMICS: null
 });

@@ -10,10 +10,9 @@ var Home = React.createClass({
     //5. a single element to contain the render stuff
     return (
       <div className="row">
-        <div className="col-sm-12">
-          <h2>YangFan Enrollment System</h2>
+        <div className="col-md-12">
           <div className="lead">
-            Welcome!  
+            Welcome to YangFan Enrollment System!  
           </div>
         </div>
       </div>

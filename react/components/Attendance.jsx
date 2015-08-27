@@ -22,7 +22,8 @@ var Attendance = React.createClass({
       ],
       daysMatched: true,
       allScheduled: false,
-      summerWeeks: []
+      summerWeeks: [],
+      canContinue: false
     };
   },
   componentDidMount: function() {
@@ -40,7 +41,7 @@ var Attendance = React.createClass({
     for(var i = 0; i < 5; i++){
       dayNum += self.state.attendingDays[i].selected ? 1 : 0;
     }
-    var p = parseInt(pat.substring(0, 1));
+    var p = pat === 'absence' ? 0 : parseInt(pat.substring(0, 1));
     if(p === dayNum){
       self.setState({ schedulePattern: pat, daysMatched: true });
     } else {
@@ -60,7 +61,8 @@ var Attendance = React.createClass({
     for(var i = 0; i < 5; i++){
       dayNum += state[i].selected ? 1 : 0;
     }
-    var p = parseInt(self.state.schedulePattern.substring(0, 1));
+    var pat = self.state.schedulePattern;
+    var p = pat === 'absence' ? 0 : parseInt(pat.substring(0, 1));
     if(p === dayNum){
       this.setState({ attendingDays: state, daysMatched: true });
     } else {
@@ -110,11 +112,8 @@ var Attendance = React.createClass({
       self.setState({ summerWeeks: YFStore.getSummerWeeks() }, function() {
         React.findDOMNode(self.refs.submitButton).blur();
         if(YFStore.getSummerWeekCount() === 10){
-          YFActions.saveSummerSchedule(this.state.currentStudent, function() {
-            YFStore.setAllScheduled(true);
-            self.setState({ allScheduled: YFStore.getAllScheduled() });
-            console.log('summer schedule saved.');
-          });
+          YFStore.setAllScheduled(true);
+          self.setState({ allScheduled: YFStore.getAllScheduled() });
         }
       });
     });
@@ -156,7 +155,11 @@ var Attendance = React.createClass({
   },
   handleContinue: function(e) {
     e.preventDefault();
-    this.transitionTo('enrichment_activities');
+    var self = this;
+    YFActions.saveSummerSchedule(self.state.currentStudent, function() {
+      console.log('summer schedule saved.');
+      self.transitionTo('afternoon_academics');
+    });
   },
   selectAllWeeks: function() {
     // e.preventDefault();
@@ -191,7 +194,7 @@ var Attendance = React.createClass({
 
   render: function () {
     var self = this;
-    var weekdaysHelper = !this.state.daysMatched ? (<p className='bg-danger'>Please choose EXACT {this.state.schedulePattern.substring(0, 1)} weekdays to attend.</p>) : <p></p> 
+    var weekdaysHelper = !this.state.daysMatched ? (<p className='bg-danger'>Please choose EXACT {self.state.schedulePattern === 'absence' ? 0 : this.state.schedulePattern.substring(0, 1)} weekday(s) to attend.</p>) : <p></p> 
 
     var weekdays = this.state.attendingDays.map(function(d){
       return (
@@ -209,7 +212,7 @@ var Attendance = React.createClass({
         });
         return (
           <label className="checkbox" key={w.week}>
-            <input type="checkbox" ref={w.week} disabled/>{w.week} ({w.coveredDate})<p className="bg-warning">Scheduled {weeks[index].schedulePattern}: {days}</p> 
+            <input type="checkbox" ref={w.week} disabled/>{w.week} ({w.coveredDate})&nbsp;<span className="bg-warning">Scheduled: {weeks[index].schedulePattern}  {days}</span> 
           </label>
         );
       } else {
@@ -221,27 +224,27 @@ var Attendance = React.createClass({
       }
     });
 
-    var continueHelper = this.state.allScheduled ? (<p className="bg-success">All summer weeks have been scheduled, please click Continue button below.</p>) : <p></p>;
+    var continueHelper = this.state.allScheduled ? (<span className="bg-success">All summer weeks have been scheduled, please click Continue button below.</span>) : <p></p>;
     
     return (
-      <div className='col-md-6 col-md-offset-3'>
+      <div className='col-md-9 col-md-offset-3'>
         <div className="panel panel-default">
           <div className="panel-heading">
             <div className="panel-title">
-              Attendance
+              <h2>Attendance</h2>
             </div>
           </div>
 
           <div className="panel-body">
           
             <div className="row">
-              <div className="col-sm-12">
+              <div className="col-md-offset-1">
                 <strong>How many days do you want to attend per week?</strong>
                 <br>
                 </br>
               </div>
 
-              <div className="col-sm-12">
+              <div className="col-md-offset-1">
                 <div className="radio">
                   <label>
                     <input type="radio" name="attendPattern" onChange={this.changePattern} value="5_full" defaultChecked/>
@@ -271,13 +274,19 @@ var Attendance = React.createClass({
                     <input type="radio" name="attendPattern" onChange={this.changePattern} value="5_afternoon"/>
                     5 afternoons per week (1:00 pm - 6:30 pm) $175
                   </label>
+                </div>  
+                <div className="radio">
+                  <label>
+                    <input type="radio" name="attendPattern" onChange={this.changePattern} value="absence"/>
+                    Absence&nbsp;<span className="bg-info">If you don't plan to attend, please choose this.</span>
+                  </label>
                 </div>                
               </div>  
             </div>
             <hr></hr>
 
             <div className="row">
-              <div className="col-sm-12">
+              <div className="col-md-offset-1">
                 <strong>Choose the attending weekdays</strong><br></br>
                 {weekdaysHelper}
                 {weekdays}
@@ -287,7 +296,7 @@ var Attendance = React.createClass({
 
             <form className="form-horizontal" onSubmit={this.applyWeeks}>
               <div className="row">
-                <div className="col-sm-12">
+                <div className="col-md-offset-1">
                   <strong>Choose the weeks to apply</strong>
                   <br></br>
                   <ul >
@@ -302,8 +311,8 @@ var Attendance = React.createClass({
               <hr></hr>
 
               <div className="row">
-                <div className="col-sm-12">
-                  <button type="submit" ref='submitButton' className="btn btn-primary">Submit</button><br></br>
+                <div className="col-md-offset-1">
+                  <button type="submit" ref='submitButton' className="btn btn-primary">Submit</button>&nbsp;
                   {continueHelper}
                 </div> 
               </div>

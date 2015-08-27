@@ -37,6 +37,14 @@ var YFActions = {
       student: student,
       next: next
     });
+  },
+
+  saveAfternoonAcademics: function(language, next) {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_SAVE_SUMMER_AFTERNOON_ACADEMICS,
+      language: language,
+      next: next
+    });
   }
 };
 

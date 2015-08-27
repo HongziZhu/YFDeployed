@@ -25561,12 +25561,20 @@ var YFActions = {
       student: student,
       next: next
     });
+  },
+
+  saveAfternoonAcademics: function(language, next) {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_SAVE_SUMMER_AFTERNOON_ACADEMICS,
+      language: language,
+      next: next
+    });
   }
 };
 
 module.exports = YFActions;
 
-},{"../constants/YFConstants":219,"../dispatcher/AppDispatcher":220}],210:[function(require,module,exports){
+},{"../constants/YFConstants":220,"../dispatcher/AppDispatcher":221}],210:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -25587,7 +25595,118 @@ if (typeof window !== 'undefined') {
 	};
 }
 
-},{"./components/Routes.jsx":216,"react":205,"react-router":36}],211:[function(require,module,exports){
+},{"./components/Routes.jsx":217,"react":205,"react-router":36}],211:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+
+var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
+  mixins: [ Navigation ],
+  getInitialState: function() {
+    return { 
+      language: '',
+      done: false,
+      showInfo: false
+    };
+  },
+  componentDidMount: function() {
+    
+  },
+  changeLang: function(e) {
+    var lang = e.currentTarget.value;
+    this.setState({ language: lang });
+  },
+  handleSubmit: function(e) {
+    e.preventDefault();
+    var self = this;
+    this.setState({ done: true, showInfo: true }, function() {
+      React.findDOMNode(this.refs.submitButton).blur();
+    });
+  },
+  handleContinue: function(e) {
+    e.preventDefault();
+    var self = this;
+    YFActions.saveAfternoonAcademics(self.state.language, function() {
+      self.transitionTo('enrichment_activities');
+    });
+  },
+
+  render: function () {
+    var self = this;
+    var info = (self.state.showInfo ? React.createElement("span", {className: "bg-success"}, self.state.language, " is chosed. If you want to change, please choose another and submit again. Then please click Continue below") : React.createElement("p", null));
+    return (
+      React.createElement("div", {className: "col-md-6 col-md-offset-3"}, 
+        React.createElement("div", {className: "panel panel-default"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              React.createElement("h2", null, "Afternoon Academics")
+            )
+          ), 
+
+          React.createElement("div", {className: "panel-body"}, 
+          
+            React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-md-offset-1"}, 
+                React.createElement("p", {className: "bg-info"}, "No additional expense for Afternoon Academics(Math and Language), all have been included in the Basic Camp Fee.")
+              )
+            ), React.createElement("hr", null), 
+
+            React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-md-offset-1"}, 
+                React.createElement("strong", null, "Mathematical Course"), React.createElement("br", null), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "dailyMath", defaultChecked: true}), 
+                    "Daily Math ", React.createElement("span", {className: "bg-success"}, "(Automatically included)")
+                  )
+                )
+              ), React.createElement("hr", null), 
+
+              React.createElement("div", {className: "col-md-offset-1"}, 
+                React.createElement("strong", null, "Language Art"), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "language", onChange: this.changeLang, value: "Daily Chinese"}), 
+                    "Daily Chinese"
+                  )
+                ), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "language", onChange: this.changeLang, value: "Daily Spanish"}), 
+                    "Daily Spanish"
+                  )
+                ), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "language", onChange: this.changeLang, value: "Daily Hindi"}), 
+                    "Daily Hindi"
+                  )
+                )
+              )
+            ), React.createElement("hr", null), 
+
+            React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-md-offset-1"}, 
+                React.createElement("button", {onClick: this.handleSubmit, ref: "submitButton", className: "btn btn-primary"}, "Submit"), "  ", React.createElement("br", null), 
+                info
+              )
+            )
+          )
+        ), 
+        this.state.done ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("p", null)
+      )
+    );
+  } 
+});
+
+module.exports = AfternoonAcademics;
+
+},{"../actions/YFActions":209,"../stores/YFStore.jsx":222,"react":205,"react-router":36}],212:[function(require,module,exports){
 'use strict';
 
 var React=require('react');
@@ -25612,7 +25731,8 @@ var Attendance = React.createClass({displayName: "Attendance",
       ],
       daysMatched: true,
       allScheduled: false,
-      summerWeeks: []
+      summerWeeks: [],
+      canContinue: false
     };
   },
   componentDidMount: function() {
@@ -25630,7 +25750,7 @@ var Attendance = React.createClass({displayName: "Attendance",
     for(var i = 0; i < 5; i++){
       dayNum += self.state.attendingDays[i].selected ? 1 : 0;
     }
-    var p = parseInt(pat.substring(0, 1));
+    var p = pat === 'absence' ? 0 : parseInt(pat.substring(0, 1));
     if(p === dayNum){
       self.setState({ schedulePattern: pat, daysMatched: true });
     } else {
@@ -25650,7 +25770,8 @@ var Attendance = React.createClass({displayName: "Attendance",
     for(var i = 0; i < 5; i++){
       dayNum += state[i].selected ? 1 : 0;
     }
-    var p = parseInt(self.state.schedulePattern.substring(0, 1));
+    var pat = self.state.schedulePattern;
+    var p = pat === 'absence' ? 0 : parseInt(pat.substring(0, 1));
     if(p === dayNum){
       this.setState({ attendingDays: state, daysMatched: true });
     } else {
@@ -25700,11 +25821,8 @@ var Attendance = React.createClass({displayName: "Attendance",
       self.setState({ summerWeeks: YFStore.getSummerWeeks() }, function() {
         React.findDOMNode(self.refs.submitButton).blur();
         if(YFStore.getSummerWeekCount() === 10){
-          YFActions.saveSummerSchedule(this.state.currentStudent, function() {
-            YFStore.setAllScheduled(true);
-            self.setState({ allScheduled: YFStore.getAllScheduled() });
-            console.log('summer schedule saved.');
-          });
+          YFStore.setAllScheduled(true);
+          self.setState({ allScheduled: YFStore.getAllScheduled() });
         }
       });
     });
@@ -25746,7 +25864,11 @@ var Attendance = React.createClass({displayName: "Attendance",
   },
   handleContinue: function(e) {
     e.preventDefault();
-    this.transitionTo('enrichment_activities');
+    var self = this;
+    YFActions.saveSummerSchedule(self.state.currentStudent, function() {
+      console.log('summer schedule saved.');
+      self.transitionTo('afternoon_academics');
+    });
   },
   selectAllWeeks: function() {
     // e.preventDefault();
@@ -25781,7 +25903,7 @@ var Attendance = React.createClass({displayName: "Attendance",
 
   render: function () {
     var self = this;
-    var weekdaysHelper = !this.state.daysMatched ? (React.createElement("p", {className: "bg-danger"}, "Please choose EXACT ", this.state.schedulePattern.substring(0, 1), " weekdays to attend.")) : React.createElement("p", null) 
+    var weekdaysHelper = !this.state.daysMatched ? (React.createElement("p", {className: "bg-danger"}, "Please choose EXACT ", self.state.schedulePattern === 'absence' ? 0 : this.state.schedulePattern.substring(0, 1), " weekday(s) to attend.")) : React.createElement("p", null) 
 
     var weekdays = this.state.attendingDays.map(function(d){
       return (
@@ -25799,7 +25921,7 @@ var Attendance = React.createClass({displayName: "Attendance",
         });
         return (
           React.createElement("label", {className: "checkbox", key: w.week}, 
-            React.createElement("input", {type: "checkbox", ref: w.week, disabled: true}), w.week, " (", w.coveredDate, ")", React.createElement("p", {className: "bg-warning"}, "Scheduled ", weeks[index].schedulePattern, ": ", days)
+            React.createElement("input", {type: "checkbox", ref: w.week, disabled: true}), w.week, " (", w.coveredDate, ") ", React.createElement("span", {className: "bg-warning"}, "Scheduled: ", weeks[index].schedulePattern, "  ", days)
           )
         );
       } else {
@@ -25811,27 +25933,27 @@ var Attendance = React.createClass({displayName: "Attendance",
       }
     });
 
-    var continueHelper = this.state.allScheduled ? (React.createElement("p", {className: "bg-success"}, "All summer weeks have been scheduled, please click Continue button below.")) : React.createElement("p", null);
+    var continueHelper = this.state.allScheduled ? (React.createElement("span", {className: "bg-success"}, "All summer weeks have been scheduled, please click Continue button below.")) : React.createElement("p", null);
     
     return (
-      React.createElement("div", {className: "col-md-6 col-md-offset-3"}, 
+      React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
         React.createElement("div", {className: "panel panel-default"}, 
           React.createElement("div", {className: "panel-heading"}, 
             React.createElement("div", {className: "panel-title"}, 
-              "Attendance"
+              React.createElement("h2", null, "Attendance")
             )
           ), 
 
           React.createElement("div", {className: "panel-body"}, 
           
             React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-sm-12"}, 
+              React.createElement("div", {className: "col-md-offset-1"}, 
                 React.createElement("strong", null, "How many days do you want to attend per week?"), 
                 React.createElement("br", null
                 )
               ), 
 
-              React.createElement("div", {className: "col-sm-12"}, 
+              React.createElement("div", {className: "col-md-offset-1"}, 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
                     React.createElement("input", {type: "radio", name: "attendPattern", onChange: this.changePattern, value: "5_full", defaultChecked: true}), 
@@ -25861,13 +25983,19 @@ var Attendance = React.createClass({displayName: "Attendance",
                     React.createElement("input", {type: "radio", name: "attendPattern", onChange: this.changePattern, value: "5_afternoon"}), 
                     "5 afternoons per week (1:00 pm - 6:30 pm) $175"
                   )
+                ), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "attendPattern", onChange: this.changePattern, value: "absence"}), 
+                    "Absence ", React.createElement("span", {className: "bg-info"}, "If you don't plan to attend, please choose this.")
+                  )
                 )
               )
             ), 
             React.createElement("hr", null), 
 
             React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-sm-12"}, 
+              React.createElement("div", {className: "col-md-offset-1"}, 
                 React.createElement("strong", null, "Choose the attending weekdays"), React.createElement("br", null), 
                 weekdaysHelper, 
                 weekdays
@@ -25877,7 +26005,7 @@ var Attendance = React.createClass({displayName: "Attendance",
 
             React.createElement("form", {className: "form-horizontal", onSubmit: this.applyWeeks}, 
               React.createElement("div", {className: "row"}, 
-                React.createElement("div", {className: "col-sm-12"}, 
+                React.createElement("div", {className: "col-md-offset-1"}, 
                   React.createElement("strong", null, "Choose the weeks to apply"), 
                   React.createElement("br", null), 
                   React.createElement("ul", null, 
@@ -25892,8 +26020,8 @@ var Attendance = React.createClass({displayName: "Attendance",
               React.createElement("hr", null), 
 
               React.createElement("div", {className: "row"}, 
-                React.createElement("div", {className: "col-sm-12"}, 
-                  React.createElement("button", {type: "submit", ref: "submitButton", className: "btn btn-primary"}, "Submit"), React.createElement("br", null), 
+                React.createElement("div", {className: "col-md-offset-1"}, 
+                  React.createElement("button", {type: "submit", ref: "submitButton", className: "btn btn-primary"}, "Submit"), " ", 
                   continueHelper
                 )
               )
@@ -25908,7 +26036,7 @@ var Attendance = React.createClass({displayName: "Attendance",
 
 module.exports = Attendance;
 
-},{"../actions/YFActions":209,"../stores/YFStore.jsx":221,"react":205,"react-router":36}],212:[function(require,module,exports){
+},{"../actions/YFActions":209,"../stores/YFStore.jsx":222,"react":205,"react-router":36}],213:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -25922,23 +26050,59 @@ var EnrichmentActivities = React.createClass({displayName: "EnrichmentActivities
   mixins: [ Navigation ],
   getInitialState: function() {
     return { 
-      x: ''
+      enrichmentDone: false,
+      enrollmentId: ''
     };
   },
   componentDidMount: function() {
     var self = this;
+    self.setState({ 
+      enrichmentDone: YFStore.getEnrichmentDone(),
+      enrollmentId: YFStore.getEnrollmentId()
+    });
   },
 
   render: function () {
     return (
-      React.createElement("p", null, "EnrichmentActivities")
+      React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
+        React.createElement("div", {className: "panel panel-default"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              "Enrichment Activities"
+            )
+          ), 
+
+          React.createElement("div", {className: "panel-body"}, 
+          
+            React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-sm-12"}, 
+                React.createElement("strong", null, "Select Morning Enrichment Activities"), 
+                React.createElement("br", null
+                )
+              ), 
+
+              React.createElement("div", {className: "col-sm-12"}, 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "attendPattern", onChange: this.changePattern, value: "5_full", defaultChecked: true}), 
+                    "5 full days per week (8:00 am - 6:30 pm) $235"
+                  )
+                )
+              )
+            ), 
+            React.createElement("hr", null)
+
+          )
+        ), 
+        this.state.enrichmentDone ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("p", null)
+      )
     );
   } 
 });
 
 module.exports = EnrichmentActivities;
 
-},{"../actions/YFActions":209,"../stores/YFStore.jsx":221,"react":205,"react-router":36}],213:[function(require,module,exports){
+},{"../actions/YFActions":209,"../stores/YFStore.jsx":222,"react":205,"react-router":36}],214:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -25986,24 +26150,38 @@ var GetStarted = React.createClass({displayName: "GetStarted",
   mixins: [ Navigation ],
   getInitialState: function() {
     return { 
-      user: {},
+      user: YFStore.getUser(),
       students: [],
-      selectedIndex: 0,
-      showGrade: false,
+      program: 'Summer Camp',
+      selectedIndex: 0, //which student
       incomingGrade: 'K',
+      showGrade: false,
+      showChild: false,
       showContinue: false
     };
   },
   componentDidMount: function() {
     var self = this;
-    this.setState({ user: YFStore.getUser() }, function() {
-      YFActions.findStudentsById(self.state.user._id, function(students) {
-        self.setState({ students: students });
-      });
-    }); 
+    // this.setState({ user: YFStore.getUser() }, function() {
+    //   YFActions.findStudentsById(self.state.user._id, function(students) {
+    //     self.setState({ students: students });
+    //   });
+    // });
+    YFStore.addChangeListener(self._onChange);
+  },
+  componentWillUnmount: function() {
+    YFStore.removeChangeListener(this._onChange);
+  },
+  handleSelectProgram: function(e) {
+    this.setState({ program: e.currentTarget.value });
   },
   handleSelectStudent: function(e) {
     this.setState({ selectedIndex: e.currentTarget.value });
+  },
+  showChildBox: function(e) {
+    e.preventDefault();
+    this.setState({ showChild: true });
+    React.findDOMNode(this.refs.program_btn).blur();
   },
   showGradeBox: function(e) {
     e.preventDefault();
@@ -26022,6 +26200,9 @@ var GetStarted = React.createClass({displayName: "GetStarted",
   showContinue: function(e) {
     e.preventDefault();
     this.setState({ showContinue: true });
+  },
+  _onChange: function() {
+    this.setState({ user: YFStore.getUser(), students: YFStore.getStudents() });
   },
 
   render: function () {
@@ -26044,13 +26225,34 @@ var GetStarted = React.createClass({displayName: "GetStarted",
       React.createElement("div", {className: "col-md-6 col-md-offset-3"}, 
       React.createElement("div", {className: "panel panel-primary"}, 
         React.createElement("div", {className: "panel-heading"}, 
+          React.createElement("strong", null, "Select the Program to Enroll")
+        ), 
+        React.createElement("div", {className: "panel-body"}, 
+          React.createElement("div", {className: "radio"}, 
+            React.createElement("label", null, React.createElement("input", {type: "radio", onChange: this.handleSelectProgram, value: "Summer Camp", name: "program", defaultChecked: true}), "Summer Camp")
+          ), 
+          React.createElement("div", {className: "radio"}, 
+            React.createElement("label", null, React.createElement("input", {type: "radio", onChange: this.handleSelectProgram, value: "After School", name: "program"}), "After School")
+          ), 
+          React.createElement("div", {className: "radio"}, 
+            React.createElement("label", null, React.createElement("input", {type: "radio", onChange: this.handleSelectProgram, value: "Elective and Enrichment", name: "program"}), "Elective and Enrichment")
+          ), 
+
+          React.createElement("button", {type: "button", className: "btn btn-info", ref: "program_btn", onClick: this.showChildBox}, "Confirm")
+        )
+      ), 
+
+
+      this.state.showChild ? 
+      React.createElement("div", {className: "panel panel-primary"}, 
+        React.createElement("div", {className: "panel-heading"}, 
           React.createElement("strong", null, "Select Your Child")
         ), 
         React.createElement("div", {className: "panel-body"}, 
           studentRows, 
           React.createElement("button", {type: "button", className: "btn btn-info", ref: "stu_btn", onClick: this.showGradeBox}, "Confirm")
         )
-      ), 
+      ) : React.createElement("p", null), 
 
       this.state.showGrade ? React.createElement(GradeBox, {
         stu_fname: this.state.students[this.state.selectedIndex].firstName, 
@@ -26065,7 +26267,7 @@ var GetStarted = React.createClass({displayName: "GetStarted",
 
 module.exports = GetStarted;
 
-},{"../actions/YFActions":209,"../stores/YFStore.jsx":221,"formsy-react":7,"react":205,"react-router":36}],214:[function(require,module,exports){
+},{"../actions/YFActions":209,"../stores/YFStore.jsx":222,"formsy-react":7,"react":205,"react-router":36}],215:[function(require,module,exports){
 'use strict';
 
 var React=require('react');
@@ -26078,10 +26280,9 @@ var Home = React.createClass({displayName: "Home",
     //5. a single element to contain the render stuff
     return (
       React.createElement("div", {className: "row"}, 
-        React.createElement("div", {className: "col-sm-12"}, 
-          React.createElement("h2", null, "YangFan Enrollment System"), 
+        React.createElement("div", {className: "col-md-12"}, 
           React.createElement("div", {className: "lead"}, 
-            "Welcome!"  
+            "Welcome to YangFan Enrollment System!"  
           )
         )
       )
@@ -26091,7 +26292,7 @@ var Home = React.createClass({displayName: "Home",
 
 module.exports = Home;
 
-},{"react":205}],215:[function(require,module,exports){
+},{"react":205}],216:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -26100,7 +26301,6 @@ var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
 var Link = Router.Link;
 var State = Router.State;
-var Formsy = require('formsy-react');
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
 
@@ -26108,7 +26308,6 @@ var Login = React.createClass({displayName: "Login",
 	mixins: [ Navigation ],
 	getInitialState: function() {
     return { 
-    	canSubmit: false,
     	authError: false
     };
   },
@@ -26126,16 +26325,6 @@ var Login = React.createClass({displayName: "Login",
 	    });
   	});
   },
-  // enableButton: function () {
-  //   this.setState({
-  //     canSubmit: true
-  //   });
-  // },
-  // disableButton: function () {
-  //   this.setState({
-  //     canSubmit: false
-  //   });
-  // },
   componentDidMount: function() {
     YFStore.addChangeListener(this._onChange);
   },
@@ -26180,53 +26369,9 @@ var Login = React.createClass({displayName: "Login",
   }
 });
 
-var MyOwnInput = React.createClass({displayName: "MyOwnInput",
-
-  // Add the Formsy Mixin
-  mixins: [Formsy.Mixin],
-
-  // setValue() will set the value of the component, which in
-  // turn will validate it and the rest of the form
-  changeValue: function (event) {
-    this.setValue(event.currentTarget.value);
-  },
-  render: function () {
-
-    // Set a specific className based on the validation
-    // state of this component. showRequired() is true
-    // when the value is empty and the required prop is
-    // passed to the input. showError() is true when the
-    // value typed is invalid
-    var className = this.props.className + ' ' + (this.showRequired() ? 'required' : this.showError() ? 'error' : null);
-
-    // An error message is returned ONLY if the component is invalid
-    // or the server has returned an error message
-    var errorMessage = this.getErrorMessage();
-
-    return (
-      React.createElement("div", {className: "form-group"}, 
-        React.createElement("label", {htmlFor: this.props.name, className: "col-sm-2 control-label"}, this.props.title), 
-        React.createElement("div", {className: "col-sm-6"}, 
-	        React.createElement("input", {className: "form-control", type: this.props.type || 'text', name: this.props.name, onChange: this.changeValue, value: this.getValue()})
-	      ), 
-	      React.createElement("span", {className: "validation-error badge"}, errorMessage)
-      )
-    );
-  }
-});
-// <Formsy.Form onSubmit={this.handleSubmit} onValid={this.enableButton} onInvalid={this.disableButton} className="form-horizontal">
-//         <MyOwnInput name="email" title="Email" validations="isEmail" validationError="Invalid Email Address." required />
-//         <MyOwnInput name="password" title="Password" type="password" required />
-        
-//         <div className="form-group">
-// 			    <div className="col-sm-offset-2 col-sm-10">
-// 			      <button type="submit" className="btn btn-primary" disabled={!this.state.canSubmit}>Log in</button>
-// 			    </div>
-// 			  </div>
-//       </Formsy.Form>
 module.exports = Login;
 
-},{"../actions/YFActions":209,"../stores/YFStore.jsx":221,"formsy-react":7,"react":205,"react-router":36}],216:[function(require,module,exports){
+},{"../actions/YFActions":209,"../stores/YFStore.jsx":222,"react":205,"react-router":36}],217:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -26242,6 +26387,7 @@ var Home = require('./Home.jsx');
 var GetStarted = require('./GetStarted.jsx');
 var Attendance = require('./Attendance.jsx');
 var EnrichmentActivities = require('./EnrichmentActivities.jsx');
+var AfternoonAcademics = require('./AfternoonAcademics.jsx');
 
 var routes = (
 	React.createElement(Route, {handler: YFApp}, 
@@ -26250,13 +26396,14 @@ var routes = (
 		React.createElement(Route, {name: "getStarted", path: "/user/getStarted", handler: GetStarted}), 
 		React.createElement(Route, {name: "attendance", path: "/user/attendance", handler: Attendance}), 
 		React.createElement(Route, {name: "enrichment_activities", path: "/user/enrichment_activities", handler: EnrichmentActivities}), 
+		React.createElement(Route, {name: "afternoon_academics", path: "/user/afternoon_academics", handler: AfternoonAcademics}), 
 		React.createElement(DefaultRoute, {name: "home", handler: Home})
 	)
 );
 
 module.exports = routes;
 
-},{"./Attendance.jsx":211,"./EnrichmentActivities.jsx":212,"./GetStarted.jsx":213,"./Home.jsx":214,"./Login.jsx":215,"./Signup.jsx":217,"./YFApp.jsx":218,"react":205,"react-router":36}],217:[function(require,module,exports){
+},{"./AfternoonAcademics.jsx":211,"./Attendance.jsx":212,"./EnrichmentActivities.jsx":213,"./GetStarted.jsx":214,"./Home.jsx":215,"./Login.jsx":216,"./Signup.jsx":218,"./YFApp.jsx":219,"react":205,"react-router":36}],218:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -26514,15 +26661,13 @@ var ParentBox = React.createClass({displayName: "ParentBox",
 
 module.exports = Signup;
 
-},{"../actions/YFActions":209,"formsy-react":7,"react":205,"react-router":36,"superagent":206}],218:[function(require,module,exports){
+},{"../actions/YFActions":209,"formsy-react":7,"react":205,"react-router":36,"superagent":206}],219:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
-var Link = Router.Link;
-var State = Router.State;
 var YFStore = require('../stores/YFStore.jsx');
 
 /** Tips: We often pass the entire state of the store down the chain of views in a single object, allowing different descendants to use what they need.
@@ -26531,14 +26676,13 @@ var YFStore = require('../stores/YFStore.jsx');
 var YFApp = React.createClass({displayName: "YFApp",
   getInitialState: function() {
     return {
-      user: {},
-      loggedIn: false
+      user: YFStore.getUser(),
+      loggedIn: YFStore.getLoggedIn()
     };
   },
 
   componentDidMount: function() {
     YFStore.addChangeListener(this._onChange);
-    this.setState({ user: YFStore.getUser(), loggedIn: YFStore.getLoggedIn() });
   },
 
   componentWillUnmount: function() {
@@ -26557,7 +26701,7 @@ var YFApp = React.createClass({displayName: "YFApp",
                 React.createElement("span", {className: "icon-bar"}), 
                 React.createElement("span", {className: "icon-bar"})
               ), 
-              React.createElement("a", {className: "navbar-brand", href: "/"}, "YangFan Enrollment")
+              React.createElement("a", {className: "navbar-brand", href: "/"}, React.createElement("h4", null, "YangFan Enrollment"))
             ), 
 
             React.createElement("div", {id: "navbar", className: "navbar-collapse collapse"}, 
@@ -26586,7 +26730,7 @@ var YFApp = React.createClass({displayName: "YFApp",
 
 module.exports = YFApp;
 
-},{"../stores/YFStore.jsx":221,"react":205,"react-router":36}],219:[function(require,module,exports){
+},{"../stores/YFStore.jsx":222,"react":205,"react-router":36}],220:[function(require,module,exports){
 /*
  * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -26604,10 +26748,11 @@ module.exports = keyMirror({
   YF_CREATE_USER: null,
   YF_LOGIN: null,
   YF_LOAD_STUDENTS: null,
-  YF_SAVE_SUMMER_SCHEDULE: null
+  YF_SAVE_SUMMER_SCHEDULE: null,
+  YF_SAVE_SUMMER_AFTERNOON_ACADEMICS: null
 });
 
-},{"keymirror":10}],220:[function(require,module,exports){
+},{"keymirror":10}],221:[function(require,module,exports){
 /*
 * AppDispatcher
 *
@@ -26618,7 +26763,7 @@ var Dispatcher = require('flux').Dispatcher;
 
 module.exports = new Dispatcher();
 
-},{"flux":3}],221:[function(require,module,exports){
+},{"flux":3}],222:[function(require,module,exports){
 'use strict';
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
@@ -26649,6 +26794,10 @@ var summerWeeks = [
 var summerWeekCount = 0;
 var summerCampWeeks = [];
 var allScheduled = false;
+var enrichmentDone = false;
+var summerWeeksNum = 10;
+var enrollmentId = '';
+var program = '';
 
 /**Tips: More than simply managing a collection of ORM-style objects, stores manage the application state for a particular domain within the application.
 */
@@ -26703,23 +26852,41 @@ function saveSummerSchedule(student, next) {
   .post(url)
   .send(data)
   .accept('application/json')
-  .end(function(err) {
+  .end(function(err, enrollment) {
     if(err) { return console.error(err); }
+    enrollmentId = enrollment.body._id;
+    next();
   });
-
-  next();
 }
 
+function saveSummerAfternoonAcademics(enrollmentId, language, next) {
+  var url = 'api/users/summer/afternoon_academics/' + enrollmentId;
+  var data = { language: language };
+  request
+  .put(url)
+  .send(data)
+  .accept('application/json')
+  .end(function(err, res) {
+    if(err) { return console.error(err); }
+    next();
+  });
+}
 
 var YFStore = assign({}, EventEmitter.prototype, {
   getUser: function() {
     return user;
+  },
+  getStudents: function() {
+    return students;
   },
   getLoggedIn: function() {
     return loggedIn;
   },
   getAuthError: function() {
     return authError;
+  },
+  getEnrollmentId: function() {
+    return enrollmentId;
   },
   resetAuthError: function() {
     authError = false;
@@ -26745,7 +26912,7 @@ var YFStore = assign({}, EventEmitter.prototype, {
       var d = attendingDays[j];
       if(d.selected) { days.push(d.day); }
     }
-    for(var i = 0; i < 10; i++) {
+    for(var i = 0; i < summerWeeksNum; i++) {
       var w = summerWeeks[i];
       if(w.selected && !w.done){
         summerCampWeeks[i] = {
@@ -26771,6 +26938,12 @@ var YFStore = assign({}, EventEmitter.prototype, {
   },
   setAllScheduled: function(b) {
     allScheduled = b;
+  },
+  getEnrichmentDone: function() {
+    return enrichmentDone;
+  },
+  setEnrichmentDone: function(b) {
+    enrichmentDone = b;
   },
 
   emitChange: function() {
@@ -26820,6 +26993,9 @@ AppDispatcher.register(function(action) {
     case YFConstants.YF_SAVE_SUMMER_SCHEDULE:
       saveSummerSchedule(action.student, action.next);
       break;
+    case YFConstants.YF_SAVE_SUMMER_AFTERNOON_ACADEMICS:
+      saveSummerAfternoonAcademics(enrollmentId, action.language, action.next);
+      break;
 
     default:
       // no op
@@ -26828,4 +27004,4 @@ AppDispatcher.register(function(action) {
 
 module.exports = YFStore;
 
-},{"../constants/YFConstants":219,"../dispatcher/AppDispatcher":220,"events":1,"object-assign":11,"superagent":206}]},{},[210]);
+},{"../constants/YFConstants":220,"../dispatcher/AppDispatcher":221,"events":1,"object-assign":11,"superagent":206}]},{},[210]);

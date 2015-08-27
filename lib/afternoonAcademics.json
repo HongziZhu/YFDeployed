@@ -1,0 +1,836 @@
+{
+	"week_1": {
+		"morning": {
+			"Basic_Camp": {
+				"theme": "Getting to know you",
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": "unlimited", 
+				"price": 0
+			},
+			"Repurpose_T-shirt_Rug": {
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [5, 15], 
+				"price": 25
+			},
+			"Indoor_Table_Tennis_&_Badminton": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 30], 
+				"price": 40
+			},
+			"Science:_Hands-on_Geology": {
+				"time": "10am-12pm", 
+				"grade": ["K", "G1", "G2"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 30
+			},
+			"Digital_Photo_Safari_&_Publishing": {
+				"time": "10am-12pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 35
+			},
+			"Aboriginal_Dot_Art": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 40
+			},
+			"Chess": {
+				"time": "10am-12pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 32
+			},
+			"Public_Speaking": {
+				"time": "10am-12pm", 
+				"grade": ["K", "G1", "G2"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 40
+			}
+		},
+		"afternoon": {
+			"Public_Speaking": {
+				"time": "4pm-5:30pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [1, 15], 
+				"price": 35
+			},
+			"Kung_Fu": {
+				"time": "4pm-5:30pm", 
+				"grade": "unlimited",
+				"hour_per_week": 4.5,
+				"class_size": [1, 15], 
+				"price": 30
+			}
+		}
+	},
+
+
+	"week_2": {
+		"morning": {
+			"Basic_Camp": {
+				"theme": "Glow in the Dark",
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": "unlimited", 
+				"price": 0
+			},
+			"Creative_Loom_Knitting": {
+				"time": "10am-12pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [5, 15], 
+				"price": 20
+			},
+			"Indoor_Basketball_&_Tennis": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 30], 
+				"price": 40
+			},
+			"Robotics": {
+				"time": "10am-12pm", 
+				"grade": ["K","G1","G2"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 50
+			},
+			"Computer_Coding_1:_Create_your_own_webpage": {
+				"time": "10am-12pm", 
+				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 40
+			},
+			"Self_Portrait_Painting": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 40
+			},
+			"Cheerleading": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 20], 
+				"price": 20
+			},
+			"Chess": {
+				"time": "10am-12pm", 
+				"grade": ["G1", "G2"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 32
+			},
+		},
+
+		"afternoon": {
+			"Chess": {
+				"time": "4pm-5:30pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [1, 15], 
+				"price": 28
+			},
+			"Swimming": {
+				"note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
+				"time": "4pm-5:30pm", 
+				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [5, 7], 
+				"price": 40
+			}
+		}
+	},
+
+
+
+	"week_3": {
+		"morning": {
+			"Basic_Camp": {
+				"theme": "American Heritage",
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": "unlimited", 
+				"price": 0
+			},
+			"Everyday_Recycle_Art": {
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [5, 15], 
+				"price": 20
+			},
+			"Outdoor_Soccer_&_Golf": {
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 30], 
+				"price": 35
+			},
+			"STEM_-_Electronic_and_Robotic_Engineering":{
+				"time": "10am-12pm",  
+				"grade": ["K", "G1", "G2"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 46
+			},
+			"Digital_Photo_Safari_&_Publishing": {
+				"time": "10am-12pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 35
+			},
+			"Pring_Making": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 40
+			},
+			"Chess": {
+				"time": "10am-12pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 32
+			},
+			"KidFit_Dance_Fitness": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 20], 
+				"price": 20
+			}
+		},
+		"afternoon": {
+			"Chess": {
+				"time": "4pm-5:30pm", 
+				"grade": ["G1", "G2"],
+				"hour_per_week": 4.5,
+				"class_size": [1, 15], 
+				"price": 28
+			},
+			"Swimming": {
+				"note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
+				"time": "4pm-5:30pm", 
+				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [5, 7], 
+				"price": 40
+			}
+		}
+	},
+
+
+	"week_4": {
+		"morning": {
+			"Basic_Camp": {
+				"theme": "Bubblicious",
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": "unlimited", 
+				"price": 0
+			},
+			"Edible_Art": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [5, 15], 
+				"price": 25
+			},
+			"Indoor_Table_Tennis_&_Badminton": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 30], 
+				"price": 40
+			},
+			"Hands-on_Chemistry:_More_Than_Lemonade": {
+				"time": "10am-12pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 30
+			},
+			"Film_Making": {
+				"time": "10am-12pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 40
+			},
+			"Collage": {
+				"time": "10am-12pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 30
+			},
+			"Chess": {
+				"time": "10am-12pm", 
+				"grade": ["G1", "G2"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 32
+			},
+			"KidFit_Dance_Fitness": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 20], 
+				"price": 20
+			},	
+			"Robotics": {
+				"time": "10am-12pm", 
+				"grade": ["K","G1","G2"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 50
+			},			
+		},
+		"afternoon": {
+			"Chess": {
+				"time": "4pm-5:30pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [1, 15], 
+				"price": 28
+			},
+			"Swimming": {
+				"note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
+				"time": "4pm-5:30pm", 
+				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [5, 7], 
+				"price": 40
+			},
+			"Public_Speaking": {
+				"time": "4pm-5:30pm", 
+				"grade": ["K", "G1", "G2"],
+				"hour_per_week": 4.5,
+				"class_size": [1, 15], 
+				"price": 35
+			}
+		}
+	},
+
+
+	"week_5": {
+		"morning": {
+			"Basic_Camp": {
+				"theme": "Getting the Message Across",
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": "unlimited", 
+				"price": 0
+			},
+			"Crocheting_with_a_purpose": {
+				"time": "10am-12pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [5, 15], 
+				"price": 20
+			},
+			"Indoor_Table_Tennis_&_Tennis": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 30], 
+				"price": 40
+			},
+			"Cooking_Around_the_World": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [5, 15], 
+				"price": 25
+			},
+			"Computer_Coding_2:_Welcome_to_my_Blog": {
+				"time": "10am-12pm", 
+				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 40
+			},
+			"Drawing_Tutorials": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 40
+			},
+			"Chess": {
+				"time": "10am-12pm", 
+				"grade": ["G1", "G2"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 32
+			},
+			"Outdoor_Survival_Life_Skills": {
+				"time": "10am-12pm", 
+				"grade": ["G1", "G2","G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 20], 
+				"price": 30
+			}
+		},
+
+		"afternoon": {
+			"Chess": {
+				"time": "4pm-5:30pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [1, 15], 
+				"price": 28
+			},
+			"Swimming": {
+				"note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
+				"time": "4pm-5:30pm", 
+				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [5, 7], 
+				"price": 40
+			},
+			"Public_Speaking": {
+				"time": "4pm-5:30pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [1, 15], 
+				"price": 35
+			}
+		}
+	},
+
+
+
+	"week_6": {
+		"morning": {
+			"Basic_Camp": {
+				"theme": "Sponge Bob",
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": "unlimited", 
+				"price": 0
+			},
+			"Candle_Making": {
+				"time": "10am-12pm", 
+				"grade": ["G2","G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [5, 15], 
+				"price": 25
+			},
+			"Indoor_Basketball_&_Tennis": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 30], 
+				"price": 40
+			},
+			"STEM_-_Mechanical_and_Aerospace_Engineering":{
+				"time": "10am-12pm",  
+				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 46
+			},
+			"Robotics": {
+				"time": "10am-12pm", 
+				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 50
+			},		
+			"Paper_Sculpture": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 40
+			},	
+			"Chess": {
+				"time": "10am-12pm", 
+				"grade": ["G1", "G2"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 32
+			},
+			"Cheerleading": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 20], 
+				"price": 20
+			}
+		},
+		"afternoon": {
+			"Swimming": {
+				"note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
+				"time": "4pm-5:30pm", 
+				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [5, 7], 
+				"price": 40
+			}
+		}
+	},
+
+
+
+	"week_7": {
+		"morning": {
+			"Basic_Camp": {
+				"theme": "Oobleck - What is it and what can you do with it?",
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": "unlimited", 
+				"price": 0
+			},
+			"Fancy_Scrapbooking": {
+				"time": "10am-12pm", 
+				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [5, 15], 
+				"price": 50
+			},
+			"Outdoor_Soccer_&_Tennis": {
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 30], 
+				"price": 35
+			},
+			"Hands-on_Chemistry:_More_Than_Lemonade": {
+				"time": "10am-12pm", 
+				"grade": ["K", "G1", "G2"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 30
+			},
+			"Indoor_Beginning_Archey": {
+				"time": "10am-12pm",  
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 30], 
+				"price": 60
+			},
+			"Ceramic_Sculpture": {
+				"time": "10am-12pm",  
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 40
+			},
+			"Chess": {
+				"time": "10am-12pm", 
+				"grade": ["G1", "G2"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 32
+			},
+			"Chinese_Folk_Dance": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 20], 
+				"price": 40,
+				"note": "Enrollment of week_8 is required."
+			}
+		},
+		"afternoon": {
+			"Chess": {
+				"time": "4pm-5:30pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [1, 15], 
+				"price": 28
+			},
+			"Swimming": {
+				"note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
+				"time": "4pm-5:30pm", 
+				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [5, 7], 
+				"price": 40
+			},
+		}
+	},
+
+
+
+	"week_8": {
+		"morning": {
+			"Basic_Camp": {
+				"theme": "Chain Reactions",
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": "unlimited", 
+				"price": 0
+			},
+			"Embroidering_Sampler": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [5, 15], 
+				"price": 20
+			},
+			"Outdoor_Soccer_&_Golf": {
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 30], 
+				"price": 35
+			},
+			"STEM_-_Mechanical_and_Aerospace_Engineering":{
+				"time": "10am-12pm",  
+				"grade": ["K","G1","G2"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 46
+			},
+			"Computer_Coding_3:_My_Rock_Star_Profile": {
+				"time": "10am-12pm", 
+				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 40
+			},
+			"Watercolor_Painting": {
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 40
+			},
+			"GeoCache": {
+				"time": "10am-12pm", 
+				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 35
+			},
+			"Chinese_Folk_Dance": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 20], 
+				"price": 40,
+				"note": "Enrollment of week_7 is required."
+			},
+			"Drama": {
+				"time": "10am-12pm", 
+				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 20], 
+				"price": 40
+			}
+		},
+		"afternoon": {
+			"Chess": {
+				"time": "4pm-5:30pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [1, 15], 
+				"price": 28
+			},
+			"Swimming": {
+				"note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
+				"time": "4pm-5:30pm", 
+				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [5, 7], 
+				"price": 40
+			},
+			"Role_Playing": {
+				"time": "4pm-5:30pm", 
+				"grade": ["K", "G1", "G2"],
+				"hour_per_week": 4.5,
+				"class_size": [1, 20], 
+				"price": 30
+			}
+		}
+	},
+
+
+
+	"week_9": {
+		"morning": {
+			"Basic_Camp": {
+				"theme": "Paper Engineering",
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": "unlimited", 
+				"price": 0
+			},
+			"Edible_Art": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [5, 15], 
+				"price": 25
+			},
+			"Outdoor_Basketball_&_Tennis": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 30], 
+				"price": 35
+			},
+			"STEM_-_Electronic_and_Robotic_Engineering":{
+				"time": "10am-12pm",  
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 46
+			},
+			"Acrylic_Painting": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 40
+			},
+			"Chess": {
+				"time": "10am-12pm", 
+				"grade": ["G1", "G2"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 32
+			},
+			"KidFit_Dance_Fitness": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 20], 
+				"price": 20
+			},	
+			"Drama": {
+				"time": "10am-12pm", 
+				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 20], 
+				"price": 40
+			}
+		},
+		"afternoon": {
+			"Chess": {
+				"time": "4pm-5:30pm", 
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [1, 15], 
+				"price": 28
+			},
+			"Swimming": {
+				"note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
+				"time": "4pm-5:30pm", 
+				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 4.5,
+				"class_size": [5, 7], 
+				"price": 40
+			},
+			"Role_Playing": {
+				"time": "4pm-5:30pm", 
+				"grade": ["K", "G1", "G2"],
+				"hour_per_week": 4.5,
+				"class_size": [1, 20], 
+				"price": 30
+			}
+		}
+	},
+
+
+
+	"week_10": {
+		"morning": {
+			"Basic_Camp": {
+				"theme": "Frozen",
+				"time": "10am-12pm",  
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": "unlimited", 
+				"price": 0
+			},
+			"Bento_Box": {
+				"time": "10am-12pm", 
+				"grade": ["G2","G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [5, 15], 
+				"price": 25
+			},
+			"Outdoor_Dodgeball_&_Kickball": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 30], 
+				"price": 35
+			},
+			"STEM_-_Civil_Engineering":{
+				"time": "10am-12pm",  
+				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 46
+			},
+			"Hands-on_Fun_Science_From_Everyday_Materials": {
+				"time": "10am-12pm", 
+				"grade": ["K", "G1", "G2"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 30
+			},
+			"3D_Hand_Drawings": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 40
+			},
+			"Chess": {
+				"time": "10am-12pm", 
+				"grade": ["G1", "G2","G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+				"hour_per_week": 6,
+				"class_size": [1, 15], 
+				"price": 32
+			},
+			"Cheerleading": {
+				"time": "10am-12pm", 
+				"grade": "unlimited",
+				"hour_per_week": 6,
+				"class_size": [1, 20], 
+				"price": 20
+			}
+		},
+		"afternoon": {
+			"Kung_Fu": {
+				"time": "4pm-5:30pm", 
+				"grade": "unlimited",
+				"hour_per_week": 4.5,
+				"class_size": [1, 15], 
+				"price": 30
+			}
+		}
+	}
+}

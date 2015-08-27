@@ -13,6 +13,7 @@ var Home = require('./Home.jsx');
 var GetStarted = require('./GetStarted.jsx');
 var Attendance = require('./Attendance.jsx');
 var EnrichmentActivities = require('./EnrichmentActivities.jsx');
+var AfternoonAcademics = require('./AfternoonAcademics.jsx');
 
 var routes = (
 	<Route handler={YFApp} >
@@ -21,6 +22,7 @@ var routes = (
 		<Route name='getStarted' path='/user/getStarted' handler={GetStarted} />
 		<Route name='attendance' path='/user/attendance' handler={Attendance} />
 		<Route name='enrichment_activities' path='/user/enrichment_activities' handler={EnrichmentActivities} />
+		<Route name='afternoon_academics' path='/user/afternoon_academics' handler={AfternoonAcademics} />
 		<DefaultRoute name='home' handler={Home} />
 	</Route>
 );

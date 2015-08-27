@@ -28,6 +28,10 @@ var summerWeeks = [
 var summerWeekCount = 0;
 var summerCampWeeks = [];
 var allScheduled = false;
+var enrichmentDone = false;
+var summerWeeksNum = 10;
+var enrollmentId = '';
+var program = '';
 
 /**Tips: More than simply managing a collection of ORM-style objects, stores manage the application state for a particular domain within the application.
 */
@@ -82,23 +86,41 @@ function saveSummerSchedule(student, next) {
   .post(url)
   .send(data)
   .accept('application/json')
-  .end(function(err) {
+  .end(function(err, enrollment) {
     if(err) { return console.error(err); }
+    enrollmentId = enrollment.body._id;
+    next();
   });
-
-  next();
 }
 
+function saveSummerAfternoonAcademics(enrollmentId, language, next) {
+  var url = 'api/users/summer/afternoon_academics/' + enrollmentId;
+  var data = { language: language };
+  request
+  .put(url)
+  .send(data)
+  .accept('application/json')
+  .end(function(err, res) {
+    if(err) { return console.error(err); }
+    next();
+  });
+}
 
 var YFStore = assign({}, EventEmitter.prototype, {
   getUser: function() {
     return user;
+  },
+  getStudents: function() {
+    return students;
   },
   getLoggedIn: function() {
     return loggedIn;
   },
   getAuthError: function() {
     return authError;
+  },
+  getEnrollmentId: function() {
+    return enrollmentId;
   },
   resetAuthError: function() {
     authError = false;
@@ -124,7 +146,7 @@ var YFStore = assign({}, EventEmitter.prototype, {
       var d = attendingDays[j];
       if(d.selected) { days.push(d.day); }
     }
-    for(var i = 0; i < 10; i++) {
+    for(var i = 0; i < summerWeeksNum; i++) {
       var w = summerWeeks[i];
       if(w.selected && !w.done){
         summerCampWeeks[i] = {
@@ -150,6 +172,12 @@ var YFStore = assign({}, EventEmitter.prototype, {
   },
   setAllScheduled: function(b) {
     allScheduled = b;
+  },
+  getEnrichmentDone: function() {
+    return enrichmentDone;
+  },
+  setEnrichmentDone: function(b) {
+    enrichmentDone = b;
   },
 
   emitChange: function() {
@@ -198,6 +226,9 @@ AppDispatcher.register(function(action) {
       break;
     case YFConstants.YF_SAVE_SUMMER_SCHEDULE:
       saveSummerSchedule(action.student, action.next);
+      break;
+    case YFConstants.YF_SAVE_SUMMER_AFTERNOON_ACADEMICS:
+      saveSummerAfternoonAcademics(enrollmentId, action.language, action.next);
       break;
 
     default:

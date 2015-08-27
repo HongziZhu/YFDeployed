@@ -28,7 +28,7 @@ var EnrollmentSchema = new Schema({
   //ten weeks for summer camp
   summerCampWeeks: [{
     coveredDate: { type: String, trim: true },
-    schedulePattern:  { type: String, trim: true },
+    schedulePattern:  { type: String, trim: true }, //"absence" 
     attendingDays: [String],
     lunchDays: [String],
     extendedCare: { 
@@ -45,6 +45,10 @@ var EnrollmentSchema = new Schema({
       price: String,
       totalHours: String,
       classSize: Number,
+    },
+    afternoonAcademics: {
+      math: { type: String, default: 'Daily Math' },
+      language: { type: String, enum: ['Daily Chinese', 'Daily Spanish', 'Daily Hindi'] }
     },
     movie: {
       movieName: String,

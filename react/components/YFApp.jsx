@@ -4,8 +4,6 @@ var React = require('react');
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
-var Link = Router.Link;
-var State = Router.State;
 var YFStore = require('../stores/YFStore.jsx');
 
 /** Tips: We often pass the entire state of the store down the chain of views in a single object, allowing different descendants to use what they need.
@@ -14,14 +12,13 @@ var YFStore = require('../stores/YFStore.jsx');
 var YFApp = React.createClass({
   getInitialState: function() {
     return {
-      user: {},
-      loggedIn: false
+      user: YFStore.getUser(),
+      loggedIn: YFStore.getLoggedIn()
     };
   },
 
   componentDidMount: function() {
     YFStore.addChangeListener(this._onChange);
-    this.setState({ user: YFStore.getUser(), loggedIn: YFStore.getLoggedIn() });
   },
 
   componentWillUnmount: function() {
@@ -40,7 +37,7 @@ var YFApp = React.createClass({
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="/">YangFan Enrollment</a>
+              <a className="navbar-brand" href="/"><h4>YangFan Enrollment</h4></a>
             </div>
 
             <div id="navbar" className="navbar-collapse collapse">
