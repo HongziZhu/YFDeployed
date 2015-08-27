@@ -21,18 +21,19 @@ var GradeBox = React.createClass({
           <select className="form-control" onChange={this.props.handleChange}>
             <option value='K'>K</option>
             <option value='G1'>G1</option>
-            <option>G2</option>
-            <option>G3</option>
-            <option>G4</option>
-            <option>G5</option>
-            <option>G6</option>
-            <option>G7</option>
-            <option>G8</option>
-            <option>G9</option>
-            <option>G10</option>
-            <option>G11</option>
-            <option>G12</option>
+            <option value='G2'>G2</option>
+            <option value='G3'>G3</option>
+            <option value='G4'>G4</option>
+            <option value='G5'>G5</option>
+            <option value='G6'>G6</option>
+            <option value='G7'>G7</option>
+            <option value='G8'>G8</option>
+            <option value='G9'>G9</option>
+            <option value='G10'>G10</option>
+            <option value='G11'>G11</option>
+            <option value='G12'>G12</option>
           </select> 
+          <button type="button" className="btn btn-info" ref='stu_btn' onClick={this.props.showContinue}>Confirm</button>
         </div>
       </div>
     );
@@ -40,14 +41,15 @@ var GradeBox = React.createClass({
 });
 
 var GetStarted = React.createClass({
-	mixins: [ Navigation ],
-	getInitialState: function() {
+  mixins: [ Navigation ],
+  getInitialState: function() {
     return { 
       user: {},
       students: [],
       selectedIndex: 0,
       showGrade: false,
-      grade: ''
+      incomingGrade: 'K',
+      showContinue: false
     };
   },
   componentDidMount: function() {
@@ -68,7 +70,16 @@ var GetStarted = React.createClass({
   },
   handleSelectGrade: function(e) {
     e.preventDefault();
-    this.setState({ grade: e.currentTarget.value });
+    this.setState({ incomingGrade: e.currentTarget.value });
+  },
+  handleContinue: function(e) {
+    e.preventDefault();
+    YFStore.setIncomingGradeAndIndex(this.state.incomingGrade, this.state.selectedIndex);
+    this.transitionTo('attendance');
+  },
+  showContinue: function(e) {
+    e.preventDefault();
+    this.setState({ showContinue: true });
   },
 
   render: function () {
@@ -88,17 +99,23 @@ var GetStarted = React.createClass({
     }
 
     return (
-      <div>
+      <div className="col-md-6 col-md-offset-3">
       <div className="panel panel-primary">
         <div className="panel-heading">
           <strong>Select Your Child</strong>
         </div>
         <div className="panel-body">
           {studentRows}
-          <button type="button" className="btn btn-primary" ref='stu_btn' onClick={this.showGradeBox}>Confirm</button>
+          <button type="button" className="btn btn-info" ref='stu_btn' onClick={this.showGradeBox}>Confirm</button>
         </div>
       </div>
-      {this.state.showGrade ? <GradeBox stu_fname={this.state.students[this.state.selectedIndex].firstName} handleChange={this.handleSelectGrade} /> : <p></p> }
+
+      {this.state.showGrade ? <GradeBox 
+        stu_fname={this.state.students[this.state.selectedIndex].firstName} 
+        handleChange={this.handleSelectGrade} 
+        showContinue={this.showContinue} /> : <p></p> }
+
+      {this.state.showContinue ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <p></p>}
       </div>
     );
   } 

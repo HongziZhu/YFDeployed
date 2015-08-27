@@ -11,12 +11,14 @@ var Signup = require('./Signup.jsx');
 var Login = require('./Login.jsx');
 var Home = require('./Home.jsx');
 var GetStarted = require('./GetStarted.jsx');
+var Attendance = require('./Attendance.jsx');
 
 var routes = (
 	<Route handler={YFApp} >
 		<Route name='signup' path='/signup' handler={Signup} />
 		<Route name='login' path='/login' handler={Login} />
 		<Route name='getStarted' path='/user/getStarted' handler={GetStarted} />
+		<Route name='attendance' path='/user/attendance' handler={Attendance} />
 		<DefaultRoute name='home' handler={Home} />
 	</Route>
 );

@@ -11,29 +11,31 @@ var user = {};
 var loggedIn = false;
 var authError = false;
 var students = [];
+var selectedIndex = 0; //selected student index
+var incomingGrade = '';
 
 /**Tips: More than simply managing a collection of ORM-style objects, stores manage the application state for a particular domain within the application.
 */
 //Register new user in a family unit
 function createUser(body) {
-	var url = '/api/users/new';
-	request
-	.post(url)
-	.send(body)
-	.accept('application/json')
-	.end(function(err, user){
-		if(err) { return console.error(err); }
-	});
+  var url = '/api/users/new';
+  request
+  .post(url)
+  .send(body)
+  .accept('application/json')
+  .end(function(err, user){
+    if(err) { return console.error(err); }
+  });
 } 
 
 function login(data, next) {
-	var url = '/api/users/session';
-	request
-	.post(url)
-	.send(data)
+  var url = '/api/users/session';
+  request
+  .post(url)
+  .send(data)
   .accept('application/json')
-	.end(function(err, res){
-		if(err) {
+  .end(function(err, res){
+    if(err) {
       authError = true;
     } else {
       loggedIn = true;
@@ -41,7 +43,7 @@ function login(data, next) {
       console.log(JSON.stringify(user, null, 4));
     }
     next();
-	});
+  });
 }
 
 function findStudentsById(id, next) {
@@ -68,6 +70,13 @@ var YFStore = assign({}, EventEmitter.prototype, {
   },
   resetAuthError: function() {
     authError = false;
+  },
+  setIncomingGradeAndIndex: function(grade, index) {
+    incomingGrade = grade;
+    selectedIndex = index;
+  },
+  getIncomingGrade: function() {
+    return incomingGrade;
   },
 
   emitChange: function() {
@@ -102,7 +111,7 @@ AppDispatcher.register(function(action) {
 
     case YFConstants.YF_LOGIN:
       data = action.data;
-    	login(data, function() {
+      login(data, function() {
         YFStore.emit(CHANGE_EVENT);
         if(!authError) { action.next(); }
       });

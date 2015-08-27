@@ -10,6 +10,7 @@ var Home = React.createClass({
     //5. a single element to contain the render stuff
     return (
       <div className="row">
+<<<<<<< HEAD
 <div className="col-md-12">
      <table className="dataintable" >
 <tbody><tr>
@@ -299,6 +300,13 @@ var Home = React.createClass({
               </div>
             </div>
           </div>		
+=======
+        <div className="col-sm-12">
+          <h2>YangFan Enrollment System</h2>
+          <div className="lead">
+            Welcome!  
+          </div>
+>>>>>>> master
         </div>
 </div>
 
