@@ -16,5 +16,78 @@
 		"weekday": "Tue",
 		"date": "6/21",
 		"time": "morning"
+	},
+    	"week_3": {
+		"name": "Earth to Echo (PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "6/28",
+		"time": "morning"
+	},
+    	"week_4": {
+		"name": "Paddington (PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "7/5",
+		"time": "morning"
+	},
+    	"week_5": {
+		"name": "Rio 2 (G)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "7/12",
+		"time": "morning"
+	},
+    	"week_6": {
+		"name": "Mr. Peabody (PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "7/19",
+		"time": "morning"
+	},
+    	"week_7": {
+		"name": "Night at the Museum: Secret of the Tomb (PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "7/26",
+		"time": "morning"
+	},
+    	"week_8": {
+		"name": "Madagascar 3 (PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "8/2",
+		"time": "morning"
+	},
+    	"week_9": {
+		"name": "Muppets, Most Wanted (PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "8/9",
+		"time": "morning"
+	},
+    	"week_10": {
+		"name": "The Lego Movie (PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "8/16",
+		"time": "morning"
 	}
+    
 }
