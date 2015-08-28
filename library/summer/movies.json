@@ -1,0 +1,20 @@
+{
+	"week_1": {
+		"name": "none",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 0,
+		"site": "Yang Fan Site",
+		"weekday": "Tue",
+		"date": "6/14",
+		"time": "morning"
+	},
+	"week_2": {
+		"name": "Nut Job(PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "6/21",
+		"time": "morning"
+	}
+}

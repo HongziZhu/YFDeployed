@@ -1,0 +1,22 @@
+{
+	"note": "Student must take and pass a pretest.",
+	"G3": {
+		"weekday": ["Mon", "Wed"],
+		"class_time": "3:30-4:30 pm",
+		"class_size": [4, 8],
+		"price_per_class": 20
+	},
+	"G4": {
+
+	},
+	"G5": {
+
+	},
+	"G6": {
+
+	},
+	...
+	"G12": {
+		
+	}
+}

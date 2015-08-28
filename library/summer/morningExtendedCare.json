@@ -1,0 +1,32 @@
+{
+	"week_1": {
+		"coveredDate": "6/13-6/17",
+		"option_1": {
+			"time": "7:00-8:00 AM",
+			"price_per_week": 25
+		},
+		"option_2": {
+			"time": "7:30-8:00 AM",
+			"price_per_week": 15,
+			"note": "Note"
+		}
+	},
+
+	"week_2": {
+		"coveredDate": "6/20-6/24",
+		"option_1": {
+			"time": "7:00-8:00 AM",
+			"price_per_week": 25
+		},
+		"option_2": {
+			"time": "7:30-8:00 AM",
+			"price_per_week": 15,
+			"note": "Note"
+		}
+	},
+
+	"week_3": {
+
+	},
+
+}

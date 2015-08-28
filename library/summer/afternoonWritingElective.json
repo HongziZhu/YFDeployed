@@ -1,0 +1,42 @@
+{
+	"note": "Class A and B are identical. Total of 8 weeks. Students can enroll weekly and do not have to enroll in all 8 weeks",
+	"G1": {
+		"A": {
+			"display_name": "Writing A",
+			"database_name": "Writing_G1A",
+			"weekday": "Tue",
+			"time": "2:20-3:05 pm",
+			"class_size": [2, 5],
+			"price_per_class": 12 
+		},
+		"B": {
+			
+		}
+	},
+	"G2": {
+		"A": {
+
+		},
+		"B": {
+
+		},
+		"C": {
+			"display_name": "Writing C",
+			"database_name": "Writing_G23",
+			"weekday": "Tue",
+			"time": "1:30-2:15 pm",
+			"class_size": [2, 5],
+			"price_per_class": 12 
+		}
+	},
+	"G3": {
+		"Writing": {
+			"display_name": "Writing",
+			"database_name": "Writing_G23",
+			"weekday": "Tue",
+			"time": "1:30-2:15 pm",
+			"class_size": [2, 5],
+			"price_per_class": 12 
+		}
+	}
+}
