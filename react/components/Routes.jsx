@@ -20,9 +20,10 @@ var routes = (
 		<Route name='signup' path='/signup' handler={Signup} />
 		<Route name='login' path='/login' handler={Login} />
 		<Route name='getStarted' path='/user/getStarted' handler={GetStarted} />
-		<Route name='attendance' path='/user/attendance' handler={Attendance} />
-		<Route name='enrichment_activities' path='/user/enrichment_activities' handler={EnrichmentActivities} />
-		<Route name='afternoon_academics' path='/user/afternoon_academics' handler={AfternoonAcademics} />
+		
+		<Route name='summer/attendance' path='/user/summer/attendance' handler={Attendance} />
+		<Route name='summer/enrichment_activities' path='/user/summer/enrichment_activities' handler={EnrichmentActivities} />
+		<Route name='summer/afternoon_academics' path='/user/summer/afternoon_academics' handler={AfternoonAcademics} />
 		<DefaultRoute name='home' handler={Home} />
 	</Route>
 );

@@ -57,11 +57,11 @@ var GetStarted = React.createClass({
   },
   componentDidMount: function() {
     var self = this;
-    // this.setState({ user: YFStore.getUser() }, function() {
-    //   YFActions.findStudentsById(self.state.user._id, function(students) {
-    //     self.setState({ students: students });
-    //   });
-    // });
+    this.setState({ user: YFStore.getUser() }, function() {
+      YFActions.findStudentsById(self.state.user._id, function(students) {
+        self.setState({ students: students });
+      });
+    });
     YFStore.addChangeListener(self._onChange);
   },
   componentWillUnmount: function() {
@@ -90,7 +90,19 @@ var GetStarted = React.createClass({
   handleContinue: function(e) {
     e.preventDefault();
     YFStore.setIncomingGradeAndIndex(this.state.incomingGrade, this.state.selectedIndex);
-    this.transitionTo('attendance');
+    var path = '';
+    switch(this.state.program) {
+      case 'Summer Camp':
+        path = 'summer/attendance';
+        break;
+      case 'After School':
+        path = 'afterschool/attendance';
+        break;
+      case 'Enrichment and Elective':
+        path = 'enrichment_elective/attendance';
+        break;
+    }
+    this.transitionTo(path);
   },
   showContinue: function(e) {
     e.preventDefault();

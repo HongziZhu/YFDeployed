@@ -27,11 +27,13 @@ var summerWeeks = [
 ];
 var summerWeekCount = 0;
 var summerCampWeeks = [];
-var allScheduled = false;
-var enrichmentDone = false;
 var summerWeeksNum = 10;
 var enrollmentId = '';
 var program = '';
+var done = {
+  scheduled: false,
+  enrichmentActivities: false
+};
 
 /**Tips: More than simply managing a collection of ORM-style objects, stores manage the application state for a particular domain within the application.
 */
@@ -168,16 +170,16 @@ var YFStore = assign({}, EventEmitter.prototype, {
     return summerCampWeeks;
   },
   getAllScheduled: function() {
-    return allScheduled;
+    return done.scheduled;
   },
   setAllScheduled: function(b) {
-    allScheduled = b;
+    done.scheduled = b;
   },
   getEnrichmentDone: function() {
-    return enrichmentDone;
+    return done.enrichmentActivities;
   },
   setEnrichmentDone: function(b) {
-    enrichmentDone = b;
+    done.enrichmentActivities = b;
   },
 
   emitChange: function() {

@@ -158,7 +158,7 @@ var Attendance = React.createClass({
     var self = this;
     YFActions.saveSummerSchedule(self.state.currentStudent, function() {
       console.log('summer schedule saved.');
-      self.transitionTo('afternoon_academics');
+      self.transitionTo('summer/afternoon_academics');
     });
   },
   selectAllWeeks: function() {

@@ -25632,7 +25632,7 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
     e.preventDefault();
     var self = this;
     YFActions.saveAfternoonAcademics(self.state.language, function() {
-      self.transitionTo('enrichment_activities');
+      self.transitionTo('summer/enrichment_activities');
     });
   },
 
@@ -25867,7 +25867,7 @@ var Attendance = React.createClass({displayName: "Attendance",
     var self = this;
     YFActions.saveSummerSchedule(self.state.currentStudent, function() {
       console.log('summer schedule saved.');
-      self.transitionTo('afternoon_academics');
+      self.transitionTo('summer/afternoon_academics');
     });
   },
   selectAllWeeks: function() {
@@ -26050,15 +26050,22 @@ var EnrichmentActivities = React.createClass({displayName: "EnrichmentActivities
   mixins: [ Navigation ],
   getInitialState: function() {
     return { 
-      enrichmentDone: false,
-      enrollmentId: ''
+      done: YFStore.getEnrichmentDone(),
+      summerCampWeeks: YFStore.getSummerCampWeeks(),
+      incomingGrade: YFStore.getIncomingGrade()
     };
   },
   componentDidMount: function() {
-    var self = this;
-    self.setState({ 
-      enrichmentDone: YFStore.getEnrichmentDone(),
-      enrollmentId: YFStore.getEnrollmentId()
+    YFStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    YFStore.removeChangeListener(this._onChange);
+  },
+  _onChange: function() {
+    this.setState({
+      done: YFStore.getEnrichmentDone(),
+      summerCampWeeks: YFStore.getSummerCampWeeks(),
+      incomingGrade: YFStore.getIncomingGrade()
     });
   },
 
@@ -26162,11 +26169,11 @@ var GetStarted = React.createClass({displayName: "GetStarted",
   },
   componentDidMount: function() {
     var self = this;
-    // this.setState({ user: YFStore.getUser() }, function() {
-    //   YFActions.findStudentsById(self.state.user._id, function(students) {
-    //     self.setState({ students: students });
-    //   });
-    // });
+    this.setState({ user: YFStore.getUser() }, function() {
+      YFActions.findStudentsById(self.state.user._id, function(students) {
+        self.setState({ students: students });
+      });
+    });
     YFStore.addChangeListener(self._onChange);
   },
   componentWillUnmount: function() {
@@ -26195,7 +26202,19 @@ var GetStarted = React.createClass({displayName: "GetStarted",
   handleContinue: function(e) {
     e.preventDefault();
     YFStore.setIncomingGradeAndIndex(this.state.incomingGrade, this.state.selectedIndex);
-    this.transitionTo('attendance');
+    var path = '';
+    switch(this.state.program) {
+      case 'Summer Camp':
+        path = 'summer/attendance';
+        break;
+      case 'After School':
+        path = 'afterschool/attendance';
+        break;
+      case 'Enrichment and Elective':
+        path = 'enrichment_elective/attendance';
+        break;
+    }
+    this.transitionTo(path);
   },
   showContinue: function(e) {
     e.preventDefault();
@@ -26394,9 +26413,10 @@ var routes = (
 		React.createElement(Route, {name: "signup", path: "/signup", handler: Signup}), 
 		React.createElement(Route, {name: "login", path: "/login", handler: Login}), 
 		React.createElement(Route, {name: "getStarted", path: "/user/getStarted", handler: GetStarted}), 
-		React.createElement(Route, {name: "attendance", path: "/user/attendance", handler: Attendance}), 
-		React.createElement(Route, {name: "enrichment_activities", path: "/user/enrichment_activities", handler: EnrichmentActivities}), 
-		React.createElement(Route, {name: "afternoon_academics", path: "/user/afternoon_academics", handler: AfternoonAcademics}), 
+		
+		React.createElement(Route, {name: "summer/attendance", path: "/user/summer/attendance", handler: Attendance}), 
+		React.createElement(Route, {name: "summer/enrichment_activities", path: "/user/summer/enrichment_activities", handler: EnrichmentActivities}), 
+		React.createElement(Route, {name: "summer/afternoon_academics", path: "/user/summer/afternoon_academics", handler: AfternoonAcademics}), 
 		React.createElement(DefaultRoute, {name: "home", handler: Home})
 	)
 );
@@ -26793,11 +26813,13 @@ var summerWeeks = [
 ];
 var summerWeekCount = 0;
 var summerCampWeeks = [];
-var allScheduled = false;
-var enrichmentDone = false;
 var summerWeeksNum = 10;
 var enrollmentId = '';
 var program = '';
+var done = {
+  scheduled: false,
+  enrichmentActivities: false
+};
 
 /**Tips: More than simply managing a collection of ORM-style objects, stores manage the application state for a particular domain within the application.
 */
@@ -26934,16 +26956,16 @@ var YFStore = assign({}, EventEmitter.prototype, {
     return summerCampWeeks;
   },
   getAllScheduled: function() {
-    return allScheduled;
+    return done.scheduled;
   },
   setAllScheduled: function(b) {
-    allScheduled = b;
+    done.scheduled = b;
   },
   getEnrichmentDone: function() {
-    return enrichmentDone;
+    return done.enrichmentActivities;
   },
   setEnrichmentDone: function(b) {
-    enrichmentDone = b;
+    done.enrichmentActivities = b;
   },
 
   emitChange: function() {

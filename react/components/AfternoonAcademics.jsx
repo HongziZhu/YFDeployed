@@ -34,7 +34,7 @@ var AfternoonAcademics = React.createClass({
     e.preventDefault();
     var self = this;
     YFActions.saveAfternoonAcademics(self.state.language, function() {
-      self.transitionTo('enrichment_activities');
+      self.transitionTo('summer/enrichment_activities');
     });
   },
 

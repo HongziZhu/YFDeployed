@@ -11,15 +11,22 @@ var EnrichmentActivities = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
     return { 
-      enrichmentDone: false,
-      enrollmentId: ''
+      done: YFStore.getEnrichmentDone(),
+      summerCampWeeks: YFStore.getSummerCampWeeks(),
+      incomingGrade: YFStore.getIncomingGrade()
     };
   },
   componentDidMount: function() {
-    var self = this;
-    self.setState({ 
-      enrichmentDone: YFStore.getEnrichmentDone(),
-      enrollmentId: YFStore.getEnrollmentId()
+    YFStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    YFStore.removeChangeListener(this._onChange);
+  },
+  _onChange: function() {
+    this.setState({
+      done: YFStore.getEnrichmentDone(),
+      summerCampWeeks: YFStore.getSummerCampWeeks(),
+      incomingGrade: YFStore.getIncomingGrade()
     });
   },
 
