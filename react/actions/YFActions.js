@@ -23,11 +23,9 @@ var YFActions = {
     });
   },
 
-  findStudentsById: function(id, next) {
+  findStudentsById: function() {
     AppDispatcher.dispatch({
       actionType: YFConstants.YF_LOAD_STUDENTS,
-      userId: id,
-      next: next
     });
   },
 
@@ -44,6 +42,12 @@ var YFActions = {
       actionType: YFConstants.YF_SAVE_SUMMER_AFTERNOON_ACADEMICS,
       language: language,
       next: next
+    });
+  },
+
+  loadEnrollment: function() {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_LOAD_ENROLLMENT,
     });
   }
 };

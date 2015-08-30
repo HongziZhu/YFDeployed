@@ -10,8 +10,12 @@ var YFStore = require('../stores/YFStore.jsx');
 var Attendance = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
+    YFActions.findStudentsById();
     return { 
-      currentStudent: {},
+      currentStudent: YFStore.getCurrentStudent(),
+      allScheduled: YFStore.getAllScheduled(),
+      summerWeeks: YFStore.getSummerWeeks(),
+      incomingGrade: YFStore.getIncomingGrade(),
       schedulePattern: '5_full',
       attendingDays: [
         { day: 'Mon', selected: true },
@@ -21,17 +25,21 @@ var Attendance = React.createClass({
         { day: 'Fri', selected: true }
       ],
       daysMatched: true,
-      allScheduled: false,
-      summerWeeks: [],
       canContinue: false
     };
   },
   componentDidMount: function() {
-    var self = this;
-    this.setState({ 
+    YFStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    YFStore.removeChangeListener(this._onChange);
+  },
+  _onChange: function() {
+    this.setState({
       currentStudent: YFStore.getCurrentStudent(),
+      allScheduled: YFStore.getAllScheduled(),
       summerWeeks: YFStore.getSummerWeeks(),
-      allScheduled: YFStore.getAllScheduled()
+      incomingGrade: YFStore.getIncomingGrade()
     });
   },
   changePattern: function(e) {

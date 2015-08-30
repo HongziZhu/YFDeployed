@@ -7,16 +7,64 @@
 		"price_per_class": 20
 	},
 	"G4": {
-
+		"weekday": ["Mon", "Wed"],
+		"class_time": "1:30-2:30 pm",
+		"class_size": [4, 8],
+		"price_per_class": 20
 	},
 	"G5": {
+        "weekday": ["Mon", "Wed"],
+		"class_time": "2:30-3:30 pm",
+		"class_size": [4, 8],
+		"price_per_class": 20
 
 	},
 	"G6": {
+        "weekday": ["Mon", "Wed"],
+		"class_time": "4:30-5:30 pm",
+		"class_size": [4, 8],
+		"price_per_class": 20
 
 	},
-	...
+    "G7": {
+        "weekday": ["Mon", "Wed"],
+		"class_time": "4:30-5:30 pm",
+		"class_size": [4, 8],
+		"price_per_class": 20
+
+	},
+    "G8": {
+        "weekday": ["Mon", "Wed"],
+		"class_time": "4:30-5:30 pm",
+		"class_size": [4, 8],
+		"price_per_class": 20
+
+	},
+    "G9": {
+        "weekday": ["Mon", "Wed"],
+		"class_time": "4:30-5:30 pm",
+		"class_size": [4, 8],
+		"price_per_class": 20
+
+	},
+    "G10": {
+        "weekday": ["Mon", "Wed"],
+		"class_time": "4:30-5:30 pm",
+		"class_size": [4, 8],
+		"price_per_class": 20
+
+	},
+    "G11": {
+        "weekday": ["Mon", "Wed"],
+		"class_time": "4:30-5:30 pm",
+		"class_size": [4, 8],
+		"price_per_class": 20
+
+	},
 	"G12": {
-		
+        "weekday": ["Mon", "Wed"],
+		"class_time": "4:30-5:30 pm",
+		"class_size": [4, 8],
+		"price_per_class": 20		
 	}
 }

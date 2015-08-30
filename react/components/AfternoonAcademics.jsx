@@ -10,14 +10,24 @@ var YFStore = require('../stores/YFStore.jsx');
 var AfternoonAcademics = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
+    YFActions.loadEnrollment();
     return { 
       language: '',
       done: false,
-      showInfo: false
+      showInfo: false,
+      summerCampWeeks: YFStore.getSummerCampWeeks()
     };
   },
   componentDidMount: function() {
-    
+    YFStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    YFStore.removeChangeListener(this._onChange);
+  },
+  _onChange: function() {
+    this.setState({
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    });
   },
   changeLang: function(e) {
     var lang = e.currentTarget.value;
@@ -34,7 +44,7 @@ var AfternoonAcademics = React.createClass({
     e.preventDefault();
     var self = this;
     YFActions.saveAfternoonAcademics(self.state.language, function() {
-      self.transitionTo('summer/enrichment_activities');
+      self.transitionTo('summer/other_services');
     });
   },
 

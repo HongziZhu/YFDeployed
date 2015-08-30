@@ -8,9 +8,9 @@ var YFStore = require('../stores/YFStore.jsx');
 
 /** Tips: We often pass the entire state of the store down the chain of views in a single object, allowing different descendants to use what they need.
 **/
-
 var YFApp = React.createClass({
   getInitialState: function() {
+    YFStore.getStateFromStorage();
     return {
       user: YFStore.getUser(),
       loggedIn: YFStore.getLoggedIn()

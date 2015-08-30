@@ -13,7 +13,7 @@ var Login = React.createClass({
 	mixins: [ Navigation ],
 	getInitialState: function() {
     return { 
-    	authError: false
+    	authError: YFStore.getAuthError()
     };
   },
   handleSubmit: function (e) {
@@ -31,15 +31,16 @@ var Login = React.createClass({
   	});
   },
   componentDidMount: function() {
+    React.findDOMNode(this.refs.email).focus();
     YFStore.addChangeListener(this._onChange);
   },
-
   componentWillUnmount: function() {
     YFStore.removeChangeListener(this._onChange);
   },
   _onChange: function() {
   	this.setState({ authError: YFStore.getAuthError() });
   },
+
   render: function () {
   	var errorAlert;
   	if(this.state.authError){

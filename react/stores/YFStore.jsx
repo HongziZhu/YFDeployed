@@ -6,13 +6,9 @@ var YFConstants = require('../constants/YFConstants');
 var assign = require('object-assign');
 var request = require('superagent');
 
+/* Constants */
 var CHANGE_EVENT = 'change';
-var user = {};
-var loggedIn = false;
-var authError = false;
-var students = [];
-var selectedIndex = 0; //selected student index
-var incomingGrade = '';
+var summerWeeksNum = 10;
 var summerWeeks = [
   { week: 'week_1', coveredDate: '6/13-6/17', selected: false, done: false },
   { week: 'week_2', coveredDate: '6/20-6/24', selected: false, done: false },
@@ -25,11 +21,18 @@ var summerWeeks = [
   { week: 'week_9', coveredDate: '8/8-8/12', selected: false, done: false },
   { week: 'week_10', coveredDate: '8/15-8/19', selected: false, done: false }
 ];
+
+/* States */
+var user = {};
+var loggedIn = false;
+var authError = false;
+var students = [];
+var studentIndex = 0; //selected student index
+var incomingGrade = '';
 var summerWeekCount = 0;
 var summerCampWeeks = [];
-var summerWeeksNum = 10;
 var enrollmentId = '';
-var program = '';
+var enrollment = {};
 var done = {
   scheduled: false,
   enrichmentActivities: false
@@ -61,6 +64,9 @@ function login(data, next) {
     } else {
       loggedIn = true;
       user = res.body;
+      sessionStorage.setItem('loggedIn', true);
+      sessionStorage.setItem('userId', user._id);
+      sessionStorage.setItem('email', user.email);
     }
     next();
   });
@@ -74,7 +80,7 @@ function findStudentsById(id, next) {
   .end(function(err, res){
     if(err) { return console.error(err); }
     students = res.body;
-    next(students);
+    next();
   });
 }
 
@@ -91,6 +97,7 @@ function saveSummerSchedule(student, next) {
   .end(function(err, enrollment) {
     if(err) { return console.error(err); }
     enrollmentId = enrollment.body._id;
+    sessionStorage.setItem('enrollmentId', enrollmentId);
     next();
   });
 }
@@ -108,7 +115,29 @@ function saveSummerAfternoonAcademics(enrollmentId, language, next) {
   });
 }
 
+function loadEnrollment(enrollmentId, next) {
+  if(enrollmentId !== ''){
+    var url = 'api/users/enroll/' + enrollmentId;
+    request
+    .get(url)
+    .accept('application/json')
+    .end(function(err, res) {
+      if(err) { return console.error(err); }
+      enrollment = res.body;
+      summerCampWeeks = res.body.summerCampWeeks;
+      next();
+    });
+  }
+}
+
 var YFStore = assign({}, EventEmitter.prototype, {
+  getStateFromStorage: function() {
+    loggedIn = sessionStorage.getItem('loggedIn') || false;
+    if(loggedIn) {
+      user._id = sessionStorage.getItem('userId');
+      user.email = sessionStorage.getItem('email');
+    }
+  },
   getUser: function() {
     return user;
   },
@@ -127,16 +156,22 @@ var YFStore = assign({}, EventEmitter.prototype, {
   resetAuthError: function() {
     authError = false;
   },
-  setIncomingGradeAndIndex: function(grade, index) {
-    incomingGrade = grade;
-    selectedIndex = index;
-    students[index].incomingGrade = grade;
+  setIncomingGradeAndIndexAndProgram: function(grade, index, program) {
+    // incomingGrade = grade;
+    sessionStorage.setItem('incomingGrade', grade);
+    // studentIndex = index;
+    sessionStorage.setItem('studentIndex', index);
+    sessionStorage.setItem('program', program);
   },
   getIncomingGrade: function() {
-    return incomingGrade;
+    return sessionStorage.getItem('incomingGrade');
   },
   getCurrentStudent: function() {
-    return students[selectedIndex];
+    var i = sessionStorage.getItem('studentIndex');
+    return students[i];
+  },
+  getSummerWeeksNum: function() {
+    return summerWeeksNum;
   },
   getSummerWeeks: function() {
     return summerWeeks;
@@ -215,26 +250,32 @@ AppDispatcher.register(function(action) {
     case YFConstants.YF_LOGIN:
       data = action.data;
       login(data, function() {
-        YFStore.emit(CHANGE_EVENT);
+        YFStore.emitChange();
         if(!authError) { action.next(); }
       });
       break;
 
     case YFConstants.YF_LOAD_STUDENTS:
-      id = action.userId;
-      findStudentsById(id, function(students) {
-        action.next(students);
+      id = user._id;
+      findStudentsById(id, function() {
+        YFStore.emitChange();
+      });
+      break;
+    case YFConstants.YF_LOAD_ENROLLMENT:
+      loadEnrollment(sessionStorage.getItem('enrollmentId'), function() {
+        YFStore.emitChange();
       });
       break;
     case YFConstants.YF_SAVE_SUMMER_SCHEDULE:
       saveSummerSchedule(action.student, action.next);
       break;
     case YFConstants.YF_SAVE_SUMMER_AFTERNOON_ACADEMICS:
+      enrollmentId = sessionStorage.getItem('enrollmentId');
       saveSummerAfternoonAcademics(enrollmentId, action.language, action.next);
       break;
-
+  
     default:
-      // no op
+      return;
   }
 });
 

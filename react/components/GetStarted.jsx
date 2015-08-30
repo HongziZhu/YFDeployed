@@ -44,25 +44,22 @@ var GradeBox = React.createClass({
 var GetStarted = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
+    YFActions.findStudentsById();
     return { 
       user: YFStore.getUser(),
-      students: [],
+      students: YFStore.getStudents(),
+
       program: 'Summer Camp',
-      selectedIndex: 0, //which student
+      studentIndex: 0, //which student
       incomingGrade: 'K',
+
       showGrade: false,
       showChild: false,
       showContinue: false
     };
   },
   componentDidMount: function() {
-    var self = this;
-    this.setState({ user: YFStore.getUser() }, function() {
-      YFActions.findStudentsById(self.state.user._id, function(students) {
-        self.setState({ students: students });
-      });
-    });
-    YFStore.addChangeListener(self._onChange);
+    YFStore.addChangeListener(this._onChange);
   },
   componentWillUnmount: function() {
     YFStore.removeChangeListener(this._onChange);
@@ -71,7 +68,7 @@ var GetStarted = React.createClass({
     this.setState({ program: e.currentTarget.value });
   },
   handleSelectStudent: function(e) {
-    this.setState({ selectedIndex: e.currentTarget.value });
+    this.setState({ studentIndex: e.currentTarget.value });
   },
   showChildBox: function(e) {
     e.preventDefault();
@@ -89,7 +86,7 @@ var GetStarted = React.createClass({
   },
   handleContinue: function(e) {
     e.preventDefault();
-    YFStore.setIncomingGradeAndIndex(this.state.incomingGrade, this.state.selectedIndex);
+    YFStore.setIncomingGradeAndIndexAndProgram(this.state.incomingGrade, this.state.studentIndex, this.state.program);
     var path = '';
     switch(this.state.program) {
       case 'Summer Camp':
@@ -162,7 +159,7 @@ var GetStarted = React.createClass({
       </div> : <p></p>}
 
       {this.state.showGrade ? <GradeBox 
-        stu_fname={this.state.students[this.state.selectedIndex].firstName} 
+        stu_fname={this.state.students[this.state.studentIndex].firstName} 
         handleChange={this.handleSelectGrade} 
         showContinue={this.showContinue} /> : <p></p> }
 
