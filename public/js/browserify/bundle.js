@@ -25727,7 +25727,7 @@ var YFActions = {
 
 module.exports = YFActions;
 
-},{"../constants/YFConstants":223,"../dispatcher/AppDispatcher":224}],212:[function(require,module,exports){
+},{"../constants/YFConstants":224,"../dispatcher/AppDispatcher":225}],212:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -25869,7 +25869,7 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
 
 module.exports = AfternoonAcademics;
 
-},{"../actions/YFActions":211,"../stores/YFStore.jsx":225,"react":207,"react-router":38}],214:[function(require,module,exports){
+},{"../actions/YFActions":211,"../stores/YFStore.jsx":226,"react":207,"react-router":38}],214:[function(require,module,exports){
 'use strict';
 
 var React=require('react');
@@ -26207,7 +26207,7 @@ var Attendance = React.createClass({displayName: "Attendance",
 
 module.exports = Attendance;
 
-},{"../actions/YFActions":211,"../stores/YFStore.jsx":225,"react":207,"react-router":38}],215:[function(require,module,exports){
+},{"../actions/YFActions":211,"../stores/YFStore.jsx":226,"react":207,"react-router":38}],215:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -26280,7 +26280,7 @@ var EnrichmentActivities = React.createClass({displayName: "EnrichmentActivities
 
 module.exports = EnrichmentActivities;
 
-},{"../actions/YFActions":211,"../stores/YFStore.jsx":225,"react":207,"react-router":38}],216:[function(require,module,exports){
+},{"../actions/YFActions":211,"../stores/YFStore.jsx":226,"react":207,"react-router":38}],216:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -26454,7 +26454,7 @@ var GetStarted = React.createClass({displayName: "GetStarted",
 
 module.exports = GetStarted;
 
-},{"../actions/YFActions":211,"../stores/YFStore.jsx":225,"formsy-react":9,"react":207,"react-router":38}],217:[function(require,module,exports){
+},{"../actions/YFActions":211,"../stores/YFStore.jsx":226,"formsy-react":9,"react":207,"react-router":38}],217:[function(require,module,exports){
 'use strict';
 
 var React=require('react');
@@ -26559,7 +26559,7 @@ var Login = React.createClass({displayName: "Login",
 
 module.exports = Login;
 
-},{"../actions/YFActions":211,"../stores/YFStore.jsx":225,"react":207,"react-router":38}],219:[function(require,module,exports){
+},{"../actions/YFActions":211,"../stores/YFStore.jsx":226,"react":207,"react-router":38}],219:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -26599,7 +26599,7 @@ var OtherServices = React.createClass({displayName: "OtherServices",
   handleContinue: function(e) {
     var self = this;
     YFActions.saveOtherServices(self.state.language, function() {
-      self.transitionTo('summer/writing');
+      self.transitionTo('summer/writing_class');
     });
   },
 
@@ -26888,7 +26888,7 @@ var MovieBox = React.createClass({displayName: "MovieBox",
 
 module.exports = OtherServices;
 
-},{"../../lib/summer/morningExtendedCare.json":1,"../../lib/summer/movies.json":2,"../actions/YFActions":211,"../stores/YFStore.jsx":225,"react":207,"react-router":38}],220:[function(require,module,exports){
+},{"../../lib/summer/morningExtendedCare.json":1,"../../lib/summer/movies.json":2,"../actions/YFActions":211,"../stores/YFStore.jsx":226,"react":207,"react-router":38}],220:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -26906,6 +26906,7 @@ var Attendance = require('./Attendance.jsx');
 var EnrichmentActivities = require('./EnrichmentActivities.jsx');
 var AfternoonAcademics = require('./AfternoonAcademics.jsx');
 var OtherServices = require('./OtherServices.jsx');
+var WritingClass = require('./WritingClass.jsx');
 
 var routes = (
 	React.createElement(Route, {handler: YFApp}, 
@@ -26917,14 +26918,14 @@ var routes = (
 		React.createElement(Route, {name: "summer/attendance", path: "/user/summer/attendance", handler: Attendance}), 
 		React.createElement(Route, {name: "summer/enrichment_activities", path: "/user/summer/enrichment_activities", handler: EnrichmentActivities}), 
 		React.createElement(Route, {name: "summer/afternoon_academics", path: "/user/summer/afternoon_academics", handler: AfternoonAcademics}), 
-		React.createElement(Route, {name: "summer/other_services", path: "user/summer/other_services", handler: OtherServices})
-		
+		React.createElement(Route, {name: "summer/other_services", path: "user/summer/other_services", handler: OtherServices}), 
+		React.createElement(Route, {name: "summer/writing_class", path: "user/summer/writing_class", handler: WritingClass})
 	)
 );
 
 module.exports = routes;
 
-},{"./AfternoonAcademics.jsx":213,"./Attendance.jsx":214,"./EnrichmentActivities.jsx":215,"./GetStarted.jsx":216,"./Home.jsx":217,"./Login.jsx":218,"./OtherServices.jsx":219,"./Signup.jsx":221,"./YFApp.jsx":222,"react":207,"react-router":38}],221:[function(require,module,exports){
+},{"./AfternoonAcademics.jsx":213,"./Attendance.jsx":214,"./EnrichmentActivities.jsx":215,"./GetStarted.jsx":216,"./Home.jsx":217,"./Login.jsx":218,"./OtherServices.jsx":219,"./Signup.jsx":221,"./WritingClass.jsx":222,"./YFApp.jsx":223,"react":207,"react-router":38}],221:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -27183,6 +27184,8 @@ var ParentBox = React.createClass({displayName: "ParentBox",
 module.exports = Signup;
 
 },{"../actions/YFActions":211,"formsy-react":9,"react":207,"react-router":38,"superagent":208}],222:[function(require,module,exports){
+
+},{}],223:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -27251,7 +27254,7 @@ var YFApp = React.createClass({displayName: "YFApp",
 
 module.exports = YFApp;
 
-},{"../stores/YFStore.jsx":225,"react":207,"react-router":38}],223:[function(require,module,exports){
+},{"../stores/YFStore.jsx":226,"react":207,"react-router":38}],224:[function(require,module,exports){
 /*
  * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -27274,7 +27277,7 @@ module.exports = keyMirror({
   YF_LOAD_ENROLLMENT: null
 });
 
-},{"keymirror":12}],224:[function(require,module,exports){
+},{"keymirror":12}],225:[function(require,module,exports){
 /*
 * AppDispatcher
 *
@@ -27285,7 +27288,7 @@ var Dispatcher = require('flux').Dispatcher;
 
 module.exports = new Dispatcher();
 
-},{"flux":5}],225:[function(require,module,exports){
+},{"flux":5}],226:[function(require,module,exports){
 'use strict';
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
@@ -27569,4 +27572,4 @@ AppDispatcher.register(function(action) {
 
 module.exports = YFStore;
 
-},{"../constants/YFConstants":223,"../dispatcher/AppDispatcher":224,"events":3,"object-assign":13,"superagent":208}]},{},[212]);
+},{"../constants/YFConstants":224,"../dispatcher/AppDispatcher":225,"events":3,"object-assign":13,"superagent":208}]},{},[212]);

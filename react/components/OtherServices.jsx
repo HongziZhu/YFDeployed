@@ -37,7 +37,7 @@ var OtherServices = React.createClass({
   handleContinue: function(e) {
     var self = this;
     YFActions.saveOtherServices(self.state.language, function() {
-      self.transitionTo('summer/writing');
+      self.transitionTo('summer/writing_class');
     });
   },
 

@@ -1,19 +1,20 @@
 {
 	"note": "Class A and B are identical. Total of 8 weeks. Students can enroll weekly and do not have to enroll in all 8 weeks",
+	"grades": ["G1", "G2", "G3", "G4", "G5"],
 	"G1": {
 		"A": {
 			"display_name": "Writing A",
 			"database_name": "Writing_G1A",
 			"weekday": "Tue",
-			"time": "2:20-3:05 pm",
+			"display_time": "2:20-3:05 pm",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		},
 		"B": {
-            "display_name": "Writing B",
+      "display_name": "Writing B",
 			"database_name": "Writing_G1B",
 			"weekday": "Thu",
-			"time": "2:20-3:05 pm",
+			"display_time": "2:20-3:05 pm",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 			
@@ -21,18 +22,18 @@
 	},
 	"G2": {
 		"A": {
-            "display_name": "Writing A",
+      "display_name": "Writing A",
 			"database_name": "Writing_G2A",
 			"weekday": "Tue",
-			"time": "3:10-3:55 pm",
+			"display_time": "3:10-3:55 pm",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		},
 		"B": {
-            "display_name": "Writing B",
+      "display_name": "Writing B",
 			"database_name": "Writing_G2B",
 			"weekday": "Thu",
-			"time": "3:10-3:55 pm",
+			"display_time": "3:10-3:55 pm",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		},
@@ -40,7 +41,7 @@
 			"display_name": "Writing C",
 			"database_name": "Writing_G23",
 			"weekday": "Tue",
-			"time": "1:30-2:15 pm",
+			"display_time": "1:30-2:15 pm",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}
@@ -50,17 +51,17 @@
 			"display_name": "Writing",
 			"database_name": "Writing_G23",
 			"weekday": "Tue",
-			"time": "1:30-2:15 pm",
+			"display_time": "1:30-2:15 pm",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}
 	},
-    "G4": {
+  "G4": {
 		"Writing": {
 			"display_name": "Writing",
 			"database_name": "Writing_G45",
 			"weekday": "Thu",
-			"time": "1:30-2:15 pm",
+			"display_time": "1:30-2:15 pm",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}
@@ -70,7 +71,7 @@
 			"display_name": "Writing",
 			"database_name": "Writing_G45",
 			"weekday": "Thu",
-			"time": "1:30-2:15 pm",
+			"display_time": "1:30-2:15 pm",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}

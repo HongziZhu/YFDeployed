@@ -29,11 +29,14 @@ var OtherServices = React.createClass({
       summerCampWeeks: YFStore.getSummerCampWeeks()
     });
   },
-  handleContinue: function(e) {
+  handleSubmit: function(e) {
     e.preventDefault();
+    this.setState({ done: true });
+  },
+  handleContinue: function(e) {
     var self = this;
     YFActions.saveOtherServices(self.state.language, function() {
-      self.transitionTo('summer/enrichment_activities');
+      self.transitionTo('summer/writing_class');
     });
   },
 
@@ -58,3 +61,27 @@ var OtherServices = React.createClass({
 });
 
 module.exports = OtherServices;
+
+
+
+var MorningCare = React.createClass({
+  render: function() {
+    return (
+      <div className="panel panel-default">
+        <div className="panel-heading">
+          <div className="panel-title">
+            <h3>Movies</h3>
+          </div>
+        </div>
+
+        <div className="panel-body">
+          <div className="row">
+            <div className='col-md-offset-1'> 
+              <span className="bg-info">Check out our movie trips! Select the days you want to go!</span>
+            </div><br></br>
+          </div>
+        </div>
+      </div>
+    );
+  }
+});
