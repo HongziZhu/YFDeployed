@@ -1,9 +1,11 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 module.exports={
-	"note": "Class A and B are identical. Total of 8 weeks. Students can enroll weekly and do not have to enroll in all 8 weeks",
+	"note": "Classes are identical in the same week. Total of 8 weeks. Students can enroll weekly and do not have to enroll in all 8 weeks",
 	"grades": ["G1", "G2", "G3", "G4", "G5"],
-	"G1": {
-		"A": {
+	"class_size": "2-5 students",
+	"price_per_class": 12,
+	"G1": [
+		{
 			"display_name": "Writing A",
 			"database_name": "Writing_G1A",
 			"weekday": "Tue",
@@ -11,18 +13,17 @@ module.exports={
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		},
-		"B": {
+		{
       "display_name": "Writing B",
 			"database_name": "Writing_G1B",
 			"weekday": "Thu",
 			"display_time": "2:20-3:05 pm",
 			"class_size": [2, 5],
-			"price_per_class": 12 
-			
+			"price_per_class": 12			
 		}
-	},
-	"G2": {
-		"A": {
+	],
+	"G2": [
+		{
       "display_name": "Writing A",
 			"database_name": "Writing_G2A",
 			"weekday": "Tue",
@@ -30,7 +31,7 @@ module.exports={
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		},
-		"B": {
+		{
       "display_name": "Writing B",
 			"database_name": "Writing_G2B",
 			"weekday": "Thu",
@@ -38,7 +39,7 @@ module.exports={
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		},
-		"C": {
+		{
 			"display_name": "Writing C",
 			"database_name": "Writing_G23",
 			"weekday": "Tue",
@@ -46,9 +47,9 @@ module.exports={
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}
-	},
-	"G3": {
-		"Writing": {
+	],
+	"G3": [
+		{
 			"display_name": "Writing",
 			"database_name": "Writing_G23",
 			"weekday": "Tue",
@@ -56,9 +57,9 @@ module.exports={
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}
-	},
-  "G4": {
-		"Writing": {
+	],
+  "G4": [
+		{
 			"display_name": "Writing",
 			"database_name": "Writing_G45",
 			"weekday": "Thu",
@@ -66,9 +67,9 @@ module.exports={
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}
-	},
-    "G5": {
-		"Writing": {
+	],
+  "G5": [
+		{
 			"display_name": "Writing",
 			"database_name": "Writing_G45",
 			"weekday": "Thu",
@@ -76,7 +77,7 @@ module.exports={
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}
-	}
+	]
 }
 },{}],2:[function(require,module,exports){
 module.exports={
@@ -26679,9 +26680,10 @@ var OtherServices = React.createClass({displayName: "OtherServices",
   },
   handleContinue: function(e) {
     var self = this;
-    YFActions.saveOtherServices(self.state.language, function() {
-      self.transitionTo('summer/writing_class');
-    });
+    // YFActions.saveOtherServices(self.state.language, function() {
+    //   self.transitionTo('summer/writing_class');
+    // });
+    self.transitionTo('summer/writing_class');
   },
 
   render: function () {
@@ -27273,7 +27275,7 @@ var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
-var writingElective = require('../../lib/summer/afternoonWritingElective.json');
+var wrData = require('../../lib/summer/afternoonWritingElective.json');
 
 var WritingClass = React.createClass({displayName: "WritingClass",
   mixins: [ Navigation ],
@@ -27302,9 +27304,9 @@ var WritingClass = React.createClass({displayName: "WritingClass",
   },
   handleContinue: function(e) {
     var self = this;
-    YFActions.saveOtherServices(self.state.language, function() {
-      self.transitionTo('summer/writing_class');
-    });
+    // YFActions.saveOtherServices(self.state.language, function() {
+    //   self.transitionTo('summer/writing_class');
+    // });
   },
 
   render: function () {
@@ -27312,7 +27314,7 @@ var WritingClass = React.createClass({displayName: "WritingClass",
     return (
       React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
       React.createElement("h2", null, "Writing Classes"), 
-        movies[1].grade.indexOf(this.state.incomingGrade) > -1 ? React.createElement(MovieBox, {summerCampWeeks: this.state.summerCampWeeks}) : React.createElement("p", null), 
+        wrData.grades.indexOf(self.state.incomingGrade) > -1 ? React.createElement(WritingElective, {summerCampWeeks: this.state.summerCampWeeks, incomingGrade: this.state.incomingGrade}) : React.createElement("p", null), 
 
 
         React.createElement("div", {className: "row"}, 
@@ -27325,6 +27327,87 @@ var WritingClass = React.createClass({displayName: "WritingClass",
       )
     );
   } 
+});
+
+var WritingElective = React.createClass({displayName: "WritingElective",
+  changeWritingElective: function(e) {
+
+  },
+  render: function() {
+    var self = this;
+    var grade = this.props.incomingGrade;
+    var writingClass = [];
+    var len = YFStore.getSummerWeeksNum();
+    var absent, week, obj, name, ref;
+    if(self.props.summerCampWeeks.length === 10){
+      for(var j = 2; j < len; j++) {
+        week = self.props.summerCampWeeks[j-1];
+        absent = (week.schedulePattern === "absence" || week.schedulePattern === '5_morning');
+
+        if(!absent){
+          var choices = [];
+          for(var x = 0; x < wrData[grade].length; x++){
+            obj = wrData[grade][x];
+            if(week.attendingDays.indexOf(obj.weekday) > -1){
+              name = 'week' + j;
+              ref = name + '_' + obj['database_name'];
+              choices.push(
+                React.createElement("div", {key: ref}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: name, ref: ref, onChange: self.changeWritingElective, value: ""}), " ", 
+                    obj['database_name'], ", ", obj['weekday'], " (", obj['display_time'], ")"
+                  )
+                )
+              );
+            }
+          }
+          if(choices.length === 0){
+            choices.push(React.createElement("span", null, "No avaialble Classes"));
+          }
+
+          writingClass.push(
+            React.createElement("tr", {key: j}, 
+              React.createElement("td", null, "week_", j, " (", week.coveredDate, ")"), 
+              React.createElement("td", {className: "cell"}, choices), 
+              React.createElement("td", {className: "cell"}, wrData['class_size']), 
+              React.createElement("td", {className: "cell"}, wrData['price_per_class'])
+            )
+          );
+        }
+      }
+    }
+    return (
+      React.createElement("div", {className: "panel panel-default"}, 
+        React.createElement("div", {className: "panel-heading"}, 
+          React.createElement("div", {className: "panel-title"}, 
+            React.createElement("h3", null, "Afternoon Writing Elective Classes")
+          )
+        ), 
+
+        React.createElement("div", {className: "panel-body"}, 
+          React.createElement("div", {className: "row"}, 
+            React.createElement("div", {className: "col-md-offset-1"}, 
+              React.createElement("span", {className: "bg-info"}, wrData.note)
+            ), React.createElement("br", null), 
+
+            React.createElement("table", {className: "table table-bordered"}, 
+              React.createElement("thead", null, 
+                React.createElement("tr", null, 
+                  React.createElement("th", null, "Week #"), 
+                  React.createElement("th", null, "Class Choices"), 
+                  React.createElement("th", null, "Class Size"), 
+                  React.createElement("th", null, "Price Per Class")
+                )
+              ), 
+              React.createElement("tbody", null, 
+                writingClass
+              )
+            )
+          )
+        )
+      )
+    );
+  }
 });
 
 module.exports = WritingClass;
