@@ -1,5 +1,6 @@
 {
 	"note": "Classes are identical in the same week. Total of 8 weeks. Students can enroll weekly and do not have to enroll in all 8 weeks",
+	"notAvailable": "Sorry, afternoon writing elective classes are only available for those whose incoming grade is between G1 and G5(included).",
 	"grades": ["G1", "G2", "G3", "G4", "G5"],
 	"class_size": "2-5 students",
 	"price_per_class": 12,

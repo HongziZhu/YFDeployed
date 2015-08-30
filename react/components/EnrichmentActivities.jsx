@@ -6,14 +6,16 @@ var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
+var movies = require('../../lib/summer/movies.json');
 
 var EnrichmentActivities = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
+    YFActions.loadEnrollment();
     return { 
-      done: YFStore.getEnrichmentDone(),
-      summerCampWeeks: YFStore.getSummerCampWeeks(),
-      incomingGrade: YFStore.getIncomingGrade()
+      incomingGrade: YFStore.getIncomingGrade(),
+      done: false,
+      summerCampWeeks: YFStore.getSummerCampWeeks()
     };
   },
   componentDidMount: function() {
@@ -24,45 +26,36 @@ var EnrichmentActivities = React.createClass({
   },
   _onChange: function() {
     this.setState({
-      done: YFStore.getEnrichmentDone(),
-      summerCampWeeks: YFStore.getSummerCampWeeks(),
-      incomingGrade: YFStore.getIncomingGrade()
+      summerCampWeeks: YFStore.getSummerCampWeeks()
     });
+  },
+  handleSubmit: function(e) {
+    e.preventDefault();
+    this.setState({ done: true });
+  },
+  handleContinue: function(e) {
+    var self = this;
+    // YFActions.saveEnrichmentActivities(self.state.language, function() {
+    //   self.transitionTo('summer/writing_class');
+    // });
+    self.transitionTo('summer/other_services');  
   },
 
   render: function () {
+    var self = this;
     return (
       <div className='col-md-9 col-md-offset-3'>
-        <div className="panel panel-default">
-          <div className="panel-heading">
-            <div className="panel-title">
-              Enrichment Activities
-            </div>
-          </div>
+      <h2>Other Services and Activities</h2>
+        {movies[1].grade.indexOf(this.state.incomingGrade) > -1 ? <MovieBox summerCampWeeks={this.state.summerCampWeeks}/> : <p></p>}
 
-          <div className="panel-body">
-          
-            <div className="row">
-              <div className="col-sm-12">
-                <strong>Select Morning Enrichment Activities</strong>
-                <br>
-                </br>
-              </div>
 
-              <div className="col-sm-12">
-                <div className="radio">
-                  <label>
-                    <input type="radio" name="attendPattern" onChange={this.changePattern} value="5_full" defaultChecked/>
-                    5 full days per week (8:00 am - 6:30 pm) $235
-                  </label>
-                </div>               
-              </div>  
-            </div>
-            <hr></hr>
-
+        <div className="row">
+          <div className='col-md-offset-1'>
+            <button onClick={this.handleSubmit} ref='submitButton' className="btn btn-primary">Submit</button>&nbsp; <br></br>
           </div>
         </div>
-        {this.state.enrichmentDone ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <p></p>}
+
+        {this.state.done ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <p></p>}
       </div>
     );
   } 
