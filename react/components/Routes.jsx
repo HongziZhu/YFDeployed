@@ -12,10 +12,12 @@ var Login = require('./Login.jsx');
 var Home = require('./Home.jsx');
 var GetStarted = require('./GetStarted.jsx');
 var Attendance = require('./Attendance.jsx');
-var EnrichmentActivities = require('./EnrichmentActivities.jsx');
 var AfternoonAcademics = require('./AfternoonAcademics.jsx');
 var OtherServices = require('./OtherServices.jsx');
 var WritingClass = require('./WritingClass.jsx');
+var Week1 = require('./Week1.jsx');
+var Week2_3 = require('./Week2_3.jsx');
+
 
 var routes = (
 	<Route handler={YFApp} >
@@ -25,8 +27,9 @@ var routes = (
 		<Route name='getStarted' path='/user/getStarted' handler={GetStarted} />
 		
 		<Route name='summer/attendance' path='/user/summer/attendance' handler={Attendance} />
-		<Route name='summer/enrichment_activities' path='/user/summer/enrichment_activities' handler={EnrichmentActivities} />
 		<Route name='summer/afternoon_academics' path='/user/summer/afternoon_academics' handler={AfternoonAcademics} />
+		<Route name='summer/week1' path='/user/summer/week1' handler={Week1} />
+		<Route name='summer/week2_3' path='/user/summer/week2_3' handler={Week2_3} />
 		<Route name='summer/other_services' path='user/summer/other_services' handler={OtherServices} />
 		<Route name='summer/writing_class' path='user/summer/writing_class' handler={WritingClass} />
 	</Route>

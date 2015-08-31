@@ -63,7 +63,7 @@ var WritingClass = React.createClass({
           </div>
         </div>}
 
-        {adWrData.grades.indexOf(self.state.incomingGrade) > -1 ? <AdvancedWriting summerCampWeeks={this.state.summerCampWeeks} incomingGrade={this.state.incomingGrade}/> : 
+        {/*adWrData.grades.indexOf(self.state.incomingGrade) > -1 ? <AdvancedWriting summerCampWeeks={this.state.summerCampWeeks} incomingGrade={this.state.incomingGrade}/> : 
         <div className="panel panel-default">
           <div className="panel-heading">
             <div className="panel-title">
@@ -78,10 +78,7 @@ var WritingClass = React.createClass({
               </div><br></br>
             </div>
           </div>
-        </div>}
-
-
-
+        </div>*/}
 
         <div className="row">
           <div className='col-md-offset-1'>
@@ -142,6 +139,7 @@ var WritingElective = React.createClass({
         }
       }
     }
+
     return (
       <div className="panel panel-default">
         <div className="panel-heading">
@@ -176,24 +174,24 @@ var WritingElective = React.createClass({
   }
 });
 
-
-var WritingElective = React.createClass({
-  changeWritingElective: function(e) {
+var AdvancedWriting = React.createClass({
+  changeAdvancedWriting: function(e) {
 
   },
   render: function() {
     var self = this;
     var grade = this.props.incomingGrade;
-    var writingClass = [];
+    var adWriting = [];
     var len = YFStore.getSummerWeeksNum();
-    var absent, week, obj, name, ref;
+    var absent_p, absent_q, week_p, week_q, obj, name, ref;
     if(self.props.summerCampWeeks.length === 10){
       for(var j = 2; j < len; j++) {
-        week = self.props.summerCampWeeks[j-1];
-        absent = (week.schedulePattern === "absence" || week.schedulePattern === '5_morning');
+        week_p = self.props.summerCampWeeks[j-1];
+        week_q = self.props.summerCampWeeks[j];
+        absent_p = (week_p.schedulePattern === "absence" || week_p.schedulePattern === '5_morning' || (week_p.attendingDays.indexOf('Mon') === -1 && week_p.attendingDays.indexOf('Wed') === -1));
+        absent_q = (week_q.schedulePattern === "absence" || week_q.schedulePattern === '5_morning' || (week_q.attendingDays.indexOf('Mon') === -1 && week_q.attendingDays.indexOf('Wed') === -1));
 
-        if(!absent){
-          var choices = [];
+        if(!absent_p && !absent_q){
           for(var x = 0; x < wrData[grade].length; x++){
             obj = wrData[grade][x];
             if(week.attendingDays.indexOf(obj.weekday) > -1){
@@ -202,7 +200,7 @@ var WritingElective = React.createClass({
               choices.push(
                 <div key={ref}>
                   <label>
-                    <input type="radio" name={name} ref={ref} onChange={self.changeWritingElective} value="" />&nbsp;
+                    <input type="radio" name={name} ref={ref} onChange={self.changeAdvancedWriting} value="" />&nbsp;
                     {obj['database_name']},&nbsp;{obj['weekday']}&nbsp;({obj['display_time']})
                   </label>
                 </div>
@@ -213,7 +211,7 @@ var WritingElective = React.createClass({
             choices.push(<span>No avaialble Classes</span>);
           }
 
-          writingClass.push(
+          adWriting.push(
             <tr key={j}>
               <td>week_{j}&nbsp;({week.coveredDate})</td>
               <td className='cell'>{choices}</td>
@@ -228,27 +226,29 @@ var WritingElective = React.createClass({
       <div className="panel panel-default">
         <div className="panel-heading">
           <div className="panel-title">
-            <h3>Afternoon Writing Elective Classes</h3>
+            <h3>Afternoon Advanced Writing Boot Camp</h3>
           </div>
         </div>
 
         <div className="panel-body">
           <div className="row">
             <div className='col-md-offset-1'> 
-              <span className="bg-info">{wrData.note}</span>
+              <span className="bg-info">{adWrData.note}</span>
             </div><br></br>
 
             <table className="table table-bordered">
               <thead>
                 <tr>
-                  <th>Week #</th>
-                  <th>Class Choices</th>
+                  <th>Select</th>
+                  <th>Unit</th>
+                  <th>Class Time</th>
+                  <th>Note</th>
                   <th>Class Size</th>
                   <th>Price Per Class</th>
                 </tr>
               </thead>
               <tbody>
-                {writingClass}
+                {adWriting}
               </tbody>
             </table>
           </div>

@@ -33,6 +33,7 @@ var summerWeekCount = 0;
 var summerCampWeeks = [];
 var enrollmentId = '';
 var enrollment = {};
+var writingChoice = 'none', mathChoice = 'none';
 var done = {
   scheduled: false,
   enrichmentActivities: false
@@ -165,6 +166,16 @@ var YFStore = assign({}, EventEmitter.prototype, {
   },
   getIncomingGrade: function() {
     return sessionStorage.getItem('incomingGrade');
+  },
+  //TODO
+  setWritingAndMathChoices: function(w, m) {
+
+  },
+  getWritingChoice: function(){
+
+  },
+  getMathChoice: function(){
+
   },
   getCurrentStudent: function() {
     var i = sessionStorage.getItem('studentIndex');
