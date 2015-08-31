@@ -4,4 +4,4 @@ config/env/env.json
 Makefile
 .DS_Store
 public/js/browserify/bundle.js
-lib/summer
+lib/summer/*
