@@ -45,6 +45,10 @@ var YFActions = {
     });
   },
 
+  saveSummerEnrichActs: function() {
+    
+  }
+
   loadEnrollment: function() {
     AppDispatcher.dispatch({
       actionType: YFConstants.YF_LOAD_ENROLLMENT,

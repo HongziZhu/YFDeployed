@@ -7,7 +7,10 @@ var Navigation = Router.Navigation;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
 
+var CourseView = require('./CourseView.jsx');
+
 var Attendance = React.createClass({
+  //TODO show but disable Continue
   mixins: [ Navigation ],
   getInitialState: function() {
     YFActions.findStudentsById();
@@ -236,6 +239,7 @@ var Attendance = React.createClass({
     
     return (
       <div className='col-md-9 col-md-offset-3'>
+        <CourseView />
         <div className="panel panel-default">
           <div className="panel-heading">
             <div className="panel-title">

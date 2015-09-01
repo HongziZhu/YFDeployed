@@ -18,6 +18,7 @@ var GATEData = require('../../lib/summer/afternoonGATE.json');
 var curWeek = 'week_1';
 var coveredDate = '6/13-6/17';
 var curWeekIdx = 0;
+var ENTER_KEY_CODE = 13;
 
 var EnrichmentActs = require('./EnrichmentActs.jsx');
 
@@ -50,9 +51,7 @@ var Week1 = React.createClass({
   },
   handleContinue: function(e) {
     var self = this;
-    // YFActions.saveWeek1(self.state.language, function() {
-    //   self.transitionTo('summer/writing_class');
-    // });
+    
     self.transitionTo('summer/week2_3');  
   },
 
@@ -68,16 +67,21 @@ var Week1 = React.createClass({
       { show ? 
         <h3>You plan not to attend in this week, please click Continue below.</h3> :
         <div>
-        <EnrichmentActs curWeek={curWeek} incomingGrade={self.state.incomingGrade} summerCampWeeks={self.state.summerCampWeeks}/>
-        <div className="row">
-          <div className='col-md-offset-1'>
-            <button onClick={this.handleSubmit} ref='submitButton' className="btn btn-primary">Submit</button>&nbsp; <br></br>
+          <EnrichmentActs 
+            curWeek={curWeek} 
+            incomingGrade={self.state.incomingGrade} 
+            summerCampWeeks={self.state.summerCampWeeks}/>
+
+          <div className="row">
+            <div className='col-md-offset-1'>
+              <button onClick={this.handleSubmit} ref='submitButton' className="btn btn-primary">Submit
+              </button><br></br>
+            </div>
           </div>
-        </div>
         </div>
       }
 
-        {(this.state.done || show) ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <p></p>}
+        {this.state.done? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" disabled>Continue</button>}
       </div>
     );
   } 

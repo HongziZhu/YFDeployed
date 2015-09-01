@@ -35,27 +35,93 @@ var EnrollmentSchema = new Schema({
       category: { type: String, enum: ['7:00-8:00 AM', '7:30-8:00 AM', 'None'] },
       price: { type: String, enum: ['15', '25', '0'] }
     },
-    enrichments: {
-      type: { type: String, enum: ['morning', 'afternoon'] },
-      time: String,
-      campOption: {
-        type: String,
-        enum: ['Basic Camp', 'Repurpose T-shirt Rug', 'Indoor Table Tennis & Badminton', 'Science: Hands-on Geology', 'Digital Photo Safari & Publishing', 'Aboriginal Dot Art', 'Chess', 'Public Speaking', 'Kung Fu']
+    pickupService: {
+      isAttend: Boolean,
+      pickupSpot: { type: String, default: "Hidden Hills Elementary" },
+      pickupTime: {type: String, default: "12:05 PM" },
+      weekday: [String],
+      pricePerTrip: Number
+    },
+    enrichmentActs: {
+      morning: {
+        activityName: String,
+        theme: String,
+        time: String,
+        weekday: [String],
+        hoursPerWeek: Number,
+        classSize: String,
+        pricePerWeek: Number
       },
-      price: String,
-      totalHours: String,
-      classSize: Number,
+      afternoon: {
+        isAttend: Boolean,
+        activityName: String,
+        theme: String,
+        time: String,
+        weekday: [String],
+        hoursPerWeek: Number,
+        classSize: String,
+        pricePerWeek: Number
+      },
     },
     afternoonAcademics: {
       math: { type: String, default: 'Daily Math' },
       language: { type: String, enum: ['Daily Chinese', 'Daily Spanish', 'Daily Hindi'] }
     },
     movie: {
+      isAttend: Boolean,
       movieName: String,
+      place: String,
       time: String,
       price: String
+    },
+    writingElective: {
+      isAttend: Boolean,
+      className: String,
+      time: [String],
+      weekday: [String],
+      classSize: String,
+      pricePerWeek: Number
+    },
+    advWriting: {
+      isAttend: Boolean,
+      className: String,
+      time: [String],
+      weekday: [String],
+      classSize: String,
+      pricePerWeek: Number
+    },
+    mathElective: {
+      isAttend: Boolean,
+      className: String,
+      time: [String],
+      weekday: [String],
+      classSize: String,
+      pricePerWeek: Number
+    },
+    advMath: {
+      isAttend: Boolean,
+      className: String,
+      time: [String],
+      weekday: [String],
+      classSize: String,
+      pricePerWeek: Number
+    },
+    mathOlympiad: {
+      isAttend: Boolean,
+      className: String,
+      time: [String],
+      weekday: [String],
+      classSize: String,
+      pricePerWeek: Number
+    },
+    GATE: {
+      isAttend: Boolean,
+      className: String,
+      time: [String],
+      weekday: [String],
+      classSize: String,
+      pricePerWeek: Number
     }
-    //TODO language, electives
   }]
 },{
   collection: 'enrollments'
