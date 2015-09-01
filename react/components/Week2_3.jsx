@@ -17,8 +17,17 @@ var GATEData = require('../../lib/summer/afternoonGATE.json');
 
 var preWeek = 'week_2';
 var postWeek = 'week_3';
+var unitWeek = 'week_2_3';
 var coveredDate = ['6/20-6/24', '6/27-7/1'];
 var preWeekIdx = 1, postWeekIdx = 2;
+
+var MathOlympiad = require('./MathOlympiad.jsx');
+var EnrichmentActs = require('./EnrichmentActs.jsx');
+var GATE = require('./GATE.jsx');
+var WritingElective = require('./WritingElective.jsx');
+var MathElective = require('./MathElective.jsx');
+var AdvancedWrUnit = require('./AdvancedWrUnit.jsx');
+var AdvancedMathUnit = require('./AdvancedMathUnit.jsx');
 
 var Week2_3 = React.createClass({
   mixins: [ Navigation ],
@@ -27,8 +36,8 @@ var Week2_3 = React.createClass({
     return { 
       timeConflict: false,
       done: false,
-      //TODO
-
+      writing: YFStore.getWritingChoice(),
+      math: YFStore.getMathChoice(),
       incomingGrade: YFStore.getIncomingGrade(),
       summerCampWeeks: YFStore.getSummerCampWeeks()
     };
@@ -58,30 +67,62 @@ var Week2_3 = React.createClass({
 
   render: function () {
     var self = this;
+    var gd = self.state.incomingGrade;
     var preShow = false, postShow = false;
     if(self.state.summerCampWeeks.length === 10){
-      preShow = self.state.summerCampWeeks[preWeekIdx].schedulePattern === 'absence';
-      postShow = self.state.summerCampWeeks[postWeekIdx].schedulePattern === 'absence';
+      preShow = self.state.summerCampWeeks[preWeekIdx].schedulePattern !== 'absence';
+      postShow = self.state.summerCampWeeks[postWeekIdx].schedulePattern !== 'absence';
     }
     return (
       <div className='col-md-9 col-md-offset-3'>
       <h2>Week 2&nbsp; ({coveredDate[0]})</h2>
-      { preShow ? 
+      { !preShow ? 
         <h3>You plan not to attend in this week, please check out next week below.</h3> :
         <div>
-        <EnrichmentActs incomingGrade={self.state.incomingGrade} summerCampWeeks={self.state.summerCampWeeks}/>
+        <EnrichmentActs curWeek={preWeek} incomingGrade={self.state.incomingGrade} summerCampWeeks={self.state.summerCampWeeks}/>
+        {self.state.writing === 'elective' ?
+        <WritingElective curWeek={preWeek} incomingGrade={self.state.incomingGrade} summerCampWeeks={self.state.summerCampWeeks}/> :
+          <p></p>}
+        {self.state.math === 'elective' ?
+        <MathElective curWeek={preWeek} incomingGrade={self.state.incomingGrade} summerCampWeeks={self.state.summerCampWeeks}/> :
+        <p></p>}
+        <MathOlympiad curWeek={preWeek} incomingGrade={self.state.incomingGrade} summerCampWeeks={self.state.summerCampWeeks}/>
+        <GATE curWeek={preWeek} incomingGrade={self.state.incomingGrade} summerCampWeeks={self.state.summerCampWeeks}/>
 
         </div>
       }
-
+      <hr></hr>
       <h2>Week 3&nbsp; ({coveredDate[1]})</h2>
-      { postShow ? 
+      { !postShow ? 
         <h3>You plan not to attend in this week, please click Submit below.</h3> :
         <div>
-        <EnrichmentActs incomingGrade={self.state.incomingGrade} summerCampWeeks={self.state.summerCampWeeks}/>
+        <EnrichmentActs curWeek={postWeek} incomingGrade={self.state.incomingGrade} summerCampWeeks={self.state.summerCampWeeks}/>
+        {self.state.writing === 'elective' ?
+        <WritingElective curWeek={postWeek} incomingGrade={self.state.incomingGrade} summerCampWeeks={self.state.summerCampWeeks}/> :
+          <p></p>}
+        {self.state.math === 'elective' ?
+        <MathElective curWeek={postWeek} incomingGrade={self.state.incomingGrade} summerCampWeeks={self.state.summerCampWeeks}/> :
+        <p></p>}
+        <MathOlympiad curWeek={postWeek} incomingGrade={self.state.incomingGrade} summerCampWeeks={self.state.summerCampWeeks}/>
+        <GATE curWeek={postWeek} incomingGrade={self.state.incomingGrade} summerCampWeeks={self.state.summerCampWeeks}/>
         
         </div>
       }
+      <hr></hr>
+      {(self.state.writing === 'advanced' || self.state.math === 'advanced') ? 
+      <div>
+        <h2>Week 2 &amp; Week 3 Unit</h2>
+          {(!preShow || !postShow) ? 
+            <h3 className='bg-info'>Sorry, you can't enroll in this Advanced Writing(or Math) Unit due to at least one-week absence.</h3> :
+            <div>
+            {self.state.writing === 'advanced' ? 
+            <AdvancedWrUnit curWeek={unitWeek} incomingGrade={self.state.incomingGrade} summerCampWeeks={self.state.summerCampWeeks}/> : <p></p>}
+            {self.state.math === 'advanced' ? 
+            <AdvancedMathUnit curWeek={unitWeek} incomingGrade={self.state.incomingGrade} summerCampWeeks={self.state.summerCampWeeks}/> : <p></p>}
+            </div>
+          }
+      </div>
+      : <p></p>}
 
       <div className="row">
         <div className='col-md-offset-1'>
@@ -93,139 +134,6 @@ var Week2_3 = React.createClass({
       </div>
     );
   } 
-});
-
-var EnrichmentActs = React.createClass({
-  render: function() {
-    var self = this;
-    var morningActs = [], afternoonActs = [];
-    var grade = this.props.incomingGrade;
-    var acts, hide, obj, ref;
-    if(self.props.summerCampWeeks.length === 10){
-      acts = enrichActData[curWeek].morning;
-      obj = acts[0];
-      //morning 
-      morningActs.push(
-        <tr key={j}>
-          <td className='cell'>
-            <input type="radio" name="morning_acts" ref={ref} onChange={this.changeMorningAct} value="" />
-          </td>
-          <td className='cell'>
-            <span className='text-primary'>{obj['activity_name']}</span>&nbsp;(Weekly Theme:&nbsp;{obj['theme']})</td>
-          <td className='cell'>{obj['class_size'] === 'unlimited' ? <p>unlimited</p> : 
-            <p>{obj['class_size'][0]}-{obj['class_size'][1]}</p>}
-          </td>
-          <td className='cell'>Free for 6 hours/week</td>
-        </tr>
-      )
-      for(var j = 1; j < acts.length; j++) {
-        obj = acts[j];
-        hide = obj.grade.indexOf(grade) === -1;
-
-        if(!hide){
-          ref = "morning_" + j;
-          morningActs.push(
-            <tr key={j}>
-              <td className='cell'>
-                <input type="radio" name="morning_acts" ref={ref} onChange={this.changeMorningAct} value="" />
-              </td>
-              <td className='cell'>{obj['activity_name']}</td>
-              <td className='cell'>{obj['class_size'] === 'unlimited' ? <p>unlimited</p> : 
-                <p>{obj['class_size'][0]}-{obj['class_size'][1]}</p>}
-              </td>
-              <td className='cell'>${obj['price']} for 6 hours/week</td>
-            </tr>
-          );
-        }
-      }
-      //afternoon
-      acts = enrichActData[curWeek].afternoon;
-      for(var j = 0; j < acts.length; j++) {
-        obj = acts[j];
-        hide = obj.grade.indexOf(grade) === -1;
-
-        if(!hide){
-          ref = "afternoon_" + j;
-          afternoonActs.push(
-            <tr key={j}>
-              <td className='cell'>
-                <input type="radio" name="afternoon_acts" ref={ref} onChange={this.changeAfternoonAct} value="" />
-              </td>
-              <td className='cell'>{obj['activity_name']}</td>
-              <td className='cell'>{obj['class_size'] === 'unlimited' ? <p>unlimited</p> : 
-                <p>{obj['class_size'][0]}-{obj['class_size'][1]}</p>}
-              </td>
-              <td className='cell'>${obj['price']} for 4.5 hours/week</td>
-            </tr>
-          );
-        }
-      }
-      afternoonActs.push(
-        <tr key='-1'>
-          <td className='cell'>
-            <input type="radio" name="afternoon_acts" ref={ref} onChange={this.changeAfternoonAct} value="" />
-          </td>
-          <td className='cell'>I don't need it, thanks.</td>
-          <td className='cell'>---</td>
-          <td className='cell'>---</td>
-        </tr>
-      );
-    }
-    return (
-      <div className="panel panel-default">
-        <div className="panel-heading">
-          <div className="panel-title">
-            <h3>Enrichment Activities</h3>
-          </div>
-        </div>
-
-        <div className="panel-body">
-          <div className="row">
-            <div className='col-md-offset-1'> 
-              <h3>Morning Activities--{enrichActData['morning_time'].display_time}</h3>
-              <span className="bg-info">1.{enrichActData['note']}</span><br></br>
-              <span className="bg-info">2. Every avtivity has the same time: {enrichActData['morning_time'].display_time}</span>
-            </div>
-
-            <table className="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Select</th>
-                  <th>Activity</th>
-                  <th>Class Size</th>
-                  <th>Price Per Week</th>
-                </tr>
-              </thead><br></br>
-              <tbody>
-                {morningActs}
-              </tbody>
-            </table>
-            <hr></hr>
-
-            <div className='col-md-offset-1'> 
-              <h3>Afternoon Activities--{enrichActData['afternoon_time'].display_time}</h3>
-              <span className="bg-info">2. Every avtivity has the same time: {enrichActData['afternoon_time'].display_time}</span>
-            </div>
-
-            <table className="table table-bordered">
-              <thead>
-                <tr>
-                  <th>Select</th>
-                  <th>Activity</th>
-                  <th>Class Size</th>
-                  <th>Price Per Week</th>
-                </tr>
-              </thead><br></br>
-              <tbody>
-                {afternoonActs}
-              </tbody>
-            </table>
-            <hr></hr>
-          </div>
-        </div>
-      </div>
-    );
-  }
 });
 
 module.exports = Week2_3;

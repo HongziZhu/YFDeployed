@@ -1,8 +1,9 @@
 {
 	"note": {
-		"a": "A four-week enrollment is highly recommended.",
-		"b": "Twice a week"
+		"b": "A four-week enrollment is highly recommended.",
+		"a": "Twice a week. Total of 8 weeks. Students can enroll weekly and do not have to enroll in all 8 weeks"
 	},
+	"notAvailable": "Sorry, Math Olympiad Classes are only avaiable for those whose incoming grade is G2 or G3.",
 	"grades": ["G2", "G3"],
 	"weeks": [2,3,4,5,6,7,8,9],
 	"G2": [

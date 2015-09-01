@@ -1,192 +1,229 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 module.exports={
-	"note": "We offer four two-week Units. Students must enroll for both week within one two-week unit. Student must take and pass a pretest.",
+	"note": [
+	"1. Student must take and pass a pretest.",
+	"2. We offer four two-week Units. Students must enroll for both week within one two-week unit."
+	],
 	"grades": ["G3", "G4", "G5", "G6", "G7","G8","G9","G10","G11","G12"],
-    "G3": [
-       {
+	"G3": [
+	{
+		"display_name": "Advanced Math Boot Camp G3",
+		"database_name": "Advanced_Math_G3",
 		"weekday": ["Tue", "Thu"],
 		"display_time": "3:30-4:30 pm",
-        "database_time": [15.30, 16.30],
-		"class_size": [4, 8],
-		"price_per_class": 20
-       }
-    ],
-	"G4": [
-       {
-		"weekday": ["Tue", "Thu"],
-		"display_time": "1:30-2:30 pm",
-        "database_time": [13.30, 14.30],
-		"class_size": [4, 8],
-		"price_per_class": 20
-	   }
-    ],
-	"G5": [
-        {
-        "weekday": ["Tue", "Thu"],
-		"display_time": "2:30-3:30 pm",
-        "database_time": [14.30, 15.30],
-		"class_size": [4, 8],
-		"price_per_class": 20
-	    }
-    ],
-	"G6":[
-        {
-        "weekday": ["Tue", "Thu"],
-		"display_time": "4:30-5:30 pm",
-        "database_time": [16.30, 17.30],
-		"class_size": [4, 8],
-		"price_per_class": 20
-	    }
-    ],
-    "G7":[ 
-        {
-        "weekday": ["Tue", "Thu"],
-		"display_time": "4:30-5:30 pm",
-        "database_time": [16.30, 17.30],
-		"class_size": [4, 8],
-		"price_per_class": 20
-	    }
-    ],
-    "G8": [
-        {
-        "weekday": ["Tue", "Thu"],
-		"display_time": "4:30-5:30 pm",
-        "database_time": [16.30, 17.30],
-		"class_size": [4, 8],
-		"price_per_class": 20
-	    }
-    ],
-    "G9":[ 
-        {
-        "weekday": ["Tue", "Thu"],
-		"display_time": "4:30-5:30 pm",
-        "database_time": [16.30, 17.30],
-		"class_size": [4, 8],
-		"price_per_class": 20
-	    }
-    ],
-    "G10": [
-    {
-        "weekday": ["Tue", "Thu"],
-		"display_time": "4:30-5:30 pm",
-        "database_time": [16.30, 17.30],
+		"database_time": [15.30, 16.30],
 		"class_size": [4, 8],
 		"price_per_class": 20
 	}
-    ],
-    "G11": [
-        {
-        "weekday": ["Tue", "Thu"],
-		"display_time": "4:30-5:30 pm",
-        "database_time": [16.30, 17.30],
+	],
+	"G4": [
+	{
+		"display_name": "Advanced Math Boot Camp G4",
+		"database_name": "Advanced_Math_G4",
+		"weekday": ["Tue", "Thu"],
+		"display_time": "1:30-2:30 pm",
+		"database_time": [13.30, 14.30],
 		"class_size": [4, 8],
 		"price_per_class": 20
-	    }
-    ],
-	"G12": [
-        {
-        "weekday": ["Tue", "Thu"],
+	}
+	],
+	"G5": [
+	{
+		"display_name": "Advanced Math Boot Camp G5",
+		"database_name": "Advanced_Math_G5",
+		"weekday": ["Tue", "Thu"],
+		"display_time": "2:30-3:30 pm",
+		"database_time": [14.30, 15.30],
+		"class_size": [4, 8],
+		"price_per_class": 20
+	}
+	],
+	"G6":[
+	{
+		"display_name": "Advanced Math Boot Camp Middle School",
+		"database_name": "Advanced_Math_MiddleSchool",
+		"weekday": ["Tue", "Thu"],
 		"display_time": "4:30-5:30 pm",
-        "database_time": [16.30, 17.30],
+		"database_time": [16.30, 17.30],
+		"class_size": [4, 8],
+		"price_per_class": 20
+	}
+	],
+	"G7":[ 
+	{
+		"display_name": "Advanced Math Boot Camp Middle School",
+		"database_name": "Advanced_Math_MiddleSchool",
+		"weekday": ["Tue", "Thu"],
+		"display_time": "4:30-5:30 pm",
+		"database_time": [16.30, 17.30],
+		"class_size": [4, 8],
+		"price_per_class": 20
+	}
+	],
+	"G8": [
+	{
+		"display_name": "Advanced Math Boot Camp Middle School",
+		"database_name": "Advanced_Math_MiddleSchool",
+		"weekday": ["Tue", "Thu"],
+		"display_time": "4:30-5:30 pm",
+		"database_time": [16.30, 17.30],
+		"class_size": [4, 8],
+		"price_per_class": 20
+	}
+	],
+	"G9":[ 
+	{
+		"display_name": "Advanced Math Boot Camp Middle School",
+		"database_name": "Advanced_Math_MiddleSchool",
+		"weekday": ["Tue", "Thu"],
+		"display_time": "4:30-5:30 pm",
+		"database_time": [16.30, 17.30],
+		"class_size": [4, 8],
+		"price_per_class": 20
+	}
+	],
+	"G10": [
+	{
+		"display_name": "Advanced Math Boot Camp Middle School",
+		"database_name": "Advanced_Math_MiddleSchool",
+		"weekday": ["Tue", "Thu"],
+		"display_time": "4:30-5:30 pm",
+		"database_time": [16.30, 17.30],
+		"class_size": [4, 8],
+		"price_per_class": 20
+	}
+	],
+	"G11": [
+	{
+		"display_name": "Advanced Math Boot Camp Middle School",
+		"database_name": "Advanced_Math_MiddleSchool",
+		"weekday": ["Tue", "Thu"],
+		"display_time": "4:30-5:30 pm",
+		"database_time": [16.30, 17.30],
+		"class_size": [4, 8],
+		"price_per_class": 20
+	}
+	],
+	"G12": [
+	{
+		"display_name": "Advanced Math Boot Camp Middle School",
+		"database_name": "Advanced_Math_MiddleSchool",
+		"weekday": ["Tue", "Thu"],
+		"display_time": "4:30-5:30 pm",
+		"database_time": [16.30, 17.30],
 		"class_size": [4, 8],
 		"price_per_class": 20		
-	    }
-    ]
+	}
+	]
 }
 },{}],2:[function(require,module,exports){
 module.exports={
-	"note": "(1). Student must take and pass a pretest.(2). We offer 4 two-week Units, students must enroll by Unit.",
+	"note": [
+	"1. Student must take and pass a pretest.",
+	"2. We offer 4 two-week Units, students must enroll by Unit."
+	],
 	"notAvailable": "Sorry, afternoon advanced writing boot camp are only available for those whose incoming grade is G3 or higher.",
 	"class_size": "4-8 students",
 	"price_per_class": 20,
 	"grades": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
 	"G3": [{
+		"display_name": "Advanced Writing G3",
 		"database_name": "Advanced_Writing_G3",
 		"weekday": ["Mon", "Wed"],
-		"display_time": "3:30-4:30 pm",
+		"display_time": "3:30 PM-4:30 PM",
 		"database_time": [15.30, 16.30],
 		"class_size": [4, 8],
 		"price_per_class": 20
-	}],
-	"G4": [{
-		"database_name": "Advanced_Writing_G4",
-		"weekday": ["Mon", "Wed"],
-		"display_time": "1:30-2:30 pm",
-		"database_time": [13.30, 14.30],
-		"class_size": [4, 8],
-		"price_per_class": 20
-	}],
-	"G5": [{
-    "database_name": "Advanced_Writing_G5",
-    "weekday": ["Mon", "Wed"],
-		"display_time": "2:30-3:30 pm",
-		"database_time": [14.30, 15.30],
-		"class_size": [4, 8],
-		"price_per_class": 20
-	}],
-	"G6": [{
-    "database_name": "Advanced_Writing_MiddleSchool",
-    "weekday": ["Mon", "Wed"],
-		"display_time": "4:30-5:30 pm",
-		"database_time": [16.30, 17.30],
-		"class_size": [4, 8],
-		"price_per_class": 20
-	}],
-  "G7": [{
-    "database_name": "Advanced_Writing_MiddleSchool",
-    "weekday": ["Mon", "Wed"],
-		"display_time": "4:30-5:30 pm",
-		"database_time": [16.30, 17.30],
-		"class_size": [4, 8],
-		"price_per_class": 20
-	}],
-  "G8": [{
-    "database_name": "Advanced_Writing_MiddleSchool",
-    "weekday": ["Mon", "Wed"],
-		"display_time": "4:30-5:30 pm",
-		"database_time": [16.30, 17.30],
-		"class_size": [4, 8],
-		"price_per_class": 20
-	}],
-  "G9": [{
-    "database_name": "Advanced_Writing_MiddleSchool",
-    "weekday": ["Mon", "Wed"],
-		"display_time": "4:30-5:30 pm",
-		"database_time": [16.30, 17.30],
-		"class_size": [4, 8],
-		"price_per_class": 20
-	}],
-  "G10": [{
-    "database_name": "Advanced_Writing_MiddleSchool",
-    "weekday": ["Mon", "Wed"],
-		"display_time": "4:30-5:30 pm",
-		"database_time": [16.30, 17.30],
-		"class_size": [4, 8],
-		"price_per_class": 20
-	}],
-  "G11": [{
-    "database_name": "Advanced_Writing_MiddleSchool",
-    "weekday": ["Mon", "Wed"],
-		"display_time": "4:30-5:30 pm",
-		"database_time": [16.30, 17.30],
-		"class_size": [4, 8],
-		"price_per_class": 20
-	}],
-	"G12": [{
-    "database_name": "Advanced_Writing_MiddleSchool",
-    "weekday": ["Mon", "Wed"],
-		"display_time": "4:30-5:30 pm",
-		"database_time": [16.30, 17.30],
-		"class_size": [4, 8],
-		"price_per_class": 20		
-	}]
-}
+		}],
+		"G4": [{
+			"display_name": "Advanced Writing G4",
+			"database_name": "Advanced_Writing_G4",
+			"weekday": ["Mon", "Wed"],
+			"display_time": "1:30 PM-2:30 PM",
+			"database_time": [13.30, 14.30],
+			"class_size": [4, 8],
+			"price_per_class": 20
+			}],
+			"G5": [{
+				"display_name": "Advanced Writing G5",
+				"database_name": "Advanced_Writing_G5",
+				"weekday": ["Mon", "Wed"],
+				"display_time": "2:30 PM-3:30 PM",
+				"database_time": [14.30, 15.30],
+				"class_size": [4, 8],
+				"price_per_class": 20
+				}],
+				"G6": [{
+					"display_name": "Advanced Writing Middle School",
+					"database_name": "Advanced_Writing_MiddleSchool",
+					"weekday": ["Mon", "Wed"],
+					"display_time": "4:30 PM-5:30 PM",
+					"database_time": [16.30, 17.30],
+					"class_size": [4, 8],
+					"price_per_class": 20
+					}],
+					"G7": [{
+						"display_name": "Advanced Writing Middle School",
+						"database_name": "Advanced_Writing_MiddleSchool",
+						"weekday": ["Mon", "Wed"],
+						"display_time": "4:30 PM-5:30 PM",
+						"database_time": [16.30, 17.30],
+						"class_size": [4, 8],
+						"price_per_class": 20
+						}],
+						"G8": [{
+							"display_name": "Advanced Writing Middle School",
+							"database_name": "Advanced_Writing_MiddleSchool",
+							"weekday": ["Mon", "Wed"],
+							"display_time": "4:30 PM-5:30 PM",
+							"database_time": [16.30, 17.30],
+							"class_size": [4, 8],
+							"price_per_class": 20
+							}],
+							"G9": [{
+								"display_name": "Advanced Writing Middle School",
+								"database_name": "Advanced_Writing_MiddleSchool",
+								"weekday": ["Mon", "Wed"],
+								"display_time": "4:30 PM-5:30 PM",
+								"database_time": [16.30, 17.30],
+								"class_size": [4, 8],
+								"price_per_class": 20
+								}],
+								"G10": [{
+									"display_name": "Advanced Writing Middle School",
+									"database_name": "Advanced_Writing_MiddleSchool",
+									"weekday": ["Mon", "Wed"],
+									"display_time": "4:30 PM-5:30 PM",
+									"database_time": [16.30, 17.30],
+									"class_size": [4, 8],
+									"price_per_class": 20
+									}],
+									"G11": [{
+										"display_name": "Advanced Writing Middle School",
+										"database_name": "Advanced_Writing_MiddleSchool",
+										"weekday": ["Mon", "Wed"],
+										"display_time": "4:30 PM-5:30 PM",
+										"database_time": [16.30, 17.30],
+										"class_size": [4, 8],
+										"price_per_class": 20
+										}],
+										"G12": [{
+											"display_name": "Advanced Writing Middle School",
+											"database_name": "Advanced_Writing_MiddleSchool",
+											"weekday": ["Mon", "Wed"],
+											"display_time": "4:30 PM-5:30 PM",
+											"database_time": [16.30, 17.30],
+											"class_size": [4, 8],
+											"price_per_class": 20		
+											}]
+										}
 },{}],3:[function(require,module,exports){
 module.exports={
 	"note": {
-		"a": "A four-week enrollment is highly recommended.",
-		"b": "Twice a week"
+		"b": "A four-week enrollment is highly recommended.",
+		"a": "Twice a week. Total of 8 weeks. Students can enroll weekly and do not have to enroll in all 8 weeks"
 	},
+	"notAvailable": "Sorry, Math Olympiad Classes are only avaiable for those whose incoming grade is G2 or G3.",
 	"grades": ["G2", "G3"],
 	"weeks": [2,3,4,5,6,7,8,9],
 	"G2": [
@@ -216,7 +253,8 @@ module.exports={
 }
 },{}],4:[function(require,module,exports){
 module.exports={
-    "Note":"Class A and B are identical for G2. Total of 8 weeks. Students can enroll weekly and do not have to enroll in all 8 weeks.",
+    "note":"Class A and B are identical for G2. Total of 8 weeks. Students can enroll weekly and do not have to enroll in all 8 weeks.",
+    "notAvailable": "Sorry, afternoon writing elective classes are only available for those whose incoming grade is between G1 or G2.",
     "grades": ["G1", "G2"],
     "G1": [
         {
@@ -250,52 +288,53 @@ module.exports={
 }
 },{}],5:[function(require,module,exports){
 module.exports={
-    "Note":"Total of 8 weeks. Students can enroll weekly and do not have to enroll in all 8 weeks.",
-	"grades": ["G3", "G4", "G5"],	
-    "G3":[
-              {
-              "display_name":"Math Olympiad",
-			  "database_name": "Math_Olympiad_G34",
-              "weekday": "Mon",
-		      "display_time": "1:30-2:15 pm",
-          "database_time": [13.30, 14.15],
-		      "class_size": [3, 6],
-		      "price_per_class": 15
-	          }
+  "note":"Total of 8 weeks. Students can enroll weekly and do not have to enroll in all 8 weeks.",
+  "grades": ["G3", "G4", "G5"],	
+  "notAvailable": "Sorry, Math Olympiad Classes are only avaiable for those whose incoming grade is G3, G4 or G5.",
+  "G3":[
+  {
+    "display_name":"Math Olympiad G3 & G4",
+    "database_name": "Math_Olympiad_G3_G4",
+    "weekday": "Mon",
+    "display_time": "1:30-2:15 pm",
+    "database_time": [13.30, 14.15],
+    "class_size": [3, 6],
+    "price_per_class": 15
+  }
+  ],
+  "G4":[
+  {
+    "display_name":"Math Olympiad G3 & G4",
+    "database_name": "Math_Olympiad_G3_G4",
+    "weekday": "Mon",    
+    "display_time": "1:30-2:15 pm",
+    "database_time": [13.30, 14.15],
+    "class_size": [3, 6],    
+    "price_per_class"    : 15    
+    },
+    {
+      "display_name":"Math Olympiad G4 & G5",
+      "database_name": "Math_Olympiad_G4_G5",
+      "weekday": "Mon",
+      "display_time": "2:20-3:05 pm",
+      "database_time": [14.20, 15.05],
+      "class_size": [3, 6],
+      "price_per_class": 15        
+
+    }
     ],
-    "G4":[
-        {
-              "display_name":"Math Olympiad A",
-              "database_name": "Math_Olympiad_G34",
-              "weekday": "Mon",    
-		      "display_time": "1:30-2:15 pm",
-          "database_time": [13.30, 14.15],
-		      "class_size": [3, 6],    
-		      "price_per_class"    : 15    
-	     },
-        {
-              "display_name":"Math Olympiad B",
-              "database_name": "Math_Olympiad_G45",
-		      "weekday": "Mon",
-		      "display_time": "2:20-3:05 pm",
-          "database_time": [14.20, 15.05],
-		      "class_size": [3, 6],
-		      "price_per_class": 15        
-        
-        }
-    ],
-        "G5":[
-              {
-              "display_name":"Math Olympiad",
-              "database_name": "Math_Olympiad_G45",
-	    	  "weekday": "Mon",
-		      "display_time": "2:20-3:05 pm",
-          "database_time": [14.20, 15.05],
-		      "class_size": [3, 6],
-		      "price_per_class": 15
-	          }
-        ]
-}
+    "G5":[
+    {
+      "display_name":"Math Olympiad G4 & G5",
+      "database_name": "Math_Olympiad_G4_G5",
+      "weekday": "Mon",
+      "display_time": "2:20-3:05 pm",
+      "database_time": [14.20, 15.05],
+      "class_size": [3, 6],
+      "price_per_class": 15
+    }
+    ]
+  }
 },{}],6:[function(require,module,exports){
 module.exports={
 	"note": "Classes are identical in the same week. Total of 8 weeks. Students can enroll weekly and do not have to enroll in all 8 weeks",
@@ -308,7 +347,7 @@ module.exports={
 			"display_name": "Writing A",
 			"database_name": "Writing_G1A",
 			"weekday": "Tue",
-			"display_time": "2:20-3:05 pm",
+			"display_time": "2:20 PM-3:05 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		},
@@ -316,7 +355,7 @@ module.exports={
       "display_name": "Writing B",
 			"database_name": "Writing_G1B",
 			"weekday": "Thu",
-			"display_time": "2:20-3:05 pm",
+			"display_time": "2:20 PM-3:05 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12			
 		}
@@ -326,7 +365,7 @@ module.exports={
       "display_name": "Writing A",
 			"database_name": "Writing_G2A",
 			"weekday": "Tue",
-			"display_time": "3:10-3:55 pm",
+			"display_time": "3:10 PM-3:55 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		},
@@ -334,7 +373,7 @@ module.exports={
       "display_name": "Writing B",
 			"database_name": "Writing_G2B",
 			"weekday": "Thu",
-			"display_time": "3:10-3:55 pm",
+			"display_time": "3:10 PM-3:55 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		},
@@ -342,7 +381,7 @@ module.exports={
 			"display_name": "Writing C",
 			"database_name": "Writing_G23",
 			"weekday": "Tue",
-			"display_time": "1:30-2:15 pm",
+			"display_time": "1:30 PM-2:15 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}
@@ -352,7 +391,7 @@ module.exports={
 			"display_name": "Writing",
 			"database_name": "Writing_G23",
 			"weekday": "Tue",
-			"display_time": "1:30-2:15 pm",
+			"display_time": "1:30 PM-2:15 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}
@@ -362,7 +401,7 @@ module.exports={
 			"display_name": "Writing",
 			"database_name": "Writing_G45",
 			"weekday": "Thu",
-			"display_time": "1:30-2:15 pm",
+			"display_time": "1:30 PM-2:15 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}
@@ -372,7 +411,7 @@ module.exports={
 			"display_name": "Writing",
 			"database_name": "Writing_G45",
 			"weekday": "Thu",
-			"display_time": "1:30-2:15 pm",
+			"display_time": "1:30 PM-2:15 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}
@@ -27058,7 +27097,7 @@ var YFActions = {
 
 module.exports = YFActions;
 
-},{"../constants/YFConstants":231,"../dispatcher/AppDispatcher":232}],219:[function(require,module,exports){
+},{"../constants/YFConstants":239,"../dispatcher/AppDispatcher":240}],219:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -27079,7 +27118,203 @@ if (typeof window !== 'undefined') {
 	};
 }
 
-},{"./components/Routes.jsx":226,"react":214,"react-router":45}],220:[function(require,module,exports){
+},{"./components/Routes.jsx":232,"react":214,"react-router":45}],220:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+var adMathData = require('../../lib/summer/afternoonAdvancedMath.json');
+
+var AdvancedMathUnit = React.createClass({displayName: "AdvancedMathUnit",
+  changeAdvancedMathUnit: function(e) {
+
+  },
+  render: function() {
+    var self = this;
+    var gd = this.props.incomingGrade;
+    var adMaths = [];
+    var arr, obj, ref;
+    if(self.props.summerCampWeeks.length === 10 && adMathData['grades'].indexOf(gd) > -1){
+      arr = adMathData[gd];
+      for(var j = 0; j < arr.length; j++) {
+        obj = arr[j];
+        ref = self.props.curWeek + '_' + 'AdvancedMathUnit_' + j;
+        adMaths.push(
+          React.createElement("tr", {key: ref}, 
+            React.createElement("td", {className: "cell"}, 
+              React.createElement("input", {type: "radio", name: "AdvancedMathUnit", ref: ref, onChange: this.changeAdvancedMathUnit, value: ""})
+            ), 
+            React.createElement("td", {className: "cell"}, obj['display_name']), 
+            React.createElement("td", {className: "cell"}, 
+              React.createElement("span", null, obj['weekday'][0], " /", obj['display_time']), React.createElement("br", null), 
+              React.createElement("span", null, obj['weekday'][1], " /", obj['display_time'])
+            ), 
+            React.createElement("td", {className: "cell"}, React.createElement("p", null, obj['class_size'][0], "-", obj['class_size'][1])), 
+            React.createElement("td", {className: "cell"}, "$", obj['price_per_class'], "/week")
+          )
+        );
+      }
+      adMaths.push(
+        React.createElement("tr", {key: "-1"}, 
+          React.createElement("td", {className: "cell"}, 
+            React.createElement("input", {type: "radio", name: "AdvancedMathUnit", onChange: this.changeAdvancedMathUnit, value: ""})
+          ), 
+          React.createElement("td", {className: "cell"}, "No, thanks."), 
+          React.createElement("td", {className: "cell"}, "---"), 
+          React.createElement("td", {className: "cell"}, "---"), 
+          React.createElement("td", {className: "cell"}, "---")
+        )
+      )
+    }
+
+    return (
+      React.createElement("div", {className: "panel panel-default"}, 
+        React.createElement("div", {className: "panel-heading"}, 
+          React.createElement("div", {className: "panel-title"}, 
+            React.createElement("h3", null, "Afternoon Advanced Math Boot Camp")
+          )
+        ), 
+
+        React.createElement("div", {className: "panel-body"}, 
+        adMathData['grades'].indexOf(gd) > -1 ? 
+          React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-md-offset-1"}, 
+                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, adMathData['note'][0])), 
+                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, adMathData['note'][1]))
+              ), 
+
+              React.createElement("table", {className: "table table-bordered"}, 
+                React.createElement("thead", null, 
+                  React.createElement("tr", null, 
+                    React.createElement("th", null, "Select"), 
+                    React.createElement("th", null, "Class Name"), 
+                    React.createElement("th", null, "Class Time (Twice a week)"), 
+                    React.createElement("th", null, "Class Size"), 
+                    React.createElement("th", null, "Price Per Class")
+                  )
+                ), React.createElement("br", null), 
+                React.createElement("tbody", null, 
+                  adMaths
+                )
+              )
+            )
+          : 
+          React.createElement("div", {className: "row"}, 
+            React.createElement("div", {className: "col-md-offset-1"}, 
+              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, adMathData['notAvailable']))
+            )
+          )
+        )
+      )
+    );
+  }
+}); 
+
+module.exports = AdvancedMathUnit;
+
+},{"../../lib/summer/afternoonAdvancedMath.json":1,"../actions/YFActions":218,"../stores/YFStore.jsx":241,"react":214,"react-router":45}],221:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+var adWrData = require('../../lib/summer/afternoonAdvancedWriting.json');
+
+var AdvancedWrUnit = React.createClass({displayName: "AdvancedWrUnit",
+  changeAdvancedWrUnit: function(e) {
+
+  },
+  render: function() {
+    var self = this;
+    var gd = this.props.incomingGrade;
+    var adWrs = [];
+    var arr, obj, ref;
+    if(self.props.summerCampWeeks.length === 10 && adWrData['grades'].indexOf(gd) > -1){
+      arr = adWrData[gd];
+      for(var j = 0; j < arr.length; j++) {
+        obj = arr[j];
+        ref = self.props.curWeek + '_' + 'AdvancedWrUnit_' + j;
+        adWrs.push(
+          React.createElement("tr", {key: ref}, 
+            React.createElement("td", {className: "cell"}, 
+              React.createElement("input", {type: "radio", name: "AdvancedWrUnit", ref: ref, onChange: this.changeAdvancedWrUnit, value: ""})
+            ), 
+            React.createElement("td", {className: "cell"}, obj['display_name']), 
+            React.createElement("td", {className: "cell"}, 
+              React.createElement("span", null, obj['weekday'][0], " /", obj['display_time']), React.createElement("br", null), 
+              React.createElement("span", null, obj['weekday'][1], " /", obj['display_time'])
+            ), 
+            React.createElement("td", {className: "cell"}, React.createElement("p", null, obj['class_size'][0], "-", obj['class_size'][1])), 
+            React.createElement("td", {className: "cell"}, "$", obj['price_per_class'], "/week")
+          )
+        );
+      }
+      adWrs.push(
+        React.createElement("tr", {key: "-1"}, 
+          React.createElement("td", {className: "cell"}, 
+            React.createElement("input", {type: "radio", name: "AdvancedWrUnit", onChange: this.changeAdvancedWrUnit, value: ""})
+          ), 
+          React.createElement("td", {className: "cell"}, "No, thanks."), 
+          React.createElement("td", {className: "cell"}, "---"), 
+          React.createElement("td", {className: "cell"}, "---"), 
+          React.createElement("td", {className: "cell"}, "---")
+        )
+      )
+    }
+
+    return (
+      React.createElement("div", {className: "panel panel-default"}, 
+        React.createElement("div", {className: "panel-heading"}, 
+          React.createElement("div", {className: "panel-title"}, 
+            React.createElement("h3", null, "Afternoon Advanced Writing Boot Camp")
+          )
+        ), 
+
+        React.createElement("div", {className: "panel-body"}, 
+        adWrData['grades'].indexOf(gd) > -1 ? 
+          React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-md-offset-1"}, 
+                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, adWrData['note'][0])), 
+                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, adWrData['note'][1]))
+              ), 
+
+              React.createElement("table", {className: "table table-bordered"}, 
+                React.createElement("thead", null, 
+                  React.createElement("tr", null, 
+                    React.createElement("th", null, "Select"), 
+                    React.createElement("th", null, "Class Name"), 
+                    React.createElement("th", null, "Class Time (Twice a week)"), 
+                    React.createElement("th", null, "Class Size"), 
+                    React.createElement("th", null, "Price Per Class")
+                  )
+                ), React.createElement("br", null), 
+                React.createElement("tbody", null, 
+                  adWrs
+                )
+              )
+            )
+          : 
+          React.createElement("div", {className: "row"}, 
+            React.createElement("div", {className: "col-md-offset-1"}, 
+              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, adWrData['notAvailable']))
+            )
+          )
+        )
+      )
+    );
+  }
+}); 
+
+module.exports = AdvancedWrUnit;
+
+},{"../../lib/summer/afternoonAdvancedWriting.json":2,"../actions/YFActions":218,"../stores/YFStore.jsx":241,"react":214,"react-router":45}],222:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -27095,6 +27330,8 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
     YFActions.loadEnrollment();
     return { 
       language: '',
+      writing: '',
+      math: '',
       done: false,
       showInfo: false,
       summerCampWeeks: YFStore.getSummerCampWeeks()
@@ -27115,9 +27352,18 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
     var lang = e.currentTarget.value;
     this.setState({ language: lang });
   },
+  changeWriting: function(w) {
+    this.setState({ writing: w });
+  },
+  changeMath: function(m) {
+    this.setState({ math: m });
+  },
   handleSubmit: function(e) {
     e.preventDefault();
     var self = this;
+    if(self.state.language === '' || self.state.writing === '' || self.state.math === ''){
+      return alert('Please finish all questions.');
+    }
     this.setState({ done: true, showInfo: true }, function() {
       React.findDOMNode(this.refs.submitButton).blur();
     });
@@ -27146,7 +27392,7 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
           
             React.createElement("div", {className: "row"}, 
               React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("p", {className: "bg-info"}, "No additional expense for Afternoon Academics(Math and Language), all have been included in the Basic Camp Fee.")
+                React.createElement("span", {className: "bg-info"}, "No additional expense for Afternoon Academics(Math and Language), all have been included in the Basic Camp Fee.")
               )
             ), React.createElement("hr", null), 
 
@@ -27182,14 +27428,16 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
                   )
                 )
               )
-            ), React.createElement("hr", null), 
-
-            React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("button", {onClick: this.handleSubmit, ref: "submitButton", className: "btn btn-primary"}, "Submit"), "  ", React.createElement("br", null), 
-                info
-              )
             )
+          )
+        ), 
+
+        React.createElement(WrMathChoice, {handleWriting: self.changeWriting, handleMath: self.changeMath}), 
+
+        React.createElement("div", {className: "row"}, 
+          React.createElement("div", {className: "col-md-offset-1"}, 
+            React.createElement("button", {onClick: this.handleSubmit, ref: "submitButton", className: "btn btn-primary"}, "Submit"), "  ", React.createElement("br", null), 
+            info
           )
         ), 
         this.state.done ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("p", null)
@@ -27198,9 +27446,87 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
   } 
 });
 
+var WrMathChoice = React.createClass({displayName: "WrMathChoice",
+  changeMath: function(e){
+    this.props.handleWriting(e.currentTarget.value);
+    YFStore.setMathChoice(e.currentTarget.value);
+  },
+  changeWriting: function(e){
+    this.props.handleMath(e.currentTarget.value);
+    YFStore.setWritingChoice(e.currentTarget.value);
+  },
+  render: function() {
+    return (
+      React.createElement("div", {className: "panel panel-default"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              React.createElement("h2", null, "Writing and Math Choices")
+            )
+          ), 
+
+          React.createElement("div", {className: "panel-body"}, 
+          
+            React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-md-offset-1"}, 
+                React.createElement("span", {className: "bg-info"}, "Please choose preferred writing and math classes.")
+              )
+            ), React.createElement("hr", null), 
+
+            React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-md-offset-1"}, 
+                React.createElement("strong", null, "Writing"), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "elective"}), 
+                    "Writing Elective Classes"
+                  )
+                ), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "advanced"}), 
+                    "Advanced Writing Boot Camp"
+                  )
+                ), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "none"}), 
+                    "No, thanks."
+                  )
+                )
+              ), 
+              React.createElement("hr", null), 
+
+              React.createElement("div", {className: "col-md-offset-1"}, 
+                React.createElement("strong", null, "Math"), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "elective"}), 
+                    "Math Elective Classes"
+                  )
+                ), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "advanced"}), 
+                    "Advanced Math Boot Camp"
+                  )
+                ), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "none"}), 
+                    "No, thanks."
+                  )
+                )
+              )
+            )
+          )
+        )
+    );
+  }
+});
+
 module.exports = AfternoonAcademics;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":233,"react":214,"react-router":45}],221:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":241,"react":214,"react-router":45}],223:[function(require,module,exports){
 'use strict';
 
 var React=require('react');
@@ -27538,7 +27864,246 @@ var Attendance = React.createClass({displayName: "Attendance",
 
 module.exports = Attendance;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":233,"react":214,"react-router":45}],222:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":241,"react":214,"react-router":45}],224:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+var enrichActData = require('../../lib/summer/enrichmentActivities.json');
+
+var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
+  render: function() {
+    var self = this;
+    var morningActs = [], afternoonActs = [];
+    var grade = this.props.incomingGrade;
+    var acts, hide, obj, ref;
+    if(self.props.summerCampWeeks.length === 10){
+      acts = enrichActData[self.props.curWeek]['morning'];
+      obj = acts[0];
+      //morning 
+      morningActs.push(
+        React.createElement("tr", {key: j}, 
+          React.createElement("td", {className: "cell"}, 
+            React.createElement("input", {type: "radio", name: "morning_acts", ref: ref, onChange: this.changeMorningAct, value: ""})
+          ), 
+          React.createElement("td", {className: "cell"}, 
+            React.createElement("span", {className: "text-primary"}, obj['activity_name']), " (Weekly Theme: ", obj['theme'], ")"), 
+          React.createElement("td", {className: "cell"}, obj['class_size'] === 'unlimited' ? React.createElement("p", null, "unlimited") : 
+            React.createElement("p", null, obj['class_size'][0], "-", obj['class_size'][1])
+          ), 
+          React.createElement("td", {className: "cell"}, "Free for 6 hours/week")
+        )
+      )
+      for(var j = 1; j < acts.length; j++) {
+        obj = acts[j];
+        hide = obj.grade.indexOf(grade) === -1;
+
+        if(!hide){
+          ref = "morning_" + j;
+          morningActs.push(
+            React.createElement("tr", {key: j}, 
+              React.createElement("td", {className: "cell"}, 
+                React.createElement("input", {type: "radio", name: "morning_acts", ref: ref, onChange: this.changeMorningAct, value: ""})
+              ), 
+              React.createElement("td", {className: "cell"}, obj['activity_name']), 
+              React.createElement("td", {className: "cell"}, obj['class_size'] === 'unlimited' ? React.createElement("p", null, "unlimited") : 
+                React.createElement("p", null, obj['class_size'][0], "-", obj['class_size'][1])
+              ), 
+              React.createElement("td", {className: "cell"}, "$", obj['price'], " for 6 hours/week")
+            )
+          );
+        }
+      }
+      //afternoon
+      acts = enrichActData[self.props.curWeek].afternoon;
+      for(var j = 0; j < acts.length; j++) {
+        obj = acts[j];
+        hide = obj.grade.indexOf(grade) === -1;
+
+        if(!hide){
+          ref = "afternoon_" + j;
+          afternoonActs.push(
+            React.createElement("tr", {key: j}, 
+              React.createElement("td", {className: "cell"}, 
+                React.createElement("input", {type: "radio", name: "afternoon_acts", ref: ref, onChange: this.changeAfternoonAct, value: ""})
+              ), 
+              React.createElement("td", {className: "cell"}, obj['activity_name']), 
+              React.createElement("td", {className: "cell"}, obj['class_size'] === 'unlimited' ? React.createElement("p", null, "unlimited") : 
+                React.createElement("p", null, obj['class_size'][0], "-", obj['class_size'][1])
+              ), 
+              React.createElement("td", {className: "cell"}, "$", obj['price'], " for 4.5 hours/week")
+            )
+          );
+        }
+      }
+      afternoonActs.push(
+        React.createElement("tr", {key: "-1"}, 
+          React.createElement("td", {className: "cell"}, 
+            React.createElement("input", {type: "radio", name: "afternoon_acts", ref: ref, onChange: this.changeAfternoonAct, value: ""})
+          ), 
+          React.createElement("td", {className: "cell"}, "I don't need it, thanks."), 
+          React.createElement("td", {className: "cell"}, "---"), 
+          React.createElement("td", {className: "cell"}, "---")
+        )
+      );
+    }
+    return (
+      React.createElement("div", {className: "panel panel-default"}, 
+        React.createElement("div", {className: "panel-heading"}, 
+          React.createElement("div", {className: "panel-title"}, 
+            React.createElement("h3", null, "Enrichment Activities")
+          )
+        ), 
+
+        React.createElement("div", {className: "panel-body"}, 
+          React.createElement("div", {className: "row"}, 
+            React.createElement("div", {className: "col-md-offset-1"}, 
+              React.createElement("h3", null, "Morning Activities--", enrichActData['morning_time'].display_time), 
+              React.createElement("span", {className: "bg-info"}, "1.", enrichActData['note']), React.createElement("br", null), 
+              React.createElement("span", {className: "bg-info"}, "2. Every avtivity has the same time: ", enrichActData['morning_time'].display_time)
+            ), 
+
+            React.createElement("table", {className: "table table-bordered"}, 
+              React.createElement("thead", null, 
+                React.createElement("tr", null, 
+                  React.createElement("th", null, "Select"), 
+                  React.createElement("th", null, "Activity"), 
+                  React.createElement("th", null, "Class Size"), 
+                  React.createElement("th", null, "Price Per Week")
+                )
+              ), React.createElement("br", null), 
+              React.createElement("tbody", null, 
+                morningActs
+              )
+            ), 
+            React.createElement("hr", null), 
+
+            React.createElement("div", {className: "col-md-offset-1"}, 
+              React.createElement("h3", null, "Afternoon Activities--", enrichActData['afternoon_time'].display_time), 
+              React.createElement("span", {className: "bg-info"}, "2. Every avtivity has the same time: ", enrichActData['afternoon_time'].display_time)
+            ), 
+
+            React.createElement("table", {className: "table table-bordered"}, 
+              React.createElement("thead", null, 
+                React.createElement("tr", null, 
+                  React.createElement("th", null, "Select"), 
+                  React.createElement("th", null, "Activity"), 
+                  React.createElement("th", null, "Class Size"), 
+                  React.createElement("th", null, "Price Per Week")
+                )
+              ), React.createElement("br", null), 
+              React.createElement("tbody", null, 
+                afternoonActs
+              )
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+module.exports = EnrichmentActs;
+
+},{"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":241,"react":214,"react-router":45}],225:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+var GATEData = require('../../lib/summer/afternoonGATE.json');
+
+var GATE = React.createClass({displayName: "GATE",
+  render: function() {
+    var self = this;
+    var gd = this.props.incomingGrade;
+    var gates = [];
+    var arr, obj, ref;
+    if(self.props.summerCampWeeks.length === 10 && GATEData['grades'].indexOf(gd) > -1){
+      arr = GATEData[gd];
+      for(var j = 0; j < arr.length; j++) {
+        obj = arr[j];
+        ref = self.props.curWeek + '_' + 'GATE_' + j;
+        gates.push(
+          React.createElement("tr", {key: ref}, 
+            React.createElement("td", {className: "cell"}, 
+              React.createElement("input", {type: "radio", name: "mathOlympiad", ref: ref, onChange: this.changeGATE, value: ""})
+            ), 
+            React.createElement("td", {className: "cell"}, obj['display_name']), 
+            React.createElement("td", {className: "cell"}, 
+              React.createElement("span", null, "Mon (", obj['class_time'][0]['display_time'], ")"), React.createElement("br", null), 
+              React.createElement("span", null, "Wed (", obj['class_time'][1]['display_time'], ")")
+            ), 
+            React.createElement("td", {className: "cell"}, React.createElement("p", null, obj['class_size'][0], "-", obj['class_size'][1])), 
+            React.createElement("td", {className: "cell"}, "$", obj['price_per_class'], "/week")
+          )
+        );
+      }
+      gates.push(
+        React.createElement("tr", {key: "-1"}, 
+          React.createElement("td", {className: "cell"}, 
+            React.createElement("input", {type: "radio", name: "mathOlympiad", onChange: this.changeGATE, value: ""})
+          ), 
+          React.createElement("td", {className: "cell"}, "No, thanks."), 
+          React.createElement("td", {className: "cell"}, "---"), 
+          React.createElement("td", {className: "cell"}, "---"), 
+          React.createElement("td", {className: "cell"}, "---")
+        )
+      )
+    }
+    return (
+      React.createElement("div", {className: "panel panel-default"}, 
+        React.createElement("div", {className: "panel-heading"}, 
+          React.createElement("div", {className: "panel-title"}, 
+            React.createElement("h3", null, "Afternoon GATE Elective Classes")
+          )
+        ), 
+
+        React.createElement("div", {className: "panel-body"}, 
+        GATEData['grades'].indexOf(gd) > -1 ? 
+          React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-md-offset-1"}, 
+                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "1. ", GATEData['note'].a)), 
+                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "2. ", GATEData['note'].b))
+              ), 
+
+              React.createElement("table", {className: "table table-bordered"}, 
+                React.createElement("thead", null, 
+                  React.createElement("tr", null, 
+                    React.createElement("th", null, "Select"), 
+                    React.createElement("th", null, "Class Name"), 
+                    React.createElement("th", null, "Class Time(Twice a week)"), 
+                    React.createElement("th", null, "Class Size"), 
+                    React.createElement("th", null, "Price Per Class")
+                  )
+                ), React.createElement("br", null), 
+                React.createElement("tbody", null, 
+                  gates
+                )
+              )
+            )
+          : 
+          React.createElement("div", {className: "row"}, 
+            React.createElement("div", {className: "col-md-offset-1"}, 
+              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, GATEData['notAvailable'])), React.createElement("br", null)
+            )
+          )
+        )
+      )
+    );
+  }
+}); 
+
+module.exports = GATE;
+
+},{"../../lib/summer/afternoonGATE.json":3,"../actions/YFActions":218,"../stores/YFStore.jsx":241,"react":214,"react-router":45}],226:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -27712,7 +28277,7 @@ var GetStarted = React.createClass({displayName: "GetStarted",
 
 module.exports = GetStarted;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":233,"formsy-react":16,"react":214,"react-router":45}],223:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":241,"formsy-react":16,"react":214,"react-router":45}],227:[function(require,module,exports){
 'use strict';
 
 var React=require('react');
@@ -27737,7 +28302,7 @@ var Home = React.createClass({displayName: "Home",
 
 module.exports = Home;
 
-},{"react":214}],224:[function(require,module,exports){
+},{"react":214}],228:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -27817,7 +28382,193 @@ var Login = React.createClass({displayName: "Login",
 
 module.exports = Login;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":233,"react":214,"react-router":45}],225:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":241,"react":214,"react-router":45}],229:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+var mathData = require('../../lib/summer/afternoonMathElective.json');
+
+var MathElective = React.createClass({displayName: "MathElective",
+  changeMathElective: function(e) {
+
+  },
+  render: function() {
+    var self = this;
+    var gd = this.props.incomingGrade;
+    var maths = [];
+    var arr, obj, ref;
+    if(self.props.summerCampWeeks.length === 10 && mathData['grades'].indexOf(gd) > -1){
+      arr = mathData[gd];
+      for(var j = 0; j < arr.length; j++) {
+        obj = arr[j];
+        ref = self.props.curWeek + '_' + 'MathElective_' + j;
+        maths.push(
+          React.createElement("tr", {key: ref}, 
+            React.createElement("td", {className: "cell"}, 
+              React.createElement("input", {type: "radio", name: "mathElective", ref: ref, onChange: this.changeMathElective, value: ""})
+            ), 
+            React.createElement("td", {className: "cell"}, obj['display_name']), 
+            React.createElement("td", {className: "cell"}, 
+              React.createElement("span", null, obj['weekday'], " /", obj['display_time'])
+            ), 
+            React.createElement("td", {className: "cell"}, React.createElement("p", null, obj['class_size'][0], "-", obj['class_size'][1])), 
+            React.createElement("td", {className: "cell"}, "$", obj['price_per_class'], "/week")
+          )
+        );
+      }
+      maths.push(
+        React.createElement("tr", {key: "-1"}, 
+          React.createElement("td", {className: "cell"}, 
+            React.createElement("input", {type: "radio", name: "mathElective", onChange: this.changeMathElective, value: ""})
+          ), 
+          React.createElement("td", {className: "cell"}, "No, thanks."), 
+          React.createElement("td", {className: "cell"}, "---"), 
+          React.createElement("td", {className: "cell"}, "---"), 
+          React.createElement("td", {className: "cell"}, "---")
+        )
+      )
+    }
+
+    return (
+      React.createElement("div", {className: "panel panel-default"}, 
+        React.createElement("div", {className: "panel-heading"}, 
+          React.createElement("div", {className: "panel-title"}, 
+            React.createElement("h3", null, "Afternoon Math Elective Classes")
+          )
+        ), 
+
+        React.createElement("div", {className: "panel-body"}, 
+        mathData['grades'].indexOf(gd) > -1 ? 
+          React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-md-offset-1"}, 
+                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, mathData['note']))
+              ), 
+
+              React.createElement("table", {className: "table table-bordered"}, 
+                React.createElement("thead", null, 
+                  React.createElement("tr", null, 
+                    React.createElement("th", null, "Select"), 
+                    React.createElement("th", null, "Class Name"), 
+                    React.createElement("th", null, "Weekday / Class Time"), 
+                    React.createElement("th", null, "Class Size"), 
+                    React.createElement("th", null, "Price Per Class")
+                  )
+                ), React.createElement("br", null), 
+                React.createElement("tbody", null, 
+                  maths
+                )
+              )
+            )
+          : 
+          React.createElement("div", {className: "row"}, 
+            React.createElement("div", {className: "col-md-offset-1"}, 
+              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, mathData['notAvailable'])), React.createElement("br", null)
+            )
+          )
+        )
+      )
+    );
+  }
+}); 
+
+module.exports = MathElective;
+
+},{"../../lib/summer/afternoonMathElective.json":4,"../actions/YFActions":218,"../stores/YFStore.jsx":241,"react":214,"react-router":45}],230:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+var mathOlpData = require('../../lib/summer/afternoonMathOlympiad.json');
+
+var MathOlympiad = React.createClass({displayName: "MathOlympiad",
+  render: function() {
+    var self = this;
+    var gd = this.props.incomingGrade;
+    var mathOlps = [];
+    var arr, obj, ref;
+    if(self.props.summerCampWeeks.length === 10 && mathOlpData['grades'].indexOf(gd) > -1){
+      arr = mathOlpData[gd];
+      for(var j = 0; j < arr.length; j++) {
+        obj = arr[j];
+        ref = self.props.curWeek + '_' + 'mathOlympiad_' + j;
+        mathOlps.push(
+          React.createElement("tr", {key: ref}, 
+            React.createElement("td", {className: "cell"}, 
+              React.createElement("input", {type: "radio", name: "mathOlympiad", ref: ref, onChange: this.changeMathOlympiad, value: ""})
+            ), 
+            React.createElement("td", {className: "cell"}, obj['display_name']), 
+            React.createElement("td", {className: "cell"}, obj['weekday'], " / ", obj['display_time']), 
+            React.createElement("td", {className: "cell"}, React.createElement("p", null, obj['class_size'][0], "-", obj['class_size'][1])), 
+            React.createElement("td", {className: "cell"}, "$", obj['price_per_class'], "/week")
+          )
+        );
+      }
+      mathOlps.push(
+        React.createElement("tr", {key: "-1"}, 
+          React.createElement("td", {className: "cell"}, 
+            React.createElement("input", {type: "radio", name: "mathOlympiad", onChange: this.changeMathOlympiad, value: ""})
+          ), 
+          React.createElement("td", {className: "cell"}, "No, thanks."), 
+          React.createElement("td", {className: "cell"}, "---"), 
+          React.createElement("td", {className: "cell"}, "---"), 
+          React.createElement("td", {className: "cell"}, "---")
+        )
+      )
+    }
+    return (
+      React.createElement("div", {className: "panel panel-default"}, 
+        React.createElement("div", {className: "panel-heading"}, 
+          React.createElement("div", {className: "panel-title"}, 
+            React.createElement("h3", null, "Afternoon Math Olympiad Elective Classes")
+          )
+        ), 
+
+        React.createElement("div", {className: "panel-body"}, 
+        mathOlpData['grades'].indexOf(gd) > -1 ? 
+          React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-md-offset-1"}, 
+                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, mathOlpData['note']))
+              ), 
+
+              React.createElement("table", {className: "table table-bordered"}, 
+                React.createElement("thead", null, 
+                  React.createElement("tr", null, 
+                    React.createElement("th", null, "Select"), 
+                    React.createElement("th", null, "Class Name"), 
+                    React.createElement("th", null, "Weekday / Class Time"), 
+                    React.createElement("th", null, "Class Size"), 
+                    React.createElement("th", null, "Price Per Week")
+                  )
+                ), React.createElement("br", null), 
+                React.createElement("tbody", null, 
+                  mathOlps
+                )
+              )
+            )
+          : 
+          React.createElement("div", {className: "row"}, 
+            React.createElement("div", {className: "col-md-offset-1"}, 
+              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, mathOlpData['notAvailable'])), React.createElement("br", null)
+            )
+          )
+        )
+      )
+    );
+  }
+}); 
+
+module.exports = MathOlympiad;
+
+},{"../../lib/summer/afternoonMathOlympiad.json":5,"../actions/YFActions":218,"../stores/YFStore.jsx":241,"react":214,"react-router":45}],231:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -28147,7 +28898,7 @@ var MovieBox = React.createClass({displayName: "MovieBox",
 
 module.exports = OtherServices;
 
-},{"../../lib/summer/morningExtendedCare.json":8,"../../lib/summer/movies.json":9,"../actions/YFActions":218,"../stores/YFStore.jsx":233,"react":214,"react-router":45}],226:[function(require,module,exports){
+},{"../../lib/summer/morningExtendedCare.json":8,"../../lib/summer/movies.json":9,"../actions/YFActions":218,"../stores/YFStore.jsx":241,"react":214,"react-router":45}],232:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -28162,10 +28913,12 @@ var Login = require('./Login.jsx');
 var Home = require('./Home.jsx');
 var GetStarted = require('./GetStarted.jsx');
 var Attendance = require('./Attendance.jsx');
-var Week1 = require('./Week1.jsx');
 var AfternoonAcademics = require('./AfternoonAcademics.jsx');
 var OtherServices = require('./OtherServices.jsx');
 var WritingClass = require('./WritingClass.jsx');
+var Week1 = require('./Week1.jsx');
+var Week2_3 = require('./Week2_3.jsx');
+
 
 var routes = (
 	React.createElement(Route, {handler: YFApp}, 
@@ -28177,6 +28930,7 @@ var routes = (
 		React.createElement(Route, {name: "summer/attendance", path: "/user/summer/attendance", handler: Attendance}), 
 		React.createElement(Route, {name: "summer/afternoon_academics", path: "/user/summer/afternoon_academics", handler: AfternoonAcademics}), 
 		React.createElement(Route, {name: "summer/week1", path: "/user/summer/week1", handler: Week1}), 
+		React.createElement(Route, {name: "summer/week2_3", path: "/user/summer/week2_3", handler: Week2_3}), 
 		React.createElement(Route, {name: "summer/other_services", path: "user/summer/other_services", handler: OtherServices}), 
 		React.createElement(Route, {name: "summer/writing_class", path: "user/summer/writing_class", handler: WritingClass})
 	)
@@ -28184,7 +28938,7 @@ var routes = (
 
 module.exports = routes;
 
-},{"./AfternoonAcademics.jsx":220,"./Attendance.jsx":221,"./GetStarted.jsx":222,"./Home.jsx":223,"./Login.jsx":224,"./OtherServices.jsx":225,"./Signup.jsx":227,"./Week1.jsx":228,"./WritingClass.jsx":229,"./YFApp.jsx":230,"react":214,"react-router":45}],227:[function(require,module,exports){
+},{"./AfternoonAcademics.jsx":222,"./Attendance.jsx":223,"./GetStarted.jsx":226,"./Home.jsx":227,"./Login.jsx":228,"./OtherServices.jsx":231,"./Signup.jsx":233,"./Week1.jsx":234,"./Week2_3.jsx":235,"./WritingClass.jsx":236,"./YFApp.jsx":238,"react":214,"react-router":45}],233:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -28442,7 +29196,7 @@ var ParentBox = React.createClass({displayName: "ParentBox",
 
 module.exports = Signup;
 
-},{"../actions/YFActions":218,"formsy-react":16,"react":214,"react-router":45,"superagent":215}],228:[function(require,module,exports){
+},{"../actions/YFActions":218,"formsy-react":16,"react":214,"react-router":45,"superagent":215}],234:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -28463,6 +29217,8 @@ var GATEData = require('../../lib/summer/afternoonGATE.json');
 var curWeek = 'week_1';
 var coveredDate = '6/13-6/17';
 var curWeekIdx = 0;
+
+var EnrichmentActs = require('./EnrichmentActs.jsx');
 
 var Week1 = React.createClass({displayName: "Week1",
   mixins: [ Navigation ],
@@ -28511,7 +29267,7 @@ var Week1 = React.createClass({displayName: "Week1",
        show ? 
         React.createElement("h3", null, "You plan not to attend in this week, please click Continue below.") :
         React.createElement("div", null, 
-        React.createElement(EnrichmentActs, {incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}), 
+        React.createElement(EnrichmentActs, {curWeek: curWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}), 
         React.createElement("div", {className: "row"}, 
           React.createElement("div", {className: "col-md-offset-1"}, 
             React.createElement("button", {onClick: this.handleSubmit, ref: "submitButton", className: "btn btn-primary"}, "Submit"), "  ", React.createElement("br", null)
@@ -28526,142 +29282,150 @@ var Week1 = React.createClass({displayName: "Week1",
   } 
 });
 
-var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
-  render: function() {
-    var self = this;
-    var morningActs = [], afternoonActs = [];
-    var grade = this.props.incomingGrade;
-    var acts, hide, obj, ref;
-    if(self.props.summerCampWeeks.length === 10){
-      acts = enrichActData[curWeek].morning;
-      obj = acts[0];
-      //morning 
-      morningActs.push(
-        React.createElement("tr", {key: j}, 
-          React.createElement("td", {className: "cell"}, 
-            React.createElement("input", {type: "radio", name: "morning_acts", ref: ref, onChange: this.changeMorningAct, value: ""})
-          ), 
-          React.createElement("td", {className: "cell"}, 
-            React.createElement("span", {className: "text-primary"}, obj['activity_name']), " (Weekly Theme: ", obj['theme'], ")"), 
-          React.createElement("td", {className: "cell"}, obj['class_size'] === 'unlimited' ? React.createElement("p", null, "unlimited") : 
-            React.createElement("p", null, obj['class_size'][0], "-", obj['class_size'][1])
-          ), 
-          React.createElement("td", {className: "cell"}, "Free for 6 hours/week")
-        )
-      )
-      for(var j = 1; j < acts.length; j++) {
-        obj = acts[j];
-        hide = obj.grade.indexOf(grade) === -1;
-
-        if(!hide){
-          ref = "morning_" + j;
-          morningActs.push(
-            React.createElement("tr", {key: j}, 
-              React.createElement("td", {className: "cell"}, 
-                React.createElement("input", {type: "radio", name: "morning_acts", ref: ref, onChange: this.changeMorningAct, value: ""})
-              ), 
-              React.createElement("td", {className: "cell"}, obj['activity_name']), 
-              React.createElement("td", {className: "cell"}, obj['class_size'] === 'unlimited' ? React.createElement("p", null, "unlimited") : 
-                React.createElement("p", null, obj['class_size'][0], "-", obj['class_size'][1])
-              ), 
-              React.createElement("td", {className: "cell"}, "$", obj['price'], " for 6 hours/week")
-            )
-          );
-        }
-      }
-      //afternoon
-      acts = enrichActData[curWeek].afternoon;
-      for(var j = 0; j < acts.length; j++) {
-        obj = acts[j];
-        hide = obj.grade.indexOf(grade) === -1;
-
-        if(!hide){
-          ref = "afternoon_" + j;
-          afternoonActs.push(
-            React.createElement("tr", {key: j}, 
-              React.createElement("td", {className: "cell"}, 
-                React.createElement("input", {type: "radio", name: "afternoon_acts", ref: ref, onChange: this.changeAfternoonAct, value: ""})
-              ), 
-              React.createElement("td", {className: "cell"}, obj['activity_name']), 
-              React.createElement("td", {className: "cell"}, obj['class_size'] === 'unlimited' ? React.createElement("p", null, "unlimited") : 
-                React.createElement("p", null, obj['class_size'][0], "-", obj['class_size'][1])
-              ), 
-              React.createElement("td", {className: "cell"}, "$", obj['price'], " for 4.5 hours/week")
-            )
-          );
-        }
-      }
-      afternoonActs.push(
-        React.createElement("tr", {key: "-1"}, 
-          React.createElement("td", {className: "cell"}, 
-            React.createElement("input", {type: "radio", name: "afternoon_acts", ref: ref, onChange: this.changeAfternoonAct, value: ""})
-          ), 
-          React.createElement("td", {className: "cell"}, "I don't need it, thanks."), 
-          React.createElement("td", {className: "cell"}, "---"), 
-          React.createElement("td", {className: "cell"}, "---")
-        )
-      );
-    }
-    return (
-      React.createElement("div", {className: "panel panel-default"}, 
-        React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Enrichment Activities")
-          )
-        ), 
-
-        React.createElement("div", {className: "panel-body"}, 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("h3", null, "Morning Activities--", enrichActData['morning_time'].display_time), 
-              React.createElement("span", {className: "bg-info"}, "1.", enrichActData['note']), React.createElement("br", null), 
-              React.createElement("span", {className: "bg-info"}, "2. Every avtivity has the same time: ", enrichActData['morning_time'].display_time)
-            ), 
-
-            React.createElement("table", {className: "table table-bordered"}, 
-              React.createElement("thead", null, 
-                React.createElement("tr", null, 
-                  React.createElement("th", null, "Select"), 
-                  React.createElement("th", null, "Activity"), 
-                  React.createElement("th", null, "Class Size"), 
-                  React.createElement("th", null, "Price Per Week")
-                )
-              ), React.createElement("br", null), 
-              React.createElement("tbody", null, 
-                morningActs
-              )
-            ), 
-            React.createElement("hr", null), 
-
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("h3", null, "Afternoon Activities--", enrichActData['afternoon_time'].display_time), 
-              React.createElement("span", {className: "bg-info"}, "2. Every avtivity has the same time: ", enrichActData['afternoon_time'].display_time)
-            ), 
-
-            React.createElement("table", {className: "table table-bordered"}, 
-              React.createElement("thead", null, 
-                React.createElement("tr", null, 
-                  React.createElement("th", null, "Select"), 
-                  React.createElement("th", null, "Activity"), 
-                  React.createElement("th", null, "Class Size"), 
-                  React.createElement("th", null, "Price Per Week")
-                )
-              ), React.createElement("br", null), 
-              React.createElement("tbody", null, 
-                afternoonActs
-              )
-            ), 
-            React.createElement("hr", null)
-          )
-        )
-      )
-    );
-  }
-});
-
 module.exports = Week1;
 
-},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":233,"react":214,"react-router":45}],229:[function(require,module,exports){
+},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":241,"./EnrichmentActs.jsx":224,"react":214,"react-router":45}],235:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+var enrichActData = require('../../lib/summer/enrichmentActivities.json');
+var wrData = require('../../lib/summer/afternoonWritingElective.json');
+var adWrData = require('../../lib/summer/afternoonAdvancedWriting.json');
+var mathData = require('../../lib/summer/afternoonMathElective.json');
+var adMathData = require('../../lib/summer/afternoonAdvancedMath.json');
+var mathOlpData = require('../../lib/summer/afternoonMathOlympiad.json');
+var GATEData = require('../../lib/summer/afternoonGATE.json');
+
+
+var preWeek = 'week_2';
+var postWeek = 'week_3';
+var unitWeek = 'week_2_3';
+var coveredDate = ['6/20-6/24', '6/27-7/1'];
+var preWeekIdx = 1, postWeekIdx = 2;
+
+var MathOlympiad = require('./MathOlympiad.jsx');
+var EnrichmentActs = require('./EnrichmentActs.jsx');
+var GATE = require('./GATE.jsx');
+var WritingElective = require('./WritingElective.jsx');
+var MathElective = require('./MathElective.jsx');
+var AdvancedWrUnit = require('./AdvancedWrUnit.jsx');
+var AdvancedMathUnit = require('./AdvancedMathUnit.jsx');
+
+var Week2_3 = React.createClass({displayName: "Week2_3",
+  mixins: [ Navigation ],
+  getInitialState: function() {
+    YFActions.loadEnrollment();
+    return { 
+      timeConflict: false,
+      done: false,
+      writing: YFStore.getWritingChoice(),
+      math: YFStore.getMathChoice(),
+      incomingGrade: YFStore.getIncomingGrade(),
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    };
+  },
+  componentDidMount: function() {
+    YFStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    YFStore.removeChangeListener(this._onChange);
+  },
+  _onChange: function() {
+    this.setState({
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    });
+  },
+  handleSubmit: function(e) {
+    e.preventDefault();
+    this.setState({ done: true });
+  },
+  handleContinue: function(e) {
+    var self = this;
+    // YFActions.saveWeek2_3(self.state.language, function() {
+    //   self.transitionTo('summer/writing_class');
+    // });
+    self.transitionTo('summer/week2_3');  
+  },
+
+  render: function () {
+    var self = this;
+    var gd = self.state.incomingGrade;
+    var preShow = false, postShow = false;
+    if(self.state.summerCampWeeks.length === 10){
+      preShow = self.state.summerCampWeeks[preWeekIdx].schedulePattern !== 'absence';
+      postShow = self.state.summerCampWeeks[postWeekIdx].schedulePattern !== 'absence';
+    }
+    return (
+      React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
+      React.createElement("h2", null, "Week 2  (", coveredDate[0], ")"), 
+       !preShow ? 
+        React.createElement("h3", null, "You plan not to attend in this week, please check out next week below.") :
+        React.createElement("div", null, 
+        React.createElement(EnrichmentActs, {curWeek: preWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}), 
+        self.state.writing === 'elective' ?
+        React.createElement(WritingElective, {curWeek: preWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}) :
+          React.createElement("p", null), 
+        self.state.math === 'elective' ?
+        React.createElement(MathElective, {curWeek: preWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}) :
+        React.createElement("p", null), 
+        React.createElement(MathOlympiad, {curWeek: preWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}), 
+        React.createElement(GATE, {curWeek: preWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks})
+
+        ), 
+      
+      React.createElement("hr", null), 
+      React.createElement("h2", null, "Week 3  (", coveredDate[1], ")"), 
+       !postShow ? 
+        React.createElement("h3", null, "You plan not to attend in this week, please click Submit below.") :
+        React.createElement("div", null, 
+        React.createElement(EnrichmentActs, {curWeek: postWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}), 
+        self.state.writing === 'elective' ?
+        React.createElement(WritingElective, {curWeek: postWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}) :
+          React.createElement("p", null), 
+        self.state.math === 'elective' ?
+        React.createElement(MathElective, {curWeek: postWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}) :
+        React.createElement("p", null), 
+        React.createElement(MathOlympiad, {curWeek: postWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}), 
+        React.createElement(GATE, {curWeek: postWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks})
+        
+        ), 
+      
+      React.createElement("hr", null), 
+      (self.state.writing === 'advanced' || self.state.math === 'advanced') ? 
+      React.createElement("div", null, 
+        React.createElement("h2", null, "Week 2 & Week 3 Unit"), 
+          (!preShow || !postShow) ? 
+            React.createElement("h3", {className: "bg-info"}, "Sorry, you can't enroll in this Advanced Writing(or Math) Unit due to at least one-week absence.") :
+            React.createElement("div", null, 
+            self.state.writing === 'advanced' ? 
+            React.createElement(AdvancedWrUnit, {curWeek: unitWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null), 
+            self.state.math === 'advanced' ? 
+            React.createElement(AdvancedMathUnit, {curWeek: unitWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null)
+            )
+          
+      )
+      : React.createElement("p", null), 
+
+      React.createElement("div", {className: "row"}, 
+        React.createElement("div", {className: "col-md-offset-1"}, 
+          React.createElement("button", {onClick: this.handleSubmit, ref: "submitButton", className: "btn btn-primary"}, "Submit"), "  ", React.createElement("br", null)
+        )
+      ), 
+
+      (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("p", null)
+      )
+    );
+  } 
+});
+
+module.exports = Week2_3;
+
+},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":241,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":224,"./GATE.jsx":225,"./MathElective.jsx":229,"./MathOlympiad.jsx":230,"./WritingElective.jsx":237,"react":214,"react-router":45}],236:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -28744,9 +29508,6 @@ var WritingClass = React.createClass({displayName: "WritingClass",
           </div>
         </div>*/
 
-
-
-
         React.createElement("div", {className: "row"}, 
           React.createElement("div", {className: "col-md-offset-1"}, 
             React.createElement("button", {onClick: this.handleSubmit, ref: "submitButton", className: "btn btn-primary"}, "Submit"), "  ", React.createElement("br", null)
@@ -28806,7 +29567,7 @@ var WritingElective = React.createClass({displayName: "WritingElective",
         }
       }
     }
-    
+
     return (
       React.createElement("div", {className: "panel panel-default"}, 
         React.createElement("div", {className: "panel-heading"}, 
@@ -28840,7 +29601,6 @@ var WritingElective = React.createClass({displayName: "WritingElective",
     );
   }
 });
-
 
 var AdvancedWriting = React.createClass({displayName: "AdvancedWriting",
   changeAdvancedWriting: function(e) {
@@ -28928,7 +29688,103 @@ var AdvancedWriting = React.createClass({displayName: "AdvancedWriting",
 
 module.exports = WritingClass;
 
-},{"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonWritingElective.json":6,"../actions/YFActions":218,"../stores/YFStore.jsx":233,"react":214,"react-router":45}],230:[function(require,module,exports){
+},{"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonWritingElective.json":6,"../actions/YFActions":218,"../stores/YFStore.jsx":241,"react":214,"react-router":45}],237:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+var wrData = require('../../lib/summer/afternoonWritingElective.json');
+
+var WritingElective = React.createClass({displayName: "WritingElective",
+  changeWritingElective: function(e) {
+
+  },
+  render: function() {
+    var self = this;
+    var gd = this.props.incomingGrade;
+    var writings = [];
+    var arr, obj, ref;
+    if(self.props.summerCampWeeks.length === 10 && wrData['grades'].indexOf(gd) > -1){
+      arr = wrData[gd];
+      for(var j = 0; j < arr.length; j++) {
+        obj = arr[j];
+        ref = self.props.curWeek + '_' + 'WritingElective_' + j;
+        writings.push(
+          React.createElement("tr", {key: ref}, 
+            React.createElement("td", {className: "cell"}, 
+              React.createElement("input", {type: "radio", name: "writingElective", ref: ref, onChange: this.changeWritingElective, value: ""})
+            ), 
+            React.createElement("td", {className: "cell"}, obj['display_name']), 
+            React.createElement("td", {className: "cell"}, 
+              React.createElement("span", null, obj['weekday'], " /", obj['display_time'])
+            ), 
+            React.createElement("td", {className: "cell"}, React.createElement("p", null, obj['class_size'][0], "-", obj['class_size'][1])), 
+            React.createElement("td", {className: "cell"}, "$", obj['price_per_class'], "/week")
+          )
+        );
+      }
+      writings.push(
+        React.createElement("tr", {key: "-1"}, 
+          React.createElement("td", {className: "cell"}, 
+            React.createElement("input", {type: "radio", name: "writingElective", onChange: this.changeWritingElective, value: ""})
+          ), 
+          React.createElement("td", {className: "cell"}, "No, thanks."), 
+          React.createElement("td", {className: "cell"}, "---"), 
+          React.createElement("td", {className: "cell"}, "---"), 
+          React.createElement("td", {className: "cell"}, "---")
+        )
+      )
+    }
+
+    return (
+      React.createElement("div", {className: "panel panel-default"}, 
+        React.createElement("div", {className: "panel-heading"}, 
+          React.createElement("div", {className: "panel-title"}, 
+            React.createElement("h3", null, "Afternoon Writing Elective Classes")
+          )
+        ), 
+
+        React.createElement("div", {className: "panel-body"}, 
+        wrData['grades'].indexOf(gd) > -1 ? 
+          React.createElement("div", {className: "row"}, 
+              React.createElement("div", {className: "col-md-offset-1"}, 
+                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, wrData['note']))
+              ), 
+
+              React.createElement("table", {className: "table table-bordered"}, 
+                React.createElement("thead", null, 
+                  React.createElement("tr", null, 
+                    React.createElement("th", null, "Select"), 
+                    React.createElement("th", null, "Class Name"), 
+                    React.createElement("th", null, "Weekday / Class Time"), 
+                    React.createElement("th", null, "Class Size"), 
+                    React.createElement("th", null, "Price Per Class")
+                  )
+                ), React.createElement("br", null), 
+                React.createElement("tbody", null, 
+                  writings
+                )
+              )
+            )
+          : 
+          React.createElement("div", {className: "row"}, 
+            React.createElement("div", {className: "col-md-offset-1"}, 
+              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, wrData['notAvailable'])), React.createElement("br", null)
+            )
+          )
+        )
+      )
+    );
+  }
+}); 
+
+module.exports = WritingElective;
+
+},{"../../lib/summer/afternoonWritingElective.json":6,"../actions/YFActions":218,"../stores/YFStore.jsx":241,"react":214,"react-router":45}],238:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -28997,7 +29853,7 @@ var YFApp = React.createClass({displayName: "YFApp",
 
 module.exports = YFApp;
 
-},{"../stores/YFStore.jsx":233,"react":214,"react-router":45}],231:[function(require,module,exports){
+},{"../stores/YFStore.jsx":241,"react":214,"react-router":45}],239:[function(require,module,exports){
 /*
  * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -29020,7 +29876,7 @@ module.exports = keyMirror({
   YF_LOAD_ENROLLMENT: null
 });
 
-},{"keymirror":19}],232:[function(require,module,exports){
+},{"keymirror":19}],240:[function(require,module,exports){
 /*
 * AppDispatcher
 *
@@ -29031,7 +29887,7 @@ var Dispatcher = require('flux').Dispatcher;
 
 module.exports = new Dispatcher();
 
-},{"flux":12}],233:[function(require,module,exports){
+},{"flux":12}],241:[function(require,module,exports){
 'use strict';
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
@@ -29067,6 +29923,7 @@ var summerWeekCount = 0;
 var summerCampWeeks = [];
 var enrollmentId = '';
 var enrollment = {};
+var writingChoice = 'none', mathChoice = 'none'; //["elective", "advanced", "none"]
 var done = {
   scheduled: false,
   enrichmentActivities: false
@@ -29200,6 +30057,18 @@ var YFStore = assign({}, EventEmitter.prototype, {
   getIncomingGrade: function() {
     return sessionStorage.getItem('incomingGrade');
   },
+  setWritingChoice: function(w) {
+    sessionStorage.setItem('writingChoice', w);
+  },
+  setMathChoice: function(m) {
+    sessionStorage.setItem('mathChoice', m);
+  },
+  getWritingChoice: function(){
+    return sessionStorage.getItem('writingChoice');
+  },
+  getMathChoice: function(){
+    return sessionStorage.getItem('mathChoice');
+  },
   getCurrentStudent: function() {
     var i = sessionStorage.getItem('studentIndex');
     return students[i];
@@ -29315,4 +30184,4 @@ AppDispatcher.register(function(action) {
 
 module.exports = YFStore;
 
-},{"../constants/YFConstants":231,"../dispatcher/AppDispatcher":232,"events":10,"object-assign":20,"superagent":215}]},{},[219]);
+},{"../constants/YFConstants":239,"../dispatcher/AppDispatcher":240,"events":10,"object-assign":20,"superagent":215}]},{},[219]);

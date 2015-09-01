@@ -1,5 +1,6 @@
 {
-    "Note":"Class A and B are identical for G2. Total of 8 weeks. Students can enroll weekly and do not have to enroll in all 8 weeks.",
+    "note":"Class A and B are identical for G2. Total of 8 weeks. Students can enroll weekly and do not have to enroll in all 8 weeks.",
+    "notAvailable": "Sorry, afternoon writing elective classes are only available for those whose incoming grade is between G1 or G2.",
     "grades": ["G1", "G2"],
     "G1": [
         {

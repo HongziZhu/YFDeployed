@@ -33,7 +33,7 @@ var summerWeekCount = 0;
 var summerCampWeeks = [];
 var enrollmentId = '';
 var enrollment = {};
-var writingChoice = 'none', mathChoice = 'none';
+var writingChoice = 'none', mathChoice = 'none'; //["elective", "advanced", "none"]
 var done = {
   scheduled: false,
   enrichmentActivities: false
@@ -167,15 +167,17 @@ var YFStore = assign({}, EventEmitter.prototype, {
   getIncomingGrade: function() {
     return sessionStorage.getItem('incomingGrade');
   },
-  //TODO
-  setWritingAndMathChoices: function(w, m) {
-
+  setWritingChoice: function(w) {
+    sessionStorage.setItem('writingChoice', w);
+  },
+  setMathChoice: function(m) {
+    sessionStorage.setItem('mathChoice', m);
   },
   getWritingChoice: function(){
-
+    return sessionStorage.getItem('writingChoice');
   },
   getMathChoice: function(){
-
+    return sessionStorage.getItem('mathChoice');
   },
   getCurrentStudent: function() {
     var i = sessionStorage.getItem('studentIndex');

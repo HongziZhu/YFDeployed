@@ -9,7 +9,7 @@
 			"display_name": "Writing A",
 			"database_name": "Writing_G1A",
 			"weekday": "Tue",
-			"display_time": "2:20-3:05 pm",
+			"display_time": "2:20 PM-3:05 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		},
@@ -17,7 +17,7 @@
       "display_name": "Writing B",
 			"database_name": "Writing_G1B",
 			"weekday": "Thu",
-			"display_time": "2:20-3:05 pm",
+			"display_time": "2:20 PM-3:05 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12			
 		}
@@ -27,7 +27,7 @@
       "display_name": "Writing A",
 			"database_name": "Writing_G2A",
 			"weekday": "Tue",
-			"display_time": "3:10-3:55 pm",
+			"display_time": "3:10 PM-3:55 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		},
@@ -35,7 +35,7 @@
       "display_name": "Writing B",
 			"database_name": "Writing_G2B",
 			"weekday": "Thu",
-			"display_time": "3:10-3:55 pm",
+			"display_time": "3:10 PM-3:55 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		},
@@ -43,7 +43,7 @@
 			"display_name": "Writing C",
 			"database_name": "Writing_G23",
 			"weekday": "Tue",
-			"display_time": "1:30-2:15 pm",
+			"display_time": "1:30 PM-2:15 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}
@@ -53,7 +53,7 @@
 			"display_name": "Writing",
 			"database_name": "Writing_G23",
 			"weekday": "Tue",
-			"display_time": "1:30-2:15 pm",
+			"display_time": "1:30 PM-2:15 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}
@@ -63,7 +63,7 @@
 			"display_name": "Writing",
 			"database_name": "Writing_G45",
 			"weekday": "Thu",
-			"display_time": "1:30-2:15 pm",
+			"display_time": "1:30 PM-2:15 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}
@@ -73,7 +73,7 @@
 			"display_name": "Writing",
 			"database_name": "Writing_G45",
 			"weekday": "Thu",
-			"display_time": "1:30-2:15 pm",
+			"display_time": "1:30 PM-2:15 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
 		}
