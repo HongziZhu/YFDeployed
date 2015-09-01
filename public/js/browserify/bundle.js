@@ -25860,8 +25860,63 @@ var Home = React.createClass({displayName: "Home",
     //Diff: 1. class -> className; 2. for -> htmlFor; 3. <input ..... />;  4. <br> -> <br></br>
     //5. a single element to contain the render stuff
     return (
-      React.createElement("div", {className: "row"}, 
-<<<<<<< HEAD
+React.createElement("div", {className: "page-container"}, 
+
+React.createElement("div", {className: "sidebar-menu toggle-others fixed"}, 
+        React.createElement("div", {className: "sidebar-menu-inner"}, 
+          React.createElement("ul", {id: "main-menu", className: "main-menu"}, 
+            React.createElement("li", null, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-cog"}), 
+                React.createElement("span", {className: "title"}, "Get Started")
+              )
+            ), 
+            React.createElement("li", null, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-desktop"}), 
+                React.createElement("span", {className: "title"}, "Attendance")
+              )
+            ), 
+            React.createElement("li", null, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-note"}), 
+                React.createElement("span", {className: "title"}, "Enrichment Activities")
+              )
+            ), 
+            React.createElement("li", null, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-database"}), 
+                React.createElement("span", {className: "title"}, "Afternoon Academics")
+              )
+            ), 
+            React.createElement("li", {className: "active opened active"}, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-cog"}), 
+                React.createElement("span", {className: "title"}, "Writing Classes")
+              )
+            ), 
+            React.createElement("li", null, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-cog"}), 
+                React.createElement("span", {className: "title"}, "Math Classes")
+              )
+            ), 
+            React.createElement("li", null, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-cog"}), 
+                React.createElement("span", {className: "title"}, "GATE Elective")
+              )
+            ), 
+            React.createElement("li", null, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-params"}), 
+                React.createElement("span", {className: "title"}, "Other Services and Activitie")
+              )
+            )
+          )
+        )
+      ), 
+
 React.createElement("div", {className: "col-md-12"}, 
      React.createElement("table", {className: "dataintable"}, 
 React.createElement("tbody", null, React.createElement("tr", null, 
@@ -25890,23 +25945,23 @@ React.createElement("td", null,
  ), 
 
 React.createElement("td", null, 
-	React.createElement("ul", null, 
-	React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
-	React.createElement("li", null, "circle")
-	)
+  React.createElement("ul", null, 
+  React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
+  React.createElement("li", null, "circle")
+  )
 ), 
 React.createElement("td", null, 
-	React.createElement("ul", null, 
-	React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
-	React.createElement("li", null, "circle")
-	)
+  React.createElement("ul", null, 
+  React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
+  React.createElement("li", null, "circle")
+  )
 ), 
 React.createElement("td", null, 
-	React.createElement("ul", null, 
-	React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
-	React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Morning Enrichment Activity")), 
-	React.createElement("li", null, "circle")
-	)
+  React.createElement("ul", null, 
+  React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
+  React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Morning Enrichment Activity")), 
+  React.createElement("li", null, "circle")
+  )
 )
 ), 
 
@@ -25914,36 +25969,37 @@ React.createElement("tr", null,
 React.createElement("th", null, "PM"), 
 React.createElement("td", null, React.createElement("ul", null, 
     React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Afternoon Enrichment Activity")), 
-	React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
-	React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes"))
+  React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
+  React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes"))
     )), 
 React.createElement("td", null, 
-	React.createElement("ul", null, 
-	React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
-	React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes")), 
-	React.createElement("li", null, "circle")
-	)
+  React.createElement("ul", null, 
+  React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
+  React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes")), 
+  React.createElement("li", null, "circle")
+  )
 ), 
 React.createElement("td", null, 
-	React.createElement("ul", null, 
-	React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
-	React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes")), 
-	React.createElement("li", null, "circle")
-	)
+  React.createElement("ul", null, 
+  React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
+  React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes")), 
+  React.createElement("li", null, "circle")
+  )
 ), 
 React.createElement("td", null, React.createElement("ul", null, 
     React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Afternoon Enrichment Activity")), 
-	React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
-	React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes"))
+  React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
+  React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes"))
     )), 
 React.createElement("td", null, React.createElement("ul", null, 
     React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Afternoon Enrichment Activity")), 
-	React.createElement("li", null, "square"), 
-	React.createElement("li", null, "circle")
+  React.createElement("li", null, "square"), 
+  React.createElement("li", null, "circle")
     ))
 )
 ))
 ), 
+
 
 
 
@@ -26150,15 +26206,16 @@ React.createElement("div", {className: "col-md-12"},
                 )
               )
             )
-          )		
-=======
+          ), 
+
         React.createElement("div", {className: "col-sm-12"}, 
           React.createElement("h2", null, "YangFan Enrollment System"), 
           React.createElement("div", {className: "lead"}, 
             "Welcome!"  
           )
->>>>>>> master
+
         )
+)
 )
 
     );

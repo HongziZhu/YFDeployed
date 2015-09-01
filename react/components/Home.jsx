@@ -9,8 +9,63 @@ var Home = React.createClass({
     //Diff: 1. class -> className; 2. for -> htmlFor; 3. <input ..... />;  4. <br> -> <br></br>
     //5. a single element to contain the render stuff
     return (
-      <div className="row">
-<<<<<<< HEAD
+<div className="page-container">
+
+<div className="sidebar-menu toggle-others fixed">
+        <div className="sidebar-menu-inner">  
+          <ul id="main-menu" className="main-menu">
+            <li>
+              <a>
+                <i className="linecons-cog" />
+                <span className="title">Get Started</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <i className="linecons-desktop" />
+                <span className="title">Attendance</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <i className="linecons-note" />
+                <span className="title">Enrichment Activities</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <i className="linecons-database" />
+                <span className="title">Afternoon Academics</span>
+              </a>
+            </li>
+            <li className="active opened active">
+              <a>
+                <i className="linecons-cog" />
+                <span className="title">Writing Classes</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <i className="linecons-cog" />
+                <span className="title">Math Classes</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <i className="linecons-cog" />
+                <span className="title">GATE Elective</span>
+              </a>
+            </li>
+            <li>
+              <a>
+                <i className="linecons-params" />
+                <span className="title">Other Services and Activitie</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
 <div className="col-md-12">
      <table className="dataintable" >
 <tbody><tr>
@@ -39,23 +94,23 @@ var Home = React.createClass({
  </td>
 
 <td>
-	<ul>
-	<li><span className = "morning-care">Morning Extended Care</span></li>
-	<li>circle</li>
-	</ul>
+  <ul>
+  <li><span className = "morning-care">Morning Extended Care</span></li>
+  <li>circle</li>
+  </ul>
 </td>
 <td>
-	<ul>
-	<li><span className = "morning-care">Morning Extended Care</span></li>
-	<li>circle</li>
-	</ul>
+  <ul>
+  <li><span className = "morning-care">Morning Extended Care</span></li>
+  <li>circle</li>
+  </ul>
 </td>
 <td>
-	<ul>
-	<li><span className = "morning-care">Morning Extended Care</span></li>
-	<li><span className = "enrichment-activity">Morning Enrichment Activity</span></li>
-	<li>circle</li>
-	</ul>
+  <ul>
+  <li><span className = "morning-care">Morning Extended Care</span></li>
+  <li><span className = "enrichment-activity">Morning Enrichment Activity</span></li>
+  <li>circle</li>
+  </ul>
 </td>
 </tr>
 
@@ -63,36 +118,37 @@ var Home = React.createClass({
 <th>PM</th>
 <td><ul>
     <li><span className = "enrichment-activity">Afternoon Enrichment Activity</span></li>
-	<li><span className = "afternoon-academics">Afternoon Academics</span></li>
-	<li><span className = "electives">Elective Classes</span></li>
+  <li><span className = "afternoon-academics">Afternoon Academics</span></li>
+  <li><span className = "electives">Elective Classes</span></li>
     </ul></td>
 <td>
-	<ul>
-	<li><span className = "afternoon-academics">Afternoon Academics</span></li>
-	<li><span className = "electives">Elective Classes</span></li>
-	<li>circle</li>
-	</ul>
+  <ul>
+  <li><span className = "afternoon-academics">Afternoon Academics</span></li>
+  <li><span className = "electives">Elective Classes</span></li>
+  <li>circle</li>
+  </ul>
 </td>
 <td>
-	<ul>
-	<li><span className = "afternoon-academics">Afternoon Academics</span></li>
-	<li><span className = "electives">Elective Classes</span></li>
-	<li>circle</li>
-	</ul>
+  <ul>
+  <li><span className = "afternoon-academics">Afternoon Academics</span></li>
+  <li><span className = "electives">Elective Classes</span></li>
+  <li>circle</li>
+  </ul>
 </td>
 <td><ul>
     <li><span className = "enrichment-activity">Afternoon Enrichment Activity</span></li>
-	<li><span className = "afternoon-academics">Afternoon Academics</span></li>
-	<li><span className = "electives">Elective Classes</span></li>
+  <li><span className = "afternoon-academics">Afternoon Academics</span></li>
+  <li><span className = "electives">Elective Classes</span></li>
     </ul></td>
 <td><ul>
     <li><span className = "enrichment-activity">Afternoon Enrichment Activity</span></li>
-	<li>square</li>
-	<li>circle</li>
+  <li>square</li>
+  <li>circle</li>
     </ul></td>
 </tr>
 </tbody></table>
 </div>
+
 
 
 
@@ -299,15 +355,16 @@ var Home = React.createClass({
                 </label>
               </div>
             </div>
-          </div>		
-=======
+          </div>    
+
         <div className="col-sm-12">
           <h2>YangFan Enrollment System</h2>
           <div className="lead">
             Welcome!  
           </div>
->>>>>>> master
+
         </div>
+</div>
 </div>
 
     );
