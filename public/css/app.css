@@ -1,3 +1,4 @@
+
 /* Sticky footer styles
 -------------------------------------------------- */
 
@@ -102,6 +103,81 @@ table.dataintable ul, table.dataintable li {
     padding: 0;
 }
 
+/* -------------------- 
+   Site Manu
+   --------------------*/
+.sidebar-menu {
+    display: table-cell;
+    position: relative;
+    width: 340px;
+    background: #2c2e2f;
+    z-index: 1;
+}
+.sidebar-menu.fixed {
+    height: 100%;
+}
+
+.page-container {
+    display: table;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    table-layout: fixed;
+}
+body {
+    font-family: "Arimo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.42857143;
+    color: #2c2e2f;
+    background-color: #ffffff;
+}
+.sidebar-menu.fixed .sidebar-menu-inner {
+    position: fixed;
+/*   left: 100px;  */
+    top: 0;
+    bottom: 0;
+    width: inherit;
+    overflow: hidden;
+}
+.sidebar-menu .main-menu {
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    list-style: none;
+}
+.sidebar-menu .main-menu a {
+    color: #979898;
+    text-decoration: none;
+    display: block;
+    padding: 13px 5px;
+    border-bottom: 1px solid #313437;
+}
+.sidebar-menu .main-menu a > i {
+    display: inline-block;
+    margin-right: 10px;
+}
+.sidebar-menu .main-menu a > i + span {
+    padding-right: 10px;
+}
+.sidebar-menu .main-menu a > span {
+    display: inline-block;
+}
+
+.sidebar-menu .main-menu li.active > a {
+    color: #ffffff;
+}
+.page-container {
+    display: table;
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    table-layout: fixed;
+}
 /* -----------------------------------------------
   App styles
   ------------------------------------------------ */

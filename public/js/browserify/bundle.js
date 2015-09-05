@@ -30112,12 +30112,67 @@ var Home = React.createClass({displayName: "Home",
     //5. a single element to contain the render stuff
     return (
       React.createElement("div", {className: "row"}, 
-        React.createElement("div", {className: "col-md-12"}, 
-          React.createElement("div", {className: "lead"}, 
-            "Welcome to YangFan Enrollment System!"  
+        /*<div className="col-md-12">
+          <div className="lead">
+            Welcome to YangFan Enrollment System!  
+          </div>
+        </div>*/
+        React.createElement("div", {className: "sidebar-menu toggle-others fixed"}, 
+        React.createElement("div", {className: "sidebar-menu-inner"}, 
+          React.createElement("ul", {id: "main-menu", className: "main-menu"}, 
+            React.createElement("li", null, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-cog"}), 
+                React.createElement("span", {className: "title"}, "Get Started")
+              )
+            ), 
+            React.createElement("li", null, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-desktop"}), 
+                React.createElement("span", {className: "title"}, "Attendance")
+              )
+            ), 
+            React.createElement("li", null, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-note"}), 
+                React.createElement("span", {className: "title"}, "Enrichment Activities")
+              )
+            ), 
+            React.createElement("li", null, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-database"}), 
+                React.createElement("span", {className: "title"}, "Afternoon Academics")
+              )
+            ), 
+            React.createElement("li", {className: "active opened active"}, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-cog"}), 
+                React.createElement("span", {className: "title"}, "Writing Classes")
+              )
+            ), 
+            React.createElement("li", null, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-cog"}), 
+                React.createElement("span", {className: "title"}, "Math Classes")
+              )
+            ), 
+            React.createElement("li", null, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-cog"}), 
+                React.createElement("span", {className: "title"}, "GATE Elective")
+              )
+            ), 
+            React.createElement("li", null, 
+              React.createElement("a", null, 
+                React.createElement("i", {className: "linecons-params"}), 
+                React.createElement("span", {className: "title"}, "Other Services and Activitie")
+              )
+            )
           )
         )
       )
+      )
+
     );
   }
 });
