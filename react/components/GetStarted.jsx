@@ -128,47 +128,47 @@ var GetStarted = React.createClass({
     }
 
     return (
-      <div>
+      <div className='page-container'>
       <SideMenu />
-      <div className="col-md-6 col-md-offset-3">
-      <div className="panel panel-primary">
-        <div className="panel-heading">
-          <strong>Select the Program to Enroll</strong>
-        </div>
-        <div className="panel-body">
-          <div className="radio">
-            <label><input type="radio" onChange={this.handleSelectProgram} value="Summer Camp" name='program' defaultChecked/>Summer Camp</label>
+      <div className="col-md-12">
+        <div className="panel panel-primary">
+          <div className="panel-heading">
+            <strong>Select the Program to Enroll</strong>
           </div>
-          <div className="radio">
-            <label><input type="radio" onChange={this.handleSelectProgram} value="After School" name='program' />After School</label>
+          <div className="panel-body">
+            <div className="radio">
+              <label><input type="radio" onChange={this.handleSelectProgram} value="Summer Camp" name='program' defaultChecked/>Summer Camp</label>
+            </div>
+            <div className="radio">
+              <label><input type="radio" onChange={this.handleSelectProgram} value="After School" name='program' />After School</label>
+            </div>
+            <div className="radio">
+              <label><input type="radio" onChange={this.handleSelectProgram} value="Elective and Enrichment" name='program' />Elective and Enrichment</label>
+            </div>
+
+            <button type="button" className="btn btn-info" ref='program_btn' onClick={this.showChildBox}>Confirm</button>
           </div>
-          <div className="radio">
-            <label><input type="radio" onChange={this.handleSelectProgram} value="Elective and Enrichment" name='program' />Elective and Enrichment</label>
+        </div>
+
+
+        {this.state.showChild ? 
+        <div className="panel panel-primary">
+          <div className="panel-heading">
+            <strong>Select Your Child</strong>
           </div>
+          <div className="panel-body">
+            {studentRows}
+            <button type="button" className="btn btn-info" ref='stu_btn' onClick={this.showGradeBox}>Confirm</button>
+          </div>
+        </div> : <p></p>}
 
-          <button type="button" className="btn btn-info" ref='program_btn' onClick={this.showChildBox}>Confirm</button>
+        {this.state.showGrade ? <GradeBox 
+          stu_fname={this.state.students[this.state.studentIndex].firstName} 
+          handleChange={this.handleSelectGrade} 
+          showContinue={this.showContinue} /> : <p></p> }
+
+        {this.state.showContinue ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
         </div>
-      </div>
-
-
-      {this.state.showChild ? 
-      <div className="panel panel-primary">
-        <div className="panel-heading">
-          <strong>Select Your Child</strong>
-        </div>
-        <div className="panel-body">
-          {studentRows}
-          <button type="button" className="btn btn-info" ref='stu_btn' onClick={this.showGradeBox}>Confirm</button>
-        </div>
-      </div> : <p></p>}
-
-      {this.state.showGrade ? <GradeBox 
-        stu_fname={this.state.students[this.state.studentIndex].firstName} 
-        handleChange={this.handleSelectGrade} 
-        showContinue={this.showContinue} /> : <p></p> }
-
-      {this.state.showContinue ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
-      </div>
       </div>
     );
   } 

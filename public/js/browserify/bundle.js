@@ -30056,47 +30056,47 @@ var GetStarted = React.createClass({displayName: "GetStarted",
     }
 
     return (
-      React.createElement("div", null, 
+      React.createElement("div", {className: "page-container"}, 
       React.createElement(SideMenu, null), 
-      React.createElement("div", {className: "col-md-6 col-md-offset-3"}, 
-      React.createElement("div", {className: "panel panel-primary"}, 
-        React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("strong", null, "Select the Program to Enroll")
+      React.createElement("div", {className: "col-md-12"}, 
+        React.createElement("div", {className: "panel panel-primary"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("strong", null, "Select the Program to Enroll")
+          ), 
+          React.createElement("div", {className: "panel-body"}, 
+            React.createElement("div", {className: "radio"}, 
+              React.createElement("label", null, React.createElement("input", {type: "radio", onChange: this.handleSelectProgram, value: "Summer Camp", name: "program", defaultChecked: true}), "Summer Camp")
+            ), 
+            React.createElement("div", {className: "radio"}, 
+              React.createElement("label", null, React.createElement("input", {type: "radio", onChange: this.handleSelectProgram, value: "After School", name: "program"}), "After School")
+            ), 
+            React.createElement("div", {className: "radio"}, 
+              React.createElement("label", null, React.createElement("input", {type: "radio", onChange: this.handleSelectProgram, value: "Elective and Enrichment", name: "program"}), "Elective and Enrichment")
+            ), 
+
+            React.createElement("button", {type: "button", className: "btn btn-info", ref: "program_btn", onClick: this.showChildBox}, "Confirm")
+          )
         ), 
-        React.createElement("div", {className: "panel-body"}, 
-          React.createElement("div", {className: "radio"}, 
-            React.createElement("label", null, React.createElement("input", {type: "radio", onChange: this.handleSelectProgram, value: "Summer Camp", name: "program", defaultChecked: true}), "Summer Camp")
-          ), 
-          React.createElement("div", {className: "radio"}, 
-            React.createElement("label", null, React.createElement("input", {type: "radio", onChange: this.handleSelectProgram, value: "After School", name: "program"}), "After School")
-          ), 
-          React.createElement("div", {className: "radio"}, 
-            React.createElement("label", null, React.createElement("input", {type: "radio", onChange: this.handleSelectProgram, value: "Elective and Enrichment", name: "program"}), "Elective and Enrichment")
-          ), 
 
-          React.createElement("button", {type: "button", className: "btn btn-info", ref: "program_btn", onClick: this.showChildBox}, "Confirm")
+
+        this.state.showChild ? 
+        React.createElement("div", {className: "panel panel-primary"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("strong", null, "Select Your Child")
+          ), 
+          React.createElement("div", {className: "panel-body"}, 
+            studentRows, 
+            React.createElement("button", {type: "button", className: "btn btn-info", ref: "stu_btn", onClick: this.showGradeBox}, "Confirm")
+          )
+        ) : React.createElement("p", null), 
+
+        this.state.showGrade ? React.createElement(GradeBox, {
+          stu_fname: this.state.students[this.state.studentIndex].firstName, 
+          handleChange: this.handleSelectGrade, 
+          showContinue: this.showContinue}) : React.createElement("p", null), 
+
+        this.state.showContinue ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
         )
-      ), 
-
-
-      this.state.showChild ? 
-      React.createElement("div", {className: "panel panel-primary"}, 
-        React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("strong", null, "Select Your Child")
-        ), 
-        React.createElement("div", {className: "panel-body"}, 
-          studentRows, 
-          React.createElement("button", {type: "button", className: "btn btn-info", ref: "stu_btn", onClick: this.showGradeBox}, "Confirm")
-        )
-      ) : React.createElement("p", null), 
-
-      this.state.showGrade ? React.createElement(GradeBox, {
-        stu_fname: this.state.students[this.state.studentIndex].firstName, 
-        handleChange: this.handleSelectGrade, 
-        showContinue: this.showContinue}) : React.createElement("p", null), 
-
-      this.state.showContinue ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
-      )
       )
     );
   } 
@@ -32585,7 +32585,7 @@ var YFApp = React.createClass({displayName: "YFApp",
           )
         ), 
 
-        React.createElement("div", {className: "page-container"}, 
+        React.createElement("div", {className: "main-content"}, 
           React.createElement(RouteHandler, null)
         )
       )
@@ -32608,8 +32608,7 @@ var SideMenu = React.createClass({displayName: "SideMenu",
   render: function () {
 
     return (
-      React.createElement("div", {className: "row"}, 
-        React.createElement("div", {className: "sidebar-menu toggle-others fixed"}, 
+      React.createElement("div", {className: "sidebar-menu toggle-others fixed"}, 
         React.createElement("div", {className: "sidebar-menu-inner"}, 
           React.createElement("ul", {id: "main-menu", className: "main-menu"}, 
             React.createElement("li", null, 
@@ -32663,8 +32662,6 @@ var SideMenu = React.createClass({displayName: "SideMenu",
           )
         )
       )
-      )
-
     );
   }
 });

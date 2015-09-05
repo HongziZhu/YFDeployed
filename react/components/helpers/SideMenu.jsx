@@ -6,8 +6,7 @@ var SideMenu = React.createClass({
   render: function () {
 
     return (
-      <div className="row">
-        <div className="sidebar-menu toggle-others fixed">
+      <div className="sidebar-menu toggle-others fixed">
         <div className="sidebar-menu-inner">  
           <ul id="main-menu" className="main-menu">
             <li>
@@ -61,8 +60,6 @@ var SideMenu = React.createClass({
           </ul>
         </div>
       </div>
-      </div>
-
     );
   }
 });
