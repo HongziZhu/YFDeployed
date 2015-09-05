@@ -50,6 +50,7 @@ var Login = React.createClass({
   	}
     return (
     	<div className="col-md-6 col-md-offset-3">
+      <hr></hr>
     	{errorAlert}
     	<form className="form-horizontal " onSubmit={this.handleSubmit}>
 			  <div className="form-group">

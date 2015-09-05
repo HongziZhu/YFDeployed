@@ -50,10 +50,8 @@ var YFApp = React.createClass({
           </div>
         </nav>
 
-        <div>
-          <div className="main-content">
-            <RouteHandler />
-          </div>
+        <div className="page-container">
+          <RouteHandler />
         </div>
       </div>
     );

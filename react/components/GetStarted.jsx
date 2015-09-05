@@ -10,6 +10,8 @@ var Formsy = require('formsy-react');
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
 
+var SideMenu = require('./helpers/SideMenu.jsx');
+
 var GradeBox = React.createClass({
   render: function() {
     return (
@@ -126,6 +128,8 @@ var GetStarted = React.createClass({
     }
 
     return (
+      <div>
+      <SideMenu />
       <div className="col-md-6 col-md-offset-3">
       <div className="panel panel-primary">
         <div className="panel-heading">
@@ -163,7 +167,8 @@ var GetStarted = React.createClass({
         handleChange={this.handleSelectGrade} 
         showContinue={this.showContinue} /> : <p></p> }
 
-      {this.state.showContinue ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <p></p>}
+      {this.state.showContinue ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
+      </div>
       </div>
     );
   } 
