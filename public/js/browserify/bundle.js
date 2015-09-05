@@ -32634,7 +32634,7 @@ var YFApp = React.createClass({displayName: "YFApp",
           )
         ), 
 
-        React.createElement("div", {className: "container"}, 
+        React.createElement("div", null, 
           React.createElement("div", {className: "main-content"}, 
             React.createElement(RouteHandler, null)
           )

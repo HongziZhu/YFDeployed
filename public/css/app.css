@@ -136,7 +136,7 @@ body {
 .sidebar-menu.fixed .sidebar-menu-inner {
     position: fixed;
 /*   left: 100px;  */
-    top: 0;
+    top: 100px; 
     bottom: 0;
     width: inherit;
     overflow: hidden;
@@ -183,7 +183,7 @@ body {
   ------------------------------------------------ */
 
 body {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 
 .article, .comment {
