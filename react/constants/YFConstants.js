@@ -18,5 +18,5 @@ module.exports = keyMirror({
   YF_SAVE_SUMMER_SCHEDULE: null,
   YF_SAVE_SUMMER_AFTERNOON_ACADEMICS: null,
   YF_LOAD_ENROLLMENT: null,
-  YF_SAVA_SUMMER_ENRICH_ACTS: null
+  YF_SAVE_SUMMER_WEEK: null
 });

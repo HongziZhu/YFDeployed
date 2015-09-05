@@ -9,8 +9,16 @@ var YFStore = require('../stores/YFStore.jsx');
 var mathData = require('../../lib/summer/afternoonMathElective.json');
 
 var MathElective = React.createClass({
+  getInitialState: function() {
+    var m = YFStore.getMathElecIdx(self.props.curWeekIdx);
+    return {
+      mathElecIdx: isNaN(m) ? -1 : m
+    };
+  },
   changeMathElective: function(e) {
-
+    var self = this;
+    var v = e.currentTarget.value;
+    YFStore.setMathElecIdx(self.props.curWeekIdx, v);
   },
   render: function() {
     var self = this;
@@ -25,7 +33,9 @@ var MathElective = React.createClass({
         maths.push(
           <tr key={ref}>
             <td className='cell'>
-              <input type="radio" name="mathElective" ref={ref} onChange={this.changeMathElective} value="" />
+            {self.state.mathElecIdx === j ? 
+              <input type="radio" name="mathElective" ref={ref} onChange={this.changeMathElective} value={j} defaultChecked/> :
+              <input type="radio" name="mathElective" ref={ref} onChange={this.changeMathElective} value={j} />}
             </td>
             <td className='cell'>{obj['display_name']}</td>
             <td className='cell'>
@@ -39,7 +49,9 @@ var MathElective = React.createClass({
       maths.push(
         <tr key="-1">
           <td className='cell'>
-            <input type="radio" name="mathElective" onChange={this.changeMathElective} value="" />
+          {self.state.mathElecIdx === j ?
+            <input type="radio" name="mathElective" onChange={this.changeMathElective} value={-1} defaultChecked/> :
+            <input type="radio" name="mathElective" onChange={this.changeMathElective} value={-1} />}
           </td>
           <td className='cell'>No, thanks.</td>
           <td className='cell'>---</td>

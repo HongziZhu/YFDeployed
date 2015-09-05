@@ -9,6 +9,10 @@ module.exports={
 	{
 		"display_name": "Advanced Math Boot Camp G3",
 		"database_name": "Advanced_Math_G3",
+		"conflict_test": [
+      { "name": "advanced math boot camp", "weekday": "Tue", "time": [215.30, 216.30] },
+      { "name": "advanced math boot camp", "weekday": "Thu", "time": [415.30, 416.30] }
+    ],
 		"weekday": ["Tue", "Thu"],
 		"display_time": "3:30-4:30 pm",
 		"database_time": [15.30, 16.30],
@@ -20,6 +24,10 @@ module.exports={
 	{
 		"display_name": "Advanced Math Boot Camp G4",
 		"database_name": "Advanced_Math_G4",
+		"conflict_test": [
+      { "name": "advanced math boot camp", "weekday": "Tue", "time": [213.30, 214.30] },
+      { "name": "advanced math boot camp", "weekday": "Thu", "time": [413.30, 414.30] }
+    ],
 		"weekday": ["Tue", "Thu"],
 		"display_time": "1:30-2:30 pm",
 		"database_time": [13.30, 14.30],
@@ -31,6 +39,10 @@ module.exports={
 	{
 		"display_name": "Advanced Math Boot Camp G5",
 		"database_name": "Advanced_Math_G5",
+		"conflict_test": [
+      { "name": "advanced math boot camp", "weekday": "Tue", "time": [214.30, 215.30] },
+      { "name": "advanced math boot camp", "weekday": "Thu", "time": [414.30, 415.30] }
+    ],
 		"weekday": ["Tue", "Thu"],
 		"display_time": "2:30-3:30 pm",
 		"database_time": [14.30, 15.30],
@@ -42,6 +54,10 @@ module.exports={
 	{
 		"display_name": "Advanced Math Boot Camp Middle School",
 		"database_name": "Advanced_Math_MiddleSchool",
+		"conflict_test": [
+      { "name": "advanced math boot camp", "weekday": "Tue", "time": [216.30, 217.30] },
+      { "name": "advanced math boot camp", "weekday": "Thu", "time": [416.30, 417.30] }
+    ],
 		"weekday": ["Tue", "Thu"],
 		"display_time": "4:30-5:30 pm",
 		"database_time": [16.30, 17.30],
@@ -53,6 +69,10 @@ module.exports={
 	{
 		"display_name": "Advanced Math Boot Camp Middle School",
 		"database_name": "Advanced_Math_MiddleSchool",
+		"conflict_test": [
+      { "name": "advanced math boot camp", "weekday": "Tue", "time": [216.30, 217.30] },
+      { "name": "advanced math boot camp", "weekday": "Thu", "time": [416.30, 417.30] }
+    ],
 		"weekday": ["Tue", "Thu"],
 		"display_time": "4:30-5:30 pm",
 		"database_time": [16.30, 17.30],
@@ -64,6 +84,10 @@ module.exports={
 	{
 		"display_name": "Advanced Math Boot Camp Middle School",
 		"database_name": "Advanced_Math_MiddleSchool",
+		"conflict_test": [
+      { "name": "advanced math boot camp", "weekday": "Tue", "time": [216.30, 217.30] },
+      { "name": "advanced math boot camp", "weekday": "Thu", "time": [416.30, 417.30] }
+    ],
 		"weekday": ["Tue", "Thu"],
 		"display_time": "4:30-5:30 pm",
 		"database_time": [16.30, 17.30],
@@ -75,6 +99,10 @@ module.exports={
 	{
 		"display_name": "Advanced Math Boot Camp Middle School",
 		"database_name": "Advanced_Math_MiddleSchool",
+		"conflict_test": [
+      { "name": "advanced math boot camp", "weekday": "Tue", "time": [216.30, 217.30] },
+      { "name": "advanced math boot camp", "weekday": "Thu", "time": [416.30, 417.30] }
+    ],
 		"weekday": ["Tue", "Thu"],
 		"display_time": "4:30-5:30 pm",
 		"database_time": [16.30, 17.30],
@@ -86,6 +114,10 @@ module.exports={
 	{
 		"display_name": "Advanced Math Boot Camp Middle School",
 		"database_name": "Advanced_Math_MiddleSchool",
+		"conflict_test": [
+      { "name": "advanced math boot camp", "weekday": "Tue", "time": [216.30, 217.30] },
+      { "name": "advanced math boot camp", "weekday": "Thu", "time": [416.30, 417.30] }
+    ],
 		"weekday": ["Tue", "Thu"],
 		"display_time": "4:30-5:30 pm",
 		"database_time": [16.30, 17.30],
@@ -97,6 +129,10 @@ module.exports={
 	{
 		"display_name": "Advanced Math Boot Camp Middle School",
 		"database_name": "Advanced_Math_MiddleSchool",
+		"conflict_test": [
+      { "name": "advanced math boot camp", "weekday": "Tue", "time": [216.30, 217.30] },
+      { "name": "advanced math boot camp", "weekday": "Thu", "time": [416.30, 417.30] }
+    ],
 		"weekday": ["Tue", "Thu"],
 		"display_time": "4:30-5:30 pm",
 		"database_time": [16.30, 17.30],
@@ -108,6 +144,10 @@ module.exports={
 	{
 		"display_name": "Advanced Math Boot Camp Middle School",
 		"database_name": "Advanced_Math_MiddleSchool",
+		"conflict_test": [
+      { "name": "advanced math boot camp", "weekday": "Tue", "time": [216.30, 217.30] },
+      { "name": "advanced math boot camp", "weekday": "Thu", "time": [416.30, 417.30] }
+    ],
 		"weekday": ["Tue", "Thu"],
 		"display_time": "4:30-5:30 pm",
 		"database_time": [16.30, 17.30],
@@ -129,6 +169,10 @@ module.exports={
 	"G3": [{
 		"display_name": "Advanced Writing G3",
 		"database_name": "Advanced_Writing_G3",
+		"conflict_test": [
+	        { "name": "advanced writing boot camp", "weekday": "Mon", "time": [115.30, 116.30] },
+	        { "name": "advanced writing boot camp", "weekday": "Wed", "time": [315.30, 316.30] }
+	        ],
 		"weekday": ["Mon", "Wed"],
 		"display_time": "3:30 PM-4:30 PM",
 		"database_time": [15.30, 16.30],
@@ -138,6 +182,10 @@ module.exports={
 		"G4": [{
 			"display_name": "Advanced Writing G4",
 			"database_name": "Advanced_Writing_G4",
+			"conflict_test": [
+	        { "name": "advanced writing boot camp", "weekday": "Mon", "time": [113.30, 114.30] },
+	        { "name": "advanced writing boot camp", "weekday": "Wed", "time": [313.30, 314.30] }
+	        ],
 			"weekday": ["Mon", "Wed"],
 			"display_time": "1:30 PM-2:30 PM",
 			"database_time": [13.30, 14.30],
@@ -147,6 +195,10 @@ module.exports={
 			"G5": [{
 				"display_name": "Advanced Writing G5",
 				"database_name": "Advanced_Writing_G5",
+				"conflict_test": [
+	        { "name": "advanced writing boot camp", "weekday": "Mon", "time": [114.30, 115.30] },
+	        { "name": "advanced writing boot camp", "weekday": "Wed", "time": [314.30, 315.30] }
+	        ],
 				"weekday": ["Mon", "Wed"],
 				"display_time": "2:30 PM-3:30 PM",
 				"database_time": [14.30, 15.30],
@@ -156,6 +208,10 @@ module.exports={
 				"G6": [{
 					"display_name": "Advanced Writing Middle School",
 					"database_name": "Advanced_Writing_MiddleSchool",
+					"conflict_test": [
+	        { "name": "advanced writing boot camp", "weekday": "Mon", "time": [116.30, 117.30] },
+	        { "name": "advanced writing boot camp", "weekday": "Wed", "time": [316.30, 317.30] }
+	        ],
 					"weekday": ["Mon", "Wed"],
 					"display_time": "4:30 PM-5:30 PM",
 					"database_time": [16.30, 17.30],
@@ -165,6 +221,10 @@ module.exports={
 					"G7": [{
 						"display_name": "Advanced Writing Middle School",
 						"database_name": "Advanced_Writing_MiddleSchool",
+						"conflict_test": [
+	        { "name": "advanced writing boot camp", "weekday": "Mon", "time": [116.30, 117.30] },
+	        { "name": "advanced writing boot camp", "weekday": "Wed", "time": [316.30, 317.30] }
+	        ],
 						"weekday": ["Mon", "Wed"],
 						"display_time": "4:30 PM-5:30 PM",
 						"database_time": [16.30, 17.30],
@@ -174,6 +234,10 @@ module.exports={
 						"G8": [{
 							"display_name": "Advanced Writing Middle School",
 							"database_name": "Advanced_Writing_MiddleSchool",
+							"conflict_test": [
+	        { "name": "advanced writing boot camp", "weekday": "Mon", "time": [116.30, 117.30] },
+	        { "name": "advanced writing boot camp", "weekday": "Wed", "time": [316.30, 317.30] }
+	        ],
 							"weekday": ["Mon", "Wed"],
 							"display_time": "4:30 PM-5:30 PM",
 							"database_time": [16.30, 17.30],
@@ -183,6 +247,10 @@ module.exports={
 							"G9": [{
 								"display_name": "Advanced Writing Middle School",
 								"database_name": "Advanced_Writing_MiddleSchool",
+								"conflict_test": [
+	        { "name": "advanced writing boot camp", "weekday": "Mon", "time": [116.30, 117.30] },
+	        { "name": "advanced writing boot camp", "weekday": "Wed", "time": [316.30, 317.30] }
+	        ],
 								"weekday": ["Mon", "Wed"],
 								"display_time": "4:30 PM-5:30 PM",
 								"database_time": [16.30, 17.30],
@@ -192,6 +260,10 @@ module.exports={
 								"G10": [{
 									"display_name": "Advanced Writing Middle School",
 									"database_name": "Advanced_Writing_MiddleSchool",
+									"conflict_test": [
+	        { "name": "advanced writing boot camp", "weekday": "Mon", "time": [116.30, 117.30] },
+	        { "name": "advanced writing boot camp", "weekday": "Wed", "time": [316.30, 317.30] }
+	        ],
 									"weekday": ["Mon", "Wed"],
 									"display_time": "4:30 PM-5:30 PM",
 									"database_time": [16.30, 17.30],
@@ -201,6 +273,10 @@ module.exports={
 									"G11": [{
 										"display_name": "Advanced Writing Middle School",
 										"database_name": "Advanced_Writing_MiddleSchool",
+										"conflict_test": [
+	        { "name": "advanced writing boot camp", "weekday": "Mon", "time": [116.30, 117.30] },
+	        { "name": "advanced writing boot camp", "weekday": "Wed", "time": [316.30, 317.30] }
+	        ],
 										"weekday": ["Mon", "Wed"],
 										"display_time": "4:30 PM-5:30 PM",
 										"database_time": [16.30, 17.30],
@@ -210,6 +286,10 @@ module.exports={
 										"G12": [{
 											"display_name": "Advanced Writing Middle School",
 											"database_name": "Advanced_Writing_MiddleSchool",
+											"conflict_test": [
+	        { "name": "advanced writing boot camp", "weekday": "Mon", "time": [116.30, 117.30] },
+	        { "name": "advanced writing boot camp", "weekday": "Wed", "time": [316.30, 317.30] }
+	        ],
 											"weekday": ["Mon", "Wed"],
 											"display_time": "4:30 PM-5:30 PM",
 											"database_time": [16.30, 17.30],
@@ -230,6 +310,11 @@ module.exports={
 		{
 			"display_name": "GATE G2_G3",
 			"databse_name": "GATE_G2_G3",
+			"conflict_test": [
+	        { "name": "GATE", "weekday": "Mon", "time": [115.10, 115.55] },
+	        { "name": "GATE", "weekday": "Wed", "time": [313.30, 314.30] }
+	     ],
+			"weekday": ["Mon", "Wed"],
 			"class_time": [
 				{"weekday": "Mon", "display_time": "3:10 PM-3:55 PM", "database_time": [15.10, 15.55] },
 				{"weekday": "Wed", "display_time": "1:30 PM-2:30 PM", "database_time": [13.30, 14.30] }
@@ -242,6 +327,11 @@ module.exports={
 		{
 			"display_name": "GATE G2_G3",
 			"databse_name": "GATE_G2_G3",
+			"conflict_test": [
+	        { "name": "GATE", "weekday": "Mon", "time": [115.10, 115.55] },
+	        { "name": "GATE", "weekday": "Wed", "time": [313.30, 314.30] }
+	     ],
+			"weekday": ["Mon", "Wed"],
 			"class_time": [
 				{"weekday": "Mon", "display_time": "3:10 PM-3:55 PM", "database_time": [15.10, 15.55] },
 				{"weekday": "Wed", "display_time": "1:30 PM-2:30 PM", "database_time": [13.30, 14.30] }
@@ -258,8 +348,12 @@ module.exports={
     "grades": ["G1", "G2"],
     "G1": [
         {
+                 "database_name": "Math",
                  "display_name": "Math",
-                 "weekday": "Wed",
+                 "conflict_test": [
+                    { "name": "math elective", "weekday": "Wed", "time": [314.20, 315.05] }
+                 ],
+                 "weekday": ["Wed"],
                  "display_time": "2:20-3:05 pm",
                  "database_time" : [14.20, 15.05],
                  "class_size": [2, 5],
@@ -268,16 +362,24 @@ module.exports={
     ],
 	"G2":[ 
            {
+                 "database_name": "Math_G2_A",
                  "display_name": "Math A",
-                 "weekday": "Mon",
+                 "conflict_test": [
+                    { "name": "math elective", "weekday": "Mon", "time": [316, 316.45] }
+                 ],
+                 "weekday": ["Mon"],
                  "display_time": "4:00-4:45 pm",
                  "database_time" : [16.00, 16.45],
                  "class_size": [2, 5],
                  "price_per_class": 12 
         },
            {
+                 "database_name": "Math_G2_B",
                  "display_name": "Math B",
-                 "weekday": "Wed",
+                 "conflict_test": [
+                    { "name": "math elective", "weekday": "Wed", "time": [315.10, 315.55] }
+                 ],
+                 "weekday": ["Wed"],
                  "display_time": "3:10-3:55 pm",
                  "database_time" : [15.10, 15.55],
                  "class_size": [2, 5],
@@ -292,42 +394,53 @@ module.exports={
   "grades": ["G3", "G4", "G5"],	
   "notAvailable": "Sorry, Math Olympiad Classes are only avaiable for those whose incoming grade is G3, G4 or G5.",
   "G3":[
-  {
-    "display_name":"Math Olympiad G3 & G4",
-    "database_name": "Math_Olympiad_G3_G4",
-    "weekday": "Mon",
-    "display_time": "1:30-2:15 pm",
-    "database_time": [13.30, 14.15],
-    "class_size": [3, 6],
-    "price_per_class": 15
-  }
+      {
+        "display_name":"Math Olympiad G3 & G4",
+        "database_name": "Math_Olympiad_G3_G4",
+        "conflict_test": [
+            { "name": "math Olympiad", "weekday": "Mon", "time": [113.30, 114.15] }
+         ],
+        "weekday": ["Mon"],
+        "display_time": "1:30-2:15 pm",
+        "database_time": [13.30, 14.15],
+        "class_size": [3, 6],
+        "price_per_class": 15
+      }
   ],
   "G4":[
-  {
-    "display_name":"Math Olympiad G3 & G4",
-    "database_name": "Math_Olympiad_G3_G4",
-    "weekday": "Mon",    
-    "display_time": "1:30-2:15 pm",
-    "database_time": [13.30, 14.15],
-    "class_size": [3, 6],    
-    "price_per_class"    : 15    
+    {
+        "display_name":"Math Olympiad G3 & G4",
+        "database_name": "Math_Olympiad_G3_G4",
+        "conflict_test": [
+            { "name": "math Olympiad", "weekday": "Mon", "time": [113.30, 114.15] }
+         ],
+        "weekday": ["Mon"],    
+        "display_time": "1:30-2:15 pm",
+        "database_time": [13.30, 14.15],
+        "class_size": [3, 6],    
+        "price_per_class"    : 15    
     },
     {
       "display_name":"Math Olympiad G4 & G5",
       "database_name": "Math_Olympiad_G4_G5",
-      "weekday": "Mon",
+      "conflict_test": [
+            { "name": "math Olympiad", "weekday": "Mon", "time": [114.20, 115.05] }
+         ],
+      "weekday": ["Mon"],
       "display_time": "2:20-3:05 pm",
       "database_time": [14.20, 15.05],
       "class_size": [3, 6],
       "price_per_class": 15        
-
     }
     ],
     "G5":[
     {
       "display_name":"Math Olympiad G4 & G5",
       "database_name": "Math_Olympiad_G4_G5",
-      "weekday": "Mon",
+      "conflict_test": [
+        { "name": "math Olympiad", "weekday": "Mon", "time": [114.20, 115.05] }
+      ],
+      "weekday": ["Mon"],
       "display_time": "2:20-3:05 pm",
       "database_time": [14.20, 15.05],
       "class_size": [3, 6],
@@ -346,7 +459,10 @@ module.exports={
 		{
 			"display_name": "Writing A",
 			"database_name": "Writing_G1A",
-			"weekday": "Tue",
+			"conflict_test": [
+				{ "name": "writing elective", "weekday": "Tue", "time": [214.20, 215.05] }
+			],
+			"weekday": ["Tue"],
 			"display_time": "2:20 PM-3:05 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
@@ -354,7 +470,10 @@ module.exports={
 		{
       "display_name": "Writing B",
 			"database_name": "Writing_G1B",
-			"weekday": "Thu",
+			"conflict_test": [
+				{ "name": "writing elective", "weekday": "Thu", "time": [414.20, 415.05] }
+			],
+			"weekday": ["Thu"],
 			"display_time": "2:20 PM-3:05 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12			
@@ -364,7 +483,10 @@ module.exports={
 		{
       "display_name": "Writing A",
 			"database_name": "Writing_G2A",
-			"weekday": "Tue",
+			"conflict_test": [
+				{ "name": "writing elective", "weekday": "Tue", "time": [215.10, 215.55] }
+			],
+			"weekday": ["Tue"],
 			"display_time": "3:10 PM-3:55 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
@@ -372,7 +494,10 @@ module.exports={
 		{
       "display_name": "Writing B",
 			"database_name": "Writing_G2B",
-			"weekday": "Thu",
+			"conflict_test": [
+				{ "name": "writing elective", "weekday": "Thu", "time": [415.10, 415.55] }
+			],
+			"weekday": ["Thu"],
 			"display_time": "3:10 PM-3:55 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
@@ -380,7 +505,10 @@ module.exports={
 		{
 			"display_name": "Writing C",
 			"database_name": "Writing_G23",
-			"weekday": "Tue",
+			"conflict_test": [
+				{ "name": "writing elective", "weekday": "Tue", "time": [213.30, 214.15] }
+			],
+			"weekday": ["Tue"],
 			"display_time": "1:30 PM-2:15 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
@@ -390,7 +518,10 @@ module.exports={
 		{
 			"display_name": "Writing",
 			"database_name": "Writing_G23",
-			"weekday": "Tue",
+			"conflict_test": [
+				{ "name": "writing elective", "weekday": "Tue", "time": [213.30, 214.15] }
+			],
+			"weekday": ["Tue"],
 			"display_time": "1:30 PM-2:15 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
@@ -400,7 +531,10 @@ module.exports={
 		{
 			"display_name": "Writing",
 			"database_name": "Writing_G45",
-			"weekday": "Thu",
+			"conflict_test": [
+				{ "name": "writing elective", "weekday": "Thu", "time": [413.30, 414.15] }
+			],
+			"weekday": ["Thu"],
 			"display_time": "1:30 PM-2:15 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
@@ -410,7 +544,10 @@ module.exports={
 		{
 			"display_name": "Writing",
 			"database_name": "Writing_G45",
-			"weekday": "Thu",
+			"conflict_test": [
+				{ "name": "writing elective", "weekday": "Thu", "time": [413.30, 414.15] }
+			],
+			"weekday": ["Thu"],
 			"display_time": "1:30 PM-2:15 PM",
 			"class_size": [2, 5],
 			"price_per_class": 12 
@@ -419,953 +556,2402 @@ module.exports={
 }
 },{}],7:[function(require,module,exports){
 module.exports={
-	"note": "If you do not wish to enroll your child in a specialty camp, please choose the Basic Camp option at no additional cost",
-	"morning_time": {
-		"display_time": "10:00 AM-12:00 PM on Mon., Wed., and Thu.",
-		"weekdays": ["Mon", "Wed", "Thu"],
-		"database_time": [10.00, 12.00]
-	},
-	"afternoon_time": {
-		"display_time": "4:00 PM-5:30 PM on Mon., Wed., and Thu.",
-		"weekdays": ["Mon", "Wed", "Thu"],
-		"database_time": [16.00, 17.30]
-	},
-	"week_1": {
-		"morning": [
-			{
-			  "activity_name": "Basic_Camp",
-				"theme": "Getting to know you",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": "unlimited", 
-				"price": 0
-			},
-			{
-				"activity_name": "Repurpose_T-shirt_Rug",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [5, 15], 
-				"price": 25
-			},
-			{
-				"activity_name": "Indoor_Table_Tennis_&_Badminton",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 30], 
-				"price": 40
-			},
-			{
-				"activity_name": "Science:_Hands-on_Geology",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 30
-			},
-			{
-				"activity_name": "Digital_Photo_Safari_&_Publishing",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 35
-			},
-			{
-				"activity_name": "Aboriginal_Dot_Art",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 40
-			},
-			{
-				"activity_name": "Chess",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 32
-			},
-			{
-				"activity_name": "Public_Speaking",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 40
-			}
-		],
-		"afternoon": [
-			{
-				"activity_name": "Public_Speaking",
-				"time": "4pm-5:30pm", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [1, 15], 
-				"price": 35
-			},
-			{
-				"activity_name": "Kung_Fu",
-				"time": "4pm-5:30pm", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [1, 15], 
-				"price": 30
-			}
-		]
-	},
-
-
-	"week_2": {
-		"morning": [
-			{
-			  "activity_name": "Basic_Camp",
-				"theme": "Glow in the Dark",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": "unlimited", 
-				"price": 0
-			},
-			{
-				"activity_name": "Creative_Loom_Knitting",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [5, 15], 
-				"price": 20
-			},
-			{
-			"activity_name": "Indoor_Basketball_&_Tennis",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 30], 
-				"price": 40
-			},
-			{
-				"activity_name": "Robotics",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K","G1","G2"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 50
-			},
-			{
-				"activity_name": "Computer_Coding_1:_Create_your_own_w	 ebpage",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 40
-			},
-			{
-				"activity_name": "Self_Portrait_Pa	inting",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 40
-			},
-			{
-				"activity_name": "Cheerleading",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 20], 
-				"price": 20
-			},
-			{
-				"activity_name": "Chess",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G1", "G2"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 32
-			},
-		],
-		"afternoon": [
-			{
-				"activity_name": "Chess",
-				"time": "4pm-5:30pm", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [1, 15], 
-				"price": 28
-			},
-			{
-				"activity_name": "Swimming",
-				"note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
-				"time": "4pm-5:30pm", 
-				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [5, 7], 
-				"price": 40
-			}
-		]
-	},
-
-
-
-	"week_3": {
-		"morning": [
-			{
-			  "activity_name": "Basic_Camp",
-				"theme": "American Heritage",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": "unlimited", 
-				"price": 0
-			},
-			{
-				"activity_name": "Everyday_Recycle_Art",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [5, 15], 
-				"price": 20
-			},
-			{
-				"activity_name": "Outdoor_Soccer_&_Golf",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 30], 
-				"price": 35
-			},
-			{
-				"activity_name": "STEM_-_Electronic_and_Robotic_Engineering",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 46
-			},
-			{
-				"activity_name": "Digital_Photo_Safari_&_Publishing",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 35
-			},
-			{
-				"activity_name": "Pring_Making",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 40
-			},
-			{
-				"activity_name": "Chess",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 32
-			},
-			{
-				"activity_name": "KidFit_Dance_Fitness",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 20], 
-				"price": 20
-			}
-		],
-		"afternoon": [
-			{
-				"activity_name": "Chess",
-				"time": "4pm-5:30pm", 
-				"grade": ["G1", "G2"],
-				"hour_per_week": 4.5,
-				"class_size": [1, 15], 
-				"price": 28
-			},
-			{
-				"activity_name": "Swimming",
-				"note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
-				"time": "4pm-5:30pm", 
-				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [5, 7], 
-				"price": 40
-			}
-		]
-	},
-
-
-	"week_4": {
-		"morning": [
-			{
-			  "activity_name": "Basic_Camp",
-				"theme": "Bubblicious",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": "unlimited", 
-				"price": 0
-			},
-			{
-				"activity_name": "Edible_Art",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [5, 15], 
-				"price": 25
-			},
-			{
-				"activity_name": "Indoor_Table_Tennis_&_Badminton",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 30], 
-				"price": 40
-			},
-			{
-				"activity_name": "Hands-on_Chemistry:_More_Than_Lemonade",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 30
-			},
-			{
-				"activity_name": "Film_Making",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 40
-			},
-			{
-				"activity_name": "Collage",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 30
-			},
-			{
-				"activity_name": "Chess",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G1", "G2"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 32
-			},
-			{
-				"activity_name": "KidFit_Dance_Fitness",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 20], 
-				"price": 20
-			},	
-			{
-				"activity_name": "Robotics",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K","G1","G2"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 50
-			},			
-		],
-		"afternoon": [
-			{
-				"activity_name": "Chess",
-				"time": "4pm-5:30pm", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [1, 15], 
-				"price": 28
-			},
-			{
-				"activity_name": "Swimming",
-				"note": "Three levels(Beginner, intermediate and Advanced) offered every day",
-				"time": "4pm-5:30pm", 
-				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [5, 7], 
-				"price": 40
-			},
-			{
-				"activity_name": "Public_Speaking",
-				"time": "4pm-5:30pm", 
-				"grade": ["K", "G1", "G2"],
-				"hour_per_week": 4.5,
-				"class_size": [1, 15], 
-				"price": 35
-			}
-		]
-	},
-
-
-	"week_5": {
-		"morning": [
-			{
-			  "activity_name": "Basic_Camp",
-				"theme": "Getting the Message Across",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": "unlimited", 
-				"price": 0
-			},
-			{
-				"activity_name": "Crocheting_with_a_purpose",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [5, 15], 
-				"price": 20
-			},
-			{
-				"activity_name": "Indoor_Table_Tennis_&_Tennis",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 30], 
-				"price": 40
-			},
-			{
-				"activity_name": "Cooking_Around_the_World",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [5, 15], 
-				"price": 25
-			},
-			{
-				"activity_name": "Computer_Coding_2:_Welcome_to_my_Blog",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 40
-			},
-			{
-				"activity_name": "Drawing_Tutorials",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 40
-			},
-			{
-				"activity_name": "Chess",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G1", "G2"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 32
-			},
-			{
-				"activity_name": "Outdoor_Survival_Life_Skills",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G1", "G2","G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 20], 
-				"price": 30
-			}
-		],
-		"afternoon": [
-			{
-				"activity_name": "Chess",
-				"time": "4pm-5:30pm", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [1, 15], 
-				"price": 28
-			},
-			{
-				"activity_name": "Swimming",
-				"note": "Three levels(Beginner, intermediate and Advanced) offered every day",
-				"time": "4pm-5:30pm", 
-				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [5, 7], 
-				"price": 40
-			},
-			{
-				"activity_name": "Public_Speaking",
-				"time": "4pm-5:30pm", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [1, 15], 
-				"price": 35
-			}
-		]
-	},
-
-
-
-	"week_6": {
-		"morning": [
-			{
-			  "activity_name": "Basic_Camp",
-				"theme": "Sponge Bob",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": "unlimited", 
-				"price": 0
-			},
-			{
-				"activity_name": "Candle_Making",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G2","G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [5, 15], 
-				"price": 25
-			},
-			{
-				"activity_name": "Indoor_Basketball_&_Tennis",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 30], 
-				"price": 40
-			},
-			{
-				"activity_name": "STEM_-_Mechanical_and_Aerospace_Engineering",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 46
-			},
-			{
-				"activity_name": "Robotics",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 50
-			},
-			{
-				"activity_name": "Paper_Sculpture",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 40
-			},
-			{
-				"activity_name": "Chess",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G1", "G2"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 32
-			},
-			{
-				"activity_name": "Cheerleading",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 20], 
-				"price": 20
-			}
-		],
-		"afternoon": [
-			{
-				"activity_name": "Swimming",
-				"note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
-				"time": "4pm-5:30pm", 
-				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [5, 7], 
-				"price": 40
-			}
-		]
-	},
-
-
-
-	"week_7": {
-		"morning": [
-			{
-			  "activity_name": "Basic_Camp",
-				"theme": "Oobleck - What is it and what can you do with it?",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": "unlimited", 
-				"price": 0
-			},
-			{
-				"activity_name": "Fancy_Scrapbooking",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [5, 15], 
-				"price": 50
-			},
-			{
-				"activity_name": "Outdoor_Soccer_&_Tennis",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 30], 
-				"price": 35
-			},
-			{
-				"activity_name": "Hands-on_Chemistry:_More_Than_Lemonade",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 30
-			},
-			{
-				"activity_name": "Indoor_Beginning_Archey",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 30], 
-				"price": 60
-			},
-			{
-				"activity_name": "Ceramic_Sculpture",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 40
-			},
-			{
-				"activity_name": "Chess",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G1", "G2"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 32
-			},
-			{
-				"activity_name": "Chinese_Folk_Dance",
-				"time": "10am-]2pm", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 20], 
-				"price": 40,
-				"note": "Enrollment of week_8 is required."
-			}
-		],
-		"afternoon": [
-			{
-				"activity_name": "Chess",
-				"time": "4pm-5:30pm", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [1, 15], 
-				"price": 28
-			},
-			{
-				"activity_name": "Swimming",
-				"note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
-				"time": "4pm-5:30pm", 
-				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [5, 7], 
-				"price": 40
-			},
-		]
-	},
-
-
-
-	"week_8": {
-		"morning": [
-			{
-			  "activity_name": "Basic_Camp",
-				"theme": "Chain Reactions",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": "unlimited", 
-				"price": 0
-			},
-			{
-				"activity_name": "Embroidering_Sampler",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [5, 15], 
-				"price": 20
-			},
-			{
-				"activity_name": "Outdoor_Soccer_&_Golf",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 30], 
-				"price": 35
-			},
-			{
-				"activity_name": "STEM_-_Mechanical_and_Aerospace_Engineering",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K","G1","G2"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 46
-			},
-			{
-				"activity_name": "Computer_Coding_3:_My_Rock_Star_Profile",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 40
-			},
-			{
-				"activity_name": "Watercolor_Painting",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 40
-			},
-			{
-				"activity_name": "GeoCache",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 35
-			},
-			{
-				"activity_name": "Chinese_Folk_Dance",
-				"time": "10am-]2pm", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 20], 
-				"price": 40,
-				"note": "Enrollment of week_7 is required."
-			},
-			{
-				"activity_name": "Drama",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 20], 
-				"price": 40
-			}
-		],
-		"afternoon": [
-			{
-				"activity_name": "Chess",
-				"time": "4pm-5:30pm", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [1, 15], 
-				"price": 28
-			},
-			{
-				"activity_name": "Swimming",
-				"note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
-				"time": "4pm-5:30pm", 
-				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [5, 7], 
-				"price": 40
-			},
-			{
-				"activity_name": "Role_Playing",
-				"time": "4pm-5:30pm", 
-				"grade": ["K", "G1", "G2"],
-				"hour_per_week": 4.5,
-				"class_size": [1, 20], 
-				"price": 30
-			}
-		]
-	},
-
-
-
-	"week_9": {
-		"morning": [
-			{
-			  "activity_name": "Basic_Camp",
-				"theme": "Paper Engineering",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": "unlimited", 
-				"price": 0
-			},
-			{
-				"activity_name": "Edible_Art",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [5, 15], 
-				"price": 25
-			},
-			{
-				"activity_name": "Outdoor_Basketball_&_Tennis",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 30], 
-				"price": 35
-			},
-			{
-				"activity_name": "STEM_-_Electronic_and_Robotic_Engineering",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 46
-			},
-			{
-				"activity_name": "Acrylic_Painting",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 40
-			},
-			{
-				"activity_name": "Chess",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G1", "G2"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 32
-			},
-			{
-				"activity_name": "KidFit_Dance_Fitness",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 20], 
-				"price": 20
-			},	
-			{
-				"activity_name": "Drama",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 20], 
-				"price": 40
-			}
-		],
-		"afternoon": [
-			{
-				"activity_name": "Chess",
-				"time": "4pm-5:30pm", 
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [1, 15], 
-				"price": 28
-			},
-			{
-				"activity_name": "Swimming",
-				"note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
-				"time": "4pm-5:30pm", 
-				"grade": ["G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [5, 7], 
-				"price": 40
-			},
-			{
-				"activity_name": "Role_Playing",
-				"time": "4pm-5:30pm", 
-				"grade": ["K", "G1", "G2"],
-				"hour_per_week": 4.5,
-				"class_size": [1, 20], 
-				"price": 30
-			}
-		]
-	},
-
-
-
-	"week_10": {
-		"morning": [
-			{
-			  "activity_name": "Basic_Camp",
-				"theme": "Frozen",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": "unlimited", 
-				"price": 0
-			},
-			{
-				"activity_name": "Bento_Box",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G2","G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [5, 15], 
-				"price": 25
-			},
-			{
-				"activity_name": "Outdoor_Dodgeball_&_Kickball",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 30], 
-				"price": 35
-			},
-			{
-				"activity_name": "STEM_-_Civil_Engineering",
-				"time": "10:00 AM-12:00 PM",  
-				"grade": ["G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 46
-			},
-			{
-				"activity_name": "Hands-on_Fun_Science_From_Everyday_Materials",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 30
-			},
-			{
-				"activity_name": "3D_Hand_Drawings",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 40
-			},
-			{
-				"activity_name": "Chess",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["G1", "G2","G3","G4","G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 15], 
-				"price": 32
-			},
-			{
-				"activity_name": "Cheerleading",
-				"time": "10:00 AM-12:00 PM", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 6,
-				"class_size": [1, 20], 
-				"price": 20
-			}
-		],
-		"afternoon": [
-			{
-				"activity_name": "Kung_Fu",
-				"time": "4pm-5:30pm", 
-				"grade": ["K", "G1", "G2","G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
-				"hour_per_week": 4.5,
-				"class_size": [1, 15], 
-				"price": 30
-			}
-		]
-	}
+    "note": "If you do not wish to enroll your child in a specialty camp, please choose the Basic Camp option at no additional cost",
+    "morning_time": {
+        "display_time": "10:00 AM-12:00 PM on Mon., Wed., and Thu.",
+        "weekdays": [
+            "Mon",
+            "Wed",
+            "Thu"
+        ],
+        "database_time": [
+            10,
+            12
+        ],
+        "conflict_test": [
+            { "name": "morning activity", "weekday": "Mon", "time": [110, 112] },
+            { "name": "morning activity", "weekday": "Wed", "time": [310, 312] },
+            { "name": "morning activity", "weekday": "Thu", "time": [410, 412] }
+        ]
+    },
+    "afternoon_time": {
+        "display_time": "4:00 PM-5:30 PM on Mon., Wed., and Thu.",
+        "weekdays": [
+            "Mon",
+            "Wed",
+            "Thu"
+        ],
+        "database_time": [
+            16,
+            17.3
+        ],
+        "conflict_test": [
+            { "name": "afternoon activity", "weekday": "Mon", "time": [116, 117.3] },
+            { "name": "afternoon activity", "weekday": "Wed", "time": [316, 317.3] },
+            { "name": "afternoon activity", "weekday": "Thu", "time": [416, 417.3] }
+        ]
+    },
+    "week_1": {
+        "morning": [
+            {
+                "activity_name": "Basic_Camp",
+                "theme": "Getting to know you",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": "unlimited",
+                "price": 0
+            },
+            {
+                "activity_name": "Repurpose_T-shirt_Rug",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    5,
+                    15
+                ],
+                "price": 25
+            },
+            {
+                "activity_name": "Indoor_Table_Tennis_&_Badminton",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    30
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Science:_Hands-on_Geology",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 30
+            },
+            {
+                "activity_name": "Digital_Photo_Safari_&_Publishing",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 35
+            },
+            {
+                "activity_name": "Aboriginal_Dot_Art",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Chess",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 32
+            },
+            {
+                "activity_name": "Public_Speaking",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
+            }
+        ],
+        "afternoon": [
+            {
+                "activity_name": "Public_Speaking",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 35
+            },
+            {
+                "activity_name": "Kung_Fu",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 30
+            }
+        ]
+    },
+    "week_2": {
+        "morning": [
+            {
+                "activity_name": "Basic_Camp",
+                "theme": "Glow in the Dark",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": "unlimited",
+                "price": 0
+            },
+            {
+                "activity_name": "Creative_Loom_Knitting",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    5,
+                    15
+                ],
+                "price": 20
+            },
+            {
+                "activity_name": "Indoor_Basketball_&_Tennis",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    30
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Robotics",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 50
+            },
+            {
+                "activity_name": "Computer_Coding_1_Create_your_own_webpage",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Self_Portrait_Painting",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Cheerleading",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    20
+                ],
+                "price": 20
+            },
+            {
+                "activity_name": "Chess",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 32
+            }
+        ],
+        "afternoon": [
+            {
+                "activity_name": "Chess",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 28
+            },
+            {
+                "activity_name": "Swimming",
+                "note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    5,
+                    7
+                ],
+                "price": 40
+            }
+        ]
+    },
+    "week_3": {
+        "morning": [
+            {
+                "activity_name": "Basic_Camp",
+                "theme": "American Heritage",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": "unlimited",
+                "price": 0
+            },
+            {
+                "activity_name": "Everyday_Recycle_Art",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    5,
+                    15
+                ],
+                "price": 20
+            },
+            {
+                "activity_name": "Outdoor_Soccer_&_Golf",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    30
+                ],
+                "price": 35
+            },
+            {
+                "activity_name": "STEM_-_Electronic_and_Robotic_Engineering",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 46
+            },
+            {
+                "activity_name": "Digital_Photo_Safari_&_Publishing",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 35
+            },
+            {
+                "activity_name": "Pring_Making",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Chess",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 32
+            },
+            {
+                "activity_name": "KidFit_Dance_Fitness",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    20
+                ],
+                "price": 20
+            }
+        ],
+        "afternoon": [
+            {
+                "activity_name": "Chess",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 28
+            },
+            {
+                "activity_name": "Swimming",
+                "note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    5,
+                    7
+                ],
+                "price": 40
+            }
+        ]
+    },
+    "week_4": {
+        "morning": [
+            {
+                "activity_name": "Basic_Camp",
+                "theme": "Bubblicious",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": "unlimited",
+                "price": 0
+            },
+            {
+                "activity_name": "Edible_Art",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    5,
+                    15
+                ],
+                "price": 25
+            },
+            {
+                "activity_name": "Indoor_Table_Tennis_&_Badminton",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    30
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Hands-on_Chemistry:_More_Than_Lemonade",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 30
+            },
+            {
+                "activity_name": "Film_Making",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Collage",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 30
+            },
+            {
+                "activity_name": "Chess",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 32
+            },
+            {
+                "activity_name": "KidFit_Dance_Fitness",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    20
+                ],
+                "price": 20
+            },
+            {
+                "activity_name": "Robotics",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 50
+            }
+        ],
+        "afternoon": [
+            {
+                "activity_name": "Chess",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 28
+            },
+            {
+                "activity_name": "Swimming",
+                "note": "Three levels(Beginner, intermediate and Advanced) offered every day",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    5,
+                    7
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Public_Speaking",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 35
+            }
+        ]
+    },
+    "week_5": {
+        "morning": [
+            {
+                "activity_name": "Basic_Camp",
+                "theme": "Getting the Message Across",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": "unlimited",
+                "price": 0
+            },
+            {
+                "activity_name": "Crocheting_with_a_purpose",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    5,
+                    15
+                ],
+                "price": 20
+            },
+            {
+                "activity_name": "Indoor_Table_Tennis_&_Tennis",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    30
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Cooking_Around_the_World",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    5,
+                    15
+                ],
+                "price": 25
+            },
+            {
+                "activity_name": "Computer_Coding_2:_Welcome_to_my_Blog",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Drawing_Tutorials",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Chess",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 32
+            },
+            {
+                "activity_name": "Outdoor_Survival_Life_Skills",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    20
+                ],
+                "price": 30
+            }
+        ],
+        "afternoon": [
+            {
+                "activity_name": "Chess",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 28
+            },
+            {
+                "activity_name": "Swimming",
+                "note": "Three levels(Beginner, intermediate and Advanced) offered every day",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    5,
+                    7
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Public_Speaking",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 35
+            }
+        ]
+    },
+    "week_6": {
+        "morning": [
+            {
+                "activity_name": "Basic_Camp",
+                "theme": "Sponge Bob",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": "unlimited",
+                "price": 0
+            },
+            {
+                "activity_name": "Candle_Making",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    5,
+                    15
+                ],
+                "price": 25
+            },
+            {
+                "activity_name": "Indoor_Basketball_&_Tennis",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    30
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "STEM_-_Mechanical_and_Aerospace_Engineering",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 46
+            },
+            {
+                "activity_name": "Robotics",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 50
+            },
+            {
+                "activity_name": "Paper_Sculpture",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Chess",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 32
+            },
+            {
+                "activity_name": "Cheerleading",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    20
+                ],
+                "price": 20
+            }
+        ],
+        "afternoon": [
+            {
+                "activity_name": "Swimming",
+                "note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    5,
+                    7
+                ],
+                "price": 40
+            }
+        ]
+    },
+    "week_7": {
+        "morning": [
+            {
+                "activity_name": "Basic_Camp",
+                "theme": "Oobleck - What is it and what can you do with it?",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": "unlimited",
+                "price": 0
+            },
+            {
+                "activity_name": "Fancy_Scrapbooking",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    5,
+                    15
+                ],
+                "price": 50
+            },
+            {
+                "activity_name": "Outdoor_Soccer_&_Tennis",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    30
+                ],
+                "price": 35
+            },
+            {
+                "activity_name": "Hands-on_Chemistry:_More_Than_Lemonade",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 30
+            },
+            {
+                "activity_name": "Indoor_Beginning_Archey",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    30
+                ],
+                "price": 60
+            },
+            {
+                "activity_name": "Ceramic_Sculpture",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Chess",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 32
+            },
+            {
+                "activity_name": "Chinese_Folk_Dance",
+                "time": "10am-]2pm",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    20
+                ],
+                "price": 40,
+                "note": "Enrollment of week_8 is required."
+            }
+        ],
+        "afternoon": [
+            {
+                "activity_name": "Chess",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 28
+            },
+            {
+                "activity_name": "Swimming",
+                "note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    5,
+                    7
+                ],
+                "price": 40
+            }
+        ]
+    },
+    "week_8": {
+        "morning": [
+            {
+                "activity_name": "Basic_Camp",
+                "theme": "Chain Reactions",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": "unlimited",
+                "price": 0
+            },
+            {
+                "activity_name": "Embroidering_Sampler",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    5,
+                    15
+                ],
+                "price": 20
+            },
+            {
+                "activity_name": "Outdoor_Soccer_&_Golf",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    30
+                ],
+                "price": 35
+            },
+            {
+                "activity_name": "STEM_-_Mechanical_and_Aerospace_Engineering",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 46
+            },
+            {
+                "activity_name": "Computer_Coding_3:_My_Rock_Star_Profile",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Watercolor_Painting",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "GeoCache",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 35
+            },
+            {
+                "activity_name": "Chinese_Folk_Dance",
+                "time": "10am-]2pm",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    20
+                ],
+                "price": 40,
+                "note": "Enrollment of week_7 is required."
+            },
+            {
+                "activity_name": "Drama",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    20
+                ],
+                "price": 40
+            }
+        ],
+        "afternoon": [
+            {
+                "activity_name": "Chess",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 28
+            },
+            {
+                "activity_name": "Swimming",
+                "note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    5,
+                    7
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Role_Playing",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    1,
+                    20
+                ],
+                "price": 30
+            }
+        ]
+    },
+    "week_9": {
+        "morning": [
+            {
+                "activity_name": "Basic_Camp",
+                "theme": "Paper Engineering",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": "unlimited",
+                "price": 0
+            },
+            {
+                "activity_name": "Edible_Art",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    5,
+                    15
+                ],
+                "price": 25
+            },
+            {
+                "activity_name": "Outdoor_Basketball_&_Tennis",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    30
+                ],
+                "price": 35
+            },
+            {
+                "activity_name": "STEM_-_Electronic_and_Robotic_Engineering",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 46
+            },
+            {
+                "activity_name": "Acrylic_Painting",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Chess",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 32
+            },
+            {
+                "activity_name": "KidFit_Dance_Fitness",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    20
+                ],
+                "price": 20
+            },
+            {
+                "activity_name": "Drama",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    20
+                ],
+                "price": 40
+            }
+        ],
+        "afternoon": [
+            {
+                "activity_name": "Chess",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 28
+            },
+            {
+                "activity_name": "Swimming",
+                "note": "Three levels(Beginner, intermediate and Advanced) offered every day.",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    5,
+                    7
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Role_Playing",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    1,
+                    20
+                ],
+                "price": 30
+            }
+        ]
+    },
+    "week_10": {
+        "morning": [
+            {
+                "activity_name": "Basic_Camp",
+                "theme": "Frozen",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": "unlimited",
+                "price": 0
+            },
+            {
+                "activity_name": "Bento_Box",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    5,
+                    15
+                ],
+                "price": 25
+            },
+            {
+                "activity_name": "Outdoor_Dodgeball_&_Kickball",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    30
+                ],
+                "price": 35
+            },
+            {
+                "activity_name": "STEM_-_Civil_Engineering",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 46
+            },
+            {
+                "activity_name": "Hands-on_Fun_Science_From_Everyday_Materials",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 30
+            },
+            {
+                "activity_name": "3D_Hand_Drawings",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
+            },
+            {
+                "activity_name": "Chess",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 32
+            },
+            {
+                "activity_name": "Cheerleading",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    20
+                ],
+                "price": 20
+            }
+        ],
+        "afternoon": [
+            {
+                "activity_name": "Kung_Fu",
+                "time": "4pm-5:30pm",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2",
+                    "G3",
+                    "G4",
+                    "G5",
+                    "G6",
+                    "G7",
+                    "G8",
+                    "G9",
+                    "G10",
+                    "G11",
+                    "G12"
+                ],
+                "hour_per_week": 4.5,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 30
+            }
+        ]
+    }
 }
 },{}],8:[function(require,module,exports){
 module.exports={
@@ -27088,6 +28674,14 @@ var YFActions = {
     });
   },
 
+  saveSummerWeek: function(week, weekIdx) {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_SAVE_SUMMER_WEEK,
+      week: week,
+      weekIdx: weekIdx
+    });
+  },
+
   loadEnrollment: function() {
     AppDispatcher.dispatch({
       actionType: YFConstants.YF_LOAD_ENROLLMENT,
@@ -27097,7 +28691,7 @@ var YFActions = {
 
 module.exports = YFActions;
 
-},{"../constants/YFConstants":240,"../dispatcher/AppDispatcher":241}],219:[function(require,module,exports){
+},{"../constants/YFConstants":247,"../dispatcher/AppDispatcher":248}],219:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -27130,8 +28724,16 @@ var YFStore = require('../stores/YFStore.jsx');
 var adMathData = require('../../lib/summer/afternoonAdvancedMath.json');
 
 var AdvancedMathUnit = React.createClass({displayName: "AdvancedMathUnit",
+  getInitialState: function() {
+    var a = YFStore.getAdvMathIdx(this.props.preWeekIdx);
+    return {
+      advMathIdx: isNaN(a) ? -1 : a
+    };
+  },
   changeAdvancedMathUnit: function(e) {
-
+    var v = e.currentTarget.value;
+    YFStore.setAdvMathIdx(this.props.preWeekIdx, v);
+    YFStore.setAdvMathIdx(this.props.postWeekIdx, v);
   },
   render: function() {
     var self = this;
@@ -27146,7 +28748,9 @@ var AdvancedMathUnit = React.createClass({displayName: "AdvancedMathUnit",
         adMaths.push(
           React.createElement("tr", {key: ref}, 
             React.createElement("td", {className: "cell"}, 
-              React.createElement("input", {type: "radio", name: "AdvancedMathUnit", ref: ref, onChange: this.changeAdvancedMathUnit, value: ""})
+            self.state.advMathIdx === j ?
+              React.createElement("input", {type: "radio", name: "AdvancedMathUnit", ref: ref, onChange: this.changeAdvancedMathUnit, value: j, defaultChecked: true}) :
+              React.createElement("input", {type: "radio", name: "AdvancedMathUnit", ref: ref, onChange: this.changeAdvancedMathUnit, value: j})
             ), 
             React.createElement("td", {className: "cell"}, obj['display_name']), 
             React.createElement("td", {className: "cell"}, 
@@ -27161,7 +28765,9 @@ var AdvancedMathUnit = React.createClass({displayName: "AdvancedMathUnit",
       adMaths.push(
         React.createElement("tr", {key: "-1"}, 
           React.createElement("td", {className: "cell"}, 
-            React.createElement("input", {type: "radio", name: "AdvancedMathUnit", onChange: this.changeAdvancedMathUnit, value: ""})
+          self.state.advMathIdx === -1 ? 
+            React.createElement("input", {type: "radio", name: "AdvancedMathUnit", onChange: this.changeAdvancedMathUnit, value: -1, defaultChecked: true}) :
+            React.createElement("input", {type: "radio", name: "AdvancedMathUnit", onChange: this.changeAdvancedMathUnit, value: -1})
           ), 
           React.createElement("td", {className: "cell"}, "No, thanks."), 
           React.createElement("td", {className: "cell"}, "---"), 
@@ -27216,7 +28822,7 @@ var AdvancedMathUnit = React.createClass({displayName: "AdvancedMathUnit",
 
 module.exports = AdvancedMathUnit;
 
-},{"../../lib/summer/afternoonAdvancedMath.json":1,"../actions/YFActions":218,"../stores/YFStore.jsx":242,"react":214,"react-router":45}],221:[function(require,module,exports){
+},{"../../lib/summer/afternoonAdvancedMath.json":1,"../actions/YFActions":218,"../stores/YFStore.jsx":249,"react":214,"react-router":45}],221:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -27228,8 +28834,16 @@ var YFStore = require('../stores/YFStore.jsx');
 var adWrData = require('../../lib/summer/afternoonAdvancedWriting.json');
 
 var AdvancedWrUnit = React.createClass({displayName: "AdvancedWrUnit",
+  getInitialState: function() {
+    var a = YFStore.getAdvWrIdx(this.props.preWeekIdx);
+    return {
+      advWrIdx: isNaN(a) ? -1 : a
+    };
+  },
   changeAdvancedWrUnit: function(e) {
-
+    var v = e.currentTarget.value;
+    YFStore.setAdvWrIdx(this.props.preWeekIdx, v);
+    YFStore.setAdvWrIdx(this.props.postWeekIdx, v);
   },
   render: function() {
     var self = this;
@@ -27244,7 +28858,9 @@ var AdvancedWrUnit = React.createClass({displayName: "AdvancedWrUnit",
         adWrs.push(
           React.createElement("tr", {key: ref}, 
             React.createElement("td", {className: "cell"}, 
-              React.createElement("input", {type: "radio", name: "AdvancedWrUnit", ref: ref, onChange: this.changeAdvancedWrUnit, value: ""})
+            self.state.advWrIdx === j ?
+              React.createElement("input", {type: "radio", name: "AdvancedWrUnit", ref: ref, onChange: this.changeAdvancedWrUnit, value: j, defaultChecked: true}) :
+              React.createElement("input", {type: "radio", name: "AdvancedWrUnit", ref: ref, onChange: this.changeAdvancedWrUnit, value: j})
             ), 
             React.createElement("td", {className: "cell"}, obj['display_name']), 
             React.createElement("td", {className: "cell"}, 
@@ -27259,7 +28875,9 @@ var AdvancedWrUnit = React.createClass({displayName: "AdvancedWrUnit",
       adWrs.push(
         React.createElement("tr", {key: "-1"}, 
           React.createElement("td", {className: "cell"}, 
-            React.createElement("input", {type: "radio", name: "AdvancedWrUnit", onChange: this.changeAdvancedWrUnit, value: ""})
+          self.state.advWrIdx === -1 ? 
+            React.createElement("input", {type: "radio", name: "AdvancedWrUnit", onChange: this.changeAdvancedWrUnit, value: -1, defaultChecked: true}) :
+            React.createElement("input", {type: "radio", name: "AdvancedWrUnit", onChange: this.changeAdvancedWrUnit, value: -1})
           ), 
           React.createElement("td", {className: "cell"}, "No, thanks."), 
           React.createElement("td", {className: "cell"}, "---"), 
@@ -27314,7 +28932,7 @@ var AdvancedWrUnit = React.createClass({displayName: "AdvancedWrUnit",
 
 module.exports = AdvancedWrUnit;
 
-},{"../../lib/summer/afternoonAdvancedWriting.json":2,"../actions/YFActions":218,"../stores/YFStore.jsx":242,"react":214,"react-router":45}],222:[function(require,module,exports){
+},{"../../lib/summer/afternoonAdvancedWriting.json":2,"../actions/YFActions":218,"../stores/YFStore.jsx":249,"react":214,"react-router":45}],222:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -27323,18 +28941,23 @@ var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
+var wrData = require('../../lib/summer/afternoonWritingElective.json');
+var adWrData = require('../../lib/summer/afternoonAdvancedWriting.json');
+var mathData = require('../../lib/summer/afternoonMathElective.json');
+var adMathData = require('../../lib/summer/afternoonAdvancedMath.json');
 
 var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
   mixins: [ Navigation ],
   getInitialState: function() {
     YFActions.loadEnrollment();
     return { 
-      language: '',
-      writing: '',
-      math: '',
+      language: YFStore.getDailyLang() || 'DailyChinese',
+      writing:  YFStore.getWritingChoice() || 'none',
+      math: YFStore.getMathChoice() || 'none',
       done: false,
       showInfo: false,
-      summerCampWeeks: YFStore.getSummerCampWeeks()
+      summerCampWeeks: YFStore.getSummerCampWeeks(),
+      incomingGrade: YFStore.getIncomingGrade()
     };
   },
   componentDidMount: function() {
@@ -27350,22 +28973,18 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
   },
   changeLang: function(e) {
     var lang = e.currentTarget.value;
-    this.setState({ language: lang });
+    YFStore.setDailyLang(lang);
   },
   changeWriting: function(w) {
-    this.setState({ writing: w });
+    YFStore.setMathChoice(w);
   },
   changeMath: function(m) {
-    this.setState({ math: m });
+    YFStore.setWritingChoice(m);
   },
-  handleSubmit: function(e) {
+  handleConfirm: function(e) {
     e.preventDefault();
-    var self = this;
-    if(self.state.language === '' || self.state.writing === '' || self.state.math === ''){
-      return alert('Please finish all questions.');
-    }
     this.setState({ done: true, showInfo: true }, function() {
-      React.findDOMNode(this.refs.submitButton).blur();
+      React.findDOMNode(this.refs.confirmButton).blur();
     });
   },
   handleContinue: function(e) {
@@ -27411,19 +29030,25 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
                 React.createElement("strong", null, "Language Art"), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "language", onChange: this.changeLang, value: "Daily Chinese"}), 
+                    self.state.language === 'DailyChinese' ? 
+                    React.createElement("input", {type: "radio", name: "language", onChange: this.changeLang, value: "DailyChinese", defaultChecked: true}) : 
+                    React.createElement("input", {type: "radio", name: "language", onChange: this.changeLang, value: "DailyChinese"}), 
                     "Daily Chinese"
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "language", onChange: this.changeLang, value: "Daily Spanish"}), 
+                    self.state.language === 'DailySpanish' ? 
+                    React.createElement("input", {type: "radio", name: "language", onChange: this.changeLang, value: "DailySpanish", defaultChecked: true}) :
+                    React.createElement("input", {type: "radio", name: "language", onChange: this.changeLang, value: "DailySpanish"}), 
                     "Daily Spanish"
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "language", onChange: this.changeLang, value: "Daily Hindi"}), 
+                    self.state.language === 'DailyHindi' ? 
+                    React.createElement("input", {type: "radio", name: "language", onChange: this.changeLang, value: "DailyHindi", defaultChecked: true}) :
+                    React.createElement("input", {type: "radio", name: "language", onChange: this.changeLang, value: "DailyHindi"}), 
                     "Daily Hindi"
                   )
                 )
@@ -27432,15 +29057,22 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
           )
         ), 
 
-        React.createElement(WrMathChoice, {handleWriting: self.changeWriting, handleMath: self.changeMath}), 
+        self.state.incomingGrade !== 'K' ?
+          React.createElement(WrMathChoice, {
+            writing: self.state.writing, 
+            math: self.state.math, 
+            incomingGrade: self.state.incomingGrade, 
+            handleWriting: self.changeWriting, 
+            handleMath: self.changeMath}) : React.createElement("p", null), 
 
         React.createElement("div", {className: "row"}, 
           React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleSubmit, ref: "submitButton", className: "btn btn-primary"}, "Submit"), "  ", React.createElement("br", null), 
+            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"), React.createElement("br", null), 
             info
           )
         ), 
-        this.state.done ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("p", null)
+        this.state.done ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : 
+          React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
       )
     );
   } 
@@ -27449,13 +29081,18 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
 var WrMathChoice = React.createClass({displayName: "WrMathChoice",
   changeMath: function(e){
     this.props.handleWriting(e.currentTarget.value);
-    YFStore.setMathChoice(e.currentTarget.value);
   },
   changeWriting: function(e){
     this.props.handleMath(e.currentTarget.value);
-    YFStore.setWritingChoice(e.currentTarget.value);
   },
   render: function() {
+    var self = this;
+    var gd = this.props.incomingGrade;
+    var wrInput = this.props.writing === 'elective' ? React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "elective", defaultChecked: true}) : React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "elective"});
+    var adWrInput = self.props.writing === 'advanced' ? React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "advanced", defaultChecked: true}) :
+      React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "advanced"});
+    var mathInput = self.props.math === 'elective' ? React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "elective", defaultChecked: true}) : React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "elective"});
+    var adMathInput = self.props.math === 'advanced' ? React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "advanced", defaultChecked: true}) : React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "advanced"});
     return (
       React.createElement("div", {className: "panel panel-default"}, 
           React.createElement("div", {className: "panel-heading"}, 
@@ -27468,7 +29105,7 @@ var WrMathChoice = React.createClass({displayName: "WrMathChoice",
           
             React.createElement("div", {className: "row"}, 
               React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("span", {className: "bg-info"}, "Please choose preferred writing and math classes.")
+                React.createElement("h4", {className: "bg-info"}, "Please choose preferred writing and math classes.")
               )
             ), React.createElement("hr", null), 
 
@@ -27477,19 +29114,25 @@ var WrMathChoice = React.createClass({displayName: "WrMathChoice",
                 React.createElement("strong", null, "Writing"), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "elective"}), 
-                    "Writing Elective Classes"
+                  wrData['grades'].indexOf(gd) > -1 ? {wrInput} :
+                    React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "elective", disabled: true}), 
+                    "Writing Elective Classes", 
+                  wrData['grades'].indexOf(gd) === -1 ? React.createElement("span", {className: "bg-danger"}, " (Not Available for your incoming grade)") : React.createElement("span", null)
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "advanced"}), 
-                    "Advanced Writing Boot Camp"
+                  adWrData['grades'].indexOf(gd) > -1 ?
+                    {adWrInput} :
+                    React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "advanced", disabled: true}), 
+                    "Advanced Writing Boot Camp", 
+                  adWrData['grades'].indexOf(gd) === -1 ? React.createElement("span", {className: "bg-danger"}, " (Not Available for your incoming grade)") : React.createElement("span", null)
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "none"}), 
+                  self.props.writing === 'none' ? React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "none", defaultChecked: true}) : 
+                  React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "none"}), 
                     "No, thanks."
                   )
                 )
@@ -27500,18 +29143,24 @@ var WrMathChoice = React.createClass({displayName: "WrMathChoice",
                 React.createElement("strong", null, "Math"), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "elective"}), 
-                    "Math Elective Classes"
+                  mathData['grades'].indexOf(gd) > -1 ? {mathInput} : 
+                    React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "elective", disabled: true}), 
+                    "Math Elective Classes", 
+                  mathData['grades'].indexOf(gd) === -1 ? React.createElement("span", {className: "bg-danger"}, " (Not Available for your incoming grade)") : React.createElement("span", null)
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "advanced"}), 
-                    "Advanced Math Boot Camp"
+                  adMathData['grades'].indexOf(gd) > -1 ? {adMathInput} : 
+                    React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "advanced", disabled: true}), 
+                    "Advanced Math Boot Camp", 
+                  adMathData['grades'].indexOf(gd) === -1 ? React.createElement("span", {className: "bg-danger"}, " (Not Available for your incoming grade)") : React.createElement("span", null)
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
+                  self.props.math === 'none' ? 
+                    React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "none", defaultChecked: true}) :
                     React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "none"}), 
                     "No, thanks."
                   )
@@ -27526,7 +29175,7 @@ var WrMathChoice = React.createClass({displayName: "WrMathChoice",
 
 module.exports = AfternoonAcademics;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":242,"react":214,"react-router":45}],223:[function(require,module,exports){
+},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonWritingElective.json":6,"../actions/YFActions":218,"../stores/YFStore.jsx":249,"react":214,"react-router":45}],223:[function(require,module,exports){
 'use strict';
 
 var React=require('react');
@@ -27868,7 +29517,7 @@ var Attendance = React.createClass({displayName: "Attendance",
 
 module.exports = Attendance;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":242,"./CourseView.jsx":224,"react":214,"react-router":45}],224:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":249,"./CourseView.jsx":224,"react":214,"react-router":45}],224:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -27978,7 +29627,7 @@ var CourseView = React.createClass({displayName: "CourseView",
 
 module.exports = CourseView;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":242,"react":214,"react-router":45}],225:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":249,"react":214,"react-router":45}],225:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -27990,19 +29639,42 @@ var YFStore = require('../stores/YFStore.jsx');
 var enrichActData = require('../../lib/summer/enrichmentActivities.json');
 
 var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
+  getInitialState: function() {
+    var self = this;
+    var a = YFStore.getAftActIdx(self.props.curWeekIdx);
+    var b = YFStore.getMorActIdx(self.props.curWeekIdx);
+    return {
+      morActIdx: b || 0,
+      aftActIdx: isNaN(a) ? -1 : a
+    };
+  },
+  changeMorningAct: function(e) {
+    var self = this;
+    var v = e.currentTarget.value;
+    YFStore.setMorActIdx(self.props.curWeekIdx, v);
+  },
+  changeAfternoonAct: function(e) {
+    var self = this;
+    var v = e.currentTarget.value;
+    YFStore.setAftActIdx(self.props.curWeekIdx, v);
+  },
   render: function() {
     var self = this;
     var morningActs = [], afternoonActs = [];
     var grade = this.props.incomingGrade;
-    var acts, hide, obj, ref;
+    var acts, hide, obj, ref, morAbsent, aftAbsent;
     if(self.props.summerCampWeeks.length === 10){
+      morAbsent = self.props.summerCampWeeks[self.props.curWeekIdx].schedulePattern === '5_afternoon';
+      aftAbsent = self.props.summerCampWeeks[self.props.curWeekIdx].schedulePattern === '5_morning';
       acts = enrichActData[self.props.curWeek]['morning'];
       obj = acts[0];
       //morning 
       morningActs.push(
-        React.createElement("tr", {key: j}, 
+        React.createElement("tr", {key: "0"}, 
           React.createElement("td", {className: "cell"}, 
-            React.createElement("input", {type: "radio", name: "morning_acts", ref: ref, onChange: this.changeMorningAct, value: ""})
+            self.state.morActIdx === 0 ? 
+              React.createElement("input", {type: "radio", name: "morning_acts", ref: ref, onChange: this.changeMorningAct, value: 0, defaultChecked: true}) :
+              React.createElement("input", {type: "radio", name: "morning_acts", ref: ref, onChange: this.changeMorningAct, value: 0})
           ), 
           React.createElement("td", {className: "cell"}, 
             React.createElement("span", {className: "text-primary"}, obj['activity_name']), " (Weekly Theme: ", obj['theme'], ")"), 
@@ -28021,7 +29693,9 @@ var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
           morningActs.push(
             React.createElement("tr", {key: j}, 
               React.createElement("td", {className: "cell"}, 
-                React.createElement("input", {type: "radio", name: "morning_acts", ref: ref, onChange: this.changeMorningAct, value: ""})
+              (self.state.morActIdx || 0) === j ? 
+                React.createElement("input", {type: "radio", name: "morning_acts", ref: ref, onChange: this.changeMorningAct, value: j, defaultChecked: true}) :
+                React.createElement("input", {type: "radio", name: "morning_acts", ref: ref, onChange: this.changeMorningAct, value: j})
               ), 
               React.createElement("td", {className: "cell"}, obj['activity_name']), 
               React.createElement("td", {className: "cell"}, obj['class_size'] === 'unlimited' ? React.createElement("p", null, "unlimited") : 
@@ -28043,7 +29717,9 @@ var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
           afternoonActs.push(
             React.createElement("tr", {key: j}, 
               React.createElement("td", {className: "cell"}, 
-                React.createElement("input", {type: "radio", name: "afternoon_acts", ref: ref, onChange: this.changeAfternoonAct, value: ""})
+              self.state.aftActIdx === j ? 
+                React.createElement("input", {type: "radio", name: "afternoon_acts", ref: ref, onChange: this.changeAfternoonAct, value: j, defaultChecked: true}) :
+                React.createElement("input", {type: "radio", name: "afternoon_acts", ref: ref, onChange: this.changeAfternoonAct, value: j})
               ), 
               React.createElement("td", {className: "cell"}, obj['activity_name']), 
               React.createElement("td", {className: "cell"}, obj['class_size'] === 'unlimited' ? React.createElement("p", null, "unlimited") : 
@@ -28057,7 +29733,9 @@ var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
       afternoonActs.push(
         React.createElement("tr", {key: "-1"}, 
           React.createElement("td", {className: "cell"}, 
-            React.createElement("input", {type: "radio", name: "afternoon_acts", ref: ref, onChange: this.changeAfternoonAct, value: ""})
+          self.state.aftActIdx === -1 ?
+            React.createElement("input", {type: "radio", name: "afternoon_acts", ref: ref, onChange: this.changeAfternoonAct, value: -1, defaultChecked: true}) :
+            React.createElement("input", {type: "radio", name: "afternoon_acts", ref: ref, onChange: this.changeAfternoonAct, value: -1})
           ), 
           React.createElement("td", {className: "cell"}, "I don't need it, thanks."), 
           React.createElement("td", {className: "cell"}, "---"), 
@@ -28065,6 +29743,7 @@ var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
         )
       );
     }
+    
     return (
       React.createElement("div", {className: "panel panel-default"}, 
         React.createElement("div", {className: "panel-heading"}, 
@@ -28075,6 +29754,12 @@ var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
 
         React.createElement("div", {className: "panel-body"}, 
           React.createElement("div", {className: "row"}, 
+          morAbsent ? 
+            React.createElement("div", {className: "col-md-offset-1"}, 
+              React.createElement("h3", null, "Morning Activities--", enrichActData['morning_time'].display_time), 
+              React.createElement("span", {className: "bg-info"}, "Sorry, you won't attend in the mornings.")
+            ) :
+            React.createElement("div", null, 
             React.createElement("div", {className: "col-md-offset-1"}, 
               React.createElement("h3", null, "Morning Activities--", enrichActData['morning_time'].display_time), 
               React.createElement("span", {className: "bg-info"}, "1.", enrichActData['note']), React.createElement("br", null), 
@@ -28093,9 +29778,16 @@ var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
               React.createElement("tbody", null, 
                 morningActs
               )
+            )
             ), 
             React.createElement("hr", null), 
 
+            aftAbsent ? 
+            React.createElement("div", {className: "col-md-offset-1"}, 
+              React.createElement("h3", null, "Afternoon Activities--", enrichActData['afternoon_time'].display_time), 
+              React.createElement("span", {className: "bg-info"}, "Sorry, you won't attend in the afternoons.")
+            ) : 
+            React.createElement("div", null, 
             React.createElement("div", {className: "col-md-offset-1"}, 
               React.createElement("h3", null, "Afternoon Activities--", enrichActData['afternoon_time'].display_time), 
               React.createElement("span", {className: "bg-info"}, "2. Every avtivity has the same time: ", enrichActData['afternoon_time'].display_time)
@@ -28114,6 +29806,7 @@ var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
                 afternoonActs
               )
             )
+            )
           )
         )
       )
@@ -28123,7 +29816,7 @@ var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
 
 module.exports = EnrichmentActs;
 
-},{"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":242,"react":214,"react-router":45}],226:[function(require,module,exports){
+},{"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":249,"react":214,"react-router":45}],226:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -28135,6 +29828,17 @@ var YFStore = require('../stores/YFStore.jsx');
 var GATEData = require('../../lib/summer/afternoonGATE.json');
 
 var GATE = React.createClass({displayName: "GATE",
+  getInitialState: function() {
+    var m = YFStore.getGATEIdx(this.props.curWeekIdx);
+    return {
+      GATEIdx: isNaN(m) ? -1 : m
+    };
+  },
+  changeMathOlympiad: function(e) {
+    var self = this;
+    var v = e.currentTarget.value;
+    YFStore.setGATEIdx(self.props.curWeekIdx, v);
+  },
   render: function() {
     var self = this;
     var gd = this.props.incomingGrade;
@@ -28148,7 +29852,9 @@ var GATE = React.createClass({displayName: "GATE",
         gates.push(
           React.createElement("tr", {key: ref}, 
             React.createElement("td", {className: "cell"}, 
-              React.createElement("input", {type: "radio", name: "mathOlympiad", ref: ref, onChange: this.changeGATE, value: ""})
+            self.state.GATEIdx === j ? 
+              React.createElement("input", {type: "radio", name: "mathOlympiad", ref: ref, onChange: this.changeGATE, value: j, defaultChecked: true}) :
+              React.createElement("input", {type: "radio", name: "mathOlympiad", ref: ref, onChange: this.changeGATE, value: j})
             ), 
             React.createElement("td", {className: "cell"}, obj['display_name']), 
             React.createElement("td", {className: "cell"}, 
@@ -28163,7 +29869,9 @@ var GATE = React.createClass({displayName: "GATE",
       gates.push(
         React.createElement("tr", {key: "-1"}, 
           React.createElement("td", {className: "cell"}, 
-            React.createElement("input", {type: "radio", name: "mathOlympiad", onChange: this.changeGATE, value: ""})
+          self.state.GATEIdx === -1 ? 
+            React.createElement("input", {type: "radio", name: "mathOlympiad", onChange: this.changeGATE, value: -1, defaultChecked: true}) :
+            React.createElement("input", {type: "radio", name: "mathOlympiad", onChange: this.changeGATE, value: -1})
           ), 
           React.createElement("td", {className: "cell"}, "No, thanks."), 
           React.createElement("td", {className: "cell"}, "---"), 
@@ -28217,7 +29925,7 @@ var GATE = React.createClass({displayName: "GATE",
 
 module.exports = GATE;
 
-},{"../../lib/summer/afternoonGATE.json":3,"../actions/YFActions":218,"../stores/YFStore.jsx":242,"react":214,"react-router":45}],227:[function(require,module,exports){
+},{"../../lib/summer/afternoonGATE.json":3,"../actions/YFActions":218,"../stores/YFStore.jsx":249,"react":214,"react-router":45}],227:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -28391,7 +30099,7 @@ var GetStarted = React.createClass({displayName: "GetStarted",
 
 module.exports = GetStarted;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":242,"formsy-react":16,"react":214,"react-router":45}],228:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":249,"formsy-react":16,"react":214,"react-router":45}],228:[function(require,module,exports){
 'use strict';
 
 var React=require('react');
@@ -28496,7 +30204,7 @@ var Login = React.createClass({displayName: "Login",
 
 module.exports = Login;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":242,"react":214,"react-router":45}],230:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":249,"react":214,"react-router":45}],230:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -28508,8 +30216,16 @@ var YFStore = require('../stores/YFStore.jsx');
 var mathData = require('../../lib/summer/afternoonMathElective.json');
 
 var MathElective = React.createClass({displayName: "MathElective",
+  getInitialState: function() {
+    var m = YFStore.getMathElecIdx(self.props.curWeekIdx);
+    return {
+      mathElecIdx: isNaN(m) ? -1 : m
+    };
+  },
   changeMathElective: function(e) {
-
+    var self = this;
+    var v = e.currentTarget.value;
+    YFStore.setMathElecIdx(self.props.curWeekIdx, v);
   },
   render: function() {
     var self = this;
@@ -28524,7 +30240,9 @@ var MathElective = React.createClass({displayName: "MathElective",
         maths.push(
           React.createElement("tr", {key: ref}, 
             React.createElement("td", {className: "cell"}, 
-              React.createElement("input", {type: "radio", name: "mathElective", ref: ref, onChange: this.changeMathElective, value: ""})
+            self.state.mathElecIdx === j ? 
+              React.createElement("input", {type: "radio", name: "mathElective", ref: ref, onChange: this.changeMathElective, value: j, defaultChecked: true}) :
+              React.createElement("input", {type: "radio", name: "mathElective", ref: ref, onChange: this.changeMathElective, value: j})
             ), 
             React.createElement("td", {className: "cell"}, obj['display_name']), 
             React.createElement("td", {className: "cell"}, 
@@ -28538,7 +30256,9 @@ var MathElective = React.createClass({displayName: "MathElective",
       maths.push(
         React.createElement("tr", {key: "-1"}, 
           React.createElement("td", {className: "cell"}, 
-            React.createElement("input", {type: "radio", name: "mathElective", onChange: this.changeMathElective, value: ""})
+          self.state.mathElecIdx === j ?
+            React.createElement("input", {type: "radio", name: "mathElective", onChange: this.changeMathElective, value: -1, defaultChecked: true}) :
+            React.createElement("input", {type: "radio", name: "mathElective", onChange: this.changeMathElective, value: -1})
           ), 
           React.createElement("td", {className: "cell"}, "No, thanks."), 
           React.createElement("td", {className: "cell"}, "---"), 
@@ -28592,7 +30312,7 @@ var MathElective = React.createClass({displayName: "MathElective",
 
 module.exports = MathElective;
 
-},{"../../lib/summer/afternoonMathElective.json":4,"../actions/YFActions":218,"../stores/YFStore.jsx":242,"react":214,"react-router":45}],231:[function(require,module,exports){
+},{"../../lib/summer/afternoonMathElective.json":4,"../actions/YFActions":218,"../stores/YFStore.jsx":249,"react":214,"react-router":45}],231:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -28604,6 +30324,17 @@ var YFStore = require('../stores/YFStore.jsx');
 var mathOlpData = require('../../lib/summer/afternoonMathOlympiad.json');
 
 var MathOlympiad = React.createClass({displayName: "MathOlympiad",
+  getInitialState: function() {
+    var m = YFStore.getMathOlypIdx(this.props.curWeekIdx);
+    return {
+      mathOlypIdx: isNaN(m) ? -1 : m
+    };
+  },
+  changeMathOlympiad: function(e) {
+    var self = this;
+    var v = e.currentTarget.value;
+    YFStore.setMathOlypIdx(self.props.curWeekIdx, v);
+  },
   render: function() {
     var self = this;
     var gd = this.props.incomingGrade;
@@ -28617,7 +30348,9 @@ var MathOlympiad = React.createClass({displayName: "MathOlympiad",
         mathOlps.push(
           React.createElement("tr", {key: ref}, 
             React.createElement("td", {className: "cell"}, 
-              React.createElement("input", {type: "radio", name: "mathOlympiad", ref: ref, onChange: this.changeMathOlympiad, value: ""})
+            self.state.mathOlypIdx === j ? 
+              React.createElement("input", {type: "radio", name: "mathOlympiad", ref: ref, onChange: this.changeMathOlympiad, value: j, defaultChecked: true}) :
+              React.createElement("input", {type: "radio", name: "mathOlympiad", ref: ref, onChange: this.changeMathOlympiad, value: j})
             ), 
             React.createElement("td", {className: "cell"}, obj['display_name']), 
             React.createElement("td", {className: "cell"}, obj['weekday'], " / ", obj['display_time']), 
@@ -28629,7 +30362,9 @@ var MathOlympiad = React.createClass({displayName: "MathOlympiad",
       mathOlps.push(
         React.createElement("tr", {key: "-1"}, 
           React.createElement("td", {className: "cell"}, 
-            React.createElement("input", {type: "radio", name: "mathOlympiad", onChange: this.changeMathOlympiad, value: ""})
+          self.state.mathOlypIdx === -1 ? 
+            React.createElement("input", {type: "radio", name: "mathOlympiad", onChange: this.changeMathOlympiad, value: -1, defaultChecked: true}) :
+            React.createElement("input", {type: "radio", name: "mathOlympiad", onChange: this.changeMathOlympiad, value: -1})
           ), 
           React.createElement("td", {className: "cell"}, "No, thanks."), 
           React.createElement("td", {className: "cell"}, "---"), 
@@ -28682,7 +30417,7 @@ var MathOlympiad = React.createClass({displayName: "MathOlympiad",
 
 module.exports = MathOlympiad;
 
-},{"../../lib/summer/afternoonMathOlympiad.json":5,"../actions/YFActions":218,"../stores/YFStore.jsx":242,"react":214,"react-router":45}],232:[function(require,module,exports){
+},{"../../lib/summer/afternoonMathOlympiad.json":5,"../actions/YFActions":218,"../stores/YFStore.jsx":249,"react":214,"react-router":45}],232:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -28721,9 +30456,7 @@ var OtherServices = React.createClass({displayName: "OtherServices",
   },
   handleContinue: function(e) {
     var self = this;
-    // YFActions.saveOtherServices(self.state.language, function() {
-    //   self.transitionTo('summer/writing_class');
-    // });
+    
     self.transitionTo('summer/writing_class');
   },
 
@@ -28743,7 +30476,7 @@ var OtherServices = React.createClass({displayName: "OtherServices",
           )
         ), 
 
-        this.state.done ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("p", null)
+        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
       )
     );
   } 
@@ -29012,7 +30745,7 @@ var MovieBox = React.createClass({displayName: "MovieBox",
 
 module.exports = OtherServices;
 
-},{"../../lib/summer/morningExtendedCare.json":8,"../../lib/summer/movies.json":9,"../actions/YFActions":218,"../stores/YFStore.jsx":242,"react":214,"react-router":45}],233:[function(require,module,exports){
+},{"../../lib/summer/morningExtendedCare.json":8,"../../lib/summer/movies.json":9,"../actions/YFActions":218,"../stores/YFStore.jsx":249,"react":214,"react-router":45}],233:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29029,10 +30762,16 @@ var GetStarted = require('./GetStarted.jsx');
 var Attendance = require('./Attendance.jsx');
 var AfternoonAcademics = require('./AfternoonAcademics.jsx');
 var OtherServices = require('./OtherServices.jsx');
-var WritingClass = require('./WritingClass.jsx');
 var Week1 = require('./Week1.jsx');
-var Week2_3 = require('./Week2_3.jsx');
-
+var Week2 = require('./Week2.jsx');
+var Week3 = require('./Week3.jsx');
+var Week4 = require('./Week4.jsx');
+var Week5 = require('./Week5.jsx');
+var Week6 = require('./Week6.jsx');
+var Week7 = require('./Week7.jsx');
+var Week8 = require('./Week8.jsx');
+var Week9 = require('./Week9.jsx');
+var Week10 = require('./Week10.jsx');
 
 var routes = (
 	React.createElement(Route, {handler: YFApp}, 
@@ -29043,16 +30782,25 @@ var routes = (
 		
 		React.createElement(Route, {name: "summer/attendance", path: "/user/summer/attendance", handler: Attendance}), 
 		React.createElement(Route, {name: "summer/afternoon_academics", path: "/user/summer/afternoon_academics", handler: AfternoonAcademics}), 
+
 		React.createElement(Route, {name: "summer/week1", path: "/user/summer/week1", handler: Week1}), 
-		React.createElement(Route, {name: "summer/week2_3", path: "/user/summer/week2_3", handler: Week2_3}), 
-		React.createElement(Route, {name: "summer/other_services", path: "user/summer/other_services", handler: OtherServices}), 
-		React.createElement(Route, {name: "summer/writing_class", path: "user/summer/writing_class", handler: WritingClass})
+		React.createElement(Route, {name: "summer/week2", path: "/user/summer/week2", handler: Week2}), 
+		React.createElement(Route, {name: "summer/week3", path: "/user/summer/week3", handler: Week3}), 
+		React.createElement(Route, {name: "summer/week4", path: "/user/summer/week4", handler: Week4}), 
+		React.createElement(Route, {name: "summer/week5", path: "/user/summer/week5", handler: Week5}), 
+		React.createElement(Route, {name: "summer/week6", path: "/user/summer/week6", handler: Week6}), 
+		React.createElement(Route, {name: "summer/week7", path: "/user/summer/week7", handler: Week7}), 
+		React.createElement(Route, {name: "summer/week8", path: "/user/summer/week8", handler: Week8}), 
+		React.createElement(Route, {name: "summer/week9", path: "/user/summer/week9", handler: Week9}), 
+		React.createElement(Route, {name: "summer/week10", path: "/user/summer/week10", handler: Week10}), 
+
+		React.createElement(Route, {name: "summer/other_services", path: "user/summer/other_services", handler: OtherServices})
 	)
 );
 
 module.exports = routes;
 
-},{"./AfternoonAcademics.jsx":222,"./Attendance.jsx":223,"./GetStarted.jsx":227,"./Home.jsx":228,"./Login.jsx":229,"./OtherServices.jsx":232,"./Signup.jsx":234,"./Week1.jsx":235,"./Week2_3.jsx":236,"./WritingClass.jsx":237,"./YFApp.jsx":239,"react":214,"react-router":45}],234:[function(require,module,exports){
+},{"./AfternoonAcademics.jsx":222,"./Attendance.jsx":223,"./GetStarted.jsx":227,"./Home.jsx":228,"./Login.jsx":229,"./OtherServices.jsx":232,"./Signup.jsx":234,"./Week1.jsx":235,"./Week10.jsx":236,"./Week2.jsx":237,"./Week3.jsx":238,"./Week4.jsx":239,"./Week5.jsx":240,"./Week6.jsx":241,"./Week7.jsx":242,"./Week8.jsx":243,"./Week9.jsx":244,"./YFApp.jsx":246,"react":214,"react-router":45}],234:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29330,7 +31078,9 @@ var GATEData = require('../../lib/summer/afternoonGATE.json');
 
 var curWeek = 'week_1';
 var coveredDate = '6/13-6/17';
+var curWeekTitle = 'Week 1';
 var curWeekIdx = 0;
+var ENTER_KEY_CODE = 13;
 
 var EnrichmentActs = require('./EnrichmentActs.jsx');
 
@@ -29341,7 +31091,6 @@ var Week1 = React.createClass({displayName: "Week1",
     return { 
       timeConflict: false,
       done: false,
-
       incomingGrade: YFStore.getIncomingGrade(),
       summerCampWeeks: YFStore.getSummerCampWeeks()
     };
@@ -29354,19 +31103,18 @@ var Week1 = React.createClass({displayName: "Week1",
   },
   _onChange: function() {
     this.setState({
+      incomingGrade: YFStore.getIncomingGrade(),
       summerCampWeeks: YFStore.getSummerCampWeeks()
     });
   },
-  handleSubmit: function(e) {
+  handleConfirm: function(e) {
     e.preventDefault();
     this.setState({ done: true });
+    React.findDOMNode(this.refs.confirmButton).blur();
   },
   handleContinue: function(e) {
-    var self = this;
-    // YFActions.saveWeek1(self.state.language, function() {
-    //   self.transitionTo('summer/writing_class');
-    // });
-    self.transitionTo('summer/week2_3');  
+    YFActions.saveSummerWeek(curWeek, curWeekIdx);
+    this.transitionTo('summer/week2');  
   },
 
   render: function () {
@@ -29377,20 +31125,26 @@ var Week1 = React.createClass({displayName: "Week1",
     }
     return (
       React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
-      React.createElement("h2", null, "Week 1  (", coveredDate, ")"), 
+      React.createElement("h2", null, curWeekTitle, "   (", coveredDate, ")"), 
        show ? 
-        React.createElement("h3", null, "You plan not to attend in this week, please click Continue below.") :
+        React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
         React.createElement("div", null, 
-        React.createElement(EnrichmentActs, {curWeek: curWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}), 
-        React.createElement("div", {className: "row"}, 
-          React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleSubmit, ref: "submitButton", className: "btn btn-primary"}, "Submit"), "  ", React.createElement("br", null)
-          )
-        )
+          React.createElement(EnrichmentActs, {
+            curWeek: curWeek, 
+            curWeekIdx: curWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks})
         ), 
       
 
-        (this.state.done || show) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("p", null)
+      React.createElement("div", {className: "row"}, 
+        React.createElement("div", {className: "col-md-offset-1"}, 
+          React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"
+          ), React.createElement("br", null)
+        )
+      ), 
+
+        this.state.done? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", disabled: true}, "Continue")
       )
     );
   } 
@@ -29398,7 +31152,7 @@ var Week1 = React.createClass({displayName: "Week1",
 
 module.exports = Week1;
 
-},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":242,"./EnrichmentActs.jsx":225,"react":214,"react-router":45}],236:[function(require,module,exports){
+},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":249,"./EnrichmentActs.jsx":225,"react":214,"react-router":45}],236:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29416,11 +31170,99 @@ var mathOlpData = require('../../lib/summer/afternoonMathOlympiad.json');
 var GATEData = require('../../lib/summer/afternoonGATE.json');
 
 
+var curWeek = 'week_10';
+var coveredDate = '8/15-8/19';
+var curWeekTitle = 'Week 10';
+var curWeekIdx = 9;
+var ENTER_KEY_CODE = 13;
+
+var EnrichmentActs = require('./EnrichmentActs.jsx');
+
+var Week10 = React.createClass({displayName: "Week10",
+  mixins: [ Navigation ],
+  getInitialState: function() {
+    YFActions.loadEnrollment();
+    return { 
+      timeConflict: false,
+      done: false,
+      incomingGrade: YFStore.getIncomingGrade(),
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    };
+  },
+  componentDidMount: function() {
+    YFStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    YFStore.removeChangeListener(this._onChange);
+  },
+  _onChange: function() {
+    this.setState({
+      incomingGrade: YFStore.getIncomingGrade(),
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    });
+  },
+  handleConfirm: function(e) {
+    e.preventDefault();
+    this.setState({ done: true });
+    React.findDOMNode(this.refs.confirmButton).blur();
+  },
+  handleContinue: function(e) {
+    YFActions.saveSummerWeek(curWeek, curWeekIdx);
+    this.transitionTo('summer/other_services');  
+  },
+
+  render: function () {
+    var self = this;
+    var show = false;
+    if(self.state.summerCampWeeks.length === 10){
+      show = self.state.summerCampWeeks[curWeekIdx].schedulePattern === 'absence';
+    }
+    return (
+      React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
+      React.createElement("h2", null, curWeekTitle, "   (", coveredDate, ")"), 
+       show ? 
+        React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
+        React.createElement("div", null, 
+          React.createElement(EnrichmentActs, {
+            curWeek: curWeek, 
+            curWeekIdx: curWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks})
+        ), 
+      
+      React.createElement("div", {className: "row"}, 
+        React.createElement("div", {className: "col-md-offset-1"}, 
+          React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"
+          ), React.createElement("br", null)
+        )
+      ), 
+
+        this.state.done? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", disabled: true}, "Continue")
+      )
+    );
+  } 
+});
+
+module.exports = Week10;
+
+},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":249,"./EnrichmentActs.jsx":225,"react":214,"react-router":45}],237:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+
 var preWeek = 'week_2';
 var postWeek = 'week_3';
+var preWeekIdx = 1;
+var postWeekIdx = 2;
+var preWeekTitle = 'Week 2';
+var postWeekTitle = 'Week 3';
 var unitWeek = 'week_2_3';
 var coveredDate = ['6/20-6/24', '6/27-7/1'];
-var preWeekIdx = 1, postWeekIdx = 2;
 
 var MathOlympiad = require('./MathOlympiad.jsx');
 var EnrichmentActs = require('./EnrichmentActs.jsx');
@@ -29430,12 +31272,11 @@ var MathElective = require('./MathElective.jsx');
 var AdvancedWrUnit = require('./AdvancedWrUnit.jsx');
 var AdvancedMathUnit = require('./AdvancedMathUnit.jsx');
 
-var Week2_3 = React.createClass({displayName: "Week2_3",
+var Week2 = React.createClass({displayName: "Week2",
   mixins: [ Navigation ],
   getInitialState: function() {
     YFActions.loadEnrollment();
     return { 
-      timeConflict: false,
       done: false,
       writing: YFStore.getWritingChoice(),
       math: YFStore.getMathChoice(),
@@ -29454,16 +31295,26 @@ var Week2_3 = React.createClass({displayName: "Week2_3",
       summerCampWeeks: YFStore.getSummerCampWeeks()
     });
   },
-  handleSubmit: function(e) {
+  handleConfirm: function(e) {
     e.preventDefault();
-    this.setState({ done: true });
+    var self = this;
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, preWeek, preWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      this.setState({ done: true }, function() {
+        React.findDOMNode(self.refs.confirmButton).blur();
+      });
+    }
   },
   handleContinue: function(e) {
-    var self = this;
-    // YFActions.saveWeek2_3(self.state.language, function() {
-    //   self.transitionTo('summer/writing_class');
-    // });
-    self.transitionTo('summer/week2_3');  
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, preWeek, preWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      YFActions.saveSummerWeek(preWeek, preWeekIdx);
+      this.transitionTo('summer/week3');  
+    }
   },
 
   render: function () {
@@ -29476,50 +31327,65 @@ var Week2_3 = React.createClass({displayName: "Week2_3",
     }
     return (
       React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
-      React.createElement("h2", null, "Week 2  (", coveredDate[0], ")"), 
+      React.createElement("h2", null, preWeekTitle, "  (", coveredDate[0], ")"), 
        !preShow ? 
-        React.createElement("h3", null, "You plan not to attend in this week, please check out next week below.") :
+        React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
         React.createElement("div", null, 
-        React.createElement(EnrichmentActs, {curWeek: preWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}), 
-        self.state.writing === 'elective' ?
-        React.createElement(WritingElective, {curWeek: preWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}) :
+          React.createElement(EnrichmentActs, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}), 
+          self.state.writing === 'elective' ?
+          React.createElement(WritingElective, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}) :
+            React.createElement("p", null), 
+          self.state.math === 'elective' ?
+          React.createElement(MathElective, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}) :
           React.createElement("p", null), 
-        self.state.math === 'elective' ?
-        React.createElement(MathElective, {curWeek: preWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}) :
-        React.createElement("p", null), 
-        React.createElement(MathOlympiad, {curWeek: preWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}), 
-        React.createElement(GATE, {curWeek: preWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks})
+          React.createElement(MathOlympiad, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}), 
+          React.createElement(GATE, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks})
+        ), 
+      
+      React.createElement("hr", null), 
 
-        ), 
-      
-      React.createElement("hr", null), 
-      React.createElement("h2", null, "Week 3  (", coveredDate[1], ")"), 
-       !postShow ? 
-        React.createElement("h3", null, "You plan not to attend in this week, please click Submit below.") :
-        React.createElement("div", null, 
-        React.createElement(EnrichmentActs, {curWeek: postWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}), 
-        self.state.writing === 'elective' ?
-        React.createElement(WritingElective, {curWeek: postWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}) :
-          React.createElement("p", null), 
-        self.state.math === 'elective' ?
-        React.createElement(MathElective, {curWeek: postWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}) :
-        React.createElement("p", null), 
-        React.createElement(MathOlympiad, {curWeek: postWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}), 
-        React.createElement(GATE, {curWeek: postWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks})
-        
-        ), 
-      
-      React.createElement("hr", null), 
       (self.state.writing === 'advanced' || self.state.math === 'advanced') ? 
       React.createElement("div", null, 
-        React.createElement("h2", null, "Week 2 & Week 3 Unit"), 
+        React.createElement("h2", null, preWeekTitle, " & ", postWeekTitle, " Unit"), 
           (!preShow || !postShow) ? 
             React.createElement("h3", {className: "bg-info"}, "Sorry, you can't enroll in this Advanced Writing(or Math) Unit due to at least one-week absence.") :
             React.createElement("div", null, 
             self.state.writing === 'advanced' ? 
-            React.createElement(AdvancedWrUnit, {curWeek: unitWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null), 
+            React.createElement(AdvancedWrUnit, {
+              preWeek: preWeek, 
+              preWeekIdx: preWeekIdx, 
+              postWeek: postWeek, 
+              postWeekIdx: postWeekIdx, 
+              incomingGrade: self.state.incomingGrade, 
+              summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null), 
             self.state.math === 'advanced' ? 
-            React.createElement(AdvancedMathUnit, {curWeek: unitWeek, incomingGrade: self.state.incomingGrade, summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null)
+            React.createElement(AdvancedMathUnit, {
+              preWeek: preWeek, 
+              preWeekIdx: preWeekIdx, 
+              postWeek: postWeek, 
+              postWeekIdx: postWeekIdx, 
+              incomingGrade: self.state.incomingGrade, 
+              summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null)
             )
           
       )
@@ -29527,19 +31393,19 @@ var Week2_3 = React.createClass({displayName: "Week2_3",
 
       React.createElement("div", {className: "row"}, 
         React.createElement("div", {className: "col-md-offset-1"}, 
-          React.createElement("button", {onClick: this.handleSubmit, ref: "submitButton", className: "btn btn-primary"}, "Submit"), "  ", React.createElement("br", null)
+          React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm")
         )
       ), 
 
-      (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("p", null)
+      (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
       )
     );
   } 
 });
 
-module.exports = Week2_3;
+module.exports = Week2;
 
-},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":242,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":238,"react":214,"react-router":45}],237:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":249,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],238:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29548,16 +31414,33 @@ var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
-var wrData = require('../../lib/summer/afternoonWritingElective.json');
-var adWrData = require('../../lib/summer/afternoonAdvancedWriting.json');
 
-var WritingClass = React.createClass({displayName: "WritingClass",
+var preWeek = 'week_2';
+var postWeek = 'week_3';
+var preWeekIdx = 1;
+var postWeekIdx = 2;
+var preWeekTitle = 'Week 2';
+var postWeekTitle = 'Week 3';
+var unitWeek = 'week_2_3';
+var coveredDate = ['6/20-6/24', '6/27-7/1'];
+
+var MathOlympiad = require('./MathOlympiad.jsx');
+var EnrichmentActs = require('./EnrichmentActs.jsx');
+var GATE = require('./GATE.jsx');
+var WritingElective = require('./WritingElective.jsx');
+var MathElective = require('./MathElective.jsx');
+var AdvancedWrUnit = require('./AdvancedWrUnit.jsx');
+var AdvancedMathUnit = require('./AdvancedMathUnit.jsx');
+
+var Week3 = React.createClass({displayName: "Week3",
   mixins: [ Navigation ],
   getInitialState: function() {
     YFActions.loadEnrollment();
     return { 
-      incomingGrade: YFStore.getIncomingGrade(),
       done: false,
+      writing: YFStore.getWritingChoice(),
+      math: YFStore.getMathChoice(),
+      incomingGrade: YFStore.getIncomingGrade(),
       summerCampWeeks: YFStore.getSummerCampWeeks()
     };
   },
@@ -29572,237 +31455,969 @@ var WritingClass = React.createClass({displayName: "WritingClass",
       summerCampWeeks: YFStore.getSummerCampWeeks()
     });
   },
-  handleSubmit: function(e) {
+  handleConfirm: function(e) {
     e.preventDefault();
-    this.setState({ done: true });
+    var self = this;
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, postWeek, postWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      this.setState({ done: true }, function() {
+        React.findDOMNode(self.refs.confirmButton).blur();
+      });
+    }
   },
   handleContinue: function(e) {
-    var self = this;
-    // YFActions.saveOtherServices(self.state.language, function() {
-    //   self.transitionTo('summer/writing_class');
-    // });
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, postWeek, postWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      YFActions.saveSummerWeek(postWeek, postWeekIdx);
+      this.transitionTo('summer/week4');  
+    }
   },
 
   render: function () {
     var self = this;
+    var gd = self.state.incomingGrade;
+    var preShow = false, postShow = false;
+    if(self.state.summerCampWeeks.length === 10){
+      preShow = self.state.summerCampWeeks[preWeekIdx].schedulePattern !== 'absence';
+      postShow = self.state.summerCampWeeks[postWeekIdx].schedulePattern !== 'absence';
+    }
     return (
       React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
-      React.createElement("h2", null, "Writing Classes"), 
-        wrData.grades.indexOf(self.state.incomingGrade) > -1 ? React.createElement(WritingElective, {summerCampWeeks: this.state.summerCampWeeks, incomingGrade: this.state.incomingGrade}) : 
-        React.createElement("div", {className: "panel panel-default"}, 
-          React.createElement("div", {className: "panel-heading"}, 
-            React.createElement("div", {className: "panel-title"}, 
-              React.createElement("h3", null, "Afternoon Writing Elective Classes")
-            )
-          ), 
-
-          React.createElement("div", {className: "panel-body"}, 
-            React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("span", {className: "bg-info"}, wrData.notAvailable)
-              ), React.createElement("br", null)
-            )
-          )
+      
+      React.createElement("h2", null, postWeekTitle, "   (", coveredDate[1], ")"), 
+       !postShow ? 
+        React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
+        React.createElement("div", null, 
+        React.createElement(EnrichmentActs, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}), 
+        self.state.writing === 'elective' ?
+        React.createElement(WritingElective, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}) :
+          React.createElement("p", null), 
+        self.state.math === 'elective' ?
+        React.createElement(MathElective, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}) :
+        React.createElement("p", null), 
+        React.createElement(MathOlympiad, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}), 
+        React.createElement(GATE, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks})
         ), 
+      
+      React.createElement("hr", null), 
+      React.createElement("div", {className: "row"}, 
+        React.createElement("div", {className: "col-md-offset-1"}, 
+          React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"), "  ", React.createElement("br", null)
+        )
+      ), 
 
-        /*adWrData.grades.indexOf(self.state.incomingGrade) > -1 ? <AdvancedWriting summerCampWeeks={this.state.summerCampWeeks} incomingGrade={this.state.incomingGrade}/> : 
-        <div className="panel panel-default">
-          <div className="panel-heading">
-            <div className="panel-title">
-              <h3>Afternoon Advanced Writing Boot Camp</h3>
-            </div>
-          </div>
-
-          <div className="panel-body">
-            <div className="row">
-              <div className='col-md-offset-1'> 
-                <span className="bg-info">{adWrData.notAvailable}</span>
-              </div><br></br>
-            </div>
-          </div>
-        </div>*/
-
-        React.createElement("div", {className: "row"}, 
-          React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleSubmit, ref: "submitButton", className: "btn btn-primary"}, "Submit"), "  ", React.createElement("br", null)
-          )
-        ), 
-
-        this.state.done ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("p", null)
+      (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
       )
     );
   } 
 });
 
-var WritingElective = React.createClass({displayName: "WritingElective",
-  changeWritingElective: function(e) {
+module.exports = Week3;
 
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":249,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],239:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+
+var preWeek = 'week_4';
+var postWeek = 'week_5';
+var preWeekIdx = 3;
+var postWeekIdx = 4;
+var preWeekTitle = 'Week 4';
+var postWeekTitle = 'Week 5';
+var unitWeek = 'week_4_5';
+var coveredDate = ['7/4-7/8', '7/11-7/15'];
+
+var MathOlympiad = require('./MathOlympiad.jsx');
+var EnrichmentActs = require('./EnrichmentActs.jsx');
+var GATE = require('./GATE.jsx');
+var WritingElective = require('./WritingElective.jsx');
+var MathElective = require('./MathElective.jsx');
+var AdvancedWrUnit = require('./AdvancedWrUnit.jsx');
+var AdvancedMathUnit = require('./AdvancedMathUnit.jsx');
+
+var Week4 = React.createClass({displayName: "Week4",
+  mixins: [ Navigation ],
+  getInitialState: function() {
+    YFActions.loadEnrollment();
+    return { 
+      done: false,
+      writing: YFStore.getWritingChoice(),
+      math: YFStore.getMathChoice(),
+      incomingGrade: YFStore.getIncomingGrade(),
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    };
   },
-  render: function() {
+  componentDidMount: function() {
+    YFStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    YFStore.removeChangeListener(this._onChange);
+  },
+  _onChange: function() {
+    this.setState({
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    });
+  },
+  handleConfirm: function(e) {
+    e.preventDefault();
     var self = this;
-    var grade = this.props.incomingGrade;
-    var writingClass = [];
-    var len = YFStore.getSummerWeeksNum();
-    var absent, week, obj, name, ref;
-    if(self.props.summerCampWeeks.length === 10){
-      for(var j = 2; j < len; j++) {
-        week = self.props.summerCampWeeks[j-1];
-        absent = (week.schedulePattern === "absence" || week.schedulePattern === '5_morning');
-
-        if(!absent){
-          var choices = [];
-          for(var x = 0; x < wrData[grade].length; x++){
-            obj = wrData[grade][x];
-            if(week.attendingDays.indexOf(obj.weekday) > -1){
-              name = 'week' + j;
-              ref = name + '_' + obj['database_name'];
-              choices.push(
-                React.createElement("div", {key: ref}, 
-                  React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: name, ref: ref, onChange: self.changeWritingElective, value: ""}), " ", 
-                    obj['database_name'], ", ", obj['weekday'], " (", obj['display_time'], ")"
-                  )
-                )
-              );
-            }
-          }
-          if(choices.length === 0){
-            choices.push(React.createElement("span", null, "No avaialble Classes"));
-          }
-
-          writingClass.push(
-            React.createElement("tr", {key: j}, 
-              React.createElement("td", null, "week_", j, " (", week.coveredDate, ")"), 
-              React.createElement("td", {className: "cell"}, choices), 
-              React.createElement("td", {className: "cell"}, wrData['class_size']), 
-              React.createElement("td", {className: "cell"}, wrData['price_per_class'])
-            )
-          );
-        }
-      }
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, preWeek, preWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      this.setState({ done: true }, function() {
+        React.findDOMNode(self.refs.confirmButton).blur();
+      });
     }
-
-    return (
-      React.createElement("div", {className: "panel panel-default"}, 
-        React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Afternoon Writing Elective Classes")
-          )
-        ), 
-
-        React.createElement("div", {className: "panel-body"}, 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("span", {className: "bg-info"}, wrData.note)
-            ), React.createElement("br", null), 
-
-            React.createElement("table", {className: "table table-bordered"}, 
-              React.createElement("thead", null, 
-                React.createElement("tr", null, 
-                  React.createElement("th", null, "Week #"), 
-                  React.createElement("th", null, "Class Choices"), 
-                  React.createElement("th", null, "Class Size"), 
-                  React.createElement("th", null, "Price Per Class")
-                )
-              ), 
-              React.createElement("tbody", null, 
-                writingClass
-              )
-            )
-          )
-        )
-      )
-    );
-  }
-});
-
-var AdvancedWriting = React.createClass({displayName: "AdvancedWriting",
-  changeAdvancedWriting: function(e) {
-
   },
-  render: function() {
+  handleContinue: function(e) {
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, preWeek, preWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      YFActions.saveSummerWeek(preWeek, preWeekIdx);
+      this.transitionTo('summer/week5');  
+    }
+  },
+
+  render: function () {
     var self = this;
-    var grade = this.props.incomingGrade;
-    var adWriting = [];
-    var len = YFStore.getSummerWeeksNum();
-    var absent_p, absent_q, week_p, week_q, obj, name, ref;
-    if(self.props.summerCampWeeks.length === 10){
-      for(var j = 2; j < len; j++) {
-        week_p = self.props.summerCampWeeks[j-1];
-        week_q = self.props.summerCampWeeks[j];
-        absent_p = (week_p.schedulePattern === "absence" || week_p.schedulePattern === '5_morning' || (week_p.attendingDays.indexOf('Mon') === -1 && week_p.attendingDays.indexOf('Wed') === -1));
-        absent_q = (week_q.schedulePattern === "absence" || week_q.schedulePattern === '5_morning' || (week_q.attendingDays.indexOf('Mon') === -1 && week_q.attendingDays.indexOf('Wed') === -1));
-
-        if(!absent_p && !absent_q){
-          for(var x = 0; x < wrData[grade].length; x++){
-            obj = wrData[grade][x];
-            if(week.attendingDays.indexOf(obj.weekday) > -1){
-              name = 'week' + j;
-              ref = name + '_' + obj['database_name'];
-              choices.push(
-                React.createElement("div", {key: ref}, 
-                  React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: name, ref: ref, onChange: self.changeAdvancedWriting, value: ""}), " ", 
-                    obj['database_name'], ", ", obj['weekday'], " (", obj['display_time'], ")"
-                  )
-                )
-              );
-            }
-          }
-          if(choices.length === 0){
-            choices.push(React.createElement("span", null, "No avaialble Classes"));
-          }
-
-          adWriting.push(
-            React.createElement("tr", {key: j}, 
-              React.createElement("td", null, "week_", j, " (", week.coveredDate, ")"), 
-              React.createElement("td", {className: "cell"}, choices), 
-              React.createElement("td", {className: "cell"}, wrData['class_size']), 
-              React.createElement("td", {className: "cell"}, wrData['price_per_class'])
-            )
-          );
-        }
-      }
+    var gd = self.state.incomingGrade;
+    var preShow = false, postShow = false;
+    if(self.state.summerCampWeeks.length === 10){
+      preShow = self.state.summerCampWeeks[preWeekIdx].schedulePattern !== 'absence';
+      postShow = self.state.summerCampWeeks[postWeekIdx].schedulePattern !== 'absence';
     }
     return (
-      React.createElement("div", {className: "panel panel-default"}, 
-        React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Afternoon Advanced Writing Boot Camp")
-          )
+      React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
+      React.createElement("h2", null, preWeekTitle, "  (", coveredDate[0], ")"), 
+       !preShow ? 
+        React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
+        React.createElement("div", null, 
+          React.createElement(EnrichmentActs, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}), 
+          self.state.writing === 'elective' ?
+          React.createElement(WritingElective, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}) :
+            React.createElement("p", null), 
+          self.state.math === 'elective' ?
+          React.createElement(MathElective, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}) :
+          React.createElement("p", null), 
+          React.createElement(MathOlympiad, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}), 
+          React.createElement(GATE, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks})
         ), 
+      
+      React.createElement("hr", null), 
 
-        React.createElement("div", {className: "panel-body"}, 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("span", {className: "bg-info"}, adWrData.note)
-            ), React.createElement("br", null), 
-
-            React.createElement("table", {className: "table table-bordered"}, 
-              React.createElement("thead", null, 
-                React.createElement("tr", null, 
-                  React.createElement("th", null, "Select"), 
-                  React.createElement("th", null, "Unit"), 
-                  React.createElement("th", null, "Class Time"), 
-                  React.createElement("th", null, "Note"), 
-                  React.createElement("th", null, "Class Size"), 
-                  React.createElement("th", null, "Price Per Class")
-                )
-              ), 
-              React.createElement("tbody", null, 
-                adWriting
-              )
+      (self.state.writing === 'advanced' || self.state.math === 'advanced') ? 
+      React.createElement("div", null, 
+        React.createElement("h2", null, preWeekTitle, " & ", postWeekTitle, " Unit"), 
+          (!preShow || !postShow) ? 
+            React.createElement("h3", {className: "bg-info"}, "Sorry, you can't enroll in this Advanced Writing(or Math) Unit due to at least one-week absence.") :
+            React.createElement("div", null, 
+            self.state.writing === 'advanced' ? 
+            React.createElement(AdvancedWrUnit, {
+              preWeek: preWeek, 
+              preWeekIdx: preWeekIdx, 
+              postWeek: postWeek, 
+              postWeekIdx: postWeekIdx, 
+              incomingGrade: self.state.incomingGrade, 
+              summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null), 
+            self.state.math === 'advanced' ? 
+            React.createElement(AdvancedMathUnit, {
+              preWeek: preWeek, 
+              preWeekIdx: preWeekIdx, 
+              postWeek: postWeek, 
+              postWeekIdx: postWeekIdx, 
+              incomingGrade: self.state.incomingGrade, 
+              summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null)
             )
-          )
+          
+      )
+      : React.createElement("p", null), 
+
+      React.createElement("div", {className: "row"}, 
+        React.createElement("div", {className: "col-md-offset-1"}, 
+          React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm")
         )
+      ), 
+
+      (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
       )
     );
-  }
+  } 
 });
 
-module.exports = WritingClass;
+module.exports = Week4;
 
-},{"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonWritingElective.json":6,"../actions/YFActions":218,"../stores/YFStore.jsx":242,"react":214,"react-router":45}],238:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":249,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],240:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+
+var preWeek = 'week_4';
+var postWeek = 'week_5';
+var preWeekIdx = 3;
+var postWeekIdx = 4;
+var preWeekTitle = 'Week 4';
+var postWeekTitle = 'Week 5';
+var unitWeek = 'week_4_5';
+var coveredDate = ['7/4-7/8', '7/11-7/15'];
+
+var MathOlympiad = require('./MathOlympiad.jsx');
+var EnrichmentActs = require('./EnrichmentActs.jsx');
+var GATE = require('./GATE.jsx');
+var WritingElective = require('./WritingElective.jsx');
+var MathElective = require('./MathElective.jsx');
+var AdvancedWrUnit = require('./AdvancedWrUnit.jsx');
+var AdvancedMathUnit = require('./AdvancedMathUnit.jsx');
+
+var Week5 = React.createClass({displayName: "Week5",
+  mixins: [ Navigation ],
+  getInitialState: function() {
+    YFActions.loadEnrollment();
+    return { 
+      done: false,
+      writing: YFStore.getWritingChoice(),
+      math: YFStore.getMathChoice(),
+      incomingGrade: YFStore.getIncomingGrade(),
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    };
+  },
+  componentDidMount: function() {
+    YFStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    YFStore.removeChangeListener(this._onChange);
+  },
+  _onChange: function() {
+    this.setState({
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    });
+  },
+  handleConfirm: function(e) {
+    e.preventDefault();
+    var self = this;
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, postWeek, postWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      this.setState({ done: true }, function() {
+        React.findDOMNode(self.refs.confirmButton).blur();
+      });
+    }
+  },
+  handleContinue: function(e) {
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, postWeek, postWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      YFActions.saveSummerWeek(postWeek, postWeekIdx);
+      this.transitionTo('summer/week6');  
+    }
+  },
+
+  render: function () {
+    var self = this;
+    var gd = self.state.incomingGrade;
+    var preShow = false, postShow = false;
+    if(self.state.summerCampWeeks.length === 10){
+      preShow = self.state.summerCampWeeks[preWeekIdx].schedulePattern !== 'absence';
+      postShow = self.state.summerCampWeeks[postWeekIdx].schedulePattern !== 'absence';
+    }
+    return (
+      React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
+      
+      React.createElement("h2", null, postWeekTitle, "   (", coveredDate[1], ")"), 
+       !postShow ? 
+        React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
+        React.createElement("div", null, 
+        React.createElement(EnrichmentActs, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}), 
+        self.state.writing === 'elective' ?
+        React.createElement(WritingElective, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}) :
+          React.createElement("p", null), 
+        self.state.math === 'elective' ?
+        React.createElement(MathElective, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}) :
+        React.createElement("p", null), 
+        React.createElement(MathOlympiad, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}), 
+        React.createElement(GATE, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks})
+        ), 
+      
+      React.createElement("hr", null), 
+      React.createElement("div", {className: "row"}, 
+        React.createElement("div", {className: "col-md-offset-1"}, 
+          React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"), "  ", React.createElement("br", null)
+        )
+      ), 
+
+      (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+      )
+    );
+  } 
+});
+
+module.exports = Week5;
+
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":249,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],241:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+
+var preWeek = 'week_6';
+var postWeek = 'week_7';
+var preWeekIdx = 5;
+var postWeekIdx = 6;
+var preWeekTitle = 'Week 6';
+var postWeekTitle = 'Week 7';
+var unitWeek = 'week_6_7';
+var coveredDate = ['7/18-7/22', '7/25-7/29'];
+
+var MathOlympiad = require('./MathOlympiad.jsx');
+var EnrichmentActs = require('./EnrichmentActs.jsx');
+var GATE = require('./GATE.jsx');
+var WritingElective = require('./WritingElective.jsx');
+var MathElective = require('./MathElective.jsx');
+var AdvancedWrUnit = require('./AdvancedWrUnit.jsx');
+var AdvancedMathUnit = require('./AdvancedMathUnit.jsx');
+
+var Week6 = React.createClass({displayName: "Week6",
+  mixins: [ Navigation ],
+  getInitialState: function() {
+    YFActions.loadEnrollment();
+    return { 
+      done: false,
+      writing: YFStore.getWritingChoice(),
+      math: YFStore.getMathChoice(),
+      incomingGrade: YFStore.getIncomingGrade(),
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    };
+  },
+  componentDidMount: function() {
+    YFStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    YFStore.removeChangeListener(this._onChange);
+  },
+  _onChange: function() {
+    this.setState({
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    });
+  },
+  handleConfirm: function(e) {
+    e.preventDefault();
+    var self = this;
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, preWeek, preWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      this.setState({ done: true }, function() {
+        React.findDOMNode(self.refs.confirmButton).blur();
+      });
+    }
+  },
+  handleContinue: function(e) {
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, preWeek, preWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      YFActions.saveSummerWeek(preWeek, preWeekIdx);
+      this.transitionTo('summer/week7');  
+    }
+  },
+
+  render: function () {
+    var self = this;
+    var gd = self.state.incomingGrade;
+    var preShow = false, postShow = false;
+    if(self.state.summerCampWeeks.length === 10){
+      preShow = self.state.summerCampWeeks[preWeekIdx].schedulePattern !== 'absence';
+      postShow = self.state.summerCampWeeks[postWeekIdx].schedulePattern !== 'absence';
+    }
+    return (
+      React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
+      React.createElement("h2", null, preWeekTitle, "  (", coveredDate[0], ")"), 
+       !preShow ? 
+        React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
+        React.createElement("div", null, 
+          React.createElement(EnrichmentActs, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}), 
+          self.state.writing === 'elective' ?
+          React.createElement(WritingElective, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}) :
+            React.createElement("p", null), 
+          self.state.math === 'elective' ?
+          React.createElement(MathElective, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}) :
+          React.createElement("p", null), 
+          React.createElement(MathOlympiad, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}), 
+          React.createElement(GATE, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks})
+        ), 
+      
+      React.createElement("hr", null), 
+
+      (self.state.writing === 'advanced' || self.state.math === 'advanced') ? 
+      React.createElement("div", null, 
+        React.createElement("h2", null, preWeekTitle, " & ", postWeekTitle, " Unit"), 
+          (!preShow || !postShow) ? 
+            React.createElement("h3", {className: "bg-info"}, "Sorry, you can't enroll in this Advanced Writing(or Math) Unit due to at least one-week absence.") :
+            React.createElement("div", null, 
+            self.state.writing === 'advanced' ? 
+            React.createElement(AdvancedWrUnit, {
+              preWeek: preWeek, 
+              preWeekIdx: preWeekIdx, 
+              postWeek: postWeek, 
+              postWeekIdx: postWeekIdx, 
+              incomingGrade: self.state.incomingGrade, 
+              summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null), 
+            self.state.math === 'advanced' ? 
+            React.createElement(AdvancedMathUnit, {
+              preWeek: preWeek, 
+              preWeekIdx: preWeekIdx, 
+              postWeek: postWeek, 
+              postWeekIdx: postWeekIdx, 
+              incomingGrade: self.state.incomingGrade, 
+              summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null)
+            )
+          
+      )
+      : React.createElement("p", null), 
+
+      React.createElement("div", {className: "row"}, 
+        React.createElement("div", {className: "col-md-offset-1"}, 
+          React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm")
+        )
+      ), 
+
+      (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+      )
+    );
+  } 
+});
+
+module.exports = Week6;
+
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":249,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],242:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+
+var preWeek = 'week_6';
+var postWeek = 'week_7';
+var preWeekIdx = 5;
+var postWeekIdx = 6;
+var preWeekTitle = 'Week 6';
+var postWeekTitle = 'Week 7';
+var unitWeek = 'week_6_7';
+var coveredDate = ['7/18-7/22', '7/25-7/29'];
+
+var MathOlympiad = require('./MathOlympiad.jsx');
+var EnrichmentActs = require('./EnrichmentActs.jsx');
+var GATE = require('./GATE.jsx');
+var WritingElective = require('./WritingElective.jsx');
+var MathElective = require('./MathElective.jsx');
+var AdvancedWrUnit = require('./AdvancedWrUnit.jsx');
+var AdvancedMathUnit = require('./AdvancedMathUnit.jsx');
+
+var Week7 = React.createClass({displayName: "Week7",
+  mixins: [ Navigation ],
+  getInitialState: function() {
+    YFActions.loadEnrollment();
+    return { 
+      done: false,
+      writing: YFStore.getWritingChoice(),
+      math: YFStore.getMathChoice(),
+      incomingGrade: YFStore.getIncomingGrade(),
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    };
+  },
+  componentDidMount: function() {
+    YFStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    YFStore.removeChangeListener(this._onChange);
+  },
+  _onChange: function() {
+    this.setState({
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    });
+  },
+  handleConfirm: function(e) {
+    e.preventDefault();
+    var self = this;
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, postWeek, postWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      this.setState({ done: true }, function() {
+        React.findDOMNode(self.refs.confirmButton).blur();
+      });
+    }
+  },
+  handleContinue: function(e) {
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, postWeek, postWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      YFActions.saveSummerWeek(postWeek, postWeekIdx);
+      this.transitionTo('summer/week8');  
+    }
+  },
+
+  render: function () {
+    var self = this;
+    var gd = self.state.incomingGrade;
+    var preShow = false, postShow = false;
+    if(self.state.summerCampWeeks.length === 10){
+      preShow = self.state.summerCampWeeks[preWeekIdx].schedulePattern !== 'absence';
+      postShow = self.state.summerCampWeeks[postWeekIdx].schedulePattern !== 'absence';
+    }
+    return (
+      React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
+      
+      React.createElement("h2", null, postWeekTitle, "   (", coveredDate[1], ")"), 
+       !postShow ? 
+        React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
+        React.createElement("div", null, 
+        React.createElement(EnrichmentActs, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}), 
+        self.state.writing === 'elective' ?
+        React.createElement(WritingElective, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}) :
+          React.createElement("p", null), 
+        self.state.math === 'elective' ?
+        React.createElement(MathElective, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}) :
+        React.createElement("p", null), 
+        React.createElement(MathOlympiad, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}), 
+        React.createElement(GATE, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks})
+        ), 
+      
+      React.createElement("hr", null), 
+      React.createElement("div", {className: "row"}, 
+        React.createElement("div", {className: "col-md-offset-1"}, 
+          React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"), "  ", React.createElement("br", null)
+        )
+      ), 
+
+      (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+      )
+    );
+  } 
+});
+
+module.exports = Week7;
+
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":249,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],243:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+
+var preWeek = 'week_8';
+var postWeek = 'week_9';
+var preWeekIdx = 7;
+var postWeekIdx = 8;
+var preWeekTitle = 'Week 8';
+var postWeekTitle = 'Week 9';
+var unitWeek = 'week_8_9';
+var coveredDate = ['8/1-8/5', '8/8-8/12'];
+
+var MathOlympiad = require('./MathOlympiad.jsx');
+var EnrichmentActs = require('./EnrichmentActs.jsx');
+var GATE = require('./GATE.jsx');
+var WritingElective = require('./WritingElective.jsx');
+var MathElective = require('./MathElective.jsx');
+var AdvancedWrUnit = require('./AdvancedWrUnit.jsx');
+var AdvancedMathUnit = require('./AdvancedMathUnit.jsx');
+
+var Week8 = React.createClass({displayName: "Week8",
+  mixins: [ Navigation ],
+  getInitialState: function() {
+    YFActions.loadEnrollment();
+    return { 
+      done: false,
+      writing: YFStore.getWritingChoice(),
+      math: YFStore.getMathChoice(),
+      incomingGrade: YFStore.getIncomingGrade(),
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    };
+  },
+  componentDidMount: function() {
+    YFStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    YFStore.removeChangeListener(this._onChange);
+  },
+  _onChange: function() {
+    this.setState({
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    });
+  },
+  handleConfirm: function(e) {
+    e.preventDefault();
+    var self = this;
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, preWeek, preWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      this.setState({ done: true }, function() {
+        React.findDOMNode(self.refs.confirmButton).blur();
+      });
+    }
+  },
+  handleContinue: function(e) {
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, preWeek, preWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      YFActions.saveSummerWeek(preWeek, preWeekIdx);
+      this.transitionTo('summer/week9');  
+    }
+  },
+
+  render: function () {
+    var self = this;
+    var gd = self.state.incomingGrade;
+    var preShow = false, postShow = false;
+    if(self.state.summerCampWeeks.length === 10){
+      preShow = self.state.summerCampWeeks[preWeekIdx].schedulePattern !== 'absence';
+      postShow = self.state.summerCampWeeks[postWeekIdx].schedulePattern !== 'absence';
+    }
+    return (
+      React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
+      React.createElement("h2", null, preWeekTitle, "  (", coveredDate[0], ")"), 
+       !preShow ? 
+        React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
+        React.createElement("div", null, 
+          React.createElement(EnrichmentActs, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}), 
+          self.state.writing === 'elective' ?
+          React.createElement(WritingElective, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}) :
+            React.createElement("p", null), 
+          self.state.math === 'elective' ?
+          React.createElement(MathElective, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}) :
+          React.createElement("p", null), 
+          React.createElement(MathOlympiad, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks}), 
+          React.createElement(GATE, {
+            curWeek: preWeek, 
+            curWeekIdx: preWeekIdx, 
+            incomingGrade: self.state.incomingGrade, 
+            summerCampWeeks: self.state.summerCampWeeks})
+        ), 
+      
+      React.createElement("hr", null), 
+
+      (self.state.writing === 'advanced' || self.state.math === 'advanced') ? 
+      React.createElement("div", null, 
+        React.createElement("h2", null, preWeekTitle, " & ", postWeekTitle, " Unit"), 
+          (!preShow || !postShow) ? 
+            React.createElement("h3", {className: "bg-info"}, "Sorry, you can't enroll in this Advanced Writing(or Math) Unit due to at least one-week absence.") :
+            React.createElement("div", null, 
+            self.state.writing === 'advanced' ? 
+            React.createElement(AdvancedWrUnit, {
+              preWeek: preWeek, 
+              preWeekIdx: preWeekIdx, 
+              postWeek: postWeek, 
+              postWeekIdx: postWeekIdx, 
+              incomingGrade: self.state.incomingGrade, 
+              summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null), 
+            self.state.math === 'advanced' ? 
+            React.createElement(AdvancedMathUnit, {
+              preWeek: preWeek, 
+              preWeekIdx: preWeekIdx, 
+              postWeek: postWeek, 
+              postWeekIdx: postWeekIdx, 
+              incomingGrade: self.state.incomingGrade, 
+              summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null)
+            )
+          
+      )
+      : React.createElement("p", null), 
+
+      React.createElement("div", {className: "row"}, 
+        React.createElement("div", {className: "col-md-offset-1"}, 
+          React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm")
+        )
+      ), 
+
+      (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+      )
+    );
+  } 
+});
+
+module.exports = Week8;
+
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":249,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],244:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
+
+var preWeek = 'week_8';
+var postWeek = 'week_9';
+var preWeekIdx = 7;
+var postWeekIdx = 8;
+var preWeekTitle = 'Week 8';
+var postWeekTitle = 'Week 9';
+var unitWeek = 'week_8_9';
+var coveredDate = ['8/1-8/5', '8/8-8/12'];
+
+var MathOlympiad = require('./MathOlympiad.jsx');
+var EnrichmentActs = require('./EnrichmentActs.jsx');
+var GATE = require('./GATE.jsx');
+var WritingElective = require('./WritingElective.jsx');
+var MathElective = require('./MathElective.jsx');
+var AdvancedWrUnit = require('./AdvancedWrUnit.jsx');
+var AdvancedMathUnit = require('./AdvancedMathUnit.jsx');
+
+var Week9 = React.createClass({displayName: "Week9",
+  mixins: [ Navigation ],
+  getInitialState: function() {
+    YFActions.loadEnrollment();
+    return { 
+      done: false,
+      writing: YFStore.getWritingChoice(),
+      math: YFStore.getMathChoice(),
+      incomingGrade: YFStore.getIncomingGrade(),
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    };
+  },
+  componentDidMount: function() {
+    YFStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    YFStore.removeChangeListener(this._onChange);
+  },
+  _onChange: function() {
+    this.setState({
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    });
+  },
+  handleConfirm: function(e) {
+    e.preventDefault();
+    var self = this;
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, postWeek, postWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      this.setState({ done: true }, function() {
+        React.findDOMNode(self.refs.confirmButton).blur();
+      });
+    }
+  },
+  handleContinue: function(e) {
+    var res = YFStore.testTimeConflictInWeek(this.state.incomingGrade, postWeek, postWeekIdx);
+    if(res.conflict){
+      alert('Time Conflict! Please check ' + res.names[0] + ' and ' + res.names[1] + '.');
+    } else {
+      YFActions.saveSummerWeek(postWeek, postWeekIdx);
+      this.transitionTo('summer/week10');  
+    }
+  },
+
+  render: function () {
+    var self = this;
+    var gd = self.state.incomingGrade;
+    var preShow = false, postShow = false;
+    if(self.state.summerCampWeeks.length === 10){
+      preShow = self.state.summerCampWeeks[preWeekIdx].schedulePattern !== 'absence';
+      postShow = self.state.summerCampWeeks[postWeekIdx].schedulePattern !== 'absence';
+    }
+    return (
+      React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
+      
+      React.createElement("h2", null, postWeekTitle, "   (", coveredDate[1], ")"), 
+       !postShow ? 
+        React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
+        React.createElement("div", null, 
+        React.createElement(EnrichmentActs, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}), 
+        self.state.writing === 'elective' ?
+        React.createElement(WritingElective, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}) :
+          React.createElement("p", null), 
+        self.state.math === 'elective' ?
+        React.createElement(MathElective, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}) :
+        React.createElement("p", null), 
+        React.createElement(MathOlympiad, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks}), 
+        React.createElement(GATE, {
+          curWeek: postWeek, 
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: self.state.incomingGrade, 
+          summerCampWeeks: self.state.summerCampWeeks})
+        ), 
+      
+      React.createElement("hr", null), 
+      React.createElement("div", {className: "row"}, 
+        React.createElement("div", {className: "col-md-offset-1"}, 
+          React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"), "  ", React.createElement("br", null)
+        )
+      ), 
+
+      (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+      )
+    );
+  } 
+});
+
+module.exports = Week9;
+
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":249,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],245:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29814,8 +32429,17 @@ var YFStore = require('../stores/YFStore.jsx');
 var wrData = require('../../lib/summer/afternoonWritingElective.json');
 
 var WritingElective = React.createClass({displayName: "WritingElective",
+  getInitialState: function() {
+    var self = this;
+    var w = YFStore.getWrElecIdx(self.props.curWeekIdx);
+    return {
+      wrElecIdx:  isNaN(w) ? -1 : w
+    };
+  },
   changeWritingElective: function(e) {
-
+    var self = this;
+    var v = e.currentTarget.value;
+    YFStore.setWrElecIdx(self.props.curWeekIdx, v);
   },
   render: function() {
     var self = this;
@@ -29830,7 +32454,9 @@ var WritingElective = React.createClass({displayName: "WritingElective",
         writings.push(
           React.createElement("tr", {key: ref}, 
             React.createElement("td", {className: "cell"}, 
-              React.createElement("input", {type: "radio", name: "writingElective", ref: ref, onChange: this.changeWritingElective, value: ""})
+            self.state.wrElecIdx === j ?
+              React.createElement("input", {type: "radio", name: "writingElective", ref: ref, onChange: this.changeWritingElective, value: j, defaultChecked: true}) :
+              React.createElement("input", {type: "radio", name: "writingElective", ref: ref, onChange: this.changeWritingElective, value: j})
             ), 
             React.createElement("td", {className: "cell"}, obj['display_name']), 
             React.createElement("td", {className: "cell"}, 
@@ -29844,7 +32470,9 @@ var WritingElective = React.createClass({displayName: "WritingElective",
       writings.push(
         React.createElement("tr", {key: "-1"}, 
           React.createElement("td", {className: "cell"}, 
-            React.createElement("input", {type: "radio", name: "writingElective", onChange: this.changeWritingElective, value: ""})
+          self.state.wrElecIdx === -1 ? 
+          React.createElement("input", {type: "radio", name: "writingElective", onChange: this.changeWritingElective, value: -1, defaultChecked: true}) :
+          React.createElement("input", {type: "radio", name: "writingElective", onChange: this.changeWritingElective, value: -1})
           ), 
           React.createElement("td", {className: "cell"}, "No, thanks."), 
           React.createElement("td", {className: "cell"}, "---"), 
@@ -29898,7 +32526,7 @@ var WritingElective = React.createClass({displayName: "WritingElective",
 
 module.exports = WritingElective;
 
-},{"../../lib/summer/afternoonWritingElective.json":6,"../actions/YFActions":218,"../stores/YFStore.jsx":242,"react":214,"react-router":45}],239:[function(require,module,exports){
+},{"../../lib/summer/afternoonWritingElective.json":6,"../actions/YFActions":218,"../stores/YFStore.jsx":249,"react":214,"react-router":45}],246:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29967,7 +32595,7 @@ var YFApp = React.createClass({displayName: "YFApp",
 
 module.exports = YFApp;
 
-},{"../stores/YFStore.jsx":242,"react":214,"react-router":45}],240:[function(require,module,exports){
+},{"../stores/YFStore.jsx":249,"react":214,"react-router":45}],247:[function(require,module,exports){
 /*
  * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -29988,10 +32616,10 @@ module.exports = keyMirror({
   YF_SAVE_SUMMER_SCHEDULE: null,
   YF_SAVE_SUMMER_AFTERNOON_ACADEMICS: null,
   YF_LOAD_ENROLLMENT: null,
-  YF_SAVA_SUMMER_ENRICH_ACTS: null
+  YF_SAVE_SUMMER_WEEK: null
 });
 
-},{"keymirror":19}],241:[function(require,module,exports){
+},{"keymirror":19}],248:[function(require,module,exports){
 /*
 * AppDispatcher
 *
@@ -30002,7 +32630,7 @@ var Dispatcher = require('flux').Dispatcher;
 
 module.exports = new Dispatcher();
 
-},{"flux":12}],242:[function(require,module,exports){
+},{"flux":12}],249:[function(require,module,exports){
 'use strict';
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
@@ -30010,6 +32638,15 @@ var EventEmitter = require('events').EventEmitter;
 var YFConstants = require('../constants/YFConstants');
 var assign = require('object-assign');
 var request = require('superagent');
+
+/* Original Data */
+var enrichActData = require('../../lib/summer/enrichmentActivities.json');
+var wrData = require('../../lib/summer/afternoonWritingElective.json');
+var adWrData = require('../../lib/summer/afternoonAdvancedWriting.json');
+var mathData = require('../../lib/summer/afternoonMathElective.json');
+var adMathData = require('../../lib/summer/afternoonAdvancedMath.json');
+var mathOlpData = require('../../lib/summer/afternoonMathOlympiad.json');
+var GATEData = require('../../lib/summer/afternoonGATE.json');
 
 /* Constants */
 var CHANGE_EVENT = 'change';
@@ -30038,7 +32675,6 @@ var summerWeekCount = 0;
 var summerCampWeeks = [];
 var enrollmentId = '';
 var enrollment = {};
-var writingChoice = 'none', mathChoice = 'none'; //["elective", "advanced", "none"]
 var done = {
   scheduled: false,
   enrichmentActivities: false
@@ -30121,6 +32757,45 @@ function saveSummerAfternoonAcademics(enrollmentId, language, next) {
   });
 }
 
+function getWeekEnrollIdxes(grade, week, weekIdx){
+  var morActIdx = YFStore.getMorActIdx(weekIdx);
+  var aftActIdx = YFStore.getAftActIdx(weekIdx);
+  var wrElecIdx = YFStore.getWrElecIdx(weekIdx);
+  var mathElecIdx = YFStore.getMathElecIdx(weekIdx);
+  var mathOlypIdx = YFStore.getMathOlypIdx(weekIdx);
+  var GATEIdx = YFStore.getGATEIdx(weekIdx);
+  var advWrIdx = YFStore.getAdvWrIdx(weekIdx);
+  var advMathIdx = YFStore.getAdvMathIdx(weekIdx);
+  var weekObj = {
+    morActIdx: !isNaN(morActIdx) ? morActIdx : 0,
+    aftActIdx: !isNaN(aftActIdx) ? aftActIdx : -1,
+    wrElecIdx: !isNaN(wrElecIdx) ? wrElecIdx : -1,
+    mathElecIdx: !isNaN(mathElecIdx) ? mathElecIdx : -1,
+    mathOlypIdx: !isNaN(mathOlypIdx) ? mathOlypIdx : -1,
+    GATEIdx: !isNaN(GATEIdx) ? GATEIdx : -1,
+    advWrIdx: !isNaN(advWrIdx) ? advWrIdx : -1,
+    advMathIdx: !isNaN(advMathIdx) ? advMathIdx : -1
+  }
+  return weekObj;
+}
+
+function saveSummerWeek(enrollmentId, grade, week, weekIdx, weekObj) {
+  var url = '/api/users/summer/weeks/' + enrollmentId;
+  var data = {
+    grade: grade,
+    week: week,
+    weekIdx: weekIdx,
+    weekObj: weekObj
+  };
+  request
+  .put(url)
+  .send(data)
+  .accept('application/json')
+  .end(function(err, res){
+    if(err) { return console.error(err); }
+  });
+}
+
 function loadEnrollment(enrollmentId, next) {
   if(enrollmentId !== ''){
     var url = 'api/users/enroll/' + enrollmentId;
@@ -30135,6 +32810,27 @@ function loadEnrollment(enrollmentId, next) {
     });
   }
 }
+
+function insertIntoLine(timeline, timeObj) {
+  if(timeline.length === 1) { 
+    timeline.splice(0, 0, timeObj); 
+    return { conflict: false };
+  }
+  for(var j = 0; j < timeline.length; j++) {
+    if(timeObj.time[1] <= timeline[j].time[0]){
+      timeline.splice(j, 0, timeObj);
+      return { conflict: false };
+    } else if(timeObj.time[0] >= timeline[j].time[1]) {
+      continue;
+    } else {
+      return {
+        conflict: true,
+        names: [timeObj.name, timeline[j].name]
+      };
+    }
+  }
+  return { conflict: false };
+};
 
 var YFStore = assign({}, EventEmitter.prototype, {
   getStateFromStorage: function() {
@@ -30205,6 +32901,7 @@ var YFStore = assign({}, EventEmitter.prototype, {
       var w = summerWeeks[i];
       if(w.selected && !w.done){
         summerCampWeeks[i] = {
+          weekIndex: 'week_' + (i+1),
           coveredDate: w.coveredDate,
           schedulePattern: schedulePattern,
           attendingDays: days
@@ -30234,18 +32931,129 @@ var YFStore = assign({}, EventEmitter.prototype, {
   setEnrichmentDone: function(b) {
     done.enrichmentActivities = b;
   },
+  setMorActIdx: function(weekIdx, v) {
+    var key = weekIdx + 'morActIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getMorActIdx: function(weekIdx){
+    var key = weekIdx + 'morActIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  setAftActIdx: function(weekIdx, v) {
+    var key = weekIdx + 'aftActIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getAftActIdx: function(weekIdx){
+    var key = weekIdx + 'aftActIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  setDailyLang: function(lang) {
+    sessionStorage.setItem('dailyLang', lang);
+  },
+  getDailyLang: function() {
+    return sessionStorage.getItem('dailyLang');
+  },
+  setWrElecIdx: function(weekIdx, v) {
+    var key = weekIdx + 'wrElecIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getWrElecIdx: function(weekIdx){
+    var key = weekIdx + 'wrElecIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  setAdvWrIdx: function(weekIdx, v) {
+    var key = weekIdx + 'advWrIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getAdvWrIdx: function(weekIdx){
+    var key = weekIdx + 'advWrIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  setMathElecIdx: function(weekIdx, v) {
+    var key = weekIdx + 'mathElecIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getMathElecIdx: function(weekIdx){
+    var key = weekIdx + 'mathElecIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  setAdvMathIdx: function(weekIdx, v) {
+    var key = weekIdx + 'advMathIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getAdvMathIdx: function(weekIdx){
+    var key = weekIdx + 'advMathIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  setMathOlypIdx: function(weekIdx, v) {
+    var key = weekIdx + 'mathOlypIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getMathOlypIdx: function(weekIdx){
+    var key = weekIdx + 'mathOlypIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  setGATEIdx: function(weekIdx, v) {
+    var key = weekIdx + 'GATEIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getGATEIdx: function(weekIdx){
+    var key = weekIdx + 'GATEIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  testTimeConflictInWeek(grade, week, weekIdx) {
+    var morActIdx = YFStore.getMorActIdx(weekIdx);
+    var aftActIdx = YFStore.getAftActIdx(weekIdx);
+    var wrElecIdx = YFStore.getWrElecIdx(weekIdx);
+    var mathElecIdx = YFStore.getMathElecIdx(weekIdx);
+    var mathOlypIdx = YFStore.getMathOlypIdx(weekIdx);
+    var GATEIdx = YFStore.getGATEIdx(weekIdx);
+    var advWrIdx = YFStore.getAdvWrIdx(weekIdx);
+    var advMathIdx = YFStore.getAdvMathIdx(weekIdx);
+    var timeline = [
+      { name: 'tail', time: [600, 700] }
+    ];
+    var attendingDays = summerCampWeeks[weekIdx].attendingDays;
+    var idxArr = [morActIdx, aftActIdx, wrElecIdx, mathElecIdx, mathOlypIdx, GATEIdx, advWrIdx, advMathIdx];
+    var timesArr = [
+      morActIdx > -1 ? enrichActData['morning_time'].conflict_test : {},
+      aftActIdx > -1 ? enrichActData['afternoon_time'].conflict_test : {},
+      wrElecIdx > -1 ? wrData[grade][wrElecIdx].conflict_test : {},
+      mathElecIdx > -1 ? mathData[grade][mathElecIdx].conflict_test : {},
+      mathOlypIdx > -1 ? mathOlpData[grade][mathOlypIdx].conflict_test : {},
+      GATEIdx > -1 ? GATEData[grade][GATEIdx].conflict_test : {},
+      advWrIdx > -1 ? adWrData[grade][advWrIdx].conflict_test : {},
+      advMathIdx > -1 ? adMathData[grade][advMathIdx].conflict_test : {}
+    ];
+
+    for(var j = 0; j < idxArr.length; j++){
+      if(isNaN(idxArr[j])) { continue; }
+      if(idxArr[j] > -1){
+        for(var q = 0; q < timesArr[j].length; q++){
+          var timeObj = timesArr[j][q];
+          if(attendingDays.indexOf(timeObj.weekday) > -1){
+            var res = insertIntoLine(timeline, timeObj);
+            if(res.conflict){
+              return res;
+            } else {
+              continue;
+            }
+          }
+        }
+      }
+    }
+    return { conflict: false };
+  },
 
   emitChange: function() {
     this.emit(CHANGE_EVENT);
   },
-
   /**
    * @param {function} callback
    */
   addChangeListener: function(callback) {
     this.on(CHANGE_EVENT, callback);
   },
-
   /**
    * @param {function} callback
    */
@@ -30257,7 +33065,8 @@ var YFStore = assign({}, EventEmitter.prototype, {
 
 // Register callback to handle all updates
 AppDispatcher.register(function(action) {
-  var body, data, id;
+  var body, data, id, week, weekIdx, weekObj;
+  var grade = YFStore.getIncomingGrade();
 
   switch(action.actionType) {
     case YFConstants.YF_CREATE_USER:
@@ -30291,6 +33100,12 @@ AppDispatcher.register(function(action) {
       enrollmentId = sessionStorage.getItem('enrollmentId');
       saveSummerAfternoonAcademics(enrollmentId, action.language, action.next);
       break;
+    case YFConstants.YF_SAVE_SUMMER_WEEK:
+      enrollmentId = sessionStorage.getItem('enrollmentId');
+      week = action.week; weekIdx = action.weekIdx; 
+      weekObj = getWeekEnrollIdxes(grade, week, weekIdx);
+      saveSummerWeek(enrollmentId, grade, week, weekIdx, weekObj);
+      break;
   
     default:
       return;
@@ -30299,4 +33114,4 @@ AppDispatcher.register(function(action) {
 
 module.exports = YFStore;
 
-},{"../constants/YFConstants":240,"../dispatcher/AppDispatcher":241,"events":10,"object-assign":20,"superagent":215}]},{},[219]);
+},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../constants/YFConstants":247,"../dispatcher/AppDispatcher":248,"events":10,"object-assign":20,"superagent":215}]},{},[219]);

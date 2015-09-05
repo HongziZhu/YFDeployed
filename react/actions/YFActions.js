@@ -45,9 +45,13 @@ var YFActions = {
     });
   },
 
-  saveSummerEnrichActs: function() {
-    
-  }
+  saveSummerWeek: function(week, weekIdx) {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_SAVE_SUMMER_WEEK,
+      week: week,
+      weekIdx: weekIdx
+    });
+  },
 
   loadEnrollment: function() {
     AppDispatcher.dispatch({

@@ -60,5 +60,7 @@ router.post('/summer/schedule/new', enrollments.create);
 
 router.put('/summer/afternoon_academics/:enrollmentId', enrollments.saveAfternoonAcademics);
 
+router.put('/summer/weeks/:enrollmentId', enrollments.saveSummerWeek);
+
 //TODO Error handling
 module.exports = router;

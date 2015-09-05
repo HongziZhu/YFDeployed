@@ -9,8 +9,16 @@ var YFStore = require('../stores/YFStore.jsx');
 var adMathData = require('../../lib/summer/afternoonAdvancedMath.json');
 
 var AdvancedMathUnit = React.createClass({
+  getInitialState: function() {
+    var a = YFStore.getAdvMathIdx(this.props.preWeekIdx);
+    return {
+      advMathIdx: isNaN(a) ? -1 : a
+    };
+  },
   changeAdvancedMathUnit: function(e) {
-
+    var v = e.currentTarget.value;
+    YFStore.setAdvMathIdx(this.props.preWeekIdx, v);
+    YFStore.setAdvMathIdx(this.props.postWeekIdx, v);
   },
   render: function() {
     var self = this;
@@ -25,7 +33,9 @@ var AdvancedMathUnit = React.createClass({
         adMaths.push(
           <tr key={ref}>
             <td className='cell'>
-              <input type="radio" name="AdvancedMathUnit" ref={ref} onChange={this.changeAdvancedMathUnit} value="" />
+            {self.state.advMathIdx === j ?
+              <input type="radio" name="AdvancedMathUnit" ref={ref} onChange={this.changeAdvancedMathUnit} value={j} defaultChecked/> :
+              <input type="radio" name="AdvancedMathUnit" ref={ref} onChange={this.changeAdvancedMathUnit} value={j} />}
             </td>
             <td className='cell'>{obj['display_name']}</td>
             <td className='cell'>
@@ -40,7 +50,9 @@ var AdvancedMathUnit = React.createClass({
       adMaths.push(
         <tr key="-1">
           <td className='cell'>
-            <input type="radio" name="AdvancedMathUnit" onChange={this.changeAdvancedMathUnit} value="" />
+          {self.state.advMathIdx === -1 ? 
+            <input type="radio" name="AdvancedMathUnit" onChange={this.changeAdvancedMathUnit} value={-1} defaultChecked/> :
+            <input type="radio" name="AdvancedMathUnit" onChange={this.changeAdvancedMathUnit} value={-1} />} 
           </td>
           <td className='cell'>No, thanks.</td>
           <td className='cell'>---</td>

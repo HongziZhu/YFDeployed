@@ -4,8 +4,12 @@
     "grades": ["G1", "G2"],
     "G1": [
         {
+                 "database_name": "Math",
                  "display_name": "Math",
-                 "weekday": "Wed",
+                 "conflict_test": [
+                    { "name": "math elective", "weekday": "Wed", "time": [314.20, 315.05] }
+                 ],
+                 "weekday": ["Wed"],
                  "display_time": "2:20-3:05 pm",
                  "database_time" : [14.20, 15.05],
                  "class_size": [2, 5],
@@ -14,16 +18,24 @@
     ],
 	"G2":[ 
            {
+                 "database_name": "Math_G2_A",
                  "display_name": "Math A",
-                 "weekday": "Mon",
+                 "conflict_test": [
+                    { "name": "math elective", "weekday": "Mon", "time": [316, 316.45] }
+                 ],
+                 "weekday": ["Mon"],
                  "display_time": "4:00-4:45 pm",
                  "database_time" : [16.00, 16.45],
                  "class_size": [2, 5],
                  "price_per_class": 12 
         },
            {
+                 "database_name": "Math_G2_B",
                  "display_name": "Math B",
-                 "weekday": "Wed",
+                 "conflict_test": [
+                    { "name": "math elective", "weekday": "Wed", "time": [315.10, 315.55] }
+                 ],
+                 "weekday": ["Wed"],
                  "display_time": "3:10-3:55 pm",
                  "database_time" : [15.10, 15.55],
                  "class_size": [2, 5],

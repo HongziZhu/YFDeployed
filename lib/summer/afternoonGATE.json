@@ -10,6 +10,11 @@
 		{
 			"display_name": "GATE G2_G3",
 			"databse_name": "GATE_G2_G3",
+			"conflict_test": [
+	        { "name": "GATE", "weekday": "Mon", "time": [115.10, 115.55] },
+	        { "name": "GATE", "weekday": "Wed", "time": [313.30, 314.30] }
+	     ],
+			"weekday": ["Mon", "Wed"],
 			"class_time": [
 				{"weekday": "Mon", "display_time": "3:10 PM-3:55 PM", "database_time": [15.10, 15.55] },
 				{"weekday": "Wed", "display_time": "1:30 PM-2:30 PM", "database_time": [13.30, 14.30] }
@@ -22,6 +27,11 @@
 		{
 			"display_name": "GATE G2_G3",
 			"databse_name": "GATE_G2_G3",
+			"conflict_test": [
+	        { "name": "GATE", "weekday": "Mon", "time": [115.10, 115.55] },
+	        { "name": "GATE", "weekday": "Wed", "time": [313.30, 314.30] }
+	     ],
+			"weekday": ["Mon", "Wed"],
 			"class_time": [
 				{"weekday": "Mon", "display_time": "3:10 PM-3:55 PM", "database_time": [15.10, 15.55] },
 				{"weekday": "Wed", "display_time": "1:30 PM-2:30 PM", "database_time": [13.30, 14.30] }

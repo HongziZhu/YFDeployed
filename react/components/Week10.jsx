@@ -15,15 +15,15 @@ var mathOlpData = require('../../lib/summer/afternoonMathOlympiad.json');
 var GATEData = require('../../lib/summer/afternoonGATE.json');
 
 
-var curWeek = 'week_1';
-var coveredDate = '6/13-6/17';
-var curWeekTitle = 'Week 1';
-var curWeekIdx = 0;
+var curWeek = 'week_10';
+var coveredDate = '8/15-8/19';
+var curWeekTitle = 'Week 10';
+var curWeekIdx = 9;
 var ENTER_KEY_CODE = 13;
 
 var EnrichmentActs = require('./EnrichmentActs.jsx');
 
-var Week1 = React.createClass({
+var Week10 = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
     YFActions.loadEnrollment();
@@ -53,7 +53,7 @@ var Week1 = React.createClass({
   },
   handleContinue: function(e) {
     YFActions.saveSummerWeek(curWeek, curWeekIdx);
-    this.transitionTo('summer/week2');  
+    this.transitionTo('summer/other_services');  
   },
 
   render: function () {
@@ -72,10 +72,9 @@ var Week1 = React.createClass({
             curWeek={curWeek} 
             curWeekIdx={curWeekIdx}
             incomingGrade={self.state.incomingGrade} 
-            summerCampWeeks={self.state.summerCampWeeks}/>          
+            summerCampWeeks={self.state.summerCampWeeks}/>   
         </div>
       }
-
       <div className="row">
         <div className='col-md-offset-1'>
           <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm
@@ -89,4 +88,4 @@ var Week1 = React.createClass({
   } 
 });
 
-module.exports = Week1;
+module.exports = Week10;

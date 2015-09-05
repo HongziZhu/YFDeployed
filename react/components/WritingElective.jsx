@@ -9,8 +9,17 @@ var YFStore = require('../stores/YFStore.jsx');
 var wrData = require('../../lib/summer/afternoonWritingElective.json');
 
 var WritingElective = React.createClass({
+  getInitialState: function() {
+    var self = this;
+    var w = YFStore.getWrElecIdx(self.props.curWeekIdx);
+    return {
+      wrElecIdx:  isNaN(w) ? -1 : w
+    };
+  },
   changeWritingElective: function(e) {
-
+    var self = this;
+    var v = e.currentTarget.value;
+    YFStore.setWrElecIdx(self.props.curWeekIdx, v);
   },
   render: function() {
     var self = this;
@@ -25,7 +34,9 @@ var WritingElective = React.createClass({
         writings.push(
           <tr key={ref}>
             <td className='cell'>
-              <input type="radio" name="writingElective" ref={ref} onChange={this.changeWritingElective} value="" />
+            {self.state.wrElecIdx === j ?
+              <input type="radio" name="writingElective" ref={ref} onChange={this.changeWritingElective} value={j} defaultChecked/> :
+              <input type="radio" name="writingElective" ref={ref} onChange={this.changeWritingElective} value={j} />}  
             </td>
             <td className='cell'>{obj['display_name']}</td>
             <td className='cell'>
@@ -39,7 +50,9 @@ var WritingElective = React.createClass({
       writings.push(
         <tr key="-1">
           <td className='cell'>
-            <input type="radio" name="writingElective" onChange={this.changeWritingElective} value="" />
+          {self.state.wrElecIdx === -1 ? 
+          <input type="radio" name="writingElective" onChange={this.changeWritingElective} value={-1} defaultChecked/> :
+          <input type="radio" name="writingElective" onChange={this.changeWritingElective} value={-1} />}
           </td>
           <td className='cell'>No, thanks.</td>
           <td className='cell'>---</td>

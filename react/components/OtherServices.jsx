@@ -36,9 +36,7 @@ var OtherServices = React.createClass({
   },
   handleContinue: function(e) {
     var self = this;
-    // YFActions.saveOtherServices(self.state.language, function() {
-    //   self.transitionTo('summer/writing_class');
-    // });
+    
     self.transitionTo('summer/writing_class');
   },
 
@@ -58,7 +56,7 @@ var OtherServices = React.createClass({
           </div>
         </div>
 
-        {this.state.done ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <p></p>}
+        {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
       </div>
     );
   } 

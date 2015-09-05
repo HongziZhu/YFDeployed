@@ -27,6 +27,7 @@ var EnrollmentSchema = new Schema({
   },
   //ten weeks for summer camp
   summerCampWeeks: [{
+    weekIndex: String,
     coveredDate: { type: String, trim: true },
     schedulePattern:  { type: String, trim: true }, //"absence" 
     attendingDays: [String],
@@ -44,82 +45,84 @@ var EnrollmentSchema = new Schema({
     },
     enrichmentActs: {
       morning: {
+        isAttend: { type: Boolean, default: false },
         activityName: String,
         theme: String,
         time: String,
         weekday: [String],
         hoursPerWeek: Number,
-        classSize: String,
+        classSize: [Number],
         pricePerWeek: Number
       },
       afternoon: {
-        isAttend: Boolean,
+        isAttend: { type: Boolean, default: false },
         activityName: String,
-        theme: String,
         time: String,
         weekday: [String],
         hoursPerWeek: Number,
-        classSize: String,
+        classSize: [Number],
         pricePerWeek: Number
-      },
+      }
     },
     afternoonAcademics: {
-      math: { type: String, default: 'Daily Math' },
-      language: { type: String, enum: ['Daily Chinese', 'Daily Spanish', 'Daily Hindi'] }
+      math: { type: String, default: 'DailyMath' },
+      language: { type: String, enum: ['DailyChinese', 'DailySpanish', 'DailyHindi'] }
     },
     movie: {
-      isAttend: Boolean,
+      isAttend: { type: Boolean, default: false },
       movieName: String,
       place: String,
       time: String,
       price: String
     },
     writingElective: {
-      isAttend: Boolean,
+      isAttend: { type: Boolean, default: false },
       className: String,
-      time: [String],
+      time: String,
       weekday: [String],
-      classSize: String,
+      classSize: [Number],
       pricePerWeek: Number
     },
     advWriting: {
-      isAttend: Boolean,
+      isAttend: { type: Boolean, default: false },
       className: String,
-      time: [String],
+      time: String,
       weekday: [String],
-      classSize: String,
+      classSize: [Number],
       pricePerWeek: Number
     },
     mathElective: {
-      isAttend: Boolean,
+      isAttend: { type: Boolean, default: false },
       className: String,
-      time: [String],
+      time: String,
       weekday: [String],
-      classSize: String,
+      classSize: [Number],
       pricePerWeek: Number
     },
     advMath: {
-      isAttend: Boolean,
+      isAttend: { type: Boolean, default: false },
       className: String,
-      time: [String],
+      time: String,
       weekday: [String],
-      classSize: String,
+      classSize: [Number],
       pricePerWeek: Number
     },
     mathOlympiad: {
-      isAttend: Boolean,
+      isAttend: { type: Boolean, default: false },
       className: String,
-      time: [String],
+      time: String,
       weekday: [String],
-      classSize: String,
+      classSize: [Number],
       pricePerWeek: Number
     },
     GATE: {
-      isAttend: Boolean,
+      isAttend: { type: Boolean, default: false },
       className: String,
-      time: [String],
+      time: [
+        { weekday: String, display_time: String, database_time: [Number] }
+      ],
       weekday: [String],
-      classSize: String,
+      classSize: [Number],
       pricePerWeek: Number
     }
   }]

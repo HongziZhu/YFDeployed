@@ -6,6 +6,15 @@ var YFConstants = require('../constants/YFConstants');
 var assign = require('object-assign');
 var request = require('superagent');
 
+/* Original Data */
+var enrichActData = require('../../lib/summer/enrichmentActivities.json');
+var wrData = require('../../lib/summer/afternoonWritingElective.json');
+var adWrData = require('../../lib/summer/afternoonAdvancedWriting.json');
+var mathData = require('../../lib/summer/afternoonMathElective.json');
+var adMathData = require('../../lib/summer/afternoonAdvancedMath.json');
+var mathOlpData = require('../../lib/summer/afternoonMathOlympiad.json');
+var GATEData = require('../../lib/summer/afternoonGATE.json');
+
 /* Constants */
 var CHANGE_EVENT = 'change';
 var summerWeeksNum = 10;
@@ -33,7 +42,6 @@ var summerWeekCount = 0;
 var summerCampWeeks = [];
 var enrollmentId = '';
 var enrollment = {};
-var writingChoice = 'none', mathChoice = 'none'; //["elective", "advanced", "none"]
 var done = {
   scheduled: false,
   enrichmentActivities: false
@@ -116,6 +124,45 @@ function saveSummerAfternoonAcademics(enrollmentId, language, next) {
   });
 }
 
+function getWeekEnrollIdxes(grade, week, weekIdx){
+  var morActIdx = YFStore.getMorActIdx(weekIdx);
+  var aftActIdx = YFStore.getAftActIdx(weekIdx);
+  var wrElecIdx = YFStore.getWrElecIdx(weekIdx);
+  var mathElecIdx = YFStore.getMathElecIdx(weekIdx);
+  var mathOlypIdx = YFStore.getMathOlypIdx(weekIdx);
+  var GATEIdx = YFStore.getGATEIdx(weekIdx);
+  var advWrIdx = YFStore.getAdvWrIdx(weekIdx);
+  var advMathIdx = YFStore.getAdvMathIdx(weekIdx);
+  var weekObj = {
+    morActIdx: !isNaN(morActIdx) ? morActIdx : 0,
+    aftActIdx: !isNaN(aftActIdx) ? aftActIdx : -1,
+    wrElecIdx: !isNaN(wrElecIdx) ? wrElecIdx : -1,
+    mathElecIdx: !isNaN(mathElecIdx) ? mathElecIdx : -1,
+    mathOlypIdx: !isNaN(mathOlypIdx) ? mathOlypIdx : -1,
+    GATEIdx: !isNaN(GATEIdx) ? GATEIdx : -1,
+    advWrIdx: !isNaN(advWrIdx) ? advWrIdx : -1,
+    advMathIdx: !isNaN(advMathIdx) ? advMathIdx : -1
+  }
+  return weekObj;
+}
+
+function saveSummerWeek(enrollmentId, grade, week, weekIdx, weekObj) {
+  var url = '/api/users/summer/weeks/' + enrollmentId;
+  var data = {
+    grade: grade,
+    week: week,
+    weekIdx: weekIdx,
+    weekObj: weekObj
+  };
+  request
+  .put(url)
+  .send(data)
+  .accept('application/json')
+  .end(function(err, res){
+    if(err) { return console.error(err); }
+  });
+}
+
 function loadEnrollment(enrollmentId, next) {
   if(enrollmentId !== ''){
     var url = 'api/users/enroll/' + enrollmentId;
@@ -130,6 +177,27 @@ function loadEnrollment(enrollmentId, next) {
     });
   }
 }
+
+function insertIntoLine(timeline, timeObj) {
+  if(timeline.length === 1) { 
+    timeline.splice(0, 0, timeObj); 
+    return { conflict: false };
+  }
+  for(var j = 0; j < timeline.length; j++) {
+    if(timeObj.time[1] <= timeline[j].time[0]){
+      timeline.splice(j, 0, timeObj);
+      return { conflict: false };
+    } else if(timeObj.time[0] >= timeline[j].time[1]) {
+      continue;
+    } else {
+      return {
+        conflict: true,
+        names: [timeObj.name, timeline[j].name]
+      };
+    }
+  }
+  return { conflict: false };
+};
 
 var YFStore = assign({}, EventEmitter.prototype, {
   getStateFromStorage: function() {
@@ -200,6 +268,7 @@ var YFStore = assign({}, EventEmitter.prototype, {
       var w = summerWeeks[i];
       if(w.selected && !w.done){
         summerCampWeeks[i] = {
+          weekIndex: 'week_' + (i+1),
           coveredDate: w.coveredDate,
           schedulePattern: schedulePattern,
           attendingDays: days
@@ -229,18 +298,129 @@ var YFStore = assign({}, EventEmitter.prototype, {
   setEnrichmentDone: function(b) {
     done.enrichmentActivities = b;
   },
+  setMorActIdx: function(weekIdx, v) {
+    var key = weekIdx + 'morActIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getMorActIdx: function(weekIdx){
+    var key = weekIdx + 'morActIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  setAftActIdx: function(weekIdx, v) {
+    var key = weekIdx + 'aftActIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getAftActIdx: function(weekIdx){
+    var key = weekIdx + 'aftActIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  setDailyLang: function(lang) {
+    sessionStorage.setItem('dailyLang', lang);
+  },
+  getDailyLang: function() {
+    return sessionStorage.getItem('dailyLang');
+  },
+  setWrElecIdx: function(weekIdx, v) {
+    var key = weekIdx + 'wrElecIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getWrElecIdx: function(weekIdx){
+    var key = weekIdx + 'wrElecIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  setAdvWrIdx: function(weekIdx, v) {
+    var key = weekIdx + 'advWrIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getAdvWrIdx: function(weekIdx){
+    var key = weekIdx + 'advWrIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  setMathElecIdx: function(weekIdx, v) {
+    var key = weekIdx + 'mathElecIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getMathElecIdx: function(weekIdx){
+    var key = weekIdx + 'mathElecIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  setAdvMathIdx: function(weekIdx, v) {
+    var key = weekIdx + 'advMathIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getAdvMathIdx: function(weekIdx){
+    var key = weekIdx + 'advMathIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  setMathOlypIdx: function(weekIdx, v) {
+    var key = weekIdx + 'mathOlypIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getMathOlypIdx: function(weekIdx){
+    var key = weekIdx + 'mathOlypIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  setGATEIdx: function(weekIdx, v) {
+    var key = weekIdx + 'GATEIdx';
+    sessionStorage.setItem(key, v);
+  },
+  getGATEIdx: function(weekIdx){
+    var key = weekIdx + 'GATEIdx';
+    return parseInt(sessionStorage.getItem(key));
+  },
+  testTimeConflictInWeek(grade, week, weekIdx) {
+    var morActIdx = YFStore.getMorActIdx(weekIdx);
+    var aftActIdx = YFStore.getAftActIdx(weekIdx);
+    var wrElecIdx = YFStore.getWrElecIdx(weekIdx);
+    var mathElecIdx = YFStore.getMathElecIdx(weekIdx);
+    var mathOlypIdx = YFStore.getMathOlypIdx(weekIdx);
+    var GATEIdx = YFStore.getGATEIdx(weekIdx);
+    var advWrIdx = YFStore.getAdvWrIdx(weekIdx);
+    var advMathIdx = YFStore.getAdvMathIdx(weekIdx);
+    var timeline = [
+      { name: 'tail', time: [600, 700] }
+    ];
+    var attendingDays = summerCampWeeks[weekIdx].attendingDays;
+    var idxArr = [morActIdx, aftActIdx, wrElecIdx, mathElecIdx, mathOlypIdx, GATEIdx, advWrIdx, advMathIdx];
+    var timesArr = [
+      morActIdx > -1 ? enrichActData['morning_time'].conflict_test : {},
+      aftActIdx > -1 ? enrichActData['afternoon_time'].conflict_test : {},
+      wrElecIdx > -1 ? wrData[grade][wrElecIdx].conflict_test : {},
+      mathElecIdx > -1 ? mathData[grade][mathElecIdx].conflict_test : {},
+      mathOlypIdx > -1 ? mathOlpData[grade][mathOlypIdx].conflict_test : {},
+      GATEIdx > -1 ? GATEData[grade][GATEIdx].conflict_test : {},
+      advWrIdx > -1 ? adWrData[grade][advWrIdx].conflict_test : {},
+      advMathIdx > -1 ? adMathData[grade][advMathIdx].conflict_test : {}
+    ];
+
+    for(var j = 0; j < idxArr.length; j++){
+      if(isNaN(idxArr[j])) { continue; }
+      if(idxArr[j] > -1){
+        for(var q = 0; q < timesArr[j].length; q++){
+          var timeObj = timesArr[j][q];
+          if(attendingDays.indexOf(timeObj.weekday) > -1){
+            var res = insertIntoLine(timeline, timeObj);
+            if(res.conflict){
+              return res;
+            } else {
+              continue;
+            }
+          }
+        }
+      }
+    }
+    return { conflict: false };
+  },
 
   emitChange: function() {
     this.emit(CHANGE_EVENT);
   },
-
   /**
    * @param {function} callback
    */
   addChangeListener: function(callback) {
     this.on(CHANGE_EVENT, callback);
   },
-
   /**
    * @param {function} callback
    */
@@ -252,7 +432,8 @@ var YFStore = assign({}, EventEmitter.prototype, {
 
 // Register callback to handle all updates
 AppDispatcher.register(function(action) {
-  var body, data, id;
+  var body, data, id, week, weekIdx, weekObj;
+  var grade = YFStore.getIncomingGrade();
 
   switch(action.actionType) {
     case YFConstants.YF_CREATE_USER:
@@ -285,6 +466,12 @@ AppDispatcher.register(function(action) {
     case YFConstants.YF_SAVE_SUMMER_AFTERNOON_ACADEMICS:
       enrollmentId = sessionStorage.getItem('enrollmentId');
       saveSummerAfternoonAcademics(enrollmentId, action.language, action.next);
+      break;
+    case YFConstants.YF_SAVE_SUMMER_WEEK:
+      enrollmentId = sessionStorage.getItem('enrollmentId');
+      week = action.week; weekIdx = action.weekIdx; 
+      weekObj = getWeekEnrollIdxes(grade, week, weekIdx);
+      saveSummerWeek(enrollmentId, grade, week, weekIdx, weekObj);
       break;
   
     default:

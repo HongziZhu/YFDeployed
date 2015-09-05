@@ -9,6 +9,17 @@ var YFStore = require('../stores/YFStore.jsx');
 var GATEData = require('../../lib/summer/afternoonGATE.json');
 
 var GATE = React.createClass({
+  getInitialState: function() {
+    var m = YFStore.getGATEIdx(this.props.curWeekIdx);
+    return {
+      GATEIdx: isNaN(m) ? -1 : m
+    };
+  },
+  changeMathOlympiad: function(e) {
+    var self = this;
+    var v = e.currentTarget.value;
+    YFStore.setGATEIdx(self.props.curWeekIdx, v);
+  },
   render: function() {
     var self = this;
     var gd = this.props.incomingGrade;
@@ -22,7 +33,9 @@ var GATE = React.createClass({
         gates.push(
           <tr key={ref}>
             <td className='cell'>
-              <input type="radio" name="mathOlympiad" ref={ref} onChange={this.changeGATE} value="" />
+            {self.state.GATEIdx === j ? 
+              <input type="radio" name="mathOlympiad" ref={ref} onChange={this.changeGATE} value={j} defaultChecked/> :
+              <input type="radio" name="mathOlympiad" ref={ref} onChange={this.changeGATE} value={j} />}
             </td>
             <td className='cell'>{obj['display_name']}</td>
             <td className='cell'>
@@ -37,7 +50,9 @@ var GATE = React.createClass({
       gates.push(
         <tr key="-1">
           <td className='cell'>
-            <input type="radio" name="mathOlympiad" onChange={this.changeGATE} value="" />
+          {self.state.GATEIdx === -1 ? 
+            <input type="radio" name="mathOlympiad" onChange={this.changeGATE} value={-1} defaultChecked/> :
+            <input type="radio" name="mathOlympiad" onChange={this.changeGATE} value={-1} /> }
           </td>
           <td className='cell'>No, thanks.</td>
           <td className='cell'>---</td>

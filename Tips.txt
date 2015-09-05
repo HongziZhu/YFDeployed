@@ -1,3 +1,6 @@
 1. Don't put this.goBack(), this.transitionTo() into superagent's request's callback.
 2. Never forget to write e.preventDefault(); if I want to give customized handling.
 3. Give radios same name in order to implement single-option
+4. Don't forget to convert string to number javascript.
+5. in JSX, don't use {} inside a {} again.
+6. 0 || -1   --->  -1

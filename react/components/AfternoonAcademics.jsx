@@ -6,18 +6,23 @@ var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
+var wrData = require('../../lib/summer/afternoonWritingElective.json');
+var adWrData = require('../../lib/summer/afternoonAdvancedWriting.json');
+var mathData = require('../../lib/summer/afternoonMathElective.json');
+var adMathData = require('../../lib/summer/afternoonAdvancedMath.json');
 
 var AfternoonAcademics = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
     YFActions.loadEnrollment();
     return { 
-      language: '',
-      writing: '',
-      math: '',
+      language: YFStore.getDailyLang() || 'DailyChinese',
+      writing:  YFStore.getWritingChoice() || 'none',
+      math: YFStore.getMathChoice() || 'none',
       done: false,
       showInfo: false,
-      summerCampWeeks: YFStore.getSummerCampWeeks()
+      summerCampWeeks: YFStore.getSummerCampWeeks(),
+      incomingGrade: YFStore.getIncomingGrade()
     };
   },
   componentDidMount: function() {
@@ -33,22 +38,18 @@ var AfternoonAcademics = React.createClass({
   },
   changeLang: function(e) {
     var lang = e.currentTarget.value;
-    this.setState({ language: lang });
+    YFStore.setDailyLang(lang);
   },
   changeWriting: function(w) {
-    this.setState({ writing: w });
+    YFStore.setMathChoice(w);
   },
   changeMath: function(m) {
-    this.setState({ math: m });
+    YFStore.setWritingChoice(m);
   },
-  handleSubmit: function(e) {
+  handleConfirm: function(e) {
     e.preventDefault();
-    var self = this;
-    if(self.state.language === '' || self.state.writing === '' || self.state.math === ''){
-      return alert('Please finish all questions.');
-    }
     this.setState({ done: true, showInfo: true }, function() {
-      React.findDOMNode(this.refs.submitButton).blur();
+      React.findDOMNode(this.refs.confirmButton).blur();
     });
   },
   handleContinue: function(e) {
@@ -94,19 +95,25 @@ var AfternoonAcademics = React.createClass({
                 <strong>Language Art</strong>
                 <div className="radio">
                   <label>
-                    <input type="radio" name="language" onChange={this.changeLang} value="Daily Chinese" />
+                    {self.state.language === 'DailyChinese' ? 
+                    <input type="radio" name="language" onChange={this.changeLang} value="DailyChinese" defaultChecked/> : 
+                    <input type="radio" name="language" onChange={this.changeLang} value="DailyChinese" />}
                     Daily Chinese
                   </label>
                 </div>  
                 <div className="radio">
                   <label>
-                    <input type="radio" name="language" onChange={this.changeLang} value="Daily Spanish" />
+                    {self.state.language === 'DailySpanish' ? 
+                    <input type="radio" name="language" onChange={this.changeLang} value="DailySpanish" defaultChecked/> :
+                    <input type="radio" name="language" onChange={this.changeLang} value="DailySpanish" /> }
                     Daily Spanish
                   </label>
                 </div> 
                 <div className="radio">
                   <label>
-                    <input type="radio" name="language" onChange={this.changeLang} value="Daily Hindi" />
+                    {self.state.language === 'DailyHindi' ? 
+                    <input type="radio" name="language" onChange={this.changeLang} value="DailyHindi" defaultChecked/> :
+                    <input type="radio" name="language" onChange={this.changeLang} value="DailyHindi" /> }
                     Daily Hindi
                   </label>
                 </div>              
@@ -115,15 +122,22 @@ var AfternoonAcademics = React.createClass({
           </div>
         </div>
 
-        <WrMathChoice handleWriting={self.changeWriting} handleMath={self.changeMath}/>
+        {self.state.incomingGrade !== 'K' ?
+          <WrMathChoice 
+            writing={self.state.writing}
+            math={self.state.math}
+            incomingGrade={self.state.incomingGrade}
+            handleWriting={self.changeWriting} 
+            handleMath={self.changeMath}/> : <p></p>}
 
         <div className="row">
           <div className='col-md-offset-1'>
-            <button onClick={this.handleSubmit} ref='submitButton' className="btn btn-primary">Submit</button>&nbsp; <br></br>
+            <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm</button><br></br>
             {info}
           </div>
         </div>
-        {this.state.done ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <p></p>}
+        {this.state.done ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : 
+          <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
       </div>
     );
   } 
@@ -132,13 +146,18 @@ var AfternoonAcademics = React.createClass({
 var WrMathChoice = React.createClass({
   changeMath: function(e){
     this.props.handleWriting(e.currentTarget.value);
-    YFStore.setMathChoice(e.currentTarget.value);
   },
   changeWriting: function(e){
     this.props.handleMath(e.currentTarget.value);
-    YFStore.setWritingChoice(e.currentTarget.value);
   },
   render: function() {
+    var self = this;
+    var gd = this.props.incomingGrade;
+    var wrInput = this.props.writing === 'elective' ? <input type="radio" name="writing" onChange={this.changeWriting} value="elective" defaultChecked/> : <input type="radio" name="writing" onChange={this.changeWriting} value="elective"/>;
+    var adWrInput = self.props.writing === 'advanced' ? <input type="radio" name="writing" onChange={this.changeWriting} value="advanced" defaultChecked/> :
+      <input type="radio" name="writing" onChange={this.changeWriting} value="advanced" />;
+    var mathInput = self.props.math === 'elective' ? <input type="radio" name="math" onChange={this.changeMath} value="elective" defaultChecked/> : <input type="radio" name="math" onChange={this.changeMath} value="elective" />;
+    var adMathInput = self.props.math === 'advanced' ? <input type="radio" name="math" onChange={this.changeMath} value="advanced" defaultChecked/> : <input type="radio" name="math" onChange={this.changeMath} value="advanced" />;
     return (
       <div className="panel panel-default">
           <div className="panel-heading">
@@ -151,7 +170,7 @@ var WrMathChoice = React.createClass({
           
             <div className="row">
               <div className='col-md-offset-1'> 
-                <span className="bg-info">Please choose preferred writing and math classes.</span>
+                <h4 className="bg-info">Please choose preferred writing and math classes.</h4>
               </div>
             </div><hr></hr>
 
@@ -160,19 +179,25 @@ var WrMathChoice = React.createClass({
                 <strong>Writing</strong>
                 <div className="radio">
                   <label>
-                    <input type="radio" name="writing" onChange={this.changeWriting} value="elective" />
+                  {wrData['grades'].indexOf(gd) > -1 ? {wrInput} :
+                    <input type="radio" name="writing" onChange={this.changeWriting} value="elective" disabled/>}
                     Writing Elective Classes
+                  {wrData['grades'].indexOf(gd) === -1 ? <span className="bg-danger">&nbsp;(Not Available for your incoming grade)</span> : <span></span>}
                   </label>
                 </div>  
                 <div className="radio">
                   <label>
-                    <input type="radio" name="writing" onChange={this.changeWriting} value="advanced" />
+                  {adWrData['grades'].indexOf(gd) > -1 ?
+                    {adWrInput} :
+                    <input type="radio" name="writing" onChange={this.changeWriting} value="advanced" disabled/>}
                     Advanced Writing Boot Camp
+                  {adWrData['grades'].indexOf(gd) === -1 ? <span className="bg-danger">&nbsp;(Not Available for your incoming grade)</span> : <span></span>}
                   </label>
                 </div> 
                 <div className="radio">
                   <label>
-                    <input type="radio" name="writing" onChange={this.changeWriting} value="none" />
+                  {self.props.writing === 'none' ? <input type="radio" name="writing" onChange={this.changeWriting} value="none" defaultChecked/> : 
+                  <input type="radio" name="writing" onChange={this.changeWriting} value="none" />}
                     No, thanks.
                   </label>
                 </div>              
@@ -183,19 +208,25 @@ var WrMathChoice = React.createClass({
                 <strong>Math</strong>
                 <div className="radio">
                   <label>
-                    <input type="radio" name="math" onChange={this.changeMath} value="elective" />
+                  {mathData['grades'].indexOf(gd) > -1 ? {mathInput} : 
+                    <input type="radio" name="math" onChange={this.changeMath} value="elective" disabled/>}
                     Math Elective Classes
+                  {mathData['grades'].indexOf(gd) === -1 ? <span className="bg-danger">&nbsp;(Not Available for your incoming grade)</span> : <span></span>}
                   </label>
                 </div>  
                 <div className="radio">
                   <label>
-                    <input type="radio" name="math" onChange={this.changeMath} value="advanced" />
+                  {adMathData['grades'].indexOf(gd) > -1 ? {adMathInput} : 
+                    <input type="radio" name="math" onChange={this.changeMath} value="advanced" disabled/>}
                     Advanced Math Boot Camp
+                  {adMathData['grades'].indexOf(gd) === -1 ? <span className="bg-danger">&nbsp;(Not Available for your incoming grade)</span> : <span></span>}
                   </label>
                 </div> 
                 <div className="radio">
                   <label>
-                    <input type="radio" name="math" onChange={this.changeMath} value="none" />
+                  {self.props.math === 'none' ? 
+                    <input type="radio" name="math" onChange={this.changeMath} value="none" defaultChecked/> :
+                    <input type="radio" name="math" onChange={this.changeMath} value="none" />}
                     No, thanks.
                   </label>
                 </div>              

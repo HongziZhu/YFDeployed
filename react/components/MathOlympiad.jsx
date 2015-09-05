@@ -9,6 +9,17 @@ var YFStore = require('../stores/YFStore.jsx');
 var mathOlpData = require('../../lib/summer/afternoonMathOlympiad.json');
 
 var MathOlympiad = React.createClass({
+  getInitialState: function() {
+    var m = YFStore.getMathOlypIdx(this.props.curWeekIdx);
+    return {
+      mathOlypIdx: isNaN(m) ? -1 : m
+    };
+  },
+  changeMathOlympiad: function(e) {
+    var self = this;
+    var v = e.currentTarget.value;
+    YFStore.setMathOlypIdx(self.props.curWeekIdx, v);
+  },
   render: function() {
     var self = this;
     var gd = this.props.incomingGrade;
@@ -22,7 +33,9 @@ var MathOlympiad = React.createClass({
         mathOlps.push(
           <tr key={ref}>
             <td className='cell'>
-              <input type="radio" name="mathOlympiad" ref={ref} onChange={this.changeMathOlympiad} value="" />
+            {self.state.mathOlypIdx === j ? 
+              <input type="radio" name="mathOlympiad" ref={ref} onChange={this.changeMathOlympiad} value={j} defaultChecked/> :
+              <input type="radio" name="mathOlympiad" ref={ref} onChange={this.changeMathOlympiad} value={j} />}
             </td>
             <td className='cell'>{obj['display_name']}</td>
             <td className='cell'>{obj['weekday']}&nbsp;/ {obj['display_time']}</td>
@@ -34,7 +47,9 @@ var MathOlympiad = React.createClass({
       mathOlps.push(
         <tr key="-1">
           <td className='cell'>
-            <input type="radio" name="mathOlympiad" onChange={this.changeMathOlympiad} value="" />
+          {self.state.mathOlypIdx === -1 ? 
+            <input type="radio" name="mathOlympiad" onChange={this.changeMathOlympiad} value={-1} defaultChecked/> :
+            <input type="radio" name="mathOlympiad" onChange={this.changeMathOlympiad} value={-1} />}  
           </td>
           <td className='cell'>No, thanks.</td>
           <td className='cell'>---</td>
