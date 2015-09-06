@@ -368,6 +368,137 @@ var YFStore = assign({}, EventEmitter.prototype, {
     var key = weekIdx + 'GATEIdx';
     return parseInt(sessionStorage.getItem(key));
   },
+  setWeeklyMovie(weekIdx, v){
+    var key = weekIdx + 'movie';
+    sessionStorage.setItem(key, v);
+  },
+  getWeeklyMovie(weekIdx){
+    var key = weekIdx + 'movie';
+    return sessionStorage.getItem(key); //'true', 'false', null
+  },
+  setMorningCare(v){
+    var key = 'morningCare';
+    sessionStorage.setItem(key, v);
+  },
+  getMorningCare(){
+    var key = 'morningCare';
+    return sessionStorage.getItem(key); //'oneHour', 'halfHour', 'none'
+  },
+  setLunch(ref, v){
+    var key = ref + 'lunch';
+    sessionStorage.setItem(key, v);
+  },
+  getLunch(ref){
+    var key = ref + 'lunch';
+    return sessionStorage.getItem(key); 
+  },
+  setCanPickup(v){
+    var key = 'canPickup';
+    sessionStorage.setItem(key, v);
+  },
+  getCanPickup(){
+    var key = 'canPickup';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
+  setNeedPickup(v){
+    var key = 'needPickup';
+    sessionStorage.setItem(key, v);
+  },
+  getNeedPickup(){
+    var key = 'needPickup';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },  
+  setPickup(weekIdx, v){
+    var key = weekIdx + 'pickup';
+    sessionStorage.setItem(key, v);
+  },
+  getPickup(weekIdx){
+    var key = weekIdx + 'pickup';
+    return sessionStorage.getItem(key); 
+  },  
+  setSwimPermit(v){
+    var key = 'swimPermit';
+    sessionStorage.setItem(key, v);
+  },
+  getSwimPermit(){
+    var key = 'swimPermit';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
+  setMoviePermit(v){
+    var key = 'moviePermit';
+    sessionStorage.setItem(key, v);
+  },
+  getMoviePermit(){
+    var key = 'moviePermit';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  }, 
+  setFieldTripPermit(v){
+    var key = 'fieldTripPermit';
+    sessionStorage.setItem(key, v);
+  },
+  getFieldTripPermit(){
+    var key = 'fieldTripPermit';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
+  setHartSportsPermit(v){
+    var key = 'HartSportsPermit';
+    sessionStorage.setItem(key, v);
+  },
+  getHartSportsPermit(){
+    var key = 'HartSportsPermit';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  }, 
+  setEmergencyPermit(v){
+    var key = 'EmergencyPermit';
+    sessionStorage.setItem(key, v);
+  },
+  getEmergencyPermit(){
+    var key = 'EmergencyPermit';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
+  setApplySunscreen(v){
+    var key = 'ApplySunscreen';
+    sessionStorage.setItem(key, v);
+  },
+  getApplySunscreen(){
+    var key = 'ApplySunscreen';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
+  setSpareSunCream(v){
+    var key = 'SpareSunCream';
+    sessionStorage.setItem(key, v);
+  },
+  getSpareSunCream(){
+    var key = 'SpareSunCream';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
+  setAllergySunscreen(v){
+    var key = 'AllergySunscreen';
+    sessionStorage.setItem(key, v);
+  },
+  getAllergySunscreen(){
+    var key = 'AllergySunscreen';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
+  setPhotoRelease(v){
+    var key = 'PhotoRelease';
+    sessionStorage.setItem(key, v);
+  },
+  getPhotoRelease(){
+    var key = 'PhotoRelease';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
   testTimeConflictInWeek(grade, week, weekIdx) {
     var morActIdx = YFStore.getMorActIdx(weekIdx);
     var aftActIdx = YFStore.getAftActIdx(weekIdx);

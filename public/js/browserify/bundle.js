@@ -28682,6 +28682,12 @@ var YFActions = {
     });
   },
 
+  saveSummerOtherServices: function() {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_SAVE_SUMMER_OTHER_SERVICES
+    });
+  },
+
   loadEnrollment: function() {
     AppDispatcher.dispatch({
       actionType: YFConstants.YF_LOAD_ENROLLMENT,
@@ -28691,7 +28697,7 @@ var YFActions = {
 
 module.exports = YFActions;
 
-},{"../constants/YFConstants":248,"../dispatcher/AppDispatcher":249}],219:[function(require,module,exports){
+},{"../constants/YFConstants":250,"../dispatcher/AppDispatcher":251}],219:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -28822,7 +28828,7 @@ var AdvancedMathUnit = React.createClass({displayName: "AdvancedMathUnit",
 
 module.exports = AdvancedMathUnit;
 
-},{"../../lib/summer/afternoonAdvancedMath.json":1,"../actions/YFActions":218,"../stores/YFStore.jsx":250,"react":214,"react-router":45}],221:[function(require,module,exports){
+},{"../../lib/summer/afternoonAdvancedMath.json":1,"../actions/YFActions":218,"../stores/YFStore.jsx":252,"react":214,"react-router":45}],221:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -28932,7 +28938,7 @@ var AdvancedWrUnit = React.createClass({displayName: "AdvancedWrUnit",
 
 module.exports = AdvancedWrUnit;
 
-},{"../../lib/summer/afternoonAdvancedWriting.json":2,"../actions/YFActions":218,"../stores/YFStore.jsx":250,"react":214,"react-router":45}],222:[function(require,module,exports){
+},{"../../lib/summer/afternoonAdvancedWriting.json":2,"../actions/YFActions":218,"../stores/YFStore.jsx":252,"react":214,"react-router":45}],222:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29175,7 +29181,7 @@ var WrMathChoice = React.createClass({displayName: "WrMathChoice",
 
 module.exports = AfternoonAcademics;
 
-},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonWritingElective.json":6,"../actions/YFActions":218,"../stores/YFStore.jsx":250,"react":214,"react-router":45}],223:[function(require,module,exports){
+},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonWritingElective.json":6,"../actions/YFActions":218,"../stores/YFStore.jsx":252,"react":214,"react-router":45}],223:[function(require,module,exports){
 'use strict';
 
 var React=require('react');
@@ -29517,7 +29523,7 @@ var Attendance = React.createClass({displayName: "Attendance",
 
 module.exports = Attendance;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":250,"./CourseView.jsx":224,"react":214,"react-router":45}],224:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":252,"./CourseView.jsx":224,"react":214,"react-router":45}],224:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29627,7 +29633,7 @@ var CourseView = React.createClass({displayName: "CourseView",
 
 module.exports = CourseView;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":250,"react":214,"react-router":45}],225:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":252,"react":214,"react-router":45}],225:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29816,7 +29822,7 @@ var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
 
 module.exports = EnrichmentActs;
 
-},{"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":250,"react":214,"react-router":45}],226:[function(require,module,exports){
+},{"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":252,"react":214,"react-router":45}],226:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29834,7 +29840,7 @@ var GATE = React.createClass({displayName: "GATE",
       GATEIdx: isNaN(m) ? -1 : m
     };
   },
-  changeMathOlympiad: function(e) {
+  changeGATE: function(e) {
     var self = this;
     var v = e.currentTarget.value;
     YFStore.setGATEIdx(self.props.curWeekIdx, v);
@@ -29925,7 +29931,7 @@ var GATE = React.createClass({displayName: "GATE",
 
 module.exports = GATE;
 
-},{"../../lib/summer/afternoonGATE.json":3,"../actions/YFActions":218,"../stores/YFStore.jsx":250,"react":214,"react-router":45}],227:[function(require,module,exports){
+},{"../../lib/summer/afternoonGATE.json":3,"../actions/YFActions":218,"../stores/YFStore.jsx":252,"react":214,"react-router":45}],227:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -30056,8 +30062,9 @@ var GetStarted = React.createClass({displayName: "GetStarted",
     }
 
     return (
-      React.createElement("div", {className: "page-container"}, 
+      React.createElement("div", null, 
       React.createElement(SideMenu, null), 
+      React.createElement("div", {className: "main-content"}, 
       React.createElement("div", {className: "col-md-12"}, 
         React.createElement("div", {className: "panel panel-primary"}, 
           React.createElement("div", {className: "panel-heading"}, 
@@ -30098,13 +30105,14 @@ var GetStarted = React.createClass({displayName: "GetStarted",
         this.state.showContinue ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
+      )
     );
   } 
 });
 
 module.exports = GetStarted;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":250,"./helpers/SideMenu.jsx":247,"formsy-react":16,"react":214,"react-router":45}],228:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":252,"./helpers/SideMenu.jsx":249,"formsy-react":16,"react":214,"react-router":45}],228:[function(require,module,exports){
 'use strict';
 
 var React=require('react');
@@ -30210,7 +30218,7 @@ var Login = React.createClass({displayName: "Login",
 
 module.exports = Login;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":250,"react":214,"react-router":45}],230:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":252,"react":214,"react-router":45}],230:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -30318,7 +30326,7 @@ var MathElective = React.createClass({displayName: "MathElective",
 
 module.exports = MathElective;
 
-},{"../../lib/summer/afternoonMathElective.json":4,"../actions/YFActions":218,"../stores/YFStore.jsx":250,"react":214,"react-router":45}],231:[function(require,module,exports){
+},{"../../lib/summer/afternoonMathElective.json":4,"../actions/YFActions":218,"../stores/YFStore.jsx":252,"react":214,"react-router":45}],231:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -30423,7 +30431,7 @@ var MathOlympiad = React.createClass({displayName: "MathOlympiad",
 
 module.exports = MathOlympiad;
 
-},{"../../lib/summer/afternoonMathOlympiad.json":5,"../actions/YFActions":218,"../stores/YFStore.jsx":250,"react":214,"react-router":45}],232:[function(require,module,exports){
+},{"../../lib/summer/afternoonMathOlympiad.json":5,"../actions/YFActions":218,"../stores/YFStore.jsx":252,"react":214,"react-router":45}],232:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -30456,14 +30464,14 @@ var OtherServices = React.createClass({displayName: "OtherServices",
       summerCampWeeks: YFStore.getSummerCampWeeks()
     });
   },
-  handleSubmit: function(e) {
+  handleConfirm: function(e) {
     e.preventDefault();
     this.setState({ done: true });
+    React.findDOMNode(this.refs.confirmButton).blur();
   },
   handleContinue: function(e) {
-    var self = this;
-    
-    self.transitionTo('summer/writing_class');
+    YFActions.saveSummerOtherServices();
+    this.transitionTo('summer/agreements');
   },
 
   render: function () {
@@ -30471,14 +30479,18 @@ var OtherServices = React.createClass({displayName: "OtherServices",
     return (
       React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
       React.createElement("h2", null, "Other Services and Activities"), 
-        movies[1].grade.indexOf(this.state.incomingGrade) > -1 ? React.createElement(MovieBox, {summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null), 
+        movies[1].grade.indexOf(this.state.incomingGrade) > -1 ? 
+          React.createElement(MovieBox, {
+
+            summerCampWeeks: self.state.summerCampWeeks}) 
+          : React.createElement("p", null), 
         React.createElement(MorningCare, null), 
         React.createElement(LunchBox, {summerCampWeeks: self.state.summerCampWeeks}), 
         React.createElement(PickupService, {summerCampWeeks: self.state.summerCampWeeks}), 
 
         React.createElement("div", {className: "row"}, 
           React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleSubmit, ref: "submitButton", className: "btn btn-primary"}, "Submit"), "  ", self.state.done ? React.createElement("span", {className: "bg-info"}, " Submitted, please Continue. ") : React.createElement("p", null)
+            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"), "  ", self.state.done ? React.createElement("h5", null, React.createElement("span", {className: "bg-info"}, " Submitted, please Continue. ")) : React.createElement("p", null)
           )
         ), 
 
@@ -30491,38 +30503,44 @@ var OtherServices = React.createClass({displayName: "OtherServices",
 var PickupService = React.createClass({displayName: "PickupService",
   getInitialState: function() {
     return {
-      canPickup: false
+      canPickup: YFStore.getCanPickup(),
+      needPickup: YFStore.getNeedPickup()
     };
   },
-  changePickup: function(e) {
+  changeCanPick: function(e) {
     var s = React.findDOMNode(this.refs.pickup).checked;
+    YFStore.setCanPickup(s);
     this.setState({ canPickup: s });
   },
+  changeNeed: function(e) {
+    var s = React.findDOMNode(this.refs.needpick).checked;
+    YFStore.setNeedPickup(s);
+    this.setState({ needPickup: s });
+  },
+  changePickup: function(e) {
+    var weekIdx = e.currentTarget.value;
+    var v = e.currentTarget.checked;
+    YFStore.setPickup(weekIdx, v);
+  },
   render: function() {
-    var pickupService = [];
     var self = this;
+    var pickupService = [];
     var len = YFStore.getSummerWeeksNum();
-    var absent, week, refs;
+    var absent;
     if(this.props.summerCampWeeks.length === 10){
       for(var j = 1; j < (len+1); j++) {
-        week = self.props.summerCampWeeks[j-1];
-        absent = week.schedulePattern === "absence";
-        refs = [j+'Mon', j+'Tue', j+'Wed', j+'Thu', j+'Fri'];
+        absent = this.props.summerCampWeeks[j-1].schedulePattern === "absence" || this.props.summerCampWeeks[j-1].schedulePattern === "5_morning";
         if(!absent){
           pickupService.push(
             React.createElement("tr", {key: j}, 
-              React.createElement("td", {className: "cell"}, React.createElement("input", {type: "checkbox", ref: j})), 
-              React.createElement("td", null, "week_", j, " (", week.coveredDate, ")"), 
-              React.createElement("td", {className: "cell"}, week.attendingDays.indexOf('Mon') > -1 ? 
-                React.createElement("input", {type: "checkbox", ref: refs[0]}) : React.createElement("span", null, "Absent")), 
-              React.createElement("td", {className: "cell"}, week.attendingDays.indexOf('Tue') > -1 ? 
-                React.createElement("input", {type: "checkbox", ref: refs[1]}) : React.createElement("span", null, "Absent")), 
-              React.createElement("td", {className: "cell"}, week.attendingDays.indexOf('Wed') > -1 ? 
-                React.createElement("input", {type: "checkbox", ref: refs[2]}) : React.createElement("span", null, "Absent")), 
-              React.createElement("td", {className: "cell"}, week.attendingDays.indexOf('Thu') > -1 ? 
-                React.createElement("input", {type: "checkbox", ref: refs[3]}) : React.createElement("span", null, "Absent")), 
-              React.createElement("td", {className: "cell"}, week.attendingDays.indexOf('Fri') > -1 ? 
-                React.createElement("input", {type: "checkbox", ref: refs[4]}) : React.createElement("span", null, "Absent"))
+              React.createElement("td", {className: "cell"}, 
+                YFStore.getPickup(j-1) === 'true' ? 
+                  React.createElement("input", {type: "checkbox", ref: j, value: j-1, onChange: self.changePickup, defaultChecked: true}) :
+                  React.createElement("input", {type: "checkbox", ref: j, value: j-1, onChange: self.changePickup})
+              ), 
+              React.createElement("td", null, self.props.summerCampWeeks[j-1].weekIndex, " (", self.props.summerCampWeeks[j-1].coveredDate, ")"), 
+              React.createElement("td", null, "Hidden Hills Elementary / 12:05 PM"), 
+              React.createElement("td", null, "$5 per trip")
             )
           );
         }
@@ -30530,34 +30548,65 @@ var PickupService = React.createClass({displayName: "PickupService",
     }
 
     return (
-      React.createElement("div", {className: "panel panel-default"}, 
+      React.createElement("div", {className: "panel panel-primary"}, 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, " Pick up service (", React.createElement("ins", null, "Only offered to students from San Ramon district summer camp program at Hidden Hills Elementary"), ")")
+            React.createElement("h3", null, "Pick-up Service")
           )
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
           React.createElement("div", {className: "row"}, 
             React.createElement("div", {className: "col-md-offset-1"}, 
+              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "Only offered to students from San Ramon district summer camp program at Hidden Hills Elementary")), React.createElement("hr", null), 
               React.createElement("h4", null, "Are you from San Ramon district summer camp program at Hidden Hills Elementary?"), 
               React.createElement("div", {className: "radio"}, 
-                React.createElement("label", null, React.createElement("input", {type: "radio", name: "pickup", ref: "pickup", onChange: this.changePickup}), "Yes")
+                React.createElement("label", null, 
+                  this.state.canPickup  ?
+                  React.createElement("input", {type: "radio", name: "pickup", ref: "pickup", onChange: this.changeCanPick, defaultChecked: true}) :
+                  React.createElement("input", {type: "radio", name: "pickup", ref: "pickup", onChange: this.changeCanPick}), 
+                  "Yes"
+                )
               ), 
               React.createElement("div", {className: "radio"}, 
-                React.createElement("label", null, React.createElement("input", {type: "radio", name: "pickup", onChange: this.changePickup}), "No")
+                React.createElement("label", null, 
+                  !this.state.canPickup ? 
+                  React.createElement("input", {type: "radio", name: "pickup", onChange: this.changeCanPick, defaultChecked: true}) :
+                  React.createElement("input", {type: "radio", name: "pickup", onChange: this.changeCanPick}), 
+                  "No"
+                )
               ), 
+
               this.state.canPickup ? 
+              React.createElement("div", null, 
+                React.createElement("h4", null, "Do you need pick-up service?"), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    this.state.needPickup  ? 
+                    React.createElement("input", {type: "radio", name: "needpick", ref: "needpick", onChange: this.changeNeed, defaultChecked: true}) :
+                    React.createElement("input", {type: "radio", name: "needpick", ref: "needpick", onChange: this.changeNeed}), 
+                    "Yes" 
+                  )
+                ), 
+                React.createElement("div", {className: "radio"}, 
+                  React.createElement("label", null, 
+                    !this.state.needPickup  ? 
+                      React.createElement("input", {type: "radio", name: "needpick", onChange: this.changeNeed, defaultChecked: true}) :
+                      React.createElement("input", {type: "radio", name: "needpick", onChange: this.changeNeed}), 
+                    "No"
+                  )
+                )
+              ) 
+              : React.createElement("p", null), 
+
+              (this.state.canPickup && this.state.needPickup) ?
               React.createElement("table", {className: "table table-bordered"}, 
                 React.createElement("thead", null, 
                   React.createElement("tr", null, 
-                    React.createElement("th", null, "Select All"), 
+                    React.createElement("th", null, "Select"), 
                     React.createElement("th", null, "Week #"), 
-                    React.createElement("th", null, "Mon"), 
-                    React.createElement("th", null, "Tue"), 
-                    React.createElement("th", null, "Wed"), 
-                    React.createElement("th", null, "Thu"), 
-                    React.createElement("th", null, "Fri")
+                    React.createElement("th", null, "Pick-up Spot / Time"), 
+                    React.createElement("th", null, "Price Per Trip")
                   )
                 ), 
                 React.createElement("tbody", null, 
@@ -30565,6 +30614,7 @@ var PickupService = React.createClass({displayName: "PickupService",
                 )
               )
               : React.createElement("p", null)
+
             )
           )
         )
@@ -30574,38 +30624,118 @@ var PickupService = React.createClass({displayName: "PickupService",
 });
 
 var LunchBox = React.createClass({displayName: "LunchBox",
+  getInitialState: function() {
+    return {
+      allSelectedWeeks: [
+        { week: 'week_1', selected: false },
+        { week: 'week_2', selected: false },
+        { week: 'week_3', selected: false },
+        { week: 'week_4', selected: false },
+        { week: 'week_5', selected: false },
+        { week: 'week_6', selected: false },
+        { week: 'week_7', selected: false },
+        { week: 'week_8', selected: false },
+        { week: 'week_9', selected: false },
+        { week: 'week_10', selected: false }
+      ]
+    };
+  },
+  changeLunch: function(e) {
+    var ref = e.currentTarget.value;
+    var v = e.currentTarget.checked;
+    YFStore.setLunch(ref, v);
+  },
+  selectWholeWeek: function(e) {
+    var j = e.currentTarget.value;
+    var state = [
+      { week: 'week_1', 
+        selected: React.findDOMNode(this.refs.week_1) ? React.findDOMNode(this.refs.week_1).checked : false },
+      { week: 'week_2', 
+        selected: React.findDOMNode(this.refs.week_2) ? React.findDOMNode(this.refs.week_2).checked : false },
+      { week: 'week_3', 
+        selected: React.findDOMNode(this.refs.week_3) ? React.findDOMNode(this.refs.week_3).checked : false },
+      { week: 'week_4', 
+        selected: React.findDOMNode(this.refs.week_4) ? React.findDOMNode(this.refs.week_4).checked : false },
+      { week: 'week_5', 
+        selected: React.findDOMNode(this.refs.week_5) ? React.findDOMNode(this.refs.week_5).checked : false },
+      { week: 'week_6', 
+        selected: React.findDOMNode(this.refs.week_6) ? React.findDOMNode(this.refs.week_6).checked : false },
+      { week: 'week_7', 
+        selected: React.findDOMNode(this.refs.week_7) ? React.findDOMNode(this.refs.week_7).checked : false },
+      { week: 'week_8', 
+        selected: React.findDOMNode(this.refs.week_8) ? React.findDOMNode(this.refs.week_8).checked : false },
+      { week: 'week_9', 
+        selected: React.findDOMNode(this.refs.week_9) ? React.findDOMNode(this.refs.week_9).checked : false },
+      { week: 'week_10', 
+        selected: React.findDOMNode(this.refs.week_10) ? React.findDOMNode(this.refs.week_10).checked : false }
+    ];
+    this.setState({ allSelectedWeeks: state });
+    var v = e.currentTarget.checked;
+    YFStore.setLunch(j, v);
+    // var refs = [j+'Mon', j+'Tue', j+'Wed', j+'Thu', j+'Fri'];
+    // for(var x = 0; x < refs.length; x++) {
+    //   YFStore.setLunch(refs[x], v);
+    // }
+  },
   render: function() {
     var self = this;
     var lunches = [], refs = [];
     var len = YFStore.getSummerWeeksNum();
-    var absent, week;
+    var absent, week, weekRef;
     if(this.props.summerCampWeeks.length === 10){
       for(var j = 1; j < (len+1); j++) {
         week = self.props.summerCampWeeks[j-1];
         absent = week.schedulePattern === "absence";
         refs = [j+'Mon', j+'Tue', j+'Wed', j+'Thu', j+'Fri'];
+        weekRef = 'week_' + j;
         if(!absent){
           lunches.push(
             React.createElement("tr", {key: j}, 
-              React.createElement("td", {className: "cell"}, React.createElement("input", {type: "checkbox", ref: j})), 
+              React.createElement("td", {className: "cell"}, 
+                (YFStore.getLunch(j) === 'true' || self.state.allSelectedWeeks[j-1].selected) ? 
+                  React.createElement("label", null, 
+                    React.createElement("input", {type: "checkbox", onChange: self.selectWholeWeek, ref: weekRef, value: j, defaultChecked: true}), " ", React.createElement("span", {className: "bg-warning"}, "The whole week selected")
+                  )
+                  :React.createElement("input", {type: "checkbox", onChange: self.selectWholeWeek, ref: weekRef, value: j})
+              ), 
               React.createElement("td", null, "week_", j, " (", week.coveredDate, ")"), 
               React.createElement("td", {className: "cell"}, week.attendingDays.indexOf('Mon') > -1 ? 
-                React.createElement("input", {type: "checkbox", ref: refs[0]}) : React.createElement("span", null, "Absent")), 
+                (YFStore.getLunch(refs[0]) === 'true' ? 
+                  React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[0], defaultChecked: true}) :
+                  React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[0]}) )
+                : React.createElement("span", null, "Absent")
+              ), 
               React.createElement("td", {className: "cell"}, week.attendingDays.indexOf('Tue') > -1 ? 
-                React.createElement("input", {type: "checkbox", ref: refs[1]}) : React.createElement("span", null, "Absent")), 
+                (YFStore.getLunch(refs[1]) === 'true' ? 
+                  React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[1], defaultChecked: true}) :
+                  React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[1]}) )
+                : React.createElement("span", null, "Absent")
+              ), 
               React.createElement("td", {className: "cell"}, week.attendingDays.indexOf('Wed') > -1 ? 
-                React.createElement("input", {type: "checkbox", ref: refs[2]}) : React.createElement("span", null, "Absent")), 
+                (YFStore.getLunch(refs[2]) === 'true' ? 
+                  React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[2], defaultChecked: true}) :
+                  React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[2]}) )
+                : React.createElement("span", null, "Absent")
+              ), 
               React.createElement("td", {className: "cell"}, week.attendingDays.indexOf('Thu') > -1 ? 
-                React.createElement("input", {type: "checkbox", ref: refs[3]}) : React.createElement("span", null, "Absent")), 
+                (YFStore.getLunch(refs[3]) === 'true' ? 
+                  React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[3], defaultChecked: true}) :
+                  React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[3]}) ) 
+                : React.createElement("span", null, "Absent")
+              ), 
               React.createElement("td", {className: "cell"}, week.attendingDays.indexOf('Fri') > -1 ? 
-                React.createElement("input", {type: "checkbox", ref: refs[4]}) : React.createElement("span", null, "Absent"))
+                (YFStore.getLunch(refs[4]) === 'true' ? 
+                  React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[4], defaultChecked: true}) :
+                  React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[4]}) )
+                : React.createElement("span", null, "Absent")
+              )
             )
           );
         }
       }
     }
     return (
-      React.createElement("div", {className: "panel panel-default"}, 
+      React.createElement("div", {className: "panel panel-primary"}, 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("div", {className: "panel-title"}, 
             React.createElement("h3", null, "Order Daily Fresh Lunches From Yang Fan")
@@ -30615,13 +30745,13 @@ var LunchBox = React.createClass({displayName: "LunchBox",
         React.createElement("div", {className: "panel-body"}, 
           React.createElement("div", {className: "row"}, 
             React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("span", {className: "bg-info"}, "We will NOT charge Lunch fee to those who are eligible for our ", React.createElement("strong", null, "early bird specials."))
+              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "We will NOT charge Lunch fee to those who are eligible for our early bird specials."))
             ), React.createElement("br", null), 
 
             React.createElement("table", {className: "table table-bordered"}, 
               React.createElement("thead", null, 
                 React.createElement("tr", null, 
-                  React.createElement("th", null, "Select All"), 
+                  React.createElement("th", null, "Select All Attending Days In the Week"), 
                   React.createElement("th", null, "Week #"), 
                   React.createElement("th", null, "Mon"), 
                   React.createElement("th", null, "Tue"), 
@@ -30642,12 +30772,12 @@ var LunchBox = React.createClass({displayName: "LunchBox",
 });
 
 var MorningCare = React.createClass({displayName: "MorningCare",
-  changeCare: function() {
-
+  changeCare: function(e) {
+    YFStore.setMorningCare(e.currentTarget.value);
   },
   render: function() {
     return (
-      React.createElement("div", {className: "panel panel-default"}, 
+      React.createElement("div", {className: "panel panel-primary"}, 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("div", {className: "panel-title"}, 
             React.createElement("h3", null, "Morning Extended Care")
@@ -30657,25 +30787,31 @@ var MorningCare = React.createClass({displayName: "MorningCare",
         React.createElement("div", {className: "panel-body"}, 
           React.createElement("div", {className: "row"}, 
             React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("strong", null, "We provide morning extended care every workday! Select the time slot that works for you. ")
+              React.createElement("h4", null, "We provide morning extended care every workday! Select the time slot that works for you. ")
             ), React.createElement("br", null), 
 
             React.createElement("div", {className: "col-md-offset-1"}, 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "morningCare", onChange: this.changeCare, value: "care1", defaultChecked: true}), 
+                    YFStore.getMorningCare() === 'oneHour' ? 
+                    React.createElement("input", {type: "radio", name: "morningCare", onChange: this.changeCare, value: "oneHour", defaultChecked: true}) : 
+                    React.createElement("input", {type: "radio", name: "morningCare", onChange: this.changeCare, value: "oneHour"}), 
                     morningCare[1].display_time, " ( $", morningCare[1].price_per_week, " per week)"
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "morningCare", onChange: this.changeCare, value: "care2"}), 
+                    YFStore.getMorningCare() === 'halfHour' ? 
+                    React.createElement("input", {type: "radio", name: "morningCare", onChange: this.changeCare, value: "halfHour", defaultChecked: true}) :
+                    React.createElement("input", {type: "radio", name: "morningCare", onChange: this.changeCare, value: "halfHour"}), 
                     morningCare[2].display_time, " ( $", morningCare[2].price_per_week, " per week)"
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    React.createElement("input", {type: "radio", name: "morningCare", onChange: this.changeCare, value: "care0"}), 
+                    (!YFStore.getMorningCare() || YFStore.getMorningCare() === 'none') ? 
+                    React.createElement("input", {type: "radio", name: "morningCare", onChange: this.changeCare, value: "none", defaultChecked: true}) :
+                    React.createElement("input", {type: "radio", name: "morningCare", onChange: this.changeCare, value: "none"}), 
                     "No, I don't need the extended care. Thanks."
                   )
                 )
@@ -30689,6 +30825,11 @@ var MorningCare = React.createClass({displayName: "MorningCare",
 });
 
 var MovieBox = React.createClass({displayName: "MovieBox",
+  changeMovie: function(e) {
+    var v = e.currentTarget.checked;
+    var weekIdx = e.currentTarget.value;
+    YFStore.setWeeklyMovie(weekIdx, v);
+  },
   render: function() {
     var self = this;
     var summerMovies = [];
@@ -30700,7 +30841,10 @@ var MovieBox = React.createClass({displayName: "MovieBox",
         if(!absent){
           summerMovies.push(
             React.createElement("tr", {key: j}, 
-              React.createElement("td", {className: "cell"}, React.createElement("input", {type: "checkbox", ref: j})
+              React.createElement("td", {className: "cell"}, 
+                YFStore.getWeeklyMovie(j-1) === 'true' ? 
+                  React.createElement("input", {type: "checkbox", ref: j, value: j-1, onChange: self.changeMovie, defaultChecked: true}) :
+                  React.createElement("input", {type: "checkbox", ref: j, value: j-1, onChange: self.changeMovie})
               ), 
               React.createElement("td", null, movies[j].week), 
               React.createElement("td", null, movies[j].name, " "), 
@@ -30714,7 +30858,7 @@ var MovieBox = React.createClass({displayName: "MovieBox",
       }
     }
     return (
-      React.createElement("div", {className: "panel panel-default"}, 
+      React.createElement("div", {className: "panel panel-primary"}, 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("div", {className: "panel-title"}, 
             React.createElement("h3", null, "Movies")
@@ -30724,7 +30868,7 @@ var MovieBox = React.createClass({displayName: "MovieBox",
         React.createElement("div", {className: "panel-body"}, 
           React.createElement("div", {className: "row"}, 
             React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("span", {className: "bg-info"}, "Check out our movie trips! Select the days you want to go!")
+              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "Check out our movie trips! Select the days you want to go!"))
             ), React.createElement("br", null), 
             React.createElement("table", {className: "table table-bordered"}, 
               React.createElement("thead", null, 
@@ -30751,7 +30895,7 @@ var MovieBox = React.createClass({displayName: "MovieBox",
 
 module.exports = OtherServices;
 
-},{"../../lib/summer/morningExtendedCare.json":8,"../../lib/summer/movies.json":9,"../actions/YFActions":218,"../stores/YFStore.jsx":250,"react":214,"react-router":45}],233:[function(require,module,exports){
+},{"../../lib/summer/morningExtendedCare.json":8,"../../lib/summer/movies.json":9,"../actions/YFActions":218,"../stores/YFStore.jsx":252,"react":214,"react-router":45}],233:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -30768,6 +30912,7 @@ var GetStarted = require('./GetStarted.jsx');
 var Attendance = require('./Attendance.jsx');
 var AfternoonAcademics = require('./AfternoonAcademics.jsx');
 var OtherServices = require('./OtherServices.jsx');
+var SummerAgreements = require('./SummerAgreements.jsx');
 var Week1 = require('./Week1.jsx');
 var Week2 = require('./Week2.jsx');
 var Week3 = require('./Week3.jsx');
@@ -30800,13 +30945,14 @@ var routes = (
 		React.createElement(Route, {name: "summer/week9", path: "/user/summer/week9", handler: Week9}), 
 		React.createElement(Route, {name: "summer/week10", path: "/user/summer/week10", handler: Week10}), 
 
-		React.createElement(Route, {name: "summer/other_services", path: "user/summer/other_services", handler: OtherServices})
+		React.createElement(Route, {name: "summer/other_services", path: "user/summer/other_services", handler: OtherServices}), 
+		React.createElement(Route, {name: "summer/agreements", path: "user/summer/agreements", handler: SummerAgreements})
 	)
 );
 
 module.exports = routes;
 
-},{"./AfternoonAcademics.jsx":222,"./Attendance.jsx":223,"./GetStarted.jsx":227,"./Home.jsx":228,"./Login.jsx":229,"./OtherServices.jsx":232,"./Signup.jsx":234,"./Week1.jsx":235,"./Week10.jsx":236,"./Week2.jsx":237,"./Week3.jsx":238,"./Week4.jsx":239,"./Week5.jsx":240,"./Week6.jsx":241,"./Week7.jsx":242,"./Week8.jsx":243,"./Week9.jsx":244,"./YFApp.jsx":246,"react":214,"react-router":45}],234:[function(require,module,exports){
+},{"./AfternoonAcademics.jsx":222,"./Attendance.jsx":223,"./GetStarted.jsx":227,"./Home.jsx":228,"./Login.jsx":229,"./OtherServices.jsx":232,"./Signup.jsx":234,"./SummerAgreements.jsx":235,"./Week1.jsx":236,"./Week10.jsx":237,"./Week2.jsx":238,"./Week3.jsx":239,"./Week4.jsx":240,"./Week5.jsx":241,"./Week6.jsx":242,"./Week7.jsx":243,"./Week8.jsx":244,"./Week9.jsx":245,"./YFApp.jsx":247,"react":214,"react-router":45}],234:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -31073,6 +31219,442 @@ var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
+
+var ContactBox = require('./helpers/ContactBox.jsx');
+
+var SummerAgreements = React.createClass({displayName: "SummerAgreements",
+  mixins: [ Navigation ],
+  getInitialState: function() {
+    YFActions.loadEnrollment();
+    return { 
+      incomingGrade: YFStore.getIncomingGrade(),
+      done: false,
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    };
+  },
+  componentDidMount: function() {
+    YFStore.addChangeListener(this._onChange);
+  },
+  componentWillUnmount: function() {
+    YFStore.removeChangeListener(this._onChange);
+  },
+  _onChange: function() {
+    this.setState({
+      summerCampWeeks: YFStore.getSummerCampWeeks()
+    });
+  },
+  handleConfirm: function(e) {
+    e.preventDefault();
+    this.setState({ done: true });
+    React.findDOMNode(this.refs.confirmButton).blur();
+  },
+  handleContinue: function(e) {
+    YFActions.saveSummerAgreements();
+    this.transitionTo('summer/writing_class');
+  },
+
+  render: function () {
+    var self = this;
+    return (
+      React.createElement("div", {className: "col-md-9 col-md-offset-3"}, 
+      React.createElement("h2", null, "Summer Release Forms"), 
+        React.createElement("h3", {className: "bg-info"}, "Parents, please answer all the questions below. ", React.createElement("ins", null, "The enrollment is not completed if questions are not answered in this page")
+        ), React.createElement("hr", null), 
+        React.createElement(SummerTripPermit, {
+          incomingGrade: this.state.incomingGrade}), 
+        React.createElement(EmergencyBox, null), 
+        React.createElement(SunscreenPermit, null), 
+        React.createElement(PhotoRelease, null), 
+
+        React.createElement("div", {className: "row"}, 
+          React.createElement("div", {className: "col-md-offset-1"}, 
+            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"), "  ", self.state.done ? React.createElement("h5", null, React.createElement("span", {className: "bg-info"}, " Submitted, please Continue. ")) : React.createElement("p", null)
+          )
+        ), 
+
+        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+      )
+    );
+  } 
+});
+
+var PhotoRelease = React.createClass({displayName: "PhotoRelease",
+  getInitialState: function() {
+    return {
+      PhotoRelease: YFStore.getPhotoRelease()
+    };
+  },
+  PhotoRelease: function(e) {
+    var v = React.findDOMNode(this.refs.PhotoRelease).checked;
+    this.setState({ PhotoRelease: v });
+    YFStore.setPhotoRelease(v);
+  },
+  render: function() {
+    var PhotoRelease = (
+      React.createElement("div", null, 
+        React.createElement("h4", null, "I permit Yang Fan to upload pictures of my child to the school on-line albums"), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            this.state.PhotoRelease ? 
+            React.createElement("input", {type: "radio", name: "PhotoRelease", ref: "PhotoRelease", onChange: this.PhotoRelease, defaultChecked: true}) :
+            React.createElement("input", {type: "radio", name: "PhotoRelease", ref: "PhotoRelease", onChange: this.PhotoRelease}), 
+            "Yes" 
+          )
+        ), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            !this.state.PhotoRelease ?
+              React.createElement("input", {type: "radio", name: "PhotoRelease", onChange: this.PhotoRelease, defaultChecked: true}) :
+              React.createElement("input", {type: "radio", name: "PhotoRelease", onChange: this.PhotoRelease}), 
+            "No"
+          )
+        )
+      ) );
+    
+    return (
+      React.createElement("div", {className: "panel panel-primary"}, 
+        React.createElement("div", {className: "panel-heading"}, 
+          React.createElement("div", {className: "panel-title"}, 
+            React.createElement("h3", null, "Photo Release")
+          )
+        ), 
+
+        React.createElement("div", {className: "panel-body"}, 
+          React.createElement("div", {className: "row"}, 
+            React.createElement("div", {className: "col-md-offset-1 col-md-10"}, 
+              React.createElement("h4", {className: "bg-info"}, "Throughout the summer, Yang Fan will take and upload the pictures of our camp activities to the school on-line albums (Access controlled) and allow our summer parents to view those pictures"
+              ), React.createElement("hr", null), 
+              PhotoRelease
+            )
+          )
+        )
+      )
+    );
+  }
+});
+var SunscreenPermit = React.createClass({displayName: "SunscreenPermit",
+  getInitialState: function() {
+    return {
+      applySunscreen: YFStore.getApplySunscreen(),
+      spareSunCream: YFStore.getSpareSunCream(),
+      allergySunscreen: YFStore.getAllergySunscreen()
+    };
+  },
+  applySunscreen: function(e) {
+    var v = React.findDOMNode(this.refs.applySunscreen).checked;
+    this.setState({ applySunscreen: v });
+    YFStore.setApplySunscreen(v);
+  },
+  spareSunCream: function(e) {
+    var v = React.findDOMNode(this.refs.spareSunCream).checked;
+    this.setState({ spareSunCream: v });
+    YFStore.setSpareSunCream(v);
+  },
+  allergySunscreen: function(e) {
+    var v = React.findDOMNode(this.refs.allergySunscreen).checked;
+    this.setState({ allergySunscreen: v });
+    YFStore.setAllergySunscreen(v);
+  },
+
+  render: function() {
+    var applySunscreen = (
+      React.createElement("div", null, 
+        React.createElement("h4", null, "I give permission for Yang Fan staffs to apply sun screen when my child needs it"), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            this.state.applySunscreen ? 
+            React.createElement("input", {type: "radio", name: "applySunscreen", ref: "applySunscreen", onChange: this.applySunscreen, defaultChecked: true}) :
+            React.createElement("input", {type: "radio", name: "applySunscreen", ref: "applySunscreen", onChange: this.applySunscreen}), 
+            "Yes" 
+          )
+        ), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            !this.state.applySunscreen ?
+              React.createElement("input", {type: "radio", name: "applySunscreen", onChange: this.applySunscreen, defaultChecked: true}) :
+              React.createElement("input", {type: "radio", name: "applySunscreen", onChange: this.applySunscreen}), 
+            "No"
+          )
+        )
+      ) );
+    var spareSunCream = (
+      React.createElement("div", null, 
+        React.createElement("h4", {className: "bg-danger"}, "If I forget to bring sun cream in, or my sun cream runs out or is misplaced, I give permission for Yang Fan staffs to use any spare sun cream that the school may have."), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            this.state.spareSunCream ? 
+            React.createElement("input", {type: "radio", name: "spareSunCream", ref: "spareSunCream", onChange: this.spareSunCream, defaultChecked: true}) :
+            React.createElement("input", {type: "radio", name: "spareSunCream", ref: "spareSunCream", onChange: this.spareSunCream}), 
+            "Yes" 
+          )
+        ), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            !this.state.spareSunCream ?
+              React.createElement("input", {type: "radio", name: "spareSunCream", onChange: this.spareSunCream, defaultChecked: true}) :
+              React.createElement("input", {type: "radio", name: "spareSunCream", onChange: this.spareSunCream}), 
+            "No"
+          )
+        )
+      ) );
+    var allergySunscreen = (
+      React.createElement("div", null, 
+        React.createElement("h4", null, "Does your child have any known allergies in association with sunscreens?"), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            this.state.allergySunscreen ? 
+            React.createElement("input", {type: "radio", name: "allergySunscreen", ref: "allergySunscreen", onChange: this.allergySunscreen, defaultChecked: true}) :
+            React.createElement("input", {type: "radio", name: "allergySunscreen", ref: "allergySunscreen", onChange: this.allergySunscreen}), 
+            "Yes" 
+          )
+        ), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            !this.state.allergySunscreen ?
+              React.createElement("input", {type: "radio", name: "allergySunscreen", onChange: this.allergySunscreen, defaultChecked: true}) :
+              React.createElement("input", {type: "radio", name: "allergySunscreen", onChange: this.allergySunscreen}), 
+            "No"
+          )
+        )
+      ) );
+
+    return (
+      React.createElement("div", {className: "panel panel-primary"}, 
+        React.createElement("div", {className: "panel-heading"}, 
+          React.createElement("div", {className: "panel-title"}, 
+            React.createElement("h3", null, "Summer Trip Permission")
+          )
+        ), 
+
+        React.createElement("div", {className: "panel-body"}, 
+          React.createElement("div", {className: "row"}, 
+            React.createElement("div", {className: "col-md-offset-1 col-md-10"}, 
+              React.createElement("h4", {className: "bg-info"}, 
+              "My child has my permission to attend below weekly off-campus activities throughout the Summer Camp. These activities include trips that use school vans, public transportation, light rail, and/or walking modes of transportation."
+              ), React.createElement("hr", null), 
+              applySunscreen, 
+              spareSunCream, 
+              allergySunscreen
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+var EmergencyBox = React.createClass({displayName: "EmergencyBox",
+  getInitialState: function() {
+    return {
+      emergencyPermit: YFStore.getEmergencyPermit()
+    };
+  },
+  emergencyPermit: function() {
+    var s = React.findDOMNode(this.refs.emergencyPermit).checked;
+    this.setState({ emergencyPermit: s });
+    YFStore.setEmergencyPermit(s);
+  },
+  render: function() {
+    return (
+      React.createElement("div", {className: "panel panel-primary"}, 
+        React.createElement("div", {className: "panel-heading"}, 
+          React.createElement("div", {className: "panel-title"}, 
+            React.createElement("h3", null, "Consent for Emergency Medical Treatment")
+          )
+        ), 
+
+        React.createElement("div", {className: "panel-body"}, 
+          React.createElement("div", {className: "row"}, 
+            React.createElement("div", {className: "col-md-offset-1 col-md-10"}, 
+              React.createElement("h4", {className: "bg-info"}, 
+              "I hereby give consent to LIL (Yang Fan) to provide all emergency medical and/or dental care as prescribed by a duly licensed physician (M.D.) or dentist (D.D.S.) for my child. This care maybe given under whatever conditions are necessary to preserve the life, limb, or well being of my dependent."
+              ), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  this.state.emergencyPermit ? 
+                  React.createElement("input", {type: "radio", name: "emergencyPermit", ref: "emergencyPermit", onChange: this.emergencyPermit, defaultChecked: true}) :
+                  React.createElement("input", {type: "radio", name: "emergencyPermit", ref: "emergencyPermit", onChange: this.emergencyPermit}), 
+                  "Agree" 
+                )
+              ), 
+              React.createElement("div", {className: "radio"}, 
+                React.createElement("label", null, 
+                  !this.state.emergencyPermit ?
+                    React.createElement("input", {type: "radio", name: "emergencyPermit", onChange: this.emergencyPermit, defaultChecked: true}) :
+                    React.createElement("input", {type: "radio", name: "emergencyPermit", onChange: this.emergencyPermit}), 
+                  "Disagree"
+                )
+              ), React.createElement("hr", null), 
+
+              this.state.emergencyPermit ? 
+                React.createElement("div", {className: "row"}, 
+                  React.createElement(ContactBox, {
+                    title: "Primary Emergency Contact"}
+                  ), 
+                  React.createElement(ContactBox, {
+                  title: "Secondary Emergency Contact"}
+                  )
+                )
+                : React.createElement("p", null)
+            ), React.createElement("hr", null)
+          )
+        )
+      )
+    );
+  }
+});
+
+var SummerTripPermit = React.createClass({displayName: "SummerTripPermit",
+  getInitialState: function() {
+    return {
+      swimPermit: YFStore.getSwimPermit(),
+      moviePermit: YFStore.getMoviePermit(),
+      fieldTripPermit: YFStore.getFieldTripPermit(),
+      HartSportsPermit: YFStore.getHartSportsPermit()
+    };
+  },
+  swimPermit: function(e) {
+    var v = React.findDOMNode(this.refs.swimPermit).checked;
+    this.setState({ swimPermit: v });
+    YFStore.setSwimPermit(v);
+  },
+  moviePermit: function(e) {
+    var v = React.findDOMNode(this.refs.moviePermit).checked;
+    this.setState({ moviePermit: v });
+    YFStore.setMoviePermit(v);
+  },
+  fieldTripPermit: function(e) {
+    var v = React.findDOMNode(this.refs.fieldTripPermit).checked;
+    this.setState({ fieldTripPermit: v });
+    YFStore.setFieldTripPermit(v);
+  },
+  HartSportsPermit: function(e) {
+    var v = React.findDOMNode(this.refs.HartSportsPermit).checked;
+    this.setState({ HartSportsPermit: v });
+    YFStore.setHartSportsPermit(v);
+  },
+  render: function() {
+    var swimPermit = (
+      React.createElement("div", null, 
+        React.createElement("h4", null, "Friday afternoon recreational Swimming trips (", React.createElement("strong", null, "students must be able to swimming independently"), ")"), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            this.state.swimPermit ? 
+            React.createElement("input", {type: "radio", name: "swimPermit", ref: "swimPermit", onChange: this.swimPermit, defaultChecked: true}) :
+            React.createElement("input", {type: "radio", name: "swimPermit", ref: "swimPermit", onChange: this.swimPermit}), 
+            "Yes" 
+          )
+        ), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            !this.state.swimPermit ?
+              React.createElement("input", {type: "radio", name: "swimPermit", onChange: this.swimPermit, defaultChecked: true}) :
+              React.createElement("input", {type: "radio", name: "swimPermit", onChange: this.swimPermit}), 
+            "No"
+          )
+        )
+      ) );
+    var moviePermit = (
+      React.createElement("div", null, 
+        React.createElement("h4", null, "Tuesday morning summer movie at Dublin Regal movie theater"), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            this.state.moviePermit ? 
+            React.createElement("input", {type: "radio", name: "moviePermit", ref: "moviePermit", onChange: this.moviePermit, defaultChecked: true}) :
+            React.createElement("input", {type: "radio", name: "moviePermit", ref: "moviePermit", onChange: this.moviePermit}), 
+            "Yes" 
+          )
+        ), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            !this.state.moviePermit ?
+              React.createElement("input", {type: "radio", name: "moviePermit", onChange: this.moviePermit, defaultChecked: true}) :
+              React.createElement("input", {type: "radio", name: "moviePermit", onChange: this.moviePermit}), 
+            "No"
+          )
+        )
+      ) );
+    var fieldTripPermit = (
+      React.createElement("div", null, 
+        React.createElement("h4", null, "Friday field trip"), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            this.state.fieldTripPermit ? 
+            React.createElement("input", {type: "radio", name: "fieldTripPermit", ref: "fieldTripPermit", onChange: this.fieldTripPermit, defaultChecked: true}) :
+            React.createElement("input", {type: "radio", name: "fieldTripPermit", ref: "fieldTripPermit", onChange: this.fieldTripPermit}), 
+            "Yes" 
+          )
+        ), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            !this.state.fieldTripPermit ?
+              React.createElement("input", {type: "radio", name: "fieldTripPermit", onChange: this.fieldTripPermit, defaultChecked: true}) :
+              React.createElement("input", {type: "radio", name: "fieldTripPermit", onChange: this.fieldTripPermit}), 
+            "No"
+          )
+        )
+      ) );
+    var HartSportsPermit = (
+      React.createElement("div", null, 
+        React.createElement("h4", null, "Hart Middle School Sports Field activities"), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            this.state.HartSportsPermit ? 
+            React.createElement("input", {type: "radio", name: "HartSportsPermit", ref: "HartSportsPermit", onChange: this.HartSportsPermit, defaultChecked: true}) :
+            React.createElement("input", {type: "radio", name: "HartSportsPermit", ref: "HartSportsPermit", onChange: this.HartSportsPermit}), 
+            "Yes" 
+          )
+        ), 
+        React.createElement("div", {className: "radio"}, 
+          React.createElement("label", null, 
+            !this.state.HartSportsPermit ?
+              React.createElement("input", {type: "radio", name: "HartSportsPermit", onChange: this.HartSportsPermit, defaultChecked: true}) :
+              React.createElement("input", {type: "radio", name: "HartSportsPermit", onChange: this.HartSportsPermit}), 
+            "No"
+          )
+        )
+      ) );
+
+
+    return (
+      React.createElement("div", {className: "panel panel-primary"}, 
+        React.createElement("div", {className: "panel-heading"}, 
+          React.createElement("div", {className: "panel-title"}, 
+            React.createElement("h3", null, "Summer Trip Permission")
+          )
+        ), 
+
+        React.createElement("div", {className: "panel-body"}, 
+          React.createElement("div", {className: "row"}, 
+            React.createElement("div", {className: "col-md-offset-1 col-md-10"}, 
+              React.createElement("h4", {className: "bg-info"}, 
+              "My child has my permission to attend below weekly off-campus activities throughout the Summer Camp. These activities include trips that use school vans, public transportation, light rail, and/or walking modes of transportation."
+              ), React.createElement("hr", null), 
+              this.props.incomingGrade !== 'K' ? {swimPermit} : React.createElement("p", null), 
+              (this.props.incomingGrade !== 'K' && this.props.incomingGrade !== 'G1') ? 
+              {moviePermit} : React.createElement("p", null), 
+              this.props.incomingGrade !== 'K' ? {fieldTripPermit} : React.createElement("p", null), 
+              HartSportsPermit
+
+            )
+          )
+        )
+      )
+    );
+  }
+});
+
+module.exports = SummerAgreements;
+
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":252,"./helpers/ContactBox.jsx":248,"react":214,"react-router":45}],236:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
+var YFStore = require('../stores/YFStore.jsx');
 var enrichActData = require('../../lib/summer/enrichmentActivities.json');
 var wrData = require('../../lib/summer/afternoonWritingElective.json');
 var adWrData = require('../../lib/summer/afternoonAdvancedWriting.json');
@@ -31158,7 +31740,7 @@ var Week1 = React.createClass({displayName: "Week1",
 
 module.exports = Week1;
 
-},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":250,"./EnrichmentActs.jsx":225,"react":214,"react-router":45}],236:[function(require,module,exports){
+},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":252,"./EnrichmentActs.jsx":225,"react":214,"react-router":45}],237:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -31236,6 +31818,7 @@ var Week10 = React.createClass({displayName: "Week10",
             summerCampWeeks: self.state.summerCampWeeks})
         ), 
       
+      React.createElement("hr", null), 
       React.createElement("div", {className: "row"}, 
         React.createElement("div", {className: "col-md-offset-1"}, 
           React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"
@@ -31251,7 +31834,7 @@ var Week10 = React.createClass({displayName: "Week10",
 
 module.exports = Week10;
 
-},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":250,"./EnrichmentActs.jsx":225,"react":214,"react-router":45}],237:[function(require,module,exports){
+},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":252,"./EnrichmentActs.jsx":225,"react":214,"react-router":45}],238:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -31411,7 +31994,7 @@ var Week2 = React.createClass({displayName: "Week2",
 
 module.exports = Week2;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":250,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],238:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":252,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"react":214,"react-router":45}],239:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -31544,7 +32127,7 @@ var Week3 = React.createClass({displayName: "Week3",
 
 module.exports = Week3;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":250,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],239:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":252,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"react":214,"react-router":45}],240:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -31704,7 +32287,7 @@ var Week4 = React.createClass({displayName: "Week4",
 
 module.exports = Week4;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":250,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],240:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":252,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"react":214,"react-router":45}],241:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -31837,7 +32420,7 @@ var Week5 = React.createClass({displayName: "Week5",
 
 module.exports = Week5;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":250,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],241:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":252,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"react":214,"react-router":45}],242:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -31997,7 +32580,7 @@ var Week6 = React.createClass({displayName: "Week6",
 
 module.exports = Week6;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":250,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],242:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":252,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"react":214,"react-router":45}],243:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -32130,7 +32713,7 @@ var Week7 = React.createClass({displayName: "Week7",
 
 module.exports = Week7;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":250,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],243:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":252,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"react":214,"react-router":45}],244:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -32290,7 +32873,7 @@ var Week8 = React.createClass({displayName: "Week8",
 
 module.exports = Week8;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":250,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],244:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":252,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"react":214,"react-router":45}],245:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -32423,7 +33006,7 @@ var Week9 = React.createClass({displayName: "Week9",
 
 module.exports = Week9;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":250,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":245,"react":214,"react-router":45}],245:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":252,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"react":214,"react-router":45}],246:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -32532,7 +33115,7 @@ var WritingElective = React.createClass({displayName: "WritingElective",
 
 module.exports = WritingElective;
 
-},{"../../lib/summer/afternoonWritingElective.json":6,"../actions/YFActions":218,"../stores/YFStore.jsx":250,"react":214,"react-router":45}],246:[function(require,module,exports){
+},{"../../lib/summer/afternoonWritingElective.json":6,"../actions/YFActions":218,"../stores/YFStore.jsx":252,"react":214,"react-router":45}],247:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -32585,7 +33168,7 @@ var YFApp = React.createClass({displayName: "YFApp",
           )
         ), 
 
-        React.createElement("div", {className: "main-content"}, 
+        React.createElement("div", null, 
           React.createElement(RouteHandler, null)
         )
       )
@@ -32599,7 +33182,95 @@ var YFApp = React.createClass({displayName: "YFApp",
 
 module.exports = YFApp;
 
-},{"../stores/YFStore.jsx":250,"react":214,"react-router":45}],247:[function(require,module,exports){
+},{"../stores/YFStore.jsx":252,"react":214,"react-router":45}],248:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../../actions/YFActions');
+var YFStore = require('../../stores/YFStore.jsx');
+
+var ContactBox = React.createClass({displayName: "ContactBox",
+	propTypes: {
+		title: React.PropTypes.string.isRequired
+	},
+  render: function() {
+    return (
+				React.createElement("div", {className: "col-md-6"}, 								
+					React.createElement("div", {className: "panel panel-default"}, 
+					
+						React.createElement("div", {className: "panel-heading"}, 
+							React.createElement("div", {className: "panel-title"}, this.props.title)
+						), 
+
+						React.createElement("div", {className: "panel-body"}, 
+
+							React.createElement("div", {className: "form-group"}, 
+								React.createElement("label", {className: "control-label"}, "Name"), 
+								
+								React.createElement("div", {className: "input-group  input-group-minimal"}, 
+									React.createElement("span", {className: "input-group-addon"}, 
+										React.createElement("i", {className: "linecons-user"})
+									), 
+									React.createElement("input", {type: "text", className: "form-control", "data-mask": "@\\w+", "data-is-regex": "true"})
+								)								
+							), 
+
+							React.createElement("div", {className: "form-group"}, 
+								React.createElement("label", {className: "control-label"}, "Cell Phone"), 
+								
+								React.createElement("div", {className: "input-group  input-group-minimal"}, 
+									React.createElement("span", {className: "input-group-addon"}, 
+										React.createElement("i", {className: "linecons-mobile"})
+									), 
+									React.createElement("input", {type: "text", className: "form-control", "data-mask": "phone"})
+								)
+							), 
+
+							React.createElement("div", {className: "form-group"}, 
+								React.createElement("label", {className: "control-label"}, "Work Phone"), 
+								
+								React.createElement("div", {className: "input-group  input-group-minimal"}, 
+									React.createElement("span", {className: "input-group-addon"}, 
+										React.createElement("i", {className: "linecons-mobile"})
+									), 
+									React.createElement("input", {type: "text", className: "form-control", "data-mask": "phone"})
+								)
+							), 
+
+							React.createElement("div", {className: "form-group"}, 
+								React.createElement("label", {className: "control-label"}, "Home Phone"), 
+								
+								React.createElement("div", {className: "input-group  input-group-minimal"}, 
+									React.createElement("span", {className: "input-group-addon"}, 
+										React.createElement("i", {className: "linecons-mobile"})
+									), 
+									React.createElement("input", {type: "text", className: "form-control", "data-mask": "phone"})
+								)
+							), 
+
+							React.createElement("div", {className: "form-group"}, 
+								React.createElement("label", {className: "control-label"}, "Email"), 
+								
+								React.createElement("div", {className: "input-group  input-group-minimal"}, 
+									React.createElement("span", {className: "input-group-addon"}, 
+										React.createElement("i", {className: "linecons-mail"})
+									), 
+									React.createElement("input", {type: "text", className: "form-control", "data-mask": "email"})
+								)
+							)
+						)	
+					)
+				)
+    );
+  }
+});
+
+module.exports = ContactBox;
+
+},{"../../actions/YFActions":218,"../../stores/YFStore.jsx":252,"react":214,"react-router":45}],249:[function(require,module,exports){
 'use strict';
 
 var React=require('react');
@@ -32668,7 +33339,7 @@ var SideMenu = React.createClass({displayName: "SideMenu",
 
 module.exports = SideMenu;
 
-},{"react":214}],248:[function(require,module,exports){
+},{"react":214}],250:[function(require,module,exports){
 /*
  * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -32689,10 +33360,11 @@ module.exports = keyMirror({
   YF_SAVE_SUMMER_SCHEDULE: null,
   YF_SAVE_SUMMER_AFTERNOON_ACADEMICS: null,
   YF_LOAD_ENROLLMENT: null,
-  YF_SAVE_SUMMER_WEEK: null
+  YF_SAVE_SUMMER_WEEK: null,
+  YF_SAVE_SUMMER_OTHER_SERVICES: null
 });
 
-},{"keymirror":19}],249:[function(require,module,exports){
+},{"keymirror":19}],251:[function(require,module,exports){
 /*
 * AppDispatcher
 *
@@ -32703,7 +33375,7 @@ var Dispatcher = require('flux').Dispatcher;
 
 module.exports = new Dispatcher();
 
-},{"flux":12}],250:[function(require,module,exports){
+},{"flux":12}],252:[function(require,module,exports){
 'use strict';
 
 var AppDispatcher = require('../dispatcher/AppDispatcher');
@@ -33074,6 +33746,137 @@ var YFStore = assign({}, EventEmitter.prototype, {
     var key = weekIdx + 'GATEIdx';
     return parseInt(sessionStorage.getItem(key));
   },
+  setWeeklyMovie(weekIdx, v){
+    var key = weekIdx + 'movie';
+    sessionStorage.setItem(key, v);
+  },
+  getWeeklyMovie(weekIdx){
+    var key = weekIdx + 'movie';
+    return sessionStorage.getItem(key); //'true', 'false', null
+  },
+  setMorningCare(v){
+    var key = 'morningCare';
+    sessionStorage.setItem(key, v);
+  },
+  getMorningCare(){
+    var key = 'morningCare';
+    return sessionStorage.getItem(key); //'oneHour', 'halfHour', 'none'
+  },
+  setLunch(ref, v){
+    var key = ref + 'lunch';
+    sessionStorage.setItem(key, v);
+  },
+  getLunch(ref){
+    var key = ref + 'lunch';
+    return sessionStorage.getItem(key); 
+  },
+  setCanPickup(v){
+    var key = 'canPickup';
+    sessionStorage.setItem(key, v);
+  },
+  getCanPickup(){
+    var key = 'canPickup';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
+  setNeedPickup(v){
+    var key = 'needPickup';
+    sessionStorage.setItem(key, v);
+  },
+  getNeedPickup(){
+    var key = 'needPickup';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },  
+  setPickup(weekIdx, v){
+    var key = weekIdx + 'pickup';
+    sessionStorage.setItem(key, v);
+  },
+  getPickup(weekIdx){
+    var key = weekIdx + 'pickup';
+    return sessionStorage.getItem(key); 
+  },  
+  setSwimPermit(v){
+    var key = 'swimPermit';
+    sessionStorage.setItem(key, v);
+  },
+  getSwimPermit(){
+    var key = 'swimPermit';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
+  setMoviePermit(v){
+    var key = 'moviePermit';
+    sessionStorage.setItem(key, v);
+  },
+  getMoviePermit(){
+    var key = 'moviePermit';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  }, 
+  setFieldTripPermit(v){
+    var key = 'fieldTripPermit';
+    sessionStorage.setItem(key, v);
+  },
+  getFieldTripPermit(){
+    var key = 'fieldTripPermit';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
+  setHartSportsPermit(v){
+    var key = 'HartSportsPermit';
+    sessionStorage.setItem(key, v);
+  },
+  getHartSportsPermit(){
+    var key = 'HartSportsPermit';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  }, 
+  setEmergencyPermit(v){
+    var key = 'EmergencyPermit';
+    sessionStorage.setItem(key, v);
+  },
+  getEmergencyPermit(){
+    var key = 'EmergencyPermit';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
+  setApplySunscreen(v){
+    var key = 'ApplySunscreen';
+    sessionStorage.setItem(key, v);
+  },
+  getApplySunscreen(){
+    var key = 'ApplySunscreen';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
+  setSpareSunCream(v){
+    var key = 'SpareSunCream';
+    sessionStorage.setItem(key, v);
+  },
+  getSpareSunCream(){
+    var key = 'SpareSunCream';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
+  setAllergySunscreen(v){
+    var key = 'AllergySunscreen';
+    sessionStorage.setItem(key, v);
+  },
+  getAllergySunscreen(){
+    var key = 'AllergySunscreen';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
+  setPhotoRelease(v){
+    var key = 'PhotoRelease';
+    sessionStorage.setItem(key, v);
+  },
+  getPhotoRelease(){
+    var key = 'PhotoRelease';
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
+  },
   testTimeConflictInWeek(grade, week, weekIdx) {
     var morActIdx = YFStore.getMorActIdx(weekIdx);
     var aftActIdx = YFStore.getAftActIdx(weekIdx);
@@ -33187,4 +33990,4 @@ AppDispatcher.register(function(action) {
 
 module.exports = YFStore;
 
-},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../constants/YFConstants":248,"../dispatcher/AppDispatcher":249,"events":10,"object-assign":20,"superagent":215}]},{},[219]);
+},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../constants/YFConstants":250,"../dispatcher/AppDispatcher":251,"events":10,"object-assign":20,"superagent":215}]},{},[219]);

@@ -53,6 +53,12 @@ var YFActions = {
     });
   },
 
+  saveSummerOtherServices: function() {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_SAVE_SUMMER_OTHER_SERVICES
+    });
+  },
+
   loadEnrollment: function() {
     AppDispatcher.dispatch({
       actionType: YFConstants.YF_LOAD_ENROLLMENT,

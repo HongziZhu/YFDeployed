@@ -14,6 +14,7 @@ var GetStarted = require('./GetStarted.jsx');
 var Attendance = require('./Attendance.jsx');
 var AfternoonAcademics = require('./AfternoonAcademics.jsx');
 var OtherServices = require('./OtherServices.jsx');
+var SummerAgreements = require('./SummerAgreements.jsx');
 var Week1 = require('./Week1.jsx');
 var Week2 = require('./Week2.jsx');
 var Week3 = require('./Week3.jsx');
@@ -47,6 +48,7 @@ var routes = (
 		<Route name='summer/week10' path='/user/summer/week10' handler={Week10} />
 
 		<Route name='summer/other_services' path='user/summer/other_services' handler={OtherServices} />
+		<Route name='summer/agreements' path='user/summer/agreements' handler={SummerAgreements} />
 	</Route>
 );
 

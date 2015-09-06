@@ -67,7 +67,7 @@ module.exports = OtherServices;
 var MorningCare = React.createClass({
   render: function() {
     return (
-      <div className="panel panel-default">
+      <div className="panel panel-primary">
         <div className="panel-heading">
           <div className="panel-title">
             <h3>Movies</h3>
@@ -76,9 +76,9 @@ var MorningCare = React.createClass({
 
         <div className="panel-body">
           <div className="row">
-            <div className='col-md-offset-1'> 
-              <span className="bg-info">Check out our movie trips! Select the days you want to go!</span>
-            </div><br></br>
+            <div className='col-md-offset-1 col-md-10'> 
+              <h4 className="bg-info">Check out our movie trips! Select the days you want to go!</h4>
+            </div><hr></hr>
           </div>
         </div>
       </div>

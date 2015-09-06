@@ -75,6 +75,7 @@ var Week10 = React.createClass({
             summerCampWeeks={self.state.summerCampWeeks}/>   
         </div>
       }
+      <hr></hr>
       <div className="row">
         <div className='col-md-offset-1'>
           <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm

@@ -15,7 +15,7 @@ var GATE = React.createClass({
       GATEIdx: isNaN(m) ? -1 : m
     };
   },
-  changeMathOlympiad: function(e) {
+  changeGATE: function(e) {
     var self = this;
     var v = e.currentTarget.value;
     YFStore.setGATEIdx(self.props.curWeekIdx, v);
