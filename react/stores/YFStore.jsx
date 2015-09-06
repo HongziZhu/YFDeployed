@@ -199,6 +199,66 @@ function insertIntoLine(timeline, timeObj) {
   return { conflict: false };
 };
 
+function saveSummerOtherServices(enrollmentId) {
+  var weeklyMovies = [], pickups = [];
+  var morningCare = YFStore.getMorningCare();
+  var lunch = [
+    { days: [] },
+    { days: [] },
+    { days: [] },
+    { days: [] },
+    { days: [] },
+    { days: [] },
+    { days: [] },
+    { days: [] },
+    { days: [] },
+    { days: [] }
+  ];
+  for(var j = 0; j < 10; j++){
+    weeklyMovies.push(
+      YFStore.getWeeklyMovie(j)
+    );
+    pickups.push(
+      YFStore.getPickup(j)
+    );
+    if(YFStore.getLunch(j+1)) {
+      lunch[j].days = summerCampWeeks[j].attendingDays;
+    } else {
+      var x = j + 1;
+      var refs = [x+'Mon', x+'Tue', x+'Wed', x+'Thu', x+'Fri'];
+      var weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+      for(var p = 0; p < refs.length; p++){
+        if(YFStore.getLunch(refs[p])){
+          lunch[j].days.push(weekdays[p]);
+        }
+      }
+    }
+  }
+
+  var data = {
+    weeklyMovies: weeklyMovies,
+    morningCare: morningCare,
+    lunch: lunch,
+    pickups: pickups
+  };
+
+  var url = '/api/users/summer/other_services/' + enrollmentId;
+  request
+  .put(url)
+  .send(data)
+  .accept('application/json')
+  .end(function(err, res){
+    if(err) { return console.error(err); }
+  });
+}
+
+function saveSummerAgreements(enrollmentId) {
+  var url = '/api/users/summer/agreements/' + enrollmentId;
+  var data = {
+    
+  };
+} 
+
 var YFStore = assign({}, EventEmitter.prototype, {
   getStateFromStorage: function() {
     loggedIn = sessionStorage.getItem('loggedIn') || false;
@@ -374,7 +434,8 @@ var YFStore = assign({}, EventEmitter.prototype, {
   },
   getWeeklyMovie(weekIdx){
     var key = weekIdx + 'movie';
-    return sessionStorage.getItem(key); //'true', 'false', null
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
   },
   setMorningCare(v){
     var key = 'morningCare';
@@ -382,7 +443,8 @@ var YFStore = assign({}, EventEmitter.prototype, {
   },
   getMorningCare(){
     var key = 'morningCare';
-    return sessionStorage.getItem(key); //'oneHour', 'halfHour', 'none'
+    //'oneHour', 'halfHour', 'none'
+    return sessionStorage.getItem(key) ? sessionStorage.getItem(key) : 'none'; 
   },
   setLunch(ref, v){
     var key = ref + 'lunch';
@@ -390,7 +452,8 @@ var YFStore = assign({}, EventEmitter.prototype, {
   },
   getLunch(ref){
     var key = ref + 'lunch';
-    return sessionStorage.getItem(key); 
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false;  
   },
   setCanPickup(v){
     var key = 'canPickup';
@@ -416,7 +479,8 @@ var YFStore = assign({}, EventEmitter.prototype, {
   },
   getPickup(weekIdx){
     var key = weekIdx + 'pickup';
-    return sessionStorage.getItem(key); 
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
   },  
   setSwimPermit(v){
     var key = 'swimPermit';
@@ -604,7 +668,15 @@ AppDispatcher.register(function(action) {
       weekObj = getWeekEnrollIdxes(grade, week, weekIdx);
       saveSummerWeek(enrollmentId, grade, week, weekIdx, weekObj);
       break;
-  
+    case YFConstants.YF_SAVE_SUMMER_OTHER_SERVICES:
+      enrollmentId = sessionStorage.getItem('enrollmentId');
+      saveSummerOtherServices(enrollmentId);
+      break;
+    case YFConstants.YF_SAVE_SUMMER_AGREEMENTS:
+      enrollmentId = sessionStorage.getItem('enrollmentId');
+      saveSummerAgreements(enrollmentId);
+      break;
+
     default:
       return;
   }

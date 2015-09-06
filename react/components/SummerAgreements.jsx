@@ -37,7 +37,7 @@ var SummerAgreements = React.createClass({
   },
   handleContinue: function(e) {
     YFActions.saveSummerAgreements();
-    this.transitionTo('summer/writing_class');
+    this.transitionTo('summer/confirm');
   },
 
   render: function () {

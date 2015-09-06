@@ -67,23 +67,23 @@ var Signup = React.createClass({
 			<form className="col-md-6 col-md-offset-3" onSubmit={this.handleSubmit}>
 			  <div className="form-group">
 			    <label htmlFor="email">Email address</label>
-			    <input type="email" className="form-control" ref="email" placeholder="Email"/>
+			    <input type="email" required className="form-control" ref="email" placeholder="Email"/>
 			  </div>
 			  <div className="form-group">
 			    <label htmlFor="password">Password</label>
-			    <input type="password" className="form-control" ref="password" placeholder="Password"/><br></br>
-			    <input type="password" className="form-control" ref="password2" placeholder="Confirm Password"  />
+			    <input type="password" required pattern=".{6}" className="form-control" ref="password" placeholder="At least 6 characters"/><br></br>
+			    <input type="password" required pattern=".{6}" className="form-control" ref="password2" placeholder="At least 6 characters"  />
 			  </div>
 			  <div className="form-group">
 			    <label htmlFor="phoneNumber">Phone Number</label>
-					<input type="text" className="form-control" ref="phoneNumber" placeholder="Please enter numbers only. e.g. 9998887777" />
+					<input type="text" required className="form-control" ref="phoneNumber" placeholder="Please enter numbers only. e.g. 9998887777" />
 			  </div>
 			  <div className="form-group">
         	<legend>Student Information</legend>
         	<StudentBox ref='student1'/><hr></hr>
         	<StudentBox ref='student2'/>
         </div>
-			  {/*<ParentBox /><br></br>*/}
+
         <hr></hr>
        	<span className="help-block">Help Block...</span>
 			  <button type="submit" className="btn btn-primary">Sign up</button>

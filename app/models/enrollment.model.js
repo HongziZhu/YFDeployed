@@ -33,8 +33,8 @@ var EnrollmentSchema = new Schema({
     attendingDays: [String],
     lunchDays: [String],
     extendedCare: { 
-      category: { type: String, enum: ['7:00-8:00 AM', '7:30-8:00 AM', 'None'] },
-      price: { type: String, enum: ['15', '25', '0'] }
+      category: { type: String, enum: ['7:00-8:00 AM', '7:30-8:00 AM', 'None'], default: 'None' },
+      price: { type: Number, enum: [15, 25, 0], default: 0 }
     },
     pickupService: {
       isAttend: Boolean,

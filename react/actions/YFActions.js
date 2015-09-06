@@ -59,6 +59,12 @@ var YFActions = {
     });
   },
 
+  saveSummerAgreements: function() {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_SAVE_SUMMER_AGREEMENT
+    });
+  },
+
   loadEnrollment: function() {
     AppDispatcher.dispatch({
       actionType: YFConstants.YF_LOAD_ENROLLMENT,

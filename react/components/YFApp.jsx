@@ -31,29 +31,32 @@ var YFApp = React.createClass({
     return (
       <div>
         <SideMenu />
-        <nav className="navbar navbar-default navbar-fixed-top">
-          <div className='container'>
-            <div className="navbar-header">
-              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-              </button>
-              <a className="navbar-brand" href="/"><h4>YangFan Enrollment</h4></a>
-            </div>
 
-            <div id="navbar" className="navbar-collapse collapse">
-              <form className="navbar-form navbar-right">
-              {this.state.loggedIn ? <a href='/' className='btn btn-danger'>Log out</a> : <a href='/login' className='btn btn-success'>Log in</a> }
-                &nbsp; &nbsp;
-                <a href='/signup' className='btn btn-primary'>Sign up</a>
-              </form>
-            </div>
-          </div>
-        </nav>
         <div className="main-content">
-         
+          <nav className="navbar navbar-default navbar-fixed-top">
+            <div className='container'>
+              <div className="navbar-header">
+                <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span className="sr-only">Toggle navigation</span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                </button>
+                <a className="navbar-brand" href="/"><h4>YangFan Enrollment</h4></a>
+              </div>
+
+              <div className="navbar-collapse collapse">
+                <form className="navbar-form navbar-right">
+                {this.state.loggedIn ? 
+                  <a href='/' className='btn btn-danger'>Log out
+                    <span><strong>&nbsp;({this.state.user.email})</strong></span>
+                  </a>
+                  : <p></p>}
+                </form>
+              </div>
+            </div>
+          </nav>
+          
           <div>
             <RouteHandler />
           </div>

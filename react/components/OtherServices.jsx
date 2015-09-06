@@ -100,7 +100,7 @@ var PickupService = React.createClass({
           pickupService.push(
             <tr key={j}>
               <td className='cell'>
-                {YFStore.getPickup(j-1) === 'true' ? 
+                {YFStore.getPickup(j-1) ? 
                   <input type="checkbox" ref={j} value={j-1} onChange={self.changePickup} defaultChecked/> :
                   <input type="checkbox" ref={j} value={j-1} onChange={self.changePickup}/>}
               </td>
@@ -258,7 +258,7 @@ var LunchBox = React.createClass({
           lunches.push(
             <tr key={j}>
               <td className='cell'>
-                {(YFStore.getLunch(j) === 'true' || self.state.allSelectedWeeks[j-1].selected) ? 
+                {(YFStore.getLunch(j) || self.state.allSelectedWeeks[j-1].selected) ? 
                   <label>
                     <input type="checkbox" onChange={self.selectWholeWeek} ref={weekRef} value={j} defaultChecked/>&nbsp;<span className='bg-warning'>The whole week selected</span>
                   </label>
@@ -266,31 +266,31 @@ var LunchBox = React.createClass({
               </td>
               <td>week_{j}&nbsp;({week.coveredDate})</td>
               <td className='cell'>{week.attendingDays.indexOf('Mon') > -1 ? 
-                (YFStore.getLunch(refs[0]) === 'true' ? 
+                (YFStore.getLunch(refs[0]) ? 
                   <input type="checkbox" onChange={self.changeLunch} value={refs[0]} defaultChecked/> :
                   <input type="checkbox" onChange={self.changeLunch} value={refs[0]} /> )
                 : <span>Absent</span>}
               </td>
               <td className='cell'>{week.attendingDays.indexOf('Tue') > -1 ? 
-                (YFStore.getLunch(refs[1]) === 'true' ? 
+                (YFStore.getLunch(refs[1]) ? 
                   <input type="checkbox" onChange={self.changeLunch} value={refs[1]} defaultChecked/> :
                   <input type="checkbox" onChange={self.changeLunch} value={refs[1]} /> )
                 : <span>Absent</span>}
               </td>
               <td className='cell'>{week.attendingDays.indexOf('Wed') > -1 ? 
-                (YFStore.getLunch(refs[2]) === 'true' ? 
+                (YFStore.getLunch(refs[2]) ? 
                   <input type="checkbox" onChange={self.changeLunch} value={refs[2]} defaultChecked/> :
                   <input type="checkbox" onChange={self.changeLunch} value={refs[2]} /> )
                 : <span>Absent</span>}
               </td>
               <td className='cell'>{week.attendingDays.indexOf('Thu') > -1 ? 
-                (YFStore.getLunch(refs[3]) === 'true' ? 
+                (YFStore.getLunch(refs[3]) ? 
                   <input type="checkbox" onChange={self.changeLunch} value={refs[3]} defaultChecked/> :
                   <input type="checkbox" onChange={self.changeLunch} value={refs[3]} /> ) 
                 : <span>Absent</span>}
               </td>
               <td className='cell'>{week.attendingDays.indexOf('Fri') > -1 ? 
-                (YFStore.getLunch(refs[4]) === 'true' ? 
+                (YFStore.getLunch(refs[4]) ? 
                   <input type="checkbox" onChange={self.changeLunch} value={refs[4]} defaultChecked/> :
                   <input type="checkbox" onChange={self.changeLunch} value={refs[4]} /> )
                 : <span>Absent</span>}
@@ -375,7 +375,7 @@ var MorningCare = React.createClass({
                 </div>
                 <div className="radio">
                   <label>
-                    {(!YFStore.getMorningCare() || YFStore.getMorningCare() === 'none') ? 
+                    {(YFStore.getMorningCare() === 'none') ? 
                     <input type="radio" name="morningCare" onChange={this.changeCare} value="none" defaultChecked/> :
                     <input type="radio" name="morningCare" onChange={this.changeCare} value="none" />}
                     No, I don't need the extended care. Thanks.
@@ -403,12 +403,12 @@ var MovieBox = React.createClass({
     var absent;
     if(this.props.summerCampWeeks.length === 10){
       for(var j = 1; j < (len+1); j++) {
-        absent = this.props.summerCampWeeks[j-1].schedulePattern === "absence";
+        absent = (this.props.summerCampWeeks[j-1].schedulePattern === "absence") || (this.props.summerCampWeeks[j-1].attendingDays.indexOf('Tue') === -1);
         if(!absent){
           summerMovies.push(
             <tr key={j}>
               <td className='cell'>
-                {YFStore.getWeeklyMovie(j-1) === 'true' ? 
+                {YFStore.getWeeklyMovie(j-1) ? 
                   <input type="checkbox" ref={j} value={j-1} onChange={self.changeMovie} defaultChecked/> :
                   <input type="checkbox" ref={j} value={j-1} onChange={self.changeMovie}/>}
               </td>

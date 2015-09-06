@@ -62,5 +62,7 @@ router.put('/summer/afternoon_academics/:enrollmentId', enrollments.saveAfternoo
 
 router.put('/summer/weeks/:enrollmentId', enrollments.saveSummerWeek);
 
+router.put('/summer/other_services/:enrollmentId', enrollments.saveSummerOtherServices);
+
 //TODO Error handling
 module.exports = router;

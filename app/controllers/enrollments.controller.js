@@ -157,3 +157,44 @@ exports.saveSummerWeek = function (req, res, next) {
 		res.json(enrollment);
 	});
 };
+
+exports.saveSummerOtherServices = function (req, res, next) {
+	var enrollment = req.enrollment;
+	if(enrollment.summerCampWeeks.length < 1){
+		return next(new Error('Not yet scheduled.'));
+	}
+	var weeklyMovies = req.body.weeklyMovies;
+	var morningCare = req.body.morningCare;
+	var lunch = req.body.lunch;
+	var pickups = req.body.pickups;
+
+	for(var j = 0; j < 10; j++) {
+		if(weeklyMovies[j]){
+			enrollment.summerCampWeeks[j].movie.isAttend = true;
+		}
+		if(pickups[j]){
+			enrollment.summerCampWeeks[j].pickupService.isAttend = true;
+		}
+		switch(morningCare) {
+			case 'oneHour':
+				enrollment.summerCampWeeks[j].extendedCare = {
+					category: '7:00-8:00 AM',
+					price: 25
+				};
+				break;
+			case 'halfHour':
+				enrollment.summerCampWeeks[j].extendedCare = {
+					category: '7:30-8:00 AM',
+					price: 15
+				};
+				break;
+			default:
+				return;
+		}
+		enrollment.summerCampWeeks[j].lunchDays = lunch[j].days;
+	}
+
+	enrollment.save(function (err, enrollment) {
+		res.json(enrollment);
+	});
+};

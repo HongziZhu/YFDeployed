@@ -28688,6 +28688,12 @@ var YFActions = {
     });
   },
 
+  saveSummerAgreements: function() {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_SAVE_SUMMER_AGREEMENT
+    });
+  },
+
   loadEnrollment: function() {
     AppDispatcher.dispatch({
       actionType: YFConstants.YF_LOAD_ENROLLMENT,
@@ -30179,9 +30185,16 @@ var Home = React.createClass({displayName: "Home",
     //5. a single element to contain the render stuff
     return (
       React.createElement("div", {className: "row"}, 
-        React.createElement("div", {className: "col-md-12"}, 
-          React.createElement("div", {className: "lead"}, 
-            "Welcome to YangFan Enrollment System!"  
+        React.createElement("div", {className: "col-md-offset-3 col-md-9"}, 
+          React.createElement("div", {class: "page-header"}, 
+            React.createElement("h1", null, "Welcome to Yang Fan Enrollment System!"), 
+            React.createElement("hr", null), 
+            React.createElement("h1", null, "Please  ", 
+              React.createElement("a", {href: "/login", className: "btn btn-success btn-lg"}, "Log in"), 
+              "  or  ", 
+              React.createElement("a", {href: "/signup", className: "btn btn-primary btn-lg"}, "Sign up")
+            )
+            
           )
         )
       )
@@ -30588,7 +30601,7 @@ var PickupService = React.createClass({displayName: "PickupService",
           pickupService.push(
             React.createElement("tr", {key: j}, 
               React.createElement("td", {className: "cell"}, 
-                YFStore.getPickup(j-1) === 'true' ? 
+                YFStore.getPickup(j-1) ? 
                   React.createElement("input", {type: "checkbox", ref: j, value: j-1, onChange: self.changePickup, defaultChecked: true}) :
                   React.createElement("input", {type: "checkbox", ref: j, value: j-1, onChange: self.changePickup})
               ), 
@@ -30746,7 +30759,7 @@ var LunchBox = React.createClass({displayName: "LunchBox",
           lunches.push(
             React.createElement("tr", {key: j}, 
               React.createElement("td", {className: "cell"}, 
-                (YFStore.getLunch(j) === 'true' || self.state.allSelectedWeeks[j-1].selected) ? 
+                (YFStore.getLunch(j) || self.state.allSelectedWeeks[j-1].selected) ? 
                   React.createElement("label", null, 
                     React.createElement("input", {type: "checkbox", onChange: self.selectWholeWeek, ref: weekRef, value: j, defaultChecked: true}), " ", React.createElement("span", {className: "bg-warning"}, "The whole week selected")
                   )
@@ -30754,31 +30767,31 @@ var LunchBox = React.createClass({displayName: "LunchBox",
               ), 
               React.createElement("td", null, "week_", j, " (", week.coveredDate, ")"), 
               React.createElement("td", {className: "cell"}, week.attendingDays.indexOf('Mon') > -1 ? 
-                (YFStore.getLunch(refs[0]) === 'true' ? 
+                (YFStore.getLunch(refs[0]) ? 
                   React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[0], defaultChecked: true}) :
                   React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[0]}) )
                 : React.createElement("span", null, "Absent")
               ), 
               React.createElement("td", {className: "cell"}, week.attendingDays.indexOf('Tue') > -1 ? 
-                (YFStore.getLunch(refs[1]) === 'true' ? 
+                (YFStore.getLunch(refs[1]) ? 
                   React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[1], defaultChecked: true}) :
                   React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[1]}) )
                 : React.createElement("span", null, "Absent")
               ), 
               React.createElement("td", {className: "cell"}, week.attendingDays.indexOf('Wed') > -1 ? 
-                (YFStore.getLunch(refs[2]) === 'true' ? 
+                (YFStore.getLunch(refs[2]) ? 
                   React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[2], defaultChecked: true}) :
                   React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[2]}) )
                 : React.createElement("span", null, "Absent")
               ), 
               React.createElement("td", {className: "cell"}, week.attendingDays.indexOf('Thu') > -1 ? 
-                (YFStore.getLunch(refs[3]) === 'true' ? 
+                (YFStore.getLunch(refs[3]) ? 
                   React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[3], defaultChecked: true}) :
                   React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[3]}) ) 
                 : React.createElement("span", null, "Absent")
               ), 
               React.createElement("td", {className: "cell"}, week.attendingDays.indexOf('Fri') > -1 ? 
-                (YFStore.getLunch(refs[4]) === 'true' ? 
+                (YFStore.getLunch(refs[4]) ? 
                   React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[4], defaultChecked: true}) :
                   React.createElement("input", {type: "checkbox", onChange: self.changeLunch, value: refs[4]}) )
                 : React.createElement("span", null, "Absent")
@@ -30863,7 +30876,7 @@ var MorningCare = React.createClass({displayName: "MorningCare",
                 ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
-                    (!YFStore.getMorningCare() || YFStore.getMorningCare() === 'none') ? 
+                    (YFStore.getMorningCare() === 'none') ? 
                     React.createElement("input", {type: "radio", name: "morningCare", onChange: this.changeCare, value: "none", defaultChecked: true}) :
                     React.createElement("input", {type: "radio", name: "morningCare", onChange: this.changeCare, value: "none"}), 
                     "No, I don't need the extended care. Thanks."
@@ -30891,12 +30904,12 @@ var MovieBox = React.createClass({displayName: "MovieBox",
     var absent;
     if(this.props.summerCampWeeks.length === 10){
       for(var j = 1; j < (len+1); j++) {
-        absent = this.props.summerCampWeeks[j-1].schedulePattern === "absence";
+        absent = (this.props.summerCampWeeks[j-1].schedulePattern === "absence") || (this.props.summerCampWeeks[j-1].attendingDays.indexOf('Tue') === -1);
         if(!absent){
           summerMovies.push(
             React.createElement("tr", {key: j}, 
               React.createElement("td", {className: "cell"}, 
-                YFStore.getWeeklyMovie(j-1) === 'true' ? 
+                YFStore.getWeeklyMovie(j-1) ? 
                   React.createElement("input", {type: "checkbox", ref: j, value: j-1, onChange: self.changeMovie, defaultChecked: true}) :
                   React.createElement("input", {type: "checkbox", ref: j, value: j-1, onChange: self.changeMovie})
               ), 
@@ -31078,23 +31091,23 @@ var Signup = React.createClass({displayName: "Signup",
 			React.createElement("form", {className: "col-md-6 col-md-offset-3", onSubmit: this.handleSubmit}, 
 			  React.createElement("div", {className: "form-group"}, 
 			    React.createElement("label", {htmlFor: "email"}, "Email address"), 
-			    React.createElement("input", {type: "email", className: "form-control", ref: "email", placeholder: "Email"})
+			    React.createElement("input", {type: "email", required: true, className: "form-control", ref: "email", placeholder: "Email"})
 			  ), 
 			  React.createElement("div", {className: "form-group"}, 
 			    React.createElement("label", {htmlFor: "password"}, "Password"), 
-			    React.createElement("input", {type: "password", className: "form-control", ref: "password", placeholder: "Password"}), React.createElement("br", null), 
-			    React.createElement("input", {type: "password", className: "form-control", ref: "password2", placeholder: "Confirm Password"})
+			    React.createElement("input", {type: "password", required: true, pattern: ".{6}", className: "form-control", ref: "password", placeholder: "At least 6 characters"}), React.createElement("br", null), 
+			    React.createElement("input", {type: "password", required: true, pattern: ".{6}", className: "form-control", ref: "password2", placeholder: "At least 6 characters"})
 			  ), 
 			  React.createElement("div", {className: "form-group"}, 
 			    React.createElement("label", {htmlFor: "phoneNumber"}, "Phone Number"), 
-					React.createElement("input", {type: "text", className: "form-control", ref: "phoneNumber", placeholder: "Please enter numbers only. e.g. 9998887777"})
+					React.createElement("input", {type: "text", required: true, className: "form-control", ref: "phoneNumber", placeholder: "Please enter numbers only. e.g. 9998887777"})
 			  ), 
 			  React.createElement("div", {className: "form-group"}, 
         	React.createElement("legend", null, "Student Information"), 
         	React.createElement(StudentBox, {ref: "student1"}), React.createElement("hr", null), 
         	React.createElement(StudentBox, {ref: "student2"})
         ), 
-			  /*<ParentBox /><br></br>*/
+
         React.createElement("hr", null), 
        	React.createElement("span", {className: "help-block"}, "Help Block..."), 
 			  React.createElement("button", {type: "submit", className: "btn btn-primary"}, "Sign up")
@@ -31306,7 +31319,7 @@ var SummerAgreements = React.createClass({displayName: "SummerAgreements",
   },
   handleContinue: function(e) {
     YFActions.saveSummerAgreements();
-    this.transitionTo('summer/writing_class');
+    this.transitionTo('summer/confirm');
   },
 
   render: function () {
@@ -33205,29 +33218,32 @@ var YFApp = React.createClass({displayName: "YFApp",
     return (
       React.createElement("div", null, 
         React.createElement(SideMenu, null), 
-        React.createElement("nav", {className: "navbar navbar-default navbar-fixed-top"}, 
-          React.createElement("div", {className: "container"}, 
-            React.createElement("div", {className: "navbar-header"}, 
-              React.createElement("button", {type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#navbar", "aria-expanded": "false", "aria-controls": "navbar"}, 
-                React.createElement("span", {className: "sr-only"}, "Toggle navigation"), 
-                React.createElement("span", {className: "icon-bar"}), 
-                React.createElement("span", {className: "icon-bar"}), 
-                React.createElement("span", {className: "icon-bar"})
-              ), 
-              React.createElement("a", {className: "navbar-brand", href: "/"}, React.createElement("h4", null, "YangFan Enrollment"))
-            ), 
 
-            React.createElement("div", {id: "navbar", className: "navbar-collapse collapse"}, 
-              React.createElement("form", {className: "navbar-form navbar-right"}, 
-              this.state.loggedIn ? React.createElement("a", {href: "/", className: "btn btn-danger"}, "Log out") : React.createElement("a", {href: "/login", className: "btn btn-success"}, "Log in"), 
-                "   ", 
-                React.createElement("a", {href: "/signup", className: "btn btn-primary"}, "Sign up")
+        React.createElement("div", {className: "main-content"}, 
+          React.createElement("nav", {className: "navbar navbar-default navbar-fixed-top"}, 
+            React.createElement("div", {className: "container"}, 
+              React.createElement("div", {className: "navbar-header"}, 
+                React.createElement("button", {type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#navbar", "aria-expanded": "false", "aria-controls": "navbar"}, 
+                  React.createElement("span", {className: "sr-only"}, "Toggle navigation"), 
+                  React.createElement("span", {className: "icon-bar"}), 
+                  React.createElement("span", {className: "icon-bar"}), 
+                  React.createElement("span", {className: "icon-bar"})
+                ), 
+                React.createElement("a", {className: "navbar-brand", href: "/"}, React.createElement("h4", null, "YangFan Enrollment"))
+              ), 
+
+              React.createElement("div", {className: "navbar-collapse collapse"}, 
+                React.createElement("form", {className: "navbar-form navbar-right"}, 
+                this.state.loggedIn ? 
+                  React.createElement("a", {href: "/", className: "btn btn-danger"}, "Log out", 
+                    React.createElement("span", null, React.createElement("strong", null, " (", this.state.user.email, ")"))
+                  )
+                  : React.createElement("p", null)
+                )
               )
             )
-          )
-        ), 
-        React.createElement("div", {className: "main-content"}, 
-         
+          ), 
+          
           React.createElement("div", null, 
             React.createElement(RouteHandler, null)
           )
@@ -33422,7 +33438,8 @@ module.exports = keyMirror({
   YF_SAVE_SUMMER_AFTERNOON_ACADEMICS: null,
   YF_LOAD_ENROLLMENT: null,
   YF_SAVE_SUMMER_WEEK: null,
-  YF_SAVE_SUMMER_OTHER_SERVICES: null
+  YF_SAVE_SUMMER_OTHER_SERVICES: null,
+  YF_SAVE_SUMMER_AGREEMENTS: null
 });
 
 },{"keymirror":19}],252:[function(require,module,exports){
@@ -33638,6 +33655,66 @@ function insertIntoLine(timeline, timeObj) {
   return { conflict: false };
 };
 
+function saveSummerOtherServices(enrollmentId) {
+  var weeklyMovies = [], pickups = [];
+  var morningCare = YFStore.getMorningCare();
+  var lunch = [
+    { days: [] },
+    { days: [] },
+    { days: [] },
+    { days: [] },
+    { days: [] },
+    { days: [] },
+    { days: [] },
+    { days: [] },
+    { days: [] },
+    { days: [] }
+  ];
+  for(var j = 0; j < 10; j++){
+    weeklyMovies.push(
+      YFStore.getWeeklyMovie(j)
+    );
+    pickups.push(
+      YFStore.getPickup(j)
+    );
+    if(YFStore.getLunch(j+1)) {
+      lunch[j].days = summerCampWeeks[j].attendingDays;
+    } else {
+      var x = j + 1;
+      var refs = [x+'Mon', x+'Tue', x+'Wed', x+'Thu', x+'Fri'];
+      var weekdays = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'];
+      for(var p = 0; p < refs.length; p++){
+        if(YFStore.getLunch(refs[p])){
+          lunch[j].days.push(weekdays[p]);
+        }
+      }
+    }
+  }
+
+  var data = {
+    weeklyMovies: weeklyMovies,
+    morningCare: morningCare,
+    lunch: lunch,
+    pickups: pickups
+  };
+
+  var url = '/api/users/summer/other_services/' + enrollmentId;
+  request
+  .put(url)
+  .send(data)
+  .accept('application/json')
+  .end(function(err, res){
+    if(err) { return console.error(err); }
+  });
+}
+
+function saveSummerAgreements(enrollmentId) {
+  var url = '/api/users/summer/agreements/' + enrollmentId;
+  var data = {
+    
+  };
+} 
+
 var YFStore = assign({}, EventEmitter.prototype, {
   getStateFromStorage: function() {
     loggedIn = sessionStorage.getItem('loggedIn') || false;
@@ -33813,7 +33890,8 @@ var YFStore = assign({}, EventEmitter.prototype, {
   },
   getWeeklyMovie(weekIdx){
     var key = weekIdx + 'movie';
-    return sessionStorage.getItem(key); //'true', 'false', null
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
   },
   setMorningCare(v){
     var key = 'morningCare';
@@ -33821,7 +33899,8 @@ var YFStore = assign({}, EventEmitter.prototype, {
   },
   getMorningCare(){
     var key = 'morningCare';
-    return sessionStorage.getItem(key); //'oneHour', 'halfHour', 'none'
+    //'oneHour', 'halfHour', 'none'
+    return sessionStorage.getItem(key) ? sessionStorage.getItem(key) : 'none'; 
   },
   setLunch(ref, v){
     var key = ref + 'lunch';
@@ -33829,7 +33908,8 @@ var YFStore = assign({}, EventEmitter.prototype, {
   },
   getLunch(ref){
     var key = ref + 'lunch';
-    return sessionStorage.getItem(key); 
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false;  
   },
   setCanPickup(v){
     var key = 'canPickup';
@@ -33855,7 +33935,8 @@ var YFStore = assign({}, EventEmitter.prototype, {
   },
   getPickup(weekIdx){
     var key = weekIdx + 'pickup';
-    return sessionStorage.getItem(key); 
+    if(sessionStorage.getItem(key) === 'true') { return true; }
+    return false; 
   },  
   setSwimPermit(v){
     var key = 'swimPermit';
@@ -34043,7 +34124,15 @@ AppDispatcher.register(function(action) {
       weekObj = getWeekEnrollIdxes(grade, week, weekIdx);
       saveSummerWeek(enrollmentId, grade, week, weekIdx, weekObj);
       break;
-  
+    case YFConstants.YF_SAVE_SUMMER_OTHER_SERVICES:
+      enrollmentId = sessionStorage.getItem('enrollmentId');
+      saveSummerOtherServices(enrollmentId);
+      break;
+    case YFConstants.YF_SAVE_SUMMER_AGREEMENTS:
+      enrollmentId = sessionStorage.getItem('enrollmentId');
+      saveSummerAgreements(enrollmentId);
+      break;
+
     default:
       return;
   }
