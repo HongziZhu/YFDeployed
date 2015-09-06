@@ -30097,9 +30097,11 @@ var GetStarted = React.createClass({displayName: "GetStarted",
           handleChange: this.handleSelectGrade, 
           showContinue: this.showContinue}) : React.createElement("p", null), 
 
-        this.state.showContinue ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue"), 
-            
-        React.createElement("footer", {className: "main-footer sticky footer-type-1", style: {}}, 
+        this.state.showContinue ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+
+        )
+      ), 
+            React.createElement("footer", {className: "main-footer sticky footer-type-1", style: {}}, 
         React.createElement("div", {className: "footer-inner"}, 
           /* Add your copyright text here */
           React.createElement("div", {className: "footer-text"}, 
@@ -30112,9 +30114,6 @@ var GetStarted = React.createClass({displayName: "GetStarted",
               React.createElement("i", {className: "fa-angle-up"})
             )
           )
-        )
-      )
-            
         )
       )
           )

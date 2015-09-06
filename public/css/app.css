@@ -140,7 +140,6 @@ body {
     bottom: 0;
     width: inherit;
     overflow: hidden;
-    background: #2c2e2f;
 }
 .sidebar-menu .main-menu {
     padding-left: 40px;
@@ -180,13 +179,13 @@ body {
     table-layout: fixed;
 }
 .page-container .main-content {
-    display: table-cell;
     position: relative;
     z-index: 1;
     padding: 30px;
     padding-bottom: 0;
     vertical-align: top;
     word-break: break-word;
+    min-height: calc(100vh - 102px);
 }
 
 
@@ -198,10 +197,10 @@ footer.main-footer {
     padding: 20px 30px;
     border-top: 1px solid #dddddd;
     font-size: 12px;
-    margin-left: -30px;
     margin-right: -30px;
     margin-top: 10px;
     background-color: #eeeeee;
+    left: 80px;
 
 }
 footer.main-footer .footer-text {

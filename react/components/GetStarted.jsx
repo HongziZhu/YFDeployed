@@ -170,8 +170,10 @@ var GetStarted = React.createClass({
           showContinue={this.showContinue} /> : <p></p> }
 
         {this.state.showContinue ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
-            
-        <footer className="main-footer sticky footer-type-1" style={{}}>
+
+        </div>
+      </div>
+            <footer className="main-footer sticky footer-type-1" style={{}}>
         <div className="footer-inner">
           {/* Add your copyright text here */}
           <div className="footer-text">
@@ -186,9 +188,6 @@ var GetStarted = React.createClass({
           </div>
         </div>
       </footer>
-            
-        </div>
-      </div>
           </div>
     );
   } 
