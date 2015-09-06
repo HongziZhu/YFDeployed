@@ -25,6 +25,7 @@ var Week7 = require('./Week7.jsx');
 var Week8 = require('./Week8.jsx');
 var Week9 = require('./Week9.jsx');
 var Week10 = require('./Week10.jsx');
+var ConfirmPage = require('./ConfirmPage.jsx');
 
 var routes = (
 	<Route handler={YFApp} >
@@ -49,6 +50,7 @@ var routes = (
 
 		<Route name='summer/other_services' path='user/summer/other_services' handler={OtherServices} />
 		<Route name='summer/agreements' path='user/summer/agreements' handler={SummerAgreements} />
+		<Route name='summer/confirm' path='user/summer/confirm' handler={ConfirmPage} />
 	</Route>
 );
 

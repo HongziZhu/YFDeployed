@@ -128,10 +128,7 @@ var GetStarted = React.createClass({
     }
 
     return (
-      <div>
-      <SideMenu />
-      <div className='main-content'>
-      <div className="col-md-12">
+      <div className='col-md-offset-3 col-md-9'>
         <div className="panel panel-primary">
           <div className="panel-heading">
             <strong>Select the Program to Enroll</strong>
@@ -169,8 +166,6 @@ var GetStarted = React.createClass({
           showContinue={this.showContinue} /> : <p></p> }
 
         {this.state.showContinue ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
-        </div>
-      </div>
       </div>
     );
   } 

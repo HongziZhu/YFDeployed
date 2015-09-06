@@ -6,6 +6,8 @@ var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
 var YFStore = require('../stores/YFStore.jsx');
 
+var SideMenu = require('./helpers/SideMenu.jsx');
+
 /** Tips: We often pass the entire state of the store down the chain of views in a single object, allowing different descendants to use what they need.
 **/
 var YFApp = React.createClass({
@@ -28,6 +30,7 @@ var YFApp = React.createClass({
   render: function() {
     return (
       <div>
+        <SideMenu />
         <nav className="navbar navbar-default navbar-fixed-top">
           <div className='container'>
             <div className="navbar-header">
@@ -49,9 +52,11 @@ var YFApp = React.createClass({
             </div>
           </div>
         </nav>
-
-        <div>
-          <RouteHandler />
+        <div className="main-content">
+         
+          <div>
+            <RouteHandler />
+          </div>
         </div>
       </div>
     );
