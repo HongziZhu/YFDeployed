@@ -30137,12 +30137,63 @@ var Home = React.createClass({displayName: "Home",
     //5. a single element to contain the render stuff
     return (
       React.createElement("div", {className: "page-container"}, 
-        React.createElement(SideMenu, null), 
         React.createElement("div", {className: "col-md-12"}, 
           React.createElement("div", {className: "lead"}, 
             "Welcome to YangFan Enrollment System!"  
-          )
-          
+          ), 
+          React.createElement("div", null, 
+        React.createElement("table", {className: "dataintable", border: 0, cellPadding: 0, cellSpacing: 0}, 
+          React.createElement("tbody", null, 
+            React.createElement("tr", {className: "days"}, 
+              React.createElement("th", null), 
+              React.createElement("th", null, "Monday"), 
+              React.createElement("th", null, "Tuesday"), 
+              React.createElement("th", null, "Wednesday"), 
+              React.createElement("th", null, "Thursday"), 
+              React.createElement("th", null, "Friday")
+            ), 
+            React.createElement("tr", null, 
+              React.createElement("th", {className: "time"}, "8:00 AM ", React.createElement("br", null), "-", React.createElement("br", null), " 12:30 PM"), 
+              React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity"), 
+              React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity"), 
+              React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity"), 
+              React.createElement("td", null), 
+              React.createElement("td", null)
+            ), 
+            React.createElement("tr", null, 
+              React.createElement("th", {className: "time"}), 
+              React.createElement("td", null), 
+              React.createElement("td", {className: "movie orange"}, "Movie Trip"), 
+              React.createElement("td", null), 
+              React.createElement("td", null), 
+              React.createElement("td", null)
+            ), 
+            React.createElement("tr", null, 
+              React.createElement("th", {className: "time"}, "1:00 PM ", React.createElement("br", null), "-", React.createElement("br", null), " 6:30 PM"), 
+              React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity"), 
+              React.createElement("td", {className: "afternoon-academics green"}, "Academics"), 
+              React.createElement("td", {className: "afternoon-academics green"}, "Academics"), 
+              React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity"), 
+              React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity")
+            ), 
+            React.createElement("tr", null, 
+              React.createElement("th", {className: "time"}), 
+              React.createElement("td", {className: "afternoon-academics green"}, "Academics"), 
+              React.createElement("td", {className: "writing-electives red"}, "Writing Elective Classes"), 
+              React.createElement("td", {className: "gate-electives purple"}, "GATE Elective Classes"), 
+              React.createElement("td", {className: "afternoon-academics green"}, "Academics"), 
+              React.createElement("td", null)
+            ), 
+            React.createElement("tr", null, 
+              React.createElement("th", {className: "time"}), 
+              React.createElement("td", {className: "gate-electives purple"}, "GATE Elective Classes"), 
+              React.createElement("td", null), 
+              React.createElement("td", {className: "math-electives brown"}, "Math Elective Classes"), 
+              React.createElement("td", null), 
+              React.createElement("td", null)
+            )
+          ))
+      )
                 
         ), 
 React.createElement("footer", {className: "main-footer sticky footer-type-1"}, 

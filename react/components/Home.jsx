@@ -11,12 +11,63 @@ var Home = React.createClass({
     //5. a single element to contain the render stuff
     return (
       <div className="page-container">
-        <SideMenu />
         <div className="col-md-12">
           <div className="lead">
             Welcome to YangFan Enrollment System!  
           </div>
-          
+          <div>
+        <table className="dataintable" border={0} cellPadding={0} cellSpacing={0}>
+          <tbody>
+            <tr className="days">
+              <th />
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+            </tr>
+            <tr>
+              <th className="time">8:00 AM <br />-<br /> 12:30 PM</th>
+              <td className="enrichment-activity blue">Enrichment Activity</td>
+              <td className="enrichment-activity blue">Enrichment Activity</td>
+              <td className="enrichment-activity blue">Enrichment Activity</td>
+              <td />
+              <td />
+            </tr>
+            <tr>
+              <th className="time" />
+              <td />
+              <td className="movie orange">Movie Trip</td>
+              <td />
+              <td />
+              <td />
+            </tr>
+            <tr>
+              <th className="time">1:00 PM <br />-<br /> 6:30 PM</th>
+              <td className="enrichment-activity blue">Enrichment Activity</td>
+              <td className="afternoon-academics green">Academics</td>
+              <td className="afternoon-academics green">Academics</td>
+              <td className="enrichment-activity blue">Enrichment Activity</td>
+              <td className="enrichment-activity blue">Enrichment Activity</td>
+            </tr>
+            <tr>
+              <th className="time" />
+              <td className="afternoon-academics green">Academics</td>
+              <td className="writing-electives red">Writing Elective Classes</td>
+              <td className="gate-electives purple">GATE Elective Classes</td>
+              <td className="afternoon-academics green">Academics</td>
+              <td />
+            </tr>
+            <tr>
+              <th className="time" />
+              <td className="gate-electives purple">GATE Elective Classes</td>
+              <td />
+              <td className="math-electives brown">Math Elective Classes</td>
+              <td />
+              <td />
+            </tr>
+          </tbody></table>
+      </div>
                 
         </div>
 <footer className="main-footer sticky footer-type-1">
