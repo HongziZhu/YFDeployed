@@ -32,6 +32,11 @@ router.post('/session', passport.authenticate('local'), function (req, res){
 	}
 });
 
+router.get('/logout', function (req, res) {
+	req.logout();
+	res.json({ success: true });
+});
+
 router.get('/:id', function (req, res) {
 	res.json(req.user);
 });

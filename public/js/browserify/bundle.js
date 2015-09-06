@@ -28652,6 +28652,12 @@ var YFActions = {
     });
   },
 
+  logout: function() {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_LOGOUT
+    });
+  },
+
   findStudentsById: function() {
     AppDispatcher.dispatch({
       actionType: YFConstants.YF_LOAD_STUDENTS,
@@ -29012,7 +29018,7 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
 
   render: function () {
     var self = this;
-    var info = (self.state.showInfo ? React.createElement("span", {className: "bg-success"}, self.state.language, " is chosed. If you want to change, please choose another and submit again. Then please click Continue below") : React.createElement("p", null));
+    var info = (self.state.showInfo ? React.createElement("h4", null, React.createElement("span", {className: "bg-success"}, self.state.language, " is chosed. If you want to change, please choose another and submit again. Then please click Continue below")) : React.createElement("p", null));
     return (
       React.createElement("div", {className: "page-container"}, 
       React.createElement(SideMenu, null), 
@@ -29084,12 +29090,12 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
 
         React.createElement("div", {className: "row"}, 
           React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"), React.createElement("br", null), 
+            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"), React.createElement("br", null), 
             info
           )
         ), 
-        this.state.done ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : 
-          React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+        this.state.done ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : 
+          React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
       )
       )
     );
@@ -29433,7 +29439,7 @@ var Attendance = React.createClass({displayName: "Attendance",
       }
     });
 
-    var continueHelper = this.state.allScheduled ? (React.createElement("span", {className: "bg-success"}, "All summer weeks have been scheduled, please click Continue button below.")) : React.createElement("p", null);
+    var continueHelper = this.state.allScheduled ? (React.createElement("h4", null, React.createElement("span", {className: "bg-success"}, "All summer weeks have been scheduled, please click Continue button below."))) : React.createElement("p", null);
     
     return (
       React.createElement("div", {className: "page-container"}, 
@@ -29551,7 +29557,7 @@ var Attendance = React.createClass({displayName: "Attendance",
               )
             )
           ), 
-          this.state.allScheduled ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+          this.state.allScheduled ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
       )
@@ -31104,39 +31110,59 @@ var request = require('superagent');
 var Formsy = require('formsy-react');
 
 var Signup = React.createClass({displayName: "Signup",
+  mixins: [ Navigation ],
 	getInitialState: function() {
-		return { canSubmit: false };
+		return { 
+      done: false,
+      studentsNum: 1
+    };
 	},
-	enableButton: function() {
-		this.setState({
-			canSubmit: true
-		});
-	},
-	disableButton: function() {
-		this.setState({
-			canSubmit: false
-		});
-	},
-	handleSubmit: function(e) {
+  addStudent: function(e) {
+    e.preventDefault();
+    var self = this;
+    var s = this.state.studentsNum + 1;
+    this.setState({ studentsNum: s });
+  },
+  handleConfirm: function(e) {
+    e.preventDefault();
+    var password = React.findDOMNode(this.refs.password).value;
+    var password2 = React.findDOMNode(this.refs.password2).value;
+    if(password !== password2){
+      alert('Passwords Not Match!');
+      React.findDOMNode(this.refs.password).focus();
+    } else {
+      this.setState({ done: true });
+    }
+    React.findDOMNode(this.refs.confirmButton).blur();
+  },
+
+	handleSignup: function(e) {
 		e.preventDefault();
 		var password = React.findDOMNode(this.refs.password).value;
 		var password2 = React.findDOMNode(this.refs.password2).value;
-		var student1 = this.refs.student1, student2 = this.refs.student2;
+		var student2 = this.refs.student2;
+    var stuRefs = [
+      this.refs.student1,
+      this.refs.student2,
+      this.refs.student3,
+      this.refs.student4,
+      this.refs.student5,
+      this.refs.student6,
+      this.refs.student7,
+      this.refs.student8
+    ];
 		var students = [];
+    var stuRef;
 		if(password === password2){
-			students.push({
-				firstName: React.findDOMNode(student1.refs.stu_fname).value.trim(),
-				lastName: React.findDOMNode(student1.refs.stu_lname).value.trim(),
-				birtyday: React.findDOMNode(student1.refs.stu_month).value + '/' + React.findDOMNode(student1.refs.stu_day).value + '/' + React.findDOMNode(student1.refs.stu_year).value,
-				gender: React.findDOMNode(student1.refs.stu_male).checked ? 'male' : 'female'
-			});
-
-			students.push({
-				firstName: React.findDOMNode(student2.refs.stu_fname).value.trim(),
-				lastName: React.findDOMNode(student2.refs.stu_lname).value.trim(),
-				birtyday: React.findDOMNode(student2.refs.stu_month).value + '/' + React.findDOMNode(student2.refs.stu_day).value + '/' + React.findDOMNode(student2.refs.stu_year).value,
-				gender: React.findDOMNode(student2.refs.stu_male).checked ? 'male' : 'female'
-			});
+      for(var j = 0; j < this.state.studentsNum; j++){
+        stuRef = stuRefs[j];
+        students.push({
+          firstName: React.findDOMNode(stuRef.refs.stu_fname).value.trim(),
+          lastName: React.findDOMNode(stuRef.refs.stu_lname).value.trim(),
+          birtyday: React.findDOMNode(stuRef.refs.stu_month).value + '/' + React.findDOMNode(stuRef.refs.stu_day).value + '/' + React.findDOMNode(stuRef.refs.stu_year).value,
+          gender: React.findDOMNode(stuRef.refs.stu_male).checked ? 'male' : 'female'
+        });
+      }
 
 			var body = {
 				students: students,
@@ -31145,42 +31171,105 @@ var Signup = React.createClass({displayName: "Signup",
 				password: React.findDOMNode(this.refs.password).value
 			}
 			YFActions.createUser(body);
-			React.findDOMNode(this.refs.email).value = '';
-			React.findDOMNode(this.refs.phoneNumber).value = '';
-			React.findDOMNode(this.refs.password).value = '';
-			React.findDOMNode(this.refs.password2).value = '';
-
+      this.transitionTo('home');
 		} else {
 			alert('Passwords Not Match!');
 			React.findDOMNode(this.refs.password).focus();
 		}
 	},
 	render: function() {
-		return (
-			React.createElement("form", {className: "col-md-6 col-md-offset-3", onSubmit: this.handleSubmit}, 
-			  React.createElement("div", {className: "form-group"}, 
-			    React.createElement("label", {htmlFor: "email"}, "Email address"), 
-			    React.createElement("input", {type: "email", required: true, className: "form-control", ref: "email", placeholder: "Email"})
-			  ), 
-			  React.createElement("div", {className: "form-group"}, 
-			    React.createElement("label", {htmlFor: "password"}, "Password"), 
-			    React.createElement("input", {type: "password", required: true, pattern: ".{6}", className: "form-control", ref: "password", placeholder: "At least 6 characters"}), React.createElement("br", null), 
-			    React.createElement("input", {type: "password", required: true, pattern: ".{6}", className: "form-control", ref: "password2", placeholder: "At least 6 characters"})
-			  ), 
-			  React.createElement("div", {className: "form-group"}, 
-			    React.createElement("label", {htmlFor: "phoneNumber"}, "Phone Number"), 
-					React.createElement("input", {type: "text", required: true, className: "form-control", ref: "phoneNumber", placeholder: "Please enter numbers only. e.g. 9998887777"})
-			  ), 
-			  React.createElement("div", {className: "form-group"}, 
-        	React.createElement("legend", null, "Student Information"), 
-        	React.createElement(StudentBox, {ref: "student1"}), React.createElement("hr", null), 
-        	React.createElement(StudentBox, {ref: "student2"})
-        ), 
+    var SignupButton = (
+      this.state.done ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleSignup}, "Sign Up") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", disabled: true}, "Sign Up")
+    );
+    var Student2 = (
+      this.state.studentsNum >= 2 ? React.createElement(StudentBox, {ref: "student2", stuIdx: "2"}) : React.createElement("p", null)
+    );
+    var Student3 = (
+      this.state.studentsNum >= 3 ? React.createElement(StudentBox, {ref: "student3", stuIdx: "3"}) : React.createElement("p", null)
+    );
+    var Student4 = (
+      this.state.studentsNum >= 4 ? React.createElement(StudentBox, {ref: "student4", stuIdx: "4"}) : React.createElement("p", null)
+    );
+    var Student5 = (
+      this.state.studentsNum >= 5 ? React.createElement(StudentBox, {ref: "student5", stuIdx: "5"}) : React.createElement("p", null)
+    );
+    var Student6 = (
+      this.state.studentsNum >= 6 ? React.createElement(StudentBox, {ref: "student6", stuIdx: "6"}) : React.createElement("p", null)
+    );
+    var Student7 = (
+      this.state.studentsNum >= 7 ? React.createElement(StudentBox, {ref: "student7", stuIdx: "7"}) : React.createElement("p", null)
+    );
+    var Student8 = (
+      this.state.studentsNum >= 8 ? React.createElement(StudentBox, {ref: "student8", stuIdx: "8"}) : React.createElement("p", null)
+    );
+    var HelpBlock = (
+      this.state.done ? React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "Information has been validated, please click Sign Up below.")) : React.createElement("p", null)
+    );
 
+		return (
+      React.createElement("div", {className: "col-md-8 col-md-offset-2"}, 
         React.createElement("hr", null), 
-       	React.createElement("span", {className: "help-block"}, "Help Block..."), 
-			  React.createElement("button", {type: "submit", className: "btn btn-primary"}, "Sign up")
-			)
+        React.createElement("div", {className: " panel panel-primary"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              React.createElement("h3", null, "Sign up")
+            )
+          ), 
+
+          React.createElement("div", {className: "panel-body"}, 
+            React.createElement("div", {className: "row"}, 
+              React.createElement("div", null, 
+                React.createElement("form", {className: "col-md-10 col-md-offset-1", onSubmit: this.handleConfirm}, 
+                  React.createElement("div", {className: "form-group"}, 
+                    React.createElement("label", {htmlFor: "email"}, "Email address"), 
+                    React.createElement("input", {type: "email", required: true, className: "form-control", ref: "email", placeholder: "Email"})
+                  ), 
+                  React.createElement("div", {className: "form-group"}, 
+                    React.createElement("label", {htmlFor: "password"}, "Password"), 
+                    React.createElement("input", {type: "password", required: true, pattern: ".{6}", className: "form-control", ref: "password", placeholder: "At least 6 characters"}), React.createElement("br", null), 
+                    React.createElement("input", {type: "password", required: true, pattern: ".{6}", className: "form-control", ref: "password2", placeholder: "At least 6 characters"})
+                  ), 
+                  React.createElement("div", {className: "form-group"}, 
+                    React.createElement("label", {htmlFor: "phoneNumber"}, "Phone Number"), 
+                    React.createElement("input", {type: "text", required: true, className: "form-control", ref: "phoneNumber", placeholder: "Please enter numbers only. e.g. 9998887777"})
+                  ), 
+                  React.createElement("div", {className: "form-group"}, 
+                    React.createElement("div", {className: "panel panel-success"}, 
+                      React.createElement("div", {className: "panel-heading"}, 
+                        React.createElement("div", {className: "panel-title"}, 
+                          React.createElement("h3", null, "Student(s) Information")
+                        )
+                      ), 
+
+                      React.createElement("div", {className: "panel-body"}, 
+                        React.createElement("div", {className: "row"}, 
+                          React.createElement(StudentBox, {ref: "student1", stuIdx: "1"}), 
+                          Student2, 
+                          Student3, 
+                          Student4, 
+                          Student5, 
+                          Student6, 
+                          Student7, 
+                          Student8, 
+                          React.createElement("div", {className: "col-md-10 col-md-offset-1"}, 
+                            React.createElement("button", {onClick: this.addStudent, className: "btn btn-info"}, "+ Add Student")
+                          )
+                        )
+                      )
+                    )
+                  ), 
+
+                  React.createElement("hr", null), 
+                  HelpBlock, 
+                  React.createElement("button", {type: "submit", ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm")
+                )
+              ), React.createElement("hr", null)
+            )
+          )
+        ), 
+        SignupButton
+      )
+			
 		);
 	}
 });
@@ -31188,14 +31277,14 @@ var Signup = React.createClass({displayName: "Signup",
 var StudentBox = React.createClass({displayName: "StudentBox",
 	render: function() {
 		return (
-				React.createElement("div", null, 
+  			React.createElement("div", {className: "col-md-10 col-md-offset-1"}, 
      			React.createElement("label", null, "Full Name"), 
           React.createElement("div", {className: "row"}, 
             React.createElement("div", {className: "col-xs-6 col-md-6"}, 
-                React.createElement("input", {type: "text", className: "form-control", ref: "stu_fname", placeholder: "First Name"})
+                React.createElement("input", {type: "text", required: true, className: "form-control", ref: "stu_fname", placeholder: "First Name"})
             ), 
             React.createElement("div", {className: "col-xs-6 col-md-6"}, 
-                React.createElement("input", {type: "text", className: "form-control", ref: "stu_lname", placeholder: "Last Name"})
+                React.createElement("input", {type: "text", required: true, className: "form-control", ref: "stu_lname", placeholder: "Last Name"})
             )
           ), React.createElement("br", null), 
                          
@@ -31277,16 +31366,15 @@ var StudentBox = React.createClass({displayName: "StudentBox",
                       React.createElement("option", {value: "2013"}, "2015")
                   )
               )
-            ), React.createElement("br", null), 
+          ), React.createElement("br", null), 
 
-            React.createElement("div", {className: "row col-md-6"}, 
-                React.createElement("label", null, "Gender  "), 
-                React.createElement("label", {className: "radio-inline"}, 
-                React.createElement("input", {type: "radio", ref: "stu_male", value: "male"}), "Male"), 
-                React.createElement("label", {className: "radio-inline"}, 
-                React.createElement("input", {type: "radio", ref: "stu_female", value: "female"}), "Female")
-            )
-          )   
+          React.createElement("label", null, "Gender  "), 
+          React.createElement("label", {className: "radio-inline"}, 
+          React.createElement("input", {type: "radio", ref: "stu_male", name: this.props.stuIdx, value: "male"}), "Male"), 
+          React.createElement("label", {className: "radio-inline"}, 
+          React.createElement("input", {type: "radio", ref: "stu_female", name: this.props.stuIdx, value: "female"}), "Female"), 
+          React.createElement("hr", null)
+        )
 		);
 	}
 });
@@ -31858,7 +31946,7 @@ var Week1 = React.createClass({displayName: "Week1",
     }
     return (
       React.createElement("div", {className: "page-container"}, 
-        React.createElement(SideMenu, null), 
+        React.createElement(SideMenu, {curWeekIdx: curWeekIdx}), 
         React.createElement("div", {className: "main-content col-md-12"}, 
         React.createElement("h1", {className: "bg-success"}, curWeekTitle, "   (", coveredDate, ")"), React.createElement("hr", null), 
          show ? 
@@ -31874,12 +31962,12 @@ var Week1 = React.createClass({displayName: "Week1",
 
         React.createElement("div", {className: "row"}, 
           React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"
+            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"
             ), React.createElement("br", null)
           )
         ), 
 
-          this.state.done? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", disabled: true}, "Continue")
+          this.state.done? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", disabled: true}, "Continue")
         )
       )
     );
@@ -31973,12 +32061,12 @@ var Week10 = React.createClass({displayName: "Week10",
 
         React.createElement("div", {className: "row"}, 
           React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"
+            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"
             ), React.createElement("br", null)
           )
         ), 
 
-          this.state.done? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", disabled: true}, "Continue")
+          this.state.done? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", disabled: true}, "Continue")
         )
       )
     );
@@ -32139,11 +32227,11 @@ var Week2 = React.createClass({displayName: "Week2",
 
         React.createElement("div", {className: "row"}, 
           React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm")
+            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-lg btn-primary"}, "Confirm")
           )
         ), 
 
-        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-lg btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -32277,11 +32365,11 @@ var Week3 = React.createClass({displayName: "Week3",
           React.createElement("hr", null), 
           React.createElement("div", {className: "row"}, 
             React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"), "  ", React.createElement("br", null)
+              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"), "  ", React.createElement("br", null)
             )
           ), 
 
-          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -32442,11 +32530,11 @@ var Week4 = React.createClass({displayName: "Week4",
 
         React.createElement("div", {className: "row"}, 
           React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm")
+            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm")
           )
         ), 
 
-        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -32580,11 +32668,11 @@ var Week5 = React.createClass({displayName: "Week5",
           React.createElement("hr", null), 
           React.createElement("div", {className: "row"}, 
             React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"), "  ", React.createElement("br", null)
+              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"), "  ", React.createElement("br", null)
             )
           ), 
 
-          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -32745,11 +32833,11 @@ var Week6 = React.createClass({displayName: "Week6",
 
         React.createElement("div", {className: "row"}, 
           React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm")
+            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm")
           )
         ), 
 
-        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -32883,11 +32971,11 @@ var Week7 = React.createClass({displayName: "Week7",
           React.createElement("hr", null), 
           React.createElement("div", {className: "row"}, 
             React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"), "  ", React.createElement("br", null)
+              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"), "  ", React.createElement("br", null)
             )
           ), 
 
-          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -33048,11 +33136,11 @@ var Week8 = React.createClass({displayName: "Week8",
 
         React.createElement("div", {className: "row"}, 
           React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm")
+            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm")
           )
         ), 
 
-        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -33186,11 +33274,11 @@ var Week9 = React.createClass({displayName: "Week9",
           React.createElement("hr", null), 
           React.createElement("div", {className: "row"}, 
             React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary"}, "Confirm"), "  ", React.createElement("br", null)
+              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"), "  ", React.createElement("br", null)
             )
           ), 
 
-          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -33315,14 +33403,16 @@ var React = require('react');
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
+var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
 
 var Footer = require('./helpers/Footer.jsx');
 /** Tips: We often pass the entire state of the store down the chain of views in a single object, allowing different descendants to use what they need.
 **/
 var YFApp = React.createClass({displayName: "YFApp",
+  mixins: [ Navigation ],
   getInitialState: function() {
-    YFStore.getStateFromStorage();
+    YFStore.getUserFromStorage();
     return {
       user: YFStore.getUser(),
       loggedIn: YFStore.getLoggedIn()
@@ -33337,11 +33427,17 @@ var YFApp = React.createClass({displayName: "YFApp",
     YFStore.removeChangeListener(this._onChange);
   },
 
+  handleLogout: function(e) {
+    var self = this;
+    YFActions.logout();
+    self.transitionTo('home');
+  },
+
   render: function() {
     return (
       React.createElement("div", null, 
         React.createElement("nav", {className: "navbar navbar-default navbar-fixed-top"}, 
-          React.createElement("div", {className: "container"}, 
+          React.createElement("div", null, 
             React.createElement("div", {className: "navbar-header"}, 
               React.createElement("button", {type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#navbar", "aria-expanded": "false", "aria-controls": "navbar"}, 
                 React.createElement("span", {className: "sr-only"}, "Toggle navigation"), 
@@ -33355,7 +33451,7 @@ var YFApp = React.createClass({displayName: "YFApp",
             React.createElement("div", {className: "navbar-collapse collapse"}, 
               React.createElement("form", {className: "navbar-form navbar-right"}, 
               this.state.loggedIn ? 
-                React.createElement("a", {href: "/", className: "btn btn-danger"}, "Log out", 
+                React.createElement("button", {className: "btn btn-danger", onClick: this.handleLogout}, "Log out", 
                   React.createElement("span", null, React.createElement("strong", null, " (", this.state.user.email, ")"))
                 )
                 : React.createElement("p", null)
@@ -33378,7 +33474,7 @@ var YFApp = React.createClass({displayName: "YFApp",
 
 module.exports = YFApp;
 
-},{"../stores/YFStore.jsx":254,"./helpers/Footer.jsx":250,"react":214,"react-router":45}],249:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./helpers/Footer.jsx":250,"react":214,"react-router":45}],249:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -33516,6 +33612,69 @@ var SideMenu = React.createClass({displayName: "SideMenu",
     };
   },
   render: function () {
+    var self = this;
+    var ProgramName = (
+      (this.state.hightlight !== 'getStarted') ? 
+      React.createElement("li", null, 
+        React.createElement("a", null, 
+          React.createElement("h5", null, React.createElement("span", {className: "title"}, "Program Name: ", React.createElement("ins", null, YFStore.getProgramName())))
+        )
+      ) : React.createElement("p", null)
+    );
+    var StudentName = (
+      (this.state.hightlight !== 'getStarted') ? 
+       React.createElement("li", null, 
+        React.createElement("a", null, 
+          React.createElement("h5", null, React.createElement("span", {className: "title"}, "Student Name: ", React.createElement("ins", null, YFStore.getStudentFullName())))
+        )
+      ) : React.createElement("p", null)
+    );
+    var GradeLine = (
+      (this.state.hightlight !== 'getStarted' && this.state.hightlight !== 'attendence' && this.state.hightlight !== 'confirm' ) ? 
+      React.createElement("li", null, 
+        React.createElement("a", null, 
+          React.createElement("h5", null, React.createElement("span", {className: "title"}, "Incoming Grade: ", React.createElement("ins", null, YFStore.getIncomingGrade())))
+        )
+      ) : React.createElement("p", null)
+    );
+    // var curSummerWeek = YFStore.getSummerCampWeeks()[this.props.curWeekIdx];
+    // var schedule;
+
+    // switch(curSummerWeek.schedulePattern) {
+    //   case '5_full':
+    //     schedule = '5 full weekdays';
+    //     break;
+    //   case '5_morning':
+    //     schedule = '5 mornings / 8:00 AM-12:30 PM';
+    //     break;
+    //   case '5_afternoon':
+    //     schedule = '5 faternoons / 1:00 PM-6:30 PM';
+    //     break;
+    //   case '4_full':
+    //     schedule = '4 full days /';
+    //     for(var j = 0; j < curSummerWeek.attendingDays; j++) {
+    //       schedule += ' ' + curSummerWeek.attendingDays[j];
+    //     }
+    //     break;
+    //   case '3_full':
+    //     schedule = '3 full days /';
+    //     for(var j = 0; j < curSummerWeek.attendingDays; j++) {
+    //       schedule += ' ' + curSummerWeek.attendingDays[j];
+    //     }
+    //     break;
+    //   default:
+    //     return;
+    // }
+
+    // var ScheduleInWeek = (
+    //   (this.state.hightlight === 'summerCampWeeks') ? 
+    //   <li>
+    //     <a>
+    //       <h5><span className="title">Schedule: <ins>{schedule}</ins></span></h5>
+    //     </a>
+    //   </li> 
+    //   : <p></p>
+    // );
 
     return (
       React.createElement("div", {className: "sidebar-menu toggle-others fixed"}, 
@@ -33611,7 +33770,11 @@ var SideMenu = React.createClass({displayName: "SideMenu",
                 React.createElement("i", {className: "linecons-attach"}), 
                 React.createElement("span", {className: "title"}, "Confirmation")
               )
-            )
+            ), 
+            React.createElement("hr", null), 
+            ProgramName, 
+            StudentName, 
+            GradeLine
           )
         )
       )
@@ -33638,6 +33801,7 @@ var keyMirror = require('keymirror');
 module.exports = keyMirror({
   YF_CREATE_USER: null,
   YF_LOGIN: null,
+  YF_LOGOUT: null,
   YF_LOAD_STUDENTS: null,
   YF_SAVE_SUMMER_SCHEDULE: null,
   YF_SAVE_SUMMER_AFTERNOON_ACADEMICS: null,
@@ -33739,6 +33903,22 @@ function login(data, next) {
       sessionStorage.setItem('email', user.email);
     }
     next();
+  });
+}
+
+function logout(next) {
+  var url = '/api/users/logout';
+  request
+  .get(url)
+  .accept('application/json')
+  .end(function(err, res){
+    if(err) { return console.error(err); }
+    if(res.body.success){
+      sessionStorage.setItem('loggedIn', false);
+      sessionStorage.removeItem('userId');
+      sessionStorage.removeItem('email');
+      next();
+    }
   });
 }
 
@@ -33921,8 +34101,8 @@ function saveSummerAgreements(enrollmentId) {
 } 
 
 var YFStore = assign({}, EventEmitter.prototype, {
-  getStateFromStorage: function() {
-    loggedIn = sessionStorage.getItem('loggedIn') || false;
+  getUserFromStorage: function() {
+    loggedIn = sessionStorage.getItem('loggedIn') === 'true';
     if(loggedIn) {
       user._id = sessionStorage.getItem('userId');
       user.email = sessionStorage.getItem('email');
@@ -33935,7 +34115,7 @@ var YFStore = assign({}, EventEmitter.prototype, {
     return students;
   },
   getLoggedIn: function() {
-    return loggedIn;
+    return sessionStorage.getItem('loggedIn') === 'true' ? true : false;
   },
   getAuthError: function() {
     return authError;
@@ -33950,11 +34130,17 @@ var YFStore = assign({}, EventEmitter.prototype, {
     authError = false;
   },
   setIncomingGradeAndIndexAndProgram: function(grade, index, program) {
-    // incomingGrade = grade;
+    var stuName = students[index].firstName + " " + students[index].lastName;
     sessionStorage.setItem('incomingGrade', grade);
-    // studentIndex = index;
     sessionStorage.setItem('studentIndex', index);
     sessionStorage.setItem('program', program);
+    sessionStorage.setItem('studentName', stuName);
+  },
+  getStudentFullName: function(){
+    return sessionStorage.getItem('studentName');
+  },
+  getProgramName: function(){
+    return sessionStorage.getItem('program');
   },
   getIncomingGrade: function() {
     return sessionStorage.getItem('incomingGrade');
@@ -34313,6 +34499,12 @@ AppDispatcher.register(function(action) {
       login(data, function() {
         YFStore.emitChange();
         if(!authError) { action.next(); }
+      });
+      break;
+
+    case YFConstants.YF_LOGOUT:
+      logout(function() {
+        YFStore.emitChange();
       });
       break;
 

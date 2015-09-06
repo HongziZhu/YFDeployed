@@ -237,7 +237,7 @@ var Attendance = React.createClass({
       }
     });
 
-    var continueHelper = this.state.allScheduled ? (<span className="bg-success">All summer weeks have been scheduled, please click Continue button below.</span>) : <p></p>;
+    var continueHelper = this.state.allScheduled ? (<h4><span className="bg-success">All summer weeks have been scheduled, please click Continue button below.</span></h4>) : <p></p>;
     
     return (
       <div className="page-container">
@@ -355,7 +355,7 @@ var Attendance = React.createClass({
               </div>
             </div>
           </div>
-          {this.state.allScheduled ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button> }
+          {this.state.allScheduled ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue} disabled>Continue</button> }
         </div>
       </div>
       </div>

@@ -81,6 +81,22 @@ function login(data, next) {
   });
 }
 
+function logout(next) {
+  var url = '/api/users/logout';
+  request
+  .get(url)
+  .accept('application/json')
+  .end(function(err, res){
+    if(err) { return console.error(err); }
+    if(res.body.success){
+      sessionStorage.setItem('loggedIn', false);
+      sessionStorage.removeItem('userId');
+      sessionStorage.removeItem('email');
+      next();
+    }
+  });
+}
+
 function findStudentsById(id, next) {
   var url = '/api/users/' + id + '/students';
   request
@@ -260,8 +276,8 @@ function saveSummerAgreements(enrollmentId) {
 } 
 
 var YFStore = assign({}, EventEmitter.prototype, {
-  getStateFromStorage: function() {
-    loggedIn = sessionStorage.getItem('loggedIn') || false;
+  getUserFromStorage: function() {
+    loggedIn = sessionStorage.getItem('loggedIn') === 'true';
     if(loggedIn) {
       user._id = sessionStorage.getItem('userId');
       user.email = sessionStorage.getItem('email');
@@ -274,7 +290,7 @@ var YFStore = assign({}, EventEmitter.prototype, {
     return students;
   },
   getLoggedIn: function() {
-    return loggedIn;
+    return sessionStorage.getItem('loggedIn') === 'true' ? true : false;
   },
   getAuthError: function() {
     return authError;
@@ -289,11 +305,17 @@ var YFStore = assign({}, EventEmitter.prototype, {
     authError = false;
   },
   setIncomingGradeAndIndexAndProgram: function(grade, index, program) {
-    // incomingGrade = grade;
+    var stuName = students[index].firstName + " " + students[index].lastName;
     sessionStorage.setItem('incomingGrade', grade);
-    // studentIndex = index;
     sessionStorage.setItem('studentIndex', index);
     sessionStorage.setItem('program', program);
+    sessionStorage.setItem('studentName', stuName);
+  },
+  getStudentFullName: function(){
+    return sessionStorage.getItem('studentName');
+  },
+  getProgramName: function(){
+    return sessionStorage.getItem('program');
   },
   getIncomingGrade: function() {
     return sessionStorage.getItem('incomingGrade');
@@ -652,6 +674,12 @@ AppDispatcher.register(function(action) {
       login(data, function() {
         YFStore.emitChange();
         if(!authError) { action.next(); }
+      });
+      break;
+
+    case YFConstants.YF_LOGOUT:
+      logout(function() {
+        YFStore.emitChange();
       });
       break;
 

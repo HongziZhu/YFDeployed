@@ -149,11 +149,11 @@ var Week4 = React.createClass({
 
         <div className="row">
           <div className='col-md-offset-1'>
-            <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm</button>
+            <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary btn-lg">Confirm</button>
           </div>
         </div>
 
-        {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
+        {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
         </div>
       </div>
     );

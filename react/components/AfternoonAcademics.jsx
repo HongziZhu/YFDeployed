@@ -65,7 +65,7 @@ var AfternoonAcademics = React.createClass({
 
   render: function () {
     var self = this;
-    var info = (self.state.showInfo ? <span className="bg-success">{self.state.language} is chosed. If you want to change, please choose another and submit again. Then please click Continue below</span> : <p></p>);
+    var info = (self.state.showInfo ? <h4><span className="bg-success">{self.state.language} is chosed. If you want to change, please choose another and submit again. Then please click Continue below</span></h4> : <p></p>);
     return (
       <div className="page-container">
       <SideMenu />
@@ -137,12 +137,12 @@ var AfternoonAcademics = React.createClass({
 
         <div className="row">
           <div className='col-md-offset-1'>
-            <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm</button><br></br>
+            <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary btn-lg">Confirm</button><br></br>
             {info}
           </div>
         </div>
-        {this.state.done ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : 
-          <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
+        {this.state.done ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : 
+          <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue} disabled>Continue</button>}
       </div>
       </div>
     );

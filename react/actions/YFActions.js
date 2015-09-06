@@ -23,6 +23,12 @@ var YFActions = {
     });
   },
 
+  logout: function() {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_LOGOUT
+    });
+  },
+
   findStudentsById: function() {
     AppDispatcher.dispatch({
       actionType: YFConstants.YF_LOAD_STUDENTS,

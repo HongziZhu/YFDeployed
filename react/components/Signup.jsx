@@ -11,39 +11,59 @@ var request = require('superagent');
 var Formsy = require('formsy-react');
 
 var Signup = React.createClass({
+  mixins: [ Navigation ],
 	getInitialState: function() {
-		return { canSubmit: false };
+		return { 
+      done: false,
+      studentsNum: 1
+    };
 	},
-	enableButton: function() {
-		this.setState({
-			canSubmit: true
-		});
-	},
-	disableButton: function() {
-		this.setState({
-			canSubmit: false
-		});
-	},
-	handleSubmit: function(e) {
+  addStudent: function(e) {
+    e.preventDefault();
+    var self = this;
+    var s = this.state.studentsNum + 1;
+    this.setState({ studentsNum: s });
+  },
+  handleConfirm: function(e) {
+    e.preventDefault();
+    var password = React.findDOMNode(this.refs.password).value;
+    var password2 = React.findDOMNode(this.refs.password2).value;
+    if(password !== password2){
+      alert('Passwords Not Match!');
+      React.findDOMNode(this.refs.password).focus();
+    } else {
+      this.setState({ done: true });
+    }
+    React.findDOMNode(this.refs.confirmButton).blur();
+  },
+
+	handleSignup: function(e) {
 		e.preventDefault();
 		var password = React.findDOMNode(this.refs.password).value;
 		var password2 = React.findDOMNode(this.refs.password2).value;
-		var student1 = this.refs.student1, student2 = this.refs.student2;
+		var student2 = this.refs.student2;
+    var stuRefs = [
+      this.refs.student1,
+      this.refs.student2,
+      this.refs.student3,
+      this.refs.student4,
+      this.refs.student5,
+      this.refs.student6,
+      this.refs.student7,
+      this.refs.student8
+    ];
 		var students = [];
+    var stuRef;
 		if(password === password2){
-			students.push({
-				firstName: React.findDOMNode(student1.refs.stu_fname).value.trim(),
-				lastName: React.findDOMNode(student1.refs.stu_lname).value.trim(),
-				birtyday: React.findDOMNode(student1.refs.stu_month).value + '/' + React.findDOMNode(student1.refs.stu_day).value + '/' + React.findDOMNode(student1.refs.stu_year).value,
-				gender: React.findDOMNode(student1.refs.stu_male).checked ? 'male' : 'female'
-			});
-
-			students.push({
-				firstName: React.findDOMNode(student2.refs.stu_fname).value.trim(),
-				lastName: React.findDOMNode(student2.refs.stu_lname).value.trim(),
-				birtyday: React.findDOMNode(student2.refs.stu_month).value + '/' + React.findDOMNode(student2.refs.stu_day).value + '/' + React.findDOMNode(student2.refs.stu_year).value,
-				gender: React.findDOMNode(student2.refs.stu_male).checked ? 'male' : 'female'
-			});
+      for(var j = 0; j < this.state.studentsNum; j++){
+        stuRef = stuRefs[j];
+        students.push({
+          firstName: React.findDOMNode(stuRef.refs.stu_fname).value.trim(),
+          lastName: React.findDOMNode(stuRef.refs.stu_lname).value.trim(),
+          birtyday: React.findDOMNode(stuRef.refs.stu_month).value + '/' + React.findDOMNode(stuRef.refs.stu_day).value + '/' + React.findDOMNode(stuRef.refs.stu_year).value,
+          gender: React.findDOMNode(stuRef.refs.stu_male).checked ? 'male' : 'female'
+        });
+      }
 
 			var body = {
 				students: students,
@@ -52,42 +72,105 @@ var Signup = React.createClass({
 				password: React.findDOMNode(this.refs.password).value
 			}
 			YFActions.createUser(body);
-			React.findDOMNode(this.refs.email).value = '';
-			React.findDOMNode(this.refs.phoneNumber).value = '';
-			React.findDOMNode(this.refs.password).value = '';
-			React.findDOMNode(this.refs.password2).value = '';
-
+      this.transitionTo('home');
 		} else {
 			alert('Passwords Not Match!');
 			React.findDOMNode(this.refs.password).focus();
 		}
 	},
 	render: function() {
-		return (
-			<form className="col-md-6 col-md-offset-3" onSubmit={this.handleSubmit}>
-			  <div className="form-group">
-			    <label htmlFor="email">Email address</label>
-			    <input type="email" required className="form-control" ref="email" placeholder="Email"/>
-			  </div>
-			  <div className="form-group">
-			    <label htmlFor="password">Password</label>
-			    <input type="password" required pattern=".{6}" className="form-control" ref="password" placeholder="At least 6 characters"/><br></br>
-			    <input type="password" required pattern=".{6}" className="form-control" ref="password2" placeholder="At least 6 characters"  />
-			  </div>
-			  <div className="form-group">
-			    <label htmlFor="phoneNumber">Phone Number</label>
-					<input type="text" required className="form-control" ref="phoneNumber" placeholder="Please enter numbers only. e.g. 9998887777" />
-			  </div>
-			  <div className="form-group">
-        	<legend>Student Information</legend>
-        	<StudentBox ref='student1'/><hr></hr>
-        	<StudentBox ref='student2'/>
-        </div>
+    var SignupButton = (
+      this.state.done ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleSignup}>Sign Up</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" disabled>Sign Up</button>
+    );
+    var Student2 = (
+      this.state.studentsNum >= 2 ? <StudentBox ref='student2' stuIdx='2'/> : <p></p>
+    );
+    var Student3 = (
+      this.state.studentsNum >= 3 ? <StudentBox ref='student3' stuIdx='3'/> : <p></p>
+    );
+    var Student4 = (
+      this.state.studentsNum >= 4 ? <StudentBox ref='student4' stuIdx='4'/> : <p></p>
+    );
+    var Student5 = (
+      this.state.studentsNum >= 5 ? <StudentBox ref='student5' stuIdx='5'/> : <p></p>
+    );
+    var Student6 = (
+      this.state.studentsNum >= 6 ? <StudentBox ref='student6' stuIdx='6'/> : <p></p>
+    );
+    var Student7 = (
+      this.state.studentsNum >= 7 ? <StudentBox ref='student7' stuIdx='7'/> : <p></p>
+    );
+    var Student8 = (
+      this.state.studentsNum >= 8 ? <StudentBox ref='student8' stuIdx='8'/> : <p></p>
+    );
+    var HelpBlock = (
+      this.state.done ? <h4><span className="bg-info">Information has been validated, please click Sign Up below.</span></h4> : <p></p>
+    );
 
+		return (
+      <div className='col-md-8 col-md-offset-2'>
         <hr></hr>
-       	<span className="help-block">Help Block...</span>
-			  <button type="submit" className="btn btn-primary">Sign up</button>
-			</form>
+        <div className=" panel panel-primary">
+          <div className="panel-heading">
+            <div className="panel-title">
+              <h3>Sign up</h3>
+            </div>
+          </div>
+
+          <div className="panel-body">
+            <div className="row">
+              <div> 
+                <form className="col-md-10 col-md-offset-1" onSubmit={this.handleConfirm}>
+                  <div className="form-group">
+                    <label htmlFor="email">Email address</label>
+                    <input type="email" required className="form-control" ref="email" placeholder="Email"/>
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="password">Password</label>
+                    <input type="password" required pattern=".{6}" className="form-control" ref="password" placeholder="At least 6 characters"/><br></br>
+                    <input type="password" required pattern=".{6}" className="form-control" ref="password2" placeholder="At least 6 characters"  />
+                  </div>
+                  <div className="form-group">
+                    <label htmlFor="phoneNumber">Phone Number</label>
+                    <input type="text" required className="form-control" ref="phoneNumber" placeholder="Please enter numbers only. e.g. 9998887777" />
+                  </div>
+                  <div className="form-group">
+                    <div className="panel panel-success">
+                      <div className="panel-heading">
+                        <div className="panel-title">
+                          <h3>Student(s) Information</h3>
+                        </div>
+                      </div>
+
+                      <div className="panel-body">
+                        <div className="row">
+                          <StudentBox ref='student1' stuIdx='1'/>
+                          {Student2}
+                          {Student3}
+                          {Student4}
+                          {Student5}
+                          {Student6}
+                          {Student7}
+                          {Student8}
+                          <div className="col-md-10 col-md-offset-1">
+                            <button onClick={this.addStudent} className="btn btn-info">+ Add Student</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>                    
+                  </div>
+
+                  <hr></hr>
+                  {HelpBlock}
+                  <button type="submit" ref="confirmButton" className="btn btn-primary btn-lg">Confirm</button>
+                </form>
+              </div><hr></hr>
+            </div>
+          </div>
+        </div>
+        {SignupButton}
+      </div>
+			
 		);
 	}
 });
@@ -95,14 +178,14 @@ var Signup = React.createClass({
 var StudentBox = React.createClass({
 	render: function() {
 		return (
-				<div>
+  			<div className="col-md-10 col-md-offset-1">
      			<label>Full Name</label>
           <div className="row">
             <div className="col-xs-6 col-md-6">
-                <input type="text" className="form-control" ref='stu_fname' placeholder="First Name"/>                        
+                <input type="text" required className="form-control" ref='stu_fname' placeholder="First Name"/>                        
             </div>
             <div className="col-xs-6 col-md-6">
-                <input type="text" className="form-control" ref='stu_lname' placeholder="Last Name"/>                        
+                <input type="text" required className="form-control" ref='stu_lname' placeholder="Last Name"/>                        
             </div>
           </div><br></br>  
                          
@@ -184,16 +267,15 @@ var StudentBox = React.createClass({
                       <option value="2013">2015</option>
                   </select>                        
               </div>
-            </div><br></br>
+          </div><br></br>
 
-            <div className='row col-md-6'>
-                <label>Gender&nbsp;&nbsp;</label>                    
-                <label className="radio-inline">
-                <input type="radio" ref='stu_male' value="male" />Male</label>
-                <label className="radio-inline">
-                <input type="radio" ref='stu_female' value="female"/>Female</label>
-            </div>  
-          </div>   
+          <label>Gender&nbsp;&nbsp;</label>                 
+          <label className="radio-inline">
+          <input type="radio" ref='stu_male' name={this.props.stuIdx} value="male" />Male</label>
+          <label className="radio-inline">
+          <input type="radio" ref='stu_female' name={this.props.stuIdx} value="female"/>Female</label>
+          <hr></hr>
+        </div>
 		);
 	}
 });
