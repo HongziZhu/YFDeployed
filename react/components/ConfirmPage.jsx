@@ -7,10 +7,13 @@ var Navigation = Router.Navigation;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
 
+var SideMenu = require('./helpers/SideMenu.jsx');
+
 var ConfirmPage = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
     YFActions.loadEnrollment();
+    YFStore.setSideHighlight('confirm');
     return { 
       incomingGrade: YFStore.getIncomingGrade(),
       done: false,
@@ -39,16 +42,33 @@ var ConfirmPage = React.createClass({
   render: function () {
     var self = this;
     return (
-      <div className='col-md-9 col-md-offset-3'>
-      <h2>Preview of your Summer Camp Enrollment</h2>
+      <div className="page-container">
+        <SideMenu />
+        <div className='main-content col-md-12'>
+          <div className="panel panel-primary">
+            <div className="panel-heading">
+              <div className="panel-title">
+                <h3>Preview of Summer Camp Enrollment</h3>
+              </div>
+            </div>
 
-        <div className="row">
-          <div className='col-md-offset-1'>
-            <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm</button>&nbsp; <br></br>
+            <div className="panel-body">
+              <div className="row">
+                <pre>
+                  {JSON.stringify(YFStore.getEnrollment(), null, 2)}
+                </pre>
+              </div>
+            </div>
           </div>
-        </div>
 
-        {this.state.done ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <p></p>}
+          <div className="row">
+            <div className='col-md-offset-1'>
+              <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm</button>&nbsp; <br></br>
+            </div>
+          </div>
+
+          {this.state.done ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <p></p>}
+        </div>
       </div>
     );
   } 

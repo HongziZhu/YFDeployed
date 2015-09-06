@@ -63,7 +63,7 @@ var AdvancedWrUnit = React.createClass({
     }
 
     return (
-      <div className="panel panel-default">
+      <div className="panel panel-primary">
         <div className="panel-heading">
           <div className="panel-title">
             <h3>Afternoon Advanced Writing Boot Camp</h3>

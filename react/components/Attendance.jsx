@@ -8,12 +8,14 @@ var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
 
 var CourseView = require('./CourseView.jsx');
+var SideMenu = require('./helpers/SideMenu.jsx');
 
 var Attendance = React.createClass({
   //TODO show but disable Continue
   mixins: [ Navigation ],
   getInitialState: function() {
     YFActions.findStudentsById();
+    YFStore.setSideHighlight('attendence');
     return { 
       currentStudent: YFStore.getCurrentStudent(),
       allScheduled: YFStore.getAllScheduled(),
@@ -238,100 +240,124 @@ var Attendance = React.createClass({
     var continueHelper = this.state.allScheduled ? (<span className="bg-success">All summer weeks have been scheduled, please click Continue button below.</span>) : <p></p>;
     
     return (
-      <div className='col-md-9 col-md-offset-3'>
-        <CourseView />
-        <div className="panel panel-default">
-          <div className="panel-heading">
-            <div className="panel-title">
-              <h2>Attendance</h2>
+      <div className="page-container">
+      <SideMenu />
+      <div className="main-content">
+        <div className='col-md-12'>
+          <CourseView />
+          <div className="panel panel-primary">
+            <div className="panel-heading">
+              <div className="panel-title">
+                <h2>Attendance</h2>
+              </div>
+            </div>
+
+            <div className="panel-body">
+              <div className='panel panel-success'>
+                <div className="panel-heading">
+                  <div className="panel-title">
+                    <h3>First, schedule attending pattern.</h3>
+                  </div>
+                </div>
+
+                <div className="panel-body">
+                  <div className="row">
+                    <div className="col-md-offset-1">
+                      <h4><strong>How many days do you want to attend per week?</strong></h4>
+                      <br>
+                      </br>
+                    </div>
+
+                    <div className="col-md-offset-1">
+                      <div className="radio">
+                        <label>
+                          <input type="radio" name="attendPattern" onChange={this.changePattern} value="5_full" defaultChecked/>
+                          5 full days per week (8:00 am - 6:30 pm) $235
+                        </label>
+                      </div>
+                      <div className="radio">
+                        <label>
+                          <input type="radio" name="attendPattern" onChange={this.changePattern} value="4_full"/>
+                          4 full days per week (8:00 am - 6:30 pm) $210
+                        </label>
+                      </div>
+                      <div className="radio">
+                        <label>
+                          <input type="radio" name="attendPattern" onChange={this.changePattern} value="3_full"/>
+                          3 full days per week (8:00 am - 6:30 pm) $190
+                        </label>
+                      </div>
+                      <div className="radio">
+                        <label>
+                          <input type="radio" name="attendPattern" onChange={this.changePattern} value="5_morning"/>
+                          5 mornings per week (8:00 am - 12:30 pm) $175
+                        </label>
+                      </div>
+                      <div className="radio">
+                        <label>
+                          <input type="radio" name="attendPattern" onChange={this.changePattern} value="5_afternoon"/>
+                          5 afternoons per week (1:00 pm - 6:30 pm) $175
+                        </label>
+                      </div>  
+                      <div className="radio">
+                        <label>
+                          <input type="radio" name="attendPattern" onChange={this.changePattern} value="absence"/>
+                          Absence&nbsp;<span className="bg-info">If you don't plan to attend, please choose this.</span>
+                        </label>
+                      </div>                
+                    </div>  
+                  </div>
+                  <hr></hr>
+
+                  <div className="row">
+                    <div className="col-md-offset-1">
+                      <h4><strong>Choose the attending weekdays</strong></h4><br></br>
+                      {weekdaysHelper}
+                      {weekdays}
+                    </div>
+                  </div>
+                  <hr></hr>
+                </div>
+              </div>
+
+              <div className='panel panel-success'>
+                <div className="panel-heading">
+                  <div className="panel-title">
+                    <h3>Then, choose some weeks to apply your attending pattern above.</h3>
+                  </div>
+                </div>
+
+                <div className="panel-body">
+                  <form className="form-horizontal" onSubmit={this.applyWeeks}>
+                    <div className="row">
+                      <div className="col-md-offset-1">
+                        <h4><span className="bg-info">No worry, you can change the attending pattern and apply them to other weeks.</span></h4>
+                        <br></br>
+                        <ul >
+                          <label className="checkbox text-primary">
+                            <input type="checkbox" ref='allWeeks' onChange={this.selectAllWeeks} /><strong>Select All Weeks</strong>
+                          </label>
+                          <br></br>
+                          {summerWeeks}
+                        </ul>
+                      </div>
+                    </div>
+                    <hr></hr>
+
+                    <div className="row">
+                      <div className="col-md-offset-1">
+                        <button type="submit" ref='submitButton' className="btn btn-primary">Apply</button>&nbsp;
+                        {continueHelper}
+                      </div> 
+                    </div>
+                  </form>
+                </div>
+              </div>
             </div>
           </div>
-
-          <div className="panel-body">
-          
-            <div className="row">
-              <div className="col-md-offset-1">
-                <strong>How many days do you want to attend per week?</strong>
-                <br>
-                </br>
-              </div>
-
-              <div className="col-md-offset-1">
-                <div className="radio">
-                  <label>
-                    <input type="radio" name="attendPattern" onChange={this.changePattern} value="5_full" defaultChecked/>
-                    5 full days per week (8:00 am - 6:30 pm) $235
-                  </label>
-                </div>
-                <div className="radio">
-                  <label>
-                    <input type="radio" name="attendPattern" onChange={this.changePattern} value="4_full"/>
-                    4 full days per week (8:00 am - 6:30 pm) $210
-                  </label>
-                </div>
-                <div className="radio">
-                  <label>
-                    <input type="radio" name="attendPattern" onChange={this.changePattern} value="3_full"/>
-                    3 full days per week (8:00 am - 6:30 pm) $190
-                  </label>
-                </div>
-                <div className="radio">
-                  <label>
-                    <input type="radio" name="attendPattern" onChange={this.changePattern} value="5_morning"/>
-                    5 mornings per week (8:00 am - 12:30 pm) $175
-                  </label>
-                </div>
-                <div className="radio">
-                  <label>
-                    <input type="radio" name="attendPattern" onChange={this.changePattern} value="5_afternoon"/>
-                    5 afternoons per week (1:00 pm - 6:30 pm) $175
-                  </label>
-                </div>  
-                <div className="radio">
-                  <label>
-                    <input type="radio" name="attendPattern" onChange={this.changePattern} value="absence"/>
-                    Absence&nbsp;<span className="bg-info">If you don't plan to attend, please choose this.</span>
-                  </label>
-                </div>                
-              </div>  
-            </div>
-            <hr></hr>
-
-            <div className="row">
-              <div className="col-md-offset-1">
-                <strong>Choose the attending weekdays</strong><br></br>
-                {weekdaysHelper}
-                {weekdays}
-              </div>
-            </div>
-            <hr></hr>
-
-            <form className="form-horizontal" onSubmit={this.applyWeeks}>
-              <div className="row">
-                <div className="col-md-offset-1">
-                  <strong>Choose the weeks to apply</strong>
-                  <br></br>
-                  <ul >
-                    <label className="checkbox text-primary">
-                      <input type="checkbox" ref='allWeeks' onChange={this.selectAllWeeks} /><strong>Select All Weeks</strong>
-                    </label>
-                    <br></br>
-                    {summerWeeks}
-                  </ul>
-                </div>
-              </div>
-              <hr></hr>
-
-              <div className="row">
-                <div className="col-md-offset-1">
-                  <button type="submit" ref='submitButton' className="btn btn-primary">Submit</button>&nbsp;
-                  {continueHelper}
-                </div> 
-              </div>
-            </form>
-          </div>
+          {this.state.allScheduled ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button> }
         </div>
-        {this.state.allScheduled ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <p></p>}
+      </div>
       </div>
     );
   }

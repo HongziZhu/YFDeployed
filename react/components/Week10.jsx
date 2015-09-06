@@ -22,11 +22,13 @@ var curWeekIdx = 9;
 var ENTER_KEY_CODE = 13;
 
 var EnrichmentActs = require('./EnrichmentActs.jsx');
+var SideMenu = require('./helpers/SideMenu.jsx');
 
 var Week10 = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
     YFActions.loadEnrollment();
+    YFStore.setSideHighlight('summerCampWeeks');
     return { 
       timeConflict: false,
       done: false,
@@ -63,27 +65,30 @@ var Week10 = React.createClass({
       show = self.state.summerCampWeeks[curWeekIdx].schedulePattern === 'absence';
     }
     return (
-      <div className='col-md-9 col-md-offset-3'>
-      <h2>{curWeekTitle} &nbsp; ({coveredDate})</h2>
-      { show ? 
-        <h3>You plan not to attend in this week, please Confirm and Continue.</h3> :
-        <div>
-          <EnrichmentActs 
-            curWeek={curWeek} 
-            curWeekIdx={curWeekIdx}
-            incomingGrade={self.state.incomingGrade} 
-            summerCampWeeks={self.state.summerCampWeeks}/>   
-        </div>
-      }
-      <hr></hr>
-      <div className="row">
-        <div className='col-md-offset-1'>
-          <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm
-          </button><br></br>
-        </div>
-      </div>
+      <div className='page-container'>
+        <SideMenu />
+        <div className='main-content col-md-12'>
+        <h1 className="bg-success">{curWeekTitle} &nbsp; ({coveredDate})</h1><hr></hr>
+        { show ? 
+          <h3>You plan not to attend in this week, please Confirm and Continue.</h3> :
+          <div>
+            <EnrichmentActs 
+              curWeek={curWeek} 
+              curWeekIdx={curWeekIdx}
+              incomingGrade={self.state.incomingGrade} 
+              summerCampWeeks={self.state.summerCampWeeks}/>          
+          </div>
+        }
 
-        {this.state.done? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" disabled>Continue</button>}
+        <div className="row">
+          <div className='col-md-offset-1'>
+            <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm
+            </button><br></br>
+          </div>
+        </div>
+
+          {this.state.done? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" disabled>Continue</button>}
+        </div>
       </div>
     );
   } 

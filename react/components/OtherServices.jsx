@@ -9,10 +9,13 @@ var YFStore = require('../stores/YFStore.jsx');
 var movies = require('../../lib/summer/movies.json');
 var morningCare = require('../../lib/summer/morningExtendedCare.json');
 
+var SideMenu = require('./helpers/SideMenu.jsx');
+
 var OtherServices = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
     YFActions.loadEnrollment();
+    YFStore.setSideHighlight('otherServices');
     return { 
       incomingGrade: YFStore.getIncomingGrade(),
       done: false,
@@ -43,24 +46,27 @@ var OtherServices = React.createClass({
   render: function () {
     var self = this;
     return (
-      <div className='col-md-9 col-md-offset-3'>
-      <h2>Other Services and Activities</h2>
-        {movies[1].grade.indexOf(this.state.incomingGrade) > -1 ? 
-          <MovieBox 
+      <div className='page-container'>
+      <SideMenu />
+        <div className='main-content col-md-12'>
+        <h2 className='bg-success'>Other Services and Activities</h2><hr></hr>
+          {movies[1].grade.indexOf(this.state.incomingGrade) > -1 ? 
+            <MovieBox 
 
-            summerCampWeeks={self.state.summerCampWeeks}/> 
-          : <p></p>}
-        <MorningCare />
-        <LunchBox summerCampWeeks={self.state.summerCampWeeks} />
-        <PickupService summerCampWeeks={self.state.summerCampWeeks} />
+              summerCampWeeks={self.state.summerCampWeeks}/> 
+            : <p></p>}
+          <MorningCare />
+          <LunchBox summerCampWeeks={self.state.summerCampWeeks} />
+          <PickupService summerCampWeeks={self.state.summerCampWeeks} />
 
-        <div className="row">
-          <div className='col-md-offset-1'>
-            <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm</button>&nbsp; {self.state.done ? <h5><span className="bg-info"> Submitted, please Continue. </span></h5> : <p></p>}
+          <div className="row">
+            <div className='col-md-offset-1'>
+              <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm</button>&nbsp; {self.state.done ? <h5><span className="bg-info"> Submitted, please Continue. </span></h5> : <p></p>}
+            </div>
           </div>
-        </div>
 
-        {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
+          {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
+        </div>
       </div>
     );
   } 
@@ -166,7 +172,7 @@ var PickupService = React.createClass({
               : <p></p>}
 
               {(this.state.canPickup && this.state.needPickup) ?
-              <table className="table table-bordered">
+              <table className="table table-bordered table-striped">
                 <thead>
                   <tr>
                     <th>Select</th>
@@ -314,7 +320,7 @@ var LunchBox = React.createClass({
               <h4><span className="bg-info">We will NOT charge Lunch fee to those who are eligible for our early bird specials.</span></h4>
             </div><br></br>
 
-            <table className="table table-bordered">
+            <table className="table table-bordered table-striped">
               <thead>
                 <tr>
                   <th>Select All Attending Days In the Week</th>
@@ -353,7 +359,7 @@ var MorningCare = React.createClass({
         <div className="panel-body">
           <div className="row">
             <div className='col-md-offset-1'> 
-              <h4>We provide morning extended care every workday! Select the time slot that works for you. </h4>
+              <h4><span className="bg-info">We provide morning extended care every workday! Select the time slot that works for you. </span></h4>
             </div><br></br>
 
             <div className="col-md-offset-1">
@@ -436,7 +442,7 @@ var MovieBox = React.createClass({
             <div className='col-md-offset-1'> 
               <h4><span className="bg-info">Check out our movie trips! Select the days you want to go!</span></h4>
             </div><br></br>
-            <table className="table table-bordered">
+            <table className="table table-bordered table-striped">
               <thead>
                 <tr>
                   <th>Select</th>

@@ -63,7 +63,7 @@ var WritingElective = React.createClass({
     }
 
     return (
-      <div className="panel panel-default">
+      <div className="panel panel-primary">
         <div className="panel-heading">
           <div className="panel-title">
             <h3>Afternoon Writing Elective Classes</h3>

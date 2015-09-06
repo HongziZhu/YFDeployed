@@ -23,11 +23,13 @@ var WritingElective = require('./WritingElective.jsx');
 var MathElective = require('./MathElective.jsx');
 var AdvancedWrUnit = require('./AdvancedWrUnit.jsx');
 var AdvancedMathUnit = require('./AdvancedMathUnit.jsx');
+var SideMenu = require('./helpers/SideMenu.jsx');
 
 var Week2 = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
     YFActions.loadEnrollment();
+    YFStore.setSideHighlight('summerCampWeeks');
     return { 
       done: false,
       writing: YFStore.getWritingChoice(),
@@ -78,78 +80,81 @@ var Week2 = React.createClass({
       postShow = self.state.summerCampWeeks[postWeekIdx].schedulePattern !== 'absence';
     }
     return (
-      <div className='col-md-9 col-md-offset-3'>
-      <h2>{preWeekTitle}&nbsp; ({coveredDate[0]})</h2>
-      { !preShow ? 
-        <h3>You plan not to attend in this week, please Confirm and Continue.</h3> :
-        <div>
-          <EnrichmentActs 
-            curWeek={preWeek} 
-            curWeekIdx={preWeekIdx}
-            incomingGrade={self.state.incomingGrade} 
-            summerCampWeeks={self.state.summerCampWeeks}/>
-          {self.state.writing === 'elective' ?
-          <WritingElective 
-            curWeek={preWeek} 
-            curWeekIdx={preWeekIdx}
-            incomingGrade={self.state.incomingGrade} 
-            summerCampWeeks={self.state.summerCampWeeks}/> :
+      <div className='page-container'>
+      <SideMenu />
+        <div className='main-content col-md-12 '>
+        <h2 className="bg-success">{preWeekTitle}&nbsp; ({coveredDate[0]})</h2><hr></hr>
+        { !preShow ? 
+          <h3>You plan not to attend in this week, please Confirm and Continue.</h3> :
+          <div>
+            <EnrichmentActs 
+              curWeek={preWeek} 
+              curWeekIdx={preWeekIdx}
+              incomingGrade={self.state.incomingGrade} 
+              summerCampWeeks={self.state.summerCampWeeks}/>
+            {self.state.writing === 'elective' ?
+            <WritingElective 
+              curWeek={preWeek} 
+              curWeekIdx={preWeekIdx}
+              incomingGrade={self.state.incomingGrade} 
+              summerCampWeeks={self.state.summerCampWeeks}/> :
+              <p></p>}
+            {self.state.math === 'elective' ?
+            <MathElective 
+              curWeek={preWeek} 
+              curWeekIdx={preWeekIdx}
+              incomingGrade={self.state.incomingGrade} 
+              summerCampWeeks={self.state.summerCampWeeks}/> :
             <p></p>}
-          {self.state.math === 'elective' ?
-          <MathElective 
-            curWeek={preWeek} 
-            curWeekIdx={preWeekIdx}
-            incomingGrade={self.state.incomingGrade} 
-            summerCampWeeks={self.state.summerCampWeeks}/> :
-          <p></p>}
-          <MathOlympiad 
-            curWeek={preWeek} 
-            curWeekIdx={preWeekIdx}
-            incomingGrade={self.state.incomingGrade} 
-            summerCampWeeks={self.state.summerCampWeeks}/>
-          <GATE 
-            curWeek={preWeek} 
-            curWeekIdx={preWeekIdx}
-            incomingGrade={self.state.incomingGrade} 
-            summerCampWeeks={self.state.summerCampWeeks}/>
-        </div>
-      }
-      <hr></hr>
-
-      {(self.state.writing === 'advanced' || self.state.math === 'advanced') ? 
-      <div>
-        <h2>{preWeekTitle} &amp; {postWeekTitle} Unit</h2>
-          {(!preShow || !postShow) ? 
-            <h3 className='bg-info'>Sorry, you can't enroll in this Advanced Writing(or Math) Unit due to at least one-week absence.</h3> :
-            <div>
-            {self.state.writing === 'advanced' ? 
-            <AdvancedWrUnit 
-              preWeek={preWeek}
-              preWeekIdx={preWeekIdx} 
-              postWeek={postWeek}
-              postWeekIdx={postWeekIdx}
+            <MathOlympiad 
+              curWeek={preWeek} 
+              curWeekIdx={preWeekIdx}
               incomingGrade={self.state.incomingGrade} 
-              summerCampWeeks={self.state.summerCampWeeks}/> : <p></p>}
-            {self.state.math === 'advanced' ? 
-            <AdvancedMathUnit 
-              preWeek={preWeek}
-              preWeekIdx={preWeekIdx} 
-              postWeek={postWeek}
-              postWeekIdx={postWeekIdx} 
+              summerCampWeeks={self.state.summerCampWeeks}/>
+            <GATE 
+              curWeek={preWeek} 
+              curWeekIdx={preWeekIdx}
               incomingGrade={self.state.incomingGrade} 
-              summerCampWeeks={self.state.summerCampWeeks}/> : <p></p>}
-            </div>
-          }
-      </div>
-      : <p></p>}
+              summerCampWeeks={self.state.summerCampWeeks}/>
+          </div>
+        }
+        <hr></hr>
 
-      <div className="row">
-        <div className='col-md-offset-1'>
-          <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm</button>
+        {(self.state.writing === 'advanced' || self.state.math === 'advanced') ? 
+        <div>
+          <h2>{preWeekTitle} &amp; {postWeekTitle} Unit</h2>
+            {(!preShow || !postShow) ? 
+              <h3 className='bg-info'>Sorry, you can't enroll in this Advanced Writing(or Math) Unit due to at least one-week absence.</h3> :
+              <div>
+              {self.state.writing === 'advanced' ? 
+              <AdvancedWrUnit 
+                preWeek={preWeek}
+                preWeekIdx={preWeekIdx} 
+                postWeek={postWeek}
+                postWeekIdx={postWeekIdx}
+                incomingGrade={self.state.incomingGrade} 
+                summerCampWeeks={self.state.summerCampWeeks}/> : <p></p>}
+              {self.state.math === 'advanced' ? 
+              <AdvancedMathUnit 
+                preWeek={preWeek}
+                preWeekIdx={preWeekIdx} 
+                postWeek={postWeek}
+                postWeekIdx={postWeekIdx} 
+                incomingGrade={self.state.incomingGrade} 
+                summerCampWeeks={self.state.summerCampWeeks}/> : <p></p>}
+              </div>
+            }
         </div>
-      </div>
+        : <p></p>}
 
-      {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
+        <div className="row">
+          <div className='col-md-offset-1'>
+            <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm</button>
+          </div>
+        </div>
+
+        {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
+        </div>
       </div>
     );
   } 

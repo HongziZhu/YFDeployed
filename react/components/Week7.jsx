@@ -24,10 +24,13 @@ var MathElective = require('./MathElective.jsx');
 var AdvancedWrUnit = require('./AdvancedWrUnit.jsx');
 var AdvancedMathUnit = require('./AdvancedMathUnit.jsx');
 
+var SideMenu = require('./helpers/SideMenu.jsx');
+
 var Week7 = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
     YFActions.loadEnrollment();
+    YFStore.setSideHighlight('summerCampWeeks');
     return { 
       done: false,
       writing: YFStore.getWritingChoice(),
@@ -78,51 +81,53 @@ var Week7 = React.createClass({
       postShow = self.state.summerCampWeeks[postWeekIdx].schedulePattern !== 'absence';
     }
     return (
-      <div className='col-md-9 col-md-offset-3'>
-      
-      <h2>{postWeekTitle} &nbsp; ({coveredDate[1]})</h2>
-      { !postShow ? 
-        <h3>You plan not to attend in this week, please Confirm and Continue.</h3> :
-        <div>
-        <EnrichmentActs 
-          curWeek={postWeek} 
-          curWeekIdx={postWeekIdx}
-          incomingGrade={self.state.incomingGrade} 
-          summerCampWeeks={self.state.summerCampWeeks}/>
-        {self.state.writing === 'elective' ?
-        <WritingElective 
-          curWeek={postWeek} 
-          curWeekIdx={postWeekIdx}
-          incomingGrade={self.state.incomingGrade} 
-          summerCampWeeks={self.state.summerCampWeeks}/> :
-          <p></p>}
-        {self.state.math === 'elective' ?
-        <MathElective 
-          curWeek={postWeek} 
-          curWeekIdx={postWeekIdx}
-          incomingGrade={self.state.incomingGrade} 
-          summerCampWeeks={self.state.summerCampWeeks}/> :
-        <p></p>}
-        <MathOlympiad 
-          curWeek={postWeek} 
-          curWeekIdx={postWeekIdx}
-          incomingGrade={self.state.incomingGrade} 
-          summerCampWeeks={self.state.summerCampWeeks}/>
-        <GATE 
-          curWeek={postWeek} 
-          curWeekIdx={postWeekIdx}
-          incomingGrade={self.state.incomingGrade} 
-          summerCampWeeks={self.state.summerCampWeeks}/>
-        </div>
-      }
-      <hr></hr>
-      <div className="row">
-        <div className='col-md-offset-1'>
-          <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm</button>&nbsp; <br></br>
-        </div>
-      </div>
+      <div className='page-container'>
+        <SideMenu />
+        <div className='main-content col-md-12'>
+          <h2 className="bg-success">{postWeekTitle} &nbsp; ({coveredDate[1]})</h2><hr></hr>
+          { !postShow ? 
+            <h3>You plan not to attend in this week, please Confirm and Continue.</h3> :
+            <div>
+            <EnrichmentActs 
+              curWeek={postWeek} 
+              curWeekIdx={postWeekIdx}
+              incomingGrade={self.state.incomingGrade} 
+              summerCampWeeks={self.state.summerCampWeeks}/>
+            {self.state.writing === 'elective' ?
+            <WritingElective 
+              curWeek={postWeek} 
+              curWeekIdx={postWeekIdx}
+              incomingGrade={self.state.incomingGrade} 
+              summerCampWeeks={self.state.summerCampWeeks}/> :
+              <p></p>}
+            {self.state.math === 'elective' ?
+            <MathElective 
+              curWeek={postWeek} 
+              curWeekIdx={postWeekIdx}
+              incomingGrade={self.state.incomingGrade} 
+              summerCampWeeks={self.state.summerCampWeeks}/> :
+            <p></p>}
+            <MathOlympiad 
+              curWeek={postWeek} 
+              curWeekIdx={postWeekIdx}
+              incomingGrade={self.state.incomingGrade} 
+              summerCampWeeks={self.state.summerCampWeeks}/>
+            <GATE 
+              curWeek={postWeek} 
+              curWeekIdx={postWeekIdx}
+              incomingGrade={self.state.incomingGrade} 
+              summerCampWeeks={self.state.summerCampWeeks}/>
+            </div>
+          }
+          <hr></hr>
+          <div className="row">
+            <div className='col-md-offset-1'>
+              <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm</button>&nbsp; <br></br>
+            </div>
+          </div>
 
-      {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
+          {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
+        </div>
       </div>
     );
   } 

@@ -8,11 +8,13 @@ var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
 
 var ContactBox = require('./helpers/ContactBox.jsx');
+var SideMenu = require('./helpers/SideMenu.jsx');
 
 var SummerAgreements = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
     YFActions.loadEnrollment();
+    YFStore.setSideHighlight('agreements');
     return { 
       incomingGrade: YFStore.getIncomingGrade(),
       done: false,
@@ -43,23 +45,26 @@ var SummerAgreements = React.createClass({
   render: function () {
     var self = this;
     return (
-      <div className='col-md-9 col-md-offset-3'>
-      <h2>Summer Release Forms</h2>
-        <h3 className='bg-info'>Parents, please answer all the questions below. <ins>The enrollment is not completed if questions are not answered in this page</ins>
-        </h3><hr></hr>
-        <SummerTripPermit 
-          incomingGrade={this.state.incomingGrade}/>
-        <EmergencyBox />
-        <SunscreenPermit />
-        <PhotoRelease />
+      <div className="page-container">
+        <SideMenu />
+        <div className='main-content col-md-12'>
+        <h2 className="bg-success">Summer Release Forms</h2><hr></hr>
+          <h3 className='bg-info'>Parents, please answer all the questions below. <ins>The enrollment is not completed if questions are not answered in this page</ins>
+          </h3><hr></hr>
+          <SummerTripPermit 
+            incomingGrade={this.state.incomingGrade}/>
+          <EmergencyBox />
+          <SunscreenPermit />
+          <PhotoRelease />
 
-        <div className="row">
-          <div className='col-md-offset-1'>
-            <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm</button>&nbsp; {self.state.done ? <h5><span className="bg-info"> Submitted, please Continue. </span></h5> : <p></p>}
+          <div className="row">
+            <div className='col-md-offset-1'>
+              <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm</button>&nbsp; {self.state.done ? <h5><span className="bg-info"> Submitted, please Continue. </span></h5> : <p></p>}
+            </div>
           </div>
-        </div>
 
-        {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
+          {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
+        </div>
       </div>
     );
   } 

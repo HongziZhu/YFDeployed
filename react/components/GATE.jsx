@@ -34,8 +34,8 @@ var GATE = React.createClass({
           <tr key={ref}>
             <td className='cell'>
             {self.state.GATEIdx === j ? 
-              <input type="radio" name="mathOlympiad" ref={ref} onChange={this.changeGATE} value={j} defaultChecked/> :
-              <input type="radio" name="mathOlympiad" ref={ref} onChange={this.changeGATE} value={j} />}
+              <input type="radio" name="GATE" ref={ref} onChange={this.changeGATE} value={j} defaultChecked/> :
+              <input type="radio" name="GATE" ref={ref} onChange={this.changeGATE} value={j} />}
             </td>
             <td className='cell'>{obj['display_name']}</td>
             <td className='cell'>
@@ -51,8 +51,8 @@ var GATE = React.createClass({
         <tr key="-1">
           <td className='cell'>
           {self.state.GATEIdx === -1 ? 
-            <input type="radio" name="mathOlympiad" onChange={this.changeGATE} value={-1} defaultChecked/> :
-            <input type="radio" name="mathOlympiad" onChange={this.changeGATE} value={-1} /> }
+            <input type="radio" name="GATE" onChange={this.changeGATE} value={-1} defaultChecked/> :
+            <input type="radio" name="GATE" onChange={this.changeGATE} value={-1} /> }
           </td>
           <td className='cell'>No, thanks.</td>
           <td className='cell'>---</td>
@@ -62,7 +62,7 @@ var GATE = React.createClass({
       )
     }
     return (
-      <div className="panel panel-default">
+      <div className="panel panel-primary">
         <div className="panel-heading">
           <div className="panel-title">
             <h3>Afternoon GATE Elective Classes</h3>

@@ -282,6 +282,9 @@ var YFStore = assign({}, EventEmitter.prototype, {
   getEnrollmentId: function() {
     return enrollmentId;
   },
+  getEnrollment: function() {
+    return enrollment;
+  },
   resetAuthError: function() {
     authError = false;
   },
@@ -562,6 +565,14 @@ var YFStore = assign({}, EventEmitter.prototype, {
     var key = 'PhotoRelease';
     if(sessionStorage.getItem(key) === 'true') { return true; }
     return false; 
+  },
+  setSideHighlight(v){
+    var key = 'SideHighlight';
+    sessionStorage.setItem(key, v);
+  },
+  getSideHighlight(){
+    var key = 'SideHighlight';
+    return sessionStorage.getItem(key); 
   },
   testTimeConflictInWeek(grade, week, weekIdx) {
     var morActIdx = YFStore.getMorActIdx(weekIdx);

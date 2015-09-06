@@ -2,6 +2,7 @@
 
 var React=require('react');
 
+
 //Home is component created by React.JS
 var Home = React.createClass({
   render: function () {
@@ -11,7 +12,7 @@ var Home = React.createClass({
     return (
       <div className="row">
         <div className="col-md-offset-3 col-md-9">
-          <div class="page-header">
+          <div className="page-header">
             <h1>Welcome to Yang Fan Enrollment System!</h1>
             <hr></hr>
             <h1>Please &nbsp;
@@ -19,7 +20,6 @@ var Home = React.createClass({
               &nbsp; or &nbsp;
               <a href='/signup' className='btn btn-primary btn-lg'>Sign up</a>
             </h1> 
-            
           </div>
         </div>
       </div>

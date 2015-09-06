@@ -25,6 +25,7 @@ var Login = React.createClass({
 	  		email: React.findDOMNode(this.refs.email).value.trim(),
 	  		password: React.findDOMNode(this.refs.password).value
 	  	};
+
 	    YFActions.login(data, function() {
 	    	self.transitionTo('getStarted');
 	    });

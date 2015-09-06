@@ -11,10 +11,13 @@ var adWrData = require('../../lib/summer/afternoonAdvancedWriting.json');
 var mathData = require('../../lib/summer/afternoonMathElective.json');
 var adMathData = require('../../lib/summer/afternoonAdvancedMath.json');
 
+var SideMenu = require('./helpers/SideMenu.jsx');
+
 var AfternoonAcademics = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
     YFActions.loadEnrollment();
+    YFStore.setSideHighlight('afternoonAcademics');
     return { 
       language: YFStore.getDailyLang() || 'DailyChinese',
       writing:  YFStore.getWritingChoice() || 'none',
@@ -64,8 +67,10 @@ var AfternoonAcademics = React.createClass({
     var self = this;
     var info = (self.state.showInfo ? <span className="bg-success">{self.state.language} is chosed. If you want to change, please choose another and submit again. Then please click Continue below</span> : <p></p>);
     return (
-      <div className='col-md-6 col-md-offset-3'>
-        <div className="panel panel-default">
+      <div className="page-container">
+      <SideMenu />
+      <div className='main-content col-md-12'>
+        <div className="panel panel-primary">
           <div className="panel-heading">
             <div className="panel-title">
               <h2>Afternoon Academics</h2>
@@ -76,13 +81,13 @@ var AfternoonAcademics = React.createClass({
           
             <div className="row">
               <div className='col-md-offset-1'> 
-                <span className="bg-info">No additional expense for Afternoon Academics(Math and Language), all have been included in the Basic Camp Fee.</span>
+                <h4><span className="bg-info">No additional expense for Afternoon Academics(Math and Language), all have been included in the Basic Camp Fee.</span></h4>
               </div>
             </div><hr></hr>
 
             <div className='row'>
               <div className='col-md-offset-1'>
-                <strong>Mathematical Course</strong><br></br>
+                <h5>Mathematical Course</h5>
                 <div className='radio'>
                   <label>
                     <input type="radio" name="dailyMath" defaultChecked/>
@@ -92,7 +97,7 @@ var AfternoonAcademics = React.createClass({
               </div><hr></hr>
 
               <div className='col-md-offset-1'>
-                <strong>Language Art</strong>
+                <h5>Language Art</h5>
                 <div className="radio">
                   <label>
                     {self.state.language === 'DailyChinese' ? 
@@ -139,6 +144,7 @@ var AfternoonAcademics = React.createClass({
         {this.state.done ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : 
           <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
       </div>
+      </div>
     );
   } 
 });
@@ -159,7 +165,7 @@ var WrMathChoice = React.createClass({
     var mathInput = self.props.math === 'elective' ? <input type="radio" name="math" onChange={this.changeMath} value="elective" defaultChecked/> : <input type="radio" name="math" onChange={this.changeMath} value="elective" />;
     var adMathInput = self.props.math === 'advanced' ? <input type="radio" name="math" onChange={this.changeMath} value="advanced" defaultChecked/> : <input type="radio" name="math" onChange={this.changeMath} value="advanced" />;
     return (
-      <div className="panel panel-default">
+      <div className="panel panel-primary">
           <div className="panel-heading">
             <div className="panel-title">
               <h2>Writing and Math Choices</h2>
@@ -170,13 +176,13 @@ var WrMathChoice = React.createClass({
           
             <div className="row">
               <div className='col-md-offset-1'> 
-                <h4 className="bg-info">Please choose preferred writing and math classes.</h4>
+                <h4><span className="bg-info">Please choose preferred writing and math classes.</span></h4>
               </div>
             </div><hr></hr>
 
             <div className='row'>
               <div className='col-md-offset-1'>
-                <strong>Writing</strong>
+                <h5>Writing</h5>
                 <div className="radio">
                   <label>
                   {wrData['grades'].indexOf(gd) > -1 ? {wrInput} :
@@ -205,7 +211,7 @@ var WrMathChoice = React.createClass({
               <hr></hr>
 
               <div className='col-md-offset-1'>
-                <strong>Math</strong>
+                <h5>Math</h5>
                 <div className="radio">
                   <label>
                   {mathData['grades'].indexOf(gd) > -1 ? {mathInput} : 

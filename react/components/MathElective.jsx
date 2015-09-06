@@ -62,7 +62,7 @@ var MathElective = React.createClass({
     }
 
     return (
-      <div className="panel panel-default">
+      <div className="panel panel-primary">
         <div className="panel-heading">
           <div className="panel-title">
             <h3>Afternoon Math Elective Classes</h3>

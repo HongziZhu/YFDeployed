@@ -11,7 +11,7 @@ var CourseView = React.createClass({
   render: function() {
 
     return (
-      <div className="panel panel-default">
+      <div className="panel panel-info">
         <div className="panel-heading">
           <div className="panel-title">
             <h3>Activities and Classes Overview</h3>
