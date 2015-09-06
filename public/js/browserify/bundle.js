@@ -30058,6 +30058,8 @@ var GetStarted = React.createClass({displayName: "GetStarted",
     return (
       React.createElement("div", {className: "page-container"}, 
       React.createElement(SideMenu, null), 
+      React.createElement("div", {className: "main-content"}, 
+
       React.createElement("div", {className: "col-md-12"}, 
         React.createElement("div", {className: "panel panel-primary"}, 
           React.createElement("div", {className: "panel-heading"}, 
@@ -30095,9 +30097,27 @@ var GetStarted = React.createClass({displayName: "GetStarted",
           handleChange: this.handleSelectGrade, 
           showContinue: this.showContinue}) : React.createElement("p", null), 
 
-        this.state.showContinue ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+        this.state.showContinue ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue"), 
+            
+        React.createElement("footer", {className: "main-footer sticky footer-type-1", style: {}}, 
+        React.createElement("div", {className: "footer-inner"}, 
+          /* Add your copyright text here */
+          React.createElement("div", {className: "footer-text"}, 
+            "© 2015", 
+            React.createElement("strong", null, "Yang Fan Academy")
+          ), 
+          /* Go to Top Link, just add rel="go-top" to any link to add this functionality */
+          React.createElement("div", {className: "go-up"}, 
+            React.createElement("a", {href: "#", rel: "go-top"}, 
+              React.createElement("i", {className: "fa-angle-up"})
+            )
+          )
         )
       )
+            
+        )
+      )
+          )
     );
   } 
 });
@@ -30106,6 +30126,7 @@ module.exports = GetStarted;
 
 },{"../actions/YFActions":218,"../stores/YFStore.jsx":250,"./helpers/SideMenu.jsx":247,"formsy-react":16,"react":214,"react-router":45}],228:[function(require,module,exports){
 'use strict';
+var SideMenu = require('./helpers/SideMenu.jsx');
 
 var React=require('react');
 
@@ -30116,12 +30137,30 @@ var Home = React.createClass({displayName: "Home",
     //Diff: 1. class -> className; 2. for -> htmlFor; 3. <input ..... />;  4. <br> -> <br></br>
     //5. a single element to contain the render stuff
     return (
-      React.createElement("div", {className: "row"}, 
+      React.createElement("div", {className: "page-container"}, 
+        React.createElement(SideMenu, null), 
         React.createElement("div", {className: "col-md-12"}, 
           React.createElement("div", {className: "lead"}, 
             "Welcome to YangFan Enrollment System!"  
           )
+          
+                
+        ), 
+React.createElement("footer", {className: "main-footer sticky footer-type-1"}, 
+        React.createElement("div", {className: "footer-inner"}, 
+          /* Add your copyright text here */
+          React.createElement("div", {className: "footer-text"}, 
+            "© 2015", 
+            React.createElement("strong", null, "Yang Fan Academy")
+          ), 
+          /* Go to Top Link, just add rel="go-top" to any link to add this functionality */
+          React.createElement("div", {className: "go-up"}, 
+            React.createElement("a", {href: "#", rel: "go-top"}, 
+              React.createElement("i", {className: "fa-angle-up"})
+            )
+          )
         )
+      )
       )
     );
   }
@@ -30129,7 +30168,7 @@ var Home = React.createClass({displayName: "Home",
 
 module.exports = Home;
 
-},{"react":214}],229:[function(require,module,exports){
+},{"./helpers/SideMenu.jsx":247,"react":214}],229:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -32585,9 +32624,9 @@ var YFApp = React.createClass({displayName: "YFApp",
           )
         ), 
 
-        React.createElement("div", {className: "main-content"}, 
+        
           React.createElement(RouteHandler, null)
-        )
+
       )
     );
   },

@@ -130,6 +130,8 @@ var GetStarted = React.createClass({
     return (
       <div className='page-container'>
       <SideMenu />
+      <div className='main-content'>
+
       <div className="col-md-12">
         <div className="panel panel-primary">
           <div className="panel-heading">
@@ -168,8 +170,26 @@ var GetStarted = React.createClass({
           showContinue={this.showContinue} /> : <p></p> }
 
         {this.state.showContinue ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
+            
+        <footer className="main-footer sticky footer-type-1" style={{}}>
+        <div className="footer-inner">
+          {/* Add your copyright text here */}
+          <div className="footer-text">
+            © 2015
+            <strong>Yang Fan Academy</strong> 
+          </div>
+          {/* Go to Top Link, just add rel="go-top" to any link to add this functionality */}
+          <div className="go-up">
+            <a href="#" rel="go-top">
+              <i className="fa-angle-up" />
+            </a>
+          </div>
+        </div>
+      </footer>
+            
         </div>
       </div>
+          </div>
     );
   } 
 });
