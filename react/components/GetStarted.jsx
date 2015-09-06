@@ -133,6 +133,7 @@ var GetStarted = React.createClass({
     return (
       <div className='page-container'>
         <SideMenu />
+
         <div className='main-content'>
         <div className="col-md-12">
           <div className="panel panel-primary">

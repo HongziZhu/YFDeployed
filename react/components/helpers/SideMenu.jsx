@@ -29,52 +29,55 @@ var SideMenu = React.createClass({
       </li> : <p></p>
     );
     var GradeLine = (
-      (this.state.hightlight !== 'getStarted' && this.state.hightlight !== 'attendence' && this.state.hightlight !== 'confirm' ) ? 
+      (this.state.hightlight !== 'getStarted' ) ? 
       <li>
         <a>
           <h5><span className="title">Incoming Grade: <ins>{YFStore.getIncomingGrade()}</ins></span></h5>
         </a>
       </li> : <p></p>
     );
-    // var curSummerWeek = YFStore.getSummerCampWeeks()[this.props.curWeekIdx];
-    // var schedule;
+    var schedule = 'absent';
+    var ScheduleInWeek;
+    if(this.state.hightlight === 'summerCampWeeks' && this.props.summerCampWeeks.length === 10){
+      var curSummerWeek = this.props.summerCampWeeks[this.props.curWeekIdx];
+      switch(curSummerWeek.schedulePattern) {
+        case '5_full':
+          schedule = '5 full weekdays';
+          break;
+        case '5_morning':
+          schedule = '5 mornings / 8:00 AM-12:30 PM';
+          break;
+        case '5_afternoon':
+          schedule = '5 faternoons / 1:00 PM-6:30 PM';
+          break;
+        case '4_full':
+          schedule = '4 full days /';
+          for(var j = 0; j < curSummerWeek.attendingDays.length; j++) {
+            schedule = schedule + ' ' + curSummerWeek.attendingDays[j];
+          }
+          break;
+        case '3_full':
+          schedule = '3 full days /';
+          for(var j = 0; j < curSummerWeek.attendingDays.length; j++) {
+            schedule = schedule + ' ' + curSummerWeek.attendingDays[j];
+          }
+          break;
+        case 'absence':
+          schedule = 'absent';
+          break;
 
-    // switch(curSummerWeek.schedulePattern) {
-    //   case '5_full':
-    //     schedule = '5 full weekdays';
-    //     break;
-    //   case '5_morning':
-    //     schedule = '5 mornings / 8:00 AM-12:30 PM';
-    //     break;
-    //   case '5_afternoon':
-    //     schedule = '5 faternoons / 1:00 PM-6:30 PM';
-    //     break;
-    //   case '4_full':
-    //     schedule = '4 full days /';
-    //     for(var j = 0; j < curSummerWeek.attendingDays; j++) {
-    //       schedule += ' ' + curSummerWeek.attendingDays[j];
-    //     }
-    //     break;
-    //   case '3_full':
-    //     schedule = '3 full days /';
-    //     for(var j = 0; j < curSummerWeek.attendingDays; j++) {
-    //       schedule += ' ' + curSummerWeek.attendingDays[j];
-    //     }
-    //     break;
-    //   default:
-    //     return;
-    // }
-
-    // var ScheduleInWeek = (
-    //   (this.state.hightlight === 'summerCampWeeks') ? 
-    //   <li>
-    //     <a>
-    //       <h5><span className="title">Schedule: <ins>{schedule}</ins></span></h5>
-    //     </a>
-    //   </li> 
-    //   : <p></p>
-    // );
-
+        default:
+          return;
+      }    
+    }
+    ScheduleInWeek = (
+      <li>
+        <a>
+          <h5><span className="title">Schedule: <ins>{schedule}</ins></span></h5>
+        </a>
+      </li>
+    );
+  
     return (
       <div className="sidebar-menu toggle-others fixed">
         <div className="sidebar-menu-inner">  
@@ -174,6 +177,7 @@ var SideMenu = React.createClass({
             {ProgramName}
             {StudentName}
             {GradeLine}
+            {this.state.hightlight === 'summerCampWeeks' ? ScheduleInWeek : <p></p> }
           </ul>
         </div>
       </div>

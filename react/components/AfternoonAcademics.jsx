@@ -69,6 +69,7 @@ var AfternoonAcademics = React.createClass({
     return (
       <div className="page-container">
       <SideMenu />
+
       <div className='main-content col-md-12'>
         <div className="panel panel-primary">
           <div className="panel-heading">

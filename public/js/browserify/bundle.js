@@ -29022,6 +29022,7 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
     return (
       React.createElement("div", {className: "page-container"}, 
       React.createElement(SideMenu, null), 
+
       React.createElement("div", {className: "main-content col-md-12"}, 
         React.createElement("div", {className: "panel panel-primary"}, 
           React.createElement("div", {className: "panel-heading"}, 
@@ -30190,6 +30191,7 @@ var GetStarted = React.createClass({displayName: "GetStarted",
     return (
       React.createElement("div", {className: "page-container"}, 
         React.createElement(SideMenu, null), 
+
         React.createElement("div", {className: "main-content"}, 
         React.createElement("div", {className: "col-md-12"}, 
           React.createElement("div", {className: "panel panel-primary"}, 
@@ -31946,7 +31948,11 @@ var Week1 = React.createClass({displayName: "Week1",
     }
     return (
       React.createElement("div", {className: "page-container"}, 
-        React.createElement(SideMenu, {curWeekIdx: curWeekIdx}), 
+        React.createElement(SideMenu, {
+          curWeekIdx: curWeekIdx, 
+          incomingGrade: this.state.incomingGrade, 
+          summerCampWeeks: this.state.summerCampWeeks}), 
+
         React.createElement("div", {className: "main-content col-md-12"}, 
         React.createElement("h1", {className: "bg-success"}, curWeekTitle, "   (", coveredDate, ")"), React.createElement("hr", null), 
          show ? 
@@ -31967,7 +31973,7 @@ var Week1 = React.createClass({displayName: "Week1",
           )
         ), 
 
-          this.state.done? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", disabled: true}, "Continue")
+          this.state.done? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", disabled: true}, "Continue")
         )
       )
     );
@@ -32045,7 +32051,11 @@ var Week10 = React.createClass({displayName: "Week10",
     }
     return (
       React.createElement("div", {className: "page-container"}, 
-        React.createElement(SideMenu, null), 
+        React.createElement(SideMenu, {
+          curWeekIdx: curWeekIdx, 
+          incomingGrade: this.state.incomingGrade, 
+          summerCampWeeks: this.state.summerCampWeeks}), 
+          
         React.createElement("div", {className: "main-content col-md-12"}, 
         React.createElement("h1", {className: "bg-success"}, curWeekTitle, "   (", coveredDate, ")"), React.createElement("hr", null), 
          show ? 
@@ -32066,7 +32076,7 @@ var Week10 = React.createClass({displayName: "Week10",
           )
         ), 
 
-          this.state.done? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", disabled: true}, "Continue")
+          this.state.done? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", disabled: true}, "Continue")
         )
       )
     );
@@ -32159,7 +32169,11 @@ var Week2 = React.createClass({displayName: "Week2",
     }
     return (
       React.createElement("div", {className: "page-container"}, 
-      React.createElement(SideMenu, null), 
+        React.createElement(SideMenu, {
+          curWeekIdx: preWeekIdx, 
+          incomingGrade: this.state.incomingGrade, 
+          summerCampWeeks: this.state.summerCampWeeks}), 
+
         React.createElement("div", {className: "main-content col-md-12 "}, 
         React.createElement("h2", {className: "bg-success"}, preWeekTitle, "  (", coveredDate[0], ")"), React.createElement("hr", null), 
          !preShow ? 
@@ -32231,7 +32245,7 @@ var Week2 = React.createClass({displayName: "Week2",
           )
         ), 
 
-        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-lg btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-lg btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -32325,7 +32339,11 @@ var Week3 = React.createClass({displayName: "Week3",
     }
     return (
       React.createElement("div", {className: "page-container"}, 
-        React.createElement(SideMenu, null), 
+        React.createElement(SideMenu, {
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: this.state.incomingGrade, 
+          summerCampWeeks: this.state.summerCampWeeks}), 
+          
         React.createElement("div", {className: "main-content col-md-12"}, 
           React.createElement("h2", {className: "bg-success"}, postWeekTitle, "   (", coveredDate[1], ")"), React.createElement("hr", null), 
            !postShow ? 
@@ -32369,7 +32387,7 @@ var Week3 = React.createClass({displayName: "Week3",
             )
           ), 
 
-          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -32462,7 +32480,11 @@ var Week4 = React.createClass({displayName: "Week4",
     }
     return (
       React.createElement("div", {className: "page-container"}, 
-      React.createElement(SideMenu, null), 
+        React.createElement(SideMenu, {
+          curWeekIdx: preWeekIdx, 
+          incomingGrade: this.state.incomingGrade, 
+          summerCampWeeks: this.state.summerCampWeeks}), 
+          
         React.createElement("div", {className: "main-content col-md-12 "}, 
         React.createElement("h2", {className: "bg-success"}, preWeekTitle, "  (", coveredDate[0], ")"), React.createElement("hr", null), 
          !preShow ? 
@@ -32534,7 +32556,7 @@ var Week4 = React.createClass({displayName: "Week4",
           )
         ), 
 
-        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -32628,7 +32650,11 @@ var Week5 = React.createClass({displayName: "Week5",
     }
     return (
       React.createElement("div", {className: "page-container"}, 
-        React.createElement(SideMenu, null), 
+        React.createElement(SideMenu, {
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: this.state.incomingGrade, 
+          summerCampWeeks: this.state.summerCampWeeks}), 
+          
         React.createElement("div", {className: "main-content col-md-12"}, 
           React.createElement("h2", {className: "bg-success"}, postWeekTitle, "   (", coveredDate[1], ")"), React.createElement("hr", null), 
            !postShow ? 
@@ -32672,7 +32698,7 @@ var Week5 = React.createClass({displayName: "Week5",
             )
           ), 
 
-          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -32765,7 +32791,11 @@ var Week6 = React.createClass({displayName: "Week6",
     }
     return (
       React.createElement("div", {className: "page-container"}, 
-      React.createElement(SideMenu, null), 
+        React.createElement(SideMenu, {
+          curWeekIdx: preWeekIdx, 
+          incomingGrade: this.state.incomingGrade, 
+          summerCampWeeks: this.state.summerCampWeeks}), 
+          
         React.createElement("div", {className: "main-content col-md-12 "}, 
         React.createElement("h2", {className: "bg-success"}, preWeekTitle, "  (", coveredDate[0], ")"), React.createElement("hr", null), 
          !preShow ? 
@@ -32837,7 +32867,7 @@ var Week6 = React.createClass({displayName: "Week6",
           )
         ), 
 
-        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -32931,7 +32961,11 @@ var Week7 = React.createClass({displayName: "Week7",
     }
     return (
       React.createElement("div", {className: "page-container"}, 
-        React.createElement(SideMenu, null), 
+        React.createElement(SideMenu, {
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: this.state.incomingGrade, 
+          summerCampWeeks: this.state.summerCampWeeks}), 
+          
         React.createElement("div", {className: "main-content col-md-12"}, 
           React.createElement("h2", {className: "bg-success"}, postWeekTitle, "   (", coveredDate[1], ")"), React.createElement("hr", null), 
            !postShow ? 
@@ -32975,7 +33009,7 @@ var Week7 = React.createClass({displayName: "Week7",
             )
           ), 
 
-          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -33068,7 +33102,11 @@ var Week8 = React.createClass({displayName: "Week8",
     }
     return (
       React.createElement("div", {className: "page-container"}, 
-      React.createElement(SideMenu, null), 
+        React.createElement(SideMenu, {
+          curWeekIdx: preWeekIdx, 
+          incomingGrade: this.state.incomingGrade, 
+          summerCampWeeks: this.state.summerCampWeeks}), 
+          
         React.createElement("div", {className: "main-content col-md-12 "}, 
         React.createElement("h2", {className: "bg-success"}, preWeekTitle, "  (", coveredDate[0], ")"), React.createElement("hr", null), 
          !preShow ? 
@@ -33140,7 +33178,7 @@ var Week8 = React.createClass({displayName: "Week8",
           )
         ), 
 
-        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -33234,7 +33272,10 @@ var Week9 = React.createClass({displayName: "Week9",
     }
     return (
       React.createElement("div", {className: "page-container"}, 
-        React.createElement(SideMenu, null), 
+        React.createElement(SideMenu, {
+          curWeekIdx: postWeekIdx, 
+          incomingGrade: this.state.incomingGrade, 
+          summerCampWeeks: this.state.summerCampWeeks}), 
         React.createElement("div", {className: "main-content col-md-12"}, 
           React.createElement("h2", {className: "bg-success"}, postWeekTitle, "   (", coveredDate[1], ")"), React.createElement("hr", null), 
            !postShow ? 
@@ -33278,7 +33319,7 @@ var Week9 = React.createClass({displayName: "Week9",
             )
           ), 
 
-          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success", onClick: this.handleContinue, disabled: true}, "Continue")
+          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -33630,52 +33671,55 @@ var SideMenu = React.createClass({displayName: "SideMenu",
       ) : React.createElement("p", null)
     );
     var GradeLine = (
-      (this.state.hightlight !== 'getStarted' && this.state.hightlight !== 'attendence' && this.state.hightlight !== 'confirm' ) ? 
+      (this.state.hightlight !== 'getStarted' ) ? 
       React.createElement("li", null, 
         React.createElement("a", null, 
           React.createElement("h5", null, React.createElement("span", {className: "title"}, "Incoming Grade: ", React.createElement("ins", null, YFStore.getIncomingGrade())))
         )
       ) : React.createElement("p", null)
     );
-    // var curSummerWeek = YFStore.getSummerCampWeeks()[this.props.curWeekIdx];
-    // var schedule;
+    var schedule = 'absent';
+    var ScheduleInWeek;
+    if(this.state.hightlight === 'summerCampWeeks' && this.props.summerCampWeeks.length === 10){
+      var curSummerWeek = this.props.summerCampWeeks[this.props.curWeekIdx];
+      switch(curSummerWeek.schedulePattern) {
+        case '5_full':
+          schedule = '5 full weekdays';
+          break;
+        case '5_morning':
+          schedule = '5 mornings / 8:00 AM-12:30 PM';
+          break;
+        case '5_afternoon':
+          schedule = '5 faternoons / 1:00 PM-6:30 PM';
+          break;
+        case '4_full':
+          schedule = '4 full days /';
+          for(var j = 0; j < curSummerWeek.attendingDays.length; j++) {
+            schedule = schedule + ' ' + curSummerWeek.attendingDays[j];
+          }
+          break;
+        case '3_full':
+          schedule = '3 full days /';
+          for(var j = 0; j < curSummerWeek.attendingDays.length; j++) {
+            schedule = schedule + ' ' + curSummerWeek.attendingDays[j];
+          }
+          break;
+        case 'absence':
+          schedule = 'absent';
+          break;
 
-    // switch(curSummerWeek.schedulePattern) {
-    //   case '5_full':
-    //     schedule = '5 full weekdays';
-    //     break;
-    //   case '5_morning':
-    //     schedule = '5 mornings / 8:00 AM-12:30 PM';
-    //     break;
-    //   case '5_afternoon':
-    //     schedule = '5 faternoons / 1:00 PM-6:30 PM';
-    //     break;
-    //   case '4_full':
-    //     schedule = '4 full days /';
-    //     for(var j = 0; j < curSummerWeek.attendingDays; j++) {
-    //       schedule += ' ' + curSummerWeek.attendingDays[j];
-    //     }
-    //     break;
-    //   case '3_full':
-    //     schedule = '3 full days /';
-    //     for(var j = 0; j < curSummerWeek.attendingDays; j++) {
-    //       schedule += ' ' + curSummerWeek.attendingDays[j];
-    //     }
-    //     break;
-    //   default:
-    //     return;
-    // }
-
-    // var ScheduleInWeek = (
-    //   (this.state.hightlight === 'summerCampWeeks') ? 
-    //   <li>
-    //     <a>
-    //       <h5><span className="title">Schedule: <ins>{schedule}</ins></span></h5>
-    //     </a>
-    //   </li> 
-    //   : <p></p>
-    // );
-
+        default:
+          return;
+      }    
+    }
+    ScheduleInWeek = (
+      React.createElement("li", null, 
+        React.createElement("a", null, 
+          React.createElement("h5", null, React.createElement("span", {className: "title"}, "Schedule: ", React.createElement("ins", null, schedule)))
+        )
+      )
+    );
+  
     return (
       React.createElement("div", {className: "sidebar-menu toggle-others fixed"}, 
         React.createElement("div", {className: "sidebar-menu-inner"}, 
@@ -33774,7 +33818,8 @@ var SideMenu = React.createClass({displayName: "SideMenu",
             React.createElement("hr", null), 
             ProgramName, 
             StudentName, 
-            GradeLine
+            GradeLine, 
+            this.state.hightlight === 'summerCampWeeks' ? ScheduleInWeek : React.createElement("p", null)
           )
         )
       )

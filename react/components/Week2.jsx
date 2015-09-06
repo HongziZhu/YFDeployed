@@ -81,7 +81,11 @@ var Week2 = React.createClass({
     }
     return (
       <div className='page-container'>
-      <SideMenu />
+        <SideMenu 
+          curWeekIdx={preWeekIdx}
+          incomingGrade={this.state.incomingGrade} 
+          summerCampWeeks={this.state.summerCampWeeks}/>
+
         <div className='main-content col-md-12 '>
         <h2 className="bg-success">{preWeekTitle}&nbsp; ({coveredDate[0]})</h2><hr></hr>
         { !preShow ? 
@@ -153,7 +157,7 @@ var Week2 = React.createClass({
           </div>
         </div>
 
-        {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-lg btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
+        {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-lg btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue} disabled>Continue</button>}
         </div>
       </div>
     );
