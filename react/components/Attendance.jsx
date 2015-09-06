@@ -7,7 +7,7 @@ var Navigation = Router.Navigation;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
 
-var CourseView = require('./CourseView.jsx');
+var CourseView = require('./helpers/CourseView.jsx');
 var SideMenu = require('./helpers/SideMenu.jsx');
 
 var Attendance = React.createClass({

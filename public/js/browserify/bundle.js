@@ -28730,7 +28730,7 @@ if (typeof window !== 'undefined') {
 	};
 }
 
-},{"./components/Routes.jsx":234,"react":214,"react-router":45}],220:[function(require,module,exports){
+},{"./components/Routes.jsx":233,"react":214,"react-router":45}],220:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29210,7 +29210,7 @@ var Navigation = Router.Navigation;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
 
-var CourseView = require('./CourseView.jsx');
+var CourseView = require('./helpers/CourseView.jsx');
 var SideMenu = require('./helpers/SideMenu.jsx');
 
 var Attendance = React.createClass({displayName: "Attendance",
@@ -29568,7 +29568,7 @@ var Attendance = React.createClass({displayName: "Attendance",
 
 module.exports = Attendance;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./CourseView.jsx":225,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],224:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./helpers/CourseView.jsx":249,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],224:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29648,116 +29648,6 @@ var ConfirmPage = React.createClass({displayName: "ConfirmPage",
 module.exports = ConfirmPage;
 
 },{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],225:[function(require,module,exports){
-'use strict';
-
-var React = require('react');
-var Router = require('react-router');
-var RouteHandler = Router.RouteHandler;
-var Navigation = Router.Navigation;
-var YFActions = require('../actions/YFActions');
-var YFStore = require('../stores/YFStore.jsx');
-
-var CourseView = React.createClass({displayName: "CourseView",
-  render: function() {
-
-    return (
-      React.createElement("div", {className: "panel panel-info"}, 
-        React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Activities and Classes Overview")
-          )
-        ), 
-
-        React.createElement("div", {className: "panel-body"}, 
-          React.createElement("table", {className: "dataintable"}, 
-            React.createElement("tbody", null, React.createElement("tr", null, 
-            React.createElement("th", {style: {width: '5%'}}), 
-            React.createElement("th", {style: {width: '19%'}}, "Monday"), 
-            React.createElement("th", {style: {width: '19%'}}, "Tuesday"), 
-            React.createElement("th", {style: {width: '19%'}}, "Wednesday"), 
-            React.createElement("th", {style: {width: '19%'}}, "Thursday"), 
-            React.createElement("th", {style: {width: '19%'}}, "Friday")
-            ), 
-
-            React.createElement("tr", null, 
-            React.createElement("th", null, "AM"), 
-            React.createElement("td", null, 
-                React.createElement("ul", null, 
-                    React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
-                    React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Morning Enrichment Activity"))
-                )
-            ), 
-            React.createElement("td", null, 
-              React.createElement("ul", null, 
-                React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
-                React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Morning Enrichment Activity")), 
-                React.createElement("li", null, React.createElement("span", {className: "movie"}, "Movie Trip"))
-              )
-             ), 
-
-            React.createElement("td", null, 
-              React.createElement("ul", null, 
-              React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
-              React.createElement("li", null, "circle")
-              )
-            ), 
-            React.createElement("td", null, 
-              React.createElement("ul", null, 
-              React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
-              React.createElement("li", null, "circle")
-              )
-            ), 
-            React.createElement("td", null, 
-              React.createElement("ul", null, 
-              React.createElement("li", null, React.createElement("span", {className: "morning-care"}, "Morning Extended Care")), 
-              React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Morning Enrichment Activity")), 
-              React.createElement("li", null, "circle")
-              )
-            )
-            ), 
-
-            React.createElement("tr", null, 
-            React.createElement("th", null, "PM"), 
-            React.createElement("td", null, React.createElement("ul", null, 
-                React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Afternoon Enrichment Activity")), 
-              React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
-              React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes"))
-                )), 
-            React.createElement("td", null, 
-              React.createElement("ul", null, 
-              React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
-              React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes")), 
-              React.createElement("li", null, "circle")
-              )
-            ), 
-            React.createElement("td", null, 
-              React.createElement("ul", null, 
-              React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
-              React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes")), 
-              React.createElement("li", null, "circle")
-              )
-            ), 
-            React.createElement("td", null, React.createElement("ul", null, 
-                React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Afternoon Enrichment Activity")), 
-              React.createElement("li", null, React.createElement("span", {className: "afternoon-academics"}, "Afternoon Academics")), 
-              React.createElement("li", null, React.createElement("span", {className: "electives"}, "Elective Classes"))
-                )), 
-            React.createElement("td", null, React.createElement("ul", null, 
-                React.createElement("li", null, React.createElement("span", {className: "enrichment-activity"}, "Afternoon Enrichment Activity")), 
-              React.createElement("li", null, "square"), 
-              React.createElement("li", null, "circle")
-                ))
-            )
-            ))
-          )
-        )
-      );
-  }
-}); 
-
-module.exports = CourseView;
-
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"react":214,"react-router":45}],226:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29946,7 +29836,7 @@ var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
 
 module.exports = EnrichmentActs;
 
-},{"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"react":214,"react-router":45}],227:[function(require,module,exports){
+},{"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"react":214,"react-router":45}],226:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -30055,7 +29945,7 @@ var GATE = React.createClass({displayName: "GATE",
 
 module.exports = GATE;
 
-},{"../../lib/summer/afternoonGATE.json":3,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"react":214,"react-router":45}],228:[function(require,module,exports){
+},{"../../lib/summer/afternoonGATE.json":3,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"react":214,"react-router":45}],227:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -30242,7 +30132,7 @@ var GetStarted = React.createClass({displayName: "GetStarted",
 
 module.exports = GetStarted;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./helpers/Footer.jsx":250,"./helpers/SideMenu.jsx":251,"formsy-react":16,"react":214,"react-router":45}],229:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./helpers/Footer.jsx":250,"./helpers/SideMenu.jsx":251,"formsy-react":16,"react":214,"react-router":45}],228:[function(require,module,exports){
 'use strict';
 
 var React=require('react');
@@ -30274,7 +30164,7 @@ var Home = React.createClass({displayName: "Home",
 
 module.exports = Home;
 
-},{"react":214}],230:[function(require,module,exports){
+},{"react":214}],229:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -30356,7 +30246,7 @@ var Login = React.createClass({displayName: "Login",
 
 module.exports = Login;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"react":214,"react-router":45}],231:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"react":214,"react-router":45}],230:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -30369,7 +30259,7 @@ var mathData = require('../../lib/summer/afternoonMathElective.json');
 
 var MathElective = React.createClass({displayName: "MathElective",
   getInitialState: function() {
-    var m = YFStore.getMathElecIdx(self.props.curWeekIdx);
+    var m = YFStore.getMathElecIdx(this.props.curWeekIdx);
     return {
       mathElecIdx: isNaN(m) ? -1 : m
     };
@@ -30464,7 +30354,7 @@ var MathElective = React.createClass({displayName: "MathElective",
 
 module.exports = MathElective;
 
-},{"../../lib/summer/afternoonMathElective.json":4,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"react":214,"react-router":45}],232:[function(require,module,exports){
+},{"../../lib/summer/afternoonMathElective.json":4,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"react":214,"react-router":45}],231:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -30569,7 +30459,7 @@ var MathOlympiad = React.createClass({displayName: "MathOlympiad",
 
 module.exports = MathOlympiad;
 
-},{"../../lib/summer/afternoonMathOlympiad.json":5,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"react":214,"react-router":45}],233:[function(require,module,exports){
+},{"../../lib/summer/afternoonMathOlympiad.json":5,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"react":214,"react-router":45}],232:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -31039,7 +30929,7 @@ var MovieBox = React.createClass({displayName: "MovieBox",
 
 module.exports = OtherServices;
 
-},{"../../lib/summer/morningExtendedCare.json":8,"../../lib/summer/movies.json":9,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],234:[function(require,module,exports){
+},{"../../lib/summer/morningExtendedCare.json":8,"../../lib/summer/movies.json":9,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],233:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -31098,7 +30988,7 @@ var routes = (
 
 module.exports = routes;
 
-},{"./AfternoonAcademics.jsx":222,"./Attendance.jsx":223,"./ConfirmPage.jsx":224,"./GetStarted.jsx":228,"./Home.jsx":229,"./Login.jsx":230,"./OtherServices.jsx":233,"./Signup.jsx":235,"./SummerAgreements.jsx":236,"./Week1.jsx":237,"./Week10.jsx":238,"./Week2.jsx":239,"./Week3.jsx":240,"./Week4.jsx":241,"./Week5.jsx":242,"./Week6.jsx":243,"./Week7.jsx":244,"./Week8.jsx":245,"./Week9.jsx":246,"./YFApp.jsx":248,"react":214,"react-router":45}],235:[function(require,module,exports){
+},{"./AfternoonAcademics.jsx":222,"./Attendance.jsx":223,"./ConfirmPage.jsx":224,"./GetStarted.jsx":227,"./Home.jsx":228,"./Login.jsx":229,"./OtherServices.jsx":232,"./Signup.jsx":234,"./SummerAgreements.jsx":235,"./Week1.jsx":236,"./Week10.jsx":237,"./Week2.jsx":238,"./Week3.jsx":239,"./Week4.jsx":240,"./Week5.jsx":241,"./Week6.jsx":242,"./Week7.jsx":243,"./Week8.jsx":244,"./Week9.jsx":245,"./YFApp.jsx":247,"react":214,"react-router":45}],234:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -31438,7 +31328,7 @@ var ParentBox = React.createClass({displayName: "ParentBox",
 
 module.exports = Signup;
 
-},{"../actions/YFActions":218,"formsy-react":16,"react":214,"react-router":45,"superagent":215}],236:[function(require,module,exports){
+},{"../actions/YFActions":218,"formsy-react":16,"react":214,"react-router":45,"superagent":215}],235:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -31879,7 +31769,7 @@ var SummerTripPermit = React.createClass({displayName: "SummerTripPermit",
 
 module.exports = SummerAgreements;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./helpers/ContactBox.jsx":249,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],237:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./helpers/ContactBox.jsx":248,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],236:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -31982,7 +31872,7 @@ var Week1 = React.createClass({displayName: "Week1",
 
 module.exports = Week1;
 
-},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./EnrichmentActs.jsx":226,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],238:[function(require,module,exports){
+},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./EnrichmentActs.jsx":225,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],237:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -32085,7 +31975,7 @@ var Week10 = React.createClass({displayName: "Week10",
 
 module.exports = Week10;
 
-},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./EnrichmentActs.jsx":226,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],239:[function(require,module,exports){
+},{"../../lib/summer/afternoonAdvancedMath.json":1,"../../lib/summer/afternoonAdvancedWriting.json":2,"../../lib/summer/afternoonGATE.json":3,"../../lib/summer/afternoonMathElective.json":4,"../../lib/summer/afternoonMathOlympiad.json":5,"../../lib/summer/afternoonWritingElective.json":6,"../../lib/summer/enrichmentActivities.json":7,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./EnrichmentActs.jsx":225,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],238:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -32254,7 +32144,7 @@ var Week2 = React.createClass({displayName: "Week2",
 
 module.exports = Week2;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":226,"./GATE.jsx":227,"./MathElective.jsx":231,"./MathOlympiad.jsx":232,"./WritingElective.jsx":247,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],240:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],239:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -32396,7 +32286,7 @@ var Week3 = React.createClass({displayName: "Week3",
 
 module.exports = Week3;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":226,"./GATE.jsx":227,"./MathElective.jsx":231,"./MathOlympiad.jsx":232,"./WritingElective.jsx":247,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],241:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],240:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -32565,7 +32455,7 @@ var Week4 = React.createClass({displayName: "Week4",
 
 module.exports = Week4;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":226,"./GATE.jsx":227,"./MathElective.jsx":231,"./MathOlympiad.jsx":232,"./WritingElective.jsx":247,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],242:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],241:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -32707,7 +32597,7 @@ var Week5 = React.createClass({displayName: "Week5",
 
 module.exports = Week5;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":226,"./GATE.jsx":227,"./MathElective.jsx":231,"./MathOlympiad.jsx":232,"./WritingElective.jsx":247,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],243:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],242:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -32876,7 +32766,7 @@ var Week6 = React.createClass({displayName: "Week6",
 
 module.exports = Week6;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":226,"./GATE.jsx":227,"./MathElective.jsx":231,"./MathOlympiad.jsx":232,"./WritingElective.jsx":247,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],244:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],243:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -33018,7 +32908,7 @@ var Week7 = React.createClass({displayName: "Week7",
 
 module.exports = Week7;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":226,"./GATE.jsx":227,"./MathElective.jsx":231,"./MathOlympiad.jsx":232,"./WritingElective.jsx":247,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],245:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],244:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -33187,7 +33077,7 @@ var Week8 = React.createClass({displayName: "Week8",
 
 module.exports = Week8;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":226,"./GATE.jsx":227,"./MathElective.jsx":231,"./MathOlympiad.jsx":232,"./WritingElective.jsx":247,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],246:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],245:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -33328,7 +33218,7 @@ var Week9 = React.createClass({displayName: "Week9",
 
 module.exports = Week9;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":226,"./GATE.jsx":227,"./MathElective.jsx":231,"./MathOlympiad.jsx":232,"./WritingElective.jsx":247,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],247:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./AdvancedMathUnit.jsx":220,"./AdvancedWrUnit.jsx":221,"./EnrichmentActs.jsx":225,"./GATE.jsx":226,"./MathElective.jsx":230,"./MathOlympiad.jsx":231,"./WritingElective.jsx":246,"./helpers/SideMenu.jsx":251,"react":214,"react-router":45}],246:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -33437,7 +33327,7 @@ var WritingElective = React.createClass({displayName: "WritingElective",
 
 module.exports = WritingElective;
 
-},{"../../lib/summer/afternoonWritingElective.json":6,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"react":214,"react-router":45}],248:[function(require,module,exports){
+},{"../../lib/summer/afternoonWritingElective.json":6,"../actions/YFActions":218,"../stores/YFStore.jsx":254,"react":214,"react-router":45}],247:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -33515,7 +33405,7 @@ var YFApp = React.createClass({displayName: "YFApp",
 
 module.exports = YFApp;
 
-},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./helpers/Footer.jsx":250,"react":214,"react-router":45}],249:[function(require,module,exports){
+},{"../actions/YFActions":218,"../stores/YFStore.jsx":254,"./helpers/Footer.jsx":250,"react":214,"react-router":45}],248:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -33602,6 +33492,88 @@ var ContactBox = React.createClass({displayName: "ContactBox",
 });
 
 module.exports = ContactBox;
+
+},{"../../actions/YFActions":218,"../../stores/YFStore.jsx":254,"react":214,"react-router":45}],249:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
+var Navigation = Router.Navigation;
+var YFActions = require('../../actions/YFActions');
+var YFStore = require('../../stores/YFStore.jsx');
+
+var CourseView = React.createClass({displayName: "CourseView",
+  render: function() {
+
+    return (
+      React.createElement("div", {className: "panel panel-info"}, 
+        React.createElement("div", {className: "panel-heading"}, 
+          React.createElement("div", {className: "panel-title"}, 
+            React.createElement("h3", null, "Activities and Classes Overview")
+          )
+        ), 
+
+        React.createElement("div", {className: "panel-body"}, 
+          React.createElement("table", {className: "dataintable", border: 0, cellPadding: 0, cellSpacing: 0}, 
+            React.createElement("tbody", null, 
+              React.createElement("tr", {className: "days"}, 
+                React.createElement("th", null), 
+                React.createElement("th", null, "Monday"), 
+                React.createElement("th", null, "Tuesday"), 
+                React.createElement("th", null, "Wednesday"), 
+                React.createElement("th", null, "Thursday"), 
+                React.createElement("th", null, "Friday")
+              ), 
+              React.createElement("tr", null, 
+                React.createElement("th", {className: "time"}, "8:00 AM ", React.createElement("br", null), "-", React.createElement("br", null), " 12:30 PM"), 
+                React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity"), 
+                React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity"), 
+                React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity"), 
+                React.createElement("td", null), 
+                React.createElement("td", null)
+              ), 
+              React.createElement("tr", null, 
+                React.createElement("th", {className: "time"}), 
+                React.createElement("td", null), 
+                React.createElement("td", {className: "movie orange"}, "Movie Trip"), 
+                React.createElement("td", null), 
+                React.createElement("td", null), 
+                React.createElement("td", null)
+              ), 
+              React.createElement("tr", null, 
+                React.createElement("th", {className: "time"}, "1:00 PM ", React.createElement("br", null), "-", React.createElement("br", null), " 6:30 PM"), 
+                React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity"), 
+                React.createElement("td", {className: "afternoon-academics green"}, "Academics"), 
+                React.createElement("td", {className: "afternoon-academics green"}, "Academics"), 
+                React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity"), 
+                React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity")
+              ), 
+              React.createElement("tr", null, 
+                React.createElement("th", {className: "time"}), 
+                React.createElement("td", {className: "afternoon-academics green"}, "Academics"), 
+                React.createElement("td", {className: "writing-electives red"}, "Writing Elective Classes"), 
+                React.createElement("td", {className: "gate-electives purple"}, "GATE Elective Classes"), 
+                React.createElement("td", {className: "afternoon-academics green"}, "Academics"), 
+                React.createElement("td", null)
+              ), 
+              React.createElement("tr", null, 
+                React.createElement("th", {className: "time"}), 
+                React.createElement("td", {className: "gate-electives purple"}, "GATE Elective Classes"), 
+                React.createElement("td", null), 
+                React.createElement("td", {className: "math-electives brown"}, "Math Elective Classes"), 
+                React.createElement("td", null), 
+                React.createElement("td", null)
+              )
+            )
+          )
+        )
+      )
+    );
+  }
+}); 
+
+module.exports = CourseView;
 
 },{"../../actions/YFActions":218,"../../stores/YFStore.jsx":254,"react":214,"react-router":45}],250:[function(require,module,exports){
 'use strict';

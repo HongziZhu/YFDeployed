@@ -50,56 +50,100 @@ span.help{
     padding: 0px 2px;
 }
 
-span.morning-care{
-          background-color: #68b828;
-    color: white;
-  }
-  span.enrichment-activity{
-    background-color: #40bbea;
-    color: #fff;
-  }
-  span.movie{
-    background-color: #2c2e2f;
-    color: #fff;
-  }
-span.afternoon-academics {
-    background-color: #ffba00;
-    color: #fff;
-}
-span.electives {
-    background-color: #7c38bc;
-    color: #fff;
+span.help{
+    margin-left: 8px;
+    cursor: pointer;
 }
 
+{
+    content: "?";
+    padding: 0px 2px;
+}
+.blue {
+  background: #03A9F4;
+}
+
+.purple {
+  background: #A786D5;
+}
+.green {
+  background: #2CC5C6;
+}
+
+.red {
+  background: #F16A5B;
+}
+
+.orange {
+  background: #FFBB42;
+}
+.brown {
+  background: #C6B2A9;
+}
+
+.morning-care{
+    background-color: #68b828;
+    color: white;
+  }
+.enrichment-activity{
+    background-color: #03A9F4;
+    color: #fff;
+  }
+.movie{
+    background-color: #FFBB42;
+    color: #fff;
+  }
+.afternoon-academics {
+    background-color: #2CC5C6;
+    color: #fff;
+}
+.math-electives {
+    background-color: #C6B2A9;
+    color: #fff;
+}
+.writing-electives {
+    background-color: #F16A5B;
+    color: #fff;
+}
+.gate-electives {
+    background-color: #A786D5;
+    color: #fff;
+}
+.days, .time {
+  background: #34495e;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  text-align: center;
+  color: #fff;
+}
+
+.time {
+  width: 3em !important;
+  color: #fff;
+}
 
     table.dataintable {
     margin-top: 10px;
     border-collapse: collapse;
-    border: 1px solid #aaa;
     width: 100%;
 }
 table.dataintable th {
     vertical-align: baseline;
-    padding: 5px 15px 5px 6px;
-    background-color: #d5d5d5;
-    border: 1px solid #aaa;
-    text-align: left;
+    background-color: #33485F;
+    padding: 1em;
+    width: 10em;
+    text-align: center;
+}
+table.dataintable tr:nth-child(2n) {
+  background: #eff0f1;
+}
+table.dataintable tr:nth-child(2n+3) {
+  background: #fff;
 }
 table.dataintable td {
-    vertical-align: text-top;
-    padding: 6px 15px 6px 6px;
-    background-color: #efefef;
-    border: 1px solid #aaa;
-}
-table.dataintable li {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-table.dataintable ul, table.dataintable li {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    vertical-align: text-center;
+    padding: 1em;
+    width: 10em;
 }
 
 /* -------------------- 

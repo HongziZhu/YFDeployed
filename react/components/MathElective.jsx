@@ -10,7 +10,7 @@ var mathData = require('../../lib/summer/afternoonMathElective.json');
 
 var MathElective = React.createClass({
   getInitialState: function() {
-    var m = YFStore.getMathElecIdx(self.props.curWeekIdx);
+    var m = YFStore.getMathElecIdx(this.props.curWeekIdx);
     return {
       mathElecIdx: isNaN(m) ? -1 : m
     };
