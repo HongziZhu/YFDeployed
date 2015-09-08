@@ -207,6 +207,21 @@
                     15
                 ],
                 "price": 40
+            },
+            {
+                "activity_name": "TTTTTTTTTTT",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
             }
         ],
         "afternoon": [

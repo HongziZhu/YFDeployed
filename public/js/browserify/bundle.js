@@ -764,6 +764,21 @@ module.exports={
                     15
                 ],
                 "price": 40
+            },
+            {
+                "activity_name": "TTTTTTTTTTT",
+                "time": "10:00 AM-12:00 PM",
+                "grade": [
+                    "K",
+                    "G1",
+                    "G2"
+                ],
+                "hour_per_week": 6,
+                "class_size": [
+                    1,
+                    15
+                ],
+                "price": 40
             }
         ],
         "afternoon": [
@@ -30145,17 +30160,30 @@ var Home = React.createClass({displayName: "Home",
     //Diff: 1. class -> className; 2. for -> htmlFor; 3. <input ..... />;  4. <br> -> <br></br>
     //5. a single element to contain the render stuff
     return (
-      React.createElement("div", {className: "row"}, 
-        React.createElement("div", {className: "col-md-offset-3 col-md-9"}, 
-          React.createElement("div", {className: "page-header"}, 
-            React.createElement("h1", null, "Welcome to Yang Fan Enrollment System!"), 
-            React.createElement("hr", null), 
-            React.createElement("h1", null, "Please  ", 
-              React.createElement("a", {href: "/login", className: "btn btn-success btn-lg"}, "Log in"), 
-              "  or  ", 
-              React.createElement("a", {href: "/signup", className: "btn btn-primary btn-lg"}, "Sign up")
+      React.createElement("div", {className: "web-boy", style: {width: '100vw', height: '100vh', margin: 0, padding: 0, background: 'url("http://i.imgur.com/UP7fWfg.jpg") no-repeat center center', backgroundSize: 'cover', fontFamily: '"Lato", sans-serif'}}, 
+        React.createElement("form", {className: "sub-form"}, 
+          React.createElement("div", {className: "input-contain"}, 
+            React.createElement("div", {className: "circle circle-quill"}), 
+            React.createElement("h2", {className: "info"}, "Welcome to Yang Fan Enrollment"), 
+            React.createElement("div", {className: "allsub"}, 
+              React.createElement("a", {href: "/login"}, 
+                React.createElement("div", {className: "submit"}, 
+                  "Log in"
+                )
+              ), 
+              React.createElement("a", {href: "/signup"}, 
+                React.createElement("div", {className: "submit"}, 
+                  "Sign up"
+                )
+              )
+            ), /*allsub*/
+            React.createElement("p", {className: "success-dialog"}, 
+              "We’ll be in touch shortly.", React.createElement("br", null), 
+              "In the meantime, ", React.createElement("br", null), 
+              "check out our ", React.createElement("br", null), 
+              React.createElement("a", {href: "#"}, "weekly offerings.")
             )
-          )
+          )/*input-contain*/
         )
       )
     );

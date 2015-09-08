@@ -306,3 +306,174 @@ button.error:focus {
   padding-left: 5px;
   padding-right: 5px;
 }
+
+/* -----------------------------------------------
+  Homepage
+  ------------------------------------------------ */
+
+div.web-boy {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: url("http://i.imgur.com/UP7fWfg.jpg") no-repeat center center;
+  background-size: cover;
+  font-family: 'Lato', sans-serif;
+}
+
+form.sub-form {
+  background: #faf5f3;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  position: absolute;
+  z-index: 10;
+  padding: 60px 60px 80px;
+  left: 50%;
+  margin-left: -230px;
+  opacity: 0.85;
+  }
+  form.sub-form h2 {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    color: darken( #4e3332, 10% );
+    letter-spacing: 0.061em;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    &.success {
+      color: #356e64;
+      margin-top: -40px;
+      margin-bottom: 0px;
+      padding: 0;
+    }
+  }
+
+.info {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 18px;
+    color: darken( #4e3332, 10% );
+    letter-spacing: 0.061em;
+    margin-top: 60px;
+    margin-bottom: 20px;
+    &.success {
+      color: #356e64;
+      margin-top: -40px;
+      margin-bottom: 0px;
+      padding: 0;
+    }
+  }
+  form.sub-form p.success-dialog {
+    margin-top: -150px;
+    color: #356e64;    
+    letter-spacing: 0.02em;
+    text-align: center;
+    line-height: 1.8em;
+    text-transform: uppercase;
+    form.sub-form a { 
+      color: #9d775f; 
+      text-decoration: none;
+      transition: 0.8s all ease;
+      &:hover {
+        color: #c08159;
+        transition: 0.4s all ease;
+      }
+    }
+  }
+  form.sub-form input { 
+    width: 100%; 
+    background: #fff;
+    text-align: center;
+
+    margin-bottom: 25px;
+    box-shadow: none;
+    appearance: none;
+    border: none;
+    border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid $gray-dk;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    font-size: 11px;
+    position: relative;
+    z-index: 500;
+    letter-spacing: 0.06em;
+    &:focus {
+      border: 1px solid $gray-dk;
+      outline: none;
+      appearance: none;
+    }
+  } 
+  input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+  }
+  form.sub-form .submit {
+    padding-top: 12px;
+    padding-bottom: 12px;
+        margin-top: 25px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 11px;
+    position: relative;
+    z-index: 500;
+    letter-spacing: 0.06em;
+    text-align: center;
+    cursor: pointer;
+    background: #0D91CA;
+    color: #fff;
+    width: 101%;
+    transition: 0.8s all ease;
+    &:hover {
+      background: #d6673c;
+      transform: translateY(1px);
+      transition: 0.4s all ease;
+    }
+  }
+
+#firstname { margin-top: 20px; }
+
+.circle {
+  padding: 15px;
+  height: 40px;
+  width: 40px;
+  margin-top: -80px;
+  margin-left: 115px;
+  position: absolute;
+  z-index: 20;
+  border-radius: 50%;
+  clear: both;
+  opacity: 0.8;
+}
+
+.circle-quill {
+  border: 1px solid $gray-dk;
+  background: #fff;
+}
+
+.circle-paper {
+  border: 1px solid $green-lt;
+  background: $green-dk;
+}
+
+.submit-under, .loader, .loader2, .circle-paper, p.success-dialog, h2.success {
+  visibility: hidden;
+}
+
+.submit-under {
+  background: #8c6e7a;
+  width: 291px;
+  height: 45px;
+  margin-top: -40px;
+  margin-left: -4px;
+  position: absolute;
+  z-index: -1;
+}
+
+.loader, .loader2 {
+  position: absolute;
+  z-index: -5;
+  margin-top: -45px;
+  margin-left: 114px;
+}
