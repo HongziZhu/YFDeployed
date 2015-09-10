@@ -4,3 +4,5 @@ config/env/env.json
 Makefile
 .DS_Store
 public/js/browserify/bundle.js
+npm-debug.log
+html_css/
