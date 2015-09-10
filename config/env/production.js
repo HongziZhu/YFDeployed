@@ -4,6 +4,6 @@
  */
 
 module.exports = {
-  //db: process.env.MONGOHQ_URL
-  db: 'mongodb://localhost/yfenroll-production'
+  db: process.env.MONGOLAB_URI
+
 };
