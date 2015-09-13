@@ -29,7 +29,7 @@ var ContactBox = React.createClass({
 									<span className="input-group-addon">
 										<i className="linecons-user"></i>
 									</span>
-									<input type="text" required className="form-control" data-mask="@\w+" data-is-regex="true"/>
+									<input type="text" required ref='name' className="form-control"/>
 								</div>								
 							</div>
 
@@ -40,7 +40,7 @@ var ContactBox = React.createClass({
 									<span className="input-group-addon">
 										<i className="linecons-user"></i>
 									</span>
-									<input type="text" required className="form-control" data-mask="@\w+" data-is-regex="true" placeholder="eg. mother"/>
+									<input type="text" required ref='relationship' className="form-control" placeholder="eg. mother"/>
 								</div>								
 							</div>
 
@@ -51,29 +51,29 @@ var ContactBox = React.createClass({
 									<span className="input-group-addon">
 										<i className="linecons-mobile"></i>
 									</span>
-									<input type="text" required className="form-control" data-mask="phone" />
+									<input type="text" required ref='cellPhone' className="form-control"/>
 								</div>
 							</div>
 
 							<div className="form-group">
-								<label className="control-label">Work Phone</label>
+								<label className="control-label">Work Phone<span className="req">*</span></label>
 								
 								<div className="input-group  input-group-minimal">
 									<span className="input-group-addon">
 										<i className="linecons-mobile"></i>
 									</span>
-									<input type="text" className="form-control" data-mask="phone" />
+									<input type="text" required ref='workPhone' className="form-control"/>
 								</div>
 							</div>
 
 							<div className="form-group">
-								<label className="control-label">Home Phone</label>
+								<label className="control-label">Home Phone<span className="req">*</span></label>
 								
 								<div className="input-group  input-group-minimal">
 									<span className="input-group-addon">
 										<i className="linecons-mobile"></i>
 									</span>
-									<input type="text" className="form-control" data-mask="phone" />
+									<input type="text" required ref='homePhone' className="form-control"/>
 								</div>
 							</div>
 
@@ -84,7 +84,7 @@ var ContactBox = React.createClass({
 									<span className="input-group-addon">
 										<i className="linecons-mail"></i>
 									</span>
-									<input type="text" className="form-control" data-mask="email" />
+									<input type="text" ref='email' className="form-control"/>
 								</div>
 							</div>
 						</div>	

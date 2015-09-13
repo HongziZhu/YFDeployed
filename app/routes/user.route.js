@@ -72,6 +72,8 @@ router.put('/summer/weeks/:enrollmentId', enrollments.saveSummerWeek);
 
 router.put('/summer/other_services/:enrollmentId', enrollments.saveSummerOtherServices);
 
+router.put('/summer/agreements/:enrollmentId', enrollments.saveSummerAgreements);
+
 router.get('/summer/sendConfirmEmail/:enrollmentId', enrollments.sendConfirmEmail);
 
 router.delete('/summer/deleteEnrollment/:enrollmentId', enrollments.deleteSummerEnrollment);

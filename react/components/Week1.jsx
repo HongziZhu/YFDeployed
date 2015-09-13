@@ -74,24 +74,26 @@ var Week1 = React.createClass({
         <div className='main-content col-md-12'>
         <h1 className="bg-success">{curWeekTitle} &nbsp; ({coveredDate})</h1><hr></hr>
         { show ? 
-          <h3>You plan not to attend in this week, please Confirm and Continue.</h3> :
+          <h3>You plan not to attend in this week, please Continue.</h3> :
           <div>
-            <EnrichmentActs 
-              curWeek={curWeek} 
-              curWeekIdx={curWeekIdx}
-              incomingGrade={self.state.incomingGrade} 
-              summerCampWeeks={self.state.summerCampWeeks}/>          
+            <div>
+              <EnrichmentActs 
+                curWeek={curWeek} 
+                curWeekIdx={curWeekIdx}
+                incomingGrade={self.state.incomingGrade} 
+                summerCampWeeks={self.state.summerCampWeeks}/>          
+            </div>
+
+            <div className="row">
+              <div className='col-md-offset-1'>
+                <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary btn-lg">Confirm
+                </button><br></br>
+              </div>
+            </div>
           </div>
         }
 
-        <div className="row">
-          <div className='col-md-offset-1'>
-            <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary btn-lg">Confirm
-            </button><br></br>
-          </div>
-        </div>
-
-          {this.state.done? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" disabled>Continue</button>}
+        {(this.state.done || show) ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" disabled>Continue</button>}
         </div>
       </div>
     );

@@ -223,6 +223,18 @@ exports.saveSummerOtherServices = function (req, res, next) {
 	});
 };
 
+exports.saveSummerAgreements = function (req, res, next) {
+  var enrollment = req.enrollment;
+  enrollment.student.summerAgreements = req.body.summerAgreements;
+  enrollment.student.primaryEmerContact = req.body.primaryEmerContact;
+  enrollment.student.secondaryEmerContact = req.body.secondaryEmerContact;
+
+  enrollment.save(function (err, enrollment) {
+    if(err) { return next(err);}
+    res.json(enrollment);
+  });
+};
+
 exports.sendConfirmEmail = function (req, res, next) {
   var enrollment = req.enrollment;
   var email = new sendgrid.Email({

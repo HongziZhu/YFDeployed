@@ -2,4 +2,4 @@
 3. Chinese Folk Dance enroll week_7 and week_8 is required
 4. figure out this scope
 5. Forget Password? Email Confirmation? Waiting List?
-6. password can only be six characters
+6. cancel confirm buttons for absent weeks

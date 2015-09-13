@@ -88,9 +88,12 @@ var YFActions = {
     });
   },
 
-  saveSummerAgreements: function() {
+  saveSummerAgreements: function(primaryEmerContact, secondaryEmerContact, next) {
     AppDispatcher.dispatch({
-      actionType: YFConstants.YF_SAVE_SUMMER_AGREEMENT
+      actionType: YFConstants.YF_SAVE_SUMMER_AGREEMENTS,
+      primaryEmerContact: primaryEmerContact,
+      secondaryEmerContact: secondaryEmerContact,
+      next: next
     });
   },
 

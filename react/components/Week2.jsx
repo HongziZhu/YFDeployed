@@ -89,7 +89,7 @@ var Week2 = React.createClass({
         <div className='main-content col-md-12 '>
         <h2 className="bg-success">{preWeekTitle}&nbsp; ({coveredDate[0]})</h2><hr></hr>
         { !preShow ? 
-          <h3>You plan not to attend in this week, please Confirm and Continue.</h3> :
+          <h3>You plan not to attend in this week, please Continue.</h3> :
           <div>
             <EnrichmentActs 
               curWeek={preWeek} 

@@ -11,6 +11,10 @@ var EnrollmentSchema = new Schema({
     userId: String,
     firstName: { type: String, trim: true, required: 'First name cannot be blank.' },
     lastName: { type: String, trim: true, required: 'Last name cannot be blank.' },
+    ChineseName: {
+      first: String,
+      last: String
+    },
     currentGrade: {
       type: String,
       enum: ['K', 'G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7', 'G8', 'G9', 'G10', 'G11', 'G12']
@@ -23,8 +27,47 @@ var EnrollmentSchema = new Schema({
     gender: { type: String, enum: ['male', 'female'] },
     qualifications: {
       advancedWriting: { type: Boolean, default: false }
+    },
+    summerSchoolAttended: { type: String, trim: true },
+    schoolDistrict: { type: String, trim: true },
+    pediatricDoctor: {
+      name: { type: String, trim: true },
+      phone: { type: String, trim: true }
+    },
+    insuranceInfor: {
+      insuranceCompany: { type: String, trim: true },
+      policyNumber: { type: String, trim: true }
+    },
+    medicalDescription: { type: String, trim: true },
+    summerAgreements: {
+      photoRelease: { type: Boolean, default: false },
+      applySunscreen: { type: Boolean, default: false },
+      spareSunCream: { type: Boolean, default: false },
+      allergySunscreen: { type: Boolean, default: false },
+      emergencyPermit: { type: Boolean, default: false },
+      swimPermit: { type: Boolean, default: false },
+      moviePermit: { type: Boolean, default: false },
+      fieldTripPermit: { type: Boolean, default: false },
+      HartSportsPermit: { type: Boolean, default: false }
+    },
+    primaryEmerContact: {
+      name: { type: String, trim: true },
+      relationship: { type: String, trim: true },
+      cellPhone: { type: String, trim: true },
+      workPhone: { type: String, trim: true },
+      homePhone: { type: String, trim: true },
+      email: { type: String, trim: true }
+    },
+    secondaryEmerContact: {
+      name: { type: String, trim: true },
+      relationship: { type: String, trim: true },
+      cellPhone: { type: String, trim: true },
+      workPhone: { type: String, trim: true },
+      homePhone: { type: String, trim: true },
+      email: { type: String, trim: true }
     }
   },
+
   //ten weeks for summer camp
   summerCampWeeks: [{
     weekIndex: String,

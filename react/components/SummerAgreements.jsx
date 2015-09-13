@@ -34,12 +34,38 @@ var SummerAgreements = React.createClass({
   },
   handleConfirm: function(e) {
     e.preventDefault();
+    if(!YFStore.getEmergencyPermit()){
+      return alert('You have to accept the consent for emergency medical treatment.');
+    }
     this.setState({ done: true });
     React.findDOMNode(this.refs.confirmButton).blur();
   },
   handleContinue: function(e) {
-    YFActions.saveSummerAgreements();
-    this.transitionTo('summer/confirm');
+    if(!YFStore.getEmergencyPermit()){
+      return alert('You have to accept the consent for emergency medical treatment.');
+    }
+    var self = this;
+    var contact1 = this.refs.emerBox.refs.primaryEmerContact; 
+    var contact2 = this.refs.emerBox.refs.secondaryEmerContact;
+    var primaryEmerContact = {
+      name: React.findDOMNode(contact1.refs.name).value.trim(),
+      relationship: React.findDOMNode(contact1.refs.relationship).value.trim(),
+      cellPhone: React.findDOMNode(contact1.refs.cellPhone).value.trim(),
+      workPhone: React.findDOMNode(contact1.refs.workPhone).value.trim(),
+      homePhone: React.findDOMNode(contact1.refs.homePhone).value.trim(),
+      email: React.findDOMNode(contact1.refs.email).value.trim()
+    };
+    var secondaryEmerContact = {
+      name: React.findDOMNode(contact2.refs.name).value.trim(),
+      relationship: React.findDOMNode(contact2.refs.relationship).value.trim(),
+      cellPhone: React.findDOMNode(contact2.refs.cellPhone).value.trim(),
+      workPhone: React.findDOMNode(contact2.refs.workPhone).value.trim(),
+      homePhone: React.findDOMNode(contact2.refs.homePhone).value.trim(),
+      email: React.findDOMNode(contact2.refs.email).value.trim()
+    };
+    YFActions.saveSummerAgreements(primaryEmerContact, secondaryEmerContact, function() {
+      self.transitionTo('summer/confirm');
+    });
   },
 
   render: function () {
@@ -51,19 +77,22 @@ var SummerAgreements = React.createClass({
         <h2 className="bg-success">Summer Release Forms</h2><hr></hr>
           <h3 className='bg-info'>Parents, please answer all the questions below. <ins>The enrollment is not completed if questions are not answered in this page</ins>
           </h3><hr></hr>
-          <SummerTripPermit 
-            incomingGrade={this.state.incomingGrade}/>
-          <EmergencyBox />
-          <SunscreenPermit />
-          <PhotoRelease />
 
-          <div className="row">
-            <div className='col-md-offset-1'>
-              <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary">Confirm</button>&nbsp; {self.state.done ? <h5><span className="bg-info"> Submitted, please Continue. </span></h5> : <p></p>}
+          <form onSubmit={this.handleConfirm} >
+            <SummerTripPermit 
+              incomingGrade={this.state.incomingGrade}/>
+            <EmergencyBox ref='emerBox'/>
+            <SunscreenPermit />
+            <PhotoRelease />
+
+            <div className="row">
+              <div className='col-md-offset-1'>
+                <button type='submit' ref='confirmButton' className="btn btn-primary btn-lg">Confirm</button>&nbsp; {self.state.done ? <h5><span className="bg-info"> Submitted, please Continue. </span></h5> : <p></p>}
+              </div>
             </div>
-          </div>
+          </form>
 
-          {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
+          {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue} disabled>Continue</button>}
         </div>
       </div>
     );
@@ -214,7 +243,7 @@ var SunscreenPermit = React.createClass({
       <div className="panel panel-primary">
         <div className="panel-heading">
           <div className="panel-title">
-            <h3>Summer Trip Permission</h3>
+            <h3>Sunscreen Permission</h3>
           </div>
         </div>
 
@@ -281,10 +310,12 @@ var EmergencyBox = React.createClass({
               {this.state.emergencyPermit ? 
                 <div className='row'>
                   <ContactBox 
+                    ref='primaryEmerContact'
                     title='Primary Emergency Contact'
                   /> 
                   <ContactBox
-                  title='Secondary Emergency Contact'
+                    ref='secondaryEmerContact'
+                    title='Secondary Emergency Contact'
                   />
                 </div>
                 : <p></p> }

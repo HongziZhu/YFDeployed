@@ -6,6 +6,7 @@ var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
+var results = require('../../lib/EnrollResults.json');
 
 var SideMenu = require('./helpers/SideMenu.jsx');
 
@@ -58,7 +59,8 @@ var ConfirmPage = React.createClass({
             <div className="panel-body">
               <div className="row">
                 <pre>
-                  {JSON.stringify(YFStore.getEnrollment(), null, 2)}
+                  {/*//TODO Shawn Peipei */}
+                  {JSON.stringify(results, null, 2)}
                 </pre>
               </div>
             </div>

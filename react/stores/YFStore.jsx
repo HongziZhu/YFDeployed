@@ -123,6 +123,9 @@ function findStudentsById(id, next) {
 }
 
 function saveSummerSchedule(student, next) {
+  if(YFStore.getHasPrevEnrollment()){
+    return next();
+  }
   var url = '/api/users/summer/schedule/new';
   var data = {
     student: student,
@@ -135,6 +138,7 @@ function saveSummerSchedule(student, next) {
   .end(function(err, res) {
     if(err) { return console.error(err); }
     var enrollmentId = res.body._id;
+    sessionStorage.setItem('hasPrevEnrollment', true);
     sessionStorage.setItem('enrollmentId', enrollmentId);
     next();
   });
@@ -148,6 +152,7 @@ function deleteSummerEnrollment(enrollmentId, next) {
   .end(function(err, res) {
     if(err) { return console.error(err); }
     if(res.body){
+      sessionStorage.setItem('hasPrevEnrollment', false);
       sessionStorage.removeItem('enrollmentId');
     }
     next();
@@ -219,6 +224,7 @@ function loadPrevEnrollment(userId, stuFirstName, next) {
   .end(function(err, res) {
     if(err) { console.error(err); }
     if(res.body){
+      sessionStorage.setItem('hasPrevEnrollment', true);
       sessionStorage.setItem('enrollmentId', res.body._id);
       enrollment = res.body;
       summerCampWeeks = res.body.summerCampWeeks;
@@ -319,11 +325,31 @@ function saveSummerOtherServices(enrollmentId) {
   });
 }
 
-function saveSummerAgreements(enrollmentId) {
+function saveSummerAgreements(enrollmentId, primaryEmerContact, secondaryEmerContact, next) {
   var url = '/api/users/summer/agreements/' + enrollmentId;
   var data = {
-    
+    summerAgreements: {
+      photoRelease: YFStore.getPhotoRelease(),
+      applySunscreen: YFStore.getApplySunscreen(),
+      spareSunCream: YFStore.getSpareSunCream(),
+      allergySunscreen: YFStore.getAllergySunscreen(),
+      emergencyPermit: YFStore.getEmergencyPermit(),
+      swimPermit: YFStore.getSwimPermit(),
+      moviePermit: YFStore.getMoviePermit(),
+      fieldTripPermit: YFStore.getFieldTripPermit(),
+      HartSportsPermit: YFStore.getHartSportsPermit()
+    },
+    primaryEmerContact: primaryEmerContact,
+    secondaryEmerContact: secondaryEmerContact
   };
+  request
+  .put(url)
+  .send(data)
+  .accept('application/json')
+  .end(function (err, res) {
+    if(err) { return console.error(err); }
+    next();
+  });
 } 
 
 function sendConfirmEmail(enrollmentId, next) {
@@ -344,6 +370,12 @@ var YFStore = assign({}, EventEmitter.prototype, {
   },
   getSignup: function() {
     return sessionStorage.getItem('signUped') === 'true' ? true : false;
+  },
+  setHasPrevEnrollment: function(v) {
+    sessionStorage.setItem('hasPrevEnrollment', v);
+  },
+  getHasPrevEnrollment: function() {
+    return sessionStorage.getItem('hasPrevEnrollment') === 'true' ? true : false;
   },
   getUserFromStorage: function() {
     loggedIn = sessionStorage.getItem('loggedIn') === 'true';
@@ -816,7 +848,7 @@ AppDispatcher.register(function(action) {
 
     case YFConstants.YF_SAVE_SUMMER_AGREEMENTS:
       enrollmentId = sessionStorage.getItem('enrollmentId');
-      saveSummerAgreements(enrollmentId);
+      saveSummerAgreements(enrollmentId, action.primaryEmerContact, action.secondaryEmerContact, action.next);
       break;
 
     case YFConstants.YF_SEND_CONFIRM_EMAIL:
