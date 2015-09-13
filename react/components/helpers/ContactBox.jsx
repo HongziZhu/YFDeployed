@@ -23,24 +23,35 @@ var ContactBox = React.createClass({
 						<div className="panel-body">
 
 							<div className="form-group">
-								<label className="control-label">Name</label>
+								<label className="control-label">Emergency Contact Name<span className="req">*</span></label>
 								
 								<div className="input-group  input-group-minimal">
 									<span className="input-group-addon">
 										<i className="linecons-user"></i>
 									</span>
-									<input type="text" className="form-control" data-mask="@\w+" data-is-regex="true"/>
+									<input type="text" required className="form-control" data-mask="@\w+" data-is-regex="true"/>
 								</div>								
 							</div>
 
 							<div className="form-group">
-								<label className="control-label">Cell Phone</label>
+								<label className="control-label">Relationship<span className="req">*</span></label>
+								
+								<div className="input-group  input-group-minimal">
+									<span className="input-group-addon">
+										<i className="linecons-user"></i>
+									</span>
+									<input type="text" required className="form-control" data-mask="@\w+" data-is-regex="true" placeholder="eg. mother"/>
+								</div>								
+							</div>
+
+							<div className="form-group">
+								<label className="control-label">Cell Phone<span className="req">*</span></label>
 								
 								<div className="input-group  input-group-minimal">
 									<span className="input-group-addon">
 										<i className="linecons-mobile"></i>
 									</span>
-									<input type="text" className="form-control" data-mask="phone" />
+									<input type="text" required className="form-control" data-mask="phone" />
 								</div>
 							</div>
 

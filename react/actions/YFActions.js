@@ -5,13 +5,19 @@ var YFConstants = require('../constants/YFConstants');
 
 var YFActions = {
 
-  /**
-   * @param  {string} text
-   */
-  createUser: function(body) {
+  validateEmail: function(email, next) {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_VALIDATE_EMAIL,
+      email: email,
+      next: next
+    });
+  },
+
+  createUser: function(body, next) {
     AppDispatcher.dispatch({
       actionType: YFConstants.YF_CREATE_USER,
-      body: body
+      body: body,
+      next: next
     });
   },
 
@@ -35,10 +41,27 @@ var YFActions = {
     });
   },
 
+  loadPrevEnrollment: function(userId, stuFirstName, next) {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_LOAD_PREVIOUS_ENROLLMENT,
+      userId: userId,
+      stuFirstName: stuFirstName,
+      next: next
+    });
+  },
+
   saveSummerSchedule: function(student, next) {
     AppDispatcher.dispatch({
       actionType: YFConstants.YF_SAVE_SUMMER_SCHEDULE,
       student: student,
+      next: next
+    });
+  },
+
+  deleteSummerEnrollment: function(enrollmentId, next) {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_DELETE_SUMMER_ENROLLMENT,
+      enrollmentId: enrollmentId,
       next: next
     });
   },
@@ -74,6 +97,13 @@ var YFActions = {
   loadEnrollment: function() {
     AppDispatcher.dispatch({
       actionType: YFConstants.YF_LOAD_ENROLLMENT,
+    });
+  },
+
+  sendConfirmEmail: function(next) {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_SEND_CONFIRM_EMAIL,
+      next: next
     });
   }
 };

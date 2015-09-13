@@ -23,15 +23,28 @@ exports.load = function (req, res, next, id) {
   });
 };
 
-exports.createUser = function (req, res, next) {
+exports.validateEmail = function (req, res) {
+  var email = req.body;
+  User.find({ email: email }, function (err, users) {
+    if(err) { return console.error(err); }
+    if(users.length === 0){
+      res.json({ emailValid: true });
+    } else {
+      res.json({ emailValid: false});
+    }
+  });
+};
+
+exports.createUser = function (req, res) {
   var user = new User(req.body);
   user.provider = 'local';
   for(var i = 0; i < user.students.length; i++) {
       user.students[i].userId = user._id;
   }
   user.save(function (err, user) {
-    if(err) { return next(err); }
-      res.json(user);
+    //err => path('email').validate
+    if(err) { return res.json({ err: err.errors.email.message }); }
+    res.json({ user: user });
   });
 };
 

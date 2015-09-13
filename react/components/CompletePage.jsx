@@ -9,7 +9,7 @@ var YFStore = require('../stores/YFStore.jsx');
 
 var SideMenu = require('./helpers/SideMenu.jsx');
 
-var ConfirmPage = React.createClass({
+var CompletePage = React.createClass({
   mixins: [ Navigation ],
   getInitialState: function() {
     YFActions.loadEnrollment();
@@ -36,10 +36,7 @@ var ConfirmPage = React.createClass({
     this.setState({ done: true });
   },
   handleContinue: function(e) {
-    var self = this;
-    YFActions.sendConfirmEmail(function() {
-      self.transitionTo('complete');
-    });
+
   },
 
   render: function () {
@@ -51,7 +48,7 @@ var ConfirmPage = React.createClass({
           <div className="panel panel-primary">
             <div className="panel-heading">
               <div className="panel-title">
-                <h3>Preview of Summer Camp Enrollment</h3>
+                <h3>Enrollment Completed!</h3>
               </div>
             </div>
 
@@ -77,4 +74,4 @@ var ConfirmPage = React.createClass({
   } 
 });
 
-module.exports = ConfirmPage;
+module.exports = CompletePage;

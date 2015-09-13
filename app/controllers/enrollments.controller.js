@@ -1,6 +1,7 @@
 'use strict';
 
 var Enrollment = require('mongoose').model('Enrollment');
+var sendgrid = require('sendgrid')(process.env.sendgrid_api_key);
 
 /* original data */
 var enrichActData = require('../../lib/summer/enrichmentActivities.json');
@@ -19,6 +20,21 @@ exports.create = function (req, res, next) {
 	});
 };
 
+exports.checkPrevEnrollment = function (req, res, next) {
+  var userId = req.body.userId;
+  var stuFirstName = req.body.stuFirstName;
+  var q = {
+    'student.userId': userId,
+    'student.firstName': stuFirstName
+  };
+
+  Enrollment.findOne(q, function (err, enrollment) {
+    if(err) { return next(err); }
+    res.json(enrollment);
+  });
+
+};
+
 exports.saveAfternoonAcademics = function (req, res, next) {
 	var enrollment = req.enrollment;
 	if(enrollment.summerCampWeeks.length < 1){
@@ -30,6 +46,14 @@ exports.saveAfternoonAcademics = function (req, res, next) {
 	enrollment.save(function (err, enrollment) {
 		res.json(enrollment);
 	});
+};
+
+exports.deleteSummerEnrollment = function (req, res, next) {
+  var enrollmentId = req.enrollment._id;
+  Enrollment.findByIdAndRemove(enrollmentId, function (err, enrollment) {
+    if(err) { return next(err); }
+    res.json(enrollment);
+  });
 };
 
 exports.saveSummerWeek = function (req, res, next) {
@@ -197,4 +221,18 @@ exports.saveSummerOtherServices = function (req, res, next) {
 	enrollment.save(function (err, enrollment) {
 		res.json(enrollment);
 	});
+};
+
+exports.sendConfirmEmail = function (req, res, next) {
+  var enrollment = req.enrollment;
+  var email = new sendgrid.Email({
+    to: 'hongzi.emma@gmail.com',
+    from: 'hj742@nyu.edu',
+    subject: 'YF Enroll Confirm',
+    text: JSON.stringify(enrollment, null, 2)
+  });
+  sendgrid.send(email, function (err, json) {
+    if(err) { console.error(err); }
+    console.log(json);
+  });
 };

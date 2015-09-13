@@ -12,14 +12,18 @@
 var keyMirror = require('keymirror');
 
 module.exports = keyMirror({
+  YF_VALIDATE_EMAIL: null,
   YF_CREATE_USER: null,
   YF_LOGIN: null,
   YF_LOGOUT: null,
   YF_LOAD_STUDENTS: null,
+  YF_LOAD_PREVIOUS_ENROLLMENT: null,
   YF_SAVE_SUMMER_SCHEDULE: null,
+  YF_DELETE_SUMMER_ENROLLMENT: null,
   YF_SAVE_SUMMER_AFTERNOON_ACADEMICS: null,
   YF_LOAD_ENROLLMENT: null,
   YF_SAVE_SUMMER_WEEK: null,
   YF_SAVE_SUMMER_OTHER_SERVICES: null,
-  YF_SAVE_SUMMER_AGREEMENTS: null
+  YF_SAVE_SUMMER_AGREEMENTS: null,
+  YF_SEND_CONFIRM_EMAIL: null
 });

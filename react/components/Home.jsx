@@ -2,7 +2,6 @@
 
 var React=require('react');
 
-
 //Home is component created by React.JS
 var Home = React.createClass({
   render: function () {
@@ -26,14 +25,8 @@ var Home = React.createClass({
                   Sign up
                 </div>
               </a>
-            </div>{/*allsub*/}
-            <p className="success-dialog">
-              We’ll be in touch shortly.<br />
-              In the meantime, <br />
-              check out our <br />
-              <a href="#">weekly offerings.</a>
-            </p>
-          </div>{/*input-contain*/}
+            </div>
+          </div>
         </form>
       </div>
     );

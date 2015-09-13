@@ -22,6 +22,8 @@ router.param('id', function (req, res, next, userId) {
 	});
 });
 
+router.get('/validateEmail', users.validateEmail);
+
 router.post('/new', users.createUser);
 
 router.post('/session', passport.authenticate('local'), function (req, res){
@@ -44,7 +46,6 @@ router.get('/:id', function (req, res) {
 router.get('/:id/students', users.getStudents);
 
 
-
 /* Enrollment */
 router.param('enrollmentId', function (req, res, next, enrollmentId) {
 	Enrollment.findById(enrollmentId, function (err, enrollment) {
@@ -61,6 +62,8 @@ router.get('/enroll/:enrollmentId', function (req, res) {
 	res.json(req.enrollment);
 });
 
+router.post('/enroll/checkPrevious', enrollments.checkPrevEnrollment);
+
 router.post('/summer/schedule/new', enrollments.create);
 
 router.put('/summer/afternoon_academics/:enrollmentId', enrollments.saveAfternoonAcademics);
@@ -68,6 +71,10 @@ router.put('/summer/afternoon_academics/:enrollmentId', enrollments.saveAfternoo
 router.put('/summer/weeks/:enrollmentId', enrollments.saveSummerWeek);
 
 router.put('/summer/other_services/:enrollmentId', enrollments.saveSummerOtherServices);
+
+router.get('/summer/sendConfirmEmail/:enrollmentId', enrollments.sendConfirmEmail);
+
+router.delete('/summer/deleteEnrollment/:enrollmentId', enrollments.deleteSummerEnrollment);
 
 //TODO Error handling
 module.exports = router;

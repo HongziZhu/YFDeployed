@@ -4,9 +4,6 @@ var React = require('react');
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
-var Link = Router.Link;
-var State = Router.State;
-var Formsy = require('formsy-react');
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
 
@@ -18,9 +15,10 @@ var GradeBox = React.createClass({
     return (
       <div className="panel panel-primary">
         <div className="panel-heading">
-          <strong>Select Incoming Grade For {this.props.stu_fname}</strong>
+          <strong>Select Incoming Grade as of Fall 2016 For {this.props.stu_fname}</strong>
         </div>
         <div className="panel-body">
+          <h4 className='bg-info'><span>e.g. If your child will be <ins>G3</ins> in Fall 2016, please select <ins>G3</ins> for him/her.</span></h4>
           <select className="form-control" onChange={this.props.handleChange}>
             <option value='K'>K</option>
             <option value='G1'>G1</option>
@@ -90,6 +88,7 @@ var GetStarted = React.createClass({
   },
   handleContinue: function(e) {
     e.preventDefault();
+    var self = this;
     YFStore.setSideHighlight('attendance');
     YFStore.setIncomingGradeAndIndexAndProgram(this.state.incomingGrade, this.state.studentIndex, this.state.program);
     var path = '';
@@ -104,7 +103,10 @@ var GetStarted = React.createClass({
         path = 'enrichment_elective/attendance';
         break;
     }
-    this.transitionTo(path);
+    var stuFirstName = this.state.students[this.state.studentIndex].firstName;
+    YFActions.loadPrevEnrollment(this.state.user._id, stuFirstName, function() {
+      self.transitionTo(path);
+    });
   },
   showContinue: function(e) {
     e.preventDefault();
@@ -145,10 +147,10 @@ var GetStarted = React.createClass({
                 <label><input type="radio" onChange={this.handleSelectProgram} value="Summer Camp" name='program' defaultChecked/>Summer Camp</label>
               </div>
               <div className="radio">
-                <label><input type="radio" onChange={this.handleSelectProgram} value="After School" name='program' />After School</label>
+                <label><input type="radio" onChange={this.handleSelectProgram} value="After School" name='program' disabled/>After School</label>
               </div>
               <div className="radio">
-                <label><input type="radio" onChange={this.handleSelectProgram} value="Elective and Enrichment" name='program' />Elective and Enrichment</label>
+                <label><input type="radio" onChange={this.handleSelectProgram} value="Elective and Enrichment" name='program' disabled/>Elective and Enrichment</label>
               </div>
 
               <button type="button" className="btn btn-info" ref='program_btn' onClick={this.showChildBox}>Confirm</button>
@@ -172,7 +174,7 @@ var GetStarted = React.createClass({
             handleChange={this.handleSelectGrade} 
             showContinue={this.showContinue} /> : <p></p> }
 
-          {this.state.showContinue ? <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success" onClick={this.handleContinue} disabled>Continue</button>}
+          {this.state.showContinue ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue} disabled>Continue</button>}
 
           </div>
         </div>

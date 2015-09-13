@@ -14,13 +14,21 @@ var oAuthTypes = [
 ];
 
 var UserSchema = new Schema({
-  // name: { type: String, default: '' },
-  // username: { type: String, default: '' },
   _id: { type: String, default: uuid.v4() },
+  email: { 
+    type: String, 
+    lowercase: true, 
+    trim: true,
+    required: "Email address is required."
+  },
   students: [{
     userId: String,
     firstName: { type: String, trim: true, required: 'First name cannot be blank.' },
     lastName: { type: String, trim: true, required: 'Last name cannot be blank.' },
+    ChineseName: {
+      first: String,
+      last: String
+    },
     currentGrade: {
       type: String,
       enum: ['K', 'G1', 'G2', 'G3', 'G4', 'G5', 'G6', 'G7', 'G8', 'G9', 'G10', 'G11', 'G12']
@@ -33,34 +41,30 @@ var UserSchema = new Schema({
     gender: { type: String, enum: ['male', 'female'] },
     qualifications: {
       advancedWriting: { type: Boolean, default: false }
-    }
-    // siblingInYF: [{
-    //   firstName: { type: String, trim: true },
-    //   lastName: { type: String, trim: true },
-    // }]
+    },
+    summerSchoolAttended: { type: String, trim: true },
+    schoolDistrict: { type: String, trim: true },
+    pediatricDoctor: {
+      name: { type: String, trim: true },
+      phone: { type: String, trim: true }
+    },
+    insuranceInfor: {
+      insuranceCompany: { type: String, trim: true },
+      policyNumber: { type: String, trim: true }
+    },
+    medicalDescription: { type: String, trim: true }
   }],
-  mother: {
-    firstName: { type: String, trim: true },
-    lastName: { type: String, trim: true },
-    workPhone: { type: String, trim: true },
-    cellPhone: { type: String, trim: true },
-    email: { type: String, trim: true }
-  },
-  father: {
-    firstName: { type: String, trim: true },
-    lastName: { type: String, trim: true },
-    workPhone: { type: String, trim: true },
-    cellPhone: { type: String, trim: true },
-    email: { type: String, trim: true }
-  },
-  phoneNumber: { type: String, trim: true },
-  email: { 
-    type: String, 
-    lowercase: true, 
-    trim: true,
-    match: [/[^\s@]+@[^\s@]+\.[^\s@]+/, "This email address is invalid."],
-    required: "Email address is required.",
-    unique: true
+  motherName: { type: String, trim: true },
+  fatherName: { type: String, trim: true },
+  cellPhone: { type: String, trim: true },
+  homePhone: { type: String, trim: true },
+  workPhone: { type: String, trim: true },
+  homeAddress: {
+    addressLine1: { type: String, trim: true },
+    addressLine2: { type: String, trim: true },
+    city: { type: String, trim: true },
+    state: { type: String, trim: true },
+    zipcode: { type: String, trim: true }
   },
   role: {
     type: String,
@@ -71,11 +75,6 @@ var UserSchema = new Schema({
   hashed_password: { type: String, default: '' },
   salt: { type: String, default: '' },
   authToken: { type: String, default: '' },
-  facebook: {},
-  twitter: {},
-  github: {},
-  google: {},
-  linkedin: {},
   created: {
     type: Date,
     default: Date.now
@@ -105,34 +104,21 @@ var UserSchema = new Schema({
   return value && value.length;
 };
 
-// the below 5 validations only apply if you are signing up traditionally
-
-// UserSchema.path('name').validate(function (name) {
-//   if (this.skipValidation()) return true;
-//   return name.length;
-// }, 'Name cannot be blank');
-
-UserSchema.path('email').validate(function (email) {
-  if (this.skipValidation()) return true;
-  return email.length;
-}, 'Email cannot be blank');
-
-UserSchema.path('email').validate(function (email, fn) {
-  var User = mongoose.model('User');
-  if (this.skipValidation()) fn(true);
-
-  // Check only when it is a new user or when email field is modified
-  if (this.isNew || this.isModified('email')) {
-    User.find({ email: email }).exec(function (err, users) {
-      fn(!err && users.length === 0);
-    });
-  } else fn(true);
+// Validate email is not taken
+// respond(true) => email is valid, hasn't existed.
+UserSchema
+.path('email')
+.validate(function(value, respond) {
+  var self = this;
+  this.constructor.findOne({email: value}, function(err, user) {
+    if(err) throw err;
+    if(user) {
+      if(self.id === user.id) return respond(true);
+      return respond(false);
+    }
+    respond(true);
+  });
 }, 'Email already exists');
-
-// UserSchema.path('username').validate(function (username) {
-//   if (this.skipValidation()) return true;
-//   return username.length;
-// }, 'Username cannot be blank');
 
 UserSchema.path('hashed_password').validate(function (hashed_password) {
   if (this.skipValidation()) return true;

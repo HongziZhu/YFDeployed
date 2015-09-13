@@ -24,10 +24,5 @@ if (fs.existsSync(envFile)) {
  */
 
 module.exports = {
-  db: 'mongodb://localhost/yfenroll',
-  facebook: {
-    clientID: process.env.FACEBOOK_CLIENTID,
-    clientSecret: process.env.FACEBOOK_SECRET,
-    callbackURL: "http://localhost:3000/auth/facebook/callback"
-  }
+  db: 'mongodb://localhost/yfenroll'
 };

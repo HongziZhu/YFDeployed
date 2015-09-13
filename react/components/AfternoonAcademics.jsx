@@ -36,7 +36,11 @@ var AfternoonAcademics = React.createClass({
   },
   _onChange: function() {
     this.setState({
-      summerCampWeeks: YFStore.getSummerCampWeeks()
+      language: YFStore.getDailyLang(),
+      writing:  YFStore.getWritingChoice(),
+      math: YFStore.getMathChoice(),
+      summerCampWeeks: YFStore.getSummerCampWeeks(),
+      incomingGrade: YFStore.getIncomingGrade()
     });
   },
   changeLang: function(e) {
@@ -65,7 +69,7 @@ var AfternoonAcademics = React.createClass({
 
   render: function () {
     var self = this;
-    var info = (self.state.showInfo ? <h4><span className="bg-success">{self.state.language} is chosed. If you want to change, please choose another and submit again. Then please click Continue below</span></h4> : <p></p>);
+    var info = (self.state.showInfo ? <h4><span className="bg-success">If you want to change, please choose another and confirm again. Then please click Continue below</span></h4> : <p></p>);
     return (
       <div className="page-container">
       <SideMenu />

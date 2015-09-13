@@ -13,7 +13,8 @@ var Login = React.createClass({
 	mixins: [ Navigation ],
 	getInitialState: function() {
     return { 
-    	authError: YFStore.getAuthError()
+    	authError: YFStore.getAuthError(),
+      signUped: YFStore.getSignup()
     };
   },
   handleSubmit: function (e) {
@@ -43,36 +44,50 @@ var Login = React.createClass({
   },
 
   render: function () {
-  	var errorAlert;
-  	if(this.state.authError){
-  		errorAlert = <div className="alert alert-danger col-sm-offset-2 col-sm-10" role="alert">Email or Password is wrong.</div>
-  	} else {
-  		<p>Success! </p>
-  	}
+  	var errorAlert = this.state.authError ? <div className="alert alert-danger col-sm-offset-2 col-sm-10" role="alert">Email or Password is wrong.</div> : <p></p>;
+    
+    var signUpInfo = this.state.signUped ? <h4 className='bg-info'>Congratulations! Sign up successfully.</h4> : <p></p>
+
     return (
-    	<div className="col-md-6 col-md-offset-3">
+      <div className="col-md-6 col-md-offset-3">
       <hr></hr>
-    	{errorAlert}
-    	<form className="form-horizontal " onSubmit={this.handleSubmit}>
-			  <div className="form-group">
-			    <label htmlFor="email" className="col-sm-2 control-label">Email</label>
-			    <div className="col-sm-10">
-			      <input type="email" autofocus className="form-control" ref="email" placeholder="Email"/>
-			    </div>
-			  </div>
-			  <div className="form-group">
-			    <label htmlFor="password" className="col-sm-2 control-label">Password</label>
-			    <div className="col-sm-10">
-			      <input type="password" className="form-control" ref="password" placeholder="Password"/>
-			    </div>
-			  </div>
-			  <div className="form-group">
-			    <div className="col-sm-offset-2 col-sm-10">
-			      <button type="submit" className="btn btn-primary">Log in</button>
-			    </div>
-			  </div>
-			</form>
-			</div>
+      <div className="panel panel-primary">
+        <div className="panel-heading">
+          <div className="panel-title">
+            <h3>Log In</h3>
+          </div>
+        </div>
+
+        <div className="panel-body">
+          <div className="row">
+            <div className='col-md-offset-1 col-md-10'> 
+              {signUpInfo}
+              {errorAlert}
+              <hr></hr>
+              <form className="form-horizontal " onSubmit={this.handleSubmit}>
+                <div className="form-group">
+                  <label htmlFor="email" className="col-sm-2 control-label">Email</label>
+                  <div className="col-sm-10">
+                    <input type="email" autofocus className="form-control" ref="email" placeholder="Email"/>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <label htmlFor="password" className="col-sm-2 control-label">Password</label>
+                  <div className="col-sm-10">
+                    <input type="password" maxLength="20" className="form-control" ref="password" placeholder="Password"/>
+                  </div>
+                </div>
+                <div className="form-group">
+                  <div className="col-sm-offset-2 col-sm-10">
+                    <button type="submit" className="btn btn-primary">Log in</button>
+                  </div>
+                </div>
+              </form>
+            </div><hr></hr>
+          </div>
+        </div>
+      </div>
+      </div>
     );
   }
 });

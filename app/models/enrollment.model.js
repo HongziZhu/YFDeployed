@@ -119,7 +119,7 @@ var EnrollmentSchema = new Schema({
       isAttend: { type: Boolean, default: false },
       className: String,
       time: [
-        { weekday: String, display_time: String, database_time: [Number] }
+      { weekday: String, display_time: String, database_time: [Number] }
       ],
       weekday: [String],
       classSize: [Number],
