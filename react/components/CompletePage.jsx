@@ -15,28 +15,8 @@ var CompletePage = React.createClass({
     YFActions.loadEnrollment();
     YFStore.setSideHighlight('confirm');
     return { 
-      incomingGrade: YFStore.getIncomingGrade(),
-      done: false,
-      summerCampWeeks: YFStore.getSummerCampWeeks()
+      studentName: YFStore.getStudentFullName()
     };
-  },
-  componentDidMount: function() {
-    YFStore.addChangeListener(this._onChange);
-  },
-  componentWillUnmount: function() {
-    YFStore.removeChangeListener(this._onChange);
-  },
-  _onChange: function() {
-    this.setState({
-      summerCampWeeks: YFStore.getSummerCampWeeks()
-    });
-  },
-  handleConfirm: function(e) {
-    e.preventDefault();
-    this.setState({ done: true });
-  },
-  handleContinue: function(e) {
-
   },
 
   render: function () {
@@ -48,26 +28,20 @@ var CompletePage = React.createClass({
           <div className="panel panel-primary">
             <div className="panel-heading">
               <div className="panel-title">
-                <h3>Enrollment Completed!</h3>
+                <h3>Enrollment Finished!</h3>
               </div>
             </div>
 
             <div className="panel-body">
-              <div className="row">
-                <pre>
-                  {JSON.stringify(YFStore.getEnrollment(), null, 2)}
-                </pre>
+              <div className="row col-md-offset-1">
+                <h4>
+                  You have successfully finshed the summer camp enrollment for {this.state.studentName}.<br></br>
+                  Now, you can LOG OUT or <a href='/user/getStarted'>START OVER</a> for your another child.
+                </h4>
               </div>
             </div>
           </div>
 
-          <div className="row">
-            <div className='col-md-offset-1'>
-              <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary btn-lg">Confirm</button>&nbsp; <br></br>
-            </div>
-          </div>
-
-          {this.state.done ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <p></p>}
         </div>
       </div>
     );

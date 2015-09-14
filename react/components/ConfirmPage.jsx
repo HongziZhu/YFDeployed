@@ -6,7 +6,6 @@ var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
-var results = require('../../lib/EnrollResults.json');
 
 var SideMenu = require('./helpers/SideMenu.jsx');
 var EnrollmentPreview = require('./helpers/EnrollmentPreview.jsx');
@@ -20,8 +19,7 @@ var ConfirmPage = React.createClass({
       done: false,
 
       incomingGrade: YFStore.getIncomingGrade(),
-      summerCampWeeks: YFStore.getSummerCampWeeks(),
-      enrollment: YFStore.getEnrollment()
+      summerCampWeeks: YFStore.getSummerCampWeeks()
     };
   },
   componentDidMount: function() {
@@ -33,8 +31,7 @@ var ConfirmPage = React.createClass({
   _onChange: function() {
     this.setState({
       incomingGrade: YFStore.getIncomingGrade(),
-      summerCampWeeks: YFStore.getSummerCampWeeks(),
-      enrollment: YFStore.getEnrollment()
+      summerCampWeeks: YFStore.getSummerCampWeeks()
     });
   },
   handleConfirm: function(e) {
@@ -43,9 +40,7 @@ var ConfirmPage = React.createClass({
   },
   handleContinue: function(e) {
     var self = this;
-    YFActions.sendConfirmEmail(function() {
-      self.transitionTo('complete');
-    });
+    this.transitionTo('summer/complete');
   },
 
   render: function () {
@@ -65,9 +60,8 @@ var ConfirmPage = React.createClass({
             <div className="panel-body">
               <div className="row">
                 <pre>
-                  {typeof this.state.enrollment === 'undefined' ?
-                  <p></p> :
-                  <EnrollmentPreview results={this.state.enrollment}/>}
+                  <EnrollmentPreview 
+                    summerCampWeeks={self.state.summerCampWeeks}/>
                   
                 </pre>
               </div>
@@ -81,6 +75,7 @@ var ConfirmPage = React.createClass({
           </div>
 
           {this.state.done ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <p></p>}
+          <hr></hr>
         </div>
       </div>
     );

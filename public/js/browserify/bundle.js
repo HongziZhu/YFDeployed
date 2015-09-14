@@ -32037,28 +32037,8 @@ var CompletePage = React.createClass({displayName: "CompletePage",
     YFActions.loadEnrollment();
     YFStore.setSideHighlight('confirm');
     return { 
-      incomingGrade: YFStore.getIncomingGrade(),
-      done: false,
-      summerCampWeeks: YFStore.getSummerCampWeeks()
+      studentName: YFStore.getStudentFullName()
     };
-  },
-  componentDidMount: function() {
-    YFStore.addChangeListener(this._onChange);
-  },
-  componentWillUnmount: function() {
-    YFStore.removeChangeListener(this._onChange);
-  },
-  _onChange: function() {
-    this.setState({
-      summerCampWeeks: YFStore.getSummerCampWeeks()
-    });
-  },
-  handleConfirm: function(e) {
-    e.preventDefault();
-    this.setState({ done: true });
-  },
-  handleContinue: function(e) {
-
   },
 
   render: function () {
@@ -32070,26 +32050,20 @@ var CompletePage = React.createClass({displayName: "CompletePage",
           React.createElement("div", {className: "panel panel-primary"}, 
             React.createElement("div", {className: "panel-heading"}, 
               React.createElement("div", {className: "panel-title"}, 
-                React.createElement("h3", null, "Enrollment Completed!")
+                React.createElement("h3", null, "Enrollment Finished!")
               )
             ), 
 
             React.createElement("div", {className: "panel-body"}, 
-              React.createElement("div", {className: "row"}, 
-                React.createElement("pre", null, 
-                  JSON.stringify(YFStore.getEnrollment(), null, 2)
+              React.createElement("div", {className: "row col-md-offset-1"}, 
+                React.createElement("h4", null, 
+                  "You have successfully finshed the summer camp enrollment for ", this.state.studentName, ".", React.createElement("br", null), 
+                  "Now, you can LOG OUT or ", React.createElement("a", {href: "/user/getStarted"}, "START OVER"), " for your another child."
                 )
               )
             )
-          ), 
+          )
 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"), "  ", React.createElement("br", null)
-            )
-          ), 
-
-          this.state.done ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("p", null)
         )
       )
     );
@@ -32107,7 +32081,6 @@ var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
-var results = require('../../lib/EnrollResults.json');
 
 var SideMenu = require('./helpers/SideMenu.jsx');
 var EnrollmentPreview = require('./helpers/EnrollmentPreview.jsx');
@@ -32121,8 +32094,7 @@ var ConfirmPage = React.createClass({displayName: "ConfirmPage",
       done: false,
 
       incomingGrade: YFStore.getIncomingGrade(),
-      summerCampWeeks: YFStore.getSummerCampWeeks(),
-      enrollment: YFStore.getEnrollment()
+      summerCampWeeks: YFStore.getSummerCampWeeks()
     };
   },
   componentDidMount: function() {
@@ -32134,8 +32106,7 @@ var ConfirmPage = React.createClass({displayName: "ConfirmPage",
   _onChange: function() {
     this.setState({
       incomingGrade: YFStore.getIncomingGrade(),
-      summerCampWeeks: YFStore.getSummerCampWeeks(),
-      enrollment: YFStore.getEnrollment()
+      summerCampWeeks: YFStore.getSummerCampWeeks()
     });
   },
   handleConfirm: function(e) {
@@ -32144,9 +32115,7 @@ var ConfirmPage = React.createClass({displayName: "ConfirmPage",
   },
   handleContinue: function(e) {
     var self = this;
-    YFActions.sendConfirmEmail(function() {
-      self.transitionTo('complete');
-    });
+    this.transitionTo('summer/complete');
   },
 
   render: function () {
@@ -32166,9 +32135,8 @@ var ConfirmPage = React.createClass({displayName: "ConfirmPage",
             React.createElement("div", {className: "panel-body"}, 
               React.createElement("div", {className: "row"}, 
                 React.createElement("pre", null, 
-                  typeof this.state.enrollment === 'undefined' ?
-                  React.createElement("p", null) :
-                  React.createElement(EnrollmentPreview, {results: this.state.enrollment})
+                  React.createElement(EnrollmentPreview, {
+                    summerCampWeeks: self.state.summerCampWeeks})
                   
                 )
               )
@@ -32181,7 +32149,8 @@ var ConfirmPage = React.createClass({displayName: "ConfirmPage",
             )
           ), 
 
-          this.state.done ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("p", null)
+          this.state.done ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("p", null), 
+          React.createElement("hr", null)
         )
       )
     );
@@ -32190,7 +32159,7 @@ var ConfirmPage = React.createClass({displayName: "ConfirmPage",
 
 module.exports = ConfirmPage;
 
-},{"../../lib/EnrollResults.json":1,"../actions/YFActions":233,"../stores/YFStore.jsx":275,"./helpers/EnrollmentPreview.jsx":268,"./helpers/SideMenu.jsx":271,"react":229,"react-router":42}],241:[function(require,module,exports){
+},{"../actions/YFActions":233,"../stores/YFStore.jsx":275,"./helpers/EnrollmentPreview.jsx":268,"./helpers/SideMenu.jsx":271,"react":229,"react-router":42}],241:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -36904,26 +36873,56 @@ var results = require('../../../lib/EnrollResults.json');
 var EnrollmentPreview = React.createClass({displayName: "EnrollmentPreview",
   render: function() {
     var weekRows = [];
-    
+    var obj;
+    if(this.props.summerCampWeeks.length === 10){
+      for(var j = 0; j < this.props.summerCampWeeks.length; j++) {
+        obj = this.props.summerCampWeeks[j];
+        weekRows.push(
+          React.createElement("tr", {key: j}, 
+            React.createElement("td", {className: "cell"}, 
+              obj['weekIndex']
+            ), 
+            React.createElement("td", {className: "cell"}, obj['coveredDate']), 
+            React.createElement("td", {className: "cell"}, obj['schedulePattern']), 
+            React.createElement("td", {className: "cell"}, obj['attendingDays']), 
+            React.createElement("td", {className: "cell"}, obj['extendedCare']['category']), 
+            React.createElement("td", {className: "cell"}, obj['enrichmentActs']['morning']['activityName'] || ''), 
+            React.createElement("td", {className: "cell"}, obj['enrichmentActs']['afternoon']['activityName'] || ''), 
+            React.createElement("td", {className: "cell"}, obj['movie']['isAttend']), 
+            React.createElement("td", {className: "cell"}, obj['afternoonAcademics']['language']), 
+            React.createElement("td", {className: "cell"}, 
+              React.createElement("ul", null, 
+              obj['writingElective']['isAttend'] ? React.createElement("li", null, "Writing Elective") : React.createElement("span", null), 
+              obj['mathElective']['isAttend'] ? React.createElement("li", null, "Math Elective") : React.createElement("span", null), 
+              obj['advWriting']['isAttend'] ? React.createElement("li", null, "Advanced Writing") : React.createElement("span", null), 
+              obj['advMath']['isAttend'] ? React.createElement("li", null, "Advanced Math") : React.createElement("span", null), 
+              obj['mathOlympiad']['isAttend'] ? React.createElement("li", null, "Math Olympiad") : React.createElement("span", null), 
+              obj['GATE']['isAttend'] ? React.createElement("li", null, "GATE") : React.createElement("span", null)
+              )
+            )
+          )
+        );
+      }
+    }
     return (
       React.createElement("table", {className: "dataintable", border: 0, cellPadding: 0, cellSpacing: 0}, 
         React.createElement("thead", null, 
           React.createElement("tr", null, 
-            React.createElement("th", null, "Week #"), 
-            React.createElement("th", null, "Covered Date"), 
-            React.createElement("th", null, "Schedule"), 
-            React.createElement("th", null, "Days Attending"), 
-            React.createElement("th", null, "Extended Care"), 
-            React.createElement("th", null, "Morning Enrichment"), 
-            React.createElement("th", null, "Afternoon Enrichment"), 
-            React.createElement("th", null, "Movie"), 
-            React.createElement("th", null, "Language Art"), 
-            React.createElement("th", null, "Afternoon Acedemics")
+            React.createElement("th", {className: "time"}, "Week #"), 
+            React.createElement("th", {className: "time"}, "Covered Date"), 
+            React.createElement("th", {className: "time"}, "Schedule"), 
+            React.createElement("th", {className: "time"}, "Days Attending"), 
+            React.createElement("th", {className: "time"}, "Extended Care"), 
+            React.createElement("th", {className: "time"}, "Morning Enrichment"), 
+            React.createElement("th", {className: "time"}, "Afternoon Enrichment"), 
+            React.createElement("th", {className: "time"}, "Movie"), 
+            React.createElement("th", {className: "time"}, "Language Art"), 
+            React.createElement("th", {className: "time"}, "Afternoon Acedemics")
           )
         ), 
 
-        React.createElement("tbody", null
-          
+        React.createElement("tbody", null, 
+          weekRows
         )
       )
       );
@@ -36947,15 +36946,6 @@ var Footer = React.createClass({displayName: "Footer",
     return (
       React.createElement("div", null, 
         React.createElement("footer", {className: "footer-distributed"}, 
-
-          React.createElement("div", {className: "footer-right"}, 
-
-            React.createElement("a", {href: "#"}, React.createElement("i", {className: "fa fa-facebook"})), 
-            React.createElement("a", {href: "#"}, React.createElement("i", {className: "fa fa-twitter"})), 
-            React.createElement("a", {href: "#"}, React.createElement("i", {className: "fa fa-linkedin"})), 
-            React.createElement("a", {href: "#"}, React.createElement("i", {className: "fa fa-github"}))
-
-          ), 
 
           React.createElement("div", {className: "footer-left"}, 
 
