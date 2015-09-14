@@ -114,18 +114,17 @@ var ConfirmPage = React.createClass({
                 <td>{results['summerCampWeeks'][9]['schedulePattern']==='absence' ? <span></span> : <span>{results['summerCampWeeks'][9]['attendingDays']}</span> }</td>
               </tr>
               <tr>
-                <th className="time">Covered Date</th>
-                <td>{results['summerCampWeeks'][0]['coverdDate']}</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
-                <td />
+                <th className="time">Morning Enrichment(Camp)</th>
+    {results['summerCampWeeks'][0]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][0]['enrichmentActs']['morning']['activityName']}</td> }            
+    {results['summerCampWeeks'][1]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][1]['enrichmentActs']['morning']['activityName']}</td> }   
+                {results['summerCampWeeks'][2]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][2]['enrichmentActs']['morning']['activityName']}</td> }   
+                {results['summerCampWeeks'][3]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][3]['enrichmentActs']['morning']['activityName']}</td>}
+                {results['summerCampWeeks'][4]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][4]['enrichmentActs']['morning']['activityName']}</td>}
+                {results['summerCampWeeks'][5]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][5]['enrichmentActs']['morning']['activityName']}</td>}
+                {results['summerCampWeeks'][6]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][6]['enrichmentActs']['morning']['activityName']}</td>}
+                {results['summerCampWeeks'][7]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][7]['enrichmentActs']['morning']['activityName']}</td>}
+                {results['summerCampWeeks'][8]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][8]['enrichmentActs']['morning']['activityName']}</td>}
+                {results['summerCampWeeks'][9]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][9]['enrichmentActs']['morning']['activityName']}</td>}
               </tr>
               <tr>
                 <th className="time">Covered Date</th>

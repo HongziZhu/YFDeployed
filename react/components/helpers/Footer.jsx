@@ -15,8 +15,16 @@ var Footer = React.createClass({
           <div className="footer-inner">
             {/* Add your copyright text here */}
             <div className="footer-text">
-              © 2015
-              <strong>Yang Fan Academy</strong> 
+              
+              © 2015 
+              
+              <a href="http://yangfanacademy.org" target="_blank"><strong> Yang Fan Academy </strong></a>
+               
+              
+              designed and developed by 
+              
+             <a href="http://justcodeit.net" target="_blank"><strong><strong> JustCodeIt Team</strong></strong></a>       
+        
             </div>
             {/* Go to Top Link, just add rel="go-top" to any link to add this functionality */}
             <div className="go-up">

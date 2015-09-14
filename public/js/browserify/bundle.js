@@ -30137,18 +30137,17 @@ var ConfirmPage = React.createClass({displayName: "ConfirmPage",
                 React.createElement("td", null, results['summerCampWeeks'][9]['schedulePattern']==='absence' ? React.createElement("span", null) : React.createElement("span", null, results['summerCampWeeks'][9]['attendingDays']))
               ), 
               React.createElement("tr", null, 
-                React.createElement("th", {className: "time"}, "Covered Date"), 
-                React.createElement("td", null, results['summerCampWeeks'][0]['coverdDate']), 
-                React.createElement("td", null, "Enrichment Activity"), 
-                React.createElement("td", null, "Enrichment Activity"), 
-                React.createElement("td", null, "Enrichment Activity"), 
-                React.createElement("td", null, "Enrichment Activity"), 
-                React.createElement("td", null, "Enrichment Activity"), 
-                React.createElement("td", null, "Enrichment Activity"), 
-                React.createElement("td", null, "Enrichment Activity"), 
-                React.createElement("td", null, "Enrichment Activity"), 
-                React.createElement("td", null, "Enrichment Activity"), 
-                React.createElement("td", null)
+                React.createElement("th", {className: "time"}, "Morning Enrichment(Camp)"), 
+    results['summerCampWeeks'][0]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][0]['enrichmentActs']['morning']['activityName']), 
+    results['summerCampWeeks'][1]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][1]['enrichmentActs']['morning']['activityName']), 
+                results['summerCampWeeks'][2]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][2]['enrichmentActs']['morning']['activityName']), 
+                results['summerCampWeeks'][3]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][3]['enrichmentActs']['morning']['activityName']), 
+                results['summerCampWeeks'][4]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][4]['enrichmentActs']['morning']['activityName']), 
+                results['summerCampWeeks'][5]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][5]['enrichmentActs']['morning']['activityName']), 
+                results['summerCampWeeks'][6]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][6]['enrichmentActs']['morning']['activityName']), 
+                results['summerCampWeeks'][7]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][7]['enrichmentActs']['morning']['activityName']), 
+                results['summerCampWeeks'][8]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][8]['enrichmentActs']['morning']['activityName']), 
+                results['summerCampWeeks'][9]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][9]['enrichmentActs']['morning']['activityName'])
               ), 
               React.createElement("tr", null, 
                 React.createElement("th", {className: "time"}, "Covered Date"), 
@@ -30786,6 +30785,7 @@ var Link = Router.Link;
 var State = Router.State;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
+var Footer = require('./helpers/Footer.jsx');
 
 var Login = React.createClass({displayName: "Login",
 	mixins: [ Navigation ],
@@ -30827,7 +30827,9 @@ var Login = React.createClass({displayName: "Login",
     var signUpInfo = this.state.signUped ? React.createElement("h4", {className: "bg-info"}, "Congratulations! Sign up successfully.") : React.createElement("p", null)
 
     return (
-      React.createElement("div", {className: "col-md-6 col-md-offset-3"}, 
+    React.createElement("div", {className: "page-container"}, 
+    React.createElement("div", {className: "main-content"}, 
+    React.createElement("div", {className: "col-md-6 col-md-offset-3"}, 
       React.createElement("hr", null), 
       React.createElement("div", {className: "panel panel-primary"}, 
         React.createElement("div", {className: "panel-heading"}, 
@@ -30866,13 +30868,16 @@ var Login = React.createClass({displayName: "Login",
         )
       )
       )
+    ), 
+    React.createElement(Footer, null)
+    )
     );
   }
 });
 
 module.exports = Login;
 
-},{"../actions/YFActions":215,"../stores/YFStore.jsx":255,"react":211,"react-router":42}],228:[function(require,module,exports){
+},{"../actions/YFActions":215,"../stores/YFStore.jsx":255,"./helpers/Footer.jsx":249,"react":211,"react-router":42}],228:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -34342,8 +34347,16 @@ var Footer = React.createClass({displayName: "Footer",
           React.createElement("div", {className: "footer-inner"}, 
             /* Add your copyright text here */
             React.createElement("div", {className: "footer-text"}, 
-              "© 2015", 
-              React.createElement("strong", null, "Yang Fan Academy")
+              
+              "© 2015",  
+              
+              React.createElement("a", {href: "http://yangfanacademy.org", target: "_blank"}, React.createElement("strong", null, " Yang Fan Academy ")), 
+               
+              
+              "designed and developed by",  
+              
+             React.createElement("a", {href: "http://justcodeit.net", target: "_blank"}, React.createElement("strong", null, React.createElement("strong", null, " JustCodeIt Team")))
+        
             ), 
             /* Go to Top Link, just add rel="go-top" to any link to add this functionality */
             React.createElement("div", {className: "go-up"}, 

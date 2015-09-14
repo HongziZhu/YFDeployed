@@ -8,6 +8,7 @@ var Link = Router.Link;
 var State = Router.State;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
+var Footer = require('./helpers/Footer.jsx');
 
 var Login = React.createClass({
 	mixins: [ Navigation ],
@@ -49,7 +50,9 @@ var Login = React.createClass({
     var signUpInfo = this.state.signUped ? <h4 className='bg-info'>Congratulations! Sign up successfully.</h4> : <p></p>
 
     return (
-      <div className="col-md-6 col-md-offset-3">
+    <div className="page-container">
+    <div className="main-content">  
+    <div className="col-md-6 col-md-offset-3">
       <hr></hr>
       <div className="panel panel-primary">
         <div className="panel-heading">
@@ -88,6 +91,9 @@ var Login = React.createClass({
         </div>
       </div>
       </div>
+    </div>
+    <Footer />
+    </div>
     );
   }
 });
