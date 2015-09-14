@@ -33850,18 +33850,22 @@ var YFApp = React.createClass({displayName: "YFApp",
                 React.createElement("span", {className: "icon-bar"}), 
                 React.createElement("span", {className: "icon-bar"})
               ), 
-              React.createElement("a", {className: "navbar-brand", href: "/"}, React.createElement("h4", null, "YangFan Enrollment"))
-            ), 
-
-            React.createElement("div", {className: "navbar-collapse collapse"}, 
-              React.createElement("form", {className: "navbar-form navbar-right"}, 
-              this.state.loggedIn ? 
-                React.createElement("button", {className: "btn btn-danger", onClick: this.handleLogout}, "Log out", 
-                  React.createElement("span", null, React.createElement("strong", null, " (", this.state.user.email, ")"))
-                )
-                : React.createElement("p", null)
+              
+              React.createElement("a", {className: "navbar-brand", href: "/"}, 
+                React.createElement("img", {src: "/img/logo.png", alt: "user-image", className: "img-circle img-inline", width: 28}), 
+                React.createElement("h4", null, "Yang Fan Enrollment")
               )
-            )
+            ), 
+React.createElement("ul", {className: "nav navbar-nav navbar-right"}, 
+        React.createElement("li", {className: "dropdown"}, 
+          React.createElement("a", {href: "#", className: "dropdown-toggle", "data-toggle": "dropdown", role: "button", "aria-haspopup": "true", "aria-expanded": "false"}, "cctmm@163.com ", React.createElement("span", {className: "caret"})), 
+          React.createElement("ul", {className: "dropdown-menu"}, 
+            React.createElement("li", null, React.createElement("a", {href: "#"}, "Edit Profile")), 
+            React.createElement("li", null, React.createElement("a", {href: "#"}, "Logout"))
+          )
+        )
+      )
+            
           )
         ), 
         

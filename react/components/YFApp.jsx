@@ -46,18 +46,22 @@ var YFApp = React.createClass({
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="/"><h4>YangFan Enrollment</h4></a>
+              
+              <a className="navbar-brand" href="/">
+                <img src="/img/logo.png" alt="user-image" className="img-circle img-inline" width={28} />
+                <h4>Yang Fan Enrollment</h4>
+              </a>
             </div>
-
-            <div className="navbar-collapse collapse">
-              <form className="navbar-form navbar-right">
-              {this.state.loggedIn ? 
-                <button className='btn btn-danger' onClick={this.handleLogout}>Log out
-                  <span><strong>&nbsp;({this.state.user.email})</strong></span>
-                </button>
-                : <p></p>}
-              </form>
-            </div>
+<ul className="nav navbar-nav navbar-right">
+        <li className="dropdown">
+          <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">cctmm@163.com <span className="caret" /></a>
+          <ul className="dropdown-menu">
+            <li><a href="#">Edit Profile</a></li>
+            <li><a href="#">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+            
           </div>
         </nav>
         
