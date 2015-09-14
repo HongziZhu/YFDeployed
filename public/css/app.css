@@ -1,6 +1,3 @@
-/* Sticky footer styles
--------------------------------------------------- */
-
 html,
 body {
   height: 100%;
@@ -253,11 +250,11 @@ footer.main-footer .go-up {
     float: right;
 }
 /* -----------------------------------------------
-  App styles
+  App styles by Haoran
   ------------------------------------------------ */
 
 body {
-  padding-top: 50px;
+  padding-top: 70px;
 }
 
 .req {

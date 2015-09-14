@@ -7,22 +7,6 @@ var mongoose = require('mongoose');
 var User = mongoose.model('User');
 var utils = require('../../lib/utils');
 
-/**
- * Load
- */
-
-exports.load = function (req, res, next, id) {
-  var options = {
-    criteria: { _id : id }
-  };
-  User.load(options, function (err, user) {
-    if (err) return next(err);
-    if (!user) return next(new Error('Failed to load User ' + id));
-    req.profile = user;
-    next();
-  });
-};
-
 exports.validateEmail = function (req, res) {
   var email = req.body;
   User.find({ email: email }, function (err, users) {
@@ -48,6 +32,23 @@ exports.createUser = function (req, res) {
   });
 };
 
+exports.updateUser = function (req, res, next) {
+  var userId = req.user._id;
+  var user = req.body.user;
+  User.findByIdAndUpdate(userId, user, function (err, user) {
+    if(err) { return next(err); }
+    if(req.body.newStudents !== undefined){
+      for(var j = 0; j < req.body.newStudents.length; j++) {
+        user.students.push(req.body.newStudents[j]);
+      }
+    }
+    user.save(function (err, user) {
+      if(err) { return res.json({ err: err.errors.email.message }); }
+      res.json({ user: user });
+    });
+  });
+};
+
 exports.getStudents = function (req, res, next) {
   User.findById(req.params.id, function (err, user) {
     if(err) { return next(err); }
@@ -55,15 +56,13 @@ exports.getStudents = function (req, res, next) {
   });
 };
 
-/**
- *  Show profile
- */
-
-exports.show = function (req, res) {
-  var user = req.profile;
-  res.render('users/show', {
-    title: user.name,
-    user: user
+exports.removeStudent = function (req, res, next) {
+  var index = req.query.stuIdx;
+  var user = req.user;
+  user.students.splice(index, 1);
+  user.save(function (err, user){
+    if(err) { next(err); }
+    res.json(user);
   });
 };
 
@@ -75,26 +74,6 @@ exports.signin = function (req, res) {};
 
 exports.authCallback = login;
 
-/**
- * Show login form
- */
-
-exports.login = function (req, res) {
-  res.render('users/login', {
-    title: 'Login'
-  });
-};
-
-/**
- * Show sign up form
- */
-
-exports.signup = function (req, res) {
-  res.render('users/signup', {
-    title: 'Sign up',
-    user: new User()
-  });
-};
 
 /**
  * Logout

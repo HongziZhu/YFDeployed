@@ -27,12 +27,14 @@ var Week9 = require('./Week9.jsx');
 var Week10 = require('./Week10.jsx');
 var ConfirmPage = require('./ConfirmPage.jsx');
 var CompletePage = require('./CompletePage.jsx');
+var Profile = require('./Profile.jsx');
 
 var routes = (
 	<Route handler={YFApp} >
 		<DefaultRoute name='home' handler={Home} />
 		<Route name='signup' path='/signup' handler={Signup} />
 		<Route name='login' path='/login' handler={Login} />
+		<Route name='profile' path='/user/profile' handler={Profile} />
 		<Route name='getStarted' path='/user/getStarted' handler={GetStarted} />
 		
 		<Route name='summer/attendance' path='/user/summer/attendance' handler={Attendance} />

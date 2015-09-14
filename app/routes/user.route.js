@@ -26,6 +26,12 @@ router.get('/validateEmail', users.validateEmail);
 
 router.post('/new', users.createUser);
 
+router.put('/update/:id', users.updateUser);
+
+router.get('/loadUser/:id', function (req, res) {
+	res.json(req.user);
+});
+
 router.post('/session', passport.authenticate('local'), function (req, res){
 	if(req.user){
 		res.json(req.user);
@@ -44,6 +50,8 @@ router.get('/:id', function (req, res) {
 });
 
 router.get('/:id/students', users.getStudents);
+
+router.put('/:id/removeStudent', users.removeStudent);
 
 
 /* Enrollment */

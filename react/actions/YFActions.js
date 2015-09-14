@@ -21,6 +21,14 @@ var YFActions = {
     });
   },
 
+  updateUser: function(body, next) {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_UPDATE_USER,
+      body: body,
+      next: next
+    });
+  },
+
   login: function(data, next) {
     AppDispatcher.dispatch({
       actionType: YFConstants.YF_LOGIN,
@@ -32,6 +40,19 @@ var YFActions = {
   logout: function() {
     AppDispatcher.dispatch({
       actionType: YFConstants.YF_LOGOUT
+    });
+  },
+
+  loadUserFromServer: function() {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_LOAD_USER
+    });
+  },
+
+  removeStudentFromUser: function(stuIdx) {
+    AppDispatcher.dispatch({
+      actionType: YFConstants.YF_REMOVE_STUDENT_FROM_USER,
+      stuIdx: stuIdx
     });
   },
 

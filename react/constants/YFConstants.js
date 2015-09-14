@@ -14,9 +14,12 @@ var keyMirror = require('keymirror');
 module.exports = keyMirror({
   YF_VALIDATE_EMAIL: null,
   YF_CREATE_USER: null,
+  YF_UPDATE_USER: null,
   YF_LOGIN: null,
   YF_LOGOUT: null,
   YF_LOAD_STUDENTS: null,
+  YF_LOAD_USER: null,
+  YF_REMOVE_STUDENT_FROM_USER: null,
   YF_LOAD_PREVIOUS_ENROLLMENT: null,
   YF_SAVE_SUMMER_SCHEDULE: null,
   YF_DELETE_SUMMER_ENROLLMENT: null,

@@ -73,6 +73,18 @@ function createUser(body, next) {
   });
 } 
 
+function updateUser(body, next) {
+  var url = '/api/users/update/' + body.user._id;
+  request
+  .put(url)
+  .send(body)
+  .accept('application/json')
+  .end(function(err, res){
+    if(err) { return console.error(err); }
+    next(res.body);
+  });
+}
+
 function login(data, next) {
   var url = '/api/users/session';
   request
@@ -107,6 +119,31 @@ function logout(next) {
       sessionStorage.clear();
       next();
     }
+  });
+}
+
+function loadUserFromServer(next) {
+  var url = '/api/users/loadUser/' + sessionStorage.getItem('userId');
+  request
+  .get(url)
+  .accept('application/json')
+  .end(function(err, res){
+    if(err) { return console.error(err); }
+    user = res.body;
+    next();
+  });
+}
+
+function removeStudentFromUser(stuIdx, next) {
+  var url = '/api/users/' + sessionStorage.getItem('userId') + '/removeStudent';
+  request
+  .put(url)
+  .query({ stuIdx: stuIdx })
+  .accept('application/json')
+  .end(function(err, res){
+    if(err) { return console.error(err); }
+    user = res.body;
+    next();
   });
 }
 
@@ -387,6 +424,7 @@ var YFStore = assign({}, EventEmitter.prototype, {
   getUser: function() {
     return user;
   },
+  
   getStudents: function() {
     return students;
   },
@@ -788,6 +826,11 @@ AppDispatcher.register(function(action) {
       createUser(body, action.next);
       break;
 
+    case YFConstants.YF_UPDATE_USER:
+      body = action.body;
+      updateUser(body, action.next);
+      break;
+
     case YFConstants.YF_LOGIN:
       data = action.data;
       login(data, function() {
@@ -798,6 +841,18 @@ AppDispatcher.register(function(action) {
 
     case YFConstants.YF_LOGOUT:
       logout(function() {
+        YFStore.emitChange();
+      });
+      break;
+
+    case YFConstants.YF_LOAD_USER:
+      loadUserFromServer(function() {
+        YFStore.emitChange();
+      });
+      break;
+
+    case YFConstants.YF_REMOVE_STUDENT_FROM_USER:
+      removeStudentFromUser(action.stuIdx, function() {
         YFStore.emitChange();
       });
       break;

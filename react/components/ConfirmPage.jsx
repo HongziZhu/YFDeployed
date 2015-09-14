@@ -45,6 +45,7 @@ var ConfirmPage = React.createClass({
 
   render: function () {
     var self = this;
+    var test = 'testItem';
     return (
       <div className="page-container">
         <SideMenu />
@@ -60,7 +61,10 @@ var ConfirmPage = React.createClass({
               <div className="row">
                 <pre>
                   {/*//TODO Shawn Peipei */}
-                  {JSON.stringify(results, null, 2)}
+                  <h4>{test}</h4>
+                  <h3>{results['student']['firstName']}</h3>
+                  <h2>week 1: {results['summerCampWeeks'][0]['GATE']['isAttend'] ? <span>TRUE</span> : <p>FALSE</p>}</h2>
+
                 </pre>
               </div>
             </div>

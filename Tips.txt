@@ -4,3 +4,4 @@
 4. Don't forget to convert string to number javascript.
 5. in JSX, don't use {} inside a {} again.
 6. 0 || -1   --->  -1
+7. value={typeof this.state.user.homeAddress === 'undefined' ? '' : this.state.user.homeAddress.zipcode}

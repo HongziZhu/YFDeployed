@@ -64,6 +64,8 @@ var YFApp = React.createClass({
         <div>
           <RouteHandler />
         </div>
+
+        <Footer />
       </div>
     );
   },

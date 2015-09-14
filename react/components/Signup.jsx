@@ -48,12 +48,6 @@ var Signup = React.createClass({
   handleConfirm: function(e) {
     e.preventDefault();
     var email = React.findDOMNode(this.refs.email).value.trim();
-    // YFActions.validateEmail(email, function(valid){
-    //   if(!valid){
-    //     return alert('The email already exists!');
-    //     React.findDOMNode(this.refs.email).focus();
-    //   }
-    // });
     
     var password = React.findDOMNode(this.refs.password).value;
     var password2 = React.findDOMNode(this.refs.password2).value;
@@ -107,7 +101,7 @@ var Signup = React.createClass({
             first: React.findDOMNode(stuRef.refs.cn_fname).value.trim(),
             last: React.findDOMNode(stuRef.refs.cn_lname).value.trim()
           },
-          birtyday: React.findDOMNode(stuRef.refs.stu_month).value + '/' + React.findDOMNode(stuRef.refs.stu_day).value + '/' + React.findDOMNode(stuRef.refs.stu_year).value,
+          birthday: React.findDOMNode(stuRef.refs.stu_month).value + '/' + React.findDOMNode(stuRef.refs.stu_day).value + '/' + React.findDOMNode(stuRef.refs.stu_year).value,
           gender: React.findDOMNode(stuRef.refs.stu_male).checked ? 'male' : 'female',
           summerSchoolAttended: React.findDOMNode(stuRef.refs.summerSchoolAttended).value.trim(),
           schoolDistrict: React.findDOMNode(stuRef.refs.schoolDistrict).value.trim(),

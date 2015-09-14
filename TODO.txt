@@ -3,3 +3,4 @@
 4. figure out this scope
 5. Forget Password? Email Confirmation? Waiting List?
 6. cancel confirm buttons for absent weeks
+7. birthday
