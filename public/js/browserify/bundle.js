@@ -30138,16 +30138,40 @@ var ConfirmPage = React.createClass({displayName: "ConfirmPage",
               ), 
               React.createElement("tr", null, 
                 React.createElement("th", {className: "time"}, "Morning Enrichment(Camp)"), 
-    results['summerCampWeeks'][0]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][0]['enrichmentActs']['morning']['activityName']), 
-    results['summerCampWeeks'][1]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][1]['enrichmentActs']['morning']['activityName']), 
-                results['summerCampWeeks'][2]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][2]['enrichmentActs']['morning']['activityName']), 
-                results['summerCampWeeks'][3]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][3]['enrichmentActs']['morning']['activityName']), 
-                results['summerCampWeeks'][4]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][4]['enrichmentActs']['morning']['activityName']), 
-                results['summerCampWeeks'][5]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][5]['enrichmentActs']['morning']['activityName']), 
-                results['summerCampWeeks'][6]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][6]['enrichmentActs']['morning']['activityName']), 
-                results['summerCampWeeks'][7]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][7]['enrichmentActs']['morning']['activityName']), 
-                results['summerCampWeeks'][8]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][8]['enrichmentActs']['morning']['activityName']), 
-                results['summerCampWeeks'][9]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][9]['enrichmentActs']['morning']['activityName'])
+
+     results['summerCampWeeks'][0]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][0]['enrichmentActs']['morning']['activityName'], 
+        React.createElement("br", null), React.createElement("br", null), results['summerCampWeeks'][0]['enrichmentActs']['morning']['time'], React.createElement("br", null), "$", results['summerCampWeeks'][0]['enrichmentActs']['morning']['pricePerWeek'], " for ", results['summerCampWeeks'][0]['enrichmentActs']['morning']['hoursPerWeek'], " hr/w"
+        ), 
+ 
+     results['summerCampWeeks'][1]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][1]['enrichmentActs']['morning']['activityName'], 
+        React.createElement("br", null), React.createElement("br", null), results['summerCampWeeks'][1]['enrichmentActs']['morning']['time'], React.createElement("br", null), "$", results['summerCampWeeks'][1]['enrichmentActs']['morning']['pricePerWeek'], " for ", results['summerCampWeeks'][1]['enrichmentActs']['morning']['hoursPerWeek'], " hr/w"
+        ), 
+    
+                    results['summerCampWeeks'][2]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][2]['enrichmentActs']['morning']['activityName'], 
+        React.createElement("br", null), React.createElement("br", null), results['summerCampWeeks'][2]['enrichmentActs']['morning']['time'], React.createElement("br", null), "$", results['summerCampWeeks'][2]['enrichmentActs']['morning']['pricePerWeek'], " for ", results['summerCampWeeks'][2]['enrichmentActs']['morning']['hoursPerWeek'], " hr/w"
+        ), 
+    
+                 results['summerCampWeeks'][3]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][3]['enrichmentActs']['morning']['activityName'], 
+        React.createElement("br", null), React.createElement("br", null), results['summerCampWeeks'][3]['enrichmentActs']['morning']['time'], React.createElement("br", null), "$", results['summerCampWeeks'][3]['enrichmentActs']['morning']['pricePerWeek'], " for ", results['summerCampWeeks'][3]['enrichmentActs']['morning']['hoursPerWeek'], " hr/w"
+        ), 
+                 results['summerCampWeeks'][4]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][4]['enrichmentActs']['morning']['activityName'], 
+        React.createElement("br", null), React.createElement("br", null), results['summerCampWeeks'][4]['enrichmentActs']['morning']['time'], React.createElement("br", null), "$", results['summerCampWeeks'][4]['enrichmentActs']['morning']['pricePerWeek'], " for ", results['summerCampWeeks'][4]['enrichmentActs']['morning']['hoursPerWeek'], " hr/w"
+        ), 
+                 results['summerCampWeeks'][5]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][5]['enrichmentActs']['morning']['activityName'], 
+        React.createElement("br", null), React.createElement("br", null), results['summerCampWeeks'][5]['enrichmentActs']['morning']['time'], React.createElement("br", null), "$", results['summerCampWeeks'][5]['enrichmentActs']['morning']['pricePerWeek'], " for ", results['summerCampWeeks'][5]['enrichmentActs']['morning']['hoursPerWeek'], " hr/w"
+        ), 
+                 results['summerCampWeeks'][6]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][6]['enrichmentActs']['morning']['activityName'], 
+        React.createElement("br", null), React.createElement("br", null), results['summerCampWeeks'][6]['enrichmentActs']['morning']['time'], React.createElement("br", null), "$", results['summerCampWeeks'][6]['enrichmentActs']['morning']['pricePerWeek'], " for ", results['summerCampWeeks'][6]['enrichmentActs']['morning']['hoursPerWeek'], " hr/w"
+        ), 
+                 results['summerCampWeeks'][7]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][7]['enrichmentActs']['morning']['activityName'], 
+        React.createElement("br", null), React.createElement("br", null), results['summerCampWeeks'][7]['enrichmentActs']['morning']['time'], React.createElement("br", null), "$", results['summerCampWeeks'][7]['enrichmentActs']['morning']['pricePerWeek'], " for ", results['summerCampWeeks'][7]['enrichmentActs']['morning']['hoursPerWeek'], " hr/w"
+        ), 
+                 results['summerCampWeeks'][8]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][8]['enrichmentActs']['morning']['activityName'], 
+        React.createElement("br", null), React.createElement("br", null), results['summerCampWeeks'][8]['enrichmentActs']['morning']['time'], React.createElement("br", null), "$", results['summerCampWeeks'][8]['enrichmentActs']['morning']['pricePerWeek'], " for ", results['summerCampWeeks'][8]['enrichmentActs']['morning']['hoursPerWeek'], " hr/w"
+        ), 
+                 results['summerCampWeeks'][9]['schedulePattern']==='absence' ? React.createElement("td", null) : React.createElement("td", {className: "enrichment-activity blue"}, results['summerCampWeeks'][9]['enrichmentActs']['morning']['activityName'], 
+        React.createElement("br", null), React.createElement("br", null), results['summerCampWeeks'][9]['enrichmentActs']['morning']['time'], React.createElement("br", null), "$", results['summerCampWeeks'][9]['enrichmentActs']['morning']['pricePerWeek'], " for ", results['summerCampWeeks'][9]['enrichmentActs']['morning']['hoursPerWeek'], " hr/w"
+        )
               ), 
               React.createElement("tr", null, 
                 React.createElement("th", {className: "time"}, "Covered Date"), 

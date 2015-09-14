@@ -228,7 +228,7 @@ body {
     padding-bottom: 0;
     vertical-align: top;
     word-break: break-word;
-    min-height: calc(100vh - 102px);
+    min-height: calc(100vh - 118px);
     background-color: #EEEEEE;
 }
 

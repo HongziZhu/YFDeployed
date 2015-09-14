@@ -115,29 +115,48 @@ var ConfirmPage = React.createClass({
               </tr>
               <tr>
                 <th className="time">Morning Enrichment(Camp)</th>
-    {results['summerCampWeeks'][0]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][0]['enrichmentActs']['morning']['activityName']}</td> }            
-    {results['summerCampWeeks'][1]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][1]['enrichmentActs']['morning']['activityName']}</td> }   
-                {results['summerCampWeeks'][2]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][2]['enrichmentActs']['morning']['activityName']}</td> }   
-                {results['summerCampWeeks'][3]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][3]['enrichmentActs']['morning']['activityName']}</td>}
-                {results['summerCampWeeks'][4]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][4]['enrichmentActs']['morning']['activityName']}</td>}
-                {results['summerCampWeeks'][5]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][5]['enrichmentActs']['morning']['activityName']}</td>}
-                {results['summerCampWeeks'][6]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][6]['enrichmentActs']['morning']['activityName']}</td>}
-                {results['summerCampWeeks'][7]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][7]['enrichmentActs']['morning']['activityName']}</td>}
-                {results['summerCampWeeks'][8]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][8]['enrichmentActs']['morning']['activityName']}</td>}
-                {results['summerCampWeeks'][9]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][9]['enrichmentActs']['morning']['activityName']}</td>}
+
+     {results['summerCampWeeks'][0]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][0]['enrichmentActs']['morning']['activityName']}
+        <br /><br />{results['summerCampWeeks'][0]['enrichmentActs']['morning']['time']}<br />${results['summerCampWeeks'][0]['enrichmentActs']['morning']['pricePerWeek']} for {results['summerCampWeeks'][0]['enrichmentActs']['morning']['hoursPerWeek']} hr/w
+        </td> }   
+ 
+     {results['summerCampWeeks'][1]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][1]['enrichmentActs']['morning']['activityName']}
+        <br /><br />{results['summerCampWeeks'][1]['enrichmentActs']['morning']['time']}<br />${results['summerCampWeeks'][1]['enrichmentActs']['morning']['pricePerWeek']} for {results['summerCampWeeks'][1]['enrichmentActs']['morning']['hoursPerWeek']} hr/w
+        </td> }   
+    
+                    {results['summerCampWeeks'][2]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][2]['enrichmentActs']['morning']['activityName']}
+        <br /><br />{results['summerCampWeeks'][2]['enrichmentActs']['morning']['time']}<br />${results['summerCampWeeks'][2]['enrichmentActs']['morning']['pricePerWeek']} for {results['summerCampWeeks'][2]['enrichmentActs']['morning']['hoursPerWeek']} hr/w
+        </td> }   
+    
+                 {results['summerCampWeeks'][3]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][3]['enrichmentActs']['morning']['activityName']}
+        <br /><br />{results['summerCampWeeks'][3]['enrichmentActs']['morning']['time']}<br />${results['summerCampWeeks'][3]['enrichmentActs']['morning']['pricePerWeek']} for {results['summerCampWeeks'][3]['enrichmentActs']['morning']['hoursPerWeek']} hr/w
+        </td> }   
+                 {results['summerCampWeeks'][4]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][4]['enrichmentActs']['morning']['activityName']}
+        <br /><br />{results['summerCampWeeks'][4]['enrichmentActs']['morning']['time']}<br />${results['summerCampWeeks'][4]['enrichmentActs']['morning']['pricePerWeek']} for {results['summerCampWeeks'][4]['enrichmentActs']['morning']['hoursPerWeek']} hr/w
+        </td> }   
+                 {results['summerCampWeeks'][5]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][5]['enrichmentActs']['morning']['activityName']}
+        <br /><br />{results['summerCampWeeks'][5]['enrichmentActs']['morning']['time']}<br />${results['summerCampWeeks'][5]['enrichmentActs']['morning']['pricePerWeek']} for {results['summerCampWeeks'][5]['enrichmentActs']['morning']['hoursPerWeek']} hr/w
+        </td> }   
+                 {results['summerCampWeeks'][6]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][6]['enrichmentActs']['morning']['activityName']}
+        <br /><br />{results['summerCampWeeks'][6]['enrichmentActs']['morning']['time']}<br />${results['summerCampWeeks'][6]['enrichmentActs']['morning']['pricePerWeek']} for {results['summerCampWeeks'][6]['enrichmentActs']['morning']['hoursPerWeek']} hr/w
+        </td> }   
+                 {results['summerCampWeeks'][7]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][7]['enrichmentActs']['morning']['activityName']}
+        <br /><br />{results['summerCampWeeks'][7]['enrichmentActs']['morning']['time']}<br />${results['summerCampWeeks'][7]['enrichmentActs']['morning']['pricePerWeek']} for {results['summerCampWeeks'][7]['enrichmentActs']['morning']['hoursPerWeek']} hr/w
+        </td> }   
+                 {results['summerCampWeeks'][8]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][8]['enrichmentActs']['morning']['activityName']}
+        <br /><br />{results['summerCampWeeks'][8]['enrichmentActs']['morning']['time']}<br />${results['summerCampWeeks'][8]['enrichmentActs']['morning']['pricePerWeek']} for {results['summerCampWeeks'][8]['enrichmentActs']['morning']['hoursPerWeek']} hr/w
+        </td> }   
+                 {results['summerCampWeeks'][9]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][9]['enrichmentActs']['morning']['activityName']}
+        <br /><br />{results['summerCampWeeks'][9]['enrichmentActs']['morning']['time']}<br />${results['summerCampWeeks'][9]['enrichmentActs']['morning']['pricePerWeek']} for {results['summerCampWeeks'][9]['enrichmentActs']['morning']['hoursPerWeek']} hr/w
+        </td> }   
               </tr>
               <tr>
-                <th className="time">Covered Date</th>
-                <td>{results['summerCampWeeks'][0]['coverdDate']}</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
-                <td>Enrichment Activity</td>
+                <th className="time">Afternoon Enrichment(Camp)</th>
+     {for (var i = 0; i< 10; i++)   {{results['summerCampWeeks'][i]['schedulePattern']==='absence' ? <td></td> : <td className='enrichment-activity blue'>{results['summerCampWeeks'][i]['enrichmentActs']['morning']['activityName']}
+        <br /><br />{results['summerCampWeeks'][i]['enrichmentActs']['morning']['time']}<br />${results['summerCampWeeks'][i]['enrichmentActs']['morning']['pricePerWeek']} for {results['summerCampWeeks'][i]['enrichmentActs']['morning']['hoursPerWeek']} hr/w
+        </td> }   
+     };}}
+     
               </tr>
                       <tr>
                 <th className="time">Covered Date</th>
