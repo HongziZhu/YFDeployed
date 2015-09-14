@@ -59,7 +59,153 @@ var ConfirmPage = React.createClass({
             <div className="panel-body">
               <div className="row">
                 <pre>
-                  {/*//TODO Shawn Peipei */}
+                  <table className="dataintable" border={0} cellPadding={0} cellSpacing={0}>
+            <tbody>
+              <tr className="days">
+                <th />
+                <th>Week 1</th>
+                <th>Week 2</th>
+                <th>Week 3</th>
+                <th>Week 4</th>
+                <th>Week 5</th>
+                <th>Week 6</th>
+                <th>Week 7</th>
+                <th>Week 8</th>        
+                <th>Week 9</th>
+                <th>Week 10</th>
+              </tr>
+              <tr>
+                <th className="time">Covered Date</th>
+                <td>{results['summerCampWeeks'][0]['coveredDate']}</td>
+                <td>{results['summerCampWeeks'][1]['coveredDate']}</td>
+                <td>{results['summerCampWeeks'][2]['coveredDate']}</td>
+                <td>{results['summerCampWeeks'][3]['coveredDate']}</td>
+                <td>{results['summerCampWeeks'][4]['coveredDate']}</td>
+                <td>{results['summerCampWeeks'][5]['coveredDate']}</td>
+                <td>{results['summerCampWeeks'][6]['coveredDate']}</td>
+                <td>{results['summerCampWeeks'][7]['coveredDate']}</td>
+                <td>{results['summerCampWeeks'][8]['coveredDate']}</td>
+                <td>{results['summerCampWeeks'][9]['coveredDate']}</td>
+              </tr>
+              <tr>
+                <th className="time">Schedule</th>
+                <td>{results['summerCampWeeks'][0]['schedulePattern']}</td>
+                <td>{results['summerCampWeeks'][1]['schedulePattern']}</td>
+                <td>{results['summerCampWeeks'][2]['schedulePattern']}</td>
+                <td>{results['summerCampWeeks'][3]['schedulePattern']}</td>
+                <td>{results['summerCampWeeks'][4]['schedulePattern']}</td>
+                <td>{results['summerCampWeeks'][5]['schedulePattern']}</td>
+                <td>{results['summerCampWeeks'][6]['schedulePattern']}</td>
+                <td>{results['summerCampWeeks'][7]['schedulePattern']}</td>
+                <td>{results['summerCampWeeks'][8]['schedulePattern']}</td>
+                <td>{results['summerCampWeeks'][9]['schedulePattern']}</td>
+              </tr>
+              <tr>
+                <th className="time">Days Attending</th>
+                <td>{results['summerCampWeeks'][0]['schedulePattern']==='absence' ? <span></span> : <span>{['summerCampWeeks'][0]['attendingDays']}</span> }</td>
+                <td>{results['summerCampWeeks'][1]['schedulePattern']==='absence' ? <span></span> : <span>{['summerCampWeeks'][1]['attendingDays']}</span> }</td>
+                <td>{results['summerCampWeeks'][2]['schedulePattern']==='absence' ? <span></span> : <span>{results['summerCampWeeks'][2]['attendingDays']}</span> }</td>
+                <td>{results['summerCampWeeks'][3]['schedulePattern']==='absence' ? <span></span> : <span>{results['summerCampWeeks'][3]['attendingDays']}</span> }</td>
+                <td>{results['summerCampWeeks'][4]['schedulePattern']==='absence' ? <span></span> : <span>{results['summerCampWeeks'][4]['attendingDays']}</span> }</td>
+                <td>{results['summerCampWeeks'][5]['schedulePattern']==='absence' ? <span></span> : <span>{results['summerCampWeeks'][5]['attendingDays']}</span> }</td>
+                <td>{results['summerCampWeeks'][6]['schedulePattern']==='absence' ? <span></span> : <span>{results['summerCampWeeks'][6]['attendingDays']}</span> }</td>
+                <td>{results['summerCampWeeks'][7]['schedulePattern']==='absence' ? <span></span> : <span>{results['summerCampWeeks'][7]['attendingDays']}</span> }</td>
+                <td>{results['summerCampWeeks'][8]['schedulePattern']==='absence' ? <span></span> : <span>{results['summerCampWeeks'][8]['attendingDays']}</span> }</td>
+                <td>{results['summerCampWeeks'][9]['schedulePattern']==='absence' ? <span></span> : <span>{results['summerCampWeeks'][9]['attendingDays']}</span> }</td>
+              </tr>
+              <tr>
+                <th className="time">Covered Date</th>
+                <td>{results['summerCampWeeks'][0]['coverdDate']}</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td />
+              </tr>
+              <tr>
+                <th className="time">Covered Date</th>
+                <td>{results['summerCampWeeks'][0]['coverdDate']}</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+              </tr>
+                      <tr>
+                <th className="time">Covered Date</th>
+                <td>{results['summerCampWeeks'][0]['coverdDate']}</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+              </tr>
+                      <tr>
+                <th className="time">Covered Date</th>
+                <td>{results['summerCampWeeks'][0]['coverdDate']}</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+              </tr>
+                      <tr>
+                <th className="time">Covered Date</th>
+                <td>{results['summerCampWeeks'][0]['coverdDate']}</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+              </tr>
+                      <tr>
+                <th className="time">Covered Date</th>
+                <td>{results['summerCampWeeks'][0]['coverdDate']}</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+              </tr>
+                      <tr>
+                <th className="time">Covered Date</th>
+                <td>{results['summerCampWeeks'][0]['coverdDate']}</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+                <td>Enrichment Activity</td>
+              </tr>
+            </tbody></table>
                   {JSON.stringify(results, null, 2)}
                 </pre>
               </div>

@@ -48,7 +48,7 @@ var YFApp = React.createClass({
               </button>
               
               <a className="navbar-brand" href="/">
-                <img src="/img/logo.png" alt="user-image" className="img-circle img-inline" width={28} />
+                <img src="/img/logo.png" alt="user-image" className="img-circle img-inline" width={32} />
                 <h4>Yang Fan Enrollment</h4>
               </a>
             </div>
