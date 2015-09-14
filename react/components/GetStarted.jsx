@@ -8,7 +8,6 @@ var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
 
 var SideMenu = require('./helpers/SideMenu.jsx');
-var Footer = require('./helpers/Footer.jsx');
 
 var GradeBox = React.createClass({
   render: function() {
@@ -178,7 +177,6 @@ var GetStarted = React.createClass({
 
           </div>
         </div>
-        <Footer />
       </div>
     );
   } 

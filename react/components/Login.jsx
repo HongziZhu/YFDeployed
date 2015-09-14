@@ -49,6 +49,8 @@ var Login = React.createClass({
     var signUpInfo = this.state.signUped ? <h4 className='bg-info'>Congratulations! Sign up successfully.</h4> : <p></p>
 
     return (
+      <div className='page-container'>
+      <div className='main-content'>
       <div className="col-md-6 col-md-offset-3">
       <hr></hr>
       <div className="panel panel-primary">
@@ -66,19 +68,19 @@ var Login = React.createClass({
               <hr></hr>
               <form className="form-horizontal " onSubmit={this.handleSubmit}>
                 <div className="form-group">
-                  <label htmlFor="email" className="col-sm-2 control-label">Email</label>
-                  <div className="col-sm-10">
+                  <label htmlFor="email" className="col-sm-3 control-label">Email</label>
+                  <div className="col-sm-9">
                     <input type="email" autofocus className="form-control" ref="email" placeholder="Email"/>
                   </div>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="password" className="col-sm-2 control-label">Password</label>
-                  <div className="col-sm-10">
+                  <label htmlFor="password" className="col-sm-3 control-label">Password</label>
+                  <div className="col-sm-9">
                     <input type="password" maxLength="20" className="form-control" ref="password" placeholder="Password"/>
                   </div>
                 </div>
                 <div className="form-group">
-                  <div className="col-sm-offset-2 col-sm-10">
+                  <div className="col-sm-offset-3 col-sm-10">
                     <button type="submit" className="btn btn-primary">Log in</button>
                   </div>
                 </div>
@@ -86,6 +88,8 @@ var Login = React.createClass({
             </div><hr></hr>
           </div>
         </div>
+      </div>
+      </div>
       </div>
       </div>
     );

@@ -179,6 +179,8 @@ var Signup = React.createClass({
     );
 
 		return (
+      <div className='page-container'>
+      <div className='main-content'>
       <div className='col-md-8 col-md-offset-2'>
         <hr></hr>
         <div className=" panel panel-primary">
@@ -191,7 +193,7 @@ var Signup = React.createClass({
           <div className="panel-body">
             <div className="row">
               <div> 
-                <form className="col-md-10 col-md-offset-1" onSubmit={this.handleConfirm}>
+                <form className="col-md-12 col-md-offset-0.5" onSubmit={this.handleConfirm}>
                   <div className="form-group">
                     <label htmlFor="email">Email address<span className='req'>*</span></label>
                     <input type="email" required className="form-control" ref="email" placeholder="Email"/>
@@ -281,6 +283,8 @@ var Signup = React.createClass({
           </div>
         </div>
         {SignupButton}
+      </div>
+      </div>
       </div>		
 		);
 	}

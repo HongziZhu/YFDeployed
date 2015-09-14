@@ -29,9 +29,14 @@ var YFApp = React.createClass({
   },
 
   handleLogout: function(e) {
-    var self = this;
-    YFActions.logout();
-    self.transitionTo('home');
+    if(confirm('Are you sure to log out?') == true){
+      YFActions.logout();
+      this.transitionTo('home');
+    }
+  },
+
+  toProfile: function(e) {
+    this.transitionTo('profile');
   },
 
   render: function() {
@@ -46,18 +51,31 @@ var YFApp = React.createClass({
                 <span className="icon-bar"></span>
                 <span className="icon-bar"></span>
               </button>
-              <a className="navbar-brand" href="/"><h4>YangFan Enrollment</h4></a>
+              <a className="navbar-brand" href="/">
+                <img src="/img/logo.png" alt="user-image" className="img-circle img-inline" width={28} />
+                <h4>Yang Fan Enrollment</h4>
+              </a>
             </div>
 
-            <div className="navbar-collapse collapse">
-              <form className="navbar-form navbar-right">
-              {this.state.loggedIn ? 
-                <button className='btn btn-danger' onClick={this.handleLogout}>Log out
-                  <span><strong>&nbsp;({this.state.user.email})</strong></span>
-                </button>
-                : <p></p>}
-              </form>
-            </div>
+            {this.state.loggedIn ? 
+            <ul className="nav navbar-nav navbar-right">
+              <li className="dropdown">
+                <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                {this.state.user.email} <span className="caret" /></a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <a href='/user/profile'>&nbsp;&nbsp;&nbsp;&nbsp;Edit Profile</a>
+                  </li>
+                  <li>
+                    <button className='col-md-offset-3 btn btn-primary' onClick={this.handleLogout}>Log out
+                    </button>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            :
+            <p></p>}
+
           </div>
         </nav>
         

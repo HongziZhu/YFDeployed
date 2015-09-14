@@ -9,6 +9,7 @@ var YFStore = require('../stores/YFStore.jsx');
 var results = require('../../lib/EnrollResults.json');
 
 var SideMenu = require('./helpers/SideMenu.jsx');
+var EnrollmentPreview = require('./helpers/EnrollmentPreview.jsx');
 
 var ConfirmPage = React.createClass({
   mixins: [ Navigation ],
@@ -16,9 +17,11 @@ var ConfirmPage = React.createClass({
     YFActions.loadEnrollment();
     YFStore.setSideHighlight('confirm');
     return { 
-      incomingGrade: YFStore.getIncomingGrade(),
       done: false,
-      summerCampWeeks: YFStore.getSummerCampWeeks()
+
+      incomingGrade: YFStore.getIncomingGrade(),
+      summerCampWeeks: YFStore.getSummerCampWeeks(),
+      enrollment: YFStore.getEnrollment()
     };
   },
   componentDidMount: function() {
@@ -29,7 +32,9 @@ var ConfirmPage = React.createClass({
   },
   _onChange: function() {
     this.setState({
-      summerCampWeeks: YFStore.getSummerCampWeeks()
+      incomingGrade: YFStore.getIncomingGrade(),
+      summerCampWeeks: YFStore.getSummerCampWeeks(),
+      enrollment: YFStore.getEnrollment()
     });
   },
   handleConfirm: function(e) {
@@ -60,11 +65,10 @@ var ConfirmPage = React.createClass({
             <div className="panel-body">
               <div className="row">
                 <pre>
-                  {/*//TODO Shawn Peipei */}
-                  <h4>{test}</h4>
-                  <h3>{results['student']['firstName']}</h3>
-                  <h2>week 1: {results['summerCampWeeks'][0]['GATE']['isAttend'] ? <span>TRUE</span> : <p>FALSE</p>}</h2>
-
+                  {typeof this.state.enrollment === 'undefined' ?
+                  <p></p> :
+                  <EnrollmentPreview results={this.state.enrollment}/>}
+                  
                 </pre>
               </div>
             </div>
