@@ -6,5 +6,4 @@ Makefile
 public/js/browserify/bundle.js
 npm-debug.log
 html_css/
-lib/summer
 ownStuff/

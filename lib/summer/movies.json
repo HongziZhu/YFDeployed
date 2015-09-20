@@ -1,0 +1,133 @@
+{
+	"1": {
+		"week": "week_1",
+		"name": "none",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 0,
+		"site": "Yang Fan Site",
+		"weekday": "Tue",
+		"date": "6/14",
+		"display_time": "9:30-11:55 AM",
+		"time": {
+			"begin": { "ap": "AM", "clock": 9.5 },
+			"end": { "ap": "AM", "clock": 11.99 }
+		}
+	},
+	"2": {
+		"week": "week_2",
+		"name": "Nut Job(PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "6/21",
+		"time": {
+			"begin": { "ap": "AM", "clock": 9.5 },
+			"end": { "ap": "AM", "clock": 11.99 }
+		}
+	},
+  "3": {
+		"week": "week_3",
+		"name": "Earth to Echo (PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "6/28",
+		"time": {
+			"begin": { "ap": "AM", "clock": 9.5 },
+			"end": { "ap": "AM", "clock": 11.99 }
+		}
+	},
+  "4": {
+		"week": "week_4",
+		"name": "Paddington (PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "7/5",
+		"time": {
+			"begin": { "ap": "AM", "clock": 9.5 },
+			"end": { "ap": "AM", "clock": 11.99 }
+		}
+	},
+  "5": {
+		"week": "week_5",
+		"name": "Rio 2 (G)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "7/12",
+		"time": {
+			"begin": { "ap": "AM", "clock": 9.5 },
+			"end": { "ap": "AM", "clock": 11.99 }
+		}
+	},
+  "6": {
+		"week": "week_6",
+		"name": "Mr. Peabody (PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "7/19",
+		"time": {
+			"begin": { "ap": "AM", "clock": 9.5 },
+			"end": { "ap": "AM", "clock": 11.99 }
+		}
+	},
+  "7": {
+		"week": "week_7",
+		"name": "Night at the Museum: Secret of the Tomb (PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "7/26",
+		"time": {
+			"begin": { "ap": "AM", "clock": 9.5 },
+			"end": { "ap": "AM", "clock": 11.99 }
+		}
+	},
+  "8": {
+		"week": "week_8",
+		"name": "Madagascar 3 (PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "8/2",
+		"time": {
+			"begin": { "ap": "AM", "clock": 9.5 },
+			"end": { "ap": "AM", "clock": 11.99 }
+		}
+	},
+  "9": {
+		"week": "week_9",
+		"name": "Muppets, Most Wanted (PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "8/9",
+		"time": {
+			"begin": { "ap": "AM", "clock": 9.5 },
+			"end": { "ap": "AM", "clock": 11.99 }
+		}
+	},
+  "10": {
+		"week": "week_10",
+		"name": "The Lego Movie (PG)",
+		"grade": ["G2", "G3", "G4", "G5", "G6", "G7", "G8", "G9", "G10", "G11", "G12"],
+		"price_per_movie": 2,
+		"site": "Dublin Regal Movie Theater",
+		"weekday": "Tue",
+		"date": "8/16",
+		"time": {
+			"begin": { "ap": "AM", "clock": 9.5 },
+			"end": { "ap": "AM", "clock": 11.99 }
+		}
+	}
+}
