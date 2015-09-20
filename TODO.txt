@@ -1,5 +1,0 @@
-1. add function to create/read/update/delete student(child)
-3. Chinese Folk Dance enroll week_7 and week_8 is required
-4. figure out this scope
-5. Forget Password? Email Confirmation? Waiting List?
-6. cancel confirm buttons for absent weeks
