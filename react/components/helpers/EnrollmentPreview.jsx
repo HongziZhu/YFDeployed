@@ -6,7 +6,6 @@ var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
 var YFActions = require('../../actions/YFActions');
 var YFStore = require('../../stores/YFStore.jsx');
-var results = require('../../../lib/EnrollResults.json');
 
 var EnrollmentPreview = React.createClass({
   render: function() {
