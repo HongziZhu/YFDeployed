@@ -62,20 +62,21 @@ var GATE = React.createClass({
       )
     }
     return (
-      <div className="panel panel-primary">
+      <div className="panel panel-color panel-gray panel-course">
         <div className="panel-heading">
           <div className="panel-title">
-            <h3>Afternoon GATE Elective Classes</h3>
+            <strong>GATE Elective</strong>
           </div>
         </div>
 
         <div className="panel-body">
         {GATEData['grades'].indexOf(gd) > -1 ? 
-          <div className="row">
-              <div className='col-md-offset-1'> 
-                <h4><span className="bg-info">1.&nbsp;{GATEData['note'].a}</span></h4>
-                <h4><span className="bg-info">2.&nbsp;{GATEData['note'].b}</span></h4>
-              </div>
+
+           <div>
+              <strong>Select a Afternoon GATE Elective Class</strong>
+              <p><i className="fa fa-info-circle fa-fw"></i>{GATEData['note'].a}<br></br>
+                <i className="fa fa-thumbs-o-up fa-fw"></i> {GATEData['note'].b}
+              </p>
 
               <table className="table table-bordered">
                 <thead>
@@ -98,7 +99,7 @@ var GATE = React.createClass({
               <h4><span className="bg-info">{GATEData['notAvailable']}</span></h4><br></br>
             </div>
           </div> }
-        </div> 
+        </div>
       </div>
     );
   }

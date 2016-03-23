@@ -31214,20 +31214,21 @@ var AdvancedMathUnit = React.createClass({displayName: "AdvancedMathUnit",
     }
 
     return (
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-color panel-gray  panel-course"}, 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Afternoon Advanced Math Boot Camp")
+            React.createElement("strong", null, "Advanced Math")
           )
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
         adMathData['grades'].indexOf(gd) > -1 ? 
-          React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, adMathData['note'][0])), 
-                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, adMathData['note'][1]))
+          React.createElement("div", null, 
+              React.createElement("strong", null, "Select a Afternoon Advanced Math Boot Camp"), 
+              React.createElement("p", null, React.createElement("i", {className: "fa fa-sign-in fa-fw"}), adMathData['note'][0], React.createElement("br", null), 
+                React.createElement("i", {className: "fa fa-info-circle fa-fw"}), " ", adMathData['note'][1]
               ), 
+              
 
               React.createElement("table", {className: "table table-bordered"}, 
                 React.createElement("thead", null, 
@@ -31245,10 +31246,10 @@ var AdvancedMathUnit = React.createClass({displayName: "AdvancedMathUnit",
               )
             )
           : 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, adMathData['notAvailable']))
-            )
+          React.createElement("div", null, 
+           
+              React.createElement("strong", null, adMathData['notAvailable'])
+            
           )
         )
       )
@@ -31324,20 +31325,21 @@ var AdvancedWrUnit = React.createClass({displayName: "AdvancedWrUnit",
     }
 
     return (
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-color panel-gray panel-course"}, 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Afternoon Advanced Writing Boot Camp")
+            React.createElement("strong", null, "Advanced Writing")
           )
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
         adWrData['grades'].indexOf(gd) > -1 ? 
-          React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, adWrData['note'][0])), 
-                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, adWrData['note'][1]))
+          React.createElement("div", null, 
+              React.createElement("strong", null, "Select a Afternoon Advanced Writing Boot Camp"), 
+              React.createElement("p", null, React.createElement("i", {className: "fa fa-sign-in fa-fw"}), adWrData['note'][0], React.createElement("br", null), 
+                React.createElement("i", {className: "fa fa-info-circle fa-fw"}), " ", adWrData['note'][1]
               ), 
+              
 
               React.createElement("table", {className: "table table-bordered"}, 
                 React.createElement("thead", null, 
@@ -31355,10 +31357,10 @@ var AdvancedWrUnit = React.createClass({displayName: "AdvancedWrUnit",
               )
             )
           : 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, adWrData['notAvailable']))
-            )
+          React.createElement("div", null, 
+            
+              React.createElement("strong", null, adWrData['notAvailable'])
+            
           )
         )
       )
@@ -31446,34 +31448,42 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
       React.createElement(SideMenu, null), 
 
       React.createElement("div", {className: "main-content col-md-12"}, 
-        React.createElement("div", {className: "panel panel-primary"}, 
+        React.createElement("div", {className: "panel panel-primary panel-week"}, 
           React.createElement("div", {className: "panel-heading"}, 
             React.createElement("div", {className: "panel-title"}, 
-              React.createElement("h2", null, "Afternoon Academics")
+              React.createElement("h2", null, "Afternoon Academics"), 
+              React.createElement("p", null, "Choose your daily afternoon academics for the summer. ")
+            )
+          )
+        ), 
+        React.createElement("div", {className: "panel panel-color panel-gray panel-course"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              React.createElement("strong", null, "Daily Afternoon Academics")
             )
           ), 
 
           React.createElement("div", {className: "panel-body"}, 
           
-            React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "No additional expense for Afternoon Academics(Math and Language), all have been included in the Basic Camp Fee."))
-              )
-            ), React.createElement("hr", null), 
-
-            React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("h5", null, "Mathematical Course"), 
+            
+              
+                React.createElement("div", null, 
+              
+                React.createElement("strong", null, "Select Daily Mathematical Course"), 
+                React.createElement("p", null, React.createElement("i", {className: "fa fa-info-circle fa-fw"}), " No additional expense, Daily Math has been Automatically included."
+              )), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
                     React.createElement("input", {type: "radio", name: "dailyMath", defaultChecked: true}), 
-                    "Daily Math ", React.createElement("span", {className: "bg-success"}, "(Automatically included)")
+                    "Daily Math "
                   )
-                )
-              ), React.createElement("hr", null), 
+                ), 
+              React.createElement("hr", null), 
 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("h5", null, "Language Art"), 
+              React.createElement("div", null, 
+                React.createElement("strong", null, "Select a specific Language Art course"), 
+                React.createElement("p", null, React.createElement("i", {className: "fa fa-info-circle fa-fw"}), "No additional expense.")
+                ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
                     self.state.language === 'DailyChinese' ? 
@@ -31498,11 +31508,20 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
                     "Daily Hindi"
                   )
                 )
-              )
-            )
+                
+            
           )
         ), 
-
+        React.createElement("hr", null), 
+        self.state.incomingGrade !== 'K' ?
+        React.createElement("div", {className: "panel panel-primary panel-week"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              React.createElement("h2", null, "Elective Preset"), 
+              React.createElement("p", null, "Before selecting courses for each week, you need to tell us your preferred writing and math classes since Elective and Boot Camp cannot be taken together.")
+            )
+          )
+        ) : React.createElement("p", null), 
         self.state.incomingGrade !== 'K' ?
           React.createElement(WrMathChoice, {
             writing: self.state.writing, 
@@ -31541,30 +31560,29 @@ var WrMathChoice = React.createClass({displayName: "WrMathChoice",
     var mathInput = self.props.math === 'elective' ? React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "elective", defaultChecked: true}) : React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "elective"});
     var adMathInput = self.props.math === 'advanced' ? React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "advanced", defaultChecked: true}) : React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "advanced"});
     return (
-      React.createElement("div", {className: "panel panel-primary"}, 
+
+      React.createElement("div", {className: "panel panel-color panel-gray panel-course"}, 
           React.createElement("div", {className: "panel-heading"}, 
             React.createElement("div", {className: "panel-title"}, 
-              React.createElement("h2", null, "Writing and Math Choices")
+              React.createElement("strong", null, "Writing and Math Choices")
             )
           ), 
 
           React.createElement("div", {className: "panel-body"}, 
-          
-            React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "Please choose preferred writing and math classes."))
-              )
-            ), React.createElement("hr", null), 
 
-            React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("h5", null, "Writing"), 
+
+            
+              React.createElement("div", null, 
+                React.createElement("strong", null, "Select one specific Writing Elective course for the summer"), 
+                React.createElement("p", null, React.createElement("i", {className: "fa fa-info-circle fa-fw"}), " You can decide the weeks you want to attend this course later."
+              )
+              ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
                   wrData['grades'].indexOf(gd) > -1 ? {wrInput} :
                     React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "elective", disabled: true}), 
                     "Writing Elective Classes", 
-                  wrData['grades'].indexOf(gd) === -1 ? React.createElement("span", {className: "bg-danger"}, " (Not Available for your incoming grade)") : React.createElement("span", null)
+                  wrData['grades'].indexOf(gd) === -1 ? React.createElement("span", {className: "choice-danger"}, " (Not Available for your incoming grade)") : React.createElement("span", null)
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
@@ -31573,7 +31591,7 @@ var WrMathChoice = React.createClass({displayName: "WrMathChoice",
                     {adWrInput} :
                     React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "advanced", disabled: true}), 
                     "Advanced Writing Boot Camp", 
-                  adWrData['grades'].indexOf(gd) === -1 ? React.createElement("span", {className: "bg-danger"}, " (Not Available for your incoming grade)") : React.createElement("span", null)
+                  adWrData['grades'].indexOf(gd) === -1 ? React.createElement("span", {className: "choice-danger"}, " (Not Available for your incoming grade)") : React.createElement("span", null)
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
@@ -31582,18 +31600,21 @@ var WrMathChoice = React.createClass({displayName: "WrMathChoice",
                   React.createElement("input", {type: "radio", name: "writing", onChange: this.changeWriting, value: "none"}), 
                     "No, thanks."
                   )
-                )
-              ), 
+                ), 
+              
               React.createElement("hr", null), 
 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("h5", null, "Math"), 
+              React.createElement("div", null, 
+                React.createElement("strong", null, "Select one specific Math Elective course for the summer"), 
+                React.createElement("p", null, React.createElement("i", {className: "fa fa-info-circle fa-fw"}), " You can decide the weeks you want to attend this course later."
+              )
+              ), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
                   mathData['grades'].indexOf(gd) > -1 ? {mathInput} : 
                     React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "elective", disabled: true}), 
                     "Math Elective Classes", 
-                  mathData['grades'].indexOf(gd) === -1 ? React.createElement("span", {className: "bg-danger"}, " (Not Available for your incoming grade)") : React.createElement("span", null)
+                  mathData['grades'].indexOf(gd) === -1 ? React.createElement("span", {className: "choice-danger"}, " (Not Available for your incoming grade)") : React.createElement("span", null)
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
@@ -31601,7 +31622,7 @@ var WrMathChoice = React.createClass({displayName: "WrMathChoice",
                   adMathData['grades'].indexOf(gd) > -1 ? {adMathInput} : 
                     React.createElement("input", {type: "radio", name: "math", onChange: this.changeMath, value: "advanced", disabled: true}), 
                     "Advanced Math Boot Camp", 
-                  adMathData['grades'].indexOf(gd) === -1 ? React.createElement("span", {className: "bg-danger"}, " (Not Available for your incoming grade)") : React.createElement("span", null)
+                  adMathData['grades'].indexOf(gd) === -1 ? React.createElement("span", {className: "choice-danger"}, " (Not Available for your incoming grade)") : React.createElement("span", null)
                   )
                 ), 
                 React.createElement("div", {className: "radio"}, 
@@ -31612,8 +31633,8 @@ var WrMathChoice = React.createClass({displayName: "WrMathChoice",
                     "No, thanks."
                   )
                 )
-              )
-            )
+              
+            
           )
         )
     );
@@ -31852,7 +31873,7 @@ var Attendance = React.createClass({displayName: "Attendance",
 
   render: function () {
     var self = this;
-    var weekdaysHelper = !this.state.daysMatched ? (React.createElement("p", {className: "bg-danger"}, "Please choose EXACT ", self.state.schedulePattern === 'absence' ? 0 : this.state.schedulePattern.substring(0, 1), " weekday(s) to attend.")) : React.createElement("p", null) 
+    var weekdaysHelper = !this.state.daysMatched ? (React.createElement("p", {className: "dismatched"}, "Please choose EXACT ", self.state.schedulePattern === 'absence' ? 0 : this.state.schedulePattern.substring(0, 1), " weekdays to attend.")) : React.createElement("p", null) 
 
     var weekdays = this.state.attendingDays.map(function(d){
       return (
@@ -31882,20 +31903,20 @@ var Attendance = React.createClass({displayName: "Attendance",
       }
     });
 
-    var continueHelper = this.state.allScheduled ? (React.createElement("h4", null, React.createElement("span", {className: "bg-success"}, "All summer weeks have been scheduled, please click Continue button below."))) : React.createElement("p", null);
+    var continueHelper = this.state.allScheduled ? (React.createElement("p", {className: "bg-success"}, "All summer weeks have been scheduled, please click Continue button below.")) : React.createElement("p", null);
     
     return (
       React.createElement("div", {className: "page-container"}, 
       React.createElement(SideMenu, null), 
-      React.createElement("div", {className: "main-content"}, 
-        React.createElement("div", {className: "col-md-12"}, 
-          React.createElement(CourseView, null), 
-          React.createElement("div", {className: "panel panel-primary"}, 
-            React.createElement("div", {className: "panel-heading"}, 
-              React.createElement("div", {className: "panel-title"}, 
-                React.createElement("h2", null, "Attendance")
-              )
-            ), 
+      React.createElement("div", {className: "main-content col-md-12"}, 
+          /* <CourseView />*/
+
+          React.createElement("div", {className: "panel panel-default"}, 
+            /* <div className="panel-heading">
+              
+                <h2>Attendance Sheet</h2>
+              
+            </div>*/
 
              this.state.enrollmentId ?
             React.createElement(ScheduleTable, {
@@ -31905,113 +31926,150 @@ var Attendance = React.createClass({displayName: "Attendance",
             :
             React.createElement("div", null, 
               React.createElement("div", {className: "panel-body"}, 
-                React.createElement("div", {className: "panel panel-success"}, 
-                  React.createElement("div", {className: "panel-heading"}, 
-                    React.createElement("div", {className: "panel-title"}, 
-                      React.createElement("h3", null, "First, schedule attending pattern.")
-                    )
-                  ), 
+                
+                  
 
-                  React.createElement("div", {className: "panel-body"}, 
-                    React.createElement("div", {className: "row"}, 
-                      React.createElement("div", {className: "col-md-offset-1"}, 
-                        React.createElement("h4", null, React.createElement("strong", null, "How many days do you want to attend per week?")), 
-                        React.createElement("br", null
-                        )
-                      ), 
+                    React.createElement("div", {className: "row introduction"}, 
+                        React.createElement("div", {className: "col-md-12 introduction"}, 
+                         React.createElement("p", null, "Please tell us your plan about attendence for our Summer Camp. ")
+                        ), 
 
-                      React.createElement("div", {className: "col-md-offset-1"}, 
+                      React.createElement("div", {className: "col-md-6 left attendencestep"}, 
+                      
+                      React.createElement("div", {className: "steps"}, "1"), 
+                      React.createElement("div", {className: "stepintro"}, "Create a weekly attendance pattern."), 
+                        /*<p>How many days do you want to attend per week?</p>*/
+                        
+                      React.createElement("div", {className: "col-md-offset-3"}, 
                         React.createElement("div", {className: "radio"}, 
                           React.createElement("label", null, 
                             React.createElement("input", {type: "radio", name: "attendPattern", onChange: this.changePattern, value: "5_full", defaultChecked: true}), 
                             "5 full days per week (8:00 am - 6:30 pm) $235"
-                          )
+                          ), 
+                           this.state.schedulePattern == "5_full" ?  
+                            React.createElement("div", {className: "attendanceinfo"}, 
+                            React.createElement("p", {className: "attendanceinfo"}, "ATTENDING WEEKDAYS"), 
+                            weekdays, " ", weekdaysHelper):
+                            React.createElement("span", null)
+                        
                         ), 
                         React.createElement("div", {className: "radio"}, 
                           React.createElement("label", null, 
                             React.createElement("input", {type: "radio", name: "attendPattern", onChange: this.changePattern, value: "4_full"}), 
                             "4 full days per week (8:00 am - 6:30 pm) $210"
-                          )
+                          ), 
+                         this.state.schedulePattern == "4_full" ?  
+                            React.createElement("div", {className: "attendanceinfo"}, 
+                            React.createElement("p", {className: "attendanceinfo"}, "ATTENDING WEEKDAYS"), 
+                            weekdays, weekdaysHelper, " "):
+                            React.createElement("span", null)
+                        
                         ), 
                         React.createElement("div", {className: "radio"}, 
                           React.createElement("label", null, 
                             React.createElement("input", {type: "radio", name: "attendPattern", onChange: this.changePattern, value: "3_full"}), 
                             "3 full days per week (8:00 am - 6:30 pm) $190"
-                          )
+                          ), 
+                           this.state.schedulePattern == "3_full" ?  
+                            React.createElement("div", {className: "attendanceinfo"}, 
+                            React.createElement("p", {className: "attendanceinfo"}, "ATTENDING WEEKDAYS"), 
+                            weekdays, weekdaysHelper, " "):
+                            React.createElement("span", null)
+                        
                         ), 
                         React.createElement("div", {className: "radio"}, 
                           React.createElement("label", null, 
                             React.createElement("input", {type: "radio", name: "attendPattern", onChange: this.changePattern, value: "5_morning"}), 
                             "5 mornings per week (8:00 am - 12:30 pm) $175"
-                          )
+                          ), 
+                           this.state.schedulePattern == "5_morning" ?  
+                            React.createElement("div", {className: "attendanceinfo"}, 
+                            React.createElement("p", {className: "attendanceinfo"}, "ATTENDING WEEKDAYS"), 
+                            weekdays, weekdaysHelper, " "):
+                            React.createElement("span", null)
+                        
                         ), 
                         React.createElement("div", {className: "radio"}, 
                           React.createElement("label", null, 
                             React.createElement("input", {type: "radio", name: "attendPattern", onChange: this.changePattern, value: "5_afternoon"}), 
                             "5 afternoons per week (1:00 pm - 6:30 pm) $175"
-                          )
+                          ), 
+                           this.state.schedulePattern == "5_afternoon" ?  
+                            React.createElement("div", {className: "attendanceinfo"}, 
+                            React.createElement("p", {className: "attendanceinfo"}, "ATTENDING WEEKDAYS"), 
+                            weekdays, weekdaysHelper, " "):
+                            React.createElement("span", null)
+                        
                         ), 
                         React.createElement("div", {className: "radio"}, 
                           React.createElement("label", null, 
                             React.createElement("input", {type: "radio", name: "attendPattern", onChange: this.changePattern, value: "absence"}), 
-                            "Absence ", React.createElement("span", {className: "bg-info"}, "If you don't plan to attend, please choose this.")
-                          )
+                            "Absence "
+                          ), 
+                           this.state.schedulePattern == "absence" ?  
+                            React.createElement("div", {className: "attendanceinfo"}, 
+                            React.createElement("p", null, "You do not want to attend this week.")
+                            ):
+                            React.createElement("span", null)
+                        
                         )
-                      )
-                    ), 
-                    React.createElement("hr", null), 
+                        )
+                        ), 
 
-                    React.createElement("div", {className: "row"}, 
-                      React.createElement("div", {className: "col-md-offset-1"}, 
-                        React.createElement("h4", null, React.createElement("strong", null, "Choose the attending weekdays")), React.createElement("br", null), 
-                        weekdaysHelper, 
-                        weekdays
-                      )
-                    ), 
-                    React.createElement("hr", null)
-                  )
-                ), 
 
-                React.createElement("div", {className: "panel panel-success"}, 
-                  React.createElement("div", {className: "panel-heading"}, 
-                    React.createElement("div", {className: "panel-title"}, 
-                      React.createElement("h3", null, "Then, choose some weeks to apply your attending pattern above.")
-                    )
-                  ), 
+                      
+                    React.createElement("div", {className: "col-md-6 attendencestep"}, 
+                    React.createElement("div", {className: "steps"}, "2"), 
+                    React.createElement("div", {className: "stepintro"}, "Choose weeks to apply attendance pattern in step 1"), 
+                    
 
-                  React.createElement("div", {className: "panel-body"}, 
+                     /*  
+                     
+                        <h4><strong>Choose the attending weekdays</strong></h4><br></br>
+                        {weekdaysHelper}
+                        {weekdays}
+                      */
+                    
+                    
+                  
+                
+
+                
+                            
+                    
+                  
+                    React.createElement("div", {className: "col-md-offset-2"}, 
+                  
                     React.createElement("form", {className: "form-horizontal", onSubmit: this.applyWeeks}, 
-                      React.createElement("div", {className: "row"}, 
-                        React.createElement("div", {className: "col-md-offset-1"}, 
-                          React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "No worry, you can change the attending pattern and apply them to other weeks.")), 
-                          React.createElement("br", null), 
+                      
+                        
+                      
                           React.createElement("ul", null, 
                             React.createElement("label", {className: "checkbox text-primary"}, 
                               React.createElement("input", {type: "checkbox", ref: "allWeeks", onChange: this.selectAllWeeks}), React.createElement("strong", null, "Select All Weeks")
                             ), 
-                            React.createElement("br", null), 
                             summerWeeks
-                          )
-                        )
-                      ), 
-                      React.createElement("hr", null), 
+                          ), 
+                        
+                      
 
-                      React.createElement("div", {className: "row"}, 
-                        React.createElement("div", {className: "col-md-offset-1"}, 
-                          React.createElement("button", {type: "submit", ref: "submitButton", className: "btn btn-primary"}, "Apply schedule pattern to selected weeks"), 
-                          React.createElement("button", {ref: "clearButton", className: "col-md-offset-1 btn btn-danger", onClick: this.clearSchedule}, "Clear All Schedule"), 
+                      
+                        
+                          React.createElement("button", {type: "submit", ref: "submitButton", className: "btn btn-primary apply-schedule"}, "Apply to Selected Weeks"), 
+                          React.createElement("button", {ref: "clearButton", className: "col-md-offset-4 btn btn-default clear-schedule", onClick: this.clearSchedule}, "Clear Existing Schedule"), 
                           continueHelper
-                        )
-                      )
+                        
+                      
                     )
-                  )
-                )
+                    )
+                  
+               )
+               )
               )
             )
           ), 
           (this.state.allScheduled || this.state.enrollmentId) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
-      )
       )
     );
   }
@@ -32277,26 +32335,27 @@ var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
     }
     
     return (
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-color panel-gray panel-course"}, 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Enrichment Activities")
+            React.createElement("strong", null, "Enrichment Activities")
           )
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
-          React.createElement("div", {className: "row"}, 
+          
           morAbsent ? 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("h3", null, "Morning Activities--", enrichActData['morning_time'].display_time), 
-              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "Sorry, you won't attend in the mornings."))
+            React.createElement("div", null, 
+              React.createElement("strong", null, "Morning Activities--", enrichActData['morning_time'].display_time), 
+              React.createElement("p", {className: "sorry_info"}, "Sorry, you won't attend in the mornings.")
             ) :
             React.createElement("div", null, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("h3", null, "Morning Activities--", enrichActData['morning_time'].display_time), 
-              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "1.", enrichActData['note'])), React.createElement("br", null), 
-              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "2. Every avtivity has the same time: ", enrichActData['morning_time'].display_time))
-            ), 
+            
+              React.createElement("strong", null, "Select a specific Morning Activitity"), 
+              
+            React.createElement("p", null, React.createElement("i", {className: "fa fa-clock-o fa-fw"}), enrichActData['morning_time'].display_time, React.createElement("br", null), 
+                React.createElement("i", {className: "fa fa-info-circle fa-fw"}), " ", enrichActData['note']
+              ), 
 
             React.createElement("table", {className: "table table-bordered table-striped"}, 
               React.createElement("thead", null, 
@@ -32315,15 +32374,16 @@ var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
             React.createElement("hr", null), 
 
             aftAbsent ? 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("h3", null, "Afternoon Activities--", enrichActData['afternoon_time'].display_time), 
-              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "Sorry, you won't attend in the afternoons."))
+            React.createElement("div", null, 
+              React.createElement("strong", null, "Afternoon Activities"), 
+              React.createElement("p", {className: "sorry_info"}, "Sorry, you won't attend in the afternoons.")
             ) : 
             React.createElement("div", null, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("h3", null, "Afternoon Activities--", enrichActData['afternoon_time'].display_time), 
-              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "2. Every avtivity has the same time: ", enrichActData['afternoon_time'].display_time))
-            ), 
+            
+              React.createElement("strong", null, "Select a specific Afternoon Activity"), 
+              React.createElement("p", null, React.createElement("i", {className: "fa fa-clock-o fa-fw"}), enrichActData['afternoon_time'].display_time
+              ), 
+            
 
             React.createElement("table", {className: "table table-bordered table-striped"}, 
               React.createElement("thead", null, 
@@ -32340,7 +32400,7 @@ var EnrichmentActs = React.createClass({displayName: "EnrichmentActs",
             )
             )
           )
-        )
+        
       )
     );
   }
@@ -32413,19 +32473,20 @@ var GATE = React.createClass({displayName: "GATE",
       )
     }
     return (
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-color panel-gray panel-course"}, 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Afternoon GATE Elective Classes")
+            React.createElement("strong", null, "GATE Elective")
           )
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
         GATEData['grades'].indexOf(gd) > -1 ? 
-          React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "1. ", GATEData['note'].a)), 
-                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "2. ", GATEData['note'].b))
+
+           React.createElement("div", null, 
+              React.createElement("strong", null, "Select a Afternoon GATE Elective Class"), 
+              React.createElement("p", null, React.createElement("i", {className: "fa fa-info-circle fa-fw"}), GATEData['note'].a, React.createElement("br", null), 
+                React.createElement("i", {className: "fa fa-thumbs-o-up fa-fw"}), " ", GATEData['note'].b
               ), 
 
               React.createElement("table", {className: "table table-bordered"}, 
@@ -32477,7 +32538,12 @@ var GradeBox = React.createClass({displayName: "GradeBox",
           React.createElement("strong", null, "Select Incoming Grade as of Fall 2016 For ", this.props.stu_fname)
         ), 
         React.createElement("div", {className: "panel-body"}, 
-          React.createElement("h4", {className: "bg-info"}, React.createElement("span", null, "e.g. If your child will be ", React.createElement("ins", null, "G3"), " in Fall 2016, please select ", React.createElement("ins", null, "G3"), " for him/her.")), 
+        /*  <h4 className='bg-info'><span>e.g. If your child will be <ins>G3</ins> in Fall 2016, please select <ins>G3</ins> for him/her.</span></h4> */
+        React.createElement("div", {className: "messageBox message_info", "aria-atomic": "true", "aria-live": "polite", role: "alert", tabIndex: 0}, 
+          React.createElement("div", {className: "messageIcon"}, "Info"), 
+          React.createElement("span", null, "For example, if your child will be ", React.createElement("ins", null, "G3"), " in Fall 2016, please select ", React.createElement("ins", null, "G3"), " for him/her."
+          )
+        ), 
           React.createElement("select", {className: "form-control", onChange: this.props.handleChange}, 
             React.createElement("option", {value: "K"}, "K"), 
             React.createElement("option", {value: "G1"}, "G1"), 
@@ -32595,8 +32661,7 @@ var GetStarted = React.createClass({displayName: "GetStarted",
       React.createElement("div", {className: "page-container"}, 
         React.createElement(SideMenu, null), 
 
-        React.createElement("div", {className: "main-content"}, 
-        React.createElement("div", {className: "col-md-12"}, 
+        React.createElement("div", {className: "main-content col-md-12"}, 
           React.createElement("div", {className: "panel panel-primary"}, 
             React.createElement("div", {className: "panel-heading"}, 
               React.createElement("strong", null, "Select the Program to Enroll")
@@ -32636,7 +32701,6 @@ var GetStarted = React.createClass({displayName: "GetStarted",
           this.state.showContinue ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
 
           )
-        )
       )
     );
   } 
@@ -32672,6 +32736,7 @@ var Home = React.createClass({displayName: "Home",
                   "Sign up"
                 )
               )
+            
             )
           )
         )
@@ -32729,52 +32794,67 @@ var Login = React.createClass({displayName: "Login",
   },
 
   render: function () {
-  	var errorAlert = this.state.authError ? React.createElement("div", {className: "alert alert-danger col-sm-offset-2 col-sm-10", role: "alert"}, "Email or Password is wrong.") : React.createElement("p", null);
+  	var errorAlert = this.state.authError ? React.createElement("div", {className: "alert alert-danger col-sm-10", role: "alert"}, "Email or Password is wrong.") : React.createElement("p", null);
     
-    var signUpInfo = this.state.signUped ? React.createElement("h4", {className: "bg-info"}, "Congratulations! Sign up successfully.") : React.createElement("p", null)
+    var signUpInfo = this.state.signUped ? React.createElement("p", {className: "bg-info"}, "Congratulations! Sign up successfully.") : React.createElement("p", null)
 
     return (
       React.createElement("div", {className: "page-container"}, 
-      React.createElement("div", {className: "main-content"}, 
-      React.createElement("div", {className: "col-md-6 col-md-offset-3"}, 
-      React.createElement("hr", null), 
+      React.createElement("div", {className: "main-content loginbg col-md-12"}, 
+      React.createElement("div", {className: "col-md-4 col-md-offset-2"}, 
+      
       React.createElement("div", {className: "panel panel-primary"}, 
-        React.createElement("div", {className: "panel-heading"}, 
+        React.createElement("div", {className: "panel-heading loginlogo"}, 
           React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Log In")
+            React.createElement("h3", null, React.createElement("img", {src: "/img/yf-logo.png", alt: "user-image", className: "img-circle img-inline", width: 60}), " ", React.createElement("span", null, "Yang Fan Enroll"))
           )
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
           React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1 col-md-10"}, 
-              signUpInfo, 
-              errorAlert, 
-              React.createElement("hr", null), 
-              React.createElement("form", {className: "form-horizontal ", onSubmit: this.handleSubmit}, 
+            React.createElement("div", {className: "col-md-12"}, 
+             
+             
+              React.createElement("form", {className: "-form-horizontal ", onSubmit: this.handleSubmit}, 
+
+
                 React.createElement("div", {className: "form-group"}, 
-                  React.createElement("label", {htmlFor: "email", className: "col-sm-3 control-label"}, "Email"), 
-                  React.createElement("div", {className: "col-sm-9"}, 
+                  /* <label htmlFor="email" className="col-sm-3 control-label">Email</label> */
+                  React.createElement("div", {className: "input-group margin-bottom-sm"}, 
+                    React.createElement("span", {className: "input-group-addon"}, React.createElement("i", {className: "fa fa-envelope-o fa-fw"})), 
                     React.createElement("input", {type: "email", autofocus: true, className: "form-control", ref: "email", placeholder: "Email"})
                   )
                 ), 
+
+
                 React.createElement("div", {className: "form-group"}, 
-                  React.createElement("label", {htmlFor: "password", className: "col-sm-3 control-label"}, "Password"), 
-                  React.createElement("div", {className: "col-sm-9"}, 
+                  /* <label htmlFor="password" className="col-sm-3 control-label">Password</label>*/
+                  React.createElement("div", {className: "input-group"}, 
+                    React.createElement("span", {className: "input-group-addon"}, React.createElement("i", {className: "fa fa-key fa-fw"})), 
                     React.createElement("input", {type: "password", maxLength: "20", className: "form-control", ref: "password", placeholder: "Password"})
                   )
                 ), 
+                 signUpInfo, 
+              errorAlert, 
                 React.createElement("div", {className: "form-group"}, 
-                  React.createElement("div", {className: "col-sm-offset-3 col-sm-10"}, 
-                    React.createElement("button", {type: "submit", className: "btn btn-primary"}, "Log in")
-                  )
+                  React.createElement("div", {className: "input-group btn-block"}, 
+                    React.createElement("button", {type: "submit", className: "btn btn-primary btn-block"}, "Log in")
+                  ), 
+                  React.createElement("br", null), 
+                  React.createElement("p", null, "Need a new account? ", React.createElement("a", {href: "/Signup"}, "Create one now"))
+                  
                 )
               )
-            ), React.createElement("hr", null)
+            )
           )
         )
       )
-      )
+      ), 
+       
+      React.createElement("img", {className: "col-md-4 col-md-offset-1", src: "img/yf-log-in.png"})
+
+
+
       )
       )
     );
@@ -32857,10 +32937,10 @@ var MathElective = React.createClass({displayName: "MathElective",
 
         React.createElement("div", {className: "panel-body"}, 
         mathData['grades'].indexOf(gd) > -1 ? 
-          React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, mathData['note']))
-              ), 
+          React.createElement("div", null, 
+              
+                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, mathData['note'])), 
+              
 
               React.createElement("table", {className: "table table-bordered"}, 
                 React.createElement("thead", null, 
@@ -32953,19 +33033,20 @@ var MathOlympiad = React.createClass({displayName: "MathOlympiad",
       )
     }
     return (
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-color panel-gray panel-course"}, 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Afternoon Math Olympiad Elective Classes")
+            React.createElement("strong", null, "Math Olympiad")
           )
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
         mathOlpData['grades'].indexOf(gd) > -1 ? 
-          React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, mathOlpData['note']))
+          React.createElement("div", null, 
+            React.createElement("strong", null, "Select a Afternoon Math Olympiad Elective Class"), 
+            React.createElement("p", null, React.createElement("i", {className: "fa fa-info-circle fa-fw"}), " ", mathOlpData['note']
               ), 
+
 
               React.createElement("table", {className: "table table-bordered"}, 
                 React.createElement("thead", null, 
@@ -32983,11 +33064,11 @@ var MathOlympiad = React.createClass({displayName: "MathOlympiad",
               )
             )
           : 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, mathOlpData['notAvailable'])), React.createElement("br", null)
+          
+            React.createElement("div", null, 
+              React.createElement("strong", null, mathOlpData['notAvailable']), React.createElement("br", null)
             )
-          )
+           
         )
       )
     );
@@ -33048,12 +33129,20 @@ var OtherServices = React.createClass({displayName: "OtherServices",
       React.createElement("div", {className: "page-container"}, 
       React.createElement(SideMenu, null), 
         React.createElement("div", {className: "main-content col-md-12"}, 
-        React.createElement("h2", {className: "bg-success"}, "Other Services and Activities"), React.createElement("hr", null), 
+        
+
+        React.createElement("div", {className: "panel panel-primary panel-week"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              React.createElement("h2", null, "Other Services and Activities")
+            )
+          )
+        ), 
           movies[1].grade.indexOf(this.state.incomingGrade) > -1 ? 
             React.createElement(MovieBox, {
 
               summerCampWeeks: self.state.summerCampWeeks}) 
-            : React.createElement("p", null), 
+            : React.createElement("p", {className: "absence"}), 
           React.createElement(MorningCare, null), 
           React.createElement(LunchBox, {summerCampWeeks: self.state.summerCampWeeks}), 
           React.createElement(PickupService, {summerCampWeeks: self.state.summerCampWeeks}), 
@@ -33119,18 +33208,18 @@ var PickupService = React.createClass({displayName: "PickupService",
     }
 
     return (
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-color panel-gray panel-activity"}, 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Pick-up Service")
+            React.createElement("strong", null, "Pick-up Service")
           )
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "Only offered to students from San Ramon district summer camp program at Hidden Hills Elementary")), React.createElement("hr", null), 
-              React.createElement("h4", null, "Are you from San Ramon district summer camp program at Hidden Hills Elementary?"), 
+          React.createElement("div", null, 
+            
+              React.createElement("strong", null, "Are you from San Ramon district summer camp program at Hidden Hills Elementary?"), 
+              React.createElement("p", null, React.createElement("i", {className: "fa fa-info-circle fa-fw"}), " Only offered to students from San Ramon district summer camp program at Hidden Hills Elementary"), 
               React.createElement("div", {className: "radio"}, 
                 React.createElement("label", null, 
                   this.state.canPickup  ?
@@ -33150,7 +33239,7 @@ var PickupService = React.createClass({displayName: "PickupService",
 
               this.state.canPickup ? 
               React.createElement("div", null, 
-                React.createElement("h4", null, "Do you need pick-up service?"), 
+                React.createElement("strong", null, "Do you need pick-up service?"), 
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
                     this.state.needPickup  ? 
@@ -33186,7 +33275,7 @@ var PickupService = React.createClass({displayName: "PickupService",
               )
               : React.createElement("p", null)
 
-            )
+           
           )
         )
       )
@@ -33306,23 +33395,24 @@ var LunchBox = React.createClass({displayName: "LunchBox",
       }
     }
     return (
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-color panel-gray panel-activity"}, 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Order Daily Fresh Lunches From Yang Fan")
+            React.createElement("strong", null, "Daily Fresh Lunches")
           )
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "We will NOT charge Lunch fee to those who are eligible for our early bird specials."))
-            ), React.createElement("br", null), 
+          React.createElement("div", null, 
+              React.createElement("strong", null, "Select the days you want to order Daily Fresh Lunches from Yang Fan"), 
+              React.createElement("p", null, React.createElement("i", {className: "fa fa-info-circle fa-fw"}), " We will NOT charge Lunch fee to those who are eligible for our early bird specials.", React.createElement("br", null), 
+              React.createElement("i", {className: "fa fa-info-circle fa-fw"}), " Check ", React.createElement("b", null, "Select All"), " if you want to order lunches for all attending days in the week."), 
+           React.createElement("br", null), 
 
             React.createElement("table", {className: "table table-bordered table-striped"}, 
               React.createElement("thead", null, 
                 React.createElement("tr", null, 
-                  React.createElement("th", null, "Select All Attending Days In the Week"), 
+                  React.createElement("th", null, "Select All"), 
                   React.createElement("th", null, "Week #"), 
                   React.createElement("th", null, "Mon"), 
                   React.createElement("th", null, "Tue"), 
@@ -33348,20 +33438,20 @@ var MorningCare = React.createClass({displayName: "MorningCare",
   },
   render: function() {
     return (
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-color panel-gray panel-activity"}, 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Morning Extended Care")
+            React.createElement("strong", null, "Morning Extended Care")
           )
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "We provide morning extended care every workday! Select the time slot that works for you. "))
-            ), React.createElement("br", null), 
+          React.createElement("div", null, 
+              React.createElement("strong", null, "Select the time slot when you want to have Morning Extended Care. "), 
+              React.createElement("p", null, React.createElement("i", {className: "fa fa-info-circle fa-fw"}), "We provide morning extended care every workday, and you option will be applied to all weeks that you attend. "), 
+            React.createElement("br", null), 
 
-            React.createElement("div", {className: "col-md-offset-1"}, 
+            
                 React.createElement("div", {className: "radio"}, 
                   React.createElement("label", null, 
                     YFStore.getMorningCare() === 'oneHour' ? 
@@ -33386,7 +33476,7 @@ var MorningCare = React.createClass({displayName: "MorningCare",
                     "No, I don't need the extended care. Thanks."
                   )
                 )
-              )
+             
 
           )
         )
@@ -33429,18 +33519,19 @@ var MovieBox = React.createClass({displayName: "MovieBox",
       }
     }
     return (
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-color panel-gray panel-activity"}, 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Movies")
+            React.createElement("strong", null, "Movies")
           )
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, "Check out our movie trips! Select the days you want to go!"))
-            ), React.createElement("br", null), 
+          React.createElement("div", null, 
+            
+              React.createElement("strong", null, "Select Movie Trips you want to go"), 
+              React.createElement("p", null, React.createElement("i", {className: "fa fa-info-circle fa-fw"}), "Check out the available movie trips according to your attendence! "), 
+            React.createElement("br", null), 
             React.createElement("table", {className: "table table-bordered table-striped"}, 
               React.createElement("thead", null, 
                 React.createElement("tr", null, 
@@ -33735,16 +33826,11 @@ var Profile = React.createClass({displayName: "Profile",
     }
 
 		return (
-      React.createElement("div", {className: "page-container"}, 
-      React.createElement("div", {className: "main-content"}, 
-      React.createElement("div", {className: "col-md-8 col-md-offset-2"}, 
-        React.createElement("hr", null), 
+      
+      
+      React.createElement("div", null, 
+        
         React.createElement("div", {className: " panel panel-primary"}, 
-          React.createElement("div", {className: "panel-heading"}, 
-            React.createElement("div", {className: "panel-title"}, 
-              React.createElement("h3", null, "Profile")
-            )
-          ), 
 
           React.createElement("div", {className: "panel-body"}, 
             React.createElement("div", {className: "row"}, 
@@ -33941,8 +34027,8 @@ var Profile = React.createClass({displayName: "Profile",
         ), 
         SaveButton
       )		
-      )
-      )
+     
+      
 		);
 	}
 });
@@ -34320,71 +34406,110 @@ var Signup = React.createClass({displayName: "Signup",
 
 		return (
       React.createElement("div", {className: "page-container"}, 
-      React.createElement("div", {className: "main-content"}, 
+      React.createElement("div", {className: "main-content col-md-12"}, 
       React.createElement("div", {className: "col-md-8 col-md-offset-2"}, 
         React.createElement("hr", null), 
         React.createElement("div", {className: " panel panel-primary"}, 
           React.createElement("div", {className: "panel-heading"}, 
             React.createElement("div", {className: "panel-title"}, 
-              React.createElement("h3", null, "Sign up")
+              "Sign up"
             )
           ), 
 
           React.createElement("div", {className: "panel-body"}, 
             React.createElement("div", {className: "row"}, 
               React.createElement("div", null, 
-                React.createElement("form", {className: "col-md-12 col-md-offset-0.5", onSubmit: this.handleConfirm}, 
+
+             React.createElement("form", {role: "forl", id: "rootwizard", className: "col-md-12 col-md-offset-0.5 form-horizontal form-wizard validate", onSubmit: this.handleConfirm}, 
+            
+            
+
+
+
+
+            /*  Basic Account Infomration */
+                
                   React.createElement("div", {className: "form-group"}, 
-                    React.createElement("label", {htmlFor: "email"}, "Email address", React.createElement("span", {className: "req"}, "*")), 
-                    React.createElement("input", {type: "email", required: true, className: "form-control", ref: "email", placeholder: "Email"})
+                    React.createElement("label", {className: "col-sm-2 control-label", htmlFor: "email"}, "Email address", React.createElement("span", {className: "req"}, "*")), 
+                    React.createElement("div", {className: "col-sm-10"}, 
+                      React.createElement("input", {type: "email", required: true, className: "form-control", ref: "email", placeholder: "Email"})
+                    )
                   ), 
 
                   React.createElement("div", {className: "form-group"}, 
-                    React.createElement("label", {htmlFor: "password"}, "Password", React.createElement("span", {className: "req"}, "*"), React.createElement("span", {className: "bg-info"}, "At lease 6 characters"), " "), 
-                    React.createElement("input", {type: "password", required: true, maxLength: "20", className: "form-control", ref: "password", placeholder: "At least 6 characters"}), React.createElement("br", null), 
-                    React.createElement("label", {htmlFor: "password"}, "Confirm Your Password", React.createElement("span", {className: "req"}, "*"), React.createElement("span", {className: "bg-info"}, "At lease 6 characters")), 
-                    React.createElement("input", {type: "password", required: true, maxLength: "20", className: "form-control", ref: "password2", placeholder: "At least 6 characters"})
+                    React.createElement("label", {className: "col-sm-2 control-label", htmlFor: "password"}, "Password", React.createElement("span", {className: "req"}, "*")), 
+                    React.createElement("div", {className: "col-sm-10"}, 
+                      React.createElement("input", {type: "password", required: true, maxLength: "20", className: "form-control", ref: "password", placeholder: "Enter your password"}), 
+                      React.createElement("p", {className: "help-block"}, "At lease 6 characters "), 
+                      React.createElement("br", null)
+                    ), 
+                      
+                    React.createElement("label", {className: "col-sm-2 control-label", htmlFor: "password"}, "Confirm Password", React.createElement("span", {className: "req"}, "*")), 
+                    React.createElement("div", {className: "col-sm-10"}, 
+                      React.createElement("input", {type: "password", required: true, maxLength: "20", className: "form-control", ref: "password2", placeholder: "Enter your password"}), 
+                      React.createElement("p", {className: "help-block"}, "At lease 6 characters")
+                    )
                   ), 
 
+
+                   React.createElement("hr", null), 
+
+                /*  Contact Infomration */
+                  
                   React.createElement("div", {className: "form-group"}, 
-                    React.createElement("label", {htmlFor: "cellPhone"}, "Cell Phone", React.createElement("span", {className: "req"}, "*")), 
-                    React.createElement("input", {type: "text", maxLength: "10", size: "10", required: true, className: "form-control", ref: "cellPhone", placeholder: "Please enter numbers only."})
+                    React.createElement("label", {className: "col-sm-2 control-label", htmlFor: "cellPhone"}, "Cell Phone", React.createElement("span", {className: "req"}, "*")), 
+                    React.createElement("div", {className: "col-sm-10"}, 
+                      React.createElement("input", {type: "text", maxLength: "10", size: "10", required: true, className: "form-control", ref: "cellPhone", placeholder: "Please enter your cell phone number."}), 
+                      React.createElement("p", {className: "help-block"}, "Please enter numbers only.")
+                    )
                   ), 
                   
                   React.createElement("div", {className: "form-group"}, 
-                    React.createElement("label", {htmlFor: "homePhone"}, "Home Phone"), 
+                    React.createElement("label", {className: "col-sm-2 control-label", htmlFor: "homePhone"}, "Home Phone"), 
+                    React.createElement("div", {className: "col-sm-10"}, 
                     React.createElement("input", {type: "text", maxLength: "10", size: "10", className: "form-control", ref: "homePhone", placeholder: "Please enter numbers only."})
+                    )
                   ), 
 
                   React.createElement("div", {className: "form-group"}, 
-                    React.createElement("label", {htmlFor: "workPhone"}, "Work Phone"), 
-                    React.createElement("input", {type: "text", className: "form-control", ref: "workPhone"})
+                    React.createElement("label", {className: "col-sm-2 control-label", htmlFor: "workPhone"}, "Work Phone"), 
+                    React.createElement("div", {className: "col-sm-10"}, 
+                      React.createElement("input", {type: "text", className: "form-control", ref: "workPhone", placeholder: "Please enter numbers only."})
+                    )
                   ), 
 
+                   React.createElement("hr", null), 
+
+                /*  Parent Infomration */
+
+
                   React.createElement("div", {className: "form-group"}, 
-                    React.createElement("label", null, "Parent(s) Name"), 
-                    React.createElement("div", {className: "row"}, 
-                      React.createElement("div", {className: "col-md-6"}, 
+                    React.createElement("label", {className: "col-sm-2 control-label"}, "Parent(s) Name"), 
+                    
+                      React.createElement("div", {className: "col-sm-5"}, 
                         React.createElement("input", {type: "text", className: " form-control", ref: "motherName", placeholder: "Mother's Name"})
                       ), 
-                      React.createElement("div", {className: "col-md-6"}, 
+                      React.createElement("div", {className: "col-sm-5"}, 
                         React.createElement("input", {type: "text", className: "col-md-6 form-control", ref: "fatherName", placeholder: "Father's Name"})
                       )
-                    )
+                    
                   ), 
 
                   React.createElement(AddressBox, {ref: "address"}), 
                   React.createElement("hr", null), 
 
-                  React.createElement("div", {className: "form-group"}, 
-                    React.createElement("div", {className: "panel panel-success"}, 
-                      React.createElement("div", {className: "panel-heading"}, 
-                        React.createElement("div", {className: "panel-title"}, 
-                          React.createElement("h3", null, "Student(s) Information")
-                        )
-                      ), 
 
-                      React.createElement("div", {className: "panel-body"}, 
+                /*  Student Infomration */
+
+                  React.createElement("div", {className: "form-group"}, 
+                    
+                      
+                        
+                          React.createElement("h3", null, "Student(s) Information"), 
+                        
+                      
+
+                      
                         React.createElement("div", {className: "row"}, 
                           React.createElement(StudentBox, {ref: "student1", stuIdx: "1"}), 
                           Student2, 
@@ -34401,10 +34526,12 @@ var Signup = React.createClass({displayName: "Signup",
                             )
                           )
                         )
-                      )
-                    )
+                      
+                                        
                   ), 
+          
 
+/*  Confirmation */
                   React.createElement("div", {className: "checkbox"}, 
                     React.createElement("label", null, 
                       React.createElement("h4", null, React.createElement("input", {type: "checkbox", onChange: this.changeAccept}), 
@@ -34416,12 +34543,22 @@ var Signup = React.createClass({displayName: "Signup",
                   ), 
                   React.createElement("hr", null), 
                   HelpBlock, 
-                  React.createElement("button", {type: "submit", ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm")
+
+                  React.createElement("button", {type: "submit", ref: "confirmButton", className: "btn btn-primary"}, "Confirm")
+                  
+                  
+
+                        
+
+
+                 
+
                 )
               ), React.createElement("hr", null)
             )
           )
         ), 
+        
         SignupButton
       )
       )
@@ -34509,9 +34646,13 @@ var SummerAgreements = React.createClass({displayName: "SummerAgreements",
       React.createElement("div", {className: "page-container"}, 
         React.createElement(SideMenu, null), 
         React.createElement("div", {className: "main-content col-md-12"}, 
-        React.createElement("h2", {className: "bg-success"}, "Summer Release Forms"), React.createElement("hr", null), 
-          React.createElement("h3", {className: "bg-info"}, "Parents, please answer all the questions below. ", React.createElement("ins", null, "The enrollment is not completed if questions are not answered in this page")
-          ), React.createElement("hr", null), 
+        React.createElement("h2", null, "Summer Release Forms"), 
+
+        React.createElement("div", {className: "messageBox message_info", "aria-atomic": "true", "aria-live": "polite", role: "alert", tabIndex: 0}, 
+          React.createElement("div", {className: "messageIcon"}, "Info"), 
+          React.createElement("span", null, "Parents, please answer all the questions below. The enrollment will not be completed if questions are not answered in this page"
+          )
+        ), 
 
           React.createElement("form", {onSubmit: this.handleConfirm}, 
             React.createElement(SummerTripPermit, {
@@ -34547,8 +34688,8 @@ var PhotoRelease = React.createClass({displayName: "PhotoRelease",
   },
   render: function() {
     var PhotoRelease = (
-      React.createElement("div", null, 
-        React.createElement("h4", null, "I permit Yang Fan to upload pictures of my child to the school on-line albums"), 
+      React.createElement("div", {className: "permissionoption"}, 
+        React.createElement("strong", null, "Permit Yang Fan to upload pictures of my child to the school on-line albums?"), 
         React.createElement("div", {className: "radio"}, 
           React.createElement("label", null, 
             this.state.PhotoRelease ? 
@@ -34568,21 +34709,22 @@ var PhotoRelease = React.createClass({displayName: "PhotoRelease",
       ) );
     
     return (
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-default"}, 
         React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Photo Release")
-          )
+          
+            React.createElement("h2", null, "Photo Release")
+          
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1 col-md-10"}, 
-              React.createElement("h4", {className: "bg-info"}, "Throughout the summer, Yang Fan will take and upload the pictures of our camp activities to the school on-line albums (Access controlled) and allow our summer parents to view those pictures"
-              ), React.createElement("hr", null), 
+          
+            React.createElement("div", {className: "agreement"}, 
+              React.createElement("h4", null, "Agreement for Photo Release"), 
+              React.createElement("p", null, "Throughout the summer, Yang Fan will take and upload the pictures of our camp activities to the school on-line albums (Access controlled) and allow our summer parents to view those pictures")
+            ), 
               PhotoRelease
-            )
-          )
+            
+          
         )
       )
     );
@@ -34614,8 +34756,8 @@ var SunscreenPermit = React.createClass({displayName: "SunscreenPermit",
 
   render: function() {
     var applySunscreen = (
-      React.createElement("div", null, 
-        React.createElement("h4", null, "I give permission for Yang Fan staffs to apply sun screen when my child needs it"), 
+      React.createElement("div", {className: "permissionoption"}, 
+        React.createElement("strong", null, "I give permission for Yang Fan staffs to apply sun screen when my child needs it"), 
         React.createElement("div", {className: "radio"}, 
           React.createElement("label", null, 
             this.state.applySunscreen ? 
@@ -34634,8 +34776,8 @@ var SunscreenPermit = React.createClass({displayName: "SunscreenPermit",
         )
       ) );
     var spareSunCream = (
-      React.createElement("div", null, 
-        React.createElement("h4", {className: "bg-danger"}, "If I forget to bring sun cream in, or my sun cream runs out or is misplaced, I give permission for Yang Fan staffs to use any spare sun cream that the school may have."), 
+      React.createElement("div", {className: "permissionoption"}, 
+        React.createElement("strong", null, "I give permission for Yang Fan staffs to use any spare sun cream that the school may have if I forget to bring sun cream in, or my sun cream runs out or is misplaced."), 
         React.createElement("div", {className: "radio"}, 
           React.createElement("label", null, 
             this.state.spareSunCream ? 
@@ -34654,8 +34796,8 @@ var SunscreenPermit = React.createClass({displayName: "SunscreenPermit",
         )
       ) );
     var allergySunscreen = (
-      React.createElement("div", null, 
-        React.createElement("h4", null, "Does your child have any known allergies in association with sunscreens?"), 
+      React.createElement("div", {className: "permissionoption"}, 
+        React.createElement("strong", null, "Does your child have any known allergies in association with sunscreens?"), 
         React.createElement("div", {className: "radio"}, 
           React.createElement("label", null, 
             this.state.allergySunscreen ? 
@@ -34675,24 +34817,24 @@ var SunscreenPermit = React.createClass({displayName: "SunscreenPermit",
       ) );
 
     return (
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-default"}, 
         React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Sunscreen Permission")
-          )
+          
+            React.createElement("h2", null, "Sunscreen Permission")
+          
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1 col-md-10"}, 
-              React.createElement("h4", {className: "bg-info"}, 
-              "My child has my permission to attend below weekly off-campus activities throughout the Summer Camp. These activities include trips that use school vans, public transportation, light rail, and/or walking modes of transportation."
-              ), React.createElement("hr", null), 
+            React.createElement("div", {className: "agreement"}, 
+              React.createElement("h4", null, "Agreement for Sunscreen"), 
+              React.createElement("p", null, "My child has my permission to attend below weekly off-campus activities throughout the Summer Camp. These activities include trips that use school vans, public transportation, light rail, and/or walking modes of transportation.")
+            ), 
+            
               applySunscreen, 
               spareSunCream, 
               allergySunscreen
-            )
-          )
+           
+          
         )
       )
     );
@@ -34712,19 +34854,19 @@ var EmergencyBox = React.createClass({displayName: "EmergencyBox",
   },
   render: function() {
     return (
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-default"}, 
         React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Consent for Emergency Medical Treatment")
-          )
+          
+            React.createElement("h2", null, "Emergency Medical Treatment")
+          
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1 col-md-10"}, 
-              React.createElement("h4", {className: "bg-info"}, 
-              "I hereby give consent to LIL (Yang Fan) to provide all emergency medical and/or dental care as prescribed by a duly licensed physician (M.D.) or dentist (D.D.S.) for my child. This care maybe given under whatever conditions are necessary to preserve the life, limb, or well being of my dependent."
-              ), 
+          
+            React.createElement("div", {className: "agreement"}, 
+              React.createElement("h4", null, "Consent for Emergency Medical Treatment"), 
+              React.createElement("p", null, "I hereby give consent to LIL (Yang Fan) to provide all emergency medical and/or dental care as prescribed by a duly licensed physician (M.D.) or dentist (D.D.S.) for my child. This care maybe given under whatever conditions are necessary to preserve the life, limb, or well being of my dependent.")
+            ), 
               React.createElement("div", {className: "radio"}, 
                 React.createElement("label", null, 
                   this.state.emergencyPermit ? 
@@ -34739,23 +34881,28 @@ var EmergencyBox = React.createClass({displayName: "EmergencyBox",
                     React.createElement("input", {type: "radio", name: "emergencyPermit", onChange: this.emergencyPermit, defaultChecked: true}) :
                     React.createElement("input", {type: "radio", name: "emergencyPermit", onChange: this.emergencyPermit}), 
                   "Disagree"
-                )
-              ), React.createElement("hr", null), 
+                ), 
+             
 
               this.state.emergencyPermit ? 
                 React.createElement("div", {className: "row"}, 
+                  React.createElement("hr", null), 
+                  React.createElement("div", {className: "col-md-12 emergencycontact"}, 
+                  React.createElement("strong", null, "Please tell us the primary and secondary emergency contacts")
+                  ), 
                   React.createElement(ContactBox, {
                     ref: "primaryEmerContact", 
                     title: "Primary Emergency Contact"}
                   ), 
+                  
                   React.createElement(ContactBox, {
                     ref: "secondaryEmerContact", 
                     title: "Secondary Emergency Contact"}
                   )
                 )
                 : React.createElement("p", null)
-            ), React.createElement("hr", null)
-          )
+            )
+         
         )
       )
     );
@@ -34793,8 +34940,9 @@ var SummerTripPermit = React.createClass({displayName: "SummerTripPermit",
   },
   render: function() {
     var swimPermit = (
-      React.createElement("div", null, 
-        React.createElement("h4", null, "Friday afternoon recreational Swimming trips (", React.createElement("strong", null, "students must be able to swimming independently"), ")"), 
+      React.createElement("div", {className: "permissionoption"}, 
+        React.createElement("strong", null, " Permit your child to attend Friday afternoon recreational Swimming trips? "), 
+        React.createElement("p", null, React.createElement("i", {className: "fa fa-info-circle fa-fw"}), "students must be able to swimming independently"), 
         React.createElement("div", {className: "radio"}, 
           React.createElement("label", null, 
             this.state.swimPermit ? 
@@ -34813,8 +34961,8 @@ var SummerTripPermit = React.createClass({displayName: "SummerTripPermit",
         )
       ) );
     var moviePermit = (
-      React.createElement("div", null, 
-        React.createElement("h4", null, "Tuesday morning summer movie at Dublin Regal movie theater"), 
+      React.createElement("div", {className: "permissionoption"}, 
+        React.createElement("strong", null, "Permit your child to attend Tuesday morning summer movie at Dublin Regal movie theater ?"), 
         React.createElement("div", {className: "radio"}, 
           React.createElement("label", null, 
             this.state.moviePermit ? 
@@ -34833,8 +34981,8 @@ var SummerTripPermit = React.createClass({displayName: "SummerTripPermit",
         )
       ) );
     var fieldTripPermit = (
-      React.createElement("div", null, 
-        React.createElement("h4", null, "Friday field trip"), 
+      React.createElement("div", {className: "permissionoption"}, 
+        React.createElement("strong", null, "Permit your child to attend Friday field trip?"), 
         React.createElement("div", {className: "radio"}, 
           React.createElement("label", null, 
             this.state.fieldTripPermit ? 
@@ -34853,8 +35001,8 @@ var SummerTripPermit = React.createClass({displayName: "SummerTripPermit",
         )
       ) );
     var HartSportsPermit = (
-      React.createElement("div", null, 
-        React.createElement("h4", null, "Hart Middle School Sports Field activities"), 
+      React.createElement("div", {className: "permissionoption"}, 
+        React.createElement("strong", null, "Permit your child to attend Hart Middle School Sports Field activities ?"), 
         React.createElement("div", {className: "radio"}, 
           React.createElement("label", null, 
             this.state.HartSportsPermit ? 
@@ -34875,19 +35023,20 @@ var SummerTripPermit = React.createClass({displayName: "SummerTripPermit",
 
 
     return (
-      React.createElement("div", {className: "panel panel-primary"}, 
+      React.createElement("div", {className: "panel panel-default"}, 
         React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Summer Trip Permission")
-          )
+            React.createElement("h2", null, "Summer Trip Permission")
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1 col-md-10"}, 
-              React.createElement("h4", {className: "bg-info"}, 
-              "My child has my permission to attend below weekly off-campus activities throughout the Summer Camp. These activities include trips that use school vans, public transportation, light rail, and/or walking modes of transportation."
-              ), React.createElement("hr", null), 
+          
+            
+              React.createElement("div", {className: "agreement"}, 
+              React.createElement("h4", null, "Agreement about summer trip"), 
+              React.createElement("p", null, "My child has my permission to attend below weekly off-campus activities throughout the Summer Camp. These activities include trips that use school vans, public transportation, light rail, and/or walking modes of transportation.")
+              ), 
+              
+              
               this.props.incomingGrade !== 'K' ? {swimPermit} : React.createElement("p", null), 
               (this.props.incomingGrade !== 'K' && this.props.incomingGrade !== 'G1') ? 
               {moviePermit} : React.createElement("p", null), 
@@ -34895,8 +35044,8 @@ var SummerTripPermit = React.createClass({displayName: "SummerTripPermit",
               HartSportsPermit
 
             )
-          )
-        )
+          
+        
       )
     );
   }
@@ -34979,7 +35128,14 @@ var Week1 = React.createClass({displayName: "Week1",
           summerCampWeeks: this.state.summerCampWeeks}), 
 
         React.createElement("div", {className: "main-content col-md-12"}, 
-        React.createElement("h1", {className: "bg-success"}, curWeekTitle, "   (", coveredDate, ")"), React.createElement("hr", null), 
+        React.createElement("div", {className: "panel panel-primary panel-week"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              React.createElement("h2", null, curWeekTitle), 
+              React.createElement("p", null, coveredDate)
+            )
+          )
+        ), 
          show ? 
           React.createElement("h3", null, "You plan not to attend in this week, please Continue.") :
           React.createElement("div", null, 
@@ -35084,7 +35240,14 @@ var Week10 = React.createClass({displayName: "Week10",
           summerCampWeeks: this.state.summerCampWeeks}), 
           
         React.createElement("div", {className: "main-content col-md-12"}, 
-        React.createElement("h1", {className: "bg-success"}, curWeekTitle, "   (", coveredDate, ")"), React.createElement("hr", null), 
+        React.createElement("div", {className: "panel panel-primary panel-week"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              React.createElement("h2", null, curWeekTitle), 
+              React.createElement("p", null, coveredDate)
+            )
+          )
+        ), 
          show ? 
           React.createElement("h3", null, "You plan not to attend in this week, please Continue.") :
           React.createElement("div", null, 
@@ -35219,14 +35382,14 @@ var Week2 = React.createClass({displayName: "Week2",
               curWeekIdx: preWeekIdx, 
               incomingGrade: self.state.incomingGrade, 
               summerCampWeeks: self.state.summerCampWeeks}) :
-              React.createElement("p", null), 
+              React.createElement("p", {className: "absence"}), 
             self.state.math === 'elective' ?
             React.createElement(MathElective, {
               curWeek: preWeek, 
               curWeekIdx: preWeekIdx, 
               incomingGrade: self.state.incomingGrade, 
               summerCampWeeks: self.state.summerCampWeeks}) :
-            React.createElement("p", null), 
+            React.createElement("p", {className: "absence"}), 
             React.createElement(MathOlympiad, {
               curWeek: preWeek, 
               curWeekIdx: preWeekIdx, 
@@ -35826,7 +35989,14 @@ var Week6 = React.createClass({displayName: "Week6",
           summerCampWeeks: this.state.summerCampWeeks}), 
           
         React.createElement("div", {className: "main-content col-md-12 "}, 
-        React.createElement("h2", {className: "bg-success"}, preWeekTitle, "  (", coveredDate[0], ")"), React.createElement("hr", null), 
+        React.createElement("div", {className: "panel panel-primary panel-week"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              React.createElement("h2", null, preWeekTitle), 
+              React.createElement("p", null, coveredDate[0])
+            )
+          )
+        ), 
          !preShow ? 
           React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
           React.createElement("div", null, 
@@ -35841,14 +36011,14 @@ var Week6 = React.createClass({displayName: "Week6",
               curWeekIdx: preWeekIdx, 
               incomingGrade: self.state.incomingGrade, 
               summerCampWeeks: self.state.summerCampWeeks}) :
-              React.createElement("p", null), 
+              React.createElement("p", {className: "absence"}), 
             self.state.math === 'elective' ?
             React.createElement(MathElective, {
               curWeek: preWeek, 
               curWeekIdx: preWeekIdx, 
               incomingGrade: self.state.incomingGrade, 
               summerCampWeeks: self.state.summerCampWeeks}) :
-            React.createElement("p", null), 
+            React.createElement("p", {className: "absence"}), 
             React.createElement(MathOlympiad, {
               curWeek: preWeek, 
               curWeekIdx: preWeekIdx, 
@@ -35865,9 +36035,16 @@ var Week6 = React.createClass({displayName: "Week6",
 
         (self.state.writing === 'advanced' || self.state.math === 'advanced') ? 
         React.createElement("div", null, 
-          React.createElement("h2", null, preWeekTitle, " & ", postWeekTitle, " Unit"), 
+        React.createElement("div", {className: "panel panel-primary panel-week"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              React.createElement("h2", null, preWeekTitle, " & ", postWeekTitle, " Unit")
+              
+            )
+          )
+        ), 
             (!preShow || !postShow) ? 
-              React.createElement("h3", {className: "bg-info"}, "Sorry, you can't enroll in this Advanced Writing(or Math) Unit due to at least one-week absence.") :
+              React.createElement("h3", null, "Sorry, you can't enroll in this Advanced Writing(or Math) Unit due to at least one-week absence.") :
               React.createElement("div", null, 
               self.state.writing === 'advanced' ? 
               React.createElement(AdvancedWrUnit, {
@@ -35876,7 +36053,7 @@ var Week6 = React.createClass({displayName: "Week6",
                 postWeek: postWeek, 
                 postWeekIdx: postWeekIdx, 
                 incomingGrade: self.state.incomingGrade, 
-                summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null), 
+                summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", {className: "absence"}), 
               self.state.math === 'advanced' ? 
               React.createElement(AdvancedMathUnit, {
                 preWeek: preWeek, 
@@ -35884,7 +36061,7 @@ var Week6 = React.createClass({displayName: "Week6",
                 postWeek: postWeek, 
                 postWeekIdx: postWeekIdx, 
                 incomingGrade: self.state.incomingGrade, 
-                summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null)
+                summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", {className: "absence"})
               )
             
         )
@@ -35996,7 +36173,15 @@ var Week7 = React.createClass({displayName: "Week7",
           summerCampWeeks: this.state.summerCampWeeks}), 
           
         React.createElement("div", {className: "main-content col-md-12"}, 
-          React.createElement("h2", {className: "bg-success"}, postWeekTitle, "   (", coveredDate[1], ")"), React.createElement("hr", null), 
+        
+        React.createElement("div", {className: "panel panel-primary panel-week"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              React.createElement("h2", null, postWeekTitle), 
+              React.createElement("p", null, coveredDate[1])
+            )
+          )
+        ), 
            !postShow ? 
             React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
             React.createElement("div", null, 
@@ -36011,14 +36196,14 @@ var Week7 = React.createClass({displayName: "Week7",
               curWeekIdx: postWeekIdx, 
               incomingGrade: self.state.incomingGrade, 
               summerCampWeeks: self.state.summerCampWeeks}) :
-              React.createElement("p", null), 
+              React.createElement("p", {className: "absence"}), 
             self.state.math === 'elective' ?
             React.createElement(MathElective, {
               curWeek: postWeek, 
               curWeekIdx: postWeekIdx, 
               incomingGrade: self.state.incomingGrade, 
               summerCampWeeks: self.state.summerCampWeeks}) :
-            React.createElement("p", null), 
+            React.createElement("p", {className: "absence"}), 
             React.createElement(MathOlympiad, {
               curWeek: postWeek, 
               curWeekIdx: postWeekIdx, 
@@ -36137,7 +36322,14 @@ var Week8 = React.createClass({displayName: "Week8",
           summerCampWeeks: this.state.summerCampWeeks}), 
           
         React.createElement("div", {className: "main-content col-md-12 "}, 
-        React.createElement("h2", {className: "bg-success"}, preWeekTitle, "  (", coveredDate[0], ")"), React.createElement("hr", null), 
+        React.createElement("div", {className: "panel panel-primary panel-week"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              React.createElement("h2", null, preWeekTitle), 
+              React.createElement("p", null, coveredDate[0])
+            )
+          )
+        ), 
          !preShow ? 
           React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
           React.createElement("div", null, 
@@ -36152,14 +36344,14 @@ var Week8 = React.createClass({displayName: "Week8",
               curWeekIdx: preWeekIdx, 
               incomingGrade: self.state.incomingGrade, 
               summerCampWeeks: self.state.summerCampWeeks}) :
-              React.createElement("p", null), 
+              React.createElement("p", {className: "absence"}), 
             self.state.math === 'elective' ?
             React.createElement(MathElective, {
               curWeek: preWeek, 
               curWeekIdx: preWeekIdx, 
               incomingGrade: self.state.incomingGrade, 
               summerCampWeeks: self.state.summerCampWeeks}) :
-            React.createElement("p", null), 
+            React.createElement("p", {className: "absence"}), 
             React.createElement(MathOlympiad, {
               curWeek: preWeek, 
               curWeekIdx: preWeekIdx, 
@@ -36176,9 +36368,17 @@ var Week8 = React.createClass({displayName: "Week8",
 
         (self.state.writing === 'advanced' || self.state.math === 'advanced') ? 
         React.createElement("div", null, 
-          React.createElement("h2", null, preWeekTitle, " & ", postWeekTitle, " Unit"), 
+          
+        React.createElement("div", {className: "panel panel-primary panel-week"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              React.createElement("h2", null, preWeekTitle, " & ", postWeekTitle, " Unit"), 
+              React.createElement("p", null, coveredDate[0], " & ", coveredDate[1])
+            )
+          )
+        ), 
             (!preShow || !postShow) ? 
-              React.createElement("h3", {className: "bg-info"}, "Sorry, you can't enroll in this Advanced Writing(or Math) Unit due to at least one-week absence.") :
+              React.createElement("h3", null, "Sorry, you can't enroll in this Advanced Writing(or Math) Unit due to at least one-week absence.") :
               React.createElement("div", null, 
               self.state.writing === 'advanced' ? 
               React.createElement(AdvancedWrUnit, {
@@ -36187,7 +36387,7 @@ var Week8 = React.createClass({displayName: "Week8",
                 postWeek: postWeek, 
                 postWeekIdx: postWeekIdx, 
                 incomingGrade: self.state.incomingGrade, 
-                summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null), 
+                summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", {className: "absence"}), 
               self.state.math === 'advanced' ? 
               React.createElement(AdvancedMathUnit, {
                 preWeek: preWeek, 
@@ -36195,7 +36395,7 @@ var Week8 = React.createClass({displayName: "Week8",
                 postWeek: postWeek, 
                 postWeekIdx: postWeekIdx, 
                 incomingGrade: self.state.incomingGrade, 
-                summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null)
+                summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", {className: "absence"})
               )
             
         )
@@ -36306,7 +36506,15 @@ var Week9 = React.createClass({displayName: "Week9",
           incomingGrade: this.state.incomingGrade, 
           summerCampWeeks: this.state.summerCampWeeks}), 
         React.createElement("div", {className: "main-content col-md-12"}, 
-          React.createElement("h2", {className: "bg-success"}, postWeekTitle, "   (", coveredDate[1], ")"), React.createElement("hr", null), 
+          
+        React.createElement("div", {className: "panel panel-primary panel-week"}, 
+          React.createElement("div", {className: "panel-heading"}, 
+            React.createElement("div", {className: "panel-title"}, 
+              React.createElement("h2", null, postWeekTitle), 
+              React.createElement("p", null, coveredDate[1])
+            )
+          )
+        ), 
            !postShow ? 
             React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
             React.createElement("div", null, 
@@ -36321,14 +36529,14 @@ var Week9 = React.createClass({displayName: "Week9",
               curWeekIdx: postWeekIdx, 
               incomingGrade: self.state.incomingGrade, 
               summerCampWeeks: self.state.summerCampWeeks}) :
-              React.createElement("p", null), 
+              React.createElement("p", {className: "absence"}), 
             self.state.math === 'elective' ?
             React.createElement(MathElective, {
               curWeek: postWeek, 
               curWeekIdx: postWeekIdx, 
               incomingGrade: self.state.incomingGrade, 
               summerCampWeeks: self.state.summerCampWeeks}) :
-            React.createElement("p", null), 
+            React.createElement("p", {className: "absence"}), 
             React.createElement(MathOlympiad, {
               curWeek: postWeek, 
               curWeekIdx: postWeekIdx, 
@@ -36426,16 +36634,16 @@ var WritingElective = React.createClass({displayName: "WritingElective",
       React.createElement("div", {className: "panel panel-primary"}, 
         React.createElement("div", {className: "panel-heading"}, 
           React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Afternoon Writing Elective Classes")
+            React.createElement("strong", null, "Afternoon Writing Elective Classes")
           )
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
         wrData['grades'].indexOf(gd) > -1 ? 
-          React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, wrData['note']))
-              ), 
+          React.createElement("div", null, 
+              
+                React.createElement("h4", null, React.createElement("span", {className: "bg-info"}, wrData['note'])), 
+              
 
               React.createElement("table", {className: "table table-bordered"}, 
                 React.createElement("thead", null, 
@@ -36475,8 +36683,9 @@ var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
-
+var CourseView = require('./helpers/CourseView.jsx');
 var Footer = require('./helpers/Footer.jsx');
+var Profile = require('./Profile.jsx');
 /** Tips: We often pass the entire state of the store down the chain of views in a single object, allowing different descendants to use what they need.
 **/
 var YFApp = React.createClass({displayName: "YFApp",
@@ -36500,7 +36709,7 @@ var YFApp = React.createClass({displayName: "YFApp",
   handleLogout: function(e) {
     if(confirm('Are you sure to log out?') == true){
       YFActions.logout();
-      this.transitionTo('home');
+      this.transitionTo('login');
     }
   },
 
@@ -36511,48 +36720,85 @@ var YFApp = React.createClass({displayName: "YFApp",
   render: function() {
     return (
       React.createElement("div", null, 
+        this.state.loggedIn ?
         React.createElement("nav", {className: "navbar navbar-default navbar-fixed-top"}, 
           React.createElement("div", null, 
             React.createElement("div", {className: "navbar-header"}, 
-              React.createElement("button", {type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#navbar", "aria-expanded": "false", "aria-controls": "navbar"}, 
-                React.createElement("span", {className: "sr-only"}, "Toggle navigation"), 
-                React.createElement("span", {className: "icon-bar"}), 
-                React.createElement("span", {className: "icon-bar"}), 
-                React.createElement("span", {className: "icon-bar"})
-              ), 
-              React.createElement("a", {className: "navbar-brand", href: "/"}, 
-                React.createElement("img", {src: "/img/logo.png", alt: "user-image", className: "img-circle img-inline", width: 28}), 
-                React.createElement("h4", null, "Yang Fan Enrollment")
+              React.createElement("a", {className: "navbar-brand"}, 
+                React.createElement("img", {src: "/img/yf-logo.png", alt: "user-image", className: "img-circle img-inline", width: 40}), 
+                React.createElement("h4", null, "Yang Fan Enroll")
               )
             ), 
+      React.createElement("ul", {className: "nav navbar-nav"}, 
+        React.createElement("li", {className: "dropdown"}, 
+          React.createElement("a", {id: "drop1", href: "#", className: "dropdown-toggle", "data-toggle": "dropdown", role: "button", "aria-haspopup": "true", "aria-expanded": "false"}, " Course Overview ", React.createElement("span", {className: "caret"})
+          ), 
+           /*
+          <ul className="dropdown-menu" aria-labelledby="drop1"> 
+            <li><a href="#">Action</a></li> 
+            <li><a href="#">Another action</a></li> 
+            <li><a href="#">Something else here</a></li> 
+            <li role="separator" className="divider" /> 
+            <li><a href="#">Separated link</a></li> 
+          </ul> */
+          React.createElement("div", {className: "dropdown-menu coursedrop", "aria-labelledby": "drop1"}, 
+          React.createElement(CourseView, null)
+          )
+        )
+      ), "               ", /* Modal */
+React.createElement("div", {className: "modal fade bs-example-modal-lg", tabindex: "-1", role: "dialog", "aria-labelledby": "myLargeModalLabel", "aria-hidden": "true"}, 
+  React.createElement("div", {className: "modal-dialog modal-lg"}, 
+    React.createElement("div", {className: "modal-content"}, 
+      React.createElement("div", {className: "modal-header"}, 
+        React.createElement("button", {type: "button", className: "close", "data-dismiss": "modal"}, React.createElement("span", {"aria-hidden": "true"}, "×"), React.createElement("span", {className: "sr-only"}, "Close")), 
+        React.createElement("h4", {className: "modal-title", id: "myModalLabel"}, "Edit Profile")
+      ), 
+      React.createElement("div", {className: "modal-body"}, 
+        React.createElement(Profile, null)
+      ), 
+      React.createElement("div", {className: "modal-footer"}, 
+        React.createElement("button", {type: "button", className: "btn btn-default", "data-dismiss": "modal"}, "Close"), 
+        React.createElement("button", {type: "button", className: "btn btn-primary"}, "Save changes")
+      )
+    )
+  )
+), 
 
-            this.state.loggedIn ? 
+            /*{this.state.loggedIn ?   */
             React.createElement("ul", {className: "nav navbar-nav navbar-right"}, 
               React.createElement("li", {className: "dropdown"}, 
                 React.createElement("a", {href: "#", className: "dropdown-toggle", "data-toggle": "dropdown", role: "button", "aria-haspopup": "true", "aria-expanded": "false"}, 
                 this.state.user.email, " ", React.createElement("span", {className: "caret"})), 
                 React.createElement("ul", {className: "dropdown-menu"}, 
                   React.createElement("li", null, 
-                    React.createElement("a", {href: "/user/profile"}, "    Edit Profile")
+                    React.createElement("a", {href: "/user/profile"}, "Edit Profile")
                   ), 
                   React.createElement("li", null, 
-                    React.createElement("button", {className: "col-md-offset-3 btn btn-primary", onClick: this.handleLogout}, "Log out"
+                    React.createElement("a", {"data-toggle": "modal", "data-target": ".bs-example-modal-lg"}, "Model")
+                  ), 
+                  React.createElement("li", null, 
+                    React.createElement("a", {onClick: this.handleLogout}, "Log Out"
                     )
                   )
                 )
               )
             )
-            :
-            React.createElement("p", null)
+            /* :  <a className="navbar-remaining"></a>   }  */
+
 
           )
-        ), 
+        ) : React.createElement("span", null), 
         
         React.createElement("div", null, 
           React.createElement(RouteHandler, null)
         ), 
+this.state.loggedIn ?
+        React.createElement(Footer, null): React.createElement("span", null)
+ 
+        
 
-        React.createElement(Footer, null)
+
+
       )
     );
   },
@@ -36564,7 +36810,7 @@ var YFApp = React.createClass({displayName: "YFApp",
 
 module.exports = YFApp;
 
-},{"../actions/YFActions":233,"../stores/YFStore.jsx":275,"./helpers/Footer.jsx":269,"react":229,"react-router":42}],265:[function(require,module,exports){
+},{"../actions/YFActions":233,"../stores/YFStore.jsx":275,"./Profile.jsx":249,"./helpers/CourseView.jsx":267,"./helpers/Footer.jsx":269,"react":229,"react-router":42}],265:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -36578,21 +36824,20 @@ var AddressBox = React.createClass({displayName: "AddressBox",
   render: function() {
     return (
       React.createElement("div", {className: "form-group"}, 
-        React.createElement("label", null, "Home Address", React.createElement("span", {className: "req"}, "*")), 
-        React.createElement("div", {className: "row"}, 
-          React.createElement("label", {className: "col-md-2 control-label"}, "Adress Line 1", React.createElement("span", {className: "req"}, "*")), 
-          React.createElement("div", {className: "col-md-10"}, 
+        
+        
+          React.createElement("label", {className: "col-sm-2 control-label"}, "Home Address 1", React.createElement("span", {className: "req"}, "*")), 
+          React.createElement("div", {className: "col-sm-10"}, 
             React.createElement("input", {type: "text", required: true, className: "form-control", maxLength: "26", ref: "addressLine1"}), React.createElement("br", null)
-          )
-        ), 
-        React.createElement("div", {className: "row"}, 
-          React.createElement("label", {className: "col-md-2 control-label"}, "Adress Line 2"), 
-          React.createElement("div", {className: "col-md-10"}, 
+          ), 
+        
+          React.createElement("label", {className: "col-sm-2 control-label"}, "Home Address 2"), 
+          React.createElement("div", {className: "col-sm-10"}, 
             React.createElement("input", {type: "text", className: "form-control", maxLength: "26", ref: "addressLine2"}), React.createElement("br", null)
-          )
-        ), 
-        React.createElement("div", {className: "row"}, 
-          React.createElement("label", {className: "col-md-1 control-label"}, "City", React.createElement("span", {className: "req"}, "*")), 
+          ), 
+        
+        
+          React.createElement("label", {className: "col-md-2 control-label"}, "City", React.createElement("span", {className: "req"}, "*")), 
           React.createElement("div", {className: "col-md-3"}, 
             React.createElement("input", {type: "text", required: true, className: "form-control", ref: "city"}), React.createElement("br", null)
           ), 
@@ -36667,10 +36912,10 @@ var AddressBox = React.createClass({displayName: "AddressBox",
             )
           ), 
           React.createElement("label", {className: "col-md-1 control-label"}, "ZIP Code", React.createElement("span", {className: "req"}, "*")), 
-          React.createElement("div", {className: "col-md-3"}, 
+          React.createElement("div", {className: "col-md-2"}, 
             React.createElement("input", {type: "number", required: true, className: "form-control", ref: "zipcode"}), React.createElement("br", null)
           )
-        )
+        
       )
     );
   }
@@ -36694,17 +36939,24 @@ var ContactBox = React.createClass({displayName: "ContactBox",
 	},
   render: function() {
     return (
-				React.createElement("div", {className: "col-md-6"}, 								
+				React.createElement("div", {className: "col-md-5"}, 
+
+
+
+
+
 					React.createElement("div", {className: "panel panel-default"}, 
 					
 						React.createElement("div", {className: "panel-heading"}, 
-							React.createElement("div", {className: "panel-title"}, this.props.title)
+							React.createElement("h2", null, this.props.title)
 						), 
 
 						React.createElement("div", {className: "panel-body"}, 
+                          React.createElement("div", {className: "row"}, 
 
+                          React.createElement("div", {className: "col-md-10 emergencycontact"}, 
 							React.createElement("div", {className: "form-group"}, 
-								React.createElement("label", {className: "control-label"}, "Emergency Contact Name", React.createElement("span", {className: "req"}, "*")), 
+								React.createElement("p", {className: "control-label"}, "Emergency Contact Name", React.createElement("span", {className: "req"}, "*")), 
 								
 								React.createElement("div", {className: "input-group  input-group-minimal"}, 
 									React.createElement("span", {className: "input-group-addon"}, 
@@ -36715,7 +36967,7 @@ var ContactBox = React.createClass({displayName: "ContactBox",
 							), 
 
 							React.createElement("div", {className: "form-group"}, 
-								React.createElement("label", {className: "control-label"}, "Relationship", React.createElement("span", {className: "req"}, "*")), 
+								React.createElement("p", {className: "control-label"}, "Relationship", React.createElement("span", {className: "req"}, "*")), 
 								
 								React.createElement("div", {className: "input-group  input-group-minimal"}, 
 									React.createElement("span", {className: "input-group-addon"}, 
@@ -36726,7 +36978,7 @@ var ContactBox = React.createClass({displayName: "ContactBox",
 							), 
 
 							React.createElement("div", {className: "form-group"}, 
-								React.createElement("label", {className: "control-label"}, "Cell Phone", React.createElement("span", {className: "req"}, "*")), 
+								React.createElement("p", {className: "control-label"}, "Cell Phone", React.createElement("span", {className: "req"}, "*")), 
 								
 								React.createElement("div", {className: "input-group  input-group-minimal"}, 
 									React.createElement("span", {className: "input-group-addon"}, 
@@ -36737,7 +36989,7 @@ var ContactBox = React.createClass({displayName: "ContactBox",
 							), 
 
 							React.createElement("div", {className: "form-group"}, 
-								React.createElement("label", {className: "control-label"}, "Work Phone", React.createElement("span", {className: "req"}, "*")), 
+								React.createElement("p", {className: "control-label"}, "Work Phone", React.createElement("span", {className: "req"}, "*")), 
 								
 								React.createElement("div", {className: "input-group  input-group-minimal"}, 
 									React.createElement("span", {className: "input-group-addon"}, 
@@ -36748,7 +37000,7 @@ var ContactBox = React.createClass({displayName: "ContactBox",
 							), 
 
 							React.createElement("div", {className: "form-group"}, 
-								React.createElement("label", {className: "control-label"}, "Home Phone", React.createElement("span", {className: "req"}, "*")), 
+								React.createElement("p", {className: "control-label"}, "Home Phone", React.createElement("span", {className: "req"}, "*")), 
 								
 								React.createElement("div", {className: "input-group  input-group-minimal"}, 
 									React.createElement("span", {className: "input-group-addon"}, 
@@ -36759,7 +37011,7 @@ var ContactBox = React.createClass({displayName: "ContactBox",
 							), 
 
 							React.createElement("div", {className: "form-group"}, 
-								React.createElement("label", {className: "control-label"}, "Email"), 
+								React.createElement("p", {className: "control-label"}, "Email"), 
 								
 								React.createElement("div", {className: "input-group  input-group-minimal"}, 
 									React.createElement("span", {className: "input-group-addon"}, 
@@ -36768,8 +37020,16 @@ var ContactBox = React.createClass({displayName: "ContactBox",
 									React.createElement("input", {type: "text", ref: "email", className: "form-control"})
 								)
 							)
+
+						  ), 
+
+						  React.createElement("div", {className: "col-md-2"}
+                          )
+                          )
+
 						)	
 					)
+					
 				)
     );
   }
@@ -36791,12 +37051,7 @@ var CourseView = React.createClass({displayName: "CourseView",
   render: function() {
 
     return (
-      React.createElement("div", {className: "panel panel-info"}, 
-        React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, "Activities and Classes Overview")
-          )
-        ), 
+      React.createElement("div", {className: "panel panel-default panel-courseview"}, 
 
         React.createElement("div", {className: "panel-body"}, 
           React.createElement("table", {className: "dataintable", border: 0, cellPadding: 0, cellSpacing: 0}, 
@@ -36810,7 +37065,7 @@ var CourseView = React.createClass({displayName: "CourseView",
                 React.createElement("th", null, "Friday")
               ), 
               React.createElement("tr", null, 
-                React.createElement("th", {className: "time"}, "8:00 AM ", React.createElement("br", null), "-", React.createElement("br", null), " 12:30 PM"), 
+                React.createElement("th", {className: "time", rowSpan: 2}, React.createElement("br", null), "8:00 AM ", React.createElement("br", null), "-", React.createElement("br", null), " 12:30 PM"), 
                 React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity"), 
                 React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity"), 
                 React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity"), 
@@ -36818,7 +37073,7 @@ var CourseView = React.createClass({displayName: "CourseView",
                 React.createElement("td", null)
               ), 
               React.createElement("tr", null, 
-                React.createElement("th", {className: "time"}), 
+
                 React.createElement("td", null), 
                 React.createElement("td", {className: "movie orange"}, "Movie Trip"), 
                 React.createElement("td", null), 
@@ -36826,7 +37081,7 @@ var CourseView = React.createClass({displayName: "CourseView",
                 React.createElement("td", null)
               ), 
               React.createElement("tr", null, 
-                React.createElement("th", {className: "time"}, "1:00 PM ", React.createElement("br", null), "-", React.createElement("br", null), " 6:30 PM"), 
+                React.createElement("th", {className: "time", rowSpan: 3, style: {borderTop: '1px solid #eee'}}, React.createElement("br", null), React.createElement("br", null), "1:00 PM ", React.createElement("br", null), "-", React.createElement("br", null), " 6:30 PM"), 
                 React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity"), 
                 React.createElement("td", {className: "afternoon-academics green"}, "Academics"), 
                 React.createElement("td", {className: "afternoon-academics green"}, "Academics"), 
@@ -36834,7 +37089,6 @@ var CourseView = React.createClass({displayName: "CourseView",
                 React.createElement("td", {className: "enrichment-activity blue"}, "Enrichment Activity")
               ), 
               React.createElement("tr", null, 
-                React.createElement("th", {className: "time"}), 
                 React.createElement("td", {className: "afternoon-academics green"}, "Academics"), 
                 React.createElement("td", {className: "writing-electives red"}, "Writing Elective Classes"), 
                 React.createElement("td", {className: "gate-electives purple"}, "GATE Elective Classes"), 
@@ -36842,7 +37096,6 @@ var CourseView = React.createClass({displayName: "CourseView",
                 React.createElement("td", null)
               ), 
               React.createElement("tr", null, 
-                React.createElement("th", {className: "time"}), 
                 React.createElement("td", {className: "gate-electives purple"}, "GATE Elective Classes"), 
                 React.createElement("td", null), 
                 React.createElement("td", {className: "math-electives brown"}, "Math Elective Classes"), 
@@ -37015,6 +37268,9 @@ var ScheduleTable = React.createClass({displayName: "ScheduleTable",
   	}
     return (
       React.createElement("div", {className: "panel-body"}, 
+      React.createElement("div", {className: "introduction"}, 
+        React.createElement("p", null, "You have already set up your attendence for this summer. ")
+      ), 
         React.createElement("table", {className: "table table-bordered table-striped"}, 
           React.createElement("thead", null, 
             React.createElement("tr", null, 
@@ -37030,10 +37286,11 @@ var ScheduleTable = React.createClass({displayName: "ScheduleTable",
         ), 
 
         React.createElement("div", {className: "row"}, 
-          React.createElement("div", {className: "col-md-offset-1"}, 
+        React.createElement("div", {className: "col-md-12"}, 
             React.createElement("button", {ref: "deleteButton", className: "btn btn-danger", onClick: this.deleteSchedule}, "Delete This Schedule"), 
-            React.createElement("span", {className: "bg-warning"}, React.createElement("strong", null, "(All related enrollment data will also be deleted)"))
-          )
+            /*  <span className="bg-warning"><strong>(All related enrollment data will also be deleted)</strong></span> */
+        React.createElement("div", {className: "messageBox warning_info", "aria-atomic": "true", "aria-live": "polite", role: "alert", tabIndex: 0, style: {marginTop: 10}}, React.createElement("div", {className: "messageIcon"}, "Info"), React.createElement("span", null, "All related enrollment data will also be deleted."), " ")
+        )
         )
       )
     );
@@ -37057,30 +37314,21 @@ var SideMenu = React.createClass({displayName: "SideMenu",
   },
   render: function () {
     var self = this;
-    var ProgramName = (
-      (this.state.hightlight !== 'getStarted') ? 
-      React.createElement("li", null, 
-        React.createElement("a", null, 
-          React.createElement("h5", null, React.createElement("span", {className: "title"}, "Program Name: ", React.createElement("ins", null, YFStore.getProgramName())))
-        )
-      ) : React.createElement("p", null)
-    );
+
+
     var StudentName = (
       (this.state.hightlight !== 'getStarted') ? 
-       React.createElement("li", null, 
-        React.createElement("a", null, 
-          React.createElement("h5", null, React.createElement("span", {className: "title"}, "Student Name: ", React.createElement("ins", null, YFStore.getStudentFullName())))
-        )
-      ) : React.createElement("p", null)
+
+          React.createElement("span", {className: "username"}, YFStore.getStudentFullName())
+          : React.createElement("span", {className: "username input"}, "Student Name")
     );
-    var GradeLine = (
-      (this.state.hightlight !== 'getStarted' ) ? 
-      React.createElement("li", null, 
-        React.createElement("a", null, 
-          React.createElement("h5", null, React.createElement("span", {className: "title"}, "Incoming Grade: ", React.createElement("ins", null, YFStore.getIncomingGrade())))
-        )
-      ) : React.createElement("p", null)
+    var ProgramandGrade = (
+      (this.state.hightlight !== 'getStarted') ? 
+
+          React.createElement("span", {className: "useremail"}, YFStore.getProgramName(), " | ", YFStore.getIncomingGrade())
+          : React.createElement("span", {className: "useremail input"}, "Program | Grade")
     );
+
     var schedule = 'absent';
     var ScheduleInWeek;
     if(this.state.hightlight === 'summerCampWeeks' && this.props.summerCampWeeks.length === 10){
@@ -37125,6 +37373,21 @@ var SideMenu = React.createClass({displayName: "SideMenu",
   
     return (
       React.createElement("div", {className: "sidebar-menu toggle-others fixed"}, 
+        
+        React.createElement("div", {className: "widget", id: "widget-profileinfo"}, 
+          React.createElement("div", {className: "widget-body"}, 
+            React.createElement("div", {className: "userinfo "}, 
+              React.createElement("div", {className: "avatar pull-left"}, 
+                React.createElement("img", {src: "../img/avatar_15.png", className: "img-responsive img-circle"})
+              ), 
+              React.createElement("div", {className: "information"}, 
+              StudentName, 
+              ProgramandGrade
+              )
+            )
+          )
+        ), 
+
         React.createElement("div", {className: "sidebar-menu-inner"}, 
           React.createElement("ul", {id: "main-menu", className: "main-menu"}, 
             this.state.hightlight === 'getStarted' ?
@@ -37218,10 +37481,7 @@ var SideMenu = React.createClass({displayName: "SideMenu",
                 React.createElement("span", {className: "title"}, "Confirmation")
               )
             ), 
-            React.createElement("hr", null), 
-            ProgramName, 
-            StudentName, 
-            GradeLine, 
+            
             this.state.hightlight === 'summerCampWeeks' ? ScheduleInWeek : React.createElement("p", null)
           )
         )
@@ -37245,35 +37505,40 @@ var YFStore = require('../../stores/YFStore.jsx');
 var StudentBox = React.createClass({displayName: "StudentBox",
 	render: function() {
 		return (
-      React.createElement("div", {className: "col-md-offset-0.5 col-md-12"}, 
-        React.createElement("div", {className: "panel panel-primary"}, 
-          React.createElement("div", {className: "panel-heading"}
-          ), 
+      
+        
+          
 
-          React.createElement("div", {className: "panel-body"}, 
-            React.createElement("div", {className: "col-md-10 col-md-offset-1"}, 
-              React.createElement("label", null, "Student Full Name", React.createElement("span", {className: "req"}, "*")), 
-              React.createElement("div", {className: "row"}, 
-                React.createElement("div", {className: "col-md-6"}, 
+         
+          React.createElement("div", {className: "col-sm-12 "}, 
+            React.createElement("div", {className: "form-group"}, 
+              React.createElement("label", {className: "col-sm-2 control-label"}, "Full Name", React.createElement("span", {className: "req"}, "*")), 
+              
+                React.createElement("div", {className: "col-sm-5"}, 
                     React.createElement("input", {type: "text", required: true, className: "form-control", ref: "stu_fname", placeholder: "First Name"})
                 ), 
-                React.createElement("div", {className: "col-md-6"}, 
+                React.createElement("div", {className: "col-sm-5"}, 
                     React.createElement("input", {type: "text", required: true, className: "form-control", ref: "stu_lname", placeholder: "Last Name"})
                 )
-              ), React.createElement("br", null), 
-              React.createElement("label", null, "中文姓名(Chinese Name, if applicable)"), 
-              React.createElement("div", {className: "row"}, 
-                React.createElement("div", {className: "col-md-6"}, 
+            ), 
+              
+            React.createElement("div", {className: "form-group"}, 
+              React.createElement("br", null), 
+              React.createElement("label", {className: "col-sm-2 control-label"}, "Chinese Name ", React.createElement("br", null), "(if applicable)"), 
+              
+                React.createElement("div", {className: "col-sm-5"}, 
                     React.createElement("input", {type: "text", className: "form-control", ref: "cn_fname", placeholder: "姓"})
                 ), 
-                React.createElement("div", {className: "col-md-6"}, 
+                React.createElement("div", {className: "col-sm-5"}, 
                     React.createElement("input", {type: "text", className: "form-control", ref: "cn_lname", placeholder: "名"})
                 )
-              ), React.createElement("br", null), 
-                             
-              React.createElement("label", null, "Birth Date", React.createElement("span", {className: "req"}, "*")), 
-              React.createElement("div", {className: "row"}, 
-                  React.createElement("div", {className: "col-md-4"}, 
+               ), 
+              React.createElement("br", null), 
+                  
+              React.createElement("div", {className: "form-group"}, 
+              React.createElement("label", {className: "col-sm-2 control-label"}, "Birth Date", React.createElement("span", {className: "req"}, "*")), 
+             
+                  React.createElement("div", {className: "col-sm-3"}, 
                       React.createElement("select", {ref: "stu_month", className: "form-control"}, 
                           React.createElement("option", {value: "01"}, "Jan"), 
                           React.createElement("option", {value: "02"}, "Feb"), 
@@ -37289,7 +37554,7 @@ var StudentBox = React.createClass({displayName: "StudentBox",
                           React.createElement("option", {value: "12"}, "Dec")
                       )
                   ), 
-                  React.createElement("div", {className: "col-md-4"}, 
+                  React.createElement("div", {className: "col-sm-3"}, 
                       React.createElement("select", {ref: "stu_day", className: "form-control"}, 
                           React.createElement("option", {value: "1"}, "1"), 
                           React.createElement("option", {value: "2"}, "2"), 
@@ -37324,7 +37589,7 @@ var StudentBox = React.createClass({displayName: "StudentBox",
                           React.createElement("option", {value: "31"}, "31")
                       )
                   ), 
-                  React.createElement("div", {className: "col-md-4"}, 
+                  React.createElement("div", {className: "col-sm-3"}, 
                       React.createElement("select", {ref: "stu_year", className: "form-control"}, 
                           React.createElement("option", {value: "1995"}, "1995"), 
                           React.createElement("option", {value: "1996"}, "1996"), 
@@ -37348,62 +37613,75 @@ var StudentBox = React.createClass({displayName: "StudentBox",
                           React.createElement("option", {value: "2012"}, "2014"), 
                           React.createElement("option", {value: "2013"}, "2015")
                       )
-                  )
-              ), React.createElement("br", null), 
+                  ), 
+              React.createElement("br", null)
+              ), 
 
-              React.createElement("div", null, 
-                React.createElement("label", null, "Gender", React.createElement("span", {className: "req"}, "*"), "  "), 
+              React.createElement("div", {className: "form-group"}, 
+                React.createElement("label", {className: "col-sm-2 control-label"}, "Gender", React.createElement("span", {className: "req"}, "*"), "  "), 
+                React.createElement("div", {className: "col-sm-3"}, 
                 React.createElement("label", {className: "radio-inline"}, 
                   React.createElement("input", {type: "radio", ref: "stu_male", name: this.props.stuIdx, value: "male"}), "Male"
                 ), 
                 React.createElement("label", {className: "radio-inline"}, 
                   React.createElement("input", {type: "radio", ref: "stu_female", name: this.props.stuIdx, value: "female"}), "Female"
                 )
+                )
               ), React.createElement("br", null), 
 
               React.createElement("div", {className: "form-group"}, 
-                React.createElement("label", null, "Summer School Attended(if applicable)"), 
-                React.createElement("input", {type: "text", className: "form-control", ref: "summerSchoolAttended"}), 
-                React.createElement("br", null), 
-                React.createElement("label", null, "School District"), 
-                React.createElement("input", {type: "text", className: "form-control", ref: "schoolDistrict"})
+                React.createElement("label", {className: "col-sm-2 control-label"}, "School Attended", React.createElement("br", null), "(if applicable)"), 
+                React.createElement("div", {className: "col-sm-10"}, 
+                  React.createElement("input", {type: "text", className: "form-control", ref: "summerSchoolAttended"}), 
+                  React.createElement("br", null)
+                ), 
+
+                React.createElement("label", {className: "col-sm-2 control-label"}, "School District"), 
+                React.createElement("div", {className: "col-sm-10"}, 
+                  React.createElement("input", {type: "text", className: "form-control", ref: "schoolDistrict"})
+                )
               ), 
 
               React.createElement("div", {className: "form-group"}, 
-                React.createElement("label", null, "Pediatric Doctor"), 
+                React.createElement("label", {className: "col-sm-2 control-label"}, "Pediatric Doctor"), 
                 React.createElement("div", {className: "row"}, 
-                  React.createElement("div", {className: "col-md-6"}, 
+                  React.createElement("div", {className: "col-sm-4"}, 
                     React.createElement("input", {type: "text", className: "form-control", ref: "doctorName", placeholder: "Doctor Name"})
                   ), 
-                  React.createElement("div", {className: "col-md-6"}, 
+                  React.createElement("label", {className: "col-sm-2 control-label"}, "Contact"), 
+                  React.createElement("div", {className: "col-sm-3"}, 
                     React.createElement("input", {type: "text", className: "form-control", ref: "doctorPhone", placeholder: "Doctor Phone"})
                   )
                 )
               ), 
 
               React.createElement("div", {className: "form-group"}, 
-                React.createElement("label", null, "Insurance Information"), 
+                React.createElement("label", {className: "col-sm-2 control-label"}, "Insurance Company"), 
                 React.createElement("div", {className: "row"}, 
-                  React.createElement("div", {className: "col-md-6"}, 
+                  React.createElement("div", {className: "col-sm-4"}, 
                     React.createElement("input", {type: "text", className: "form-control", ref: "insuranceCompany", placeholder: "Insurance Company Name"})
                   ), 
-                  React.createElement("div", {className: "col-md-6"}, 
+                  React.createElement("label", {className: "col-sm-2 control-label"}, "Policy Number"), 
+                  React.createElement("div", {className: "col-md-3"}, 
                     React.createElement("input", {type: "text", className: "form-control", ref: "policyNumber", placeholder: "Insurance Policy Number"})
                   )
                 )
               ), 
 
               React.createElement("div", {className: "form-group"}, 
-                React.createElement("label", null, "Please list all medical limitations and special conditions"), 
-                React.createElement("textarea", {className: "form-control", rows: "4", ref: "medicalDescription", placeholder: "Allergies to medicine or food, asthma, etc."}
+                React.createElement("label", {className: "col-sm-2 control-label"}, "Note"), 
+                React.createElement("div", {className: "col-sm-10"}, 
+                  React.createElement("textarea", {className: "form-control", rows: "4", ref: "medicalDescription", placeholder: "Allergies to medicine or food, asthma, etc."}
+                  ), 
+                  React.createElement("p", {className: "help-block"}, "Please list all medical limitations and special conditions")
                 )
               ), 
 
               React.createElement("hr", null)
-            )
           )
-        ), React.createElement("hr", null)
-      )
+          
+       
+      
   			
 		);
 	}

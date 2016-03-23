@@ -227,7 +227,7 @@ var Attendance = React.createClass({
 
   render: function () {
     var self = this;
-    var weekdaysHelper = !this.state.daysMatched ? (<p className='bg-danger'>Please choose EXACT {self.state.schedulePattern === 'absence' ? 0 : this.state.schedulePattern.substring(0, 1)} weekday(s) to attend.</p>) : <p></p> 
+    var weekdaysHelper = !this.state.daysMatched ? (<p className="dismatched">Please choose EXACT {self.state.schedulePattern === 'absence' ? 0 : this.state.schedulePattern.substring(0, 1)} weekdays to attend.</p>) : <p></p> 
 
     var weekdays = this.state.attendingDays.map(function(d){
       return (
@@ -257,20 +257,20 @@ var Attendance = React.createClass({
       }
     });
 
-    var continueHelper = this.state.allScheduled ? (<h4><span className="bg-success">All summer weeks have been scheduled, please click Continue button below.</span></h4>) : <p></p>;
+    var continueHelper = this.state.allScheduled ? (<p className="bg-success">All summer weeks have been scheduled, please click Continue button below.</p>) : <p></p>;
     
     return (
       <div className="page-container">
       <SideMenu />
-      <div className="main-content">
-        <div className='col-md-12'>
-          <CourseView />
-          <div className="panel panel-primary">
-            <div className="panel-heading">
-              <div className="panel-title">
-                <h2>Attendance</h2>
-              </div>
-            </div>
+      <div className="main-content col-md-12">
+          {/* <CourseView />*/}
+
+          <div className="panel panel-default">
+            {/* <div className="panel-heading">
+              
+                <h2>Attendance Sheet</h2>
+              
+            </div>*/}
 
             { this.state.enrollmentId ?
             <ScheduleTable 
@@ -280,113 +280,150 @@ var Attendance = React.createClass({
             :
             <div>
               <div className="panel-body">
-                <div className='panel panel-success'>
-                  <div className="panel-heading">
-                    <div className="panel-title">
-                      <h3>First, schedule attending pattern.</h3>
-                    </div>
-                  </div>
+                
+                  
 
-                  <div className="panel-body">
-                    <div className="row">
-                      <div className="col-md-offset-1">
-                        <h4><strong>How many days do you want to attend per week?</strong></h4>
-                        <br>
-                        </br>
-                      </div>
+                    <div className="row introduction">
+                        <div className="col-md-12 introduction">
+                         <p>Please tell us your plan about attendence for our Summer Camp. </p>
+                        </div>
 
-                      <div className="col-md-offset-1">
+                      <div className="col-md-6 left attendencestep">
+                      
+                      <div className="steps">1</div>
+                      <div className="stepintro">Create a weekly attendance pattern.</div>
+                        {/*<p>How many days do you want to attend per week?</p>*/}
+                        
+                      <div className="col-md-offset-3">
                         <div className="radio">
                           <label>
                             <input type="radio" name="attendPattern" onChange={this.changePattern} value="5_full" defaultChecked/>
                             5 full days per week (8:00 am - 6:30 pm) $235
                           </label>
+                          { this.state.schedulePattern == "5_full" ?  
+                            <div className="attendanceinfo">
+                            <p className="attendanceinfo">ATTENDING WEEKDAYS</p>
+                            {weekdays} {weekdaysHelper}</div>:
+                            <span></span>
+                        } 
                         </div>
                         <div className="radio">
                           <label>
                             <input type="radio" name="attendPattern" onChange={this.changePattern} value="4_full"/>
                             4 full days per week (8:00 am - 6:30 pm) $210
                           </label>
+                        { this.state.schedulePattern == "4_full" ?  
+                            <div className="attendanceinfo">
+                            <p className="attendanceinfo">ATTENDING WEEKDAYS</p>
+                            {weekdays}{weekdaysHelper} </div>:
+                            <span></span>
+                        } 
                         </div>
                         <div className="radio">
                           <label>
                             <input type="radio" name="attendPattern" onChange={this.changePattern} value="3_full"/>
                             3 full days per week (8:00 am - 6:30 pm) $190
                           </label>
+                          { this.state.schedulePattern == "3_full" ?  
+                            <div className="attendanceinfo">
+                            <p className="attendanceinfo">ATTENDING WEEKDAYS</p>
+                            {weekdays}{weekdaysHelper} </div>:
+                            <span></span>
+                        } 
                         </div>
                         <div className="radio">
                           <label>
                             <input type="radio" name="attendPattern" onChange={this.changePattern} value="5_morning"/>
                             5 mornings per week (8:00 am - 12:30 pm) $175
                           </label>
+                          { this.state.schedulePattern == "5_morning" ?  
+                            <div className="attendanceinfo">
+                            <p className="attendanceinfo">ATTENDING WEEKDAYS</p>
+                            {weekdays}{weekdaysHelper} </div>:
+                            <span></span>
+                        } 
                         </div>
                         <div className="radio">
                           <label>
                             <input type="radio" name="attendPattern" onChange={this.changePattern} value="5_afternoon"/>
                             5 afternoons per week (1:00 pm - 6:30 pm) $175
                           </label>
+                          { this.state.schedulePattern == "5_afternoon" ?  
+                            <div className="attendanceinfo">
+                            <p className="attendanceinfo">ATTENDING WEEKDAYS</p>
+                            {weekdays}{weekdaysHelper} </div>:
+                            <span></span>
+                        } 
                         </div>  
                         <div className="radio">
                           <label>
                             <input type="radio" name="attendPattern" onChange={this.changePattern} value="absence"/>
-                            Absence&nbsp;<span className="bg-info">If you don't plan to attend, please choose this.</span>
+                            Absence&nbsp;
                           </label>
+                          { this.state.schedulePattern == "absence" ?  
+                            <div className="attendanceinfo">
+                            <p>You do not want to attend this week.</p>
+                            </div>:
+                            <span></span>
+                        } 
+                        </div>
+                        </div>
                         </div>                
-                      </div>  
-                    </div>
-                    <hr></hr>
 
-                    <div className="row">
-                      <div className="col-md-offset-1">
+
+                      
+                    <div className="col-md-6 attendencestep">
+                    <div className="steps">2</div>
+                    <div className="stepintro">Choose weeks to apply attendance pattern in step 1</div>
+                    
+
+                     {/*  
+                     
                         <h4><strong>Choose the attending weekdays</strong></h4><br></br>
                         {weekdaysHelper}
                         {weekdays}
-                      </div>
-                    </div>
-                    <hr></hr>
-                  </div>
-                </div>
+                      */}
+                    
+                    
+                  
+                
 
-                <div className='panel panel-success'>
-                  <div className="panel-heading">
-                    <div className="panel-title">
-                      <h3>Then, choose some weeks to apply your attending pattern above.</h3>
-                    </div>
-                  </div>
-
-                  <div className="panel-body">
+                
+                            
+                    
+                  
+                    <div className="col-md-offset-2">
+                  
                     <form className="form-horizontal" onSubmit={this.applyWeeks}>
-                      <div className="row">
-                        <div className="col-md-offset-1">
-                          <h4><span className="bg-info">No worry, you can change the attending pattern and apply them to other weeks.</span></h4>
-                          <br></br>
+                      
+                        
+                      
                           <ul >
                             <label className="checkbox text-primary">
                               <input type="checkbox" ref='allWeeks' onChange={this.selectAllWeeks} /><strong>Select All Weeks</strong>
                             </label>
-                            <br></br>
                             {summerWeeks}
                           </ul>
-                        </div>
-                      </div>
-                      <hr></hr>
+                        
+                      
 
-                      <div className="row">
-                        <div className="col-md-offset-1">
-                          <button type="submit" ref='submitButton' className="btn btn-primary">Apply schedule pattern to selected weeks</button>
-                          <button ref='clearButton' className="col-md-offset-1 btn btn-danger" onClick={this.clearSchedule}>Clear All Schedule</button>
+                      
+                        
+                          <button type="submit" ref='submitButton' className="btn btn-primary apply-schedule">Apply to Selected Weeks</button>
+                          <button ref='clearButton' className="col-md-offset-4 btn btn-default clear-schedule" onClick={this.clearSchedule}>Clear Existing Schedule</button>
                           {continueHelper}
-                        </div> 
-                      </div>
-                    </form>
-                  </div>
-                </div>
+                        
+                      
+                    </form>  
+                    </div>
+                  
+               </div> 
+               </div>
               </div>
             </div>}
           </div>
           {(this.state.allScheduled || this.state.enrollmentId) ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue} disabled>Continue</button> }
         </div>
-      </div>
       </div>
     );
   }

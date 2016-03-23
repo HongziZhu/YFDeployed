@@ -63,20 +63,21 @@ var AdvancedWrUnit = React.createClass({
     }
 
     return (
-      <div className="panel panel-primary">
+      <div className="panel panel-color panel-gray panel-course">
         <div className="panel-heading">
           <div className="panel-title">
-            <h3>Afternoon Advanced Writing Boot Camp</h3>
+            <strong>Advanced Writing</strong>
           </div>
         </div>
 
         <div className="panel-body">
         {adWrData['grades'].indexOf(gd) > -1 ? 
-          <div className="row">
-              <div className='col-md-offset-1'> 
-                <h4><span className="bg-info">{adWrData['note'][0]}</span></h4>
-                <h4><span className="bg-info">{adWrData['note'][1]}</span></h4>
-              </div>
+          <div>
+              <strong>Select a Afternoon Advanced Writing Boot Camp</strong>
+              <p><i className="fa fa-sign-in fa-fw"></i>{adWrData['note'][0]}<br></br>
+                <i className="fa fa-info-circle fa-fw"></i> {adWrData['note'][1]}
+              </p>
+              
 
               <table className="table table-bordered">
                 <thead>
@@ -94,10 +95,10 @@ var AdvancedWrUnit = React.createClass({
               </table>
             </div>
           : 
-          <div className="row">
-            <div className='col-md-offset-1'> 
-              <h4><span className="bg-info">{adWrData['notAvailable']}</span></h4>
-            </div>
+          <div>
+            
+              <strong>{adWrData['notAvailable']}</strong>
+            
           </div> }
         </div> 
       </div>

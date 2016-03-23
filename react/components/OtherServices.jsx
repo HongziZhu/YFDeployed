@@ -49,12 +49,20 @@ var OtherServices = React.createClass({
       <div className='page-container'>
       <SideMenu />
         <div className='main-content col-md-12'>
-        <h2 className='bg-success'>Other Services and Activities</h2><hr></hr>
+        
+
+        <div className="panel panel-primary panel-week">
+          <div className="panel-heading">
+            <div className="panel-title">
+              <h2>Other Services and Activities</h2> 
+            </div>
+          </div>
+        </div>
           {movies[1].grade.indexOf(this.state.incomingGrade) > -1 ? 
             <MovieBox 
 
               summerCampWeeks={self.state.summerCampWeeks}/> 
-            : <p></p>}
+            : <p className="absence"></p>}
           <MorningCare />
           <LunchBox summerCampWeeks={self.state.summerCampWeeks} />
           <PickupService summerCampWeeks={self.state.summerCampWeeks} />
@@ -120,18 +128,18 @@ var PickupService = React.createClass({
     }
 
     return (
-      <div className="panel panel-primary">
+      <div className="panel panel-color panel-gray panel-activity">
         <div className="panel-heading">
           <div className="panel-title">
-            <h3>Pick-up Service</h3>
+            <strong>Pick-up Service</strong>
           </div>
         </div>
 
         <div className="panel-body">
-          <div className="row">
-            <div className='col-md-offset-1'> 
-              <h4><span className='bg-info'>Only offered to students from San Ramon district summer camp program at Hidden Hills Elementary</span></h4><hr></hr>
-              <h4>Are you from San Ramon district summer camp program at Hidden Hills Elementary?</h4>
+          <div>
+            
+              <strong>Are you from San Ramon district summer camp program at Hidden Hills Elementary?</strong>
+              <p><i className="fa fa-info-circle fa-fw"></i> Only offered to students from San Ramon district summer camp program at Hidden Hills Elementary</p>
               <div className="radio">
                 <label>
                   {this.state.canPickup  ?
@@ -151,7 +159,7 @@ var PickupService = React.createClass({
 
               {this.state.canPickup ? 
               <div>
-                <h4>Do you need pick-up service?</h4>
+                <strong>Do you need pick-up service?</strong>
                 <div className="radio">
                   <label>
                     {this.state.needPickup  ? 
@@ -187,7 +195,7 @@ var PickupService = React.createClass({
               </table>
               : <p></p>}
 
-            </div>
+           
           </div>
         </div>
       </div>
@@ -307,23 +315,24 @@ var LunchBox = React.createClass({
       }
     }
     return (
-      <div className="panel panel-primary">
+      <div className="panel panel-color panel-gray panel-activity">
         <div className="panel-heading">
           <div className="panel-title">
-            <h3>Order Daily Fresh Lunches From Yang Fan</h3>
+            <strong>Daily Fresh Lunches</strong>
           </div>
         </div>
 
         <div className="panel-body">
-          <div className="row">
-            <div className='col-md-offset-1'> 
-              <h4><span className="bg-info">We will NOT charge Lunch fee to those who are eligible for our early bird specials.</span></h4>
-            </div><br></br>
+          <div>
+              <strong>Select the days you want to order Daily Fresh Lunches from Yang Fan</strong>
+              <p><i className="fa fa-info-circle fa-fw"></i> We will NOT charge Lunch fee to those who are eligible for our early bird specials.<br></br>
+              <i className="fa fa-info-circle fa-fw"></i> Check <b>Select All</b> if you want to order lunches for all attending days in the week.</p>
+           <br></br>
 
             <table className="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>Select All Attending Days In the Week</th>
+                  <th>Select All</th>
                   <th>Week #</th>
                   <th>Mon</th>
                   <th>Tue</th>
@@ -349,20 +358,20 @@ var MorningCare = React.createClass({
   },
   render: function() {
     return (
-      <div className="panel panel-primary">
+      <div className="panel panel-color panel-gray panel-activity">
         <div className="panel-heading">
           <div className="panel-title">
-            <h3>Morning Extended Care</h3>
+            <strong>Morning Extended Care</strong>
           </div>
         </div>
 
         <div className="panel-body">
-          <div className="row">
-            <div className='col-md-offset-1'> 
-              <h4><span className="bg-info">We provide morning extended care every workday! Select the time slot that works for you. </span></h4>
-            </div><br></br>
+          <div> 
+              <strong>Select the time slot when you want to have Morning Extended Care. </strong>
+              <p><i className="fa fa-info-circle fa-fw"></i>We provide morning extended care every workday, and you option will be applied to all weeks that you attend. </p>
+            <br></br>
 
-            <div className="col-md-offset-1">
+            
                 <div className="radio">
                   <label>
                     {YFStore.getMorningCare() === 'oneHour' ? 
@@ -387,7 +396,7 @@ var MorningCare = React.createClass({
                     No, I don't need the extended care. Thanks.
                   </label>
                 </div>                
-              </div>  
+             
 
           </div>
         </div>
@@ -430,18 +439,19 @@ var MovieBox = React.createClass({
       }
     }
     return (
-      <div className="panel panel-primary">
+      <div className="panel panel-color panel-gray panel-activity">
         <div className="panel-heading">
           <div className="panel-title">
-            <h3>Movies</h3>
+            <strong>Movies</strong>
           </div>
         </div>
 
         <div className="panel-body">
-          <div className="row">
-            <div className='col-md-offset-1'> 
-              <h4><span className="bg-info">Check out our movie trips! Select the days you want to go!</span></h4>
-            </div><br></br>
+          <div>
+            
+              <strong>Select Movie Trips you want to go</strong>
+              <p><i className="fa fa-info-circle fa-fw"></i>Check out the available movie trips according to your attendence! </p>
+            <br></br>
             <table className="table table-bordered table-striped">
               <thead>
                 <tr>

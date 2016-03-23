@@ -11,12 +11,7 @@ var CourseView = React.createClass({
   render: function() {
 
     return (
-      <div className="panel panel-info">
-        <div className="panel-heading">
-          <div className="panel-title">
-            <h3>Activities and Classes Overview</h3>
-          </div>
-        </div>
+      <div className="panel panel-default panel-courseview">
 
         <div className="panel-body">
           <table className="dataintable" border={0} cellPadding={0} cellSpacing={0}>
@@ -30,7 +25,7 @@ var CourseView = React.createClass({
                 <th>Friday</th>
               </tr>
               <tr>
-                <th className="time">8:00 AM <br />-<br /> 12:30 PM</th>
+                <th className="time" rowSpan={2}><br />8:00 AM <br />-<br /> 12:30 PM</th>
                 <td className="enrichment-activity blue">Enrichment Activity</td>
                 <td className="enrichment-activity blue">Enrichment Activity</td>
                 <td className="enrichment-activity blue">Enrichment Activity</td>
@@ -38,7 +33,7 @@ var CourseView = React.createClass({
                 <td />
               </tr>
               <tr>
-                <th className="time" />
+
                 <td />
                 <td className="movie orange">Movie Trip</td>
                 <td />
@@ -46,7 +41,7 @@ var CourseView = React.createClass({
                 <td />
               </tr>
               <tr>
-                <th className="time">1:00 PM <br />-<br /> 6:30 PM</th>
+                <th className="time" rowSpan={3} style={{borderTop: '1px solid #eee'}}><br /><br />1:00 PM <br />-<br /> 6:30 PM</th>
                 <td className="enrichment-activity blue">Enrichment Activity</td>
                 <td className="afternoon-academics green">Academics</td>
                 <td className="afternoon-academics green">Academics</td>
@@ -54,7 +49,6 @@ var CourseView = React.createClass({
                 <td className="enrichment-activity blue">Enrichment Activity</td>
               </tr>
               <tr>
-                <th className="time" />
                 <td className="afternoon-academics green">Academics</td>
                 <td className="writing-electives red">Writing Elective Classes</td>
                 <td className="gate-electives purple">GATE Elective Classes</td>
@@ -62,7 +56,6 @@ var CourseView = React.createClass({
                 <td />
               </tr>
               <tr>
-                <th className="time" />
                 <td className="gate-electives purple">GATE Elective Classes</td>
                 <td />
                 <td className="math-electives brown">Math Elective Classes</td>

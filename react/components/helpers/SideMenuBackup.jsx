@@ -12,21 +12,30 @@ var SideMenu = React.createClass({
   },
   render: function () {
     var self = this;
-
-
+    var ProgramName = (
+      (this.state.hightlight !== 'getStarted') ? 
+      <li>
+        <a>
+          <h5><span className="title">Program Name: <ins>{YFStore.getProgramName()}</ins></span></h5>
+        </a>
+      </li> : <p></p>
+    );
     var StudentName = (
       (this.state.hightlight !== 'getStarted') ? 
-
-          <span className="username">{YFStore.getStudentFullName()}</span>
-          : <span className="username input">Student Name</span>
+       <li>
+        <a>
+          <h5><span className="title">Student Name: <ins>{YFStore.getStudentFullName()}</ins></span></h5>
+        </a>
+      </li> : <p></p>
     );
-    var ProgramandGrade = (
-      (this.state.hightlight !== 'getStarted') ? 
-
-          <span className="useremail">{YFStore.getProgramName()} | {YFStore.getIncomingGrade()}</span>
-          : <span className="useremail input">Program | Grade</span>
+    var GradeLine = (
+      (this.state.hightlight !== 'getStarted' ) ? 
+      <li>
+        <a>
+          <h5><span className="title">Incoming Grade: <ins>{YFStore.getIncomingGrade()}</ins></span></h5>
+        </a>
+      </li> : <p></p>
     );
-
     var schedule = 'absent';
     var ScheduleInWeek;
     if(this.state.hightlight === 'summerCampWeeks' && this.props.summerCampWeeks.length === 10){
@@ -71,20 +80,19 @@ var SideMenu = React.createClass({
   
     return (
       <div className="sidebar-menu toggle-others fixed">
-        
-        <div className="widget" id="widget-profileinfo">
-          <div className="widget-body">
-            <div className="userinfo ">
-              <div className="avatar pull-left">
-                <img src="../img/avatar_15.png" className="img-responsive img-circle" /> 
-              </div>
-              <div className="information">
-              {StudentName}
-              {ProgramandGrade}
-              </div>
+            <div className="widget" id="widget-profileinfo">
+        <div className="widget-body">
+          <div className="userinfo ">
+            <div className="avatar pull-left">
+              <img src="../img/avatar_15.png" className="img-responsive img-circle" /> 
+            </div>
+            <div className="information">
+              <span className="username">Jonathan Smith</span>
+              <span className="useremail">Summer Camp | G3</span>
             </div>
           </div>
-        </div> 
+        </div>
+      </div>
 
         <div className="sidebar-menu-inner">  
           <ul id="main-menu" className="main-menu">
@@ -179,7 +187,10 @@ var SideMenu = React.createClass({
                 <span className="title">Confirmation</span>
               </a>
             </li>}
-            
+            <hr></hr>
+            {ProgramName}
+            {StudentName}
+            {GradeLine}
             {this.state.hightlight === 'summerCampWeeks' ? ScheduleInWeek : <p></p> }
           </ul>
         </div>

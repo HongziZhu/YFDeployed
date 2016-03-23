@@ -74,9 +74,13 @@ var SummerAgreements = React.createClass({
       <div className="page-container">
         <SideMenu />
         <div className='main-content col-md-12'>
-        <h2 className="bg-success">Summer Release Forms</h2><hr></hr>
-          <h3 className='bg-info'>Parents, please answer all the questions below. <ins>The enrollment is not completed if questions are not answered in this page</ins>
-          </h3><hr></hr>
+        <h2>Summer Release Forms</h2>
+
+        <div className="messageBox message_info" aria-atomic="true" aria-live="polite" role="alert" tabIndex={0}>
+          <div className="messageIcon">Info</div>
+          <span>Parents, please answer all the questions below. The enrollment will not be completed if questions are not answered in this page
+          </span> 
+        </div>
 
           <form onSubmit={this.handleConfirm} >
             <SummerTripPermit 
@@ -112,8 +116,8 @@ var PhotoRelease = React.createClass({
   },
   render: function() {
     var PhotoRelease = (
-      <div>
-        <h4>I permit Yang Fan to upload pictures of my child to the school on-line albums</h4>
+      <div className="permissionoption">
+        <strong>Permit Yang Fan to upload pictures of my child to the school on-line albums?</strong>
         <div className="radio">
           <label>
             {this.state.PhotoRelease ? 
@@ -133,21 +137,22 @@ var PhotoRelease = React.createClass({
       </div> );
     
     return (
-      <div className="panel panel-primary">
+      <div className="panel panel-default">
         <div className="panel-heading">
-          <div className="panel-title">
-            <h3>Photo Release</h3>
-          </div>
+          
+            <h2>Photo Release</h2>
+          
         </div>
 
         <div className="panel-body">
-          <div className="row">
-            <div className='col-md-offset-1 col-md-10'> 
-              <h4 className="bg-info">Throughout the summer, Yang Fan will take and upload the pictures of our camp activities to the school on-line albums (Access controlled) and allow our summer parents to view those pictures
-              </h4><hr></hr>
-              {PhotoRelease}
+          
+            <div className="agreement">
+              <h4>Agreement for Photo Release</h4>
+              <p>Throughout the summer, Yang Fan will take and upload the pictures of our camp activities to the school on-line albums (Access controlled) and allow our summer parents to view those pictures</p>
             </div>
-          </div>
+              {PhotoRelease}
+            
+          
         </div>
       </div>
     );
@@ -179,8 +184,8 @@ var SunscreenPermit = React.createClass({
 
   render: function() {
     var applySunscreen = (
-      <div>
-        <h4>I give permission for Yang Fan staffs to apply sun screen when my child needs it</h4>
+      <div className="permissionoption">
+        <strong>I give permission for Yang Fan staffs to apply sun screen when my child needs it</strong>
         <div className="radio">
           <label>
             {this.state.applySunscreen ? 
@@ -199,8 +204,8 @@ var SunscreenPermit = React.createClass({
         </div>
       </div> );
     var spareSunCream = (
-      <div>
-        <h4 className='bg-danger'>If I forget to bring sun cream in, or my sun cream runs out or is misplaced, I give permission for Yang Fan staffs to use any spare sun cream that the school may have.</h4>
+      <div className="permissionoption">
+        <strong>I give permission for Yang Fan staffs to use any spare sun cream that the school may have if I forget to bring sun cream in, or my sun cream runs out or is misplaced.</strong>
         <div className="radio">
           <label>
             {this.state.spareSunCream ? 
@@ -219,8 +224,8 @@ var SunscreenPermit = React.createClass({
         </div>
       </div> );
     var allergySunscreen = (
-      <div>
-        <h4>Does your child have any known allergies in association with sunscreens?</h4>
+      <div className="permissionoption">
+        <strong>Does your child have any known allergies in association with sunscreens?</strong>
         <div className="radio">
           <label>
             {this.state.allergySunscreen ? 
@@ -240,24 +245,24 @@ var SunscreenPermit = React.createClass({
       </div> );
 
     return (
-      <div className="panel panel-primary">
+      <div className="panel panel-default">
         <div className="panel-heading">
-          <div className="panel-title">
-            <h3>Sunscreen Permission</h3>
-          </div>
+          
+            <h2>Sunscreen Permission</h2>
+          
         </div>
 
         <div className="panel-body">
-          <div className="row">
-            <div className='col-md-offset-1 col-md-10'> 
-              <h4 className="bg-info">
-              My child has my permission to attend below weekly off-campus activities throughout the Summer Camp. These activities include trips that use school vans, public transportation, light rail, and/or walking modes of transportation.
-              </h4><hr></hr>
+            <div className="agreement">
+              <h4>Agreement for Sunscreen</h4>
+              <p>My child has my permission to attend below weekly off-campus activities throughout the Summer Camp. These activities include trips that use school vans, public transportation, light rail, and/or walking modes of transportation.</p>
+            </div>
+            
               {applySunscreen}
               {spareSunCream}
               {allergySunscreen}
-            </div>
-          </div>
+           
+          
         </div>
       </div>
     );
@@ -277,19 +282,19 @@ var EmergencyBox = React.createClass({
   },
   render: function() {
     return (
-      <div className="panel panel-primary">
+      <div className="panel panel-default">
         <div className="panel-heading">
-          <div className="panel-title">
-            <h3>Consent for Emergency Medical Treatment</h3>
-          </div>
+          
+            <h2>Emergency Medical Treatment</h2>
+          
         </div>
 
         <div className="panel-body">
-          <div className="row">
-            <div className='col-md-offset-1 col-md-10'> 
-              <h4 className="bg-info">
-              I hereby give consent to LIL (Yang Fan) to provide all emergency medical and/or dental care as prescribed by a duly licensed physician (M.D.) or dentist (D.D.S.) for my child. This care maybe given under whatever conditions are necessary to preserve the life, limb, or well being of my dependent.
-              </h4>
+          
+            <div className="agreement">
+              <h4>Consent for Emergency Medical Treatment</h4>
+              <p>I hereby give consent to LIL (Yang Fan) to provide all emergency medical and/or dental care as prescribed by a duly licensed physician (M.D.) or dentist (D.D.S.) for my child. This care maybe given under whatever conditions are necessary to preserve the life, limb, or well being of my dependent.</p>
+            </div>
               <div className="radio">
                 <label>
                   {this.state.emergencyPermit ? 
@@ -305,22 +310,27 @@ var EmergencyBox = React.createClass({
                     <input type="radio" name="emergencyPermit" onChange={this.emergencyPermit} />}
                   Disagree
                 </label>
-              </div><hr></hr>
+             
 
               {this.state.emergencyPermit ? 
                 <div className='row'>
+                  <hr></hr>
+                  <div className="col-md-12 emergencycontact">
+                  <strong>Please tell us the primary and secondary emergency contacts</strong>
+                  </div>
                   <ContactBox 
                     ref='primaryEmerContact'
                     title='Primary Emergency Contact'
                   /> 
+                  
                   <ContactBox
                     ref='secondaryEmerContact'
                     title='Secondary Emergency Contact'
                   />
                 </div>
                 : <p></p> }
-            </div><hr></hr>
-          </div>
+            </div>
+         
         </div>
       </div>
     );
@@ -358,8 +368,9 @@ var SummerTripPermit = React.createClass({
   },
   render: function() {
     var swimPermit = (
-      <div>
-        <h4>Friday afternoon recreational Swimming trips (<strong>students must be able to swimming independently</strong>)</h4>
+      <div className="permissionoption">
+        <strong> Permit your child to attend Friday afternoon recreational Swimming trips? </strong>
+        <p><i className="fa fa-info-circle fa-fw"></i>students must be able to swimming independently</p>
         <div className="radio">
           <label>
             {this.state.swimPermit ? 
@@ -378,8 +389,8 @@ var SummerTripPermit = React.createClass({
         </div>
       </div> );
     var moviePermit = (
-      <div>
-        <h4>Tuesday morning summer movie at Dublin Regal movie theater</h4>
+      <div className="permissionoption">
+        <strong>Permit your child to attend Tuesday morning summer movie at Dublin Regal movie theater ?</strong>
         <div className="radio">
           <label>
             {this.state.moviePermit ? 
@@ -398,8 +409,8 @@ var SummerTripPermit = React.createClass({
         </div>
       </div> );
     var fieldTripPermit = (
-      <div>
-        <h4>Friday field trip</h4>
+      <div className="permissionoption">
+        <strong>Permit your child to attend Friday field trip?</strong>
         <div className="radio">
           <label>
             {this.state.fieldTripPermit ? 
@@ -418,8 +429,8 @@ var SummerTripPermit = React.createClass({
         </div>
       </div> );
     var HartSportsPermit = (
-      <div>
-        <h4>Hart Middle School Sports Field activities</h4>
+      <div className="permissionoption">
+        <strong>Permit your child to attend Hart Middle School Sports Field activities ?</strong>
         <div className="radio">
           <label>
             {this.state.HartSportsPermit ? 
@@ -440,19 +451,20 @@ var SummerTripPermit = React.createClass({
 
 
     return (
-      <div className="panel panel-primary">
+      <div className="panel panel-default">
         <div className="panel-heading">
-          <div className="panel-title">
-            <h3>Summer Trip Permission</h3>
-          </div>
+            <h2>Summer Trip Permission</h2>
         </div>
 
         <div className="panel-body">
-          <div className="row">
-            <div className='col-md-offset-1 col-md-10'> 
-              <h4 className="bg-info">
-              My child has my permission to attend below weekly off-campus activities throughout the Summer Camp. These activities include trips that use school vans, public transportation, light rail, and/or walking modes of transportation.
-              </h4><hr></hr>
+          
+            
+              <div className="agreement">
+              <h4>Agreement about summer trip</h4>
+              <p>My child has my permission to attend below weekly off-campus activities throughout the Summer Camp. These activities include trips that use school vans, public transportation, light rail, and/or walking modes of transportation.</p>
+              </div>
+              
+              
               {this.props.incomingGrade !== 'K' ? {swimPermit} : <p></p>}
               {(this.props.incomingGrade !== 'K' && this.props.incomingGrade !== 'G1') ? 
               {moviePermit} : <p></p>}
@@ -460,8 +472,8 @@ var SummerTripPermit = React.createClass({
               {HartSportsPermit}
 
             </div>
-          </div>
-        </div>
+          
+        
       </div>
     );
   }

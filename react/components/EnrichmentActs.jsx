@@ -115,26 +115,27 @@ var EnrichmentActs = React.createClass({
     }
     
     return (
-      <div className="panel panel-primary">
+      <div className="panel panel-color panel-gray panel-course">
         <div className="panel-heading">
           <div className="panel-title">
-            <h3>Enrichment Activities</h3>
+            <strong>Enrichment Activities</strong>
           </div>
         </div>
 
         <div className="panel-body">
-          <div className="row">
+          
           {morAbsent ? 
-            <div className='col-md-offset-1'> 
-              <h3>Morning Activities--{enrichActData['morning_time'].display_time}</h3>
-              <h4><span className="bg-info">Sorry, you won't attend in the mornings.</span></h4>
+            <div> 
+              <strong>Morning Activities--{enrichActData['morning_time'].display_time}</strong>
+              <p className="sorry_info">Sorry, you won't attend in the mornings.</p>
             </div> :
             <div>
-            <div className='col-md-offset-1'> 
-              <h3>Morning Activities--{enrichActData['morning_time'].display_time}</h3>
-              <h4><span className="bg-info">1.{enrichActData['note']}</span></h4><br></br>
-              <h4><span className="bg-info">2. Every avtivity has the same time: {enrichActData['morning_time'].display_time}</span></h4>
-            </div>
+            
+              <strong>Select a specific Morning Activitity</strong>
+              
+            <p><i className="fa fa-clock-o fa-fw"></i>{enrichActData['morning_time'].display_time}<br></br>
+                <i className="fa fa-info-circle fa-fw"></i> {enrichActData['note']}
+              </p>
 
             <table className="table table-bordered table-striped">
               <thead>
@@ -153,15 +154,16 @@ var EnrichmentActs = React.createClass({
             <hr></hr>
 
             {aftAbsent ? 
-            <div className='col-md-offset-1'> 
-              <h3>Afternoon Activities--{enrichActData['afternoon_time'].display_time}</h3>
-              <h4><span className="bg-info">Sorry, you won't attend in the afternoons.</span></h4>
+            <div> 
+              <strong>Afternoon Activities</strong>
+              <p className="sorry_info">Sorry, you won't attend in the afternoons.</p>
             </div> : 
             <div>
-            <div className='col-md-offset-1'> 
-              <h3>Afternoon Activities--{enrichActData['afternoon_time'].display_time}</h3>
-              <h4><span className="bg-info">2. Every avtivity has the same time: {enrichActData['afternoon_time'].display_time}</span></h4>
-            </div>
+            
+              <strong>Select a specific Afternoon Activity</strong>
+              <p><i className="fa fa-clock-o fa-fw"></i>{enrichActData['afternoon_time'].display_time}
+              </p>
+            
 
             <table className="table table-bordered table-striped">
               <thead>
@@ -178,7 +180,7 @@ var EnrichmentActs = React.createClass({
             </table>
             </div> }
           </div>
-        </div>
+        
       </div>
     );
   }

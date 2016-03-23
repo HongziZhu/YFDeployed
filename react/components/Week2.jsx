@@ -102,14 +102,14 @@ var Week2 = React.createClass({
               curWeekIdx={preWeekIdx}
               incomingGrade={self.state.incomingGrade} 
               summerCampWeeks={self.state.summerCampWeeks}/> :
-              <p></p>}
+              <p className="absence"></p>}
             {self.state.math === 'elective' ?
             <MathElective 
               curWeek={preWeek} 
               curWeekIdx={preWeekIdx}
               incomingGrade={self.state.incomingGrade} 
               summerCampWeeks={self.state.summerCampWeeks}/> :
-            <p></p>}
+            <p className="absence"></p>}
             <MathOlympiad 
               curWeek={preWeek} 
               curWeekIdx={preWeekIdx}

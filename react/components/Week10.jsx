@@ -72,7 +72,14 @@ var Week10 = React.createClass({
           summerCampWeeks={this.state.summerCampWeeks}/>
           
         <div className='main-content col-md-12'>
-        <h1 className="bg-success">{curWeekTitle} &nbsp; ({coveredDate})</h1><hr></hr>
+        <div className="panel panel-primary panel-week">
+          <div className="panel-heading">
+            <div className="panel-title">
+              <h2>{curWeekTitle}</h2>
+              <p>{coveredDate}</p>
+            </div>
+          </div>
+        </div>
         { show ? 
           <h3>You plan not to attend in this week, please Continue.</h3> :
           <div>

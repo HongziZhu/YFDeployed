@@ -6,8 +6,9 @@ var RouteHandler = Router.RouteHandler;
 var Navigation = Router.Navigation;
 var YFActions = require('../actions/YFActions');
 var YFStore = require('../stores/YFStore.jsx');
-
+var CourseView = require('./helpers/CourseView.jsx');
 var Footer = require('./helpers/Footer.jsx');
+var Profile = require('./Profile.jsx');
 /** Tips: We often pass the entire state of the store down the chain of views in a single object, allowing different descendants to use what they need.
 **/
 var YFApp = React.createClass({
@@ -31,7 +32,7 @@ var YFApp = React.createClass({
   handleLogout: function(e) {
     if(confirm('Are you sure to log out?') == true){
       YFActions.logout();
-      this.transitionTo('home');
+      this.transitionTo('login');
     }
   },
 
@@ -42,48 +43,85 @@ var YFApp = React.createClass({
   render: function() {
     return (
       <div>
+        {this.state.loggedIn ?
         <nav className="navbar navbar-default navbar-fixed-top">
           <div>
             <div className="navbar-header">
-              <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span className="sr-only">Toggle navigation</span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-                <span className="icon-bar"></span>
-              </button>
-              <a className="navbar-brand" href="/">
-                <img src="/img/logo.png" alt="user-image" className="img-circle img-inline" width={28} />
-                <h4>Yang Fan Enrollment</h4>
+              <a className="navbar-brand" >
+                <img src="/img/yf-logo.png" alt="user-image" className="img-circle img-inline" width={40} />
+                <h4>Yang Fan Enroll</h4>
               </a>
             </div>
+      <ul className="nav navbar-nav"> 
+        <li className="dropdown"> 
+          <a id="drop1" href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Course Overview <span className="caret" /> 
+          </a> 
+           {/*
+          <ul className="dropdown-menu" aria-labelledby="drop1"> 
+            <li><a href="#">Action</a></li> 
+            <li><a href="#">Another action</a></li> 
+            <li><a href="#">Something else here</a></li> 
+            <li role="separator" className="divider" /> 
+            <li><a href="#">Separated link</a></li> 
+          </ul> */}
+          <div className="dropdown-menu coursedrop" aria-labelledby="drop1">
+          <CourseView />
+          </div>
+        </li> 
+      </ul>               {/* Modal */}
+<div className="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div className="modal-dialog modal-lg">
+    <div className="modal-content">
+      <div className="modal-header">
+        <button type="button" className="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span className="sr-only">Close</span></button>
+        <h4 className="modal-title" id="myModalLabel">Edit Profile</h4>
+      </div>
+      <div className="modal-body">
+        <Profile />
+      </div>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" className="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-            {this.state.loggedIn ? 
+            {/*{this.state.loggedIn ?   */}
             <ul className="nav navbar-nav navbar-right">
               <li className="dropdown">
                 <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                 {this.state.user.email} <span className="caret" /></a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a href='/user/profile'>&nbsp;&nbsp;&nbsp;&nbsp;Edit Profile</a>
+                    <a href='/user/profile'>Edit Profile</a>
                   </li>
                   <li>
-                    <button className='col-md-offset-3 btn btn-primary' onClick={this.handleLogout}>Log out
-                    </button>
+                    <a data-toggle="modal" data-target=".bs-example-modal-lg">Model</a>
+                  </li>
+                  <li>
+                    <a onClick={this.handleLogout}>Log Out
+                    </a>
                   </li>
                 </ul>
               </li>
             </ul>
-            :
-            <p></p>}
+            {/* :  <a className="navbar-remaining"></a>   }  */}
+
 
           </div>
-        </nav>
+        </nav> : <span></span>}
         
         <div>
           <RouteHandler />
         </div>
+{this.state.loggedIn ?
+        <Footer />: <span></span>}
+ 
+        
 
-        <Footer />
+
+
       </div>
     );
   },

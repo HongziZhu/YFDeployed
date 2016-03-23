@@ -10,35 +10,40 @@ var YFStore = require('../../stores/YFStore.jsx');
 var StudentBox = React.createClass({
 	render: function() {
 		return (
-      <div className='col-md-offset-0.5 col-md-12'>
-        <div className="panel panel-primary">
-          <div className="panel-heading">
-          </div>
+      
+        
+          
 
-          <div className="panel-body">
-            <div className="col-md-10 col-md-offset-1">
-              <label>Student Full Name<span className="req">*</span></label>
-              <div className="row">
-                <div className="col-md-6">
+         
+          <div className="col-sm-12 ">
+            <div className="form-group">
+              <label className="col-sm-2 control-label">Full Name<span className="req">*</span></label>
+              
+                <div className="col-sm-5">
                     <input type="text" required className="form-control" ref='stu_fname' placeholder="First Name"/>                        
                 </div>
-                <div className="col-md-6">
+                <div className="col-sm-5">
                     <input type="text" required className="form-control" ref='stu_lname' placeholder="Last Name"/>                        
                 </div>
-              </div><br></br>  
-              <label>中文姓名(Chinese Name, if applicable)</label>
-              <div className="row">
-                <div className="col-md-6">
+            </div>
+              
+            <div className="form-group">  
+              <br></br>  
+              <label className="col-sm-2 control-label">Chinese Name <br />(if applicable)</label>
+              
+                <div className="col-sm-5">
                     <input type="text" className="form-control" ref='cn_fname' placeholder="姓"/>                        
                 </div>
-                <div className="col-md-6">
+                <div className="col-sm-5">
                     <input type="text" className="form-control" ref='cn_lname' placeholder="名"/>                        
                 </div>
-              </div><br></br>  
-                             
-              <label>Birth Date<span className="req">*</span></label>                    
-              <div className="row">
-                  <div className="col-md-4">
+               </div>
+              <br></br>  
+                  
+              <div className="form-group">            
+              <label className="col-sm-2 control-label">Birth Date<span className="req">*</span></label>                    
+             
+                  <div className="col-sm-3">
                       <select ref="stu_month" className="form-control">
                           <option value="01">Jan</option>
                           <option value="02">Feb</option>
@@ -54,7 +59,7 @@ var StudentBox = React.createClass({
                           <option value="12">Dec</option>
                       </select>                        
                   </div>
-                  <div className="col-md-4">
+                  <div className="col-sm-3">
                       <select ref="stu_day" className = "form-control">
                           <option value="1">1</option>
                           <option value="2">2</option>
@@ -89,7 +94,7 @@ var StudentBox = React.createClass({
                           <option value="31">31</option>
                       </select>                        
                   </div>
-                  <div className="col-md-4">
+                  <div className="col-sm-3">
                       <select ref="stu_year" className = "form-control">
                           <option value="1995">1995</option>
                           <option value="1996">1996</option>
@@ -114,61 +119,74 @@ var StudentBox = React.createClass({
                           <option value="2013">2015</option>
                       </select>                        
                   </div>
-              </div><br></br>
+              <br></br>
+              </div>
 
-              <div>    
-                <label>Gender<span className="req">*</span>&nbsp;&nbsp;</label>            
+              <div className="form-group">    
+                <label className="col-sm-2 control-label">Gender<span className="req">*</span>&nbsp;&nbsp;</label>            
+                <div className="col-sm-3">
                 <label className="radio-inline">
                   <input type="radio" ref='stu_male' name={this.props.stuIdx} value="male" />Male
                 </label>
                 <label className="radio-inline">
                   <input type="radio" ref='stu_female' name={this.props.stuIdx} value="female"/>Female
                 </label>
+                </div>
               </div><br></br>
 
               <div className="form-group">
-                <label >Summer School Attended(if applicable)</label>
-                <input type="text" className="form-control" ref="summerSchoolAttended"/>
-                <br></br>
-                <label >School District</label>
-                <input type="text" className="form-control" ref="schoolDistrict"/>
+                <label className="col-sm-2 control-label">School Attended<br />(if applicable)</label>
+                <div className="col-sm-10">
+                  <input type="text" className="form-control" ref="summerSchoolAttended"/>
+                  <br />
+                </div>
+
+                <label className="col-sm-2 control-label">School District</label>
+                <div className="col-sm-10">
+                  <input type="text" className="form-control" ref="schoolDistrict"/>
+                </div>
               </div>
 
               <div className="form-group">
-                <label >Pediatric Doctor</label>
+                <label className="col-sm-2 control-label">Pediatric Doctor</label>
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-sm-4">
                     <input type="text" className="form-control" ref="doctorName" placeholder="Doctor Name"/>
                   </div>
-                  <div className="col-md-6">
+                  <label className="col-sm-2 control-label">Contact</label>
+                  <div className="col-sm-3">
                     <input type="text" className="form-control" ref="doctorPhone" placeholder="Doctor Phone" />
                   </div>
                 </div>
               </div>
 
               <div className="form-group">
-                <label >Insurance Information</label>
+                <label className="col-sm-2 control-label">Insurance Company</label>
                 <div className="row">
-                  <div className="col-md-6">
+                  <div className="col-sm-4">
                     <input type="text" className="form-control" ref="insuranceCompany" placeholder="Insurance Company Name"/>
                   </div>
-                  <div className="col-md-6">
+                  <label className="col-sm-2 control-label">Policy Number</label>
+                  <div className="col-md-3">
                     <input type="text" className="form-control" ref="policyNumber" placeholder="Insurance Policy Number" />
                   </div>
                 </div>
               </div>
 
               <div className="form-group">
-                <label >Please list all medical limitations and special conditions</label>
-                <textarea className="form-control" rows="4" ref='medicalDescription' placeholder="Allergies to medicine or food, asthma, etc.">
-                </textarea>
+                <label className="col-sm-2 control-label">Note</label>
+                <div className="col-sm-10">
+                  <textarea className="form-control" rows="4" ref='medicalDescription' placeholder="Allergies to medicine or food, asthma, etc.">
+                  </textarea>
+                  <p className="help-block">Please list all medical limitations and special conditions</p>
+                </div>
               </div>
 
               <hr></hr>
-            </div>
           </div>
-        </div><hr></hr>
-      </div>
+          
+       
+      
   			
 		);
 	}

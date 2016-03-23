@@ -66,16 +66,16 @@ var WritingElective = React.createClass({
       <div className="panel panel-primary">
         <div className="panel-heading">
           <div className="panel-title">
-            <h3>Afternoon Writing Elective Classes</h3>
+            <strong>Afternoon Writing Elective Classes</strong>
           </div>
         </div>
 
         <div className="panel-body">
         {wrData['grades'].indexOf(gd) > -1 ? 
-          <div className="row">
-              <div className='col-md-offset-1'> 
+          <div >
+              
                 <h4><span className="bg-info">{wrData['note']}</span></h4>
-              </div>
+              
 
               <table className="table table-bordered">
                 <thead>

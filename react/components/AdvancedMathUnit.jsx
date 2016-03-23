@@ -63,20 +63,21 @@ var AdvancedMathUnit = React.createClass({
     }
 
     return (
-      <div className="panel panel-primary">
+      <div className="panel panel-color panel-gray  panel-course">
         <div className="panel-heading">
           <div className="panel-title">
-            <h3>Afternoon Advanced Math Boot Camp</h3>
+            <strong>Advanced Math</strong>
           </div>
         </div>
 
         <div className="panel-body">
         {adMathData['grades'].indexOf(gd) > -1 ? 
-          <div className="row">
-              <div className='col-md-offset-1'> 
-                <h4><span className="bg-info">{adMathData['note'][0]}</span></h4>
-                <h4><span className="bg-info">{adMathData['note'][1]}</span></h4>
-              </div>
+          <div>
+              <strong>Select a Afternoon Advanced Math Boot Camp</strong>
+              <p><i className="fa fa-sign-in fa-fw"></i>{adMathData['note'][0]}<br></br>
+                <i className="fa fa-info-circle fa-fw"></i> {adMathData['note'][1]}
+              </p>
+              
 
               <table className="table table-bordered">
                 <thead>
@@ -94,10 +95,10 @@ var AdvancedMathUnit = React.createClass({
               </table>
             </div>
           : 
-          <div className="row">
-            <div className='col-md-offset-1'> 
-              <h4><span className="bg-info">{adMathData['notAvailable']}</span></h4>
-            </div>
+          <div>
+           
+              <strong>{adMathData['notAvailable']}</strong>
+            
           </div> }
         </div> 
       </div>

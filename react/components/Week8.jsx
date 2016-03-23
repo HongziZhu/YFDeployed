@@ -87,7 +87,14 @@ var Week8 = React.createClass({
           summerCampWeeks={this.state.summerCampWeeks}/>
           
         <div className='main-content col-md-12 '>
-        <h2 className="bg-success">{preWeekTitle}&nbsp; ({coveredDate[0]})</h2><hr></hr>
+        <div className="panel panel-primary panel-week">
+          <div className="panel-heading">
+            <div className="panel-title">
+              <h2>{preWeekTitle}</h2>
+              <p>{coveredDate[0]}</p>
+            </div>
+          </div>
+        </div>
         { !preShow ? 
           <h3>You plan not to attend in this week, please Confirm and Continue.</h3> :
           <div>
@@ -102,14 +109,14 @@ var Week8 = React.createClass({
               curWeekIdx={preWeekIdx}
               incomingGrade={self.state.incomingGrade} 
               summerCampWeeks={self.state.summerCampWeeks}/> :
-              <p></p>}
+              <p className="absence"></p>}
             {self.state.math === 'elective' ?
             <MathElective 
               curWeek={preWeek} 
               curWeekIdx={preWeekIdx}
               incomingGrade={self.state.incomingGrade} 
               summerCampWeeks={self.state.summerCampWeeks}/> :
-            <p></p>}
+            <p className="absence"></p>}
             <MathOlympiad 
               curWeek={preWeek} 
               curWeekIdx={preWeekIdx}
@@ -126,9 +133,17 @@ var Week8 = React.createClass({
 
         {(self.state.writing === 'advanced' || self.state.math === 'advanced') ? 
         <div>
-          <h2>{preWeekTitle} &amp; {postWeekTitle} Unit</h2>
+          
+        <div className="panel panel-primary panel-week">
+          <div className="panel-heading">
+            <div className="panel-title">
+              <h2>{preWeekTitle} &amp; {postWeekTitle} Unit</h2>
+              <p>{coveredDate[0]} &amp; {coveredDate[1]}</p>
+            </div>
+          </div>
+        </div> 
             {(!preShow || !postShow) ? 
-              <h3 className='bg-info'>Sorry, you can't enroll in this Advanced Writing(or Math) Unit due to at least one-week absence.</h3> :
+              <h3>Sorry, you can't enroll in this Advanced Writing(or Math) Unit due to at least one-week absence.</h3> :
               <div>
               {self.state.writing === 'advanced' ? 
               <AdvancedWrUnit 
@@ -137,7 +152,7 @@ var Week8 = React.createClass({
                 postWeek={postWeek}
                 postWeekIdx={postWeekIdx}
                 incomingGrade={self.state.incomingGrade} 
-                summerCampWeeks={self.state.summerCampWeeks}/> : <p></p>}
+                summerCampWeeks={self.state.summerCampWeeks}/> : <p className="absence"></p>}
               {self.state.math === 'advanced' ? 
               <AdvancedMathUnit 
                 preWeek={preWeek}
@@ -145,7 +160,7 @@ var Week8 = React.createClass({
                 postWeek={postWeek}
                 postWeekIdx={postWeekIdx} 
                 incomingGrade={self.state.incomingGrade} 
-                summerCampWeeks={self.state.summerCampWeeks}/> : <p></p>}
+                summerCampWeeks={self.state.summerCampWeeks}/> : <p className="absence"></p>}
               </div>
             }
         </div>

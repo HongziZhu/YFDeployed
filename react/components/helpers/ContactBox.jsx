@@ -13,17 +13,24 @@ var ContactBox = React.createClass({
 	},
   render: function() {
     return (
-				<div className="col-md-6">								
+				<div className="col-md-5">
+
+
+
+
+
 					<div className="panel panel-default">
 					
 						<div className="panel-heading">
-							<div className="panel-title">{this.props.title}</div>
+							<h2>{this.props.title}</h2>
 						</div>
 
 						<div className="panel-body">
+                          <div className="row">
 
+                          <div className="col-md-10 emergencycontact">
 							<div className="form-group">
-								<label className="control-label">Emergency Contact Name<span className="req">*</span></label>
+								<p className="control-label">Emergency Contact Name<span className="req">*</span></p>
 								
 								<div className="input-group  input-group-minimal">
 									<span className="input-group-addon">
@@ -34,7 +41,7 @@ var ContactBox = React.createClass({
 							</div>
 
 							<div className="form-group">
-								<label className="control-label">Relationship<span className="req">*</span></label>
+								<p className="control-label">Relationship<span className="req">*</span></p>
 								
 								<div className="input-group  input-group-minimal">
 									<span className="input-group-addon">
@@ -45,7 +52,7 @@ var ContactBox = React.createClass({
 							</div>
 
 							<div className="form-group">
-								<label className="control-label">Cell Phone<span className="req">*</span></label>
+								<p className="control-label">Cell Phone<span className="req">*</span></p>
 								
 								<div className="input-group  input-group-minimal">
 									<span className="input-group-addon">
@@ -56,7 +63,7 @@ var ContactBox = React.createClass({
 							</div>
 
 							<div className="form-group">
-								<label className="control-label">Work Phone<span className="req">*</span></label>
+								<p className="control-label">Work Phone<span className="req">*</span></p>
 								
 								<div className="input-group  input-group-minimal">
 									<span className="input-group-addon">
@@ -67,7 +74,7 @@ var ContactBox = React.createClass({
 							</div>
 
 							<div className="form-group">
-								<label className="control-label">Home Phone<span className="req">*</span></label>
+								<p className="control-label">Home Phone<span className="req">*</span></p>
 								
 								<div className="input-group  input-group-minimal">
 									<span className="input-group-addon">
@@ -78,7 +85,7 @@ var ContactBox = React.createClass({
 							</div>
 
 							<div className="form-group">
-								<label className="control-label">Email</label>
+								<p className="control-label">Email</p>
 								
 								<div className="input-group  input-group-minimal">
 									<span className="input-group-addon">
@@ -87,8 +94,16 @@ var ContactBox = React.createClass({
 									<input type="text" ref='email' className="form-control"/>
 								</div>
 							</div>
+
+						  </div>
+
+						  <div className="col-md-2">
+                          </div>
+                          </div>
+
 						</div>	
 					</div>
+					
 				</div>
     );
   }

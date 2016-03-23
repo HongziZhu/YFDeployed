@@ -44,52 +44,67 @@ var Login = React.createClass({
   },
 
   render: function () {
-  	var errorAlert = this.state.authError ? <div className="alert alert-danger col-sm-offset-2 col-sm-10" role="alert">Email or Password is wrong.</div> : <p></p>;
+  	var errorAlert = this.state.authError ? <div className="alert alert-danger col-sm-10" role="alert">Email or Password is wrong.</div> : <p></p>;
     
-    var signUpInfo = this.state.signUped ? <h4 className='bg-info'>Congratulations! Sign up successfully.</h4> : <p></p>
+    var signUpInfo = this.state.signUped ? <p className='bg-info'>Congratulations! Sign up successfully.</p> : <p></p>
 
     return (
       <div className='page-container'>
-      <div className='main-content'>
-      <div className="col-md-6 col-md-offset-3">
-      <hr></hr>
+      <div className='main-content loginbg col-md-12'>
+      <div className="col-md-4 col-md-offset-2">
+      
       <div className="panel panel-primary">
-        <div className="panel-heading">
+        <div className="panel-heading loginlogo">
           <div className="panel-title">
-            <h3>Log In</h3>
+            <h3><img src="/img/yf-logo.png" alt="user-image" className="img-circle img-inline" width={60} /> <span>Yang Fan Enroll</span></h3>
           </div>
         </div>
 
         <div className="panel-body">
           <div className="row">
-            <div className='col-md-offset-1 col-md-10'> 
-              {signUpInfo}
-              {errorAlert}
-              <hr></hr>
-              <form className="form-horizontal " onSubmit={this.handleSubmit}>
+            <div className='col-md-12'> 
+             
+             
+              <form className="-form-horizontal " onSubmit={this.handleSubmit}>
+
+
                 <div className="form-group">
-                  <label htmlFor="email" className="col-sm-3 control-label">Email</label>
-                  <div className="col-sm-9">
+                  {/* <label htmlFor="email" className="col-sm-3 control-label">Email</label> */}
+                  <div className="input-group margin-bottom-sm">
+                    <span className="input-group-addon"><i className="fa fa-envelope-o fa-fw"></i></span>
                     <input type="email" autofocus className="form-control" ref="email" placeholder="Email"/>
                   </div>
                 </div>
+
+
                 <div className="form-group">
-                  <label htmlFor="password" className="col-sm-3 control-label">Password</label>
-                  <div className="col-sm-9">
+                  {/* <label htmlFor="password" className="col-sm-3 control-label">Password</label>*/}
+                  <div className="input-group">
+                    <span className="input-group-addon"><i className="fa fa-key fa-fw"></i></span>
                     <input type="password" maxLength="20" className="form-control" ref="password" placeholder="Password"/>
                   </div>
                 </div>
+                 {signUpInfo}
+              {errorAlert}
                 <div className="form-group">
-                  <div className="col-sm-offset-3 col-sm-10">
-                    <button type="submit" className="btn btn-primary">Log in</button>
+                  <div className="input-group btn-block">
+                    <button type="submit" className="btn btn-primary btn-block">Log in</button>
                   </div>
+                  <br />
+                  <p>Need a new account? <a href="/Signup">Create one now</a></p>
+                  
                 </div>
               </form>
-            </div><hr></hr>
+            </div>
           </div>
         </div>
       </div>
       </div>
+       
+      <img className="col-md-4 col-md-offset-1" src="img/yf-log-in.png" />
+
+
+
       </div>
       </div>
     );

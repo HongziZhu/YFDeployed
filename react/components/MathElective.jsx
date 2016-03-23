@@ -71,10 +71,10 @@ var MathElective = React.createClass({
 
         <div className="panel-body">
         {mathData['grades'].indexOf(gd) > -1 ? 
-          <div className="row">
-              <div className='col-md-offset-1'> 
+          <div>
+              
                 <h4><span className="bg-info">{mathData['note']}</span></h4>
-              </div>
+              
 
               <table className="table table-bordered">
                 <thead>

@@ -24,7 +24,8 @@ var Home = React.createClass({
                 <div className="submit">
                   Sign up
                 </div>
-              </a>
+              </a>  
+            
             </div>
           </div>
         </form>

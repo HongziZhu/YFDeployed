@@ -59,19 +59,20 @@ var MathOlympiad = React.createClass({
       )
     }
     return (
-      <div className="panel panel-primary">
+      <div className="panel panel-color panel-gray panel-course">
         <div className="panel-heading">
           <div className="panel-title">
-            <h3>Afternoon Math Olympiad Elective Classes</h3>
+            <strong>Math Olympiad</strong>
           </div>
         </div>
 
         <div className="panel-body">
         {mathOlpData['grades'].indexOf(gd) > -1 ? 
-          <div className="row">
-              <div className='col-md-offset-1'> 
-                <h4><span className="bg-info">{mathOlpData['note']}</span></h4>
-              </div>
+          <div>
+            <strong>Select a Afternoon Math Olympiad Elective Class</strong>
+            <p><i className="fa fa-info-circle fa-fw"></i> {mathOlpData['note']}
+              </p>
+
 
               <table className="table table-bordered">
                 <thead>
@@ -89,11 +90,11 @@ var MathOlympiad = React.createClass({
               </table>
             </div>
           : 
-          <div className="row">
-            <div className='col-md-offset-1'> 
-              <h4><span className="bg-info">{mathOlpData['notAvailable']}</span></h4><br></br>
+          
+            <div> 
+              <strong>{mathOlpData['notAvailable']}</strong><br></br>
             </div>
-          </div> }
+           }
         </div> 
       </div>
     );

@@ -17,7 +17,12 @@ var GradeBox = React.createClass({
           <strong>Select Incoming Grade as of Fall 2016 For {this.props.stu_fname}</strong>
         </div>
         <div className="panel-body">
-          <h4 className='bg-info'><span>e.g. If your child will be <ins>G3</ins> in Fall 2016, please select <ins>G3</ins> for him/her.</span></h4>
+        {/*  <h4 className='bg-info'><span>e.g. If your child will be <ins>G3</ins> in Fall 2016, please select <ins>G3</ins> for him/her.</span></h4> */}
+        <div className="messageBox message_info" aria-atomic="true" aria-live="polite" role="alert" tabIndex={0}>
+          <div className="messageIcon">Info</div>
+          <span>For example, if your child will be <ins>G3</ins> in Fall 2016, please select <ins>G3</ins> for him/her.
+          </span> 
+        </div>
           <select className="form-control" onChange={this.props.handleChange}>
             <option value='K'>K</option>
             <option value='G1'>G1</option>
@@ -135,8 +140,7 @@ var GetStarted = React.createClass({
       <div className='page-container'>
         <SideMenu />
 
-        <div className='main-content'>
-        <div className="col-md-12">
+        <div className='main-content col-md-12'>
           <div className="panel panel-primary">
             <div className="panel-heading">
               <strong>Select the Program to Enroll</strong>
@@ -176,7 +180,6 @@ var GetStarted = React.createClass({
           {this.state.showContinue ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue} disabled>Continue</button>}
 
           </div>
-        </div>
       </div>
     );
   } 

@@ -41,6 +41,9 @@ var ScheduleTable = React.createClass({
   	}
     return (
       <div className="panel-body">
+      <div className="introduction">
+        <p>You have already set up your attendence for this summer. </p>
+      </div>
         <table className="table table-bordered table-striped">
           <thead>
             <tr>
@@ -56,10 +59,11 @@ var ScheduleTable = React.createClass({
         </table>
 
         <div className="row">
-          <div className="col-md-offset-1">
+        <div className="col-md-12">
             <button ref='deleteButton' className="btn btn-danger" onClick={this.deleteSchedule}>Delete This Schedule</button>
-            <span className="bg-warning"><strong>(All related enrollment data will also be deleted)</strong></span>
-          </div> 
+            {/*  <span className="bg-warning"><strong>(All related enrollment data will also be deleted)</strong></span> */}
+        <div className="messageBox warning_info" aria-atomic="true" aria-live="polite" role="alert" tabIndex={0} style={{marginTop: 10}}><div className="messageIcon">Info</div><span>All related enrollment data will also be deleted.</span> </div>
+        </div>
         </div>
       </div>
     );

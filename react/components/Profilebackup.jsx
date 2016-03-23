@@ -266,11 +266,16 @@ var Profile = React.createClass({
     }
 
 		return (
-      
-      
-      <div>
-        
+      <div className='page-container'>
+      <div className='main-content'>
+      <div className='col-md-8 col-md-offset-2'>
+        <hr></hr>
         <div className=" panel panel-primary">
+          <div className="panel-heading">
+            <div className="panel-title">
+              <h3>Profile</h3>
+            </div>
+          </div>
 
           <div className="panel-body">
             <div className="row">
@@ -467,8 +472,8 @@ var Profile = React.createClass({
         </div>
         {SaveButton}
       </div>		
-     
-      
+      </div>
+      </div>
 		);
 	}
 });

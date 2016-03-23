@@ -88,7 +88,15 @@ var Week7 = React.createClass({
           summerCampWeeks={this.state.summerCampWeeks}/>
           
         <div className='main-content col-md-12'>
-          <h2 className="bg-success">{postWeekTitle} &nbsp; ({coveredDate[1]})</h2><hr></hr>
+        
+        <div className="panel panel-primary panel-week">
+          <div className="panel-heading">
+            <div className="panel-title">
+              <h2>{postWeekTitle}</h2>
+              <p>{coveredDate[1]}</p>
+            </div>
+          </div>
+        </div>
           { !postShow ? 
             <h3>You plan not to attend in this week, please Confirm and Continue.</h3> :
             <div>
@@ -103,14 +111,14 @@ var Week7 = React.createClass({
               curWeekIdx={postWeekIdx}
               incomingGrade={self.state.incomingGrade} 
               summerCampWeeks={self.state.summerCampWeeks}/> :
-              <p></p>}
+              <p className="absence"></p>}
             {self.state.math === 'elective' ?
             <MathElective 
               curWeek={postWeek} 
               curWeekIdx={postWeekIdx}
               incomingGrade={self.state.incomingGrade} 
               summerCampWeeks={self.state.summerCampWeeks}/> :
-            <p></p>}
+            <p className="absence"></p>}
             <MathOlympiad 
               curWeek={postWeek} 
               curWeekIdx={postWeekIdx}

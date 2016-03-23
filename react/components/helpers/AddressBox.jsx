@@ -11,21 +11,20 @@ var AddressBox = React.createClass({
   render: function() {
     return (
       <div className="form-group">
-        <label>Home Address<span className='req'>*</span></label>
-        <div className='row'>
-          <label className="col-md-2 control-label">Adress Line 1<span className='req'>*</span></label>
-          <div className="col-md-10">
+        
+        
+          <label className="col-sm-2 control-label">Home Address 1<span className='req'>*</span></label>
+          <div className="col-sm-10">
             <input type="text" required className="form-control" maxLength="26" ref="addressLine1"/><br></br>
           </div>
-        </div>
-        <div className='row'>
-          <label className="col-md-2 control-label">Adress Line 2</label>
-          <div className="col-md-10">
+        
+          <label className="col-sm-2 control-label">Home Address 2</label>
+          <div className="col-sm-10">
             <input type="text" className="form-control" maxLength="26" ref="addressLine2" /><br></br>
           </div>
-        </div>
-        <div className='row'>
-          <label className="col-md-1 control-label" >City<span className='req'>*</span></label>
+        
+        
+          <label className="col-md-2 control-label" >City<span className='req'>*</span></label>
           <div className="col-md-3">
             <input type="text" required className="form-control" ref="city"/><br></br>
           </div>
@@ -100,10 +99,10 @@ var AddressBox = React.createClass({
             </select>
           </div>
           <label className="col-md-1 control-label" >ZIP Code<span className='req'>*</span></label>
-          <div className="col-md-3">
+          <div className="col-md-2">
             <input type="number" required className="form-control" ref="zipcode"/><br></br>
           </div>
-        </div>
+        
       </div>
     );
   }

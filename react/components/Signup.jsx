@@ -180,71 +180,110 @@ var Signup = React.createClass({
 
 		return (
       <div className='page-container'>
-      <div className='main-content'>
+      <div className='main-content col-md-12'>
       <div className='col-md-8 col-md-offset-2'>
         <hr></hr>
         <div className=" panel panel-primary">
           <div className="panel-heading">
             <div className="panel-title">
-              <h3>Sign up</h3>
+              Sign up
             </div>
           </div>
 
           <div className="panel-body">
             <div className="row">
               <div> 
-                <form className="col-md-12 col-md-offset-0.5" onSubmit={this.handleConfirm}>
+
+             <form role="forl" id="rootwizard" className="col-md-12 col-md-offset-0.5 form-horizontal form-wizard validate" onSubmit={this.handleConfirm}>
+            
+            
+
+
+
+
+            {/*  Basic Account Infomration */}
+                
                   <div className="form-group">
-                    <label htmlFor="email">Email address<span className='req'>*</span></label>
-                    <input type="email" required className="form-control" ref="email" placeholder="Email"/>
+                    <label className="col-sm-2 control-label" htmlFor="email">Email address<span className='req'>*</span></label>
+                    <div className="col-sm-10">
+                      <input type="email" required className="form-control" ref="email" placeholder="Email"/>
+                    </div>
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="password">Password<span className='req'>*</span><span className='bg-info'>At lease 6 characters</span> </label>
-                    <input type="password" required maxLength="20" className="form-control" ref="password" placeholder="At least 6 characters"/><br></br>
-                    <label htmlFor="password">Confirm Your Password<span className='req'>*</span><span className='bg-info'>At lease 6 characters</span></label>
-                    <input type="password" required maxLength="20" className="form-control" ref="password2" placeholder="At least 6 characters"  />
+                    <label className="col-sm-2 control-label" htmlFor="password">Password<span className='req'>*</span></label>
+                    <div className="col-sm-10">
+                      <input type="password" required maxLength="20" className="form-control" ref="password" placeholder="Enter your password"/>
+                      <p className="help-block">At lease 6 characters </p>
+                      <br></br>
+                    </div>  
+                      
+                    <label className="col-sm-2 control-label" htmlFor="password">Confirm Password<span className='req'>*</span></label>
+                    <div className="col-sm-10">
+                      <input type="password" required maxLength="20" className="form-control" ref="password2" placeholder="Enter your password"  />
+                      <p className="help-block">At lease 6 characters</p>
+                    </div>
                   </div>
 
+
+                   <hr></hr>
+
+                {/*  Contact Infomration */}
+                  
                   <div className="form-group">
-                    <label htmlFor="cellPhone">Cell Phone<span className='req'>*</span></label>
-                    <input type="text" maxLength="10" size="10" required className="form-control" ref="cellPhone" placeholder="Please enter numbers only." />
+                    <label className="col-sm-2 control-label" htmlFor="cellPhone">Cell Phone<span className='req'>*</span></label>
+                    <div className="col-sm-10">
+                      <input type="text" maxLength="10" size="10" required className="form-control" ref="cellPhone" placeholder="Please enter your cell phone number." />
+                      <p className="help-block">Please enter numbers only.</p>
+                    </div>
                   </div>
                   
                   <div className="form-group">
-                    <label htmlFor="homePhone">Home Phone</label>
+                    <label className="col-sm-2 control-label" htmlFor="homePhone">Home Phone</label>
+                    <div className="col-sm-10">
                     <input type="text" maxLength="10" size="10" className="form-control" ref="homePhone" placeholder="Please enter numbers only." />
+                    </div>
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="workPhone">Work Phone</label>
-                    <input type="text" className="form-control" ref="workPhone" />
+                    <label className="col-sm-2 control-label" htmlFor="workPhone">Work Phone</label>
+                    <div className="col-sm-10">
+                      <input type="text" className="form-control" ref="workPhone" placeholder="Please enter numbers only."/>
+                    </div>
                   </div>
 
+                   <hr></hr>
+
+                {/*  Parent Infomration */}
+
+
                   <div className="form-group">
-                    <label >Parent(s) Name</label>
-                    <div className="row">
-                      <div className="col-md-6">
+                    <label className="col-sm-2 control-label">Parent(s) Name</label>
+                    
+                      <div className="col-sm-5">
                         <input type="text" className=" form-control" ref="motherName" placeholder="Mother's Name" />
                       </div>
-                      <div className="col-md-6">
+                      <div className="col-sm-5">
                         <input type="text" className="col-md-6 form-control" ref="fatherName" placeholder="Father's Name" />
                       </div>
-                    </div>
+                    
                   </div>
 
                   <AddressBox ref='address' />
                   <hr></hr>
 
-                  <div className="form-group">
-                    <div className="panel panel-success">
-                      <div className="panel-heading">
-                        <div className="panel-title">
-                          <h3>Student(s) Information</h3>
-                        </div>
-                      </div>
 
-                      <div className="panel-body">
+                {/*  Student Infomration */}
+
+                  <div className="form-group">
+                    
+                      
+                        
+                          <h3>Student(s) Information</h3>
+                        
+                      
+
+                      
                         <div className="row">
                           <StudentBox ref='student1' stuIdx='1'/>
                           {Student2}
@@ -261,10 +300,12 @@ var Signup = React.createClass({
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>                    
+                      
+                                        
                   </div>
+          
 
+{/*  Confirmation */}
                   <div className="checkbox">
                     <label>
                       <h4><input type="checkbox" onChange={this.changeAccept}/>
@@ -276,12 +317,22 @@ var Signup = React.createClass({
                   </div>
                   <hr></hr>
                   {HelpBlock}
-                  <button type="submit" ref="confirmButton" className="btn btn-primary btn-lg">Confirm</button>
+
+                  <button type="submit" ref="confirmButton" className="btn btn-primary">Confirm</button>
+                  
+                  
+
+                        
+
+
+                 
+
                 </form>
               </div><hr></hr>
             </div>
           </div>
         </div>
+        
         {SignupButton}
       </div>
       </div>

@@ -75,34 +75,42 @@ var AfternoonAcademics = React.createClass({
       <SideMenu />
 
       <div className='main-content col-md-12'>
-        <div className="panel panel-primary">
+        <div className="panel panel-primary panel-week">
           <div className="panel-heading">
             <div className="panel-title">
               <h2>Afternoon Academics</h2>
+              <p>Choose your daily afternoon academics for the summer. </p>
+            </div>
+          </div>
+        </div>
+        <div className="panel panel-color panel-gray panel-course">
+          <div className="panel-heading">
+            <div className="panel-title">
+              <strong>Daily Afternoon Academics</strong>
             </div>
           </div>
 
           <div className="panel-body">
           
-            <div className="row">
-              <div className='col-md-offset-1'> 
-                <h4><span className="bg-info">No additional expense for Afternoon Academics(Math and Language), all have been included in the Basic Camp Fee.</span></h4>
-              </div>
-            </div><hr></hr>
-
-            <div className='row'>
-              <div className='col-md-offset-1'>
-                <h5>Mathematical Course</h5>
+            
+              
+                <div> 
+              
+                <strong>Select Daily Mathematical Course</strong>
+                <p><i className="fa fa-info-circle fa-fw"></i> No additional expense, Daily Math has been Automatically included.
+              </p></div>
                 <div className='radio'>
                   <label>
                     <input type="radio" name="dailyMath" defaultChecked/>
-                    Daily Math&nbsp;<span className='bg-success'>(Automatically included)</span>
+                    Daily Math&nbsp;
                   </label>
                 </div>
-              </div><hr></hr>
+              <hr></hr>
 
-              <div className='col-md-offset-1'>
-                <h5>Language Art</h5>
+              <div>
+                <strong>Select a specific Language Art course</strong>
+                <p><i className="fa fa-info-circle fa-fw"></i>No additional expense.</p>
+                </div>
                 <div className="radio">
                   <label>
                     {self.state.language === 'DailyChinese' ? 
@@ -127,11 +135,20 @@ var AfternoonAcademics = React.createClass({
                     Daily Hindi
                   </label>
                 </div>              
-              </div>  
-            </div>
+                
+            
           </div>
         </div>
-
+        <hr></hr>
+        {self.state.incomingGrade !== 'K' ?
+        <div className="panel panel-primary panel-week">
+          <div className="panel-heading">
+            <div className="panel-title">
+              <h2>Elective Preset</h2>
+              <p>Before selecting courses for each week, you need to tell us your preferred writing and math classes since Elective and Boot Camp cannot be taken together.</p>
+            </div>
+          </div>
+        </div> : <p></p>}
         {self.state.incomingGrade !== 'K' ?
           <WrMathChoice 
             writing={self.state.writing}
@@ -170,30 +187,29 @@ var WrMathChoice = React.createClass({
     var mathInput = self.props.math === 'elective' ? <input type="radio" name="math" onChange={this.changeMath} value="elective" defaultChecked/> : <input type="radio" name="math" onChange={this.changeMath} value="elective" />;
     var adMathInput = self.props.math === 'advanced' ? <input type="radio" name="math" onChange={this.changeMath} value="advanced" defaultChecked/> : <input type="radio" name="math" onChange={this.changeMath} value="advanced" />;
     return (
-      <div className="panel panel-primary">
+
+      <div className="panel panel-color panel-gray panel-course">
           <div className="panel-heading">
             <div className="panel-title">
-              <h2>Writing and Math Choices</h2>
+              <strong>Writing and Math Choices</strong>
             </div>
           </div>
 
           <div className="panel-body">
-          
-            <div className="row">
-              <div className='col-md-offset-1'> 
-                <h4><span className="bg-info">Please choose preferred writing and math classes.</span></h4>
-              </div>
-            </div><hr></hr>
 
-            <div className='row'>
-              <div className='col-md-offset-1'>
-                <h5>Writing</h5>
+
+            
+              <div>
+                <strong>Select one specific Writing Elective course for the summer</strong>
+                <p><i className="fa fa-info-circle fa-fw"></i> You can decide the weeks you want to attend this course later.
+              </p>
+              </div>
                 <div className="radio">
                   <label>
                   {wrData['grades'].indexOf(gd) > -1 ? {wrInput} :
                     <input type="radio" name="writing" onChange={this.changeWriting} value="elective" disabled/>}
                     Writing Elective Classes
-                  {wrData['grades'].indexOf(gd) === -1 ? <span className="bg-danger">&nbsp;(Not Available for your incoming grade)</span> : <span></span>}
+                  {wrData['grades'].indexOf(gd) === -1 ? <span className="choice-danger">&nbsp;(Not Available for your incoming grade)</span> : <span></span>}
                   </label>
                 </div>  
                 <div className="radio">
@@ -202,7 +218,7 @@ var WrMathChoice = React.createClass({
                     {adWrInput} :
                     <input type="radio" name="writing" onChange={this.changeWriting} value="advanced" disabled/>}
                     Advanced Writing Boot Camp
-                  {adWrData['grades'].indexOf(gd) === -1 ? <span className="bg-danger">&nbsp;(Not Available for your incoming grade)</span> : <span></span>}
+                  {adWrData['grades'].indexOf(gd) === -1 ? <span className="choice-danger">&nbsp;(Not Available for your incoming grade)</span> : <span></span>}
                   </label>
                 </div> 
                 <div className="radio">
@@ -212,17 +228,20 @@ var WrMathChoice = React.createClass({
                     No, thanks.
                   </label>
                 </div>              
-              </div>
+              
               <hr></hr>
 
-              <div className='col-md-offset-1'>
-                <h5>Math</h5>
+              <div>
+                <strong>Select one specific Math Elective course for the summer</strong>
+                <p><i className="fa fa-info-circle fa-fw"></i> You can decide the weeks you want to attend this course later.
+              </p>
+              </div>
                 <div className="radio">
                   <label>
                   {mathData['grades'].indexOf(gd) > -1 ? {mathInput} : 
                     <input type="radio" name="math" onChange={this.changeMath} value="elective" disabled/>}
                     Math Elective Classes
-                  {mathData['grades'].indexOf(gd) === -1 ? <span className="bg-danger">&nbsp;(Not Available for your incoming grade)</span> : <span></span>}
+                  {mathData['grades'].indexOf(gd) === -1 ? <span className="choice-danger">&nbsp;(Not Available for your incoming grade)</span> : <span></span>}
                   </label>
                 </div>  
                 <div className="radio">
@@ -230,7 +249,7 @@ var WrMathChoice = React.createClass({
                   {adMathData['grades'].indexOf(gd) > -1 ? {adMathInput} : 
                     <input type="radio" name="math" onChange={this.changeMath} value="advanced" disabled/>}
                     Advanced Math Boot Camp
-                  {adMathData['grades'].indexOf(gd) === -1 ? <span className="bg-danger">&nbsp;(Not Available for your incoming grade)</span> : <span></span>}
+                  {adMathData['grades'].indexOf(gd) === -1 ? <span className="choice-danger">&nbsp;(Not Available for your incoming grade)</span> : <span></span>}
                   </label>
                 </div> 
                 <div className="radio">
@@ -241,8 +260,8 @@ var WrMathChoice = React.createClass({
                     No, thanks.
                   </label>
                 </div>              
-              </div>  
-            </div>
+              
+            
           </div>
         </div>
     );
