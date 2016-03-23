@@ -64,7 +64,7 @@ var YFApp = React.createClass({
                 {this.state.user.email} <span className="caret" /></a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a className="bg-success" href='/user/profile'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Edit Profile</a>
+                    <a href='/user/profile'>&nbsp;&nbsp;&nbsp;&nbsp;Edit Profile</a>
                   </li>
                   <li>
                     <button className='col-md-offset-3 btn btn-primary' onClick={this.handleLogout}>Log out

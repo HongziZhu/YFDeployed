@@ -1,0 +1,59 @@
+{
+  "note":"Total of 8 weeks. Students can enroll weekly and do not have to enroll in all 8 weeks.",
+  "grades": ["G3", "G4", "G5"],	
+  "notAvailable": "Sorry, Math Olympiad Classes are only avaiable for those whose incoming grade is G3, G4 or G5.",
+  "G3":[
+      {
+        "display_name":"Math Olympiad G3 & G4",
+        "database_name": "Math_Olympiad_G3_G4",
+        "conflict_test": [
+            { "name": "math Olympiad", "weekday": "Mon", "time": [113.30, 114.15] }
+         ],
+        "weekday": ["Mon"],
+        "display_time": "1:30-2:15 pm",
+        "database_time": [13.30, 14.15],
+        "class_size": [3, 6],
+        "price_per_class": 15
+      }
+  ],
+  "G4":[
+    {
+        "display_name":"Math Olympiad G3 & G4",
+        "database_name": "Math_Olympiad_G3_G4",
+        "conflict_test": [
+            { "name": "math Olympiad", "weekday": "Mon", "time": [113.30, 114.15] }
+         ],
+        "weekday": ["Mon"],    
+        "display_time": "1:30-2:15 pm",
+        "database_time": [13.30, 14.15],
+        "class_size": [3, 6],    
+        "price_per_class"    : 15    
+    },
+    {
+      "display_name":"Math Olympiad G4 & G5",
+      "database_name": "Math_Olympiad_G4_G5",
+      "conflict_test": [
+            { "name": "math Olympiad", "weekday": "Mon", "time": [114.20, 115.05] }
+         ],
+      "weekday": ["Mon"],
+      "display_time": "2:20-3:05 pm",
+      "database_time": [14.20, 15.05],
+      "class_size": [3, 6],
+      "price_per_class": 15        
+    }
+    ],
+    "G5":[
+    {
+      "display_name":"Math Olympiad G4 & G5",
+      "database_name": "Math_Olympiad_G4_G5",
+      "conflict_test": [
+        { "name": "math Olympiad", "weekday": "Mon", "time": [114.20, 115.05] }
+      ],
+      "weekday": ["Mon"],
+      "display_time": "2:20-3:05 pm",
+      "database_time": [14.20, 15.05],
+      "class_size": [3, 6],
+      "price_per_class": 15
+    }
+    ]
+  }

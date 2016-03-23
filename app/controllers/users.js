@@ -5,6 +5,7 @@
 
 var mongoose = require('mongoose');
 var User = mongoose.model('User');
+var utils = require('../../lib/utils');
 
 exports.validateEmail = function (req, res) {
   var email = req.body;
