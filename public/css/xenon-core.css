@@ -3461,11 +3461,14 @@ body.chat-open #chat {
   background-color: rgba(79, 205, 252, 0.15);
 }
 .panel.panel-gray .panel-heading {
-  background-color: #e1e1e1;
+  background-color: #2C3D41;
   color: #717272;
 }
 .panel.panel-gray .panel-heading > .panel-title {
-  color: #717272;
+  color: #ddd;
+}
+.panel.panel-gray .panel-heading > .panel-title > strong {
+  font-weight: 300;
 }
 .panel.panel-gray .panel-heading > .panel-title > a {
   color: inherit;
@@ -6795,9 +6798,11 @@ a.text-white:hover {
 .bg-primary,
 .bg-success,
 .bg-info,
-.bg-warning,
 .bg-danger {
   padding: 10px 15px;
+}
+.bg-warning {
+  
 }
 .bg-muted {
   background-color: #d0d0d0;

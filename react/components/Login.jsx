@@ -92,6 +92,7 @@ var Login = React.createClass({
                   </div>
                   <br />
                   <p>Need a new account? <a href="/Signup">Create one now</a></p>
+                  <p>Test account: test@ux.com     password: 123456</p>
                   
                 </div>
               </form>
