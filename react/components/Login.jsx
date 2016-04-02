@@ -57,16 +57,17 @@ var Login = React.createClass({
         <div className="panel-heading loginlogo">
           <div className="panel-title">
             <h3><img src="/img/yf-logo.png" alt="user-image" className="img-circle img-inline" width={60} /> <span>Yang Fan Enroll</span></h3>
+            <p className="login-header">Test account: test@ux.com     password: 123456</p>
           </div>
         </div>
 
         <div className="panel-body">
           <div className="row">
             <div className='col-md-12'> 
-             
-             
-              <form className="-form-horizontal " onSubmit={this.handleSubmit}>
+                
 
+              <form className="-form-horizontal " onSubmit={this.handleSubmit}>
+                
 
                 <div className="form-group">
                   {/* <label htmlFor="email" className="col-sm-3 control-label">Email</label> */}
@@ -92,7 +93,7 @@ var Login = React.createClass({
                   </div>
                   <br />
                   <p>Need a new account? <a href="/Signup">Create one now</a></p>
-                  <p>Test account: test@ux.com     password: 123456</p>
+                  
                   
                 </div>
               </form>

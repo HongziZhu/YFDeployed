@@ -32816,17 +32816,18 @@ var Login = React.createClass({displayName: "Login",
       React.createElement("div", {className: "panel panel-primary"}, 
         React.createElement("div", {className: "panel-heading loginlogo"}, 
           React.createElement("div", {className: "panel-title"}, 
-            React.createElement("h3", null, React.createElement("img", {src: "/img/yf-logo.png", alt: "user-image", className: "img-circle img-inline", width: 60}), " ", React.createElement("span", null, "Yang Fan Enroll"))
+            React.createElement("h3", null, React.createElement("img", {src: "/img/yf-logo.png", alt: "user-image", className: "img-circle img-inline", width: 60}), " ", React.createElement("span", null, "Yang Fan Enroll")), 
+            React.createElement("p", {className: "login-header"}, "Test account: test@ux.com     password: 123456")
           )
         ), 
 
         React.createElement("div", {className: "panel-body"}, 
           React.createElement("div", {className: "row"}, 
             React.createElement("div", {className: "col-md-12"}, 
-             
-             
-              React.createElement("form", {className: "-form-horizontal ", onSubmit: this.handleSubmit}, 
+                
 
+              React.createElement("form", {className: "-form-horizontal ", onSubmit: this.handleSubmit}, 
+                
 
                 React.createElement("div", {className: "form-group"}, 
                   /* <label htmlFor="email" className="col-sm-3 control-label">Email</label> */
@@ -32851,8 +32852,8 @@ var Login = React.createClass({displayName: "Login",
                     React.createElement("button", {type: "submit", className: "btn btn-primary btn-block"}, "Log in")
                   ), 
                   React.createElement("br", null), 
-                  React.createElement("p", null, "Need a new account? ", React.createElement("a", {href: "/Signup"}, "Create one now")), 
-                  React.createElement("p", null, "Test account: test@ux.com     password: 123456")
+                  React.createElement("p", null, "Need a new account? ", React.createElement("a", {href: "/Signup"}, "Create one now"))
+                  
                   
                 )
               )
