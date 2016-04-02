@@ -16,13 +16,6 @@ var Footer = React.createClass({
           <div className="footer-left">
 
             <p className="footer-links">
-              <a href="#">Home</a>
-              &nbsp;·&nbsp;
-              <a href="#">Blog</a>
-              &nbsp;·&nbsp;
-              <a href="#">About</a>
-              &nbsp;·&nbsp;
-              <a href="#">Contact</a>
             </p>
 
             <p>Yang Fan Academy &copy; 2015</p>

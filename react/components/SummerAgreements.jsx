@@ -89,14 +89,12 @@ var SummerAgreements = React.createClass({
             <SunscreenPermit />
             <PhotoRelease />
 
-            <div className="row">
-              <div className='col-md-offset-1'>
-                <button type='submit' ref='confirmButton' className="btn btn-primary btn-lg">Confirm</button>&nbsp; {self.state.done ? <h5><span className="bg-info"> Submitted, please Continue. </span></h5> : <p></p>}
-              </div>
-            </div>
+ 
+                <button type='submit' ref='confirmButton' className="middleplaceapply btn materialbtn btn-lanse">Confirm</button>&nbsp; {self.state.done ? <h5><span className="bg-info"> Submitted, please Continue. </span></h5> : <p></p>}
+
           </form>
 
-          {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue} disabled>Continue</button>}
+          {(this.state.done) ? <button type="button" className="middleplace btn materialbtn btn-green btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="middleplace btn materialbtn btn-green btn-lg" onClick={this.handleContinue} disabled>Continue</button>}
         </div>
       </div>
     );

@@ -33,12 +33,12 @@ var CompletePage = React.createClass({
             </div>
 
             <div className="panel-body">
-              <div className="row col-md-offset-1">
-                <h4>
+              
+                
                   You have successfully finshed the summer camp enrollment for {this.state.studentName}.<br></br>
                   Now, you can LOG OUT or <a href='/user/getStarted'>START OVER</a> for your another child.
-                </h4>
-              </div>
+                
+              
             </div>
           </div>
 

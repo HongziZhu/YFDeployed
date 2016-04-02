@@ -31442,7 +31442,7 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
 
   render: function () {
     var self = this;
-    var info = (self.state.showInfo ? React.createElement("h4", null, React.createElement("span", {className: "bg-success"}, "If you want to change, please choose another and confirm again. Then please click Continue below")) : React.createElement("p", null));
+    var info = (self.state.showInfo ? React.createElement("h5", null, React.createElement("span", {className: "bg-info"}, "If you want to change, please choose another and confirm again. Then please click Continue below")) : React.createElement("p", null));
     return (
       React.createElement("div", {className: "page-container"}, 
       React.createElement(SideMenu, null), 
@@ -31530,14 +31530,12 @@ var AfternoonAcademics = React.createClass({displayName: "AfternoonAcademics",
             handleWriting: self.changeWriting, 
             handleMath: self.changeMath}) : React.createElement("p", null), 
 
-        React.createElement("div", {className: "row"}, 
-          React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"), React.createElement("br", null), 
-            info
-          )
-        ), 
-        this.state.done ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : 
-          React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
+        
+          
+            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "middleplaceapply btn materialbtn btn-lanse btn-lg"}, "Confirm"), React.createElement("br", null), 
+            info, 
+        this.state.done ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : 
+          React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
       )
       )
     );
@@ -32055,20 +32053,21 @@ var Attendance = React.createClass({displayName: "Attendance",
 
                       
                         
-                          React.createElement("button", {type: "submit", ref: "submitButton", className: "btn btn-primary apply-schedule"}, "Apply to Selected Weeks"), 
-                          React.createElement("button", {ref: "clearButton", className: "col-md-offset-4 btn btn-default clear-schedule", onClick: this.clearSchedule}, "Clear Existing Schedule"), 
-                          continueHelper
+                          React.createElement("button", {type: "submit", ref: "submitButton", className: "btn materialbtn btn-lanse apply-schedule"}, "Apply to Selected Weeks"), 
+                          React.createElement("button", {ref: "clearButton", className: "btn materialbtn btn-default clear-schedule", onClick: this.clearSchedule}, "Clear Existing Schedule")
+                          
                         
                       
                     )
                     )
                   
                )
-               )
+               ), 
+               continueHelper
               )
             )
           ), 
-          (this.state.allScheduled || this.state.enrollmentId) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
+          (this.state.allScheduled || this.state.enrollmentId) ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -32113,12 +32112,12 @@ var CompletePage = React.createClass({displayName: "CompletePage",
             ), 
 
             React.createElement("div", {className: "panel-body"}, 
-              React.createElement("div", {className: "row col-md-offset-1"}, 
-                React.createElement("h4", null, 
+              
+                
                   "You have successfully finshed the summer camp enrollment for ", this.state.studentName, ".", React.createElement("br", null), 
                   "Now, you can LOG OUT or ", React.createElement("a", {href: "/user/getStarted"}, "START OVER"), " for your another child."
-                )
-              )
+                
+              
             )
           )
 
@@ -32201,13 +32200,11 @@ var ConfirmPage = React.createClass({displayName: "ConfirmPage",
             )
           ), 
 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"), "  ", React.createElement("br", null)
-            )
-          ), 
 
-          this.state.done ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("p", null), 
+              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "middleplaceapply btn materialbtn btn-lanse"}, "Confirm"), "  ", React.createElement("br", null), 
+
+
+          this.state.done ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("p", null), 
           React.createElement("hr", null)
         )
       )
@@ -32533,11 +32530,11 @@ var SideMenu = require('./helpers/SideMenu.jsx');
 var GradeBox = React.createClass({displayName: "GradeBox",
   render: function() {
     return (
-      React.createElement("div", {className: "panel panel-primary"}, 
-        React.createElement("div", {className: "panel-heading"}, 
-          React.createElement("strong", null, "Select Incoming Grade as of Fall 2016 For ", this.props.stu_fname)
-        ), 
-        React.createElement("div", {className: "panel-body"}, 
+      React.createElement("div", {className: "step-container"}, 
+        
+        React.createElement("span", {className: "step-num"}, "3"), 
+        React.createElement("fieldset", {className: "step-detail"}, 
+        React.createElement("legend", {className: "step-label"}, "Select Incoming Grade as of Fall 2016 For ", this.props.stu_fname), 
         /*  <h4 className='bg-info'><span>e.g. If your child will be <ins>G3</ins> in Fall 2016, please select <ins>G3</ins> for him/her.</span></h4> */
         React.createElement("div", {className: "messageBox message_info", "aria-atomic": "true", "aria-live": "polite", role: "alert", tabIndex: 0}, 
           React.createElement("div", {className: "messageIcon"}, "Info"), 
@@ -32560,8 +32557,8 @@ var GradeBox = React.createClass({displayName: "GradeBox",
             React.createElement("option", {value: "G12"}, "G12")
           ), 
           React.createElement("br", null), 
-          React.createElement("button", {type: "button", className: "btn btn-info", ref: "stu_btn", onClick: this.props.showContinue}, "Confirm")
-        )
+          React.createElement("button", {type: "button", className: "btn materialbtn btn-lanse", ref: "stu_btn", onClick: this.props.showContinue}, "Confirm")
+          )
       )
     );
   }
@@ -32662,11 +32659,15 @@ var GetStarted = React.createClass({displayName: "GetStarted",
         React.createElement(SideMenu, null), 
 
         React.createElement("div", {className: "main-content col-md-12"}, 
-          React.createElement("div", {className: "panel panel-primary"}, 
+          React.createElement("div", {className: "panel panel-default panel-getstarted"}, 
             React.createElement("div", {className: "panel-heading"}, 
-              React.createElement("strong", null, "Select the Program to Enroll")
+             React.createElement("h2", null, "Get your enrollment started")
             ), 
             React.createElement("div", {className: "panel-body"}, 
+            React.createElement("div", {lassName: "step-container"}, 
+            React.createElement("span", {className: "step-num"}, "1"), 
+            React.createElement("fieldset", {className: "step-detail"}, 
+               React.createElement("legend", {className: "step-label"}, "Select the Program to Enroll"), 
               React.createElement("div", {className: "radio"}, 
                 React.createElement("label", null, React.createElement("input", {type: "radio", onChange: this.handleSelectProgram, value: "Summer Camp", name: "program", defaultChecked: true}), "Summer Camp")
               ), 
@@ -32677,28 +32678,37 @@ var GetStarted = React.createClass({displayName: "GetStarted",
                 React.createElement("label", null, React.createElement("input", {type: "radio", onChange: this.handleSelectProgram, value: "Elective and Enrichment", name: "program", disabled: true}), "Elective and Enrichment")
               ), 
 
-              React.createElement("button", {type: "button", className: "btn btn-info", ref: "program_btn", onClick: this.showChildBox}, "Confirm")
+              React.createElement("button", {type: "button", className: "btn materialbtn btn-lanse", ref: "program_btn", onClick: this.showChildBox}, "Confirm")
+             )
+             ), 
+             
+
+
+              this.state.showChild ? 
+              React.createElement("div", {className: "step-container"}, 
+              React.createElement("span", {className: "step-num"}, "2"), 
+              React.createElement("fieldset", {className: "step-detail"}, 
+              React.createElement("legend", {className: "step-label"}, "Select Your Child"), 
+              studentRows, 
+              React.createElement("button", {type: "button", className: "btn materialbtn btn-lanse", ref: "stu_btn", onClick: this.showGradeBox}, "Confirm")
+              )
+              ) : React.createElement("p", null), 
+
+
+            this.state.showGrade ? React.createElement(GradeBox, {
+            stu_fname: this.state.students[this.state.studentIndex].firstName, 
+            handleChange: this.handleSelectGrade, 
+            showContinue: this.showContinue}) : React.createElement("p", null)
+
             )
           ), 
 
 
-          this.state.showChild ? 
-          React.createElement("div", {className: "panel panel-primary"}, 
-            React.createElement("div", {className: "panel-heading"}, 
-              React.createElement("strong", null, "Select Your Child")
-            ), 
-            React.createElement("div", {className: "panel-body"}, 
-              studentRows, 
-              React.createElement("button", {type: "button", className: "btn btn-info", ref: "stu_btn", onClick: this.showGradeBox}, "Confirm")
-            )
-          ) : React.createElement("p", null), 
 
-          this.state.showGrade ? React.createElement(GradeBox, {
-            stu_fname: this.state.students[this.state.studentIndex].firstName, 
-            handleChange: this.handleSelectGrade, 
-            showContinue: this.showContinue}) : React.createElement("p", null), 
 
-          this.state.showContinue ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
+
+
+          this.state.showContinue ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
 
           )
       )
@@ -32841,7 +32851,8 @@ var Login = React.createClass({displayName: "Login",
                     React.createElement("button", {type: "submit", className: "btn btn-primary btn-block"}, "Log in")
                   ), 
                   React.createElement("br", null), 
-                  React.createElement("p", null, "Need a new account? ", React.createElement("a", {href: "/Signup"}, "Create one now"))
+                  React.createElement("p", null, "Need a new account? ", React.createElement("a", {href: "/Signup"}, "Create one now")), 
+                  React.createElement("p", null, "Test account: test@ux.com     password: 123456")
                   
                 )
               )
@@ -33147,13 +33158,11 @@ var OtherServices = React.createClass({displayName: "OtherServices",
           React.createElement(LunchBox, {summerCampWeeks: self.state.summerCampWeeks}), 
           React.createElement(PickupService, {summerCampWeeks: self.state.summerCampWeeks}), 
 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"), "  ", self.state.done ? React.createElement("h5", null, React.createElement("span", {className: "bg-info"}, " Submitted, please Continue. ")) : React.createElement("p", null)
-            )
-          ), 
 
-          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
+              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "middleplaceapply btn materialbtn btn-lanse"}, "Confirm"), "  ", self.state.done ? React.createElement("h5", null, React.createElement("span", {className: "bg-info"}, " Submitted, please continue. ")) : React.createElement("p", null), 
+
+
+          (this.state.done) ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -34377,7 +34386,7 @@ var Signup = React.createClass({displayName: "Signup",
 	},
 	render: function() {
     var SignupButton = (
-      this.state.done ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleSignup}, "Sign Up") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", disabled: true}, "Sign Up")
+      this.state.done ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleSignup}, "Sign Up") : React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", disabled: true}, "Sign Up")
     );
     var Student2 = (
       this.state.studentsNum >= 2 ? React.createElement(StudentBox, {ref: "student2", stuIdx: "2"}) : React.createElement("p", null)
@@ -34406,13 +34415,13 @@ var Signup = React.createClass({displayName: "Signup",
 
 		return (
       React.createElement("div", {className: "page-container"}, 
-      React.createElement("div", {className: "main-content col-md-12"}, 
+      React.createElement("div", {className: "main-content whitebackground col-md-12"}, 
       React.createElement("div", {className: "col-md-8 col-md-offset-2"}, 
         React.createElement("hr", null), 
         React.createElement("div", {className: " panel panel-primary"}, 
           React.createElement("div", {className: "panel-heading"}, 
             React.createElement("div", {className: "panel-title"}, 
-              "Sign up"
+              React.createElement("h2", null, "Sign up")
             )
           ), 
 
@@ -34505,12 +34514,13 @@ var Signup = React.createClass({displayName: "Signup",
                     
                       
                         
-                          React.createElement("h3", null, "Student(s) Information"), 
+                          
                         
                       
 
                       
-                        React.createElement("div", {className: "row"}, 
+                       
+                        React.createElement("h4", null, "Student(s) Information"), 
                           React.createElement(StudentBox, {ref: "student1", stuIdx: "1"}), 
                           Student2, 
                           Student3, 
@@ -34519,13 +34529,13 @@ var Signup = React.createClass({displayName: "Signup",
                           Student6, 
                           Student7, 
                           Student8, 
-                          React.createElement("div", {className: "col-md-10 col-md-offset-1"}, 
+                          React.createElement("div", {className: "col-md-10"}, 
                             React.createElement("div", {className: "row"}, 
-                              React.createElement("button", {onClick: this.addStudent, ref: "addButton", className: "btn btn-info"}, "+ Add Student"), 
-                              React.createElement("button", {onClick: this.removeStudent, ref: "removeButton", className: "col-md-offset-1 btn btn-danger"}, "- Remove Student")
+                              React.createElement("button", {onClick: this.addStudent, ref: "addButton", className: "btn materialbtn btn-info"}, "+ Add Student"), 
+                              React.createElement("button", {onClick: this.removeStudent, ref: "removeButton", className: "col-md-offset-1 btn materialbtn btn-danger"}, "- Remove Student")
                             )
                           )
-                        )
+                        
                       
                                         
                   ), 
@@ -34534,8 +34544,8 @@ var Signup = React.createClass({displayName: "Signup",
 /*  Confirmation */
                   React.createElement("div", {className: "checkbox"}, 
                     React.createElement("label", null, 
-                      React.createElement("h4", null, React.createElement("input", {type: "checkbox", onChange: this.changeAccept}), 
-                      "I accept the ", React.createElement("a", {onClick: this.showLiabilityRelease}, "Liability Release"), " from Yang Fan Academy."), 
+                      React.createElement("input", {type: "checkbox", onChange: this.changeAccept}), 
+                      "I accept the ", React.createElement("a", {onClick: this.showLiabilityRelease}, "Liability Release"), " from Yang Fan Academy.", 
                       this.state.showLiabilityRelease ? React.createElement("div", {className: "bg-info"}, 
                         "I, the undersigned, in consideration of participation in the programs offered by Little Ivy League/Yang Fan Academy 扬帆课后书苑 (the “Program”), agree to indemnify and release the Program from any and all liabilities from any injuries which may be suffered by the above named child, arising out of, or in any way connected with participation in the classes or activities offered by the Program, except to the extent attributable to willful act or active negligence of the Program or its officers, staff, agents or employees. I, the undersigned, as the parent/guardian, acknowledge that the above named child is being enrolled in a program that consists of entertaining and recreational components, and that the Program is an exempt, NOT licensed childcare. I ACKNOWLEDGE THAT I HAVE READ THE ABOVE AGREEMENT AND RELEASE, AND FULLY UNDERSTAND THAT I HAVE ASSUMED ALL THE RISKS FOR INJURY THAT MAY INVOLVE IN THE ACTIVITIES OFFERED BY THE PROGRAM. I hereby further authorize the Program as my agent for the above named child to consent to any medical diagnosis or treatment and hospital care rendered by and under the general supervision and advice of a licensed physician or surgeon in case of accident or illness during the session of any classes or activities offered by the Program."
                       ) : React.createElement("p", null)
@@ -34544,7 +34554,7 @@ var Signup = React.createClass({displayName: "Signup",
                   React.createElement("hr", null), 
                   HelpBlock, 
 
-                  React.createElement("button", {type: "submit", ref: "confirmButton", className: "btn btn-primary"}, "Confirm")
+                  React.createElement("button", {type: "submit", ref: "confirmButton", className: "middleplaceapply btn materialbtn btn-lanse"}, "Confirm")
                   
                   
 
@@ -34661,14 +34671,12 @@ var SummerAgreements = React.createClass({displayName: "SummerAgreements",
             React.createElement(SunscreenPermit, null), 
             React.createElement(PhotoRelease, null), 
 
-            React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("button", {type: "submit", ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"), "  ", self.state.done ? React.createElement("h5", null, React.createElement("span", {className: "bg-info"}, " Submitted, please Continue. ")) : React.createElement("p", null)
-              )
-            )
+ 
+                React.createElement("button", {type: "submit", ref: "confirmButton", className: "middleplaceapply btn materialbtn btn-lanse"}, "Confirm"), "  ", self.state.done ? React.createElement("h5", null, React.createElement("span", {className: "bg-info"}, " Submitted, please Continue. ")) : React.createElement("p", null)
+
           ), 
 
-          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
+          (this.state.done) ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -35147,16 +35155,16 @@ var Week1 = React.createClass({displayName: "Week1",
                 summerCampWeeks: self.state.summerCampWeeks})
             ), 
 
-            React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"
+            
+              
+                React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "middleplaceapply btn materialbtn btn-lanse"}, "Confirm"
                 ), React.createElement("br", null)
-              )
-            )
+              
+            
           ), 
         
 
-        (this.state.done || show) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", disabled: true}, "Continue")
+        (this.state.done || show) ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", disabled: true}, "Continue")
         )
       )
     );
@@ -35259,16 +35267,14 @@ var Week10 = React.createClass({displayName: "Week10",
                 summerCampWeeks: self.state.summerCampWeeks})
             ), 
 
-            React.createElement("div", {className: "row"}, 
-              React.createElement("div", {className: "col-md-offset-1"}, 
-                React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"
+
+                React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "middleplaceapply btn materialbtn btn-lanse"}, "Confirm"
                 ), React.createElement("br", null)
-              )
-            )
+
           ), 
         
 
-        (this.state.done || show) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", disabled: true}, "Continue")
+        (this.state.done || show) ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", disabled: true}, "Continue")
         )
       )
     );
@@ -35367,7 +35373,14 @@ var Week2 = React.createClass({displayName: "Week2",
           summerCampWeeks: this.state.summerCampWeeks}), 
 
         React.createElement("div", {className: "main-content col-md-12 "}, 
-        React.createElement("h2", {className: "bg-success"}, preWeekTitle, "  (", coveredDate[0], ")"), React.createElement("hr", null), 
+          React.createElement("div", {className: "panel panel-primary panel-week"}, 
+            React.createElement("div", {className: "panel-heading"}, 
+                React.createElement("div", {className: "panel-title"}, 
+                  React.createElement("h2", null, preWeekTitle), 
+                  React.createElement("p", null, coveredDate[0])
+                )
+            )
+          ), 
          !preShow ? 
           React.createElement("h3", null, "You plan not to attend in this week, please Continue.") :
           React.createElement("div", null, 
@@ -35417,7 +35430,7 @@ var Week2 = React.createClass({displayName: "Week2",
                 postWeek: postWeek, 
                 postWeekIdx: postWeekIdx, 
                 incomingGrade: self.state.incomingGrade, 
-                summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null), 
+                summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", {className: "absence"}), 
               self.state.math === 'advanced' ? 
               React.createElement(AdvancedMathUnit, {
                 preWeek: preWeek, 
@@ -35425,19 +35438,19 @@ var Week2 = React.createClass({displayName: "Week2",
                 postWeek: postWeek, 
                 postWeekIdx: postWeekIdx, 
                 incomingGrade: self.state.incomingGrade, 
-                summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", null)
+                summerCampWeeks: self.state.summerCampWeeks}) : React.createElement("p", {className: "absence"})
               )
             
         )
-        : React.createElement("p", null), 
+        : React.createElement("p", {className: "absence"}), 
 
-        React.createElement("div", {className: "row"}, 
-          React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-lg btn-primary"}, "Confirm")
-          )
-        ), 
+       
+          
+            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "middleplaceapply btn materialbtn btn-lanse"}, "Confirm"), 
+          
+        
 
-        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-lg btn-success", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
+        (this.state.done) ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -35537,7 +35550,14 @@ var Week3 = React.createClass({displayName: "Week3",
           summerCampWeeks: this.state.summerCampWeeks}), 
           
         React.createElement("div", {className: "main-content col-md-12"}, 
-          React.createElement("h2", {className: "bg-success"}, postWeekTitle, "   (", coveredDate[1], ")"), React.createElement("hr", null), 
+          React.createElement("div", {className: "panel panel-primary panel-week"}, 
+            React.createElement("div", {className: "panel-heading"}, 
+                React.createElement("div", {className: "panel-title"}, 
+                  React.createElement("h2", null, postWeekTitle), 
+                  React.createElement("p", null, coveredDate[1])
+                )
+            )
+          ), 
            !postShow ? 
             React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
             React.createElement("div", null, 
@@ -35552,14 +35572,14 @@ var Week3 = React.createClass({displayName: "Week3",
               curWeekIdx: postWeekIdx, 
               incomingGrade: self.state.incomingGrade, 
               summerCampWeeks: self.state.summerCampWeeks}) :
-              React.createElement("p", null), 
+              React.createElement("p", {className: "absence"}), 
             self.state.math === 'elective' ?
             React.createElement(MathElective, {
               curWeek: postWeek, 
               curWeekIdx: postWeekIdx, 
               incomingGrade: self.state.incomingGrade, 
               summerCampWeeks: self.state.summerCampWeeks}) :
-            React.createElement("p", null), 
+            React.createElement("p", {className: "absence"}), 
             React.createElement(MathOlympiad, {
               curWeek: postWeek, 
               curWeekIdx: postWeekIdx, 
@@ -35572,14 +35592,13 @@ var Week3 = React.createClass({displayName: "Week3",
               summerCampWeeks: self.state.summerCampWeeks})
             ), 
           
-          React.createElement("hr", null), 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"), "  ", React.createElement("br", null)
-            )
-          ), 
 
-          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
+
+            
+              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "middleplaceapply btn materialbtn btn-lanse"}, "Confirm"), "  ", React.createElement("br", null), 
+
+
+          (this.state.done) ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -35678,7 +35697,14 @@ var Week4 = React.createClass({displayName: "Week4",
           summerCampWeeks: this.state.summerCampWeeks}), 
           
         React.createElement("div", {className: "main-content col-md-12 "}, 
-        React.createElement("h2", {className: "bg-success"}, preWeekTitle, "  (", coveredDate[0], ")"), React.createElement("hr", null), 
+          React.createElement("div", {className: "panel panel-primary panel-week"}, 
+            React.createElement("div", {className: "panel-heading"}, 
+                React.createElement("div", {className: "panel-title"}, 
+                  React.createElement("h2", null, preWeekTitle), 
+                  React.createElement("p", null, coveredDate[0])
+                )
+            )
+          ), 
          !preShow ? 
           React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
           React.createElement("div", null, 
@@ -35742,13 +35768,13 @@ var Week4 = React.createClass({displayName: "Week4",
         )
         : React.createElement("p", null), 
 
-        React.createElement("div", {className: "row"}, 
-          React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm")
-          )
-        ), 
+        
+          
+            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "middleplaceapply btn materialbtn btn-lanse"}, "Confirm"), 
+          
+        
 
-        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
+        (this.state.done) ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -35848,7 +35874,14 @@ var Week5 = React.createClass({displayName: "Week5",
           summerCampWeeks: this.state.summerCampWeeks}), 
           
         React.createElement("div", {className: "main-content col-md-12"}, 
-          React.createElement("h2", {className: "bg-success"}, postWeekTitle, "   (", coveredDate[1], ")"), React.createElement("hr", null), 
+            React.createElement("div", {className: "panel panel-primary panel-week"}, 
+              React.createElement("div", {className: "panel-heading"}, 
+                React.createElement("div", {className: "panel-title"}, 
+                  React.createElement("h2", null, postWeekTitle), 
+                  React.createElement("p", null, coveredDate[1])
+                )
+            )
+          ), 
            !postShow ? 
             React.createElement("h3", null, "You plan not to attend in this week, please Confirm and Continue.") :
             React.createElement("div", null, 
@@ -35863,14 +35896,14 @@ var Week5 = React.createClass({displayName: "Week5",
               curWeekIdx: postWeekIdx, 
               incomingGrade: self.state.incomingGrade, 
               summerCampWeeks: self.state.summerCampWeeks}) :
-              React.createElement("p", null), 
+              React.createElement("p", {className: "absence"}), 
             self.state.math === 'elective' ?
             React.createElement(MathElective, {
               curWeek: postWeek, 
               curWeekIdx: postWeekIdx, 
               incomingGrade: self.state.incomingGrade, 
               summerCampWeeks: self.state.summerCampWeeks}) :
-            React.createElement("p", null), 
+            React.createElement("p", {className: "absence"}), 
             React.createElement(MathOlympiad, {
               curWeek: postWeek, 
               curWeekIdx: postWeekIdx, 
@@ -35883,14 +35916,12 @@ var Week5 = React.createClass({displayName: "Week5",
               summerCampWeeks: self.state.summerCampWeeks})
             ), 
           
-          React.createElement("hr", null), 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"), "  ", React.createElement("br", null)
-            )
-          ), 
 
-          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
+
+              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "middleplaceapply btn materialbtn btn-lanse"}, "Confirm"), "  ", React.createElement("br", null), 
+
+
+          (this.state.done) ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -36067,13 +36098,13 @@ var Week6 = React.createClass({displayName: "Week6",
         )
         : React.createElement("p", null), 
 
-        React.createElement("div", {className: "row"}, 
-          React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm")
-          )
-        ), 
+        
+          
+            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "middleplaceapply btn materialbtn btn-lanse"}, "Confirm"), 
+          
+        
 
-        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
+        (this.state.done) ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -36216,14 +36247,13 @@ var Week7 = React.createClass({displayName: "Week7",
               summerCampWeeks: self.state.summerCampWeeks})
             ), 
           
-          React.createElement("hr", null), 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"), "  ", React.createElement("br", null)
-            )
-          ), 
 
-          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
+          
+            
+              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "middleplaceapply btn materialbtn btn-lanse"}, "Confirm"), "  ", React.createElement("br", null), 
+
+
+          (this.state.done) ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -36401,13 +36431,11 @@ var Week8 = React.createClass({displayName: "Week8",
         )
         : React.createElement("p", null), 
 
-        React.createElement("div", {className: "row"}, 
-          React.createElement("div", {className: "col-md-offset-1"}, 
-            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm")
-          )
-        ), 
 
-        (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
+            React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "middleplaceapply btn materialbtn btn-lanse"}, "Confirm"), 
+
+
+        (this.state.done) ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -36549,14 +36577,11 @@ var Week9 = React.createClass({displayName: "Week9",
               summerCampWeeks: self.state.summerCampWeeks})
             ), 
           
-          React.createElement("hr", null), 
-          React.createElement("div", {className: "row"}, 
-            React.createElement("div", {className: "col-md-offset-1"}, 
-              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "btn btn-primary btn-lg"}, "Confirm"), "  ", React.createElement("br", null)
-            )
-          ), 
+ 
+              React.createElement("button", {onClick: this.handleConfirm, ref: "confirmButton", className: "middleplaceapply btn materialbtn btn-lanse"}, "Confirm"), "  ", React.createElement("br", null), 
 
-          (this.state.done) ? React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "col-md-offset-10 btn btn-success btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
+
+          (this.state.done) ? React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue}, "Continue") : React.createElement("button", {type: "button", className: "middleplace btn materialbtn btn-green btn-lg", onClick: this.handleContinue, disabled: true}, "Continue")
         )
       )
     );
@@ -37202,14 +37227,7 @@ var Footer = React.createClass({displayName: "Footer",
 
           React.createElement("div", {className: "footer-left"}, 
 
-            React.createElement("p", {className: "footer-links"}, 
-              React.createElement("a", {href: "#"}, "Home"), 
-              " · ", 
-              React.createElement("a", {href: "#"}, "Blog"), 
-              " · ", 
-              React.createElement("a", {href: "#"}, "About"), 
-              " · ", 
-              React.createElement("a", {href: "#"}, "Contact")
+            React.createElement("p", {className: "footer-links"}
             ), 
 
             React.createElement("p", null, "Yang Fan Academy © 2015"), 
@@ -37287,7 +37305,7 @@ var ScheduleTable = React.createClass({displayName: "ScheduleTable",
 
         React.createElement("div", {className: "row"}, 
         React.createElement("div", {className: "col-md-12"}, 
-            React.createElement("button", {ref: "deleteButton", className: "btn btn-danger", onClick: this.deleteSchedule}, "Delete This Schedule"), 
+            React.createElement("button", {ref: "deleteButton", className: "btn materialbtn btn-red", onClick: this.deleteSchedule}, "Delete This Schedule"), 
             /*  <span className="bg-warning"><strong>(All related enrollment data will also be deleted)</strong></span> */
         React.createElement("div", {className: "messageBox warning_info", "aria-atomic": "true", "aria-live": "polite", role: "alert", tabIndex: 0, style: {marginTop: 10}}, React.createElement("div", {className: "messageIcon"}, "Info"), React.createElement("span", null, "All related enrollment data will also be deleted."), " ")
         )

@@ -12,11 +12,11 @@ var SideMenu = require('./helpers/SideMenu.jsx');
 var GradeBox = React.createClass({
   render: function() {
     return (
-      <div className="panel panel-primary">
-        <div className="panel-heading">
-          <strong>Select Incoming Grade as of Fall 2016 For {this.props.stu_fname}</strong>
-        </div>
-        <div className="panel-body">
+      <div className="step-container">
+        
+        <span className="step-num">3</span>
+        <fieldset className="step-detail">
+        <legend className="step-label">Select Incoming Grade as of Fall 2016 For {this.props.stu_fname}</legend>
         {/*  <h4 className='bg-info'><span>e.g. If your child will be <ins>G3</ins> in Fall 2016, please select <ins>G3</ins> for him/her.</span></h4> */}
         <div className="messageBox message_info" aria-atomic="true" aria-live="polite" role="alert" tabIndex={0}>
           <div className="messageIcon">Info</div>
@@ -39,8 +39,8 @@ var GradeBox = React.createClass({
             <option value='G12'>G12</option>
           </select> 
           <br></br>
-          <button type="button" className="btn btn-info" ref='stu_btn' onClick={this.props.showContinue}>Confirm</button>
-        </div>
+          <button type="button" className="btn materialbtn btn-lanse" ref='stu_btn' onClick={this.props.showContinue}>Confirm</button>
+          </fieldset>
       </div>
     );
   }
@@ -141,11 +141,15 @@ var GetStarted = React.createClass({
         <SideMenu />
 
         <div className='main-content col-md-12'>
-          <div className="panel panel-primary">
+          <div className="panel panel-default panel-getstarted">
             <div className="panel-heading">
-              <strong>Select the Program to Enroll</strong>
+             <h2>Get your enrollment started</h2> 
             </div>
             <div className="panel-body">
+            <div lassName="step-container">
+            <span className="step-num">1</span>
+            <fieldset className="step-detail">
+               <legend className="step-label">Select the Program to Enroll</legend>
               <div className="radio">
                 <label><input type="radio" onChange={this.handleSelectProgram} value="Summer Camp" name='program' defaultChecked/>Summer Camp</label>
               </div>
@@ -156,28 +160,37 @@ var GetStarted = React.createClass({
                 <label><input type="radio" onChange={this.handleSelectProgram} value="Elective and Enrichment" name='program' disabled/>Elective and Enrichment</label>
               </div>
 
-              <button type="button" className="btn btn-info" ref='program_btn' onClick={this.showChildBox}>Confirm</button>
-            </div>
-          </div>
+              <button type="button" className="btn materialbtn btn-lanse" ref='program_btn' onClick={this.showChildBox}>Confirm</button>
+             </fieldset>
+             </div>
+             
 
 
-          {this.state.showChild ? 
-          <div className="panel panel-primary">
-            <div className="panel-heading">
-              <strong>Select Your Child</strong>
-            </div>
-            <div className="panel-body">
+              {this.state.showChild ? 
+              <div className="step-container">
+              <span className="step-num">2</span>
+              <fieldset className="step-detail">
+              <legend className="step-label">Select Your Child</legend>
               {studentRows}
-              <button type="button" className="btn btn-info" ref='stu_btn' onClick={this.showGradeBox}>Confirm</button>
-            </div>
-          </div> : <p></p>}
+              <button type="button" className="btn materialbtn btn-lanse" ref='stu_btn' onClick={this.showGradeBox}>Confirm</button>
+              </fieldset>
+              </div> : <p></p>}
 
-          {this.state.showGrade ? <GradeBox 
+
+            {this.state.showGrade ? <GradeBox 
             stu_fname={this.state.students[this.state.studentIndex].firstName} 
             handleChange={this.handleSelectGrade} 
             showContinue={this.showContinue} /> : <p></p> }
 
-          {this.state.showContinue ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue} disabled>Continue</button>}
+            </div>
+          </div>
+
+
+
+
+
+
+          {this.state.showContinue ? <button type="button" className="middleplace btn materialbtn btn-green btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="middleplace btn materialbtn btn-green btn-lg" onClick={this.handleContinue} disabled>Continue</button>}
 
           </div>
       </div>

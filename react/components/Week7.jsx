@@ -131,14 +131,13 @@ var Week7 = React.createClass({
               summerCampWeeks={self.state.summerCampWeeks}/>
             </div>
           }
-          <hr></hr>
-          <div className="row">
-            <div className='col-md-offset-1'>
-              <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary btn-lg">Confirm</button>&nbsp; <br></br>
-            </div>
-          </div>
 
-          {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue} disabled>Continue</button>}
+          
+            
+              <button onClick={this.handleConfirm} ref='confirmButton' className="middleplaceapply btn materialbtn btn-lanse">Confirm</button>&nbsp; <br></br>
+
+
+          {(this.state.done) ? <button type="button" className="middleplace btn materialbtn btn-green btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="middleplace btn materialbtn btn-green btn-lg" onClick={this.handleContinue} disabled>Continue</button>}
         </div>
       </div>
     );

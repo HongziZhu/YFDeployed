@@ -60,7 +60,7 @@ var ScheduleTable = React.createClass({
 
         <div className="row">
         <div className="col-md-12">
-            <button ref='deleteButton' className="btn btn-danger" onClick={this.deleteSchedule}>Delete This Schedule</button>
+            <button ref='deleteButton' className="btn materialbtn btn-red" onClick={this.deleteSchedule}>Delete This Schedule</button>
             {/*  <span className="bg-warning"><strong>(All related enrollment data will also be deleted)</strong></span> */}
         <div className="messageBox warning_info" aria-atomic="true" aria-live="polite" role="alert" tabIndex={0} style={{marginTop: 10}}><div className="messageIcon">Info</div><span>All related enrollment data will also be deleted.</span> </div>
         </div>

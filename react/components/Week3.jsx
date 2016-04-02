@@ -88,7 +88,14 @@ var Week3 = React.createClass({
           summerCampWeeks={this.state.summerCampWeeks}/>
           
         <div className='main-content col-md-12'>
-          <h2 className="bg-success">{postWeekTitle} &nbsp; ({coveredDate[1]})</h2><hr></hr>
+          <div className="panel panel-primary panel-week">
+            <div className="panel-heading">
+                <div className="panel-title">
+                  <h2>{postWeekTitle}</h2>
+                  <p>{coveredDate[1]}</p>
+                </div>
+            </div>
+          </div> 
           { !postShow ? 
             <h3>You plan not to attend in this week, please Confirm and Continue.</h3> :
             <div>
@@ -103,14 +110,14 @@ var Week3 = React.createClass({
               curWeekIdx={postWeekIdx}
               incomingGrade={self.state.incomingGrade} 
               summerCampWeeks={self.state.summerCampWeeks}/> :
-              <p></p>}
+              <p  className="absence"></p>}
             {self.state.math === 'elective' ?
             <MathElective 
               curWeek={postWeek} 
               curWeekIdx={postWeekIdx}
               incomingGrade={self.state.incomingGrade} 
               summerCampWeeks={self.state.summerCampWeeks}/> :
-            <p></p>}
+            <p  className="absence"></p>}
             <MathOlympiad 
               curWeek={postWeek} 
               curWeekIdx={postWeekIdx}
@@ -123,14 +130,13 @@ var Week3 = React.createClass({
               summerCampWeeks={self.state.summerCampWeeks}/>
             </div>
           }
-          <hr></hr>
-          <div className="row">
-            <div className='col-md-offset-1'>
-              <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary btn-lg">Confirm</button>&nbsp; <br></br>
-            </div>
-          </div>
 
-          {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue} disabled>Continue</button>}
+
+            
+              <button onClick={this.handleConfirm} ref='confirmButton' className="middleplaceapply btn materialbtn btn-lanse">Confirm</button>&nbsp; <br></br>
+
+
+          {(this.state.done) ? <button type="button" className="middleplace btn materialbtn btn-green btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="middleplace btn materialbtn btn-green btn-lg" onClick={this.handleContinue} disabled>Continue</button>}
         </div>
       </div>
     );

@@ -409,9 +409,9 @@ var Attendance = React.createClass({
 
                       
                         
-                          <button type="submit" ref='submitButton' className="btn btn-primary apply-schedule">Apply to Selected Weeks</button>
-                          <button ref='clearButton' className="col-md-offset-4 btn btn-default clear-schedule" onClick={this.clearSchedule}>Clear Existing Schedule</button>
-                          {continueHelper}
+                          <button type="submit" ref='submitButton' className="btn materialbtn btn-lanse apply-schedule">Apply to Selected Weeks</button>
+                          <button ref='clearButton' className="btn materialbtn btn-default clear-schedule" onClick={this.clearSchedule}>Clear Existing Schedule</button>
+                          
                         
                       
                     </form>  
@@ -419,10 +419,11 @@ var Attendance = React.createClass({
                   
                </div> 
                </div>
+               {continueHelper}
               </div>
             </div>}
           </div>
-          {(this.state.allScheduled || this.state.enrollmentId) ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue} disabled>Continue</button> }
+          {(this.state.allScheduled || this.state.enrollmentId) ? <button type="button" className="middleplace btn materialbtn btn-green btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="middleplace btn materialbtn btn-green btn-lg" onClick={this.handleContinue} disabled>Continue</button> }
         </div>
       </div>
     );

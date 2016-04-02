@@ -599,6 +599,18 @@ h3{
   font-weight: 500;
 }
 
+.panel.panel-getstarted .panel-body > strong {
+  font-size: 20px;
+  color: #000;
+  font-weight: 500;
+}
+
+.panel.panel-getstarted .panel-body > div > strong {
+  font-size: 20px;
+  color: #000;
+  font-weight: 500;
+}
+
 .panel.panel-color .panel-body > div > p.sorry_info {
   color: #000;
 }
@@ -621,6 +633,42 @@ p.absence {
   color: #B40000;
 }
 
+.step-container{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.step-detail{
+  margin-left: 60px;
+}
+
+.step-num{
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    -o-border-radius: 40px;
+    border-radius: 40px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px !important;
+    text-align: center;
+    font-size: 20px;
+    line-height: 20px;
+    color: #1DB0ED;
+    font-weight: 300;
+    float: left;
+}
+.step-detail .step-label {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 18px;
+    color: #000;
+    color: #333;
+    padding: 12px 0;
+    float: none;
+    width: 100%;
+    border-bottom: 0px solid #e5e5e5;
+}
+
 /* -----------------------------------------------
   Material Panel
   ------------------------------------------------ */
@@ -632,6 +680,8 @@ p.absence {
     margin: 0 0 32px 0;
     padding: 0 0 0 0;
 }
+
+
 
 .panel.panel-default .panel-heading {
     color: #616161;
@@ -669,6 +719,11 @@ p.absence {
     width: 100%;
     position: relative;
 }
+
+.panel-default.panel-getstarted .panel-body{
+  padding-bottom: 50px;
+}
+
 
 .panel.panel-default .panel-heading h2 {
     color: #616161;
@@ -1018,4 +1073,74 @@ padding: 0px !important;
     color: #666;
     background-color: #fff;
     border-color: #ccc;
+}
+
+.materialbtn {
+    border: none;
+    border-radius: 2px;
+    position: relative;
+    padding: 8px 30px;
+    margin: 10px 1px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0;
+    will-change: box-shadow, transform;
+    transition: box-shadow 0.2s cubic-bezier(0.4, 0, 1, 1), background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    outline: 0;
+    cursor: pointer;
+    text-decoration: none;
+    background: transparent;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.14), 0 2px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+}
+
+.materialbtn.btn-lanse{
+  /*background-color: #03a9f4;*/
+  background-color: #1DB0ED;
+  color: rgba(255,255,255, 0.84);
+}
+.materialbtn.btn-lanse:hover, .materialbtn.btn-lanse:focus, .materialbtn.btn-lanse:active{
+  background-color: #0fb2fc;
+  color: rgba(255,255,255, 1);
+}
+.materialbtn.btn-green{
+  /*background-color: #03a9f4;*/
+  background-color: #8bc34a;
+  color: rgba(255,255,255, 0.84);
+}
+
+.materialbtn.btn-green:hover{
+  /*background-color: #03a9f4;*/
+  background-color: 7AAB42;
+}
+.middleplace{
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block;
+  width: 129px;
+  margin-bottom: 80px;
+  margin-top: 80px;
+}
+.middleplaceapply{
+  margin-left: auto !important;
+  margin-right: auto !important;
+  display: block;
+  width: 129px;
+  margin-top: 30px;
+}
+
+.btn-info {
+    color: #fff;
+    background-color: #5bc0de;
+    
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #d9534f;
+    
+}
+
+.whitebackground{
+  background-color: #fff !important;
 }

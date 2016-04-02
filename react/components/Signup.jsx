@@ -151,7 +151,7 @@ var Signup = React.createClass({
 	},
 	render: function() {
     var SignupButton = (
-      this.state.done ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleSignup}>Sign Up</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" disabled>Sign Up</button>
+      this.state.done ? <button type="button" className="middleplace btn materialbtn btn-green btn-lg" onClick={this.handleSignup}>Sign Up</button> : <button type="button" className="middleplace btn materialbtn btn-green btn-lg" disabled>Sign Up</button>
     );
     var Student2 = (
       this.state.studentsNum >= 2 ? <StudentBox ref='student2' stuIdx='2'/> : <p></p>
@@ -180,13 +180,13 @@ var Signup = React.createClass({
 
 		return (
       <div className='page-container'>
-      <div className='main-content col-md-12'>
+      <div className='main-content whitebackground col-md-12'>
       <div className='col-md-8 col-md-offset-2'>
         <hr></hr>
         <div className=" panel panel-primary">
           <div className="panel-heading">
             <div className="panel-title">
-              Sign up
+              <h2>Sign up</h2>
             </div>
           </div>
 
@@ -279,12 +279,13 @@ var Signup = React.createClass({
                     
                       
                         
-                          <h3>Student(s) Information</h3>
+                          
                         
                       
 
                       
-                        <div className="row">
+                       
+                        <h4>Student(s) Information</h4>
                           <StudentBox ref='student1' stuIdx='1'/>
                           {Student2}
                           {Student3}
@@ -293,13 +294,13 @@ var Signup = React.createClass({
                           {Student6}
                           {Student7}
                           {Student8}
-                          <div className="col-md-10 col-md-offset-1">
+                          <div className="col-md-10">
                             <div className='row'>
-                              <button onClick={this.addStudent} ref='addButton' className="btn btn-info">+ Add Student</button>
-                              <button onClick={this.removeStudent} ref='removeButton' className="col-md-offset-1 btn btn-danger">- Remove Student</button>
+                              <button onClick={this.addStudent} ref='addButton' className="btn materialbtn btn-info">+ Add Student</button>
+                              <button onClick={this.removeStudent} ref='removeButton' className="col-md-offset-1 btn materialbtn btn-danger">- Remove Student</button>
                             </div>
                           </div>
-                        </div>
+                        
                       
                                         
                   </div>
@@ -308,8 +309,8 @@ var Signup = React.createClass({
 {/*  Confirmation */}
                   <div className="checkbox">
                     <label>
-                      <h4><input type="checkbox" onChange={this.changeAccept}/>
-                      I accept the <a onClick={this.showLiabilityRelease}>Liability Release</a> from Yang Fan Academy.</h4>
+                      <input type="checkbox" onChange={this.changeAccept}/>
+                      I accept the <a onClick={this.showLiabilityRelease}>Liability Release</a> from Yang Fan Academy.
                       {this.state.showLiabilityRelease ? <div className="bg-info">
                         I, the undersigned, in consideration of participation in the programs offered by Little Ivy League/Yang Fan Academy 扬帆课后书苑 (the “Program”), agree to indemnify and release the Program from any and all liabilities from any injuries which may be suffered by the above named child, arising out of, or in any way connected with participation in the classes or activities offered by the Program, except to the extent attributable to willful act or active negligence of the Program or its officers, staff, agents or employees. I, the undersigned, as the parent/guardian, acknowledge that the above named child is being enrolled in a program that consists of entertaining and recreational components, and that the Program is an exempt, NOT licensed childcare. I ACKNOWLEDGE THAT I HAVE READ THE ABOVE AGREEMENT AND RELEASE, AND FULLY UNDERSTAND THAT I HAVE ASSUMED ALL THE RISKS FOR INJURY THAT MAY INVOLVE IN THE ACTIVITIES OFFERED BY THE PROGRAM. I hereby further authorize the Program as my agent for the above named child to consent to any medical diagnosis or treatment and hospital care rendered by and under the general supervision and advice of a licensed physician or surgeon in case of accident or illness during the session of any classes or activities offered by the Program.
                       </div> : <p></p> }
@@ -318,7 +319,7 @@ var Signup = React.createClass({
                   <hr></hr>
                   {HelpBlock}
 
-                  <button type="submit" ref="confirmButton" className="btn btn-primary">Confirm</button>
+                  <button type="submit" ref="confirmButton" className="middleplaceapply btn materialbtn btn-lanse">Confirm</button>
                   
                   
 

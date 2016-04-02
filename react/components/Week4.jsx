@@ -87,7 +87,14 @@ var Week4 = React.createClass({
           summerCampWeeks={this.state.summerCampWeeks}/>
           
         <div className='main-content col-md-12 '>
-        <h2 className="bg-success">{preWeekTitle}&nbsp; ({coveredDate[0]})</h2><hr></hr>
+          <div className="panel panel-primary panel-week">
+            <div className="panel-heading">
+                <div className="panel-title">
+                  <h2>{preWeekTitle}</h2>
+                  <p>{coveredDate[0]}</p>
+                </div>
+            </div>
+          </div> 
         { !preShow ? 
           <h3>You plan not to attend in this week, please Confirm and Continue.</h3> :
           <div>
@@ -151,13 +158,13 @@ var Week4 = React.createClass({
         </div>
         : <p></p>}
 
-        <div className="row">
-          <div className='col-md-offset-1'>
-            <button onClick={this.handleConfirm} ref='confirmButton' className="btn btn-primary btn-lg">Confirm</button>
-          </div>
-        </div>
+        
+          
+            <button onClick={this.handleConfirm} ref='confirmButton' className="middleplaceapply btn materialbtn btn-lanse">Confirm</button>
+          
+        
 
-        {(this.state.done) ? <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="col-md-offset-10 btn btn-success btn-lg" onClick={this.handleContinue} disabled>Continue</button>}
+        {(this.state.done) ? <button type="button" className="middleplace btn materialbtn btn-green btn-lg" onClick={this.handleContinue}>Continue</button> : <button type="button" className="middleplace btn materialbtn btn-green btn-lg" onClick={this.handleContinue} disabled>Continue</button>}
         </div>
       </div>
     );
